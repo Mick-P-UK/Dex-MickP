@@ -14,15 +14,46 @@
 #
 # The Work MCP uses these to categorize tasks and check balance across your work.
 
-pillars: []
-  # Will be populated during onboarding
-  # Example structure:
-  # - id: pillar_id
-  #   name: "Pillar Name"
-  #   description: "What this pillar represents"
-  #   keywords:
-  #     - keyword1
-  #     - keyword2
+pillars:
+  - id: diy_investors_com
+    name: "DIY-Investors.com"
+    description: "Running and growing the DIY-Investors.com business division"
+    keywords:
+      - diy-investors.com
+      - diy investors
+      - business operations
+      - website
+      - content
+  - id: diy_investors_ai
+    name: "DIY-Investors.ai"
+    description: "Running and growing the DIY-Investors.ai business division"
+    keywords:
+      - diy-investors.ai
+      - ai business
+      - ai division
+      - ai operations
+  - id: personal_hobbies
+    name: "Personal/Hobbies"
+    description: "Personal life areas including art, dancing, family history, family & friends, gardening, household & holidays"
+    keywords:
+      - personal
+      - hobbies
+      - art
+      - dancing
+      - family
+      - gardening
+      - household
+      - holidays
+  - id: writing
+    name: "Writing"
+    description: "Writing activities across all other pillars - content creation, documentation, creative writing"
+    keywords:
+      - writing
+      - content
+      - documentation
+      - blog
+      - articles
+      - creative writing
 
 # Priority limits (how many active tasks per priority level)
 priority_limits:

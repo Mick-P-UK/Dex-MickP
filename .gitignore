@@ -49,6 +49,9 @@ core/mcp-premium/
 # User customization notes
 System/my-customizations.md
 
+# Custom changes log (tracked - documents system modifications)
+!CUSTOM_CHANGES.md
+
 # ============================================
 # Beta Features (created on activation)
 # ============================================

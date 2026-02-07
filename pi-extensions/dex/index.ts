@@ -33,9 +33,49 @@ const execAsync = promisify(exec);
 const VAULT_PATH = process.env.VAULT_PATH || "/Users/dave/Claudesidian";
 const PEOPLE_PATH = path.join(VAULT_PATH, "05-Areas/People");
 const COMPANIES_PATH = path.join(VAULT_PATH, "05-Areas/Companies");
-const TASKS_PATH = path.join(VAULT_PATH, "03-Tasks/Tasks.md");
+const TASKS_DIR = path.join(VAULT_PATH, "03-Tasks");
 const INBOX_PATH = path.join(VAULT_PATH, "00-Inbox");
 const DAILY_PLANS_PATH = path.join(VAULT_PATH, "07-Archives/Plans");
+
+/**
+ * Find the latest dated file matching pattern YYYY.MM.DD-baseName.md
+ * Falls back to baseName if no dated version exists.
+ */
+function findLatestDatedFile(directory: string, baseName: string): string {
+  const baseFile = path.join(directory, baseName);
+  
+  if (!fs.existsSync(directory)) {
+    return baseFile;
+  }
+  
+  const files = fs.readdirSync(directory);
+  const pattern = /^(\d{4})\.(\d{2})\.(\d{2})-(.+)$/;
+  const datedFiles: Array<{ date: Date; path: string }> = [];
+  
+  for (const file of files) {
+    const match = file.match(pattern);
+    if (match) {
+      const [, year, month, day, rest] = match;
+      if (rest === baseName) {
+        try {
+          const fileDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+          datedFiles.push({ date: fileDate, path: path.join(directory, file) });
+        } catch (e) {
+          // Invalid date, skip
+        }
+      }
+    }
+  }
+  
+  if (datedFiles.length > 0) {
+    datedFiles.sort((a, b) => b.date.getTime() - a.date.getTime());
+    return datedFiles[0].path;
+  }
+  
+  return baseFile;
+}
+
+const TASKS_PATH = findLatestDatedFile(TASKS_DIR, "Tasks.md");
 
 // ============================================================================
 // UTILITIES

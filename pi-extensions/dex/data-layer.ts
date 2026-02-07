@@ -8,10 +8,51 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 
 const VAULT_PATH = process.env.VAULT_PATH || "/Users/dave/Claudesidian";
-const TASKS_PATH = path.join(VAULT_PATH, "03-Tasks/Tasks.md");
-const WEEK_PRIORITIES_PATH = path.join(VAULT_PATH, "02-Week_Priorities");
+const TASKS_DIR = path.join(VAULT_PATH, "03-Tasks");
+const WEEK_PRIORITIES_DIR = path.join(VAULT_PATH, "02-Week_Priorities");
 const DAILY_PLAN_PATH = path.join(VAULT_PATH, "01-Daily_Plan");
 const CAREER_EVIDENCE_PATH = path.join(VAULT_PATH, "05-Areas/Career/Evidence");
+
+/**
+ * Find the latest dated file matching pattern YYYY.MM.DD-baseName.md
+ * Falls back to baseName if no dated version exists.
+ */
+function findLatestDatedFile(directory: string, baseName: string): string {
+  const baseFile = path.join(directory, baseName);
+  
+  if (!fs.existsSync(directory)) {
+    return baseFile;
+  }
+  
+  const files = fs.readdirSync(directory);
+  const pattern = /^(\d{4})\.(\d{2})\.(\d{2})-(.+)$/;
+  const datedFiles: Array<{ date: Date; path: string }> = [];
+  
+  for (const file of files) {
+    const match = file.match(pattern);
+    if (match) {
+      const [, year, month, day, rest] = match;
+      if (rest === baseName) {
+        try {
+          const fileDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+          datedFiles.push({ date: fileDate, path: path.join(directory, file) });
+        } catch (e) {
+          // Invalid date, skip
+        }
+      }
+    }
+  }
+  
+  if (datedFiles.length > 0) {
+    datedFiles.sort((a, b) => b.date.getTime() - a.date.getTime());
+    return datedFiles[0].path;
+  }
+  
+  return baseFile;
+}
+
+const TASKS_PATH = findLatestDatedFile(TASKS_DIR, "Tasks.md");
+const WEEK_PRIORITIES_PATH = WEEK_PRIORITIES_DIR;
 
 // Type definitions
 export interface Task {
@@ -268,8 +309,8 @@ export function getTaskSummary(): {
  * Load week priorities from current week file
  */
 export function loadWeekPriorities(): WeekPriority[] {
-  // Read Week_Priorities.md directly
-  const weekFilePath = path.join(WEEK_PRIORITIES_PATH, "Week_Priorities.md");
+  // Find latest dated Week_Priorities.md file
+  const weekFilePath = findLatestDatedFile(WEEK_PRIORITIES_PATH, "Week_Priorities.md");
   console.log("[Dex Data Layer] Loading week priorities from:", weekFilePath);
   
   const content = readFileSync(weekFilePath);

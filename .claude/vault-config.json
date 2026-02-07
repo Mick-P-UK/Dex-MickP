@@ -1,0 +1,15 @@
+{
+  "user": {
+    "name": "Mick",
+    "role": "Consultant",
+    "company": "Ditty Box Ltd",
+    "companySize": "startup",
+    "pillars": [
+      "DIY-Investors.com",
+      "DIY-Investors.ai",
+      "Personal/Hobbies",
+      "Writing"
+    ]
+  },
+  "createdAt": "2026-02-07"
+}

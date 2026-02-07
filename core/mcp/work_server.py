@@ -66,7 +66,7 @@ class DateTimeEncoder(json.JSONEncoder):
 # Configuration - Vault paths
 BASE_DIR = Path(os.environ.get('VAULT_PATH', Path.cwd()))
 TASKS_FILE = BASE_DIR / '03-Tasks/Tasks.md'
-WEEK_PRIORITIES_FILE = BASE_DIR / 'Inbox' / 'Week Priorities.md'
+WEEK_PRIORITIES_FILE = BASE_DIR / '02-Week_Priorities' / 'Week_Priorities.md'
 QUARTER_GOALS_FILE = BASE_DIR / '01-Quarter_Goals/Quarter_Goals.md'
 GOALS_FILE = BASE_DIR / 'GOALS.md'  # Legacy, kept for compatibility
 INBOX_DIR = BASE_DIR / 'Inbox'
@@ -92,11 +92,55 @@ def is_demo_mode() -> bool:
         logger.error(f"Error checking demo mode: {e}")
         return False
 
+def find_latest_dated_file(directory: Path, base_name: str) -> Path:
+    """
+    Find the latest dated file matching pattern YYYY.MM.DD-base_name.md
+    Falls back to base_name.md if no dated version exists.
+    
+    Args:
+        directory: Directory to search in
+        base_name: Base filename (e.g., 'Tasks.md' or 'Week_Priorities.md')
+    
+    Returns:
+        Path to the latest dated file, or the base file if no dated version exists
+    """
+    import re
+    from datetime import datetime
+    
+    # Pattern: YYYY.MM.DD-base_name
+    pattern = re.compile(r'^(\d{4})\.(\d{2})\.(\d{2})-(.+)$')
+    
+    dated_files = []
+    base_file = directory / base_name
+    
+    # Search for dated files
+    if directory.exists():
+        for file_path in directory.iterdir():
+            if file_path.is_file() and file_path.suffix == '.md':
+                match = pattern.match(file_path.name)
+                if match:
+                    year, month, day, rest = match.groups()
+                    # Check if the rest matches our base_name
+                    if rest == base_name:
+                        try:
+                            file_date = datetime(int(year), int(month), int(day))
+                            dated_files.append((file_date, file_path))
+                        except ValueError:
+                            continue
+    
+    # Return the most recent dated file, or fall back to base file
+    if dated_files:
+        dated_files.sort(key=lambda x: x[0], reverse=True)
+        return dated_files[0][1]
+    
+    return base_file
+
 def get_tasks_file() -> Path:
-    """Get the appropriate 03-Tasks/Tasks.md file based on demo mode"""
+    """Get the appropriate 03-Tasks/Tasks.md file based on demo mode and dated files"""
     if is_demo_mode():
         return DEMO_DIR / '03-Tasks/Tasks.md'
-    return TASKS_FILE
+    tasks_dir = BASE_DIR / '03-Tasks'
+    return find_latest_dated_file(tasks_dir, 'Tasks.md')
 
 def get_pillars_file() -> Path:
     """Get the appropriate pillars.yaml file based on demo mode"""
@@ -107,10 +151,11 @@ def get_pillars_file() -> Path:
     return PILLARS_FILE
 
 def get_week_priorities_file() -> Path:
-    """Get the appropriate Week Priorities file based on demo mode"""
+    """Get the appropriate Week Priorities file based on demo mode and dated files"""
     if is_demo_mode():
         return DEMO_DIR / 'Inbox' / 'Week Priorities.md'
-    return WEEK_PRIORITIES_FILE
+    priorities_dir = BASE_DIR / '02-Week_Priorities'
+    return find_latest_dated_file(priorities_dir, 'Week_Priorities.md')
 
 def get_people_dir() -> Path:
     """Get the appropriate People directory based on demo mode"""

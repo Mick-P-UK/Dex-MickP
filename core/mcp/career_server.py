@@ -55,6 +55,49 @@ CAREER_DIR = BASE_DIR / 'Active' / 'Career'
 EVIDENCE_DIR = BASE_DIR / 'Resources' / 'Career_Evidence'
 LADDER_FILE = CAREER_DIR / 'Career_Ladder.md'
 
+def find_latest_dated_file(directory: Path, base_name: str) -> Path:
+    """
+    Find the latest dated file matching pattern YYYY.MM.DD-base_name.md
+    Falls back to base_name.md if no dated version exists.
+    
+    Args:
+        directory: Directory to search in
+        base_name: Base filename (e.g., 'Tasks.md' or 'Week_Priorities.md')
+    
+    Returns:
+        Path to the latest dated file, or the base file if no dated version exists
+    """
+    import re
+    from datetime import datetime
+    
+    # Pattern: YYYY.MM.DD-base_name
+    pattern = re.compile(r'^(\d{4})\.(\d{2})\.(\d{2})-(.+)$')
+    
+    dated_files = []
+    base_file = directory / base_name
+    
+    # Search for dated files
+    if directory.exists():
+        for file_path in directory.iterdir():
+            if file_path.is_file() and file_path.suffix == '.md':
+                match = pattern.match(file_path.name)
+                if match:
+                    year, month, day, rest = match.groups()
+                    # Check if the rest matches our base_name
+                    if rest == base_name:
+                        try:
+                            file_date = datetime(int(year), int(month), int(day))
+                            dated_files.append((file_date, file_path))
+                        except ValueError:
+                            continue
+    
+    # Return the most recent dated file, or fall back to base file
+    if dated_files:
+        dated_files.sort(key=lambda x: x[0], reverse=True)
+        return dated_files[0][1]
+    
+    return base_file
+
 # Initialize the MCP server
 app = Server("dex-career-mcp")
 
@@ -752,7 +795,8 @@ async def handle_skills_gap_analysis(arguments: dict) -> list[types.TextContent]
                 active_skills[skill]['last_seen'] = datetime.now()  # Simplified - would check actual dates
     
     # Scan 03-Tasks/Tasks.md for # Career: tags
-    tasks_file = BASE_DIR / '03-Tasks/Tasks.md'
+    tasks_dir = BASE_DIR / '03-Tasks'
+    tasks_file = find_latest_dated_file(tasks_dir, 'Tasks.md')
     if tasks_file.exists():
         content = tasks_file.read_text()
         career_tags = re.findall(r'#\s*Career:\s*([^\n]+)', content)

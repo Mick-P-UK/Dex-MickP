@@ -40,12 +40,16 @@ The system automatically suggests `/getting-started` at next session if vault < 
 ## User Profile
 
 <!-- Updated during onboarding -->
-**Name:** Not yet configured
-**Role:** Not yet configured
-**Company Size:** Not yet configured
+**Name:** Mick
+**Role:** Consultant
+**Company:** Ditty Box Ltd
+**Company Size:** Startup (1-100 people)
 **Working Style:** Not yet configured
 **Pillars:**
-- Not yet configured
+- DIY-Investors.com
+- DIY-Investors.ai
+- Personal/Hobbies
+- Writing
 
 ---
 
