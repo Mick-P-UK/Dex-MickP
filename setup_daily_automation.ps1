@@ -105,7 +105,7 @@ try {
 
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Green
-Write-Host "✓ Automation Setup Complete!" -ForegroundColor Green
+Write-Host "[SUCCESS] Automation Setup Complete!" -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "Created tasks:" -ForegroundColor Cyan
@@ -122,5 +122,5 @@ Write-Host "  - Open Task Scheduler (taskschd.msc)" -ForegroundColor White
 Write-Host "  - Look for tasks starting with 'Dex Git Commit'" -ForegroundColor White
 Write-Host ""
 Write-Host "To test the script manually:" -ForegroundColor Cyan
-Write-Host "  python `"$pythonScript`"" -ForegroundColor White
+Write-Host "  python $pythonScript" -ForegroundColor White
 Write-Host ""

@@ -1,7 +1,27 @@
 @echo off
 REM Batch file to run PowerShell automation setup as Administrator
-REM This handles the path with apostrophe correctly
+REM Auto-elevates if not running as admin
 
+:: Check for admin rights
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    goto :run_setup
+) else (
+    echo.
+    echo ============================================================
+    echo  Requesting Administrator Privileges...
+    echo ============================================================
+    echo.
+    echo This script needs admin rights to create scheduled tasks.
+    echo You'll see a UAC prompt - click Yes to continue.
+    echo.
+
+    :: Re-launch as admin
+    powershell -Command "Start-Process '%~f0' -Verb RunAs"
+    exit /b
+)
+
+:run_setup
 echo.
 echo ============================================================
 echo  Git Automation Setup
@@ -26,12 +46,16 @@ if %ERRORLEVEL% EQU 0 (
     echo  Setup Complete!
     echo ============================================================
     echo.
+    echo Tasks created successfully!
+    echo Open Task Scheduler to view them.
+    echo.
 ) else (
     echo.
     echo ============================================================
     echo  Setup Failed
     echo ============================================================
     echo.
+    echo Error code: %ERRORLEVEL%
     echo Please check the error messages above.
     echo Or try the manual setup in SETUP_AUTOMATION.md
     echo.

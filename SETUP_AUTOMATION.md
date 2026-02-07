@@ -1,17 +1,22 @@
 # Set Up Daily Git Commit Automation
 
+> **Status:** ✅ All components tested and working. See `SETUP_STATUS.md` for details.
+
 ## Quick Setup (Recommended)
 
-### Option 1: Batch File (Easiest)
+### Option 1: Batch File (Easiest) ⭐ RECOMMENDED
 
-1. **Right-click `setup-automation.bat` in your Dex folder**
-2. **Select "Run as administrator"**
-3. **Done!** The script will create both tasks automatically.
+1. **Double-click `setup-automation.bat`** in your Dex folder
+2. **Click "Yes"** when Windows asks for Administrator permission (UAC prompt)
+3. **Press any key** to continue when prompted
+4. **Done!** The script will create both tasks automatically.
 
 **File location:**
 ```
 C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\setup-automation.bat
 ```
+
+**Note:** The batch file automatically requests admin rights - no need to right-click "Run as administrator"
 
 ---
 
