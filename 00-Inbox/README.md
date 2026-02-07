@@ -1,33 +1,20 @@
 # Inbox
 
-Temporary holding area for orphaned files that need routing.
+Your capture zone for quick notes, meeting notes, and ideas.
 
-## What Goes Here
+## How to use:
 
-Standalone files that arrive without context:
-- Screenshots you want to file later
-- PDFs or exports that need a home
-- Files forwarded from email or other tools
+- **Meetings/**: Meeting notes go here automatically when you process them
+- **Ideas/**: Quick thoughts, feature ideas, things to explore later
 
-## Primary Capture is Conversational
-
-Don't use this folder for day-to-day capture. Just tell Claude things:
-
-```
-You: "Sarah worried about timeline but interested in Q2 pilot"
-Claude: "Add to Sarah's person page and Q2 Planning project?"
-You: "Yes"
-```
-
-The system routes intelligently based on your Week Priorities and Goals.
-
-## When to Use `/triage`
+## Processing your inbox:
 
 Run `/triage` periodically to:
-- Route standalone files in this folder
-- Find scattered `- [ ]` tasks across notes
-- Clean up orphaned items
+- Move items to the right place
+- Extract tasks
+- Create person/project pages as needed
+- Archive what's done
 
-## Inbox Zero
+---
 
-Aim to keep this folder empty. Files here are exceptions, not the norm.
+*The inbox is meant to be messy - that's its job. Process it regularly to keep things organized.*

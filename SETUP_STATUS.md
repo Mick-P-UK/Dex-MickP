@@ -39,6 +39,7 @@
 ### 4. Documentation
 - ✅ **SETUP_AUTOMATION.md** - Updated with three options
 - ✅ **System/git_automation_log.md** - Updated with status
+- ✅ **check_task_status.ps1** - Verification script created
 
 ---
 
@@ -71,22 +72,49 @@ C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\setup-automation.bat
 
 ---
 
-## 🔍 After Setup - Verification
+## 🔍 Verification - Check Current Status
 
-### Check Tasks Were Created
+### Quick Status Check (Recommended)
+Run the verification script to check if tasks are configured:
+
+```powershell
+# In PowerShell (no admin needed for checking):
+cd "C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP"
+.\check_task_status.ps1
+```
+
+This will show:
+- Whether each task exists
+- Task state (Ready, Disabled, etc.)
+- Last run time and result
+- Next scheduled run time
+
+### Manual Verification via Task Scheduler
+
+**Check Tasks Were Created:**
 1. Press `Win + R`
 2. Type `taskschd.msc` and press Enter
 3. Look for tasks named "Dex Git Commit - Startup" and "Dex Git Commit - Daily 9PM"
 
-### Test a Task Manually
+**Test a Task Manually:**
 1. In Task Scheduler, find one of the tasks
 2. Right-click → "Run"
 3. Check the "Last Run Result" column (should show "0x0" for success)
 
-### View Task History
+**View Task History:**
 1. Select a task in Task Scheduler
 2. Click the "History" tab at the bottom
 3. Review recent runs and any errors
+
+### Current Status Check Results
+
+**Last Verified:** Not yet verified - run `check_task_status.ps1` to check current status
+
+**To verify:**
+1. Open PowerShell
+2. Navigate to Dex folder: `cd "C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP"`
+3. Run: `.\check_task_status.ps1`
+4. Review the output to see which tasks exist and their status
 
 ---
 

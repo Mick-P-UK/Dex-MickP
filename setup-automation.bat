@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 REM Batch file to run PowerShell automation setup as Administrator
 REM Auto-elevates if not running as admin
 
@@ -22,6 +23,8 @@ if %errorLevel% == 0 (
 )
 
 :run_setup
+
+
 echo.
 echo ============================================================
 echo  Git Automation Setup
@@ -38,7 +41,7 @@ echo.
 echo Running PowerShell setup script...
 echo.
 
-PowerShell -ExecutionPolicy Bypass -Command "& '%~dp0setup_daily_automation.ps1'"
+PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0setup_daily_automation.ps1"
 
 if %ERRORLEVEL% EQU 0 (
     echo.
@@ -50,14 +53,22 @@ if %ERRORLEVEL% EQU 0 (
     echo Open Task Scheduler to view them.
     echo.
 ) else (
+    set ERR=%ERRORLEVEL%
     echo.
     echo ============================================================
     echo  Setup Failed
     echo ============================================================
     echo.
-    echo Error code: %ERRORLEVEL%
+    echo Error code: !ERR!
     echo Please check the error messages above.
-    echo Or try the manual setup in SETUP_AUTOMATION.md
+    echo.
+    echo Common issues:
+    echo   - PowerShell script not found
+    echo   - Python not installed or not in PATH
+    echo   - daily_git_commit.py missing
+    echo   - Not running as Administrator
+    echo.
+    echo Try the manual setup in SETUP_AUTOMATION.md
     echo.
 )
 

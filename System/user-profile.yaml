@@ -26,7 +26,11 @@ company_size: "startup"  # options: startup (1-100), scaling (100-1000), enterpr
 # Your company email domain (used to identify internal vs external people)
 # Example: "pendo.io" (without @)
 # Multiple domains: "pendo.io, pendo.com"
-email_domain: ""
+email_domain: "dittybox.org"
+
+# Timezone (detected from system)
+# Format: IANA timezone or Windows timezone ID
+timezone: "Europe/London"  # GMT/BST - Auto-detected from system
 
 # Communication Preferences
 # How the AI adapts its tone and language when working with you

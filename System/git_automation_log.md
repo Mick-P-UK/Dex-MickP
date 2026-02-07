@@ -221,11 +221,30 @@ git diff
    - Fallback if Python unavailable
    - Same functionality as Python script
 
+4. **`setup-automation.bat`** - Task Scheduler setup (easiest method)
+   - Auto-elevates to Administrator
+   - Runs PowerShell setup script
+   - Creates both scheduled tasks
+
+5. **`setup_daily_automation.ps1`** - PowerShell Task Scheduler setup
+   - Creates startup and daily tasks
+   - Requires Administrator privileges
+   - Can be run directly or via batch file
+
+6. **`check_task_status.ps1`** - Verification script
+   - Checks if scheduled tasks exist
+   - Reports task state and run history
+   - No admin rights needed for checking
+
 ### Windows Task Scheduler Setup
 
-**Status:** Scripts tested and ready. Task Scheduler setup pending.
+**Status:** Scripts tested and ready. Task Scheduler setup status needs verification.
 
-**Next Step:** Run PowerShell setup script as Administrator (see SETUP_AUTOMATION.md)
+**Verification:** Run `check_task_status.ps1` to check if tasks are configured:
+```powershell
+cd "C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP"
+.\check_task_status.ps1
+```
 
 **Target Configuration:**
 - **Task 1:** "Dex Git Commit - Startup" - Runs at system startup
@@ -238,17 +257,27 @@ git diff
 
 **Setup Methods:**
 
-**Method 1: PowerShell Script (Recommended)**
+**Method 1: Batch File (Easiest - Recommended)**
+- Script: `setup-automation.bat`
+- Double-click to run (auto-elevates to Administrator)
+- Automatically creates both tasks
+
+**Method 2: PowerShell Script**
 - Script: `setup_daily_automation.ps1`
 - Run as Administrator: `.\setup_daily_automation.ps1`
 - Automatically creates both tasks
 
-**Method 2: Manual Setup**
+**Method 3: Manual Setup**
 - See `SETUP_AUTOMATION.md` for detailed instructions
 - Create two tasks in Task Scheduler:
   1. Startup trigger
   2. Daily at 9:00 PM trigger
 - Both run: `python daily_git_commit.py`
+
+**Verification Script:**
+- **check_task_status.ps1** - Checks if tasks exist and reports their status
+- No admin rights needed to check status
+- Shows task state, last run time, and next run time
 
 ### Error Handling
 
