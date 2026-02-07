@@ -2,27 +2,36 @@
 
 ## Quick Setup (Recommended)
 
-### Option 1: PowerShell Script (Easiest)
+### Option 1: Batch File (Easiest)
+
+1. **Right-click `setup-automation.bat` in your Dex folder**
+2. **Select "Run as administrator"**
+3. **Done!** The script will create both tasks automatically.
+
+**File location:**
+```
+C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\setup-automation.bat
+```
+
+---
+
+### Option 2: PowerShell Command
 
 1. **Open PowerShell as Administrator:**
    - Press `Win + X`
    - Select "Windows PowerShell (Admin)" or "Terminal (Admin)"
 
-2. **Navigate to Dex folder:**
+2. **Copy and paste this command:**
    ```powershell
-   cd "c:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP"
+   Set-Location 'C:\Vaults\Mick''s-Dex-2nd-Brain\Dex-MickP'; .\setup_daily_automation.ps1
    ```
+   *(Note: The double apostrophe `''` in Mick''s is correct for PowerShell)*
 
-3. **Run the setup script:**
-   ```powershell
-   .\setup_daily_automation.ps1
-   ```
-
-4. **Done!** The script will create both tasks automatically.
+3. **Done!** The script will create both tasks automatically.
 
 ---
 
-### Option 2: Manual Task Scheduler Setup
+### Option 3: Manual Task Scheduler Setup
 
 If the PowerShell script doesn't work, set up manually:
 

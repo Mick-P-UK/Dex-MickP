@@ -223,7 +223,11 @@ git diff
 
 ### Windows Task Scheduler Setup
 
-**Current Configuration (2026-02-07):**
+**Status:** Scripts tested and ready. Task Scheduler setup pending.
+
+**Next Step:** Run PowerShell setup script as Administrator (see SETUP_AUTOMATION.md)
+
+**Target Configuration:**
 - **Task 1:** "Dex Git Commit - Startup" - Runs at system startup
 - **Task 2:** "Dex Git Commit - Daily 9PM" - Runs daily at 9:00 PM
 
