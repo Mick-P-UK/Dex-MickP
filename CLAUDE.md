@@ -410,6 +410,45 @@ Track feature adoption in `System/usage_log.md` to power `/dex-level-up` recomme
 
 ---
 
+## Writing System
+
+Mick has an integrated Writing System in `05-Areas/Writing_System/` with voice DNA, ICP, and business profile.
+
+### Context Profiles (Auto-Loaded)
+
+When Mick uses writing skills, these profiles inject automatically:
+
+| Profile | Location | Contains |
+|---------|----------|----------|
+| **Voice DNA** | `context/core/voice-dna-mick.json` | Tone, style, phrases, boundaries |
+| **ICP** | `context/core/icp.json` | Audience pain points, language, aspirations |
+| **Business Profile** | `context/core/business-profile.json` | Offerings, positioning, methodology |
+
+### Writing Skills Available
+
+| Skill | Purpose |
+|-------|---------|
+| `/thought-leadership` | Value-packed newsletters (800-1,500 words) |
+| `/substack-note` | High-performing short notes |
+| `/content-extraction` | Extract ideas from long-form content |
+| `/social-media-bio-generator` | Platform-specific bio generation |
+
+### Writing Agents
+
+Use Task tool for complex writing:
+- `article-writer.md` - Long-form articles
+- `newsletter-writer.md` - Email newsletters
+- `researcher-agent.md` - Research and synthesis
+
+### Knowledge Base
+
+- **Published Content** - `knowledge/content/` - Past newsletters, letters, polished work
+- **Drafts** - `knowledge/drafts/` - Work in progress
+
+**See:** `05-Areas/Writing_System/README.md` for complete guide
+
+---
+
 ## Skills
 
 Skills extend Dex capabilities and are invoked with `/skill-name`. Common skills include:
