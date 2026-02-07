@@ -22,13 +22,13 @@ def test_daily_commit():
     
     # Check if script exists
     if not daily_script.exists():
-        print("✗ ERROR: daily_git_commit.py not found!")
+        print("[ERROR] daily_git_commit.py not found!")
         return 1
-    
+
     # Check if git repository exists
     git_dir = script_dir / ".git"
     if not git_dir.exists():
-        print("⚠ WARNING: Git repository not initialized")
+        print("[WARNING] Git repository not initialized")
         print("  Run setup_git.py first")
         print()
     
@@ -46,20 +46,20 @@ def test_daily_commit():
         
         print()
         print("-" * 60)
-        
+
         if result.returncode == 0:
-            print("✓ Test completed successfully!")
+            print("[SUCCESS] Test completed successfully!")
             print()
             print("The script is working correctly.")
             print("You can now set up the scheduled tasks.")
             return 0
         else:
-            print("✗ Test completed with errors")
+            print("[ERROR] Test completed with errors")
             print("Check the output above for details.")
             return 1
-            
+
     except Exception as e:
-        print(f"✗ Error running script: {e}")
+        print(f"[ERROR] Error running script: {e}")
         return 1
 
 if __name__ == "__main__":

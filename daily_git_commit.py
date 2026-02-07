@@ -122,14 +122,14 @@ def main():
     
     # Check if git repository exists
     if not (script_dir / ".git").exists():
-        print("⚠ Git repository not initialized. Run setup_git.py first.")
+        print("[WARNING] Git repository not initialized. Run setup_git.py first.")
         return 1
-    
+
     # Check for changes
     changed_files = get_changed_files()
-    
+
     if not changed_files:
-        print("✓ No changes to commit")
+        print("[OK] No changes to commit")
         return 0
     
     print(f"Found {len(changed_files)} changed file(s):")
@@ -143,9 +143,9 @@ def main():
     print("Staging changes...", end=" ", flush=True)
     result = run_command("git add .", "Staging files")
     if result and result.returncode == 0:
-        print("✓")
+        print("Done")
     else:
-        print("✗")
+        print("Failed")
         if result:
             print(f"  Error: {result.stderr.strip()}")
         return 1
@@ -161,13 +161,13 @@ def main():
     )
     
     if result and result.returncode == 0:
-        print("✓")
+        print("Done")
         print(f"  {result.stdout.strip()}")
         print()
-        print("✓ Daily commit completed successfully")
+        print("[SUCCESS] Daily commit completed successfully")
         return 0
     else:
-        print("✗")
+        print("Failed")
         if result:
             if "nothing to commit" in result.stdout:
                 print("  Nothing to commit (files may be ignored)")
