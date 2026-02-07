@@ -23,6 +23,61 @@ company: "Ditty Box Ltd"
 # Company size tier
 company_size: "startup"  # options: startup (1-100), scaling (100-1000), enterprise (1000-10000), large_enterprise (10000+)
 
+# Business Information
+# Sourced from Writing System business profile
+business:
+  brand: "DIY-Investors"
+  divisions:
+    - "diy-investors.com"  # Investment education and portfolio guidance
+    - "diy-investors.ai"   # AI-augmented investing education
+  mission: "Serving DIY investors who want to manage their own stock market investments to secure their financial future"
+  founder_background: "Full-time investor, retired Chartered Quantity Surveyor, entrepreneur, and small business owner"
+
+  offerings:
+    inner_circle:
+      division: "diy-investors.com"
+      type: "membership"
+      price_annual: "£380"
+      audience: "Serious DIY investors who want to invest on their own account"
+
+    plaza_group:
+      division: "diy-investors.com"
+      type: "premium_membership"
+      price_annual: "£720"
+      audience: "Experienced DIY investors wanting daily access and real money portfolio insights"
+
+    ai_for_investing:
+      division: "diy-investors.ai"
+      type: "membership"
+      price_annual: "£300"
+      audience: "Investors who want to gain the advantage AI offers for investing"
+
+    boot_camp:
+      type: "workshop"
+      frequency: "occasional"
+      audience: "Members seeking intensive, in-person training"
+
+  brand_positioning:
+    unique_angle: "Combining fundamental and technical analysis with AI augmentation, plus live interactive Q&A sessions"
+    core_philosophy: "The market is manipulated by insiders. DIY investors need independent thinking, facts, and rational analysis to succeed."
+    differentiators:
+      - "Combines fundamental and technical analysis"
+      - "Uses AI to augment investing methods"
+      - "Live Q&A sessions at every webinar"
+      - "Daily Slack access to real money portfolios (Plaza Group)"
+      - "Transparent about wins and losses"
+
+  brand_frameworks:
+    - "Portico Investing - Application of knowledge about Market Makers' activities"
+    - "Three Pillars of DIY-Investing - Fundamental Analysis, Technical Analysis, News-Flow"
+
+  content_principles:
+    - "Do Your Own Research (DYOR)"
+    - "Get the facts, ignore opinion"
+    - "Make your own mind up"
+    - "Don't be afraid to go against herd mentality"
+    - "Apply analysis and rational thinking over emotion"
+
 # Your company email domain (used to identify internal vs external people)
 # Example: "pendo.io" (without @)
 # Multiple domains: "pendo.io, pendo.com"

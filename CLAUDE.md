@@ -45,6 +45,15 @@ The system automatically suggests `/getting-started` at next session if vault < 
 **Company:** Ditty Box Ltd
 **Company Size:** Startup (1-100 people)
 **Working Style:** Not yet configured
+
+**Business:** DIY-Investors (Founder)
+- **Mission:** Serving DIY investors who want to manage their own stock market investments
+- **Divisions:** diy-investors.com, diy-investors.ai
+- **Offerings:** Inner Circle (£380/yr), Plaza Group (£720/yr), AI for Investing (£300/yr), Boot Camp
+- **Positioning:** Combining fundamental & technical analysis with AI, plus live Q&A webinars
+- **Frameworks:** Portico Investing, Three Pillars (Fundamental Analysis, Technical Analysis, News-Flow)
+- **Philosophy:** DYOR (Do Your Own Research), independent thinking, facts over opinion
+
 **Pillars:**
 - DIY-Investors.com
 - DIY-Investors.ai
