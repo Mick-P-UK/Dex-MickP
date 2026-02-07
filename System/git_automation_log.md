@@ -223,16 +223,28 @@ git diff
 
 ### Windows Task Scheduler Setup
 
-To automate daily commits:
+**Current Configuration (2026-02-07):**
+- **Task 1:** "Dex Git Commit - Startup" - Runs at system startup
+- **Task 2:** "Dex Git Commit - Daily 9PM" - Runs daily at 9:00 PM
 
-1. Open Task Scheduler
-2. Create Basic Task
-3. Name: "Dex Daily Git Commit"
-4. Trigger: Daily at 6:00 PM (or preferred time)
-5. Action: Start a program
-6. Program: `python` (or full path to python.exe)
-7. Arguments: `"c:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\daily_git_commit.py"`
-8. Start in: `c:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP`
+**Why two tasks:**
+- Startup task catches up on missed commits if computer was off at 9PM
+- Daily task commits changes made during the day
+- Ensures no changes are ever lost
+
+**Setup Methods:**
+
+**Method 1: PowerShell Script (Recommended)**
+- Script: `setup_daily_automation.ps1`
+- Run as Administrator: `.\setup_daily_automation.ps1`
+- Automatically creates both tasks
+
+**Method 2: Manual Setup**
+- See `SETUP_AUTOMATION.md` for detailed instructions
+- Create two tasks in Task Scheduler:
+  1. Startup trigger
+  2. Daily at 9:00 PM trigger
+- Both run: `python daily_git_commit.py`
 
 ### Error Handling
 
