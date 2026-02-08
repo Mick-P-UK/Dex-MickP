@@ -16,7 +16,15 @@
       "Bash(git commit:*)",
       "Bash(python -c \"import sys; sys.path.insert\\(0, ''.scripts/work_mcp''\\); from work_mcp import create_task; task = create_task\\(pillar=''writing'', subject=''Review markdown-to-docx conversion options'', description=''Review the \"\"Markdown to DOCX Conversion Guide.md\"\" in Writing System folder and decide which approach to use for converting newsletter drafts to .docx format for layout review. Options: 1\\) DOCX skill, 2\\) Pandoc with template, 3\\) Automated workflow. Consider frequency, styling needs, and technical comfort.'', active_form=''Reviewing conversion options''\\); print\\(f''Task created: {task[\"\"task_id\"\"]}''\\)\")",
       "Bash(cmd.exe /c \"schtasks /query /fo LIST\")",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(if [ -f \"System/.credentials/google_calendar_credentials.json\" ])",
+      "Bash(then echo \"✅ Credentials file found\")",
+      "Bash(else echo \"❌ Credentials file not found - setup still needed\")",
+      "Bash(fi)",
+      "Bash(ls:*)",
+      "Bash(mklink:*)",
+      "Bash(ln:*)"
     ]
   }
 }

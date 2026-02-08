@@ -24,6 +24,9 @@ pillars:
       - business operations
       - website
       - content
+      - youtube
+      - video content
+      - educational videos
   - id: diy_investors_ai
     name: "DIY-Investors.ai"
     description: "Running and growing the DIY-Investors.ai business division"
@@ -32,6 +35,9 @@ pillars:
       - ai business
       - ai division
       - ai operations
+      - youtube
+      - video content
+      - ai video content
   - id: personal_hobbies
     name: "Personal/Hobbies"
     description: "Personal life areas including art, dancing, family history, family & friends, gardening, household & holidays"

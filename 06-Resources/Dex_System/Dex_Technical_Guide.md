@@ -9,15 +9,93 @@
 
 ## Table of Contents
 
-1. [Architecture Philosophy](#architecture-philosophy)
-2. [The Agent Skills Standard](#the-agent-skills-standard)
-3. [MCP Servers Deep Dive](#mcp-servers-deep-dive)
-4. [Context Management](#context-management)
-5. [State Management & Syncing](#state-management--syncing)
-6. [Planning Architecture](#planning-architecture)
-7. [Integration Layer](#integration-layer)
-8. [Self-Learning System](#self-learning-system)
-9. [Design Constraints](#design-constraints)
+1. [Platform Compatibility](#platform-compatibility)
+2. [Architecture Philosophy](#architecture-philosophy)
+3. [The Agent Skills Standard](#the-agent-skills-standard)
+4. [MCP Servers Deep Dive](#mcp-servers-deep-dive)
+5. [Context Management](#context-management)
+6. [State Management & Syncing](#state-management--syncing)
+7. [Planning Architecture](#planning-architecture)
+8. [Integration Layer](#integration-layer)
+9. [Self-Learning System](#self-learning-system)
+10. [Design Constraints](#design-constraints)
+
+---
+
+## Platform Compatibility
+
+Dex is designed to work cross-platform on **Windows, macOS, and Linux**. However, some features have platform-specific implementations or availability.
+
+### Core Features (All Platforms)
+
+These work identically on all platforms:
+- ✅ **PARA file structure** - Markdown files, YAML configs
+- ✅ **Skills system** - All skills work cross-platform
+- ✅ **Work MCP** - Task syncing across files
+- ✅ **Task management** - Tasks.md, task IDs, backlinks
+- ✅ **Person/Company pages** - Knowledge management
+- ✅ **Daily/Weekly planning** - `/daily-plan`, `/week-plan`, `/review`
+- ✅ **Git integration** - Version control, updates via `/dex-update`
+
+### Calendar Integration
+
+**Current status:**
+- ✅ **Google Calendar API** - Cross-platform (Windows, macOS, Linux)
+- ⚙️ **Setup required** - First-time OAuth 2.0 credentials setup
+- 📄 **Guide:** `System/.credentials/GOOGLE_CALENDAR_SETUP.md`
+
+**Python dependencies:**
+- **Windows/Linux:** `google-api-python-client`, `google-auth-httplib2`, `google-auth-oauthlib`
+- **macOS:** Can use either Google Calendar API or native EventKit (legacy)
+
+### Meeting Intelligence (Granola)
+
+**Cache paths:**
+- **macOS:** `~/Library/Application Support/Granola/cache-v3.json`
+- **Windows:** `%APPDATA%/Granola/cache-v3.json`
+- **Cross-platform:** API-first approach works on all platforms
+
+### Background Automation
+
+**Current status:**
+- ✅ **macOS** - Launch Agents for background tasks
+  - Changelog checks (every 6 hours)
+  - Learning reviews (daily at 5pm)
+  - Meeting intel sync (daily)
+- ⏳ **Windows** - Task Scheduler implementation planned (not yet available)
+- ℹ️ **Fallback** - Background checks run inline during session start (still fast, <1 second)
+
+**What this means:**
+- **macOS users:** Get continuous background checks for optimal performance
+- **Windows users:** System works perfectly; checks happen during session start with minimal latency
+
+### Obsidian Sync Daemon
+
+**Current status:**
+- ✅ **Python watchdog** - Cross-platform file monitoring (works on all platforms)
+- ✅ **macOS** - Launch Agent installation available
+- ⏳ **Windows** - Task Scheduler installation planned
+
+**What this means:**
+- The sync logic works everywhere (Python watchdog is cross-platform)
+- Installation automation is currently macOS-only
+- Windows users can run the sync daemon manually if needed
+
+### Platform-Specific Notes
+
+**Windows:**
+- Install script uses Windows-compatible commands (`python` vs `python3`)
+- Checks for Python in PATH (common Windows setup issue)
+- Calendar requires Google Calendar API setup (one-time, 5-10 minutes)
+
+**macOS:**
+- Xcode Command Line Tools check (required for git)
+- Can use native EventKit for calendar (legacy) or Google Calendar API
+- Launch Agents available for background automation
+
+**Linux:**
+- Google Calendar API for calendar integration
+- Manual daemon management (no Launch Agents/Task Scheduler)
 
 ---
 
@@ -240,17 +318,21 @@ This ensures every task gets a unique, sortable ID that's stable across files.
 
 **Why this matters:** Task IDs are how we maintain relationships. When a meeting note says "^task-20260128-001", Dex can find that task in `03-Tasks/Tasks.md` AND on the person page AND link back to the meeting.
 
-#### 2. **Calendar MCP** (`user-dave-calendar-mcp`)
+#### 2. **Calendar MCP** (`calendar_server.py`)
 
-**Purpose:** Read-only access to Apple Calendar for meeting context.
+**Purpose:** Access to Google Calendar for meeting context via Google Calendar API.
 
-**Why Apple Calendar?** It syncs with Google Calendar accounts locally, so it's a universal interface for macOS users.
+**Why Google Calendar API?** Cross-platform solution that works on Windows, macOS, and Linux. Direct API access to your Google Calendar with OAuth 2.0 authentication.
 
 **Key tools:**
 - `calendar_list_calendars` - Show available calendars
-- `calendar_list_events` - Get meetings for date range
+- `calendar_get_events` - Get meetings for date range
+- `calendar_get_today` - Quick access to today's meetings
+- `calendar_get_events_with_attendees` - Get events with full attendee details
 
-**How it's used:** The `/daily-plan` skill calls `calendar_list_events(start_date="2026-01-28")` to show today's meetings. Claude then cross-references meeting attendees with person pages to inject context.
+**Setup:** Requires Google Calendar API credentials (one-time setup). See `System/.credentials/GOOGLE_CALENDAR_SETUP.md` for instructions.
+
+**How it's used:** The `/daily-plan` skill calls `calendar_get_today()` to show today's meetings. Claude then cross-references meeting attendees with person pages to inject context.
 
 #### 3. **Granola MCP** (`core/mcp/granola_server.py`)
 
@@ -260,7 +342,9 @@ This ensures every task gets a unique, sortable ID that's stable across files.
 
 **Architecture:** API-first with cache fallback (v2.0)
 - **Primary:** Uses Granola's unofficial API for complete historical data (91% success rate)
-- **Fallback:** Reads from local cache (`~/Library/Application Support/Granola/cache-v3.json`) if API fails
+- **Fallback:** Reads from local cache if API fails
+  - macOS: `~/Library/Application Support/Granola/cache-v3.json`
+  - Windows: `%APPDATA%/Granola/cache-v3.json`
 - **Protection:** Response caching (5 min TTL), exponential backoff, graceful degradation
 
 **Key tools:**
@@ -329,7 +413,7 @@ This ensures every task gets a unique, sortable ID that's stable across files.
 - Session state management with resume capability
 - Step-by-step validation enforcement (cannot skip required fields)
 - Email domain validation (Step 4) with format checking (no @, must have dot)
-- Dependency verification (Python packages, Calendar.app, Granola)
+- Dependency verification (Python packages, calendar integration, Granola)
 - Automatic MCP configuration with VAULT_PATH substitution
 - PARA folder structure creation
 
@@ -728,13 +812,16 @@ Tasks use three tag types:
 **Goal:** Surface today's meetings in daily plan with context about attendees.
 
 **Tech stack:**
-- **Calendar MCP** (`user-dave-calendar-mcp`)
-- **Apple Calendar.app** (syncs Google Calendar accounts locally)
+- **Calendar MCP** (`calendar_server.py`)
+- **Google Calendar API** (cross-platform: Windows, macOS, Linux)
+- **OAuth 2.0** for secure authentication
+
+**Setup:** First-time setup requires Google Calendar API credentials. See `System/.credentials/GOOGLE_CALENDAR_SETUP.md` for instructions.
 
 **Flow:**
 
 1. User runs `/daily-plan`
-2. Skill calls `calendar_list_events(start_date="2026-01-28")`
+2. Skill calls `calendar_get_today()` or `calendar_get_events(start_date="2026-01-28")`
 3. MCP returns meeting list:
    ```json
    [
@@ -876,7 +963,7 @@ Focus on architecture questions, not syntax nitpicks. I trust the team on detail
 **Tech stack:**
 - **Background automation** (`.scripts/meeting-intel/daily-synthesis.cjs`)
 - **Anthropic changelog monitoring** (every 6 hours)
-- **LaunchAgent** (`com.dex.meeting-intel.plist`)
+- **LaunchAgent** (`com.dex.meeting-intel.plist`) - macOS only (Windows Task Scheduler planned)
 
 **Flow:**
 
@@ -943,6 +1030,8 @@ The system runs checks automatically during:
 - `System/.last-learning-check` - Tracks last daily learning review
 
 #### Optional: Launch Agent Installation (Background Optimization)
+
+**Platform note:** Launch Agents are macOS-only. Windows Task Scheduler equivalents are planned but not yet implemented. Windows users can still use Dex - background checks run inline during session start with minimal latency.
 
 For faster execution without inline checks, install macOS Launch Agents:
 

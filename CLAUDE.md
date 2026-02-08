@@ -16,7 +16,7 @@ If `04-Projects/` folder doesn't exist, this is a fresh setup.
 3. Use MCP `validate_and_save_step()` after each step to enforce validation
 4. **CRITICAL:** Step 4 (email_domain) is MANDATORY and validated by the MCP
 5. Before finalization, call `get_onboarding_status()` to verify completion
-6. Call `verify_dependencies()` to check Python packages and Calendar.app
+6. Call `verify_dependencies()` to check Python packages and calendar integration
 7. Call `finalize_onboarding()` to create vault structure and configs
 
 **Why MCP-based:**
@@ -94,6 +94,76 @@ Calculate the current time in London timezone and adjust the greeting accordingl
 ---
 
 ## Core Behaviors
+
+### 🚨 SESSION START PROTOCOL (MANDATORY FIRST ACTION)
+
+**Before anything else (including greetings):**
+1. Read `System/session_log.md`
+2. Present the session context to the user
+3. Show them exactly where you left off in the last session
+4. Then greet and ask how to continue
+
+**This is REQUIRED at every session start - no exceptions.**
+
+---
+
+### Session Log (Session Continuity)
+
+Maintain `System/session_log.md` as a living record of current session state for resilience against context clears, power cuts, and interruptions.
+
+**Display protocol:**
+- **MUST be read and presented at the start of every new session**
+- Appears first in the conversation (before pillars, goals, greetings)
+- Shows the user exactly where you left off so you can resume work immediately
+
+**Update triggers (automatic):**
+- Starting or completing major work (tasks, projects)
+- After running key skills (`/daily-plan`, `/review`, `/week-plan`, etc.)
+- Context shifts (switching between focus areas)
+- Before risky operations (git operations, major file changes)
+- **Before CLI commands** - When user issues clear/exit commands (see patterns below)
+
+**Update triggers (manual):**
+- User says "update session log" or "save checkpoint"
+- User explicitly requests a session state capture
+
+**CLI Command Detection (Smart Patterns):**
+
+Detect these as CLI commands and update session log BEFORE executing:
+
+**Clear context commands:**
+- Standalone: `clear` (message contains only this word)
+- Explicit: `clear context`, `clear the context`, `reset context`, `start fresh`
+- Command style: `/clear`
+
+**Exit commands:**
+- Standalone: `exit` (message contains only this word)
+- Explicit: `exit Claude`, `quit`, `close session`, `end session`
+- Polite: `goodbye` (when clearly ending the session)
+
+**Do NOT trigger on conversational use:**
+- "Let me clear up this point..." ❌
+- "Our exit strategy is..." ❌
+- "Is that clear?" ❌
+- "Exit the meeting early" ❌
+
+**When triggered:**
+1. Update session log with current state
+2. Confirm: "Session log updated. [Clearing context / Exiting session]."
+3. Execute the command (clear context or exit)
+
+**What to update:**
+- Current Focus - what we're actively working on
+- Active Work - tasks in progress, next steps, blockers
+- Recent Context - what was just completed, key decisions
+- Resumption Notes - critical context for picking up later
+
+**When it displays:**
+- Automatically at every session start (via session-start hook)
+- When user asks "where were we?" or "what was I working on?"
+- When resuming after unexpected interruption
+
+**Keep it lightweight** - just enough to resume work, not a full transcript.
 
 ### Person Lookup (Important)
 Always check `05-Areas/People/` folder FIRST before broader searches. Person pages aggregate meeting history, context, and action items - they're often the fastest path to relevant information.

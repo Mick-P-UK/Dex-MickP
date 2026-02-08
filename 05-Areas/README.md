@@ -36,7 +36,43 @@ During onboarding, additional areas are created based on your role:
 
 ## vs. Projects
 
-**Area** = ongoing responsibility ("Manage customer relationships")  
+**Area** = ongoing responsibility ("Manage customer relationships")
 **Project** = has an end ("Onboard Acme Corp")
 
 Projects often live within areas—for example, a specific onboarding might be a project, but customer success is the area.
+
+---
+
+## Special Area: YouTube_System/
+
+The **YouTube Content Management System** is a specialized area for managing video content creation across your YouTube channels.
+
+**Structure:**
+- `YouTube_System/diy-investors.com/` — Main educational channel content
+- `YouTube_System/diy-investors.ai/` — AI tools and demos channel content
+- `YouTube_System/context/` — Channel configs and shared context from Writing System
+- `YouTube_System/_templates/` — Project and script templates
+- `YouTube_System/Content-Calendar.md` — Monthly content planning
+
+**Key Features:**
+- **Project-based workflow** — Each video is a full project with research, scripts, assets, and derivatives
+- **Status tracking** — Videos progress through: research → scripting → draft → edited → final → published
+- **Shared context** — Reuses voice DNA, ICP, and business profile from Writing System
+- **Derivative management** — YouTube Shorts and social clips organized under parent videos
+- **Content calendar** — Monthly planning with channel balance tracking
+
+**Learn More:** See `YouTube_System/README.md` for complete system guide
+
+---
+
+## Special Area: Writing_System/
+
+The **Writing System** manages written content creation with voice DNA, ICP profiles, and business context.
+
+**Key Components:**
+- Context profiles (voice DNA, ICP, business profile)
+- Workflow stages (ideas → drafts → ready → published → derivatives)
+- Writing skills (`/thought-leadership`, `/substack-note`, `/content-extraction`)
+- Knowledge base of published content
+
+**Learn More:** See `Writing_System/README.md` for complete guide

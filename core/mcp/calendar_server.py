@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Apple Calendar MCP Server for Dex
+Google Calendar MCP Server for Dex
 
-Provides read/write access to Apple Calendar via AppleScript.
-Works with any calendar synced to Calendar.app, including Google accounts.
+Provides read/write access to Google Calendar via Google Calendar API.
+Works on all platforms (Windows, macOS, Linux).
 
 Tools:
 - calendar_list_calendars: List all available calendars
@@ -17,31 +17,47 @@ Tools:
 """
 
 import os
-import subprocess
 import json
 import logging
-import tempfile
-import re
 import yaml
 from pathlib import Path
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, timedelta, timezone
 from typing import Optional
+import pickle
 
 from mcp.server import Server, NotificationOptions
 from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
+# Google Calendar imports
+try:
+    from google.auth.transport.requests import Request
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from googleapiclient.discovery import build
+    from googleapiclient.errors import HttpError
+    GOOGLE_CALENDAR_AVAILABLE = True
+except ImportError:
+    GOOGLE_CALENDAR_AVAILABLE = False
+    logging.warning("Google Calendar API libraries not installed. Run: pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib")
+
 # Vault paths
 VAULT_PATH = Path(os.environ.get('VAULT_PATH', Path.cwd()))
-PEOPLE_DIR = VAULT_PATH / "People"
+PEOPLE_DIR = VAULT_PATH / "05-Areas" / "People"
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Scripts directory
-SCRIPTS_DIR = Path(__file__).parent / "scripts"
+# Google Calendar API scopes
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+
+# Credentials paths
+CREDENTIALS_DIR = VAULT_PATH / "System" / ".credentials"
+CREDENTIALS_DIR.mkdir(parents=True, exist_ok=True)
+TOKEN_FILE = CREDENTIALS_DIR / "google_calendar_token.pickle"
+CLIENT_SECRET_FILE = CREDENTIALS_DIR / "google_calendar_credentials.json"
 
 # User profile path
 USER_PROFILE_PATH = VAULT_PATH / "System" / "user-profile.yaml"
@@ -49,27 +65,23 @@ USER_PROFILE_PATH = VAULT_PATH / "System" / "user-profile.yaml"
 
 def get_default_work_calendar() -> str:
     """Get the configured work calendar from user-profile.yaml.
-    
+
     Returns the work_calendar if configured, otherwise tries work_email,
-    otherwise falls back to 'Work'.
-    
-    This dramatically improves performance (45s → 0.3s) by querying
-    only the relevant calendar instead of all calendars.
+    otherwise falls back to 'primary'.
     """
     try:
-        import yaml
         if USER_PROFILE_PATH.exists():
             with open(USER_PROFILE_PATH, 'r') as f:
                 profile = yaml.safe_load(f)
-            
+
             # Try calendar.work_calendar first
             if profile.get('calendar', {}).get('work_calendar'):
                 return profile['calendar']['work_calendar']
-            
+
             # Fall back to work_email
             if profile.get('work_email'):
                 return profile['work_email']
-            
+
             # Try constructing from email_domain
             if profile.get('name') and profile.get('email_domain'):
                 name = profile['name'].lower().replace(' ', '.')
@@ -77,146 +89,121 @@ def get_default_work_calendar() -> str:
                 return f"{name}@{domain}"
     except Exception as e:
         logger.warning(f"Could not read work calendar from profile: {e}")
-    
-    return "Work"  # Fallback default
+
+    return "primary"  # Fallback to primary Google calendar
 
 
-# Cache the default calendar (read once at startup)
+# Cache the default calendar
 DEFAULT_WORK_CALENDAR = get_default_work_calendar()
 logger.info(f"Default work calendar: {DEFAULT_WORK_CALENDAR}")
 
 
-# Custom JSON encoder for handling date/datetime objects
 class DateTimeEncoder(json.JSONEncoder):
+    """Custom JSON encoder for handling date/datetime objects"""
     def default(self, obj):
         if isinstance(obj, (datetime, date)):
             return obj.isoformat()
         return super().default(obj)
 
 
-def run_applescript(script: str) -> tuple[bool, str]:
-    """Run an AppleScript and return (success, output).
-    
-    Uses os.system with temp file output to avoid subprocess.run timeout issues
-    with Calendar.app AppleScript queries.
+def get_google_calendar_service():
+    """Authenticate and return Google Calendar API service.
+
+    Uses OAuth 2.0 with token caching. On first run, opens browser for auth.
     """
+    if not GOOGLE_CALENDAR_AVAILABLE:
+        raise RuntimeError("Google Calendar API libraries not installed")
+
+    if not CLIENT_SECRET_FILE.exists():
+        raise FileNotFoundError(
+            f"Google Calendar credentials not found at: {CLIENT_SECRET_FILE}\n\n"
+            "Setup instructions:\n"
+            "1. Go to https://console.cloud.google.com/\n"
+            "2. Create a new project or select existing\n"
+            "3. Enable Google Calendar API\n"
+            "4. Create OAuth 2.0 credentials (Desktop app)\n"
+            "5. Download credentials JSON\n"
+            "6. Save as: {CLIENT_SECRET_FILE}"
+        )
+
+    creds = None
+
+    # Load cached token if exists
+    if TOKEN_FILE.exists():
+        with open(TOKEN_FILE, 'rb') as token:
+            creds = pickle.load(token)
+
+    # Refresh or get new credentials
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                str(CLIENT_SECRET_FILE), SCOPES)
+            creds = flow.run_local_server(port=0)
+
+        # Save credentials for future use
+        with open(TOKEN_FILE, 'wb') as token:
+            pickle.dump(creds, token)
+
+    return build('calendar', 'v3', credentials=creds)
+
+
+def format_event(event: dict) -> dict:
+    """Format Google Calendar event to match Dex calendar format."""
+    start = event['start'].get('dateTime', event['start'].get('date'))
+    end = event['end'].get('dateTime', event['end'].get('date'))
+
+    # Check if all-day event
+    all_day = 'date' in event['start']
+
+    # Parse dates
+    if all_day:
+        start_dt = datetime.fromisoformat(start)
+        end_dt = datetime.fromisoformat(end)
+    else:
+        start_dt = datetime.fromisoformat(start.replace('Z', '+00:00'))
+        end_dt = datetime.fromisoformat(end.replace('Z', '+00:00'))
+
+    return {
+        'id': event['id'],
+        'title': event.get('summary', '(No title)'),
+        'start': start_dt.isoformat(),
+        'end': end_dt.isoformat(),
+        'all_day': all_day,
+        'location': event.get('location', ''),
+        'description': event.get('description', ''),
+        'attendees': [
+            {
+                'name': att.get('displayName', att.get('email', 'Unknown')),
+                'email': att.get('email', ''),
+                'status': att.get('responseStatus', 'needsAction')
+            }
+            for att in event.get('attendees', [])
+        ]
+    }
+
+
+def find_calendar_id(service, calendar_name: str) -> Optional[str]:
+    """Find calendar ID by name or email. Returns None if not found."""
+    if calendar_name == 'primary':
+        return 'primary'
+
     try:
-        # Write script to temp file
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.scpt', delete=False) as script_file:
-            script_file.write(script)
-            script_path = script_file.name
-        
-        # Output file
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as out_file:
-            out_path = out_file.name
-        
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as err_file:
-            err_path = err_file.name
-        
-        try:
-            # Run osascript via os.system (avoids subprocess pipe issues)
-            exit_code = os.system(f'osascript "{script_path}" > "{out_path}" 2> "{err_path}"')
-            
-            with open(out_path, 'r') as f:
-                stdout = f.read().strip()
-            with open(err_path, 'r') as f:
-                stderr = f.read().strip()
-            
-            if exit_code == 0:
-                return True, stdout
-            else:
-                return False, stderr or f"Exit code: {exit_code}"
-        finally:
-            # Cleanup temp files
-            for path in [script_path, out_path, err_path]:
-                try:
-                    os.unlink(path)
-                except:
-                    pass
-                    
-    except Exception as e:
-        return False, str(e)
+        calendar_list = service.calendarList().list().execute()
+        for calendar in calendar_list.get('items', []):
+            if (calendar.get('summary', '').lower() == calendar_name.lower() or
+                calendar.get('id', '').lower() == calendar_name.lower()):
+                return calendar['id']
+    except HttpError as e:
+        logger.error(f"Error finding calendar: {e}")
 
-
-def run_shell_script(script_name: str, *args) -> tuple[bool, str]:
-    """Run a shell script from the scripts directory."""
-    script_path = SCRIPTS_DIR / script_name
-    if not script_path.exists():
-        return False, f"Script not found: {script_path}"
-    
-    try:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as out_file:
-            out_path = out_file.name
-        
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False) as err_file:
-            err_path = err_file.name
-        
-        try:
-            # Build command with quoted args
-            cmd_args = ' '.join(f'"{arg}"' for arg in args)
-            cmd = f'"{script_path}" {cmd_args} > "{out_path}" 2> "{err_path}"'
-            exit_code = os.system(cmd)
-            
-            with open(out_path, 'r') as f:
-                stdout = f.read().strip()
-            with open(err_path, 'r') as f:
-                stderr = f.read().strip()
-            
-            if exit_code == 0:
-                return True, stdout
-            else:
-                return False, stderr or f"Exit code: {exit_code}"
-        finally:
-            for path in [out_path, err_path]:
-                try:
-                    os.unlink(path)
-                except:
-                    pass
-                    
-    except Exception as e:
-        return False, str(e)
-
-
-def parse_applescript_list(output: str) -> list[str]:
-    """Parse comma-separated AppleScript output into a list"""
-    if not output:
-        return []
-    # AppleScript returns lists like: item1, item2, item3
-    return [item.strip() for item in output.split(', ') if item.strip()]
-
-
-def parse_attendee_string(attendee_str: str) -> dict:
-    """Parse an attendee string like 'Name<email>[status]' into a dict."""
-    match = re.match(r'^(.+?)<(.+?)>\[(.+?)\]$', attendee_str.strip())
-    if match:
-        name, email, status = match.groups()
-        name = name.strip()
-        email = email.strip().lower()
-        
-        # If name equals email, try to extract a proper name from email
-        if name.lower() == email.lower() or '@' in name:
-            # Extract from email: firstname.lastname@domain -> Firstname Lastname
-            local_part = email.split('@')[0]
-            name = local_part.replace('.', ' ').replace('_', ' ').replace('-', ' ').title()
-        
-        return {
-            'name': name,
-            'email': email,
-            'status': status.strip()
-        }
-    return None
-
-
-def get_domain_from_email(email: str) -> str:
-    """Extract domain from email address."""
-    if '@' in email:
-        return email.split('@')[1].lower()
     return None
 
 
 def normalize_name_for_filename(name: str) -> str:
     """Convert a name to a filename-safe format."""
-    # Replace spaces with underscores, remove special chars
+    import re
     safe_name = re.sub(r'[^\w\s-]', '', name)
     safe_name = re.sub(r'\s+', '_', safe_name.strip())
     return safe_name
@@ -224,35 +211,28 @@ def normalize_name_for_filename(name: str) -> str:
 
 def find_person_page(name: str, email: str) -> Optional[Path]:
     """Find an existing person page by name or email."""
-    # Try multiple name variations
     name_variations = [
         normalize_name_for_filename(name),
-        # Also try extracting name from email (firstname.lastname@domain)
         normalize_name_for_filename(email.split('@')[0].replace('.', ' ').replace('_', ' ').title()) if '@' in email else None
     ]
     name_variations = [n for n in name_variations if n]
-    
-    # Check Internal and External folders
+
     for folder in ['Internal', 'External']:
         folder_path = PEOPLE_DIR / folder
         if folder_path.exists():
             for file in folder_path.glob('*.md'):
                 file_stem_lower = file.stem.lower().replace('_', ' ').replace('-', ' ')
-                
-                # Check by filename variations
+
                 for name_var in name_variations:
                     name_var_lower = name_var.lower().replace('_', ' ')
-                    # Check if names match (allowing for partial matches)
                     if name_var_lower in file_stem_lower or file_stem_lower in name_var_lower:
                         return file
-                    # Check individual name parts
+
                     name_parts = name_var_lower.split()
                     if len(name_parts) >= 2:
-                        # Check if first and last name are in filename
                         if name_parts[0] in file_stem_lower and name_parts[-1] in file_stem_lower:
                             return file
-                
-                # Check by email in file content
+
                 try:
                     content = file.read_text()
                     if email.lower() in content.lower():
@@ -262,7 +242,7 @@ def find_person_page(name: str, email: str) -> Optional[Path]:
     return None
 
 
-# Initialize the MCP server
+# Initialize MCP server
 app = Server("dex-calendar-mcp")
 
 
@@ -272,7 +252,7 @@ async def handle_list_tools() -> list[types.Tool]:
     return [
         types.Tool(
             name="calendar_list_calendars",
-            description="List all calendars available in Apple Calendar",
+            description="List all calendars available in Google Calendar",
             inputSchema={
                 "type": "object",
                 "properties": {}
@@ -384,7 +364,7 @@ async def handle_list_tools() -> list[types.Tool]:
         ),
         types.Tool(
             name="calendar_delete_event",
-            description="Delete a calendar event by its title and date",
+            description="Delete a calendar event by its ID",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -392,16 +372,12 @@ async def handle_list_tools() -> list[types.Tool]:
                         "type": "string",
                         "description": "Name of the calendar containing the event"
                     },
-                    "title": {
+                    "event_id": {
                         "type": "string",
-                        "description": "Exact title of the event to delete"
-                    },
-                    "event_date": {
-                        "type": "string",
-                        "description": "Date of the event in YYYY-MM-DD format"
+                        "description": "Event ID (returned by other calendar tools)"
                     }
                 },
-                "required": ["title", "event_date"]
+                "required": ["event_id"]
             }
         ),
         types.Tool(
@@ -448,98 +424,91 @@ async def handle_call_tool(
     name: str, arguments: dict | None
 ) -> list[types.TextContent | types.ImageContent | types.EmbeddedResource]:
     """Handle tool calls"""
-    
+
     arguments = arguments or {}
-    
+
+    try:
+        service = get_google_calendar_service()
+    except Exception as e:
+        error_msg = f"Failed to connect to Google Calendar: {str(e)}"
+        return [types.TextContent(type="text", text=json.dumps({
+            "success": False,
+            "error": error_msg
+        }, indent=2))]
+
     if name == "calendar_list_calendars":
-        # Use fast EventKit
-        success, output = run_shell_script("calendar_eventkit.py", "list")
-        
-        if success:
-            try:
-                calendars = json.loads(output)
-                # Extract just the titles for backward compatibility
-                calendar_names = [cal["title"] for cal in calendars]
-                result = {
-                    "success": True,
-                    "calendars": calendar_names,
-                    "count": len(calendar_names),
-                    "details": calendars  # Full details for advanced use
+        try:
+            calendar_list = service.calendarList().list().execute()
+            calendars = [
+                {
+                    "title": cal.get('summary', ''),
+                    "id": cal['id'],
+                    "primary": cal.get('primary', False),
+                    "access_role": cal.get('accessRole', '')
                 }
-            except json.JSONDecodeError as e:
-                result = {"success": False, "error": f"JSON parse error: {e}"}
-        else:
-            result = {"success": False, "error": output}
-        
+                for cal in calendar_list.get('items', [])
+            ]
+
+            result = {
+                "success": True,
+                "calendars": [cal["title"] for cal in calendars],
+                "count": len(calendars),
+                "details": calendars
+            }
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
         return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
-    
+
     elif name == "calendar_get_events":
         calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
         start_date = arguments.get("start_date", datetime.now().strftime("%Y-%m-%d"))
-        
-        # Parse start date
+
         start_dt = datetime.strptime(start_date, "%Y-%m-%d")
-        
-        # End date defaults to start + 1 day
+
         if "end_date" in arguments:
             end_dt = datetime.strptime(arguments["end_date"], "%Y-%m-%d")
         else:
             end_dt = start_dt + timedelta(days=1)
-        
-        # Calculate days offset from today for EventKit
-        today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-        start_offset = (start_dt - today).days
-        end_offset = (end_dt - today).days
-        
-        # Use fast EventKit Python script (replaces slow AppleScript)
-        success, output = run_shell_script(
-            "calendar_eventkit.py",
-            "events",
-            calendar_name,
-            str(start_offset),
-            str(end_offset)
-        )
-        
-        if success:
-            # EventKit returns clean JSON
-            try:
-                events = json.loads(output)
-                
-                # Filter out all-day events that span beyond the target date
-                # (they can pollute results when querying single days)
-                filtered_events = []
-                for event in events:
-                    if event.get('all_day'):
-                        # Only include all-day events that start within our range
-                        event_start = datetime.fromisoformat(event['start'].replace(' +0000', ''))
-                        if start_dt <= event_start < end_dt:
-                            filtered_events.append(event)
-                    else:
-                        # Include all non-all-day events
-                        filtered_events.append(event)
-                
-                result = {
-                    "success": True,
-                    "calendar": calendar_name,
-                    "date_range": f"{start_date} to {end_dt.strftime('%Y-%m-%d')}",
-                    "events": filtered_events,
-                    "count": len(filtered_events)
-                }
-            except json.JSONDecodeError as e:
-                result = {"success": False, "error": f"JSON parse error: {e}"}
-        else:
-            result = {"success": False, "error": output}
-        
+
+        # Convert to RFC3339 format with timezone
+        time_min = start_dt.replace(tzinfo=timezone.utc).isoformat()
+        time_max = end_dt.replace(tzinfo=timezone.utc).isoformat()
+
+        calendar_id = find_calendar_id(service, calendar_name) or calendar_name
+        limit = arguments.get("limit", 50)
+
+        try:
+            events_result = service.events().list(
+                calendarId=calendar_id,
+                timeMin=time_min,
+                timeMax=time_max,
+                maxResults=limit,
+                singleEvents=True,
+                orderBy='startTime'
+            ).execute()
+
+            events = [format_event(e) for e in events_result.get('items', [])]
+
+            result = {
+                "success": True,
+                "calendar": calendar_name,
+                "date_range": f"{start_date} to {end_dt.strftime('%Y-%m-%d')}",
+                "events": events,
+                "count": len(events)
+            }
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
         return [types.TextContent(type="text", text=json.dumps(result, indent=2, cls=DateTimeEncoder))]
-    
+
     elif name == "calendar_get_today":
         calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
         today = datetime.now().strftime("%Y-%m-%d")
-        
-        # Reuse get_events logic
+
         arguments = {"calendar_name": calendar_name, "start_date": today}
         return await handle_call_tool("calendar_get_events", arguments)
-    
+
     elif name == "calendar_create_event":
         calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
         title = arguments["title"]
@@ -547,190 +516,185 @@ async def handle_call_tool(
         duration = arguments.get("duration_minutes", 30)
         description = arguments.get("description", "")
         location = arguments.get("location", "")
-        
-        # Validate datetime format
+
         try:
-            datetime.strptime(start_str, "%Y-%m-%d %H:%M")
+            start_dt = datetime.strptime(start_str, "%Y-%m-%d %H:%M")
+            end_dt = start_dt + timedelta(minutes=duration)
         except ValueError:
             return [types.TextContent(type="text", text=json.dumps({
                 "success": False,
                 "error": f"Invalid datetime format. Use 'YYYY-MM-DD HH:MM', got: {start_str}"
             }, indent=2))]
-        
-        # Use shell script
-        success, output = run_shell_script(
-            "calendar_create_event.sh",
-            calendar_name,
-            title,
-            start_str,
-            str(duration),
-            description,
-            location
-        )
-        
-        if success:
+
+        calendar_id = find_calendar_id(service, calendar_name) or calendar_name
+
+        event = {
+            'summary': title,
+            'location': location,
+            'description': description,
+            'start': {
+                'dateTime': start_dt.isoformat(),
+                'timeZone': 'UTC',
+            },
+            'end': {
+                'dateTime': end_dt.isoformat(),
+                'timeZone': 'UTC',
+            },
+        }
+
+        try:
+            created_event = service.events().insert(calendarId=calendar_id, body=event).execute()
             result = {
                 "success": True,
-                "message": output,
+                "message": f"Event created: {created_event.get('htmlLink')}",
                 "event": {
+                    "id": created_event['id'],
                     "title": title,
                     "calendar": calendar_name,
                     "start": start_str,
                     "duration_minutes": duration
                 }
             }
-        else:
-            result = {"success": False, "error": output}
-        
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
         return [types.TextContent(type="text", text=json.dumps(result, indent=2, cls=DateTimeEncoder))]
-    
+
     elif name == "calendar_search_events":
         calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
         query = arguments["query"]
         days_back = arguments.get("days_back", 30)
         days_forward = arguments.get("days_forward", 30)
-        
-        # Use fast EventKit search
-        success, output = run_shell_script(
-            "calendar_eventkit.py",
-            "search",
-            calendar_name,
-            query,
-            str(days_back),
-            str(days_forward)
-        )
-        
-        if success:
-            try:
-                events = json.loads(output)
-                result = {
-                    "success": True,
-                    "query": query,
-                    "calendar": calendar_name,
-                    "events": events,
-                    "count": len(events)
-                }
-            except json.JSONDecodeError as e:
-                result = {"success": False, "error": f"JSON parse error: {e}"}
-        else:
-            result = {"success": False, "error": output}
-        
-        return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
-    
-    elif name == "calendar_delete_event":
-        calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
-        title = arguments["title"]
-        event_date = arguments["event_date"]
-        
-        # Parse the date and calculate offset from today
+
+        start_dt = datetime.now() - timedelta(days=days_back)
+        end_dt = datetime.now() + timedelta(days=days_forward)
+
+        time_min = start_dt.replace(tzinfo=timezone.utc).isoformat()
+        time_max = end_dt.replace(tzinfo=timezone.utc).isoformat()
+
+        calendar_id = find_calendar_id(service, calendar_name) or calendar_name
+
         try:
-            target_dt = datetime.strptime(event_date, "%Y-%m-%d")
-        except ValueError:
-            return [types.TextContent(type="text", text=json.dumps({
-                "success": False,
-                "error": f"Invalid date format. Use 'YYYY-MM-DD', got: {event_date}"
-            }, indent=2))]
-        
-        today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-        day_offset = (target_dt - today).days
-        
-        success, output = run_shell_script(
-            "calendar_delete_event.sh",
-            calendar_name,
-            title,
-            str(day_offset)
-        )
-        
-        if success:
+            events_result = service.events().list(
+                calendarId=calendar_id,
+                timeMin=time_min,
+                timeMax=time_max,
+                q=query,
+                singleEvents=True,
+                orderBy='startTime'
+            ).execute()
+
+            events = [format_event(e) for e in events_result.get('items', [])]
+
             result = {
                 "success": True,
-                "message": output
+                "query": query,
+                "calendar": calendar_name,
+                "events": events,
+                "count": len(events)
             }
-        else:
-            result = {"success": False, "error": output}
-        
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
         return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
-    
+
+    elif name == "calendar_delete_event":
+        calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
+        event_id = arguments["event_id"]
+
+        calendar_id = find_calendar_id(service, calendar_name) or calendar_name
+
+        try:
+            service.events().delete(calendarId=calendar_id, eventId=event_id).execute()
+            result = {
+                "success": True,
+                "message": f"Event deleted: {event_id}"
+            }
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
+        return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
+
     elif name == "calendar_get_next_event":
         calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
-        
-        # Use fast EventKit
-        success, output = run_shell_script("calendar_eventkit.py", "next", calendar_name)
-        
-        if success:
-            try:
-                event_data = json.loads(output)
-                if "message" in event_data:
-                    # No events found
-                    result = {
-                        "success": True,
-                        "message": event_data["message"],
-                        "next_event": None
-                    }
-                else:
-                    # Event found
-                    result = {
-                        "success": True,
-                        "next_event": event_data
-                    }
-            except json.JSONDecodeError as e:
-                result = {"success": False, "error": f"JSON parse error: {e}"}
-        else:
-            result = {"success": False, "error": output}
-        
+
+        now = datetime.now(timezone.utc).isoformat()
+        calendar_id = find_calendar_id(service, calendar_name) or calendar_name
+
+        try:
+            events_result = service.events().list(
+                calendarId=calendar_id,
+                timeMin=now,
+                maxResults=1,
+                singleEvents=True,
+                orderBy='startTime'
+            ).execute()
+
+            items = events_result.get('items', [])
+            if not items:
+                result = {
+                    "success": True,
+                    "message": "No upcoming events found",
+                    "next_event": None
+                }
+            else:
+                result = {
+                    "success": True,
+                    "next_event": format_event(items[0])
+                }
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
         return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
-    
+
     elif name == "calendar_get_events_with_attendees":
         calendar_name = arguments.get("calendar_name", DEFAULT_WORK_CALENDAR)
         start_date = arguments.get("start_date", datetime.now().strftime("%Y-%m-%d"))
-        
+
         start_dt = datetime.strptime(start_date, "%Y-%m-%d")
         if "end_date" in arguments:
             end_dt = datetime.strptime(arguments["end_date"], "%Y-%m-%d")
         else:
             end_dt = start_dt + timedelta(days=1)
-        
-        today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-        start_offset = (start_dt - today).days
-        end_offset = (end_dt - today).days
-        
-        # Use fast EventKit with attendee details
-        success, output = run_shell_script(
-            "calendar_eventkit.py",
-            "attendees",
-            calendar_name,
-            str(start_offset),
-            str(end_offset)
-        )
-        
-        if success:
-            try:
-                events = json.loads(output)
-                
-                # Enhance attendees with person page links
-                for event in events:
-                    if "attendees" in event:
-                        for att in event["attendees"]:
-                            # Check if person page exists
-                            person_page = find_person_page(att.get('name', ''), att.get('email', ''))
-                            att['has_person_page'] = person_page is not None
-                            if person_page:
-                                att['person_page'] = str(person_page.relative_to(VAULT_PATH))
-                
-                result = {
-                    "success": True,
-                    "calendar": calendar_name,
-                    "date_range": f"{start_date} to {end_dt.strftime('%Y-%m-%d')}",
-                    "events": events,
-                    "count": len(events)
-                }
-            except json.JSONDecodeError as e:
-                result = {"success": False, "error": f"JSON parse error: {e}"}
-        else:
-            result = {"success": False, "error": output}
-        
+
+        time_min = start_dt.replace(tzinfo=timezone.utc).isoformat()
+        time_max = end_dt.replace(tzinfo=timezone.utc).isoformat()
+
+        calendar_id = find_calendar_id(service, calendar_name) or calendar_name
+
+        try:
+            events_result = service.events().list(
+                calendarId=calendar_id,
+                timeMin=time_min,
+                timeMax=time_max,
+                maxResults=50,
+                singleEvents=True,
+                orderBy='startTime'
+            ).execute()
+
+            events = [format_event(e) for e in events_result.get('items', [])]
+
+            # Enhance attendees with person page links
+            for event in events:
+                if "attendees" in event:
+                    for att in event["attendees"]:
+                        person_page = find_person_page(att.get('name', ''), att.get('email', ''))
+                        att['has_person_page'] = person_page is not None
+                        if person_page:
+                            att['person_page'] = str(person_page.relative_to(VAULT_PATH))
+
+            result = {
+                "success": True,
+                "calendar": calendar_name,
+                "date_range": f"{start_date} to {end_dt.strftime('%Y-%m-%d')}",
+                "events": events,
+                "count": len(events)
+            }
+        except HttpError as e:
+            result = {"success": False, "error": str(e)}
+
         return [types.TextContent(type="text", text=json.dumps(result, indent=2, cls=DateTimeEncoder))]
-    
+
     else:
         return [types.TextContent(type="text", text=json.dumps({
             "error": f"Unknown tool: {name}"
@@ -740,15 +704,15 @@ async def handle_call_tool(
 async def _main():
     """Async main entry point for the MCP server"""
     logger.info("Starting Dex Calendar MCP Server")
-    logger.info("Using Apple Calendar via AppleScript")
-    
+    logger.info("Using Google Calendar API")
+
     async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
         await app.run(
             read_stream,
             write_stream,
             InitializationOptions(
                 server_name="dex-calendar-mcp",
-                server_version="1.0.0",
+                server_version="2.0.0",
                 capabilities=app.get_capabilities(
                     notification_options=NotificationOptions(),
                     experimental_capabilities={},

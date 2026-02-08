@@ -155,9 +155,16 @@ if [ ! -f .mcp.json ]; then
     echo "   Python command: $PYTHON_CMD"
 fi
 
-# Check for Granola (optional)
+# Check for Granola (optional) - cross-platform
 echo ""
-if [ -f "$HOME/Library/Application Support/Granola/cache-v3.json" ]; then
+GRANOLA_CACHE=""
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    GRANOLA_CACHE="$HOME/Library/Application Support/Granola/cache-v3.json"
+elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    GRANOLA_CACHE="$APPDATA/Granola/cache-v3.json"
+fi
+
+if [ -f "$GRANOLA_CACHE" ]; then
     echo "✅ Granola detected - meeting intelligence available"
 else
     echo "ℹ️  Granola not detected - meeting intelligence won't work"
@@ -180,22 +187,25 @@ if [ -n "$PIP_CMD" ]; then
     # First, try to upgrade pip (silently, many users have old pip versions)
     echo "   Upgrading pip..."
     $PYTHON_CMD -m pip install --upgrade pip --quiet 2>/dev/null || true
-    
-    # Detect Apple Silicon and set appropriate pip flags
-    PIP_FLAGS=""
-    if [[ "$OSTYPE" == "darwin"* ]] && [[ $(uname -m) == "arm64" ]]; then
-        echo "   Detected Apple Silicon - ensuring native ARM64 packages..."
-        # Force reinstall without cache to get native ARM64 binaries
-        PIP_FLAGS="--force-reinstall --no-cache-dir"
+
+    # Install packages based on platform
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS: Install EventKit for native calendar access
+        CALENDAR_PACKAGE="pyobjc-framework-EventKit"
+        echo "   Installing macOS calendar integration..."
+    else
+        # Windows/Linux: Install Google Calendar API
+        CALENDAR_PACKAGE="google-api-python-client google-auth-httplib2 google-auth-oauthlib"
+        echo "   Installing Google Calendar API..."
     fi
-    
+
     # Try standard install first
-    if $PIP_CMD install $PIP_FLAGS mcp pyyaml pyobjc-framework-EventKit --quiet 2>/dev/null; then
-        echo "✅ MCP dependencies installed (including fast EventKit calendar access)"
+    if $PIP_CMD install mcp pyyaml $CALENDAR_PACKAGE --quiet 2>/dev/null; then
+        echo "✅ MCP dependencies installed (including calendar access)"
     else
         # Try with --user flag (works around permission issues)
         echo "   Trying with --user flag..."
-        if $PIP_CMD install --user $PIP_FLAGS mcp pyyaml pyobjc-framework-EventKit --quiet 2>/dev/null; then
+        if $PIP_CMD install --user mcp pyyaml $CALENDAR_PACKAGE --quiet 2>/dev/null; then
             echo "✅ MCP dependencies installed (user mode)"
         else
             echo "❌ Could not install Python dependencies"
@@ -203,15 +213,9 @@ if [ -n "$PIP_CMD" ]; then
             echo "Work MCP is critical - it syncs tasks across all your files."
             echo "Without it, checking off a task in one place won't update others."
             echo ""
-            if [[ "$OSTYPE" == "darwin"* ]] && [[ $(uname -m) == "arm64" ]]; then
-                echo "On Apple Silicon, sometimes pip installs Intel packages by mistake."
-                echo "Try manually with explicit architecture flags:"
-                echo "  arch -arm64 $PIP_CMD install --force-reinstall --no-cache-dir mcp pyyaml pyobjc-framework-EventKit"
-            else
-                echo "Try manually (upgrade pip first):"
-                echo "  $PYTHON_CMD -m pip install --upgrade pip"
-                echo "  $PIP_CMD install --user mcp pyyaml pyobjc-framework-EventKit"
-            fi
+            echo "Try manually (upgrade pip first):"
+            echo "  $PYTHON_CMD -m pip install --upgrade pip"
+            echo "  $PIP_CMD install --user mcp pyyaml $CALENDAR_PACKAGE"
             echo ""
             read -p "Press Enter to continue setup (you can fix this later)..."
         fi
@@ -259,14 +263,16 @@ CURSOR_VERSION=""
 
 if [ -d "$HOME/.cursor" ]; then
     EDITOR_DETECTED="Cursor"
-    
-    # Try to detect Cursor version from the app bundle (macOS)
+
+    # Try to detect Cursor version from the app bundle (macOS only)
     if [[ "$OSTYPE" == "darwin"* ]]; then
         CURSOR_PLIST="/Applications/Cursor.app/Contents/Info.plist"
         if [ -f "$CURSOR_PLIST" ]; then
             CURSOR_VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$CURSOR_PLIST" 2>/dev/null || echo "")
         fi
     fi
+    # Note: Windows Cursor version detection not implemented
+    # Users can check manually: Help → About Cursor
 fi
 
 # Skills in .claude/skills/ work natively in BOTH editors:

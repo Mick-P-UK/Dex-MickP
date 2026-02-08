@@ -12,9 +12,18 @@ LEARNINGS_DIR="$CLAUDE_DIR/06-Resources/Learnings"
 MISTAKES_FILE="$LEARNINGS_DIR/Mistake_Patterns.md"
 PREFERENCES_FILE="$LEARNINGS_DIR/Working_Preferences.md"
 ONBOARDING_MARKER="$CLAUDE_DIR/System/.onboarding-complete"
+SESSION_LOG="$CLAUDE_DIR/System/session_log.md"
 
 echo "=== Dex Session Context ==="
 echo ""
+
+# Session Log (Resume Context)
+if [[ -f "$SESSION_LOG" ]]; then
+    echo "--- 📍 Where We Left Off ---"
+    cat "$SESSION_LOG"
+    echo "---"
+    echo ""
+fi
 
 # Skip background checks during onboarding - nothing to check yet!
 if [[ ! -f "$ONBOARDING_MARKER" ]]; then

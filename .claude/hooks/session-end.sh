@@ -48,4 +48,21 @@ if [[ -n "$TRANSCRIPT_PATH" ]] && [[ -f "$TRANSCRIPT_PATH" ]]; then
     echo "" >> "$LEARNING_FILE"
 fi
 
+# Update session log with exit timestamp (backup for unexpected exits)
+SESSION_LOG="$CLAUDE_DIR/System/session_log.md"
+if [[ -f "$SESSION_LOG" ]]; then
+    # Read the last updated time from the session log
+    LAST_UPDATED=$(grep "^\*\*Last Updated:\*\*" "$SESSION_LOG" | head -1 | sed 's/\*\*Last Updated:\*\* //')
+    CURRENT_TIME=$(date +"%Y-%m-%d %H:%M")
+
+    # Only append if it's been more than 5 minutes since last update
+    # (prevents duplicate entries if user explicitly exited)
+    if [[ -z "$LAST_UPDATED" ]] || [[ "$LAST_UPDATED" != "$CURRENT_TIME"* ]]; then
+        echo "" >> "$SESSION_LOG"
+        echo "---" >> "$SESSION_LOG"
+        echo "" >> "$SESSION_LOG"
+        echo "_Session ended: $(date +"%Y-%m-%d %H:%M") (via SessionEnd hook)_" >> "$SESSION_LOG"
+    fi
+fi
+
 exit 0

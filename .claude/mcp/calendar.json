@@ -1,6 +1,6 @@
 {
   "name": "calendar",
-  "description": "Calendar integration for meeting prep and scheduling context",
+  "description": "Google Calendar integration for meeting prep and scheduling context",
   "server": {
     "command": "python",
     "args": ["core/mcp/calendar_server.py"],
@@ -8,5 +8,5 @@
       "VAULT_PATH": "${workspaceFolder}"
     }
   },
-  "notes": "Reads from Apple Calendar. Works with any calendar synced to Calendar.app including Google accounts."
+  "notes": "Uses Google Calendar API. Cross-platform (Windows, macOS, Linux). Requires Google Calendar API credentials - see System/.credentials/GOOGLE_CALENDAR_SETUP.md for setup instructions."
 }

@@ -54,17 +54,21 @@ You create task "Ship payments redesign" in meeting with Sarah. Work MCP:
 
 ### Calendar MCP (`calendar_server.py`)
 
-**What it does:**  
-Apple Calendar integration via AppleScript. Reads events, attendees, and meeting context without leaving Cursor.
+**What it does:**
+Google Calendar integration via Google Calendar API. Reads events, attendees, and meeting context without leaving your editor. Cross-platform (Windows, macOS, Linux).
 
-**Why it's an MCP:**  
+**Why it's an MCP:**
 Calendar data changes frequently. Having an MCP means `/daily-plan` always gets live meeting data without manually exporting/importing CSVs or leaving the editor.
 
 **Power:**
-- **Universal sync** - Works with any calendar in Calendar.app (Google, Exchange, iCloud, etc.)
+- **Cross-platform** - Works on Windows, macOS, and Linux
+- **Google Calendar access** - Direct API integration with your Google Calendar
 - **Attendee context** - Returns full attendee lists for meeting prep
 - **Day-at-a-glance** - Instant view of today's schedule with times and locations
-- **No API keys** - Uses native macOS calendar access
+- **OAuth 2.0** - Secure authentication with automatic token refresh
+
+**Setup required:**
+First-time setup requires Google Calendar API credentials. See `System/.credentials/GOOGLE_CALENDAR_SETUP.md` for step-by-step instructions (5-10 minutes).
 
 **Real-world example:**  
 You run `/daily-plan` at 8am. Calendar MCP fetches today's meetings:
