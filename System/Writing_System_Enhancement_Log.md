@@ -64,9 +64,9 @@ Enhanced Writing System with:
 
 ---
 
-### Step 5: Update Writing System README
+### Step 5: Update Writing System [[README]]
 - **Time:** 2026-02-07 20:55 GMT
-- **Action:** Enhanced README with workflow and Bases info
+- **Action:** Enhanced [[README]] with workflow and Bases info
 - **File:** `README.md`
 - **Additions:**
   - Complete workflow overview (Stage 0-4)
@@ -84,7 +84,7 @@ Enhanced Writing System with:
 ✅ **Templates** - 3 content templates with Bases-optimized YAML
 ✅ **Example Content** - Three Pillars newsletter in 1-Drafts with metadata
 ✅ **Bases Guide** - Complete setup guide with 5 recommended views
-✅ **Documentation** - Updated README with full workflow
+✅ **Documentation** - Updated [[README]] with full workflow
 
 **Key Features:**
 

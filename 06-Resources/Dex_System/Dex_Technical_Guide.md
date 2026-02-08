@@ -316,7 +316,7 @@ def generate_task_id() -> str:
 
 This ensures every task gets a unique, sortable ID that's stable across files.
 
-**Why this matters:** Task IDs are how we maintain relationships. When a meeting note says "^task-20260128-001", Dex can find that task in `03-Tasks/Tasks.md` AND on the person page AND link back to the meeting.
+**Why this matters:** Task IDs are how we maintain relationships. When a meeting note says "[[^task-20260128-001]]", Dex can find that task in `03-Tasks/Tasks.md` AND on the person page AND link back to the meeting.
 
 #### 2. **Calendar MCP** (`calendar_server.py`)
 

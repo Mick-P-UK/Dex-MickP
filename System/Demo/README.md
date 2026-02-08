@@ -34,7 +34,7 @@ The system teaches you as you go. Start shallow, go deep as you get curious. Two
 
 **For teams and organizations:** One person adopts Dex, sees the value, shares it with colleagues. Technical leaders can distribute the repo (everyone gets the same foundation, adapted to their role) or share demo mode (let people explore without committing their own data). Teams develop common language around what AI can reliably do. Your organization moves from AI demos to AI operations.
 
-**Want to share this?** Point colleagues to the [companion blog post](https://link-tbd) for the full story with more detail and color about how everything comes together. At the bottom of this README, there's a ready-to-use message you can copy and paste to share with your team - makes it easy to accelerate AI fluency adoption across your organization.
+**Want to share this?** Point colleagues to the [companion blog post](https://link-tbd) for the full story with more detail and color about how everything comes together. At the bottom of this [[README]], there's a ready-to-use message you can copy and paste to share with your team - makes it easy to accelerate AI fluency adoption across your organization.
 
 ---
 

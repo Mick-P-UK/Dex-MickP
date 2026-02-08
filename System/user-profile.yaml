@@ -150,6 +150,10 @@ journaling:
   # Weekly journal: patterns and synthesis
   weekly: false
 
+# Obsidian Integration
+# Enables wiki link format for graph-based navigation
+obsidian_mode: true
+
 # Quarterly Planning Configuration
 # Controls whether you use quarterly goal setting
 quarterly_planning:

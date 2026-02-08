@@ -42,7 +42,7 @@
 2. Copy context, knowledge, _templates folders
 3. Merge .claude/skills/ (4 writing skills)
 4. Merge .claude/agents/ (3 writing agents)
-5. Create Writing_System README with usage guide
+5. Create Writing_System [[README]] with usage guide
 6. Update Dex CLAUDE.md to reference Writing System
 7. Test integration
 
@@ -94,7 +94,7 @@
 
 ---
 
-### Step 6: Create Writing System README
+### Step 6: Create Writing System [[README]]
 - **Time:** 2026-02-07 20:23 GMT
 - **Action:** Created `05-Areas/Writing_System/README.md`
 - **Content:** Complete usage guide with skills, agents, context profiles

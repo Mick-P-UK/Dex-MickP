@@ -55,6 +55,18 @@ if [[ -f "$ONBOARDING_MARKER" ]]; then
     sleep 0.1
 fi
 
+# OBSIDIAN SYNC DAEMON (if enabled)
+USER_PROFILE="$CLAUDE_DIR/System/user-profile.yaml"
+if [[ -f "$USER_PROFILE" ]] && grep -q "^obsidian_mode: true" "$USER_PROFILE" 2>/dev/null; then
+    # Check if sync daemon is already running
+    SYNC_DAEMON_PID=$(pgrep -f "python.*sync_daemon.py" 2>/dev/null)
+    if [[ -z "$SYNC_DAEMON_PID" ]]; then
+        # Start sync daemon in background
+        nohup python "$CLAUDE_DIR/core/obsidian/sync_daemon.py" > /dev/null 2>&1 &
+        echo "✓ Obsidian sync daemon started"
+    fi
+fi
+
 echo ""
 
 # STRATEGIC HIERARCHY (Top-Down)

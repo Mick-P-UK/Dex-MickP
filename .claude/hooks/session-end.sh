@@ -65,4 +65,10 @@ if [[ -f "$SESSION_LOG" ]]; then
     fi
 fi
 
+# Stop Obsidian sync daemon if running
+SYNC_DAEMON_PID=$(pgrep -f "python.*sync_daemon.py" 2>/dev/null)
+if [[ -n "$SYNC_DAEMON_PID" ]]; then
+    kill "$SYNC_DAEMON_PID" 2>/dev/null
+fi
+
 exit 0

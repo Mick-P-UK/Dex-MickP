@@ -55,7 +55,7 @@ For each skill directory in `plugins/compound-engineering/skills/*/`:
 
 ### MCP Servers
 For each MCP server in `plugins/compound-engineering/mcp-servers/*/`:
-- Read the configuration and README
+- Read the configuration and [[README]]
 - List the tools provided
 
 ## Step 2: Update Documentation Pages

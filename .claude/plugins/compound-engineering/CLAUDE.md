@@ -20,8 +20,8 @@ Before committing ANY changes:
 
 - [ ] Version bumped in `.claude-plugin/plugin.json`
 - [ ] CHANGELOG.md updated with changes
-- [ ] README.md component counts verified
-- [ ] README.md tables accurate (agents, commands, skills)
+- [ ] [[README]].md component counts verified
+- [ ] [[README]].md tables accurate (agents, commands, skills)
 - [ ] plugin.json description matches current counts
 
 ### Directory Structure
@@ -75,15 +75,7 @@ When adding or modifying skills, verify compliance with skill-creator spec:
 
 ### Quick Validation Command
 
-```bash
-# Check for unlinked references in a skill
-grep -E '`(references|assets|scripts)/[^`]+`' skills/*/SKILL.md
-# Should return nothing if all refs are properly linked
-
-# Check description format
-grep -E '^description:' skills/*/SKILL.md | grep -v 'This skill'
-# Should return nothing if all use third person
-```
+__CODE_BLOCK_1__
 
 ## Documentation
 
