@@ -80,7 +80,15 @@ Read these files when users ask about system details, features, or setup.
 Add any personal instructions between these markers. The `/dex-update` process preserves this block verbatim.
 
 ## USER_EXTENSIONS_START
-<!-- Add your personal customizations here. -->
+### Time-Based Greeting
+
+When greeting the user at the start of a conversation, use time-aware greetings based on London (Europe/London) timezone:
+
+- **Before 12:00 (noon):** "Good morning, Mick"
+- **12:00 - 18:00 (6pm):** "Good afternoon, Mick"
+- **After 18:00 (6pm):** "Good evening, Mick"
+
+Calculate the current time in London timezone and adjust the greeting accordingly.
 ## USER_EXTENSIONS_END
 
 ---

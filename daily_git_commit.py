@@ -164,8 +164,25 @@ def main():
         print("Done")
         print(f"  {result.stdout.strip()}")
         print()
-        print("[SUCCESS] Daily commit completed successfully")
-        return 0
+
+        # Push to remote (GitHub)
+        print("Pushing to GitHub...", end=" ", flush=True)
+        push_result = run_command("git push", "Pushing to remote")
+
+        if push_result and push_result.returncode == 0:
+            print("Done")
+            print(f"  {push_result.stdout.strip() if push_result.stdout.strip() else 'Everything up-to-date'}")
+            print()
+            print("[SUCCESS] Daily commit and push completed successfully")
+            return 0
+        else:
+            print("Failed")
+            if push_result:
+                print(f"  Error: {push_result.stderr.strip()}")
+                print()
+                print("[WARNING] Commit created locally but push to GitHub failed")
+                print("  You may need to check your GitHub authentication or network connection")
+            return 1
     else:
         print("Failed")
         if result:
