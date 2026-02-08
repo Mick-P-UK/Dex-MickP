@@ -58,18 +58,21 @@ def build_company_index() -> dict:
     
     return index
 
-def convert_references_in_file(content: str, person_idx: dict, 
+def convert_references_in_file(content: str, person_idx: dict,
                                project_idx: dict, company_idx: dict) -> Tuple[str, int]:
     """Convert plain text references to wiki links. Returns (new_content, num_changes)"""
     changes = 0
-    
-    # Skip code blocks
+
+    # Skip code blocks and inline code
     code_blocks = []
     def save_code_block(match):
         code_blocks.append(match.group(0))
         return f"__CODE_BLOCK_{len(code_blocks)-1}__"
-    
+
+    # Save multi-line code blocks
     content = re.sub(r'```.*?```', save_code_block, content, flags=re.DOTALL)
+    # Save inline code
+    content = re.sub(r'`[^`]+`', save_code_block, content)
     
     # Convert person references (Firstname_Lastname pattern)
     for person_name, person_path in person_idx.items():
@@ -120,10 +123,10 @@ def estimate_migration(files: List[Path]) -> str:
         minutes = int(est_seconds / 60)
         return f"~{minutes} minute{'s' if minutes > 1 else ''}"
 
-def migrate_vault(dry_run: bool = False):
+def migrate_vault(dry_run: bool = False, auto_confirm: bool = False):
     """Main migration function"""
     print("Dex Obsidian Migration\n" + "="*50)
-    
+
     # Build indices
     print("Building indices...")
     person_idx = build_person_index()
@@ -132,17 +135,18 @@ def migrate_vault(dry_run: bool = False):
     print(f"  Found {len(person_idx)} people")
     print(f"  Found {len(project_idx)} projects")
     print(f"  Found {len(company_idx)} companies")
-    
+
     # Find all markdown files
     print("\nScanning vault...")
     md_files = list(BASE_DIR.rglob('*.md'))
     print(f"  Found {len(md_files)} markdown files")
     print(f"  Estimated time: {estimate_migration(md_files)}")
-    
+
     if dry_run:
         print("\n[DRY RUN MODE] - No files will be modified")
-    
-    input("\nPress Enter to continue...")
+
+    if not auto_confirm:
+        input("\nPress Enter to continue...")
     
     # Create backup via git
     if not dry_run:
@@ -159,14 +163,14 @@ def migrate_vault(dry_run: bool = False):
     
     for md_file in iterator:
         try:
-            content = md_file.read_text()
+            content = md_file.read_text(encoding='utf-8')
             new_content, changes = convert_references_in_file(
                 content, person_idx, project_idx, company_idx
             )
-            
+
             if changes > 0:
                 if not dry_run:
-                    md_file.write_text(new_content)
+                    md_file.write_text(new_content, encoding='utf-8')
                 files_modified += 1
                 total_changes += changes
         except Exception as e:
@@ -195,4 +199,5 @@ def migrate_vault(dry_run: bool = False):
 
 if __name__ == '__main__':
     dry_run = '--dry-run' in sys.argv
-    migrate_vault(dry_run=dry_run)
+    auto_confirm = '--yes' in sys.argv or '-y' in sys.argv
+    migrate_vault(dry_run=dry_run, auto_confirm=auto_confirm)
