@@ -3,6 +3,16 @@
 # Injects strategic hierarchy and tactical context
 # For Dex personal knowledge system
 
+# Verify CLAUDE_PROJECT_DIR is set
+if [[ -z "$CLAUDE_PROJECT_DIR" ]]; then
+    echo "=== Dex Session Context ==="
+    echo ""
+    echo "⚠️  ERROR: CLAUDE_PROJECT_DIR environment variable not set"
+    echo "Session log cannot be loaded. Please check hook configuration."
+    echo ""
+    exit 1
+fi
+
 CLAUDE_DIR="$CLAUDE_PROJECT_DIR"
 PILLARS_FILE="$CLAUDE_DIR/System/pillars.yaml"
 QUARTER_GOALS="$CLAUDE_DIR/01-Quarter_Goals/Quarter_Goals.md"
@@ -17,10 +27,23 @@ SESSION_LOG="$CLAUDE_DIR/System/session_log.md"
 echo "=== Dex Session Context ==="
 echo ""
 
-# Session Log (Resume Context)
+# Session Log (Resume Context) - CRITICAL: Always output something
 if [[ -f "$SESSION_LOG" ]]; then
     echo "--- 📍 Where We Left Off ---"
-    cat "$SESSION_LOG"
+    if cat "$SESSION_LOG" 2>/dev/null; then
+        echo "---"
+        echo ""
+    else
+        echo "⚠️  ERROR: Could not read session log file: $SESSION_LOG"
+        echo "File exists but cannot be read. Check permissions."
+        echo "---"
+        echo ""
+    fi
+else
+    # File doesn't exist - output diagnostic message
+    echo "--- 📍 Where We Left Off ---"
+    echo "ℹ️  Session log not found at: $SESSION_LOG"
+    echo "This is normal for first-time setup or if session log was cleared."
     echo "---"
     echo ""
 fi

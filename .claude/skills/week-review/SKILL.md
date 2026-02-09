@@ -9,6 +9,48 @@ Create a synthesis of the week reviewing activity, progress, and what was accomp
 
 ---
 
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date and calculate week boundaries:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date, timedelta
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   day_name = today.strftime('%A')  # e.g., "Sunday"
+   ```
+
+2. **Calculate Monday of this week:**
+   ```python
+   days_since_monday = today.weekday()  # 0=Monday, 6=Sunday
+   monday = today - timedelta(days=days_since_monday)
+   monday_str = monday.strftime('%Y-%m-%d')  # e.g., "2026-02-03"
+   ```
+
+3. **Check if weekly synthesis file already exists:**
+   ```python
+   from pathlib import Path
+   synthesis_file = Path(f"00-Inbox/Weekly_Synthesis_{monday_str}.md")
+   if synthesis_file.exists():
+       # File already exists - ask user if they want to update or create new
+   ```
+
+4. **Verify day of week matches date:**
+   - Never assume day of week from date or vice versa
+   - Always calculate both independently and verify they match
+
+5. **Never assume date progression:**
+   - Don't assume Monday is "today - X days"
+   - Always calculate Monday from actual current date
+   - Always get actual current date from system
+
+**Use `date_str`, `monday_str`, and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
+
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
 ## Data Sources
 
 ### 1. Task Progress
@@ -190,7 +232,7 @@ Review `System/Session_Learnings/` files from this week:
 
 ## Output Format
 
-Create `00-Inbox/Weekly_Synthesis_YYYY-MM-DD.md`:
+Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step 0):
 
 ```markdown
 # Weekly Synthesis — Week of [Date]

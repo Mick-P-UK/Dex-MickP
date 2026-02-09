@@ -24,19 +24,70 @@ Set priorities and plan the week ahead. Now with **intelligent priority suggesti
 
 ---
 
-## Step 0: Demo Mode Check
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date and calculate week boundaries:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date, timedelta
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   day_name = today.strftime('%A')  # e.g., "Sunday"
+   ```
+
+2. **Calculate Monday of target week:**
+   ```python
+   # If user said "next" or it's Friday/weekend, plan next week
+   # Otherwise plan current week
+   days_since_monday = today.weekday()  # 0=Monday, 6=Sunday
+   
+   if user_param == "next" or (day_name in ["Friday", "Saturday", "Sunday"] and user_param != "current"):
+       # Next week: Monday is 7 days from this week's Monday
+       monday = today - timedelta(days=days_since_monday) + timedelta(days=7)
+   else:
+       # Current week
+       monday = today - timedelta(days=days_since_monday)
+   
+   monday_str = monday.strftime('%Y-%m-%d')  # e.g., "2026-02-10"
+   ```
+
+3. **Check if week priorities file already exists:**
+   ```python
+   from pathlib import Path
+   priorities_file = Path("02-Week_Priorities/Week_Priorities.md")
+   if priorities_file.exists():
+       # Read existing file to check if it's for this week or needs updating
+   ```
+
+4. **Verify day of week matches date:**
+   - Never assume day of week from date or vice versa
+   - Always calculate both independently and verify they match
+
+5. **Never assume date progression:**
+   - Don't assume Monday is "today - X days"
+   - Always calculate Monday from actual current date
+   - Always get actual current date from system
+
+**Use `date_str`, `monday_str`, and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
+
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
+## Step 1: Demo Mode Check
 
 Check `System/user-profile.yaml` for `demo_mode`. If true, use demo paths.
 
 ---
 
-## Step 1: Determine Target Week
+## Step 2: Determine Target Week
 
 Calculate target week (current or next) based on day of week and user parameter.
 
 ---
 
-## Step 2: Context Gathering (ENHANCED)
+## Step 3: Context Gathering (ENHANCED)
 
 Gather comprehensive context to inform **intelligent priority suggestions**.
 
@@ -181,7 +232,7 @@ Use: create_weekly_priority(
   pillar="...",
   quarterly_goal_id="..." or "operational",
   success_criteria="...",
-  week_date="YYYY-MM-DD"
+  week_date="{monday_str}"  # Use monday_str from Step 0
 )
 ```
 
@@ -201,14 +252,14 @@ Check `System/Dex_Backlog.md` for high-priority improvement ideas worth tackling
 
 ## Step 6: Generate Week Priorities File
 
-Archive old file to `07-Archives/Plans/YYYY-Wxx.md`.
+Archive old file to `07-Archives/Plans/{year}-W{week_number:02d}.md` (calculate week number from monday_str).
 
 Create updated `02-Week_Priorities/Week_Priorities.md`:
 
 ```markdown
 # Week Priorities
 
-**Week of:** [Monday YYYY-MM-DD]
+**Week of:** {{monday_str}}  # Use monday_str from Step 0
 
 ---
 

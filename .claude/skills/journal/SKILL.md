@@ -7,6 +7,55 @@ description: Toggle journaling or start a journal entry (morning/evening/weekly)
 
 Toggle journaling on/off, or start a journal entry.
 
+---
+
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   day_name = today.strftime('%A')  # e.g., "Sunday"
+   year = today.year
+   month = today.month
+   month_name = today.strftime('%B')  # e.g., "February"
+   ```
+
+2. **For weekly journals, calculate Monday of this week:**
+   ```python
+   from datetime import timedelta
+   days_since_monday = today.weekday()  # 0=Monday, 6=Sunday
+   monday = today - timedelta(days=days_since_monday)
+   monday_str = monday.strftime('%Y-%m-%d')
+   ```
+
+3. **Check if journal file already exists:**
+   ```python
+   from pathlib import Path
+   # For daily journals
+   morning_file = Path(f"00-Inbox/Journals/{year}/{month:02d}-{month_name}/Morning/{date_str}-morning.md")
+   evening_file = Path(f"00-Inbox/Journals/{year}/{month:02d}-{month_name}/Evening/{date_str}-evening.md")
+   # For weekly journals
+   weekly_file = Path(f"00-Inbox/Journals/{year}/{month:02d}-{month_name}/Weekly/{monday_str}-weekly.md")
+   ```
+
+4. **Verify day of week matches date:**
+   - Never assume day of week from date or vice versa
+   - Always calculate both independently and verify they match
+
+5. **Never assume date progression:**
+   - Don't assume today is "yesterday + 1 day"
+   - Always get actual current date from system
+
+**Use `date_str`, `day_name`, `year`, `month`, `month_name`, and `monday_str` throughout the rest of the skill** - never hardcode dates or assume.
+
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
 ## Usage
 
 - `/journal on` — Enable daily journaling prompts

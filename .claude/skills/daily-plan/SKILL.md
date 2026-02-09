@@ -21,7 +21,52 @@ Before executing this command, read `System/user-profile.yaml` → `communicatio
 
 ---
 
-## Step 0: Demo Mode Check
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   day_name = today.strftime('%A')  # e.g., "Sunday"
+   ```
+
+2. **Check if plan file already exists:**
+   ```python
+   from pathlib import Path
+   plan_file = Path(f"07-Archives/Plans/{date_str}.md")
+   if plan_file.exists():
+       # File already exists - ask user if they want to update it or create new
+       # Or read existing file and update it
+   ```
+
+3. **Verify day of week matches date:**
+   - Never assume day of week from date or vice versa
+   - Always calculate both independently and verify they match
+   - Use `day_name` from step 1 in the plan header
+
+4. **Never assume date progression:**
+   - Don't assume today is "yesterday + 1 day"
+   - Don't assume date from session log timestamps
+   - Always get actual current date from system
+
+**If user specified "tomorrow":**
+```python
+from datetime import timedelta
+tomorrow = today + timedelta(days=1)
+date_str = tomorrow.strftime('%Y-%m-%d')
+day_name = tomorrow.strftime('%A')
+```
+
+**Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
+
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
+## Step 1: Demo Mode Check
 
 Before anything else, check if demo mode is active:
 
@@ -34,7 +79,7 @@ Before anything else, check if demo mode is active:
 
 ---
 
-## Step 1: Background Checks (Silent)
+## Step 2: Background Checks (Silent)
 
 Run these silently without user-facing output:
 
@@ -43,25 +88,25 @@ Run these silently without user-facing output:
 
 ---
 
-## Step 2: Morning Journal Check (If Enabled)
+## Step 3: Morning Journal Check (If Enabled)
 
 If `journaling.morning: true` in user-profile.yaml, check for today's morning journal and prompt if missing.
 
 ---
 
-## Step 3: Monday Weekly Planning Gate
+## Step 4: Monday Weekly Planning Gate
 
 If today is Monday and week isn't planned, offer to run `/week-plan` first.
 
 ---
 
-## Step 4: Yesterday's Review Check (Soft Gate)
+## Step 5: Yesterday's Review Check (Soft Gate)
 
 Check for yesterday's review and extract context (open loops, tomorrow's focus, blocked items).
 
 ---
 
-## Step 5: Context Gathering (ENHANCED)
+## Step 6: Context Gathering (ENHANCED)
 
 Gather context from all available sources. **This is where the magic happens.**
 
@@ -176,7 +221,7 @@ Also gather:
 
 ---
 
-## Step 6: Synthesis
+## Step 7: Synthesis
 
 Combine all gathered context into actionable recommendations:
 
@@ -215,18 +260,18 @@ Flag potential issues:
 
 ---
 
-## Step 7: Generate Daily Plan
+## Step 8: Generate Daily Plan
 
-Create `07-Archives/Plans/YYYY-MM-DD.md`:
+Create `07-Archives/Plans/{date_str}.md` (using `date_str` from Step 0):
 
 ```markdown
 ---
-date: YYYY-MM-DD
+date: {{date_str}}  # Use date_str from Step 0
 type: daily-plan
 integrations_used: [calendar, tasks, people, work-intelligence]
 ---
 
-# Daily Plan — {{Day}}, {{Month}} {{DD}}
+# Daily Plan — {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
 
 ## TL;DR
 - {{1-2 sentence summary including week progress}}
@@ -325,7 +370,7 @@ integrations_used: [calendar, tasks, people, work-intelligence]
 
 ---
 
-## Step 8: Track Usage (Silent)
+## Step 9: Track Usage (Silent)
 
 Update `System/usage_log.md` to mark daily planning as used.
 

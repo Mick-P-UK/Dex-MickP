@@ -13,13 +13,50 @@ Read `System/user-profile.yaml` → `communication` section and adapt accordingl
 
 ---
 
-## Step 0: Demo Mode Check
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   day_name = today.strftime('%A')  # e.g., "Sunday"
+   ```
+
+2. **Check if review file already exists:**
+   ```python
+   from pathlib import Path
+   review_file = Path(f"07-Archives/Reviews/Daily_Review_{date_str}.md")
+   learning_file = Path(f"System/Session_Learnings/{date_str}.md")
+   if review_file.exists() or learning_file.exists():
+       # Files already exist - ask user if they want to update or create new
+   ```
+
+3. **Verify day of week matches date:**
+   - Never assume day of week from date or vice versa
+   - Always calculate both independently and verify they match
+   - Use `day_name` from step 1 in the review header
+
+4. **Never assume date progression:**
+   - Don't assume today is "yesterday + 1 day"
+   - Don't assume date from session log timestamps
+   - Always get actual current date from system
+
+**Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
+
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
+## Step 1: Demo Mode Check
 
 Check `System/user-profile.yaml` for `demo_mode`. If true, use demo paths.
 
 ---
 
-## Step 1: File Discovery
+## Step 2: File Discovery
 
 Find files modified TODAY:
 
@@ -35,7 +72,7 @@ find . -type f -name "*.md" -newermt "$TODAY 00:00:00" ! -newermt "$TODAY 23:59:
 
 ---
 
-## Step 2: Gather Context
+## Step 3: Gather Context
 
 ### From 03-Tasks/Tasks.md
 - Tasks completed today (look for `✅ YYYY-MM-DD` matching today)
@@ -162,7 +199,7 @@ Use: process_commitment(commitment_id="comm-XXXXXX-XXX", action="dismiss")
 
 ### 3.1 Find Today's Plan
 
-Look for `07-Archives/Plans/YYYY-MM-DD.md` (today's date).
+Look for `07-Archives/Plans/{date_str}.md` (using `date_str` from Step 0).
 
 ### 3.2 Extract Planned Focus
 
@@ -269,7 +306,7 @@ Scan today's conversation for learnings:
 3. **Documentation gaps** — Were there questions about how the system works?
 4. **Workflow inefficiencies** — Did any task take longer than it should?
 
-Write to `System/Session_Learnings/YYYY-MM-DD.md`.
+Write to `System/Session_Learnings/{date_str}.md` (using `date_str` from Step 0).
 
 Then ask: "I captured [N] learnings from today's session. Anything else you'd like to add?"
 
@@ -321,16 +358,16 @@ If `journaling.evening: true`, prompt for evening reflection.
 
 ## Output Format
 
-Create `07-Archives/Reviews/Daily_Review_YYYY-MM-DD.md`:
+Create `07-Archives/Reviews/Daily_Review_{date_str}.md` (using `date_str` from Step 0):
 
 ```markdown
 ---
-date: YYYY-MM-DD
+date: {{date_str}}  # Use date_str from Step 0
 type: daily-review
 plan_completion_rate: X%
 ---
 
-# Daily Review — [Day], [Month] [DD], [YYYY]
+# Daily Review — {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
 
 ## 📊 Plan vs. Reality
 

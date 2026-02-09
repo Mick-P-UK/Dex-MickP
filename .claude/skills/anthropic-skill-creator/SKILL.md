@@ -235,6 +235,7 @@ To turn concrete examples into an effective skill, analyze each example by:
 
 1. Considering how to execute on the example from scratch
 2. Identifying what scripts, references, and assets would be helpful when executing these workflows repeatedly
+3. **Checking if dates are involved** - If yes, plan to include date verification step (see Step 4 → Date Verification Checklist)
 
 Example: When building a `pdf-editor` skill to handle queries like "Help me rotate this PDF," the analysis shows:
 
@@ -300,6 +301,55 @@ Any example files and directories not needed for the skill should be deleted. Th
 #### Update SKILL.md
 
 **Writing Guidelines:** Always use imperative/infinitive form.
+
+##### Date Verification Checklist (CRITICAL)
+
+**Before writing SKILL.md, check if the skill involves dates:**
+
+- ✅ Creating files with dates in filenames (e.g., `YYYY-MM-DD-report.md`)
+- ✅ Daily/weekly/monthly/quarterly operations
+- ✅ References to "today", "this week", "this quarter"
+- ✅ Date-based calculations or comparisons
+- ✅ Time-based workflows or scheduling
+
+**If ANY of the above apply, the skill MUST include Step 0: Date Verification.**
+
+**Date Verification Template:**
+```markdown
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')
+   day_name = today.strftime('%A')
+   ```
+
+2. **Check if file already exists:**
+   ```python
+   from pathlib import Path
+   target_file = Path(f"path/to/{date_str}-filename.md")
+   if target_file.exists():
+       # Handle existing file
+   ```
+
+3. **Verify day of week matches date** (never assume)
+4. **Never assume date progression** (always get actual date from system)
+
+**Use `date_str` and `day_name` throughout** - never hardcode dates.
+
+**Why:** See CLAUDE.md → File Conventions → Date Verification for details.
+```
+
+**For weekly operations:** Calculate Monday from actual date
+**For quarterly operations:** Calculate quarter from user profile's q1_start_month
+
+**Reference:** See existing skills (`/daily-plan`, `/week-plan`, `/quarter-plan`) for implementation examples.
+
+---
 
 ##### Frontmatter
 

@@ -14,7 +14,47 @@ Review and synthesize the quarter that just ended. Evaluates goal completion, ca
 
 ---
 
-## Step 0: Check if Quarterly Planning is Enabled
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date to determine the correct quarter:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   year = today.year
+   month = today.month
+   ```
+
+2. **Read q1_start_month from user profile:**
+   ```python
+   # Read System/user-profile.yaml
+   q1_start_month = user_profile.get('quarterly_planning', {}).get('q1_start_month', 1)
+   ```
+
+3. **Calculate current quarter:**
+   ```python
+   # Calculate which quarter we're in based on q1_start_month
+   # This logic must match get_quarter_info() in work_server.py
+   months_since_q1_start = (month - q1_start_month) % 12
+   quarter_num = (months_since_q1_start // 3) + 1
+   current_quarter = f"Q{quarter_num} {year}"
+   ```
+
+4. **Never assume quarter:**
+   - Don't assume Q1 starts in January
+   - Always read q1_start_month from user profile
+   - Always calculate quarter from actual current date
+   - If user provides specific quarter parameter, validate it matches calculated quarter
+
+**Use `date_str`, `current_quarter`, and calculated quarter dates throughout the rest of the skill** - never hardcode quarters or assume.
+
+**Why:** Quarter calculations must be accurate. Wrong quarters cause reviews to be filed incorrectly and break quarterly workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
+## Step 1: Check if Quarterly Planning is Enabled
 
 Read `System/user-profile.yaml`:
 
@@ -22,11 +62,11 @@ Read `System/user-profile.yaml`:
 2. **If `false`:**
    - Display: "Quarterly planning is disabled. Enable it first with `/quarter-plan`"
    - End command
-3. **If `true`:** Continue to Step 1
+3. **If `true`:** Continue to Step 2
 
 ---
 
-## Step 1: Determine Target Quarter
+## Step 2: Determine Target Quarter
 
 **If no parameter:**
 - Calculate current quarter based on `q1_start_month`
@@ -43,7 +83,7 @@ Calculate:
 
 ---
 
-## Step 2: Context Gathering
+## Step 3: Context Gathering
 
 ### Quarter Goals File
 

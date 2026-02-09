@@ -29,7 +29,44 @@ See CLAUDE.md → "Communication Adaptation" for full guidelines.
 
 ---
 
-## Step 0: File Discovery
+## Step 0: Date Verification (CRITICAL - MUST DO FIRST)
+
+**Before anything else, verify the current date:**
+
+1. **Get actual current date programmatically:**
+   ```python
+   from datetime import date
+   today = date.today()
+   date_str = today.strftime('%Y-%m-%d')  # e.g., "2026-02-08"
+   day_name = today.strftime('%A')  # e.g., "Sunday"
+   ```
+
+2. **Check if review file already exists:**
+   ```python
+   from pathlib import Path
+   review_file = Path(f"07-Archives/Reviews/Daily_Review_{date_str}.md")
+   learning_file = Path(f"System/Session_Learnings/{date_str}.md")
+   if review_file.exists() or learning_file.exists():
+       # Files already exist - ask user if they want to update or create new
+   ```
+
+3. **Verify day of week matches date:**
+   - Never assume day of week from date or vice versa
+   - Always calculate both independently and verify they match
+   - Use `day_name` from step 1 in the review header
+
+4. **Never assume date progression:**
+   - Don't assume today is "yesterday + 1 day"
+   - Don't assume date from session log timestamps
+   - Always get actual current date from system
+
+**Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
+
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+
+---
+
+## Step 1: File Discovery
 
 **Find files modified TODAY:**
 
@@ -45,7 +82,7 @@ find . -type f -name "*.md" -newermt "$TODAY 00:00:00" ! -newermt "$TODAY 23:59:
 3. **Verify with user** — After listing files, ASK: "These are the files I found modified today. What did you actually work on?"
 4. **Don't infer** — File timestamps tell you what changed, not what matters. Wait for user confirmation.
 
-## Step 1: Gather Context
+## Step 2: Gather Context
 
 ### Completed Tasks Today
 Check `03-Tasks/Tasks.md` for tasks completed today using completion timestamps:
@@ -105,7 +142,7 @@ Before asking the user anything, reflect on today's session and automatically ex
    - Were there repetitive manual steps?
    - Opportunities for automation?
 
-**For each learning identified, write to `00-Inbox/Session_Learnings/YYYY-MM-DD.md`:**
+**For each learning identified, write to `00-Inbox/Session_Learnings/{date_str}.md` (using `date_str` from Step 0):**
 
 ```markdown
 ## HH:MM - [Short title]
@@ -170,7 +207,7 @@ Check if evening journaling is enabled:
 
 ## Output Format
 
-Create daily note at `00-Inbox/Daily_Reviews/Daily_Review_[YYYY-MM-DD].md`:
+Create daily note at `00-Inbox/Daily_Reviews/Daily_Review_{date_str}.md` (using `date_str` from Step 0):
 
 ```markdown
 ---
@@ -188,11 +225,11 @@ Before executing, check if demo mode is active:
    - Write any output to `System/Demo/` subdirectories
 3. **If `demo_mode: false`:** Use normal vault paths
 
-date: [YYYY-MM-DD]
+date: {{date_str}}  # Use date_str from Step 0
 type: daily-review
 ---
 
-# Daily Review — [Day], [Month] [DD], [YYYY]
+# Daily Review — {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
 
 ## Accomplished
 

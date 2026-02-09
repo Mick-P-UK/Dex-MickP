@@ -26,5 +26,15 @@
       "Bash(mklink:*)",
       "Bash(ln:*)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "work-mcp",
+    "calendar-mcp",
+    "granola-mcp",
+    "career-mcp",
+    "dex-improvements-mcp",
+    "resume-mcp",
+    "update-checker",
+    "onboarding-mcp"
+  ]
 }

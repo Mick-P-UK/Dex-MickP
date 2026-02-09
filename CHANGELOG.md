@@ -6,6 +6,27 @@ All notable changes to Dex will be documented in this file.
 
 ---
 
+## [Unreleased]
+
+### 🛡️ Date Verification Safeguards
+
+**What was frustrating:** Date-based files (daily plans, reviews, weekly syntheses) could be created with incorrect dates if the system assumed dates instead of verifying them. This caused confusion, duplicate files, and broken workflows.
+
+**What's different now:** All date-based routines now verify the current date programmatically before creating any files. This includes:
+- `/daily-plan` - Verifies today's date and day of week
+- `/review` and `/daily-review` - Verifies date before creating review files
+- `/week-plan` and `/week-review` - Calculates Monday of the week correctly from actual date
+- `/quarter-plan` and `/quarter-review` - Calculates current quarter correctly based on user's Q1 start month
+- `/journal` - Verifies date for daily and weekly journal entries
+
+**Why you'll care:** No more wrong dates, no more duplicate files, no more confusion about which day/week/quarter you're working with. The system always uses the correct date, calculated from your system clock, not assumptions.
+
+**Technical details:** Added Step 0: Date Verification (CRITICAL) to all date-based skills. See CLAUDE.md → File Conventions → Date Verification for the full guidelines.
+
+**Skill creation safeguards:** Both `/create-skill` and `/anthropic-skill-creator` now include date verification checklists. When creating new skills, if dates are involved, the date verification step is automatically required. This prevents future date errors in newly created skills.
+
+---
+
 ## [1.3.0] - 2026-02-05
 
 ### 🔬 X-Ray: Understand What's Actually Happening (and Make Dex Your Own)
