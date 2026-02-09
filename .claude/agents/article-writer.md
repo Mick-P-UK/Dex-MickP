@@ -165,8 +165,9 @@ Before delivering, verify:
 - [ ] Subject lines create curiosity or promise value
 - [ ] No voice boundaries violated
 - [ ] Format is correct for A4 (unless specifically instructed to format for another size)
-- [ ] Check for 'orphans' eg. headings dislocated from the content at page breaks - Ensure pleasing layout 
+- [ ] Check for 'orphans' eg. headings dislocated from the content at page breaks - Ensure pleasing layout
 - [ ] Checked for relevant skills and followed them
+- [ ] **Version labeling:** If creating versioned content, filename MUST match internal version label (e.g., "v1.2" in filename = "v1.2" in content header)
 
 ---
 

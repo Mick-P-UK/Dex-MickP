@@ -162,6 +162,7 @@ Before delivering, verify:
 - [ ] Subject lines create curiosity or promise value
 - [ ] No voice boundaries violated
 - [ ] Checked for relevant skills and followed them
+- [ ] **Version labeling:** If creating versioned content, filename MUST match internal version label (e.g., "v1.2" in filename = "v1.2" in content header)
 
 ---
 
