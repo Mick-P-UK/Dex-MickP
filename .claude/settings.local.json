@@ -24,7 +24,9 @@
       "Bash(fi)",
       "Bash(ls:*)",
       "Bash(mklink:*)",
-      "Bash(ln:*)"
+      "Bash(ln:*)",
+      "WebSearch",
+      "Bash(dir:*)"
     ]
   },
   "enabledMcpjsonServers": [
