@@ -1,14 +1,34 @@
 # Session Log
 
-**Last Updated:** 2026-02-09 13:00
-**Session Started:** 2026-02-09 10:38
-**Status:** Session paused - usage limit reached (resumes 3pm)
+**Last Updated:** 2026-02-10 16:15
+**Status:** ✅ System rolled back to clean state - ready for productive work
 
 ## Current Focus
 
-**🔄 IN REVIEW: Silver Video Script (User Action)**
+**🎬 Silver Video Production**
 
-Mick is reviewing draft version 1.2 of the silver video script. Cedric is checking for parallel work opportunities while user reviews.
+Video has been recorded using script v1.3. Ready to continue with editing and publishing workflow.
+
+**Timeline:**
+- ✅ Tuesday: Script complete, video recorded
+- 📅 Wednesday (Today): Edit video
+- 📅 Thursday: Publish by EOD
+
+---
+
+## Recent Actions (2026-02-10 16:00-16:15)
+
+**✅ System Rollback - Back to Clean State**
+
+After 3+ hours of MCP troubleshooting (Feb 10, 13:00-16:00), rolled back to last working commit (739fcc6 - Feb 9, 21:00).
+
+**What was restored:**
+- ✅ Clean working tree
+- ✅ All content work preserved (silver video, folder consolidation)
+- ✅ Calendar credentials intact (Google authorization working)
+- ❌ MCP troubleshooting changes removed (good riddance)
+
+**Decision:** Pause MCP setup indefinitely. Core Dex functionality works fine without MCPs. Focus on actual work (silver video, writing) instead of technical rabbit holes.
 
 ## Active Work
 
