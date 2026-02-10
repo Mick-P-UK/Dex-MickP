@@ -616,7 +616,7 @@ Use `capture_idea` MCP tool to capture Dex system improvements anytime. Ideas ar
 
 ### Date Verification (CRITICAL)
 
-**Before creating any date-based file, ALWAYS verify the current date:**
+**Before making ANY date reference (files, conversation, timelines), ALWAYS verify the current date:**
 
 1. **Get actual current date programmatically:**
    ```python
@@ -643,14 +643,15 @@ Use `capture_idea` MCP tool to capture Dex system improvements anytime. Ideas ar
    - Always get actual current date from system
 
 **Applies to:**
+- **Conversational date references** - Saying "today is Wednesday", "tomorrow", "yesterday", or presenting timelines
 - Daily plans (`/daily-plan`)
 - Daily reviews (`/review`)
 - Any date-based file creation
 - Date calculations in workflows
-- References to "today", "yesterday", "this week"
+- All references to "today", "tomorrow", "yesterday", "this week"
 - **New skills/agents** - When creating skills with `/create-skill` or `/anthropic-skill-creator`, if the skill involves dates, it MUST include Step 0: Date Verification
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows.
+**Why:** Wrong dates cause confusion, duplicates, and break workflows. This applies to conversation AND file operations.
 
 **Skill Creation Safeguard:** Both `/create-skill` and `/anthropic-skill-creator` now include date verification checklists. When creating new skills, if dates are involved, the date verification step is required.
 - Career skill tags: Add `# Career: [skill]` to tasks/goals that develop specific skills
