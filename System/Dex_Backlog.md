@@ -1,6 +1,6 @@
 # Dex System Improvement Backlog
 
-*Last ranked: 2026-01-28 (Initial setup)*
+*Last ranked: 2026-02-11 (Re-scored based on current usage patterns)*
 
 Welcome to your Dex system improvement backlog! This file tracks ideas for making Dex better.
 
@@ -42,52 +42,51 @@ The ideas below demonstrate the level of detail you'll see when you capture your
 
 <!-- Auto-ranked by /dex-backlog command -->
 
-### 🔥 High Priority (Score: 85+)
+### ⚡ Medium Priority (Score: 60-84)
 
 - **[idea-001]** Save meeting summaries so I don't re-read entire notes every time
 
-  **The Problem:** 
+  **The Problem:**
   Right now, when you're preparing for a follow-up meeting, Cursor has to re-read your entire meeting notes from scratch. If you had 3 meetings with Sarah last quarter, that's reading thousands of words just to remember "What did we decide last time?"
-  
+
   **The Solution:**
   Create a separate folder (`06-Resources/Meeting_Cache/`) that stores short, structured summaries of each meeting:
   - Who attended
   - Key decisions made
   - Action items assigned
   - Important topics discussed
-  
+
   **How It Works in Cursor:**
   ✅ Totally doable! When you run `/process-meetings` or create a meeting note, Cursor:
   1. Reads the new meeting note (one file)
   2. Extracts the key information above
   3. Saves a short summary file in the cache folder
   4. Next time you need meeting context, reads the small summary instead of the full notes
-  
+
   **The Benefit:**
   Instead of reading 2,000 words of meeting notes, Cursor reads 200 words of summaries. That's 90% less to process, which means faster responses and you stay under usage limits.
-  
+
   **Real Example:**
   - Before: "Prepare for my 1:1 with Sarah" → Reads 3 full meeting notes (3,000 words)
   - After: "Prepare for my 1:1 with Sarah" → Reads cached summaries (300 words), only reads full notes if you ask for specific details
-  
-  - **Score:** 92 (Impact: 95, Alignment: 85, Token: 95, Memory: 90, Proactive: 85)
+
+  - **Score:** 72 (Impact: 65, Alignment: 50, Token: 100, Memory: 80, Proactive: 70)
   - **Category:** knowledge
   - **Captured:** 2026-01-28
-
-### ⚡ Medium Priority (Score: 60-84)
+  - **Why ranked here:** High token efficiency when used, but you're not actively using meeting features yet (calendar not connected, no person pages). Score will jump when you start processing meetings regularly. Good future investment.
 
 - **[idea-002]** Quick-reference directory of people so Cursor doesn't read every person page
 
   **The Problem:**
   You have person pages for everyone you work with (managers, colleagues, customers). When you ask "Who's my contact at Acme Corp?" Cursor currently has to open and read every person page file to find the answer. If you have 30 person pages, that's a lot of unnecessary reading.
-  
+
   **The Solution:**
   Create one lightweight "directory" file (`System/People_Index.json`) that lists basic info about everyone:
   ```
   Sarah Johnson → Internal, Engineering Manager, last met 2026-01-25
   Mike Chen → External, Acme Corp, Product Lead, last met 2026-01-20
   ```
-  
+
   **How It Works in Cursor:**
   ✅ Totally doable! Here's how:
   1. When you create or update a person page, Cursor quickly scans it
@@ -95,21 +94,22 @@ The ideas below demonstrate the level of detail you'll see when you capture your
   3. Adds or updates that one entry in the directory file
   4. When you ask "Who do I know at Acme Corp?", Cursor checks the directory first (one small file)
   5. Only opens full person pages when you need detailed context
-  
+
   **The Benefit:**
   Simple lookups become instant. Instead of reading 30 full person pages (15,000 words), Cursor reads one directory file (500 words). That's 97% less to process for common questions.
-  
+
   **Real Example:**
   - Before: "Who did I meet with last week?" → Opens and reads all 30 person pages
   - After: "Who did I meet with last week?" → Reads directory, finds 3 names, only opens those 3 person pages if you need details
-  
-  - **Score:** 78 (Impact: 75, Alignment: 80, Token: 90, Memory: 70, Proactive: 65)
+
+  - **Score:** 62 (Impact: 50, Alignment: 50, Token: 100, Memory: 60, Proactive: 50)
   - **Category:** system
   - **Captured:** 2026-01-28
+  - **Why ranked here:** Excellent token efficiency design, but person pages aren't actively used yet. Will become more valuable as you build out your relationship network. Consider when you start tracking contacts.
 
 ### 💡 Low Priority (Score: <60)
 
-*Example ideas provided above to show the level of detail and clarity expected.*
+*No ideas in this category yet.*
 
 **When you capture your own ideas, explain:**
 - What problem you're trying to solve (be specific!)
@@ -127,4 +127,4 @@ The ideas below demonstrate the level of detail you'll see when you capture your
 
 ---
 
-*Run `/dex-backlog` to re-rank ideas based on current system state.* 
+*Run `/dex-backlog` to re-rank ideas based on current system state.*
