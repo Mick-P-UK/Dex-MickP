@@ -1,16 +1,88 @@
 # Session Log
 
-**Last Updated:** 2026-02-11 08:40
-**Status:** 🎬 Silver video editing - Morning prep work
+**Last Updated:** 2026-02-12 21:05
+**Status:** 🔒 Security hardening + YouTube MCP planning
 
 ## Current Focus
 
-**🎬 Silver Video Production - Wednesday Morning**
+**🔒 API Security Hard-Baked into CLAUDE.md (21:00-21:05)**
 
-Morning session (08:00-12:00):
-- Dex context uploads
-- Review raw video footage
-- Plan editing workflow for Thu + Sat
+After discussing YouTube MCP integration, Mick raised critical security concern: ensure ALL API keys are stored in .env (never in config files).
+
+**Changes made:**
+1. ✅ Added "Security & API Keys" section to CLAUDE.md
+   - Mandatory requirement: ALL secrets in .env file
+   - NEVER hardcode in configs (.mcp.json, docs, scripts)
+   - Reference via ${VAR_NAME} syntax
+   - Defense-in-depth approach
+   - Clear "stop immediately" instruction if hardcoded key found
+2. ✅ Created task ^task-20260212-001 for YouTube MCP integration
+   - Includes security requirements
+   - Step-by-step setup guide
+   - Reference to GitHub repo
+3. ✅ Ready to commit and push to GitHub
+
+**Security principle established:** This is sacrosanct - no exceptions for API keys, tokens, credentials.
+
+**Next session:** When ready, complete YouTube MCP setup following the secure pattern.
+
+---
+
+## Previous Focus
+
+**🎉 SILVER VIDEO PROJECT COMPLETE (20:23)**
+
+Mick completed the entire silver video project - from research to live on YouTube:
+
+✅ **Video editing** - Finished in full-day editing session (Thursday 2026-02-12)
+✅ **YouTube upload** - Uploaded and published to diy-investors.com channel
+✅ **Video live** - Now publicly available on YouTube
+✅ **Member notification** - Email sent to DIYinvestors.com members announcing publication
+
+**Published:** 4 days ahead of planned Sunday Feb 16 publish date
+
+**Complete timeline:**
+- 2026-02-09: Research (agent-driven)
+- 2026-02-09 to 2026-02-10: Script (v1.0 → v1.3)
+- 2026-02-10 (Tuesday): Filming
+- 2026-02-12 (Thursday): Full-day editing session
+- 2026-02-12 (Thursday 20:23 GMT): Published & member notification sent
+
+**Project status:** Updated to `complete` in PROJECT.md with full completion notes
+
+**Next:** Mick can add YouTube URL/ID when convenient
+
+---
+
+**✅ System Improvement - Time-Based Greeting Fix (20:19-20:30)**
+
+Fixed the time-based greeting issue where Cedric said "Good morning" without checking actual time (it was 20:19 evening):
+
+**Changes made:**
+1. ✅ Updated CLAUDE.md Session Start Protocol (Step 2)
+   - Added mandatory time verification before greeting
+   - Includes Python code snippet for UTC → London time
+   - Lists greeting rules (morning/afternoon/evening)
+2. ✅ Updated CHANGELOG.md [Unreleased]
+   - Documented the fix for users
+   - Explains what was wrong and how it's fixed
+3. ✅ Updated session log (this file)
+
+**Result:** From next session onwards, time verification is mandatory before greeting - part of the "REQUIRED at every session start - no exceptions" protocol.
+
+**Educational context:** Mick asked about the mechanics of hard-baking enforcement into CLAUDE.md - learned about using mandatory checkpoints (Session Start Protocol) vs descriptive instructions (USER_EXTENSIONS).
+
+---
+
+## Previous Focus
+
+**🎬 Silver Video Production - Thursday (Main Editing Day)**
+
+Full day session - Deep editing flow:
+- First-pass edit: pacing and clarity
+- Add major graphics from visual concepts
+- Create rough thumbnail concepts
+- Publishing target: Sunday Feb 16
 
 **⚡ Dex Improvements Captured (for later):**
 Three quick-win improvements identified via `/dex-improve` capability audit:

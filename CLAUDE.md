@@ -99,9 +99,20 @@ Calculate the current time in London timezone and adjust the greeting accordingl
 
 **Before anything else (including greetings):**
 1. **ALWAYS read `System/session_log.md`** - Even if the hook output shows session log content, read the file directly to ensure you have the complete, current state
-2. Present the session context to the user
-3. Show them exactly where you left off in the last session
-4. Then greet and ask how to continue
+2. **ALWAYS verify current time in London timezone** - Required for time-appropriate greeting:
+   ```python
+   from datetime import datetime
+   now_utc = datetime.utcnow()
+   utc_hour = now_utc.hour
+   # London is UTC+0 (GMT) in winter, UTC+1 (BST) in summer
+   # For simplicity: london_hour ≈ utc_hour (adjust for BST if needed)
+   ```
+   - Before 12:00: "Good morning, Mick"
+   - 12:00-18:00: "Good afternoon, Mick"
+   - After 18:00: "Good evening, Mick"
+3. Present the session context to the user
+4. Show them exactly where you left off in the last session
+5. Then greet (using verified time) and ask how to continue
 
 **Critical fallback:** If the hook output doesn't show session log content (hook may have failed silently on Windows or other platforms), you MUST still read `System/session_log.md` directly. The hook is a convenience - reading the file is mandatory.
 
@@ -199,6 +210,56 @@ Adapt your tone and language based on user preferences in `System/user-profile.y
 - **Career level:** Adjust encouragement and strategic depth based on seniority
 
 Apply consistently across all interactions (planning, reviews, meetings, project discussions).
+
+### Security & API Keys (CRITICAL - NON-NEGOTIABLE)
+
+**ALL API keys, tokens, and credentials MUST be stored in `.env` file - NEVER in config files.**
+
+This is a hard security requirement with no exceptions:
+
+1. **ALWAYS store secrets in `.env`:**
+   ```bash
+   # .env file (gitignored)
+   YOUTUBE_API_KEY=AIza...
+   OPENAI_API_KEY=sk-...
+   ANTHROPIC_API_KEY=sk-ant-...
+   ```
+
+2. **ALWAYS reference via environment variables in configs:**
+   ```json
+   {
+     "env": {
+       "API_KEY": "${API_KEY}"  ← Reference, never hardcode
+     }
+   }
+   ```
+
+3. **NEVER hardcode API keys in:**
+   - `.mcp.json` or `System/.mcp.json`
+   - CLAUDE.md or any documentation
+   - Skills or scripts
+   - Git commits or any tracked files
+
+**Why this matters:**
+- `.env` is gitignored - never pushed to GitHub
+- Config files may be shared/committed
+- One mistake can expose credentials publicly
+- Defense-in-depth: even gitignored configs should use references
+
+**Before adding ANY external integration:**
+1. ✅ Add API key to `.env`
+2. ✅ Reference it via `${VAR_NAME}` in config
+3. ✅ Verify `.env` is in `.gitignore`
+4. ✅ Never commit actual key values
+
+**This applies to:**
+- MCP server integrations (YouTube, GitHub, Slack, etc.)
+- Cloud services (OpenAI, Anthropic, Google, AWS)
+- Database connections (MongoDB, Postgres, etc.)
+- OAuth tokens and refresh tokens
+- Webhook secrets and signing keys
+
+**If you catch a hardcoded API key:** Stop immediately, move it to `.env`, update the reference, and alert the user.
 
 ### Meeting Capture
 When the user shares meeting notes or says they had a meeting:

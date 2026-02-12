@@ -8,6 +8,43 @@ All notable changes to Dex will be documented in this file.
 
 ## [Unreleased]
 
+### 🔒 API Key Security Requirements (Hard-Baked)
+
+**What was missing:** No explicit guidance on where to store API keys and credentials when integrating external services (MCPs, cloud APIs, databases). This created risk of accidentally committing secrets to GitHub.
+
+**What's different now:** Hard security requirement added to CLAUDE.md - **ALL API keys, tokens, and credentials MUST be stored in `.env` file (gitignored), NEVER in config files.**
+
+**The rules:**
+- ✅ Store secrets in `.env` (gitignored)
+- ✅ Reference via `${VAR_NAME}` in configs
+- ✅ Never hardcode keys in `.mcp.json`, docs, scripts, or commits
+- ✅ Defense-in-depth: even gitignored configs use references
+- ❌ Stop immediately if hardcoded key detected
+
+**Why you'll care:** Your API keys and credentials will never accidentally end up on GitHub. Following this pattern is mandatory for all external integrations (YouTube, OpenAI, databases, OAuth tokens, webhook secrets, etc.).
+
+**Technical details:** Added "Security & API Keys (CRITICAL - NON-NEGOTIABLE)" section to CLAUDE.md → Core Behaviors. This is now enforced behavior, not optional guidance.
+
+---
+
+### ⏰ Time-Based Greeting Enforcement
+
+**What was frustrating:** Cedric would greet with "Good morning/afternoon/evening" without actually checking the current time first. This led to incorrect greetings (saying "morning" when it was actually evening) and broke the time-aware personalization.
+
+**What's different now:** Time verification is now **mandatory** in the Session Start Protocol. Before greeting at the start of any session, Cedric must:
+1. Check current UTC time programmatically
+2. Calculate London (Europe/London) timezone
+3. Use the appropriate greeting based on actual time:
+   - Before 12:00: "Good morning, Mick"
+   - 12:00-18:00: "Good afternoon, Mick"
+   - After 18:00: "Good evening, Mick"
+
+**Why you'll care:** Every session now starts with a correctly time-aware greeting. No more "morning" when it's evening. Small detail, but it makes interactions feel more natural and shows that the system is paying attention.
+
+**Technical details:** Added Step 2 to Session Start Protocol in CLAUDE.md. Time verification is now part of the "REQUIRED at every session start - no exceptions" enforcement layer, not just a descriptive guideline.
+
+---
+
 ### 🛡️ Date Verification Safeguards
 
 **What was frustrating:** Date-based files (daily plans, reviews, weekly syntheses) could be created with incorrect dates if the system assumed dates instead of verifying them. This caused confusion, duplicate files, and broken workflows.

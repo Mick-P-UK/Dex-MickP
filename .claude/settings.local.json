@@ -27,7 +27,12 @@
       "Bash(ln:*)",
       "WebSearch",
       "Bash(dir:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "WebFetch(domain:youtu.be)",
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:smithery.ai)",
+      "WebFetch(domain:github.com)",
+      "Bash(node --version:*)"
     ]
   },
   "enabledMcpjsonServers": [
