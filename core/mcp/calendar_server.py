@@ -30,6 +30,20 @@ from mcp.server.models import InitializationOptions
 import mcp.server.stdio
 import mcp.types as types
 
+# Vault paths (set early so we can load .env from vault root)
+VAULT_PATH = Path(os.environ.get('VAULT_PATH', Path.cwd()))
+PEOPLE_DIR = VAULT_PATH / "05-Areas" / "People"
+
+# Load environment variables from .env file in vault root
+try:
+    from dotenv import load_dotenv
+    env_file = VAULT_PATH / ".env"
+    if env_file.exists():
+        load_dotenv(env_file)
+except ImportError:
+    # python-dotenv not installed, env vars must be set manually
+    pass
+
 # Google Calendar imports
 try:
     from google.auth.transport.requests import Request
@@ -41,10 +55,6 @@ try:
 except ImportError:
     GOOGLE_CALENDAR_AVAILABLE = False
     logging.warning("Google Calendar API libraries not installed. Run: pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib")
-
-# Vault paths
-VAULT_PATH = Path(os.environ.get('VAULT_PATH', Path.cwd()))
-PEOPLE_DIR = VAULT_PATH / "05-Areas" / "People"
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -110,21 +120,43 @@ def get_google_calendar_service():
     """Authenticate and return Google Calendar API service.
 
     Uses OAuth 2.0 with token caching. On first run, opens browser for auth.
+    Credentials are loaded from environment variables (.env file).
     """
     if not GOOGLE_CALENDAR_AVAILABLE:
         raise RuntimeError("Google Calendar API libraries not installed")
 
-    if not CLIENT_SECRET_FILE.exists():
-        raise FileNotFoundError(
-            f"Google Calendar credentials not found at: {CLIENT_SECRET_FILE}\n\n"
+    # Check for environment variables (preferred method - secure)
+    client_id = os.environ.get('GOOGLE_CLIENT_ID')
+    client_secret = os.environ.get('GOOGLE_CLIENT_SECRET')
+    project_id = os.environ.get('GOOGLE_PROJECT_ID', 'dex-calendar')
+
+    if not client_id or not client_secret:
+        raise ValueError(
+            "Google Calendar credentials not found in environment variables.\n\n"
+            "Required environment variables in .env file:\n"
+            "  GOOGLE_CLIENT_ID=your_client_id\n"
+            "  GOOGLE_CLIENT_SECRET=your_client_secret\n"
+            "  GOOGLE_PROJECT_ID=your_project_id (optional)\n\n"
             "Setup instructions:\n"
             "1. Go to https://console.cloud.google.com/\n"
             "2. Create a new project or select existing\n"
             "3. Enable Google Calendar API\n"
             "4. Create OAuth 2.0 credentials (Desktop app)\n"
-            "5. Download credentials JSON\n"
-            "6. Save as: {CLIENT_SECRET_FILE}"
+            "5. Add credentials to .env file (never commit to git!)"
         )
+
+    # Construct client config from environment variables
+    client_config = {
+        "installed": {
+            "client_id": client_id,
+            "client_secret": client_secret,
+            "project_id": project_id,
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+            "redirect_uris": ["http://localhost"]
+        }
+    }
 
     creds = None
 
@@ -138,8 +170,8 @@ def get_google_calendar_service():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                str(CLIENT_SECRET_FILE), SCOPES)
+            # Use from_client_config instead of from_client_secrets_file
+            flow = InstalledAppFlow.from_client_config(client_config, SCOPES)
             creds = flow.run_local_server(port=0)
 
         # Save credentials for future use

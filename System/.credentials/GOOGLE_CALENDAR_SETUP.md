@@ -39,10 +39,17 @@ This guide walks you through setting up Google Calendar API access for Dex.
    - Name: "Dex Calendar Client"
    - Click "Create"
 5. Click "Download JSON" to download your credentials
-6. Save the downloaded file as:
-   ```
-   System/.credentials/google_calendar_credentials.json
-   ```
+6. **IMPORTANT:** Extract credentials and add to `.env` file (NOT as a file):
+   - Open the downloaded JSON file
+   - Find `client_id` and `client_secret` values
+   - Add to `.env` file in vault root:
+     ```bash
+     GOOGLE_CLIENT_ID=your_client_id_here
+     GOOGLE_CLIENT_SECRET=your_client_secret_here
+     GOOGLE_PROJECT_ID=your_project_id_here
+     ```
+   - **Security:** Never commit `.env` to git - it's already in `.gitignore`
+   - The JSON file can be deleted after extracting these values
 
 ## Step 4: First-Time Authentication
 
@@ -100,11 +107,15 @@ Google Calendar API has these limits:
 
 ## Security Notes
 
-**Keep these files private:**
-- `google_calendar_credentials.json` - Contains OAuth client secret
-- `google_calendar_token.pickle` - Contains access token
+**Keep these private:**
+- `.env` file - Contains OAuth client ID and client secret (**NEVER commit to git!**)
+- `google_calendar_token.pickle` - Contains access token (already in `.gitignore`)
 
-**Never commit these to git!** They're already in `.gitignore`.
+**Security best practice:**
+All API keys and secrets are stored in `.env` file, not in separate credential files. This ensures:
+- Single source of truth for all secrets
+- Consistent security across all integrations
+- Easy to verify nothing sensitive is committed to git
 
 ## Revoking Access
 

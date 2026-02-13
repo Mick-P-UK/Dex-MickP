@@ -1,6 +1,15 @@
 {
   "hooks": {
-    "SessionStart": [],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"%CLAUDE_PROJECT_DIR%\\.claude\\hooks\\session-start.bat\""
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Read",
