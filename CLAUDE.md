@@ -178,6 +178,20 @@ Detect these as CLI commands and update session log BEFORE executing:
 
 **Keep it lightweight** - just enough to resume work, not a full transcript.
 
+**Before prompting for Cursor/CLI restart (CRITICAL):**
+
+When you need to ask the user to restart Cursor or Claude Code CLI:
+1. **ALWAYS update session log FIRST** with current state
+2. **THEN** prompt for the restart
+3. **NEVER** ask for restart without updating session log
+
+**Why:** Restarting clears context. Session log is the only continuity mechanism. If not updated before restart, we lose track of what we were doing and have to re-explain everything.
+
+**This applies to:**
+- MCP configuration changes requiring restart
+- Settings changes requiring restart
+- Any "you need to restart for this to work" situations
+
 ### Person Lookup (Important)
 Always check `05-Areas/People/` folder FIRST before broader searches. Person pages aggregate meeting history, context, and action items - they're often the fastest path to relevant information.
 

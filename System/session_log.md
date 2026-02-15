@@ -1,9 +1,39 @@
 # Session Log
 
-**Last Updated:** 2026-02-15 16:25
-**Status:** ✅ SOLVED - Claude Desktop has all MCPs working, Mick testing functionality
+**Last Updated:** 2026-02-15 20:50
+**Status:** ✅ Working with Claude Desktop this week (CLI investigation deferred)
 
 ## Current Focus
+
+**📋 Using Claude Desktop This Week - CLI Investigation Deferred (20:50)**
+
+**Week Context:**
+- **Wednesday:** Plaza Group webinar (time commitment)
+- **Friday-Saturday:** Away visiting family
+- **Decision:** Use Claude Desktop for all work this week (MCP work + daily planning)
+
+**✅ Confirmed working in Desktop:**
+- All 11 MCP servers loading successfully
+- Work MCP, Calendar, Granola, NotebookLM all functional
+- Complete Dex functionality available
+
+**⏳ TO-DO FOR NEXT CLI SESSION:**
+
+Investigate Claude Code CLI MCP loading issue:
+1. **Hypothesis:** Session-start hook failure may be related to MCP loading problem
+   - Hook fails silently on Windows (noticed during testing)
+   - Could indicate broader hook/MCP initialization issue in CLI
+2. **Investigation steps:**
+   - Test if disabling hooks affects MCP loading
+   - Check hook execution timing vs MCP initialization
+   - Review debug logs for correlation between hook failures and MCP loading
+3. **Only investigate when time permits** - not urgent, Desktop is fully functional
+
+**Current status:** Desktop workflow established, CLI investigation noted for future
+
+---
+
+## Previous Focus
 
 **🎉 BREAKTHROUGH - All MCPs Working in Claude Desktop! (16:22-16:25)**
 

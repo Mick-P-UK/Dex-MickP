@@ -32,9 +32,39 @@
       "WebFetch(domain:www.youtube.com)",
       "WebFetch(domain:smithery.ai)",
       "WebFetch(domain:github.com)",
-      "Bash(node --version:*)"
+      "Bash(node --version:*)",
+      "Bash(uv tool install:*)",
+      "Bash(nlm --help:*)",
+      "Bash(nlm login:*)",
+      "Bash(nlm doctor:*)",
+      "Bash(PYTHONIOENCODING=utf-8 nlm login:*)",
+      "Bash(PYTHONIOENCODING=utf-8 nlm setup add:*)",
+      "Bash(PYTHONIOENCODING=utf-8 nlm setup show:*)",
+      "Bash(notebooklm-mcp:*)",
+      "Bash(PYTHONIOENCODING=utf-8 nlm doctor:*)",
+      "Bash(where:*)",
+      "Bash(pip show:*)",
+      "Bash(notebooklm-mcp-auth:*)",
+      "Bash(test:*)",
+      "Bash(uvx:*)",
+      "Bash(echo:*)",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 timeout 5 uvx notebooklm-mcp server)",
+      "Bash(nlm setup --help:*)",
+      "Bash(nlm setup list:*)",
+      "Bash(nlm --ai:*)",
+      "Bash(C:\\\\Users\\\\pavey\\\\.local\\\\bin\\\\notebooklm-mcp.exe:*)",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 timeout 10 uvx:*)",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 timeout 5 notebooklm-mcp:*)",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 nlm doctor:*)",
+      "Bash(else echo \"❌ ~/.claude/.mcp.json not found\")",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 timeout 3 uvx notebooklm-mcp:*)",
+      "Bash(claude mcp --help:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(claude --version:*)",
+      "Bash(claude config:*)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "work-mcp",
     "calendar-mcp",
@@ -43,6 +73,7 @@
     "dex-improvements-mcp",
     "resume-mcp",
     "update-checker",
-    "onboarding-mcp"
+    "onboarding-mcp",
+    "notebooklm-mcp"
   ]
 }
