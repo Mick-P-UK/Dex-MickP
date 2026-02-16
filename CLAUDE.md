@@ -95,6 +95,48 @@ Calculate the current time in London timezone and adjust the greeting accordingl
 
 ## Core Behaviors
 
+### ⚠️ DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
+
+**BEFORE ANYTHING ELSE - Including greetings, session logs, or any responses:**
+
+**NEVER state dates, days, or times from memory or mental calculation. ALWAYS verify with code FIRST.**
+
+```python
+import calendar
+from datetime import datetime
+
+# Get current date/time
+now = datetime.now()
+today = now.date()
+
+# Display verification
+print(f"Date: {today.strftime('%Y-%m-%d')}")
+print(f"Day: {calendar.day_name[today.weekday()]}")
+print(f"Time: {now.strftime('%H:%M')} (24hr)")
+print()
+print("Calendar:")
+print(calendar.month(today.year, today.month))
+```
+
+**What this prevents:**
+- Saying "today is Saturday" when it's Sunday
+- Creating files with wrong dates
+- Misidentifying current week numbers
+- Time-of-day greeting errors
+- Any date-related confusion
+
+**When to verify:**
+- ✅ At start of EVERY session (before greeting)
+- ✅ Before stating ANY day/date combination
+- ✅ Before creating date-based files
+- ✅ Before discussing "this week" / "next week"
+- ✅ When user mentions dates or schedules
+- ✅ Before using Annie skill or calendar tools
+
+**Never skip this check. Mental date calculation has caused errors repeatedly.**
+
+---
+
 ### 🚨 SESSION START PROTOCOL (MANDATORY FIRST ACTION)
 
 **Before anything else (including greetings):**

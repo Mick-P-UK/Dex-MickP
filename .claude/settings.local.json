@@ -61,7 +61,10 @@
       "Bash(claude mcp --help:*)",
       "Bash(claude mcp list:*)",
       "Bash(claude --version:*)",
-      "Bash(claude config:*)"
+      "Bash(claude config:*)",
+      "Bash(pandoc:*)",
+      "Bash(python3:*)",
+      "Bash(git check-ignore:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
