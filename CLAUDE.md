@@ -815,3 +815,38 @@ flowchart LR
 ```
 
 Use `neutral` theme - works in both light and dark modes.
+
+---
+
+## CRITICAL: Prohibited Characters in Task Files
+
+**Never use the following characters when writing to ANY file in this vault** (Tasks.md, Week_Priorities.md, meeting notes, or any other Markdown file). These characters cause UTF-8 encoding failures that silently corrupt files and break all work-mcp tools.
+
+### Prohibited Characters - Use Plain ASCII Alternatives Instead
+
+| Prohibited | Name | Bytes | Use Instead |
+|-----------|------|-------|-------------|
+| `—` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
+| `–` | En dash | `\x96` | ` - ` (spaced hyphen) |
+| `“` | Left double quote | `\x93` | `"` (straight quote) |
+| `”` | Right double quote | `\x94` | `"` (straight quote) |
+| `‘` | Left single quote | `\x91` | `'` (straight apostrophe) |
+| `’` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
+| `…` | Ellipsis | `\x85` | `...` (three dots) |
+| `•` | Bullet | `\x95` | `-` (hyphen) |
+| `�` | Unicode replacement char | `\xef\xbf\xbd` | *(remove entirely)* |
+
+### Why This Matters
+
+The work-mcp server reads files using Python's `Path.read_text(encoding='utf-8')`. Windows-1252 typographic characters (smart quotes, em dashes, etc.) are not valid UTF-8 and cause `UnicodeDecodeError`, which breaks `create_task`, `list_tasks`, `get_system_status`, and all other work-mcp operations.
+
+**This includes task titles, context notes, comments, and any text Claude writes into vault files.**
+
+### Enforcement Rule
+
+Before writing ANY string to a vault file:
+- Scan for typographic characters (curly quotes, dashes, ellipsis)
+- Replace with plain ASCII equivalents (see table above)
+- This applies to ALL Claude instances, sub-agents, and skill outputs
+
+**Root cause logged**: 2026-02-17 - em dash introduced by Claude in task title `Draft 'The Freedom Blueprint' newsletter` caused immediate re-corruption of Tasks.md after yesterday's encoding fix.
