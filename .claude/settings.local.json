@@ -64,7 +64,13 @@
       "Bash(claude config:*)",
       "Bash(pandoc:*)",
       "Bash(python3:*)",
-      "Bash(git check-ignore:*)"
+      "Bash(git check-ignore:*)",
+      "Bash(claude mcp:*)",
+      "mcp__calendar-mcp__calendar_get_today",
+      "mcp__work-mcp__get_week_progress",
+      "mcp__work-mcp__get_week_priorities",
+      "mcp__work-mcp__list_tasks",
+      "mcp__work-mcp__get_commitments_due"
     ]
   },
   "enableAllProjectMcpServers": true,

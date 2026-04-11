@@ -74,6 +74,45 @@ Code changes can be reverted by removing the helper functions and restoring orig
 
 ---
 
+## 2026-02-22 - UTF-8 Pre-Commit Hook
+
+### Summary
+Installed a git pre-commit hook that scans all staged `.md` files for Windows-1252
+typographic characters (em dashes, smart quotes, ellipsis, etc.) before every commit.
+Blocks the commit and shows exact file/line/replacement if any are found.
+
+This was triggered by an em dash (0x97) in `03-Tasks/2026.02.07-Tasks.md` at position
+301 (phrase: "4th Mar -- find a free hour") that broke all work-mcp tools.
+
+### Files Added/Modified
+- **Added:** `.git/hooks/pre-commit` - Python script, scans staged .md files
+- **Added:** `docs/utf8-corruption-troubleshooting.md` - Full troubleshooting guide
+- **Fixed:** `03-Tasks/2026.02.07-Tasks.md` - Em dash replaced with hyphen
+- **Fixed:** `03-Tasks/Tasks.md` - Smart quotes replaced with straight quotes
+
+### How the Hook Works
+- Runs automatically on every `git commit`
+- Gets list of staged .md files via `git diff --cached --name-only`
+- Scans each file byte-by-byte for bytes 0x80-0xA0 (Windows-1252 range)
+- If found: blocks commit, prints file/line/position/suggested replacement
+- If clean: prints quiet confirmation, allows commit
+
+### Rationale
+work-mcp tools use strict `encoding='utf-8'` when reading vault files. Windows-1252
+typographic characters are invisible corruption - they look fine in editors but crash
+Python's UTF-8 decoder, blocking all work-mcp functionality until manually fixed.
+
+### If the Hook Stops Running
+```powershell
+git config core.hooksPath .git/hooks
+```
+See `docs/utf8-corruption-troubleshooting.md` for full recovery steps.
+
+### Rollback Instructions
+Delete `.git/hooks/pre-commit` to remove the hook. No other files are affected.
+
+---
+
 ## Change Log Template
 
 When making future changes, add entries using this format:

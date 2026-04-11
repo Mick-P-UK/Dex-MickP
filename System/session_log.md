@@ -1,922 +1,361 @@
 # Session Log
 
-**Last Updated:** 2026-02-16 14:17
-**Status:** ✅ Mixed voice methodology integrated + Freedom Blueprint newsletter complete
-
-## Current Focus
-
-**📝 Mixed Voice Methodology Integration + Newsletter Production (2026-02-16 11:35-14:17)**
-
-**What was completed:**
-
-1. ✅ **Mixed voice pattern extraction from Mick's edits** (11:35-12:30)
-   - Source: PGM research paper (v1 AI-generated vs v3 Mick's edit)
-   - Extracted 8 distinct mixed voice patterns:
-     1. Personal Attribution & Journey ("it's occurred to me", "I've decided")
-     2. Humility Markers ("(IMHO)", "To me,", "It seems obvious to me")
-     3. Audience Specificity ("diy-investors" not generic "investors")
-     4. Conversational Transitions ("OK, let me" not "Right, let's")
-     5. Clarity & Precision ("example", "typically", scope clarifiers)
-     6. Softer Technical Language ("uncover" vs "pierce")
-     7. Contextual Scaffolding ("In this research paper", positioning)
-     8. Professional Protection (risk warnings, DYOR signature)
-   - Documents analyzed: 6,000+ word research paper comparison
-
-2. ✅ **Voice DNA updated with mixed voice patterns** (12:30-13:00)
-   - File: `05-Areas/Writing_System/context/core/voice-dna-mick.json`
-   - Added complete `mixed_voice_patterns` section to `communication_style`
-   - Includes all 8 patterns with examples and purpose
-   - Added `when_to_use` guidelines (research papers, newsletters, quick updates, notes)
-   - Updated metadata: source document, analysis date
-   - Auto-loads into all writing skills going forward
-
-3. ✅ **Mixed voice methodology reference created** (13:00-13:30)
-   - File: `.claude/reference/mixed-voice-methodology.md`
-   - Comprehensive 5,000+ word guide with:
-     - All 8 patterns documented with before/after examples
-     - Purpose explanations for each pattern
-     - Usage guidelines by content type
-     - Implementation checklist
-     - Example transformations
-     - Critical differences table (Generic AI vs Mick's Mixed Voice)
-
-4. ✅ **Newsletter article created with article-writer** (13:30-14:00)
-   - Transformed 6,000-word research paper → 600-word newsletter article
-   - Target: "The Freedom Blueprint" DIY-Investors Newsletter (February 2026)
-   - Article-writer agent applied mixed voice patterns automatically
-   - Output: `05-Areas/Writing_System/knowledge/1-Drafts/2026.02.16 - Freedom Blueprint - PGM Valuation Framework - v1.md`
-   - Exactly 600 words (excluding title/risk warning)
-   - Core insight preserved: Physical production leverage framework
-   - Key finding highlighted: Tharisa 2.4x more metal per £1 than Valterra
-
-5. ✅ **Newsletter finalized and published** (14:00-14:17)
-   - Mick edited v1 → v2-Mick-Edit
-   - Moved to `2-Ready/` folder
-   - Created .docx version with professional formatting:
-     - Title and subtitle styling
-     - Proper heading hierarchy (H2 sections)
-     - Bold and italic text preserved
-     - Block quote for formula
-     - Paragraph spacing
-     - Risk warning section
-     - Arial font, 1-inch margins
-   - Files: Both .md and .docx ready for publication
-
-**Voice system enhancement:**
-- Mixed voice patterns now permanent part of Writing System
-- Auto-applies to all technical research and newsletters
-- Balances authority with humility and warmth
-- Maintains Mick's authentic voice in analytical content
-
-**Agent used:**
-- article-writer (Agent ID: a3d9502)
-
-**Next session:**
-- Ready to apply mixed voice to future research papers and newsletters
-- Voice DNA + methodology reference ensure consistency
+**Last Updated:** 2026-03-15
+**Status:** SESSION ACTIVE - Writing System: March newsletter draft + ASCII rule hardening
 
 ---
 
-## Previous Focus
+## Session Summary (2026-03-22) - Week Catch-Up & Pre-Holiday Handover
 
-**📝 Voice Rewriting Methodology - Complete Documentation (2026-02-16 11:08-11:35)**
+**Status:** COMPLETE
+**Environment:** Claude Desktop (Filesystem MCP confirmed)
 
-**What was completed:**
+### What Was Done
 
-1. ✅ **Successful voice rewriting test case** (11:08-11:30)
-   - Document: `2026.02.16 - Strategic Dual Valuation Methodology_PGM's_Unformatted.docx` (40KB)
-   - Type: Highly academic PGM mining valuation analysis with 190+ citations
-   - Transformed into Mick's voice whilst preserving all technical data and citations
-   - Output: `2026.02.16 - Strategic Dual Valuation Methodology_PGM's_Mick's_Voice_v1.docx` (17KB)
+1. Week reviewed (16-22 March) - highlights:
+   - AI-4-Investing Webinar 'Claude Code for Beginners' delivered Wed 18 Mar
+   - Post-webinar tasks largely resolved by 21 Mar
+   - Foundry Artists session 2 of 3 completed Fri 20 Mar
+   - 'Weekend of Mistakes' at Hay-on-Wye Sat 21 Mar - met Steve and Janusz Marecki
 
-2. ✅ **Voice transformation applied** (11:08-11:30)
-   - Loaded Writing System context profiles:
-     - `voice-dna-mick.json` - Core voice essence, linguistic fingerprint, authenticity markers
-     - `icp.json` - DIY investors audience profile
-     - `business-profile.json` - DIY-Investors brand positioning
-   - Converted academic opening to conversational ("Right, let's talk about...")
-   - Applied British English throughout (whilst, favour, contextualised)
-   - Added signature transitions (Meanwhile, As ever, Note that)
-   - Maintained all numerical data, citations, technical terminology
-   - Ended with DYOR philosophy + standard sign-off
+2. Tasks updated:
+   - Lilian PDFs (language capabilities + Indian sectors) - DONE, sent
+   - Steve / castle conversations - DONE (met at Hay-on-Wye Sat 21 Mar)
+   - New task added: Follow up Janusz Marecki for IC webinar 8 Apr ^task-20260322-001
 
-3. ✅ **Technical process executed** (11:08-11:30)
-   - Extracted text from .docx using python-docx
-   - Created JavaScript generation script using docx module
-   - Installed dependencies (`npm install docx`)
-   - Generated new .docx with proper formatting (Arial, headings, bullet lists)
-   - Cleaned up temporary files
+3. Re-recording of webinar (Part 1 + NotebookLM section) confirmed for Monday 23 Mar 09:00-12:00
 
-4. ✅ **Complete methodology documentation created** (11:30-11:35)
-   - File: `.claude/reference/voice-rewriting-methodology.md` (12KB)
-   - Documents entire voice transformation framework
-   - Includes before/after examples with explanations
-   - Technical process step-by-step
-   - Quality checklist for verification
-   - Notes for converting to skill
-   - Future enhancement ideas
+4. Deferred until after Somerset holiday (back ~28-29 Mar):
+   - Micks-View Phase 1 build
+   - /radar skill sign-off (5 items in Section 10)
+   - 2023 IC Webinar archive (radar_extractor.py)
 
-**Next action when context cleared:**
-- Create `/voice-rewrite` skill based on methodology doc
-- Skill will automate: load contexts → extract document → apply voice → generate .docx
+5. Somerset holiday: Tue 24 - Fri 27 Mar (back weekend 28/29 Mar)
 
-**Files created this session:**
-- `05-Areas/Writing_System/knowledge/1-Drafts/2026.02.16 - Strategic Dual Valuation Methodology_PGM's_Mick's_Voice_v1.docx` (17KB)
-- `.claude/reference/voice-rewriting-methodology.md` (12KB)
+### Monday 23 March - Priority Actions
 
-**Dependencies installed:**
-- `docx` npm package (Node.js module for .docx generation)
+1. Re-record webinar Part 1 + NotebookLM section (09:00-12:00)
+2. Contact Janusz Marecki re IC webinar 8 April (urgent - time-sensitive)
+3. Complete any remaining webinar post-production before holiday
+
+### Post-Holiday Priorities (w/c 28 March)
+
+1. Micks-View Phase 1 build (PRD v2.2 approved, ready to go)
+2. /radar skill sign-off - 5 items in Section 10 awaiting Mick
+3. 2023 IC Webinar archive via radar_extractor.py
+4. February portfolio posts review + publish (WP drafts 15071, 15073, 15076, 15078)
+
+_Session ended: 2026-03-22 (Sun morning, pre-holiday)_
 
 ---
 
-## Previous Focus
+## Session Summary (2026-03-15) - ASCII Rule Update + Writing System
 
-**📋 Using Claude Desktop This Week - CLI Investigation Deferred (2026-02-15 20:50)**
+**Status:** COMPLETE
+**Environment:** Claude Code (Writing System vault)
 
-**Week Context:**
-- **Wednesday:** Plaza Group webinar (time commitment)
-- **Friday-Saturday:** Away visiting family
-- **Decision:** Use Claude Desktop for all work this week (MCP work + daily planning)
+### What Was Done
 
-**✅ Confirmed working in Desktop:**
-- All 11 MCP servers loading successfully
-- Work MCP, Calendar, Granola, NotebookLM all functional
-- Complete Dex functionality available
+1. ASCII-only output rule strengthened across all writing system files
+   - Root cause: double hyphens and other non-ASCII characters identified as potential Dex/Obsidian rendering issues
+   - Previous rule allowed double hyphen as em dash equivalent - this is now banned
+   - New rule: single hyphen - only for all dash needs
 
-**⏳ TO-DO FOR NEXT CLI SESSION:**
+2. Files updated:
+   - C:\Users\pavey\.claude\CLAUDE.md - global rule updated, double hyphen explicitly banned
+   - C:\Vaults\Mick's-Writing-System\CLAUDE.md - ASCII-only section added
+   - All 5 Writing System skill files (diy-newsletter, substack-note, thought-leadership, content-extraction, social-media-bio-generator)
 
-Investigate Claude Code CLI MCP loading issue:
-1. **Hypothesis:** Session-start hook failure may be related to MCP loading problem
-   - Hook fails silently on Windows (noticed during testing)
-   - Could indicate broader hook/MCP initialization issue in CLI
-2. **Investigation steps:**
-   - Test if disabling hooks affects MCP loading
-   - Check hook execution timing vs MCP initialization
-   - Review debug logs for correlation between hook failures and MCP loading
-3. **Only investigate when time permits** - not urgent, Desktop is fully functional
+3. Safe characters confirmed:
+   - Dash: single hyphen - only
+   - Quotes: straight " and ' only
+   - Ellipsis: three separate full stops ... only
+   - No Unicode, no em/en dashes, no smart quotes, no double hyphens
 
-**Current status:** Desktop workflow established, CLI investigation noted for future
+4. Newsletter template created for Freedom Blueprint monthly newsletter
+   - Template saved: C:\Vaults\Mick's-Writing-System\_templates\Freedom Blueprint Newsletter Template.txt
+   - March 2026 draft started: knowledge\drafts\2026.03.17 - Freedom Blueprint March_v.01.01_TXT.txt
 
----
+5. Meet Cedric episode created in Notion Content Studio
+   - "2026.03.15 - Meet Cedric - Building the Newsletter Template"
 
-## Previous Focus
+### Pending - Carry Forward
 
-**🎉 BREAKTHROUGH - All MCPs Working in Claude Desktop! (16:22-16:25)**
-
-**Discovery:** Claude Desktop has **EVERYTHING working** - all Dex MCPs + NotebookLM!
-
-**What we confirmed:**
-1. ✅ **Claude Desktop MCP inventory:** 11 servers total
-   - work-mcp ✅ (task management, goals, priorities)
-   - calendar-mcp ✅ (Google Calendar integration)
-   - granola-mcp ✅ (meeting transcripts)
-   - notebooklm ✅ (all 29 tools available)
-   - Plus: Notion, filesystem, Context7, PDF, Chrome automation, Vercel
-2. ✅ **Dex fully functional** in Claude Desktop
-3. ✅ **NotebookLM already set up** - can use immediately
-4. ✅ **Bug confirmed:** Claude Code CLI not loading project MCPs (Desktop works, CLI doesn't)
-
-**Practical Solution:**
-- **Claude Desktop** → MCP work (tasks, calendar, NotebookLM, meetings)
-- **Claude Code CLI** → Coding/editing (better IDE integration)
-- **No workaround needed** - everything accessible via Desktop
-
-**Current State:**
-- ✅ Mick testing Claude Desktop functionality (NotebookLM, tasks, calendar)
-- ✅ All features available and working
-- ✅ No additional setup needed
-
-**Files logged:**
-- ✅ Complete investigation log: `System/Debug_Logs/2026-02-15-Session-Log-MCP-Investigation.md`
-- ✅ Session log updated (this file)
-- ⏳ Ready to commit and push to GitHub
-
-**When Mick returns:**
-- Get feedback on Claude Desktop experience
-- Decide if we need to investigate Desktop config location
-- Consider reporting Claude Code CLI bug to Anthropic
+- [ ] March Freedom Blueprint newsletter - ACTIVE (see handoff note)
+- [ ] Word newsletter template - Mick to drop into Writing System inbox
+- [ ] Monthly newsletter SOP - to be written once workflow confirmed
+- [ ] All items carried forward from 2026-03-10 session (see below)
 
 ---
 
-## Previous Focus
+## Session Summary (2026-03-10) - Micks-View PRD v2.2 Sign-Off
 
-**📚 NotebookLM MCP Setup - ACTUAL ROOT CAUSE DISCOVERED! (15:38-15:50)**
+**Status:** COMPLETE
+**Environment:** Claude Desktop (MCP confirmed via tool_search probe)
 
-**🚨 CRITICAL DISCOVERY:** Claude Code CLI is **NOT loading ANY project MCPs** from `.mcp.json` file!
+### What Was Done
 
-**How we found it:**
-1. **15:38** - Mick restarted Cursor + Claude Code CLI (full restart)
-2. **15:40** - Verified project `.mcp.json` has correct NotebookLM config
-3. **15:42** - Discovered work-mcp tools ALSO not loading (not just NotebookLM!)
-4. **15:45** - Hard-baked Mick's working environment into MEMORY.md:
-   - Runs Claude Code CLI inside Cursor IDE terminal
-   - Should read project `.mcp.json` (NOT Cursor's config)
-5. **15:48** - Checked Claude Code CLI debug logs (`~/.claude/debug/`)
-6. **15:50** - **FOUND IT:** Startup logs show NO project MCPs loading at all
+1. PRD v2.1_Mick (DOCX upload) read in full via pandoc extraction
+2. All Mick's comments and annotations addressed:
+   - ticker field removed from YAML schema
+   - exchanges changed to list (supports dual-listed stocks)
+   - sp renamed sp_start
+   - verdict renamed view_current (Positive/Negative/Watch/Shortlist/Stop_Loss)
+   - tags confirmed as multi-select free taxonomy
+   - micks-stocknote confirmed as Phase 1 PC requirement (not Phase 2)
+   - 514-stock watchlist noted - Phase 3 RAG timeline to be reviewed
+3. Item 1 (GitHub scope) resolved via live Filesystem MCP check:
+   - .git root at Dex-MickP\.git (NOT vault root)
+   - Option B agreed: Micks-View\ inside Dex-MickP\
+   - No git config changes needed
+4. DEX system compatibility confirmed - CLAUDE.md and .gitignore reviewed:
+   - No DEX changes required
+   - Micks-View\ will be versioned (not gitignored)
+5. PRD v2.2 produced as formatted DOCX - APPROVED FOR BUILD
+   - All 6 Section 10 items resolved (green status)
+   - Phase 1 build sequence documented (7 steps)
 
-**Debug log evidence:**
+### Ready for Next Thread
+
+**Start prompt for new thread:**
+"Cedric - please start the Micks-View Phase 1 build. Begin with Step 1: create the folder structure at C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\Micks-View\ per PRD v2.2 Section 3.5, then create a few test hub notes."
+
+### Pending - Carry Forward
+
+- [ ] Micks-View Phase 1 build (NEW THREAD)
+- [ ] NotebookLM Claude Code CLI issue
+- [ ] radar_extractor.py --backfill --dry-run then --backfill
+- [ ] Dual-write /week-plan-print skill
+- [ ] PAIDA orchestrator Claude Code build session
+- [ ] Check Oct + Nov 2024 IC Webinar PDFs manually
+- [ ] April 2025 IC Webinar - check manually
+- [ ] Run 2023 IC Webinar archive
+
+_Session ended: 2026-03-10 (new thread to follow)_
+
+---
+
+## Session Summary (2026-03-08 evening) - Session Start SKILL.md + Environment Detection
+
+**Status:** COMPLETE
+**Environment:** claude.ai (MCP probe via tool_search)
+
+### What Was Done
+
+1. **Session start SKILL.md - COMPLETED**
+   - Blocker from earlier sessions resolved: /mnt/skills/user/ path confirmed via userPreferences
+   - Windows vault path: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\
+   - Directory created: skills/session-start/
+   - SKILL.md written to: /mnt/skills/user/session-start/SKILL.md (auto-mirrors to vault)
+   - File verified - contents confirmed correct
+
+2. **Session start protocol - updated in userPreferences**
+   - Probe changed from notebooklm-mcp:notebook_list to tool_search (more generic)
+   - Rationale: tool_search works regardless of which MCPs are installed
+   - userPreferences updated by Mick (pasted into Settings)
+
+3. **Skills path added to userPreferences (Key Paths section)**
+   - Line added: Skills (vault): C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\ (mirrored to /mnt/skills/user/)
+   - This enables claude.ai sessions to always know the Windows skills location
+
+### Pending - Unchanged From Previous Session
+
+- [ ] NotebookLM Claude Code CLI setup - nlm setup add claude-code had a problem
+- [ ] NotebookLM aliases not yet created
+- [ ] NotebookLM planned notebooks: Inner Circle Webinars, Plaza Group Webinars, AI for Investing
+- [ ] radar_extractor.py --backfill --dry-run then --backfill
+- [ ] Dual-write /week-plan-print skill to /mnt/skills/user/week-plan-print/
+- [ ] PAIDA orchestrator build session
+- [ ] Check Oct + Nov 2024 IC Webinar PDFs manually
+- [ ] April 2025 IC Webinar - check manually for company slides
+- [ ] Run 2023 IC Webinar archive when PDFs available
+
+_Session ended: 2026-03-08 ~18:00 (Mick heading out for the evening)_
+
+---
+
+## Previous Session (2026-03-08) - Claude Code CLI
+
+### What Was Done This Session
+
+1. **Daily plan updated for Sunday 8 March 2026**
+   - Saved to: 07-Archives/Plans/2026-03-08.md
+   - Confirmed calendar-mcp and work-mcp both loading -- MCP fix successful
+
+2. **Two new issues discovered (both need fixing before /daily-plan fully works):**
+
+   **Issue A - Calendar OAuth token expired:**
+   - calendar-mcp loads but Google rejects the token (invalid_grant)
+   - Token: System/.credentials/google_calendar_token.pickle
+   - Fix: reauth via Claude Desktop (browser OAuth flow)
+
+   **Issue B - work-mcp returning 0 tasks:**
+   - work-mcp connects and responds but reads 0 tasks despite Tasks.md having content
+   - Tasks.md read directly -- 3 active P1 tasks confirmed
+   - Likely cause: VAULT_PATH wrong in C:\ProgramData\ClaudeCode\managed-mcp.json
+   - Fix: check VAULT_PATH value for work-mcp entry
+
+3. **Quick win identified:** task ^task-20260301-004 ("Add calendar-mcp to Cursor") is DONE -- not yet marked complete in Tasks.md
+
+### Next Actions (when Mick returns)
+
+- [ ] Fix calendar OAuth token (reauth via Claude Desktop)
+- [ ] Check VAULT_PATH in managed-mcp.json for work-mcp
+- [ ] Mark ^task-20260301-004 as complete in Tasks.md
+- [ ] Run radar_extractor.py --backfill --dry-run (in Windows terminal)
+- [ ] Run radar_extractor.py --backfill (if dry-run looks good)
+- [ ] Spot-check 2-3 Notion entries after backfill (FUM, MTL, C4XD)
+- [ ] Run /week-plan for Week 11 (9-15 March)
+
+### Still Pending
+
+- [ ] Dual-write /week-plan-print skill to /mnt/skills/user/week-plan-print/
+- [ ] Dual-write /process-webinar skill to /mnt/skills/user/process-webinar/SKILL.md
+- [ ] Check Oct + Nov 2024 IC Webinar PDFs manually (company slides may have been missed)
+- [ ] April 2025 IC Webinar - check manually for company slides
+- [ ] PAIDA orchestrator build session - hand briefing v1.1 to Claude Code
+- [ ] Run 2023 IC Webinar archive when PDFs available
+
+---
+
+## Previous Session Summary (2026-03-07) - radar_extractor.py --backfill upgrade
+
+**Status:** COMPLETE - Script upgraded, restart pending
+
+- radar_extractor.py upgraded: OCR raised to 300 DPI, improved EXTRACTION_PROMPT, new --backfill mode
+- --backfill: queries Notion for blank page bodies, finds matching PDF, OCRs, updates entry with rich content
+- build_page_body_blocks() creates: bold meta line, divider, full My View text, colour-coded callout
+- Script: C:\Users\pavey\Documents\0.0 - AI Projects\radar-extractor\radar_extractor.py
+- Central .env: C:\Users\pavey\Documents\0.0 - AI Projects\PAIDA-Config\.env
+
+**Commands to run:**
 ```
-[STARTUP] Loading MCP configs...
-[STARTUP] MCP configs loaded in 504ms
-MCP server "gdrive": Starting connection...          ✅ (from ~/.claude/mcp-servers/)
-MCP server "claude.ai Notion": Starting connection... ✅ (cloud MCP)
-MCP server "claude.ai Vercel": Starting connection... ✅ (cloud MCP)
-MCP server "ide": Starting connection...             ✅ (built-in)
-
-MISSING:
-- work-mcp ❌
-- calendar-mcp ❌
-- granola-mcp ❌
-- career-mcp ❌
-- dex-improvements-mcp ❌
-- resume-mcp ❌
-- update-checker ❌
-- onboarding-mcp ❌
-- notebooklm-mcp ❌
+cd C:\Users\pavey\Documents\0.0 - AI Projects\radar-extractor
+python radar_extractor.py --backfill --dry-run   # preview first
+python radar_extractor.py --backfill              # then actual run
 ```
 
-**What we verified (all correct):**
-- ✅ Project `.mcp.json` exists and is valid JSON
-- ✅ Correct working directory (`/c/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP`)
-- ✅ Settings have `"enableAllProjectMcpServers": true`
-- ✅ All 9 MCPs listed in `"enabledMcpjsonServers"`
-- ✅ Python works, MCP servers run manually (tested work-mcp)
-- ✅ File permissions correct
-- ✅ Claude Code CLI version 2.1.42 (recent)
-- ✅ No conflicting global configs
-- ✅ Full restart done (Cursor + Claude Code CLI)
+---
 
-**Conclusion:**
-This is **NOT a configuration issue** - Claude Code CLI has a bug or limitation when run from within Cursor's terminal. It's simply not reading the project `.mcp.json` file during startup, even though all settings are correct.
+## Previous Session Summary (2026-03-06) - Batch Webinar 2025 Archive
 
-**Next actions:**
-1. ✅ Log findings to session log, debug log, and MEMORY.md
-2. ✅ Investigate conflict between Dex system and notebooklm-mcp-cli
-3. ⏳ Investigate fix approaches
-4. ⏳ Implement solution
+**Status:** COMPLETE
+
+- 23 Radar Log entries + 23 My View entries created for 2025 IC Webinar archive
+- /batch-process-webinars skill created
+- Next: run 2024 archive (already done in 2026-03-07 session)
 
 ---
 
-## Previous Focus
+## Earlier Session History
 
-**📚 NotebookLM MCP - CONFLICT IDENTIFIED! (15:50-16:00)**
-
-**🎯 ROOT CAUSE CONFIRMED:** Conflict between Dex system design and Claude Code CLI behavior
-
-**Investigation findings:**
-
-1. **Checked NotebookLM MCP documentation** (.claude/reference/notebooklm-mcp-guide.md):
-   - **Official installation for Claude Code CLI:** `claude mcp add --scope user notebooklm-mcp notebooklm-mcp`
-   - Uses `--scope user` → creates **user-level** MCP config
-   - NOT project-level configuration
-
-2. **Checked Dex system documentation** (06-Resources/Dex_System/):
-   - Dex creates **project-level `.mcp.json`** during installation
-   - All Dex MCPs (work, calendar, granola, etc.) configured in project `.mcp.json`
-   - Expects Claude Code CLI to read this file
-
-3. **Found the smoking gun in `~/.claude.json`:**
-   ```json
-   "C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP": {
-     "mcpServers": {},                  ← EMPTY!
-     "enabledMcpjsonServers": [],       ← EMPTY!
-   }
-   ```
-
-4. **But project `.claude/settings.local.json` has:**
-   ```json
-   {
-     "enableAllProjectMcpServers": true,
-     "enabledMcpjsonServers": ["work-mcp", "calendar-mcp", ...]  ← All 9 MCPs listed!
-   }
-   ```
-
-5. **User-level MCPs in `~/.claude.json` (lines 487-497):**
-   ```json
-   "mcpServers": {
-     "gdrive-sa": { ... }  ← This loads successfully!
-   }
-   ```
-
-**The conflict explained:**
-- **Dex system assumption:** Claude Code CLI reads project `.mcp.json`
-- **Actual behavior:** Claude Code CLI reads user-level `~/.claude.json` for project-specific config
-- **User-level config:** Empty MCP arrays for this project
-- **Project-level config:** All MCPs enabled, but being ignored
-- **Result:** Zero project MCPs load (Dex core MCPs AND NotebookLM both broken)
-
-**Why gdrive MCP works:**
-- Configured at **user-level** in `~/.claude.json` (outside project config)
-- Not a project MCP, so it loads fine
-
-**Key learning:**
-- ✅ **Always check official documentation first** - NotebookLM docs clearly state to use `claude mcp add --scope user`
-- ✅ **Understand config hierarchy** - User-level vs project-level, which takes precedence
-- ✅ **Check actual runtime config** - Not just what's in project files, but what Claude Code CLI actually reads
-
-**Impact:**
-- **ALL Dex core MCPs broken** (work, calendar, granola, career, dex-improvements, resume, update-checker, onboarding)
-- **NotebookLM MCP cannot be added** using current Dex setup
-- **Fundamental architecture mismatch** between Dex system and Claude Code CLI
-
-**Possible solutions to investigate:**
-1. Use `claude mcp add` to register project MCPs at user level
-2. Manually sync `~/.claude.json` with project MCP config
-3. Find command to import project `.mcp.json` into user config
-4. Change Dex architecture to use user-level MCP config instead
+See CEDRIC_MEMORY.md Section 11 and git history for full changelog prior to 2026-03-06.
 
 ---
 
-## Previous Focus
-
-**📚 NotebookLM MCP Setup - Final Fix + Anti-Circular Logging (15:15-15:21)**
-
-**✅ ACTUAL ROOT CAUSE FOUND:** The executable doesn't accept a "server" argument
-
-**Diagnostic-first approach worked:**
-1. ✅ Ran `nlm doctor` - All checks passed (auth working, 51 cookies, CSRF token)
-2. ✅ Tested executable manually - Found it rejects "server" argument
-3. ✅ Checked usage help - Confirmed no positional args needed (stdio is default)
-
-**Final fix applied:**
-- ✅ Removed incorrect "server" argument from `.mcp.json`:
-  ```json
-  "command": "C:\\Users\\pavey\\.local\\bin\\notebooklm-mcp.exe",
-  "args": []  ← Changed from ["server"]
-  ```
-- ✅ Tested manually - Server starts successfully with message:
-  ```
-  INFO Starting MCP server 'notebooklm' with transport 'stdio'
-  ```
-
-**✅ LOGGED TO MEMORY.MD (15:21):**
-- Complete config change timeline documented
-- Correct final configuration saved as reference
-- Next-session verification checklist added
-- This prevents going in circles with config changes
-
-**Complete timeline of config attempts:**
-1. Attempt 1 (~13:00): Changed `uvx` → direct path (kept "server" arg) ❌
-2. Attempt 2 (15:18): Removed "server" argument completely ✅
-
-**Next action:** Restart Claude Code CLI to load NotebookLM MCP with corrected config
-
-**Expected after restart:** NotebookLM MCP tools will now be available (list notebooks, read contents, search, create, etc.)
-
-**Next session protection:** MEMORY.md now has verification checklist to prevent repeating these same config changes
+_Session ended: 2026-03-08 11:25 (via SessionEnd hook)_
 
 ---
 
-## Previous Focus
+## Session Summary (2026-03-08 afternoon) - Status Review + NotebookLM MCP Confirmed
 
-**📚 NotebookLM MCP Setup - Diagnostic-First Approach (12:55-13:10)**
+**Status:** SHORT SESSION - status review only
+**Time:** ~16:00-16:20
+**Environment:** Claude Desktop (MCP confirmed via tool probe)
 
-**Key Learning:** Multiple restart cycles without diagnostics wasted 3+ hours. Created "Diagnostic-First Protocol" in MEMORY.md.
+### What Happened
 
-**What we did differently this time:**
+Mick requested a continuation from the earlier 2026-03-08 morning session.
+Cedric confirmed Claude Desktop environment (notebooklm-mcp, google-calendar, Vercel, Claude in Chrome all returned).
+NotebookLM MCP confirmed live - installed earlier today (nlm CLI v0.4.1, Google auth complete, Desktop MCP configured).
 
-1. **Ran diagnostics FIRST** (instead of blind restart):
-   ```bash
-   nlm doctor  # ✅ All checks passed - auth working, 51 cookies, CSRF token present
-   ```
+No active tasks completed - session was a status review. Mick took a short break.
 
-2. **Tested command manually** to verify correct args:
-   ```bash
-   uvx notebooklm-mcp server  # ✅ Works with UTF-8 environment variables
-   ```
+### Outstanding Items Confirmed Pending
 
-3. **Checked actual config** - Found `.mcp.json` already has CORRECT configuration:
-   ```json
-   "command": "uvx",
-   "args": ["notebooklm-mcp", "server"],  ← Correct!
-   "env": {
-     "PYTHONIOENCODING": "utf-8",
-     "PYTHONUTF8": "1"
-   }
-   ```
+- [ ] NotebookLM Claude Code CLI setup - `nlm setup add claude-code` had a problem - needs investigation
+- [ ] NotebookLM aliases - not yet created
+- [ ] NotebookLM planned notebooks not yet created: Inner Circle Webinars, Plaza Group Webinars, AI for Investing Webinars
+- [ ] radar_extractor.py --backfill --dry-run (carried from morning session)
+- [ ] Dual-write /week-plan-print skill to /mnt/skills/user/week-plan-print/
+- [ ] PAIDA orchestrator build session - still deferred
+- [ ] Check Oct + Nov 2024 IC Webinar PDFs manually
+- [ ] April 2025 IC Webinar - check manually for company slides
+- [ ] Run 2023 IC Webinar archive when PDFs available
 
-**Root cause of confusion:**
-- Previous fixes were to Cursor's config (`C:\Users\pavey\AppData\Roaming\Cursor\User\mcp.json`)
-- But user runs **Claude Code CLI**, which uses project `.mcp.json`
-- Project config was already correct - just needed restart to pick it up
+### Next Session Priorities
 
-**Pre-restart cleanup:**
-- ✅ Orphaned Chrome windows closed (3 instances from previous attempts)
-- ✅ All cleanup complete
-- ✅ Ready for restart
+1. Investigate NotebookLM Claude Code CLI issue
+2. Create 3 planned NotebookLM notebooks (Inner Circle, Plaza Group, AI for Investing)
+3. Run radar_extractor.py --backfill --dry-run then --backfill
+4. Dual-write /week-plan-print skill
 
-**Next action:** Restart Claude Code CLI to load NotebookLM MCP server.
-
-**Expected after restart:** NotebookLM MCP tools WILL be available (config verified working).
+_Session ended: 2026-03-08 ~16:20_
 
 ---
 
-## Previous Focus
-
-**📚 NotebookLM MCP - User-Level Config Fix (11:00-12:05)**
-
-**✅ THIRD ROOT CAUSE FOUND:** Outdated user-level MCP configuration taking precedence
-
-**Complete timeline:**
-1. ✅ First fix (12:00): Added `server` subcommand to project-level MCP config
-2. ✅ Restarted Cursor (11:56)
-3. ❌ MCP still not loading - tools not available
-4. ✅ Tested server manually - found UnicodeEncodeError crash
-5. ✅ Second fix (12:02): Added UTF-8 environment variables to project-level config
-6. ✅ Restarted Cursor (12:03)
-7. ❌ MCP tools STILL not loading after restart
-8. ✅ Third root cause (12:05): Found outdated user-level config at `~/.claude/.mcp.json`
-
-**The user-level config problem:**
-- User-level MCP config at `~/.claude/.mcp.json` had old NotebookLM configuration
-- Missing: `uvx` command, `server` argument, UTF-8 environment variables
-- User-level config takes precedence over project-level config
-- Even though project config was correct, outdated user config was being used
-
-**Fix applied (12:05):**
-- ✅ Updated `~/.claude/.mcp.json` with correct configuration:
-  ```json
-  {
-    "command": "uvx",
-    "args": ["notebooklm-mcp", "server"],
-    "env": {
-      "PYTHONIOENCODING": "utf-8",
-      "PYTHONUTF8": "1"
-    }
-  }
-  ```
-- ✅ Server tested manually - starts successfully with authentication
-
-**Next action:** Full Claude Code CLI restart (close and reopen Cursor) to load corrected user-level config.
-
-**Expected after restart:** NotebookLM MCP tools should now be available (list notebooks, read contents, search, create, etc.)
-
-**System improvement needed:** Hard-bake "always update session log before prompting for restart" into CLAUDE.md
-
----
-
-## Previous Focus
-
-**🔤 Global Abbreviations System Created (11:50-12:10)**
-
-Built a global abbreviations management system that works across all Claude projects and vaults.
-
-**What was created:**
-1. ✅ Global abbreviations file: `C:\Users\pavey\.claude\abbreviations.md`
-   - Contains: NBLM = NotebookLM
-   - Accessible from all projects and vaults
-2. ✅ Created `/abbreviations` skill
-   - Add, list, search abbreviations
-   - Protected from Dex updates (-custom suffix)
-   - Location: `.claude/skills/abbreviations-custom/`
-3. ✅ Hard-baked automatic checking into MEMORY.md
-   - Checks abbreviations.md automatically when unknown shorthand encountered
-   - Prompts user for meaning if not found
-   - Saves new abbreviations automatically
-   - No manual skill invocation needed
-
-**How it works:**
-- User uses abbreviation (e.g., "NBLM")
-- Claude checks abbreviations.md automatically
-- If found: Uses meaning, continues naturally
-- If not found: Asks user, saves it, resumes task
-
-**Triggered by:** Mick asked "list my notebooks in NBLM" - Claude didn't recognize NBLM
-
----
-
-**📚 NotebookLM MCP Re-Authentication (12:10-12:15)**
-
-Previous authentication expired. Re-authenticated using auto mode.
-
-**Re-auth completed:**
-1. ✅ Mick closed all Chrome browsers
-2. ✅ Ran `notebooklm-mcp-auth` (auto mode)
-   - Chrome launched with debugging enabled
-   - 24 cookies extracted
-   - CSRF token obtained
-   - Session ID: boq_labs-tailwind-frontend_20260212.13_p0
-3. ✅ Auth tokens cached to `C:\Users\pavey\.notebooklm-mcp\auth.json`
-4. ⏳ Tools not yet available (need Claude restart)
-
-**Available after restart:**
-- List NotebookLM notebooks
-- Read notebook contents
-- Search notebooks
-- Query sources
-- Create and manage notebooks
-- Add sources, generate study materials
-
-**Next:** Restart Claude Code to activate MCP server with new auth
-
-**Reference:** https://github.com/jacob-bd/notebooklm-mcp-cli
-
----
-
-## Previous Focus
-
-**🔒 API Security Hard-Baked into CLAUDE.md (2026-02-12 21:00-21:05)**
-
-After discussing YouTube MCP integration, Mick raised critical security concern: ensure ALL API keys are stored in .env (never in config files).
-
-**Changes made:**
-1. ✅ Added "Security & API Keys" section to CLAUDE.md
-   - Mandatory requirement: ALL secrets in .env file
-   - NEVER hardcode in configs (.mcp.json, docs, scripts)
-   - Reference via ${VAR_NAME} syntax
-   - Defense-in-depth approach
-   - Clear "stop immediately" instruction if hardcoded key found
-2. ✅ Created task ^task-20260212-001 for YouTube MCP integration
-   - Includes security requirements
-   - Step-by-step setup guide
-   - Reference to GitHub repo
-3. ✅ Ready to commit and push to GitHub
-
-**Security principle established:** This is sacrosanct - no exceptions for API keys, tokens, credentials.
-
----
-
-## Previous Focus
-
-**🎉 SILVER VIDEO PROJECT COMPLETE (20:23)**
-
-Mick completed the entire silver video project - from research to live on YouTube:
-
-✅ **Video editing** - Finished in full-day editing session (Thursday 2026-02-12)
-✅ **YouTube upload** - Uploaded and published to diy-investors.com channel
-✅ **Video live** - Now publicly available on YouTube
-✅ **Member notification** - Email sent to DIYinvestors.com members announcing publication
-
-**Published:** 4 days ahead of planned Sunday Feb 16 publish date
-
-**Complete timeline:**
-- 2026-02-09: Research (agent-driven)
-- 2026-02-09 to 2026-02-10: Script (v1.0 → v1.3)
-- 2026-02-10 (Tuesday): Filming
-- 2026-02-12 (Thursday): Full-day editing session
-- 2026-02-12 (Thursday 20:23 GMT): Published & member notification sent
-
-**Project status:** Updated to `complete` in PROJECT.md with full completion notes
-
-**Next:** Mick can add YouTube URL/ID when convenient
-
----
-
-**✅ System Improvement - Time-Based Greeting Fix (20:19-20:30)**
-
-Fixed the time-based greeting issue where Cedric said "Good morning" without checking actual time (it was 20:19 evening):
-
-**Changes made:**
-1. ✅ Updated CLAUDE.md Session Start Protocol (Step 2)
-   - Added mandatory time verification before greeting
-   - Includes Python code snippet for UTC → London time
-   - Lists greeting rules (morning/afternoon/evening)
-2. ✅ Updated CHANGELOG.md [Unreleased]
-   - Documented the fix for users
-   - Explains what was wrong and how it's fixed
-3. ✅ Updated session log (this file)
-
-**Result:** From next session onwards, time verification is mandatory before greeting - part of the "REQUIRED at every session start - no exceptions" protocol.
-
-**Educational context:** Mick asked about the mechanics of hard-baking enforcement into CLAUDE.md - learned about using mandatory checkpoints (Session Start Protocol) vs descriptive instructions (USER_EXTENSIONS).
-
----
-
-## Previous Focus
-
-**🎬 Silver Video Production - Thursday (Main Editing Day)**
-
-Full day session - Deep editing flow:
-- First-pass edit: pacing and clarity
-- Add major graphics from visual concepts
-- Create rough thumbnail concepts
-- Publishing target: Sunday Feb 16
-
-**⚡ Dex Improvements Captured (for later):**
-Three quick-win improvements identified via `/dex-improve` capability audit:
-1. ✅ Enable SessionStart hook (5 min) - Auto-display session log at startup
-2. ✅ Add daily review routine (10 min setup) - Systematic learning capture
-3. ✅ Connect calendar integration (15 min) - Automatic meeting intelligence
-
-**Tasks created:** ^task-20260211-001, ^task-20260211-002, ^task-20260211-003
-**Next session reminder:** "Ready to set up those three Dex improvements? They'll take 30 min total."
-
-Mick has systematically loaded nine comprehensive development skills, covering complete lifecycles for both MCPs and Skills with dual approaches (technical vs simplified) for each:
-
-**Development Skills Loaded:**
-1. **`/anthropic-mcp-builder`** (17:56) - Backend integration via MCP servers
-   - Four-phase workflow: Research → Implementation → Review → Evaluation
-   - TypeScript (recommended) and Python support
-   - Create tools for LLM-service integration
-
-2. **`/anthropic-skill-creator`** (17:58) - Workflow packaging as skills
-   - Six-step process: Understand → Plan → Initialize → Edit → Package → Iterate
-   - Progressive disclosure design (metadata → SKILL.md → bundled resources)
-   - Scripts, references, and assets organization
-
-3. **`/anthropic-web-artifacts-builder`** (18:00) - Frontend development
-   - React 18 + TypeScript + Vite + Tailwind CSS + shadcn/ui
-   - 40+ pre-installed shadcn/ui components
-   - Bundle to single HTML file for claude.ai artifacts
-
-4. **`/anthropic-webapp-testing`** (18:01) - Testing & QA automation
-   - Python Playwright for local web app testing
-   - Server lifecycle management (with_server.py)
-   - Reconnaissance-then-action pattern for dynamic webapps
-
-5. **`/dex-update`** (18:02) - Automatic Dex system updates
-   - Git-based update workflow with conflict resolution
-   - Protects user data and customizations (USER_EXTENSIONS, custom-* MCPs/skills)
-   - Non-technical friendly (2-5 minutes, no command line knowledge)
-   - Example of production-grade skill with scripts and progressive disclosure
-
-6. **`/integrate-mcp`** (18:10) - Integrate pre-built MCP servers
-   - Connect tools from Smithery.ai marketplace (100+ pre-built MCPs)
-   - Guided setup for npm, pip, GitHub, and Docker-based MCPs
-   - Automatic config generation and testing
-   - Complements `/anthropic-mcp-builder` (build custom vs integrate existing)
-
-7. **`/create-mcp`** (18:12) - Build custom MCPs (guided wizard)
-   - Non-technical wizard for creating MCP servers from scratch
-   - 5-phase process: Understand → Design → Implement → Integrate → Verify
-   - Complements `/anthropic-mcp-builder` (wizard vs technical guide)
-   - Handles auth setup, code generation, and documentation
-
-8. **`/dex-add-mcp`** (18:14) - Add MCPs safely with proper scoping
-   - User scope by default (survives Dex updates, applies to all projects)
-   - Project scope option (shared with team, stored in .mcp.json)
-   - Safe way to add MCPs without manual config editing
-   - Completes the MCP lifecycle (build → integrate → add)
-
-9. **`/create-skill`** (18:16) - Create custom skills (simplified)
-   - Quick command to create protected custom skills
-   - Automatically adds `-custom` suffix (survives Dex updates)
-   - Includes date verification checklist for date-based skills
-   - Complements `/anthropic-skill-creator` (simple vs technical guide)
-
-**Actions completed (18:03-18:07):**
-- ✅ Documented skill exploration session in session log
-- ✅ Prepared for GitHub commit
-- ✅ Created commit: "Document development toolkit exploration session"
-- ✅ Pushed to GitHub (792a2ee..1a40d45)
-
-**Background context:** Silver video editing in progress (Descript), publish target Thursday Feb 12.
-
----
-
-## Recent Actions (2026-02-11 08:00-08:05)
-
-**✅ Daily Plan Created - Wednesday Feb 11 (Updated with actual availability)**
-
-Generated comprehensive daily plan for Wednesday with full context:
-- **Week progress:** Day 3 of 5, Priority 1 (Silver Video) in progress
-- **Filming status:** Complete ✅ (recorded Tuesday with v1.3 script)
-- **Editing status:** Not started yet ⚠️
-- **Today's availability:** Morning only (08:00-12:00) — Out 12:00-17:00 for social visit
-- **Today's focus:** Upload Dex context + review footage + plan editing workflow
-- **Main editing day:** Thursday (full day available)
-- **Publishing timeline:** Sunday Feb 16 (Thu + Sat for editing)
-- **Fill-in work:** Three Pillars Newsletter (Priority 2), DEX system (Priority 3)
-
-**Key insight:** Wednesday is half-day (morning only), so treating it as prep day. Thursday becomes main editing day with full focus time. Still have Thu + Sat (2 full days) before Sunday publish.
-
-**Plan file:** `07-Archives/Plans/2026-02-11.md`
-
----
-
-## Recent Actions (2026-02-10 17:56-18:16)
-
-**📚 Complete Development Ecosystem with Dual Approaches**
-
-**Purpose:** Systematic exploration of Dex development capabilities, revealing dual approaches (technical vs simplified) for both MCPs and Skills.
-
-**Skills loaded - organized by pattern:**
-
-**MCP Lifecycle (Dual Creation Approaches + Integration + Installation):**
-1. **MCP Builder** (17:56) - Technical guide for custom MCP development
-2. **Create MCP** (18:12) - Guided wizard for custom MCP creation
-3. **Integrate MCP** (18:10) - Connect pre-built MCPs from Smithery.ai
-4. **Dex Add MCP** (18:14) - Safely add MCPs with proper scoping
-
-**Skill Lifecycle (Dual Creation Approaches):**
-5. **Skill Creator** (17:58) - Technical guide for comprehensive skill creation
-6. **Create Skill** (18:16) - Simple command for protected custom skills
-
-**Frontend & Testing:**
-7. **Web Artifacts Builder** (18:00) - Frontend/UI with React + TypeScript
-8. **Web App Testing** (18:01) - QA automation with Playwright
-
-**System Maintenance:**
-9. **Dex Update** (18:02) - System updates (excellent skill reference)
-
-**Key insights - Parallel Dual Approaches:**
-- **MCPs:** Technical (`/anthropic-mcp-builder`) vs Wizard (`/create-mcp`)
-- **Skills:** Technical (`/anthropic-skill-creator`) vs Simple (`/create-skill`)
-- **Pattern:** Choose based on skill level and need for control
-- **Protection:** Both approaches create update-safe implementations
-
-**Git operations:**
-- ✅ First commit (18:03-18:07): "Document development toolkit exploration session" (792a2ee..1a40d45)
-- ✅ Second commit (18:17): "Document complete development ecosystem with dual approaches" (1a40d45..c41025f)
-- ✅ Both commits pushed to GitHub successfully
-
-**Session wrap-up (18:20):**
-- Marked exploration session as complete
-- All skills documented and catalogued
-- Dual approach pattern identified and documented
-- Ready for future development work
-
-**Session outcome:**
-- **9 comprehensive development skills explored**
-- **Complete MCP lifecycle** understood (build → integrate → add)
-- **Complete Skill lifecycle** understood (technical vs simple creation)
-- **Dual approach pattern** discovered for flexible development
-- **All documentation committed** to GitHub
-
-**Next session:** Apply this knowledge to build MCPs, Skills, or React UIs as needed.
-
-## Recent Actions (2026-02-10 16:15-16:30)
-
-**✅ Permanent Date Verification Fix**
-
-After incorrectly saying "Wednesday (today)" when it was Tuesday Feb 10, implemented permanent fix:
-
-1. **Updated CLAUDE.md (line 619):**
-   - Changed "Before creating any date-based file" → "Before making ANY date reference"
-   - Added "Conversational date references" to "Applies to:" section
-   - Made it explicit: date verification applies to conversation AND file operations
-
-2. **Created Session Learning:**
-   - `System/Session_Learnings/2026-02-10.md`
-   - Documents the issue, root cause, and solution
-
-3. **Updated MEMORY.md:**
-   - Added "Date & Time References" section
-   - Includes code snippet for date verification
-   - Lists what never to assume
-   - Will persist across all future conversations
-
-**Result:** Date verification now covers ALL date mentions, not just file creation. Should prevent future date confusion in conversation.
-
-## Recent Actions (2026-02-10 16:00-16:15)
-
-**✅ System Rollback - Back to Clean State**
-
-After 3+ hours of MCP troubleshooting (Feb 10, 13:00-16:00), rolled back to last working commit (739fcc6 - Feb 9, 21:00).
-
-**What was restored:**
-- ✅ Clean working tree
-- ✅ All content work preserved (silver video, folder consolidation)
-- ✅ Calendar credentials intact (Google authorization working)
-- ❌ MCP troubleshooting changes removed (good riddance)
-
-**Decision:** Pause MCP setup indefinitely. Core Dex functionality works fine without MCPs. Focus on actual work (silver video, writing) instead of technical rabbit holes.
-
-## Active Work
-
-### Silver Video Project - Scripting Phase Complete
-
-**✅ Script Writing (Agent 1 - Completed 10:45)**
-- Created comprehensive 15-minute script (2,347 words)
-- File: `05-Areas/YouTube_System/diy-investors.com/YT-Longform/2026-02-09 - Physical vs Paper Silver Disconnect/scripts/v1-draft.md`
-- Integrated Mick's voice DNA (direct, educational, data-driven, DYOR philosophy)
-- Incorporated all key research findings:
-  - 820M oz cumulative deficit (2021-2025)
-  - 33.45M oz withdrawn in 7 days (January 2026)
-  - 75% collapse in COMEX registered inventory
-  - 8.7:1 leverage ratio
-  - 18-19% premiums on American Silver Eagles
-  - January 29 ATH ($121.67) and 31-36% crash
-- Structure: Hook → Physical Shortage → COMEX Mechanics → The Disconnect → Investment Implications → Conclusion
-- 20 visual placeholders marked throughout
-
-**✅ Visual Concepts (Agent 2 - Completed 10:50)**
-- Created 26 detailed visual concept descriptions
-- File: `05-Areas/YouTube_System/diy-investors.com/YT-Longform/2026-02-09 - Physical vs Paper Silver Disconnect/assets/visual-concepts.md`
-- Each visual includes:
-  - Type classification (chart/graphic/B-roll/animation)
-  - Detailed description and data points
-  - Style notes (colors, layout, emphasis)
-  - Production notes (tools, sources, time estimates)
-  - Display duration recommendations
-- Additional deliverables:
-  - 3 thumbnail concept variants
-  - Opening title card concept
-  - YouTube chapter markers
-  - End screen layout
-- Production timeline estimate: 50-65 hours total
-
-**✅ Project Status Updates**
-- Updated PROJECT.md status from "research" to "scripting"
-- Marked script and visual concepts as complete
-- Next steps identified: Review script, create graphics, film
-
-## Recent Context
-
-### What User Requested
-1. Create draft script for ~15 minute video based on research
-2. Include visual ideas/placeholders in script
-3. Use sub-agents:
-   - Agent 1: Write draft script
-   - Agent 2: Create visual concepts for placeholders
-4. Update project status and management markers
-
-### Deliverables Provided
-1. **v1 Script** (2,347 words, 15 min)
-   - Matches target length
-   - Incorporates voice DNA
-   - Data-driven, educational tone
-   - Strong hook (January 2026 crash)
-   - Clear structure with timestamps
-   - 20 visual placeholders
-
-2. **Visual Concepts Document** (26 visuals)
-   - Production-ready specifications
-   - All numbers verified against research
-   - Tool recommendations
-   - Time estimates
-   - Thumbnail concepts
-   - Chapter markers
-
-3. **Project Status Updates**
-   - PROJECT.md updated
-   - Next steps defined
-   - Ready for Mick's review
-
-### Agent Information
-- **Script Agent ID:** a52b42b (can resume if needed)
-- **Visual Agent ID:** acf6615 (can resume if needed)
-
-## Recent Actions (11:00-11:10)
-
-**✅ Script Delivery & File Organization**
-- Copied silver video script to Writing_System/1-Drafts for review
-- Identified duplicate folders issue: `drafts/` vs `1-Drafts/` in Writing_System/knowledge
-- Created task ^task-20260209-001 to review and consolidate folder structure
-- Updated MEMORY.md with file organization learnings
-- Ready for GitHub commit
-
-## Recent Actions (11:25-12:57)
-
-**✅ Writing System Folder Consolidation Complete**
-- Created detailed consolidation plan (approved by Mick)
-- Created new folder structure: `tools/pdf-generation/`
-- Moved 3 SP500 reports to `knowledge/Archive/`
-- Moved 3 Python utility scripts to `tools/pdf-generation/`
-- Removed duplicate lowercase `drafts/` folder
-- Verified consolidation successful - only `1-Drafts/` remains
-- Marked task ^task-20260209-001 as completed
-
-## Resumption Notes
-
-**Current State (13:18 - Pausing for usage limit reset):**
-- ✅ NotebookLM MCP config updated with direct executable path
-- ✅ Official guides saved to `.claude/reference/` for future troubleshooting
-- ⏳ **NEXT ACTION WHEN RESUMING:** Restart Claude Code CLI to test NotebookLM MCP with new config
-- 📍 Session paused at 95% usage limit
-- 🕒 Resumes at 3pm GMT (15:00)
-
-**What changed this session:**
-1. Saved official NotebookLM guides as reference docs:
-   - `.claude/reference/notebooklm-mcp-guide.md`
-   - `.claude/reference/notebooklm-cli-guide.md`
-2. Fixed `.mcp.json` config - changed from `uvx` to direct path:
-   - Old: `"command": "uvx", "args": ["notebooklm-mcp", "server"]`
-   - New: `"command": "C:\\Users\\pavey\\.local\\bin\\notebooklm-mcp.exe", "args": ["server"]`
-3. Kept UTF-8 environment variables (prevents encoding errors)
-
-**Expected after restart:** NotebookLM MCP tools should load successfully with the corrected config
-
----
-
-**Previous State (13:00 - Pausing for usage limit reset):**
-- Silver video project: Script v1.2 being reviewed by Mick
-- Writing System folder consolidation: ✅ COMPLETE
-  - Duplicate drafts folders resolved
-  - Task ^task-20260209-001 completed
-  - New tools/ folder created for utilities
-- Session paused at 95% usage limit
-- Resumes at 3pm GMT
-
-**Next Actions When Resuming:**
-- Get feedback on silver video script v1.2
-- Determine next steps for video production
-- Task backlog: Clean (all P2 tasks completed)
-
----
-
-## Previous Session Work (2026-02-08 16:38-16:58)
-
-**✅ COMPLETED: YouTube Content Management System Implementation**
-
-Fully implemented a project-based YouTube content system for managing video creation across both DIY-Investors channels (.com and .ai).
-
-**✅ COMPLETED: Obsidian Integration Setup**
-
-Set up Obsidian sync daemon for bidirectional task synchronization between Obsidian and Dex. Configured to run automatically at session start via session-start hook.
-
-**✅ COMPLETED: Fixed Windows Startup Hook Error**
-
-Hook temporarily disabled - Claude Code starts successfully. Need to debug why hook was hanging (likely Obsidian daemon check or PowerShell command parsing).
-
----
+## Session: 2026-03-15 (Sunday afternoon)
+
+_Environment: Claude Desktop (Filesystem MCP confirmed)_
+_Session focus: AI-4-Investing webinar prep (Wednesday 18 March)_
+
+### What Happened
+
+1. **New NotebookLM notebook created** for Wednesday webinar planning.
+   - Title: DIY-4-Investing_webinar_updated:2026-03-15
+   - Notebook ID: 6600445b-c9ba-4023-bd6b-e558fff90e89
+   - URL: https://notebooklm.google.com/notebook/6600445b-c9ba-4023-bd6b-e558fff90e89
+
+2. **Demo concept developed** for Wednesday webinar - 3-phase structure:
+   - Phase 1: Free Claude (claude.ai) - manual portfolio paste + RNS news check + verdicts
+   - Phase 2: Free Claude + Google Sheet link - pull holdings from shared sheet
+   - Phase 3: Claude API + Python app - automated 07:30 daily run with GUI
+
+3. **Demo prompts written** - 4 polished prompts ready for Phase 1 live demo:
+   - Set context, morning check, verdict request, summary brief
+
+4. **Python app built and delivered** - lse_portfolio_monitor.py with:
+   - Light theme GUI (warm off-white, green Run Now button)
+   - Colour-coded verdict output (HOLD green / WATCH amber / REVIEW red)
+   - Google Sheet integration for portfolio source
+   - Built-in scheduler (07:30 daily) + Run Now button for on-demand use
+   - Headless mode for Windows Task Scheduler
+   - Auto-saves timestamped reports to /reports/ folder
+   - setup_scheduler.py (one-time Windows Task Scheduler registration)
+   - README.md with full setup instructions
+   - All three files zipped as lse_portfolio_monitor.zip and downloaded
+
+5. **Light theme rule confirmed** - now permanent in memory:
+   Always use light themes for all UI/visual output unless Mick says otherwise.
+   Reason: print-friendliness for slides and handouts.
+
+6. **UI mockup created** inline in claude.ai showing the app window design.
+
+### Outstanding from This Session
+
+- [ ] Mick to test lse_portfolio_monitor.zip tomorrow (Monday 16 March)
+- [ ] Add Anthropic API key to the script before demo
+- [ ] Optionally set up Google Sheet with demo portfolio holdings
+- [ ] Wednesday webinar (18 March) - AI-4-Investing: Claude Code for Beginners
+  - NotebookLM notebook 6600445b ready for slide/demo prep
+  - Demo flow: Free Claude (Phase 1) -> Google Sheet (Phase 2) -> Python app (Phase 3)
+
+### Carried Forward (from previous sessions)
+
+- [ ] NotebookLM Claude Code CLI setup - nlm setup add claude-code - needs investigation
+- [ ] Create 3 planned NLM notebooks: Inner Circle Webinars, Plaza Group Webinars, AI for Investing Webinars
+- [ ] radar_extractor.py --backfill --dry-run then --backfill
+- [ ] Dual-write /week-plan-print skill to /mnt/skills/user/week-plan-print/
+- [ ] Micks-View Phase 1 build - PRD v2.2 approved, start new thread to begin
+- [ ] /radar skill build - 5 outstanding items in Section 10 of planning doc need sign-off
+- [ ] Check Oct + Nov 2024 IC Webinar PDFs manually
+- [ ] April 2025 IC Webinar - check manually for company slides
+
+### Next Session Priorities (Monday 16 March)
+
+1. Test lse_portfolio_monitor.zip - confirm it runs correctly
+2. Wednesday webinar final prep - slides and demo walkthrough
+3. NotebookLM notebook 6600445b - load any additional sources needed
+4. Pick up any carried items above as time allows
+
+_Session ended: 2026-03-15 ~17:00_
