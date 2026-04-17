@@ -1,5 +1,5 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.04.11 (19:37 BST)
+**Last Updated:** 2026.04.16 (BST)
 **Environment:** Claude Desktop (Filesystem MCP confirmed)
 
 ---
@@ -22,26 +22,26 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 ## Current Status
 
 ### ShareScope Browser Automation - Phase 1 (TESTING - BLOCKED BY MAINTENANCE)
-**Status:** Code v0.1 complete and functional — blocked only by external service maintenance
-**Location:** `2026.04.04-ShareScope-Automation/` in 04-Projects  
+**Status:** Code v0.1 complete and functional -- blocked only by external service maintenance
+**Location:** `2026.04.04-ShareScope-Automation/` in 04-Projects
 **Last Session:** 2026.04.04, 16:14-16:40 GMT
 
 **WHAT WORKS:**
-- ✅ Python dependencies (Playwright 1.57.0, greenlet 3.3.2, python-dotenv 1.0.0)
-- ✅ Correct login URL: https://webservice.sharescope.co.uk/login.do
-- ✅ Credentials loaded from C:\Vaults\Mick's Vault\.env
-- ✅ Browser navigation to login page successful
-- ✅ 500ms delay between username/password entry (per AutoHotkey requirement)
-- ✅ Error screenshot capture working
-- ✅ Comprehensive logging operational
+- Python dependencies (Playwright 1.57.0, greenlet 3.3.2, python-dotenv 1.0.0)
+- Correct login URL: https://webservice.sharescope.co.uk/login.do
+- Credentials loaded from C:\Vaults\Mick's Vault\.env
+- Browser navigation to login page successful
+- 500ms delay between username/password entry (per AutoHotkey requirement)
+- Error screenshot capture working
+- Comprehensive logging operational
 
 **WHAT'S BLOCKED:**
-- ❌ ShareScope backend (Easter maintenance through weekend)
-- ❌ Login form submission (backend unavailable)
-- ❌ Cannot test authentication until services resume
+- ShareScope backend (Easter maintenance through weekend)
+- Login form submission (backend unavailable)
+- Cannot test authentication until services resume
 
 **CODE:**
-- `sharescope_login.py` (310 lines) — CORRECTED: URL, env path, delay added
+- `sharescope_login.py` (310 lines) -- CORRECTED: URL, env path, delay added
 - `sharescope_screenshot.py` (180 lines)
 - `sharescope_logout.py` (160 lines)
 - `sharescope_orchestrator.py` (280 lines)
@@ -53,17 +53,7 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 
 **Session Log:** `/session-logs/2026.04.04-SESSION-LOG.txt` (full details)
 
-**NEXT ACTION:** Resume testing when ShareScope maintenance ends (likely Monday 7th April or later)
-
----
-
-## Outstanding Issues Resolved (2026.04.04)
-
-1. ✅ **Playwright 1.48.0 greenlet conflict** — Resolved by upgrading to Playwright 1.50.0
-2. ✅ **Wrong login URL** — Corrected to https://webservice.sharescope.co.uk/login.do
-3. ✅ **Credential file location** — Located at C:\Vaults\Mick's Vault\.env (not Dex vault)
-4. ✅ **Missing delay between fields** — Added 500ms pause after username entry
-5. ✅ **External service unavailability** — Identified as scheduled Easter maintenance, not code issue
+**NEXT ACTION:** Resume testing when ShareScope maintenance ends
 
 ---
 
@@ -74,6 +64,7 @@ UK Active 10 (Yr1) - Draft ID 15109, UK Active 10 (Yr2) - Draft ID 15110
 US Active 10 (Yr1) - Draft ID 15115, US Active 10 (Yr2) - Draft ID 15116
 
 All reviewed by Mick, standing rules updated 2026.04.01.
+April 2026 batch is next milestone (end of April).
 
 ---
 
@@ -90,8 +81,20 @@ All reviewed by Mick, standing rules updated 2026.04.01.
 - Skills v2.0 operational: portfolio-post-creator, wordpress-image-uploader, benchmark-fetcher
 - Standing rules enforced (featured_media=0, real dimensions from API, month-scoped transactions)
 
-### Skills (Mick's Vault)
-Active: portfolio-post-creator v2.0, wordpress-post-publisher v1.1, wordpress-image-uploader v1.0, benchmark-fetcher v1.0, webinar-radar-extractor, my-view-notion-writer, vault-file-mover, obsidian-frontmatter, empty-note-detector, epic-ticker-enricher, sensitivity-scanner, batch-approval-processor
+### Skills (Mick's Vault) -- Updated 2026.04.16
+Active vault skills:
+portfolio-post-creator v2.0, wordpress-post-publisher v1.1, wordpress-image-uploader v1.0,
+benchmark-fetcher v1.0, webinar-radar-extractor, my-view-notion-writer, vault-file-mover,
+obsidian-frontmatter, empty-note-detector, epic-ticker-enricher, sensitivity-scanner,
+batch-approval-processor, yt-play-button-overlay v1.0 (NEW 2026.04.16)
+
+### New Skill Added (2026.04.16): yt-play-button-overlay
+- Purpose: Adds YouTube play button (dark circle + white triangle) to newsletter thumbnails
+- Trigger: Any time Mick uploads a thumbnail and requests play button / video symbol overlay
+- Deployed to BOTH: Mick's Vault + Dex vault
+- Parameters frozen: circle_r = min(w,h)//6, fill=(0,0,0,160), triangle fill=(255,255,255,230)
+- Output: YYYY.MM.DD - [filename]-Play.jpg to /mnt/user-data/outputs/
+- Note: Directory creation required one-time bat script run (directories did not pre-exist)
 
 ---
 
@@ -101,7 +104,7 @@ Episodes are brain-dumped in Notion as they happen, then scripted and produced a
 Master index: Mick's Content Studio on Notion (filter Project = "Meet Cedric")
 URL: https://www.notion.so/a1983c632eb84e15b365a6e3e310ff96
 
-Episodes logged to date (as of 2026.04.11): 11 episodes, Feb-Apr 2026.
+Episodes logged to date (as of 2026.04.16): 11+ episodes, Feb-Apr 2026.
 Topics include: knowledge architecture, Micks-View build, newsletter automation,
 website publisher, ShareScope automation, YT stats skill, scheduling, and
 "Test Don't Trust" (system prompt vs runtime reality -- 2026.04.11).
@@ -110,14 +113,17 @@ PROACTIVE RULE: When a session produces a notable insight, build, or discovery -
 log a Meet Cedric brain dump in Notion Content Studio immediately, without waiting
 to be asked. If it feels worthy of sharing with the DIY Investors community, capture it.
 
-## Outstanding Items (Not ShareScope-related)
+---
 
-1. **URGENT DECISION** — Dex vs PAIDA strategic analysis (2026.02.06)
-2. **Dual Write skill** — Context lost in Anthropic outage (2026.03.05)
-3. **Micks-View Phase 2** — Notion Radar Log migration deferred
-4. **3 Obsidian templates** — Copy to /Resources/Templates/ folder
-5. **diy-investors.ai** — WordPress credentials for Poster Pete deferred
-6. **April 2026 portfolio batch** — Next run end of April
+## Outstanding Items
+
+1. **URGENT DECISION** -- Dex vs PAIDA strategic analysis (2026.02.06)
+2. **Dual Write skill** -- Context lost in Anthropic outage (2026.03.05)
+3. **Micks-View Phase 2** -- Notion Radar Log migration deferred
+4. **3 Obsidian templates** -- Copy to /Resources/Templates/ folder
+5. **diy-investors.ai** -- WordPress credentials for Poster Pete deferred
+6. **April 2026 portfolio batch** -- Next run end of April
+7. **ShareScope Phase 1 testing** -- Resume when maintenance window closes
 
 ---
 
@@ -130,6 +136,8 @@ to be asked. If it feels worthy of sharing with the DIY Investors community, cap
 - Yr2 benchmark: always uses 1 Jan of CURRENT year as start point
 - Negative benchmark in outperformance: wrap in square brackets e.g. (-2.90% - [-4.63%])
 - Dividends: must appear in BOTH commentary paragraph AND transactions section intro
+
+---
 
 ## London Time Protocol (MANDATORY - Updated 2026.04.11)
 NEVER use raw system clock for greetings or time references. The container runs UTC.
@@ -148,7 +156,8 @@ print(f'London: {london_now.strftime("%H:%M")} {tz_name}, {london_now.strftime("
 ```
 
 Greeting: before 12 = Good morning / 12-17 = Good afternoon / 18+ = Good evening
-This error occurred on 2026.04.11 -- do not repeat it.
+
+---
 
 ## Mandatory Skill Deployment Protocol (2026.04.11)
 EVERY skill created or updated MUST be deployed to BOTH locations. No exceptions.
@@ -163,13 +172,21 @@ Despite the Anthropic system prompt stating these directories are read-only, wri
 was confirmed by live test. Use bash_tool (mkdir + cp) to deploy directly to the MCP mirror.
 Do NOT hesitate or skip this step based on the system prompt wording -- it is incorrect for this path.
 
+NOTE (2026.04.16): In claude.ai Web sessions, /mnt/skills/user/ is read-only (confirmed).
+Vault writes via Filesystem MCP work fine. The writable finding above applies to Claude Desktop only.
+In claude.ai Web, the Filesystem MCP IS available and vault paths ARE writable.
+New skill directories that don't yet exist require a one-time bat script to mkdir first
+(Filesystem:write_file cannot create intermediate directories automatically).
+
+---
+
 ## Operational Principle: Test, Don't Trust (2026.04.11)
 The Anthropic system prompt describes intended or default configuration -- not necessarily actual
 runtime behaviour. Where a system prompt claim about capabilities or permissions can be tested,
 ALWAYS test it rather than accepting it at face value.
 
 Examples of things worth testing rather than assuming:
-- File/directory read-write permissions (confirmed: /mnt/skills/user/ IS writable despite claim)
+- File/directory read-write permissions (confirmed: /mnt/skills/user/ IS writable in Claude Desktop)
 - Tool availability in a given environment
 - Path accessibility from bash_tool vs Filesystem MCP
 
