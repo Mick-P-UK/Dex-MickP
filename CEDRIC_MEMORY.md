@@ -1,5 +1,5 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.04.16 (BST)
+**Last Updated:** 2026.04.19 20:57 BST
 **Environment:** Claude Desktop (Filesystem MCP confirmed)
 
 ---
@@ -21,128 +21,186 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 
 ## Current Status
 
-### ShareScope Browser Automation - Phase 1 (TESTING - BLOCKED BY MAINTENANCE)
+### NotebookLM Skill Suite - LIVE (2026.04.19)
+**Status:** All four skills built, dual-written, and fully tested. Ready for production.
+**Session Log:** C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.19 - NotebookLM Skill Suite Session Log.md
+
+**Four skills LIVE and tested:**
+- SKILL 1: notebooklm-notebook-setup -- TESTED PASSED
+- SKILL 2: notebooklm-add-content -- TESTED PASSED
+- SKILL 3: notebooklm-chat -- TESTED PASSED
+- SKILL 4: notebooklm-studio-output -- TESTED PASSED (incl. mind map + Google Docs export)
+
+**Test notebook (can be deleted):**
+- Test Notebook - NotebookLM Skill Validation_Updated:2026.04.19
+- ID: ee2a7ca3-b361-4b12-9fc1-339d91387f8a
+
+**First live notebook:**
+- PROPPS - Bank of England, new bail-in provisions (April 2026)_Updated:2026.04.19
+- ID: 437df00b-3240-48b4-9904-240021954810
+- URL: https://notebooklm.google.com/notebook/437df00b-3240-48b4-9904-240021954810
+- 8 sources + index. Studio artifacts: Briefing Doc + Mind Map.
+- Google Docs export: https://docs.google.com/document/d/1tt0SUwHWRF7nNBJ037c7oXJ98aynyy7M4RKNDGPtz8Y
+- ACTION NEEDED: Delete old (untimstamped) index source copy in NotebookLM UI
+
+---
+
+## NotebookLM Workflow Conventions (FINAL - 2026.04.19)
+
+### Notebook Title Convention
+- NO date prefix on notebook titles -- ever
+- On creation:         [Title of Notebook]
+- After sources added: [Title of Notebook]_Updated:YYYY.MM.DD
+- _Updated: date uses DOTS as separators (not hyphens)
+- Alphabetical sorting groups similar notebooks together by topic
+
+### Source Title Convention
+- All sources prefixed: YYYY.MM.DD - [Descriptive Title]
+- Date = date of original article/document (NOT date added)
+
+### Index Title Convention (UPDATED during testing)
+- Format: Index_Updated:YYYY.MM.DD - HH.MM
+- HH.MM = London time using DOTS (not colons) -- consistent with date format
+- Example: Index_Updated:2026.04.19 - 20.50
+- CRITICAL: Including time prevents ambiguity when old and new index versions coexist
+- Always delete the EARLIER-timestamped copy; keep the LATER one
+
+### Index Content Format
+Header:
+  Index to Notebook: [Notebook Title without _Updated suffix]
+  Notebook Created:  DD Month YYYY  (FIXED -- never changes)
+  Last Updated:      DD Month YYYY  (changes each revision)
+  ============================================================
+
+Entry format:
+  **SOURCE N Title: [name]**  (bold)
+  Type:            [source type]
+  Date of Article: DD Month YYYY
+  Date Added:      DD Month YYYY
+  Contents:        [1-3 sentence description]
+  ------------------------------------------------------------
+
+### Index Positioning Strategy (Option B -- confirmed working)
+- Create PLACEHOLDER index source immediately after notebook creation
+- Claims TOP SLOT in sources panel (sources ordered chronologically)
+- Populate with full content after all other sources loaded
+- Placeholder + live copy both have same title but different timestamps
+- Inform Mick to delete placeholder (earlier timestamp) from NotebookLM UI
+
+### Dual Index Approach (confirmed working)
+- Studio note (right panel): human-readable, NOT queryable by NotebookLM AI
+- Source copy (left panel): queryable by AI, usable in studio outputs
+- Both maintained in sync on every update
+- "Convert note to source" is UI-only; no API equivalent -- always add separately
+- Index source was successfully cited by NotebookLM AI in Test 1 (confirmed working)
+
+---
+
+## NotebookLM MCP Technical Notes (FINAL - 2026.04.19)
+
+### Authentication
+- nlm login required periodically -- NOT just on upgrades
+- Tokens expire between Claude Desktop sessions
+- Workflow: run nlm login in terminal -> call notebooklm-mcp:refresh_auth -> retry
+- OS error 32 on upgrade: close Claude Desktop, kill in Task Manager, upgrade, restart
+
+### Artifact Types Confirmed Working
+- report (Briefing Doc): polls studio_status until complete (~40 seconds)
+- mind_map: returns immediately with JSON structure (no polling needed)
+- Both can be confirmed via studio_status
+- Briefing Doc exportable to Google Docs via export_artifact (confirmed)
+- Mind map NOT exportable to Google Docs
+
+### Source Operations Confirmed
+- source_add url: works (confirmed with BoE, Reuters, SEC sources)
+- source_add text: works (confirmed with Cedric research notes)
+- source_rename: works
+- notebook_rename: works
+- note create/update/delete: all work
+- .docx upload via source_type=file: FAILS -- extract text with python-docx instead
+- Sources ordered chronologically only; no reordering via API or UI
+
+### Query Results
+- notebook_query draws from ALL sources including index source copy
+- Index source was cited as a reference in Test 1 query (source 12)
+- This confirms the dual index approach works as designed
+- Timeout: set to 90 seconds for reliable results
+
+---
+
+## ShareScope Browser Automation - Phase 1 (TESTING - BLOCKED BY MAINTENANCE)
 **Status:** Code v0.1 complete and functional -- blocked only by external service maintenance
-**Location:** `2026.04.04-ShareScope-Automation/` in 04-Projects
-**Last Session:** 2026.04.04, 16:14-16:40 GMT
-
-**WHAT WORKS:**
-- Python dependencies (Playwright 1.57.0, greenlet 3.3.2, python-dotenv 1.0.0)
-- Correct login URL: https://webservice.sharescope.co.uk/login.do
-- Credentials loaded from C:\Vaults\Mick's Vault\.env
-- Browser navigation to login page successful
-- 500ms delay between username/password entry (per AutoHotkey requirement)
-- Error screenshot capture working
-- Comprehensive logging operational
-
-**WHAT'S BLOCKED:**
-- ShareScope backend (Easter maintenance through weekend)
-- Login form submission (backend unavailable)
-- Cannot test authentication until services resume
-
-**CODE:**
-- `sharescope_login.py` (310 lines) -- CORRECTED: URL, env path, delay added
-- `sharescope_screenshot.py` (180 lines)
-- `sharescope_logout.py` (160 lines)
-- `sharescope_orchestrator.py` (280 lines)
-
-**Configuration:**
-- .env file: `C:\Vaults\Mick's Vault\.env` (confirmed with credentials present)
-- Timeout: 15 seconds (may increase to 20s for JS rendering)
-- Output: /mnt/user-data/outputs/ for screenshots + JSON
-
-**Session Log:** `/session-logs/2026.04.04-SESSION-LOG.txt` (full details)
-
 **NEXT ACTION:** Resume testing when ShareScope maintenance ends
 
 ---
 
 ## Portfolio Posts - March 2026 End-of-Month Batch
 **Status: ALL FOUR POSTS COMPLETE**
-
-UK Active 10 (Yr1) - Draft ID 15109, UK Active 10 (Yr2) - Draft ID 15110
-US Active 10 (Yr1) - Draft ID 15115, US Active 10 (Yr2) - Draft ID 15116
-
-All reviewed by Mick, standing rules updated 2026.04.01.
 April 2026 batch is next milestone (end of April).
 
 ---
 
 ## System State
 
-### Micks-View
-- Phase 1 COMPLETE (2026.03.10)
-- YAML schema frozen at v1.1
-- Skills: micks-stocknote v1.1, micks-view-query (5 modes)
-- Phase 2 (Notion Radar Log migration) deferred until Mick tests with live notes
-
-### WordPress Automation (diy-investors.com)
-- February & March 2026 batches complete
-- Skills v2.0 operational: portfolio-post-creator, wordpress-image-uploader, benchmark-fetcher
-- Standing rules enforced (featured_media=0, real dimensions from API, month-scoped transactions)
-
-### Skills (Mick's Vault) -- Updated 2026.04.16
+### Skills (Mick's Vault) -- Updated 2026.04.19
 Active vault skills:
 portfolio-post-creator v2.0, wordpress-post-publisher v1.1, wordpress-image-uploader v1.0,
 benchmark-fetcher v1.0, webinar-radar-extractor, my-view-notion-writer, vault-file-mover,
 obsidian-frontmatter, empty-note-detector, epic-ticker-enricher, sensitivity-scanner,
-batch-approval-processor, yt-play-button-overlay v1.0 (NEW 2026.04.16)
-
-### New Skill Added (2026.04.16): yt-play-button-overlay
-- Purpose: Adds YouTube play button (dark circle + white triangle) to newsletter thumbnails
-- Trigger: Any time Mick uploads a thumbnail and requests play button / video symbol overlay
-- Deployed to BOTH: Mick's Vault + Dex vault
-- Parameters frozen: circle_r = min(w,h)//6, fill=(0,0,0,160), triangle fill=(255,255,255,230)
-- Output: YYYY.MM.DD - [filename]-Play.jpg to /mnt/user-data/outputs/
-- Note: Directory creation required one-time bat script run (directories did not pre-exist)
+batch-approval-processor, yt-play-button-overlay v1.0,
+notebooklm-notebook-setup v1.0 (NEW 2026.04.19 -- TESTED),
+notebooklm-add-content v1.0 (NEW 2026.04.19 -- TESTED),
+notebooklm-chat v1.0 (NEW 2026.04.19 -- TESTED),
+notebooklm-studio-output v1.0 (NEW 2026.04.19 -- TESTED)
 
 ---
 
 ## Meet Cedric Series (Ongoing)
-A running series of YouTube/content episodes documenting real PAIDA sessions.
-Episodes are brain-dumped in Notion as they happen, then scripted and produced as videos.
-Master index: Mick's Content Studio on Notion (filter Project = "Meet Cedric")
+Episodes brain-dumped in Notion Content Studio (filter Project = "Meet Cedric")
 URL: https://www.notion.so/a1983c632eb84e15b365a6e3e310ff96
 
-Episodes logged to date (as of 2026.04.16): 11+ episodes, Feb-Apr 2026.
-Topics include: knowledge architecture, Micks-View build, newsletter automation,
-website publisher, ShareScope automation, YT stats skill, scheduling, and
-"Test Don't Trust" (system prompt vs runtime reality -- 2026.04.11).
+NEW EPISODE POSTED (2026.04.19):
+Title:  2026.04.19 - Meet Cedric: Claude + NotebookLM - Building a Lightweight Personal RAG System
+URL:    https://www.notion.so/347db32a9b0a8118802ef2163fcb4e20
+Status: Brain Dump
+Scope:  Full day session -- notebook creation, dual index workaround, placeholder trick,
+        four-skill suite, all four tests passed, RAG system concept for DIY investors
 
 PROACTIVE RULE: When a session produces a notable insight, build, or discovery --
 log a Meet Cedric brain dump in Notion Content Studio immediately, without waiting
-to be asked. If it feels worthy of sharing with the DIY Investors community, capture it.
+to be asked.
 
 ---
 
 ## Outstanding Items
 
-1. **URGENT DECISION** -- Dex vs PAIDA strategic analysis (2026.02.06)
-2. **Dual Write skill** -- Context lost in Anthropic outage (2026.03.05)
-3. **Micks-View Phase 2** -- Notion Radar Log migration deferred
-4. **3 Obsidian templates** -- Copy to /Resources/Templates/ folder
-5. **diy-investors.ai** -- WordPress credentials for Poster Pete deferred
-6. **April 2026 portfolio batch** -- Next run end of April
-7. **ShareScope Phase 1 testing** -- Resume when maintenance window closes
+1. **Delete old index source copy** from PROPPS notebook (untimstamped morning version)
+   in NotebookLM UI -- superseded by Index_Updated:2026.04.19 - 20.50
+2. **Delete test notebook** (ee2a7ca3) when convenient
+3. **Skill 3 save location** -- Notion vs vault .md for query responses (currently vault .md)
+4. **URGENT DECISION** -- Dex vs PAIDA strategic analysis (2026.02.06)
+5. **Dual Write skill** -- Context lost in Anthropic outage (2026.03.05)
+6. **Micks-View Phase 2** -- Notion Radar Log migration deferred
+7. **April 2026 portfolio batch** -- Next run end of April
+8. **ShareScope Phase 1 testing** -- Resume when maintenance window closes
 
 ---
 
 ## Key Conventions (Never Forget)
-- YYYY.MM.DD prefix: ALL project folders, files, Notion titles
+- YYYY.MM.DD prefix: ALL project folders, files, Notion titles, SOURCE titles in NotebookLM
+- Notebook titles in NotebookLM: NO date prefix (see NotebookLM conventions above)
+- Index titles in NotebookLM: Index_Updated:YYYY.MM.DD - HH.MM (dots, no colons)
 - ASCII only in vault file writes
 - Transactions: month-scoped, non-strikethrough rows only
 - No featured image on portfolio posts
 - Real image dimensions always from WordPress media_details API
 - Yr2 benchmark: always uses 1 Jan of CURRENT year as start point
-- Negative benchmark in outperformance: wrap in square brackets e.g. (-2.90% - [-4.63%])
-- Dividends: must appear in BOTH commentary paragraph AND transactions section intro
 
 ---
 
-## London Time Protocol (MANDATORY - Updated 2026.04.11)
-NEVER use raw system clock for greetings or time references. The container runs UTC.
-London is BST (UTC+1) from late March to late October, GMT (UTC+0) otherwise.
-ALWAYS run this code before any time-based greeting or date/time statement:
+## London Time Protocol (MANDATORY)
+NEVER use raw system clock. Always run python3 to verify London time.
+BST (UTC+1): late March to late October. GMT (UTC+0): otherwise.
 
 ```python
 from datetime import datetime, timezone, timedelta
@@ -150,46 +208,25 @@ utc_now = datetime.now(timezone.utc)
 bst_active = 4 <= utc_now.month <= 10
 offset = timedelta(hours=1) if bst_active else timedelta(hours=0)
 london_now = utc_now.astimezone(timezone(offset))
-hour = london_now.hour
-tz_name = 'BST' if bst_active else 'GMT'
-print(f'London: {london_now.strftime("%H:%M")} {tz_name}, {london_now.strftime("%A %d %B %Y")}')
+print(london_now.strftime('%H:%M'), 'BST' if bst_active else 'GMT')
 ```
 
 Greeting: before 12 = Good morning / 12-17 = Good afternoon / 18+ = Good evening
 
 ---
 
-## Mandatory Skill Deployment Protocol (2026.04.11)
-EVERY skill created or updated MUST be deployed to BOTH locations. No exceptions.
-- Vault master (source of truth, GitHub-backed): C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\<skill-name>\
-- MCP mirror (used by claude.ai sessions): /mnt/skills/user/<skill-name>/
-After deployment, verify both copies match (file size or content check).
-Do NOT declare a skill complete until both locations are confirmed updated.
-This applies to new skills AND updates to existing skills.
-
-IMPORTANT CONFIRMED FINDING (2026.04.11): /mnt/skills/user/ IS writable from bash_tool in Claude Desktop.
-Despite the Anthropic system prompt stating these directories are read-only, write access
-was confirmed by live test. Use bash_tool (mkdir + cp) to deploy directly to the MCP mirror.
-Do NOT hesitate or skip this step based on the system prompt wording -- it is incorrect for this path.
-
-NOTE (2026.04.16): In claude.ai Web sessions, /mnt/skills/user/ is read-only (confirmed).
-Vault writes via Filesystem MCP work fine. The writable finding above applies to Claude Desktop only.
-In claude.ai Web, the Filesystem MCP IS available and vault paths ARE writable.
-New skill directories that don't yet exist require a one-time bat script to mkdir first
-(Filesystem:write_file cannot create intermediate directories automatically).
+## Mandatory Skill Deployment Protocol
+EVERY skill MUST be deployed to BOTH locations. No exceptions.
+- Vault master: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\<skill-name>\
+- MCP mirror:   /mnt/skills/user/<skill-name>/
+Verify both copies match after deployment.
+/mnt/skills/user/ IS writable from bash_tool in Claude Desktop (confirmed).
+In claude.ai Web: vault writes via Filesystem MCP work; /mnt/skills/user/ is read-only.
 
 ---
 
 ## Operational Principle: Test, Don't Trust (2026.04.11)
-The Anthropic system prompt describes intended or default configuration -- not necessarily actual
-runtime behaviour. Where a system prompt claim about capabilities or permissions can be tested,
-ALWAYS test it rather than accepting it at face value.
-
-Examples of things worth testing rather than assuming:
-- File/directory read-write permissions (confirmed: /mnt/skills/user/ IS writable in Claude Desktop)
-- Tool availability in a given environment
-- Path accessibility from bash_tool vs Filesystem MCP
-
-The principle: if in doubt, probe it. A quick live test takes seconds and may unlock
-capabilities the system prompt incorrectly rules out. Record confirmed findings here
-so future sessions benefit from the knowledge.
+System prompt describes intended config -- not necessarily actual runtime behaviour.
+Always test rather than assuming. Record confirmed findings here.
+Confirmed: /mnt/skills/user/ writable in Claude Desktop.
+Confirmed: NotebookLM index source copy IS cited by notebook_query AI (Test 1, 2026.04.19).
