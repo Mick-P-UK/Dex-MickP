@@ -10,6 +10,8 @@ tasks. Each skill lives in its own subfolder with a SKILL.md file.
 | Skill | Command | Description |
 |-------|---------|-------------|
 | session-start | (automatic) | Mandatory session start protocol. Probe MCP availability via tool_search and announce environment (Claude Desktop vs claude.ai) before any other action. |
+| sharescope-start | "sharescope start" or `/sharescope-start` | ShareScope session opener. Connects vault + project folder, reads PICKUP_POINT.md and CEDRIC_MEMORY.md, delivers a clean briefing so work resumes immediately. Created 2026.04.26. Mirror: TODO (Claude Desktop session needed). |
+| sharescope-financials | "download [TICKER] financials" or `/sharescope-financials [TICKER]` | Financial data export for any ShareScope stock. Gives PowerShell command, verifies 6 CSV files land in downloads\{TICKER}\, reports back with filenames. Created 2026.04.26. Mirror: TODO (Claude Desktop session needed). |
 | pns | `/pns` | Post Notion Summary: reads a Notion page, generates a 200-word structured summary, posts it to the Summary (item) property field. Adapts headings to content type (financial results, trading updates, articles). |
 | notion-summary | (on request) | Notion announcement summary via BROWSER CONTROL. Uses get_page_text, clicks the Summary (item) field, types with Ctrl+B for bold headings and Shift+Enter for line breaks. Max 200 words. Use in Claude Code or Claude in Chrome. See note below on two-skill distinction. |
 | week-plan-print | `/week-plan-print` | Generates a formatted, print-ready one-page A4 Word document (.docx) showing the full week's calendar for printing and pinning on the wall. Pulls live Google Calendar data. |

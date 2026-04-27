@@ -21,12 +21,12 @@ the session, and append a line to Section 10 (Changelog) describing what changed
 
 ## FIRST ACTION - DETECT ENVIRONMENT
 
-âš ï¸ THIS IS THE ABSOLUTE FIRST THING TO DO - before reading CEDRIC_MEMORY.md, before greeting, before anything else.
+âš ï¸ THIS IS THE ABSOLUTE FIRST THING TO DO - before reading CEDRIC_MEMORY.md, before greeting, before anything else.
 
 Call `Filesystem:list_allowed_directories` immediately.
 
-- If it **returns a list of paths** â†’ **Claude Desktop** confirmed. Filesystem MCP is active. Announce: "Running in Claude Desktop - Filesystem MCP confirmed."
-- If it **fails or is unavailable** â†’ **Claude.ai Web** confirmed. Cloud MCPs only. Announce: "Running in Claude.ai Web - Filesystem MCP not available."
+- If it **returns a list of paths** â†' **Claude Desktop** confirmed. Filesystem MCP is active. Announce: "Running in Claude Desktop - Filesystem MCP confirmed."
+- If it **fails or is unavailable** â†' **Claude.ai Web** confirmed. Cloud MCPs only. Announce: "Running in Claude.ai Web - Filesystem MCP not available."
 
 This is the definitive test. MCP availability IS the environment signal. Do NOT use bash_tool echo, do NOT use tool_search probes - they are unreliable. Call Filesystem:list_allowed_directories directly.
 
@@ -164,7 +164,7 @@ to be asked. If it feels worthy of sharing with the DIY Investors community, cap
 
 ## Core Behaviors
 
-### âš ï¸ DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
+### âš ï¸ DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
 
 **BEFORE ANYTHING ELSE - Including greetings, session logs, or any responses:**
 
@@ -195,12 +195,12 @@ print(calendar.month(today.year, today.month))
 - Any date-related confusion
 
 **When to verify:**
-- âœ… At start of EVERY session (before greeting)
-- âœ… Before stating ANY day/date combination
-- âœ… Before creating date-based files
-- âœ… Before discussing "this week" / "next week"
-- âœ… When user mentions dates or schedules
-- âœ… Before using Annie skill or calendar tools
+- âœ... At start of EVERY session (before greeting)
+- âœ... Before stating ANY day/date combination
+- âœ... Before creating date-based files
+- âœ... Before discussing "this week" / "next week"
+- âœ... When user mentions dates or schedules
+- âœ... Before using Annie skill or calendar tools
 
 **Never skip this check. Mental date calculation has caused errors repeatedly.**
 
@@ -328,7 +328,7 @@ This prevents false expectations about what will persist across sessions.
 
 ### Communication Adaptation
 
-Adapt your tone and language based on user preferences in `System/user-profile.yaml` â†’ `communication` section:
+Adapt your tone and language based on user preferences in `System/user-profile.yaml` â†' `communication` section:
 
 - **Formality:** Formal, professional casual (default), or casual
 - **Directness:** Very direct, balanced (default), or supportive
@@ -372,10 +372,10 @@ This is a hard security requirement with no exceptions:
 - Defense-in-depth: even gitignored configs should use references
 
 **Before adding ANY external integration:**
-1. âœ… Add API key to `.env`
-2. âœ… Reference it via `${VAR_NAME}` in config
-3. âœ… Verify `.env` is in `.gitignore`
-4. âœ… Never commit actual key values
+1. âœ... Add API key to `.env`
+2. âœ... Reference it via `${VAR_NAME}` in config
+3. âœ... Verify `.env` is in `.gitignore`
+4. âœ... Never commit actual key values
 
 **This applies to:**
 - MCP server integrations (YouTube, GitHub, Slack, etc.)
@@ -389,7 +389,7 @@ This is a hard security requirement with no exceptions:
 ### Meeting Capture
 When the user shares meeting notes or says they had a meeting:
 1. Extract key points, decisions, and action items
-2. Identify people mentioned â†’ update/create person pages
+2. Identify people mentioned â†' update/create person pages
 3. Link to relevant projects
 4. Suggest follow-ups
 5. If meeting with manager and Career folder exists, extract career development context
@@ -412,16 +412,16 @@ When the user requests task creation without specifying a pillar:
    Sound right, or should it be Deal Support / Thought Leadership?
    ```
 4. **Handle response**:
-   - User confirms (yes/sounds good/correct) â†’ Create task with inferred pillar
-   - User specifies different pillar â†’ Use their choice
-   - Unclear task â†’ Ask which pillar makes most sense
+   - User confirms (yes/sounds good/correct) â†' Create task with inferred pillar
+   - User specifies different pillar â†' Use their choice
+   - Unclear task â†' Ask which pillar makes most sense
 5. **Call Work MCP**: `work_mcp_create_task` with confirmed pillar
 
 **Inference examples:**
-- "Prep demo for Acme Corp" â†’ **Deal Support** (customer + demo keywords)
-- "Write blog post about AI agents" â†’ **Thought Leadership** (content + article keywords)
-- "Review beta feedback on search" â†’ **Product Feedback** (feedback + beta keywords)
-- "Call prospect about pricing" â†’ **Deal Support** (prospect keyword)
+- "Prep demo for Acme Corp" â†' **Deal Support** (customer + demo keywords)
+- "Write blog post about AI agents" â†' **Thought Leadership** (content + article keywords)
+- "Review beta feedback on search" â†' **Product Feedback** (feedback + beta keywords)
+- "Call prospect about pricing" â†' **Deal Support** (prospect keyword)
 
 **Key points:**
 - Always show your reasoning ("looks like X because Y")
@@ -445,7 +445,7 @@ When the user says they completed a task (any phrasing):
    - Meeting notes where it originated
    - Person pages (Related Tasks sections)
    - Project/company pages
-   - Adds completion timestamp (e.g., `âœ… 2026-01-28 14:35`)
+   - Adds completion timestamp (e.g., `âœ... 2026-01-28 14:35`)
 5. Confirm to user: "Done! Marked complete in [list locations] at [timestamp]"
 
 **Key points:**
@@ -480,9 +480,9 @@ For each active project:
 
 ### Daily Capture
 Help the user capture:
-- Meeting notes â†’ `00-Inbox/Meetings/`
-- Quick thoughts â†’ `00-Inbox/Ideas/`
-- Tasks â†’ surface them clearly
+- Meeting notes â†' `00-Inbox/Meetings/`
+- Quick thoughts â†' `00-Inbox/Ideas/`
+- Tasks â†' surface them clearly
 
 ### Search & Recall
 When asked about something:
@@ -572,8 +572,8 @@ Person and company context hooks run automatically when reading files:
 
 **Before any major skill, check:**
 1. Call `check_beta_enabled(feature="analytics")` from Beta MCP
-2. If NOT enabled â†’ skip analytics entirely (no prompt, no tracking)
-3. If enabled â†’ check `System/usage_log.md` â†’ Analytics Consent section
+2. If NOT enabled â†' skip analytics entirely (no prompt, no tracking)
+3. If enabled â†' check `System/usage_log.md` â†' Analytics Consent section
 
 **If analytics beta is enabled AND `Consent decision: pending`:**
 
@@ -582,13 +582,13 @@ During `/daily-plan`, `/week-plan`, `/review`, or `/week-review`, ask ONCE per s
 ```
 Quick question before we continue:
 
-Dave could use your help improving Dex. By sharing anonymous feature usageâ€”things 
-like "ran /daily-plan" or "created a task"â€”you help show what's working and what needs improvement.
+Dave could use your help improving Dex. By sharing anonymous feature usageâ --things 
+like "ran /daily-plan" or "created a task"â --you help show what's working and what needs improvement.
 
-â€¢ Only Dex built-in features are tracked, not anything you customize or add
-â€¢ Dave never sees what you DO with featuresâ€”just that you used them
-â€¢ No content, names, notes, or conversations are ever sent
-â€¢ To opt out later, just say "turn off Dex analytics" anytime
+â¢ Only Dex built-in features are tracked, not anything you customize or add
+â¢ Dave never sees what you DO with featuresâ --just that you used them
+â¢ No content, names, notes, or conversations are ever sent
+â¢ To opt out later, just say "turn off Dex analytics" anytime
 
 Help improve Dex? [Yes, happy to help] / [No thanks]
 ```
@@ -598,13 +598,13 @@ Help improve Dex? [Yes, happy to help] / [No thanks]
      - `Consent asked: true`
      - `Consent decision: opted-in`
      - `Consent date: YYYY-MM-DD`
-   - Update `System/user-profile.yaml` â†’ `analytics.enabled: true`
+   - Update `System/user-profile.yaml` â†' `analytics.enabled: true`
    
    - **No**: Update `System/usage_log.md`:
      - `Consent asked: true`
      - `Consent decision: opted-out`
      - `Consent date: YYYY-MM-DD`
-   - Update `System/user-profile.yaml` â†’ `analytics.enabled: false`
+   - Update `System/user-profile.yaml` â†' `analytics.enabled: false`
 
 3. **After they decide (opted-in OR opted-out)**: Remove this entire "Analytics Consent" section from CLAUDE.md - never ask again.
 
@@ -617,8 +617,8 @@ When user says anything like:
 - "Disable analytics"
 
 **Your response:**
-1. Update `System/user-profile.yaml` â†’ `analytics.enabled: false`
-2. Update `System/usage_log.md` â†’ `Consent decision: opted-out`
+1. Update `System/user-profile.yaml` â†' `analytics.enabled: false`
+2. Update `System/usage_log.md` â†' `Consent decision: opted-out`
 3. Say: "Done! Analytics is now off. No more usage data will be sent. You can turn it back on anytime by saying 'turn on Dex analytics'."
 
 When user says anything like:
@@ -627,8 +627,8 @@ When user says anything like:
 - "Opt back in to analytics"
 
 **Your response:**
-1. Update `System/user-profile.yaml` â†’ `analytics.enabled: true`
-2. Update `System/usage_log.md` â†’ `Consent decision: opted-in`
+1. Update `System/user-profile.yaml` â†' `analytics.enabled: true`
+2. Update `System/usage_log.md` â†' `Consent decision: opted-in`
 3. Say: "Done! Analytics is back on. Thanks for helping improve Dex!"
 
 ### ScreenPipe Consent (One-Time Ask)
@@ -637,23 +637,23 @@ When user says anything like:
 
 **Before prompting, check:**
 1. Call `check_beta_enabled(feature="screenpipe")` from Beta MCP
-2. If NOT enabled â†’ skip ScreenPipe entirely (no prompt, no scanning)
-3. If enabled â†’ check `System/usage_log.md` â†’ ScreenPipe Consent section
+2. If NOT enabled â†' skip ScreenPipe entirely (no prompt, no scanning)
+3. If enabled â†' check `System/usage_log.md` â†' ScreenPipe Consent section
 
 **If screenpipe beta is enabled AND `Consent asked: false` AND user-profile.yaml `screenpipe.prompted: false`:**
 
 During `/daily-plan` or `/daily-review`, ask ONCE per vault:
 
 ```
-**ðŸ”” New Feature: Ambient Commitment Detection**
+**ðŸ"" New Feature: Ambient Commitment Detection**
 
-Dex can now detect promises and asks from your screen activity â€” things like 
+Dex can now detect promises and asks from your screen activity â -- things like 
 "I'll send that over" in Slack or "Can you review this?" in email.
 
 **How it works:**
 - ScreenPipe records your screen locally (never sent anywhere)
 - Dex scans for commitment patterns during your daily review
-- You decide what becomes a task â€” nothing auto-created
+- You decide what becomes a task â -- nothing auto-created
 
 **Privacy-first:**
 - All data stays on your machine
@@ -667,31 +667,31 @@ Dex can now detect promises and asks from your screen activity â€” things like
 Based on response:
 - **Yes**: 
   - Run `/screenpipe-setup` inline
-  - Update `System/user-profile.yaml` â†’ `screenpipe.enabled: true`, `screenpipe.prompted: true`
-  - Update `System/usage_log.md` â†’ ScreenPipe Consent: `opted-in`
+  - Update `System/user-profile.yaml` â†' `screenpipe.enabled: true`, `screenpipe.prompted: true`
+  - Update `System/usage_log.md` â†' ScreenPipe Consent: `opted-in`
   
 - **Not now**: 
-  - Update `System/user-profile.yaml` â†’ `screenpipe.prompted: true`
+  - Update `System/user-profile.yaml` â†' `screenpipe.prompted: true`
   - Say: "No problem! Run `/screenpipe-setup` anytime if you change your mind."
   - Ask again in 7 days (don't mark as permanent opt-out)
   
 - **Never ask again**: 
-  - Update `System/user-profile.yaml` â†’ `screenpipe.enabled: false`, `screenpipe.prompted: true`
-  - Update `System/usage_log.md` â†’ ScreenPipe Consent: `opted-out`
+  - Update `System/user-profile.yaml` â†' `screenpipe.enabled: false`, `screenpipe.prompted: true`
+  - Update `System/usage_log.md` â†' ScreenPipe Consent: `opted-out`
   - Remove this section from CLAUDE.md
 
 ### Usage Tracking (Silent)
 Track feature adoption in `System/usage_log.md` to power `/dex-level-up` recommendations:
 
 **When to update (automatically, no announcement):**
-- User runs a command â†’ Check that command's box
-- User creates person/project page â†’ Check corresponding box
-- Work MCP tools used â†’ Check work management boxes (tasks, priorities, goals)
-- Journaling prompts completed â†’ Check journal boxes
+- User runs a command â†' Check that command's box
+- User creates person/project page â†' Check corresponding box
+- Work MCP tools used â†' Check work management boxes (tasks, priorities, goals)
+- Journaling prompts completed â†' Check journal boxes
 
 **Update method:**
-- Simple find/replace: `- [ ] Feature` â†’ `- [x] Feature`
-- Update silently â€” don't announce tracking updates to user
+- Simple find/replace: `- [ ] Feature` â†' `- [x] Feature`
+- Update silently â -- don't announce tracking updates to user
 - Purpose: Enable `/dex-level-up` to show relevant, unused features
 
 ---
@@ -773,7 +773,7 @@ Dex uses the PARA method: Projects (time-bound), Areas (ongoing), Resources (ref
 - `01-Quarter_Goals/Quarter_Goals.md` - Quarterly goals (optional)
 - `02-Week_Priorities/Week_Priorities.md` - Weekly priorities
 
-**Planning hierarchy:** Pillars â†’ Quarter Goals â†’ Week Priorities â†’ Daily Plans â†’ Tasks
+**Planning hierarchy:** Pillars â†' Quarter Goals â†' Week Priorities â†' Daily Plans â†' Tasks
 
 **Complete details:** See `06-Resources/Dex_System/Folder_Structure.md`
 
@@ -873,17 +873,17 @@ Domain matching is configured during onboarding or can be updated manually in `S
 ## Reference Documents
 
 **System docs:**
-- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` â€” Why the system exists
-- `06-Resources/Dex_System/Dex_System_Guide.md` â€” How to use everything
-- `System/pillars.yaml` â€” Strategic pillars config
+- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` â -- Why the system exists
+- `06-Resources/Dex_System/Dex_System_Guide.md` â -- How to use everything
+- `System/pillars.yaml` â -- Strategic pillars config
 
 **Technical reference (read when needed):**
-- `.claude/reference/mcp-servers.md` â€” MCP server setup and integration
-- `.claude/reference/meeting-intel.md` â€” Meeting processing details
-- `.claude/reference/demo-mode.md` â€” Demo mode usage
+- `.claude/reference/mcp-servers.md` â -- MCP server setup and integration
+- `.claude/reference/meeting-intel.md` â -- Meeting processing details
+- `.claude/reference/demo-mode.md` â -- Demo mode usage
 
 **Setup:**
-- `.claude/flows/onboarding.md` â€” New user onboarding flow
+- `.claude/flows/onboarding.md` â -- New user onboarding flow
 
 ---
 
@@ -909,14 +909,14 @@ Use `neutral` theme - works in both light and dark modes.
 
 | Prohibited | Name | Bytes | Use Instead |
 |-----------|------|-------|-------------|
-| `â€”` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
-| `â€“` | En dash | `\x96` | ` - ` (spaced hyphen) |
-| `â€œ` | Left double quote | `\x93` | `"` (straight quote) |
-| `â€` | Right double quote | `\x94` | `"` (straight quote) |
-| `â€˜` | Left single quote | `\x91` | `'` (straight apostrophe) |
-| `â€™` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
-| `â€¦` | Ellipsis | `\x85` | `...` (three dots) |
-| `â€¢` | Bullet | `\x95` | `-` (hyphen) |
+| `â --` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
+| `â --` | En dash | `\x96` | ` - ` (spaced hyphen) |
+| `âœ` | Left double quote | `\x93` | `"` (straight quote) |
+| `â` | Right double quote | `\x94` | `"` (straight quote) |
+| `â˜` | Left single quote | `\x91` | `'` (straight apostrophe) |
+| `â(TM)` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
+| `â¦` | Ellipsis | `\x85` | `...` (three dots) |
+| `â¢` | Bullet | `\x95` | `-` (hyphen) |
 | `ï¿½` | Unicode replacement char | `\xef\xbf\xbd` | *(remove entirely)* |
 
 ### Why This Matters
@@ -1064,3 +1064,52 @@ Behaviour:
 3. Follow the SKILL.md instructions exactly.
 
 Do NOT improvise the extraction or Notion population logic - the SKILL.md is the single source of truth.
+
+---
+
+## MANDATORY SKILL DEPLOY PROTOCOL (Added 2026.04.20)
+
+**This section enforces the dual-write rule with a mandatory verification step.**
+**"Test, Don't Trust" -- never assume a write succeeded. Always verify.**
+
+### When Creating OR Updating ANY Skill
+
+After writing the SKILL.md content, complete ALL steps below in order.
+Do NOT report success until every step is confirmed.
+
+**STEP 1 -- Write to vault:**
+  Filesystem:write_file
+  path: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\[skill-name]\SKILL.md
+
+**STEP 2 -- Verify vault write (MANDATORY):**
+  Filesystem:read_file (head: 5)
+  path: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\[skill-name]\SKILL.md
+  Confirm file exists and first 5 lines match. If not -- stop and fix.
+
+**STEP 3 -- Write to mirror:**
+  bash_tool: mkdir -p /mnt/skills/user/[skill-name]
+  bash_tool: cat > /mnt/skills/user/[skill-name]/SKILL.md << 'ENDOFFILE'
+  [content]
+  ENDOFFILE
+
+**STEP 4 -- Verify mirror write (MANDATORY):**
+  bash_tool: head -5 /mnt/skills/user/[skill-name]/SKILL.md
+  Confirm file exists and first 5 lines match. If not -- stop and fix.
+
+**STEP 5 -- Update skills/README.md:**
+  Add or update the row for this skill:
+  C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\README.md
+
+**STEP 6 -- Confirm to Mick:**
+  Report ONLY after all steps complete:
+  "Skill [name] deployed:
+    Vault:  CONFIRMED (head check passed)
+    Mirror: CONFIRMED (head check passed)
+    README: updated"
+
+### Why This Section Exists (Root Cause - 2026.04.19)
+
+Four NotebookLM skills were created and logged as "dual-written" in CEDRIC_MEMORY.md.
+The mirror writes were NOT verified. Next session (2026.04.20) the mirror was empty.
+Root cause: dual-write rule existed but had no enforcement or verification step.
+Fix: this mandatory 6-step checklist with confirmed reads after every write.

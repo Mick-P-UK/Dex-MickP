@@ -4,6 +4,79 @@ _This file is the current session working doc. Completed sessions are archived t
 
 ---
 
+## Session: 2026-04-20 (Monday morning)
+
+_Session started: 2026-04-20 ~09:42 BST_
+_Environment: claude.ai Web (Filesystem MCP confirmed via tool_search)_
+_Session closed: ongoing_
+
+### Context at Session Start
+
+- Continuation of PAIDA development work.
+- Mick has Plaza Group webinar prep today so limited PAIDA time.
+- Key loose ends from 2026.04.19: NotebookLM skill suite built but mirror deploy not verified.
+
+### Actions Taken This Session
+
+1. **NotebookLM skills mirror gap diagnosed and fixed**
+   - All 4 NLM skills (notebooklm-notebook-setup, notebooklm-add-content, notebooklm-chat, notebooklm-studio-output) were in vault but NOT in /mnt/skills/user/.
+   - Root cause: dual-deploy from yesterday's session was not verified ("Test, Don't Trust" failure).
+   - All 4 skills copied to mirror with head-verified confirmation.
+   - Skills are now live and will surface at next Desktop session start.
+
+2. **Mandatory Skill Deploy Protocol added to CLAUDE.md**
+   - New section appended: 6-step checklist with mandatory vault write + verify, mirror write + verify, README update, and confirmation to Mick.
+   - Root cause note included so future sessions understand why it exists.
+   - Edit done via Filesystem:edit_file (targeted append, not full rewrite).
+
+3. **CLAUDE.md restructure plan produced**
+   - Current state: 1115 lines, 44KB, loaded in full every session.
+   - Agreed plan: split into 3 files (CLAUDE.md ~280 lines, CEDRIC-RULES.md ~330 lines, CEDRIC-DEX.md ~460 lines).
+   - Projected saving: ~75% reduction in session context load.
+   - Backup created: 07-Archives/CLAUDE-backups/CLAUDE.backup.2026.04.20.md
+   - Execution deferred to next PAIDA session (webinar prep today).
+
+4. **Memory system audit conducted**
+   - Layers reviewed: CEDRIC_MEMORY.md, session_log.md, Anthropic built-in memory, Meet Cedric Notion.
+   - Gap identified: no enforced session-end write, no memory-read verification at start.
+   - 18 April PAIDA Session Memory planning doc pulled and integrated into CEDRIC_MEMORY.
+   - All 5 open questions from 18 April preserved as outstanding items.
+
+5. **Session end /wrap protocol agreed**
+   - Behaviour agreed: session log + CEDRIC_MEMORY update + Meet Cedric brain dump + confirmation.
+   - /wrap skill to be built in next PAIDA session (vault + mirror).
+
+6. **Three Meet Cedric brain dumps logged in Notion:**
+   - Episode A: PAIDA Memory System Audit + CLAUDE.md Restructure Plan
+   - Episode B: Why Session Memory Is the Foundation of a Reliable AI Assistant
+   - Episode C: Claude Code vs Desktop vs Cowork -- Why Your AI Has a Different Brain in Every Tab
+   Note: Episodes B and C are strong companion pieces -- potential two-parter or one definitive video.
+   All three best produced AFTER /wrap skill and Memory Read Confirmed checkpoint are built.
+
+### Outstanding from This Session (carried to next PAIDA session)
+
+- [ ] CLAUDE.md restructure Pass 1 -- create CEDRIC-RULES.md and CEDRIC-DEX.md
+- [ ] PAIDA Session Memory -- answer 5 open questions, create NLM notebook, build vault structure
+- [ ] /wrap skill -- build as vault+mirror skill
+- [ ] Memory reading verification -- "Memory Read Confirmed" checkpoint at session start
+- [ ] notion-summary-generator vault copy (only in MCP mirror currently)
+- [ ] Janusz Marecki IC webinar guest invite (task ^task-20260322-001)
+- [ ] Micks-View Phase 1 build -- PRD v2.2 approved, not yet started
+- [ ] /radar skill -- 5 items in Section 10 awaiting Mick sign-off
+
+### Carried Forward (from 2026.04.18)
+
+- [ ] NotebookLM: nlm setup add claude-code -- pending
+- [ ] Create 3 NLM notebooks: IC Webinars, Plaza Group Webinars, AI for Investing Webinars
+- [ ] radar_extractor.py --backfill
+- [ ] Delete old PROPPS notebook index source copy (untimstamped version)
+- [ ] Delete test notebook ee2a7ca3
+- [ ] April 2026 portfolio batch -- end of April
+
+_Session active as of 2026-04-20 ~10:30 BST_
+
+---
+
 ## Session: 2026-04-18 (Saturday afternoon)
 
 _Session started: 2026-04-18 ~14:03 BST_

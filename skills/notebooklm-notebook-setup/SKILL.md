@@ -12,6 +12,11 @@ description: >
 
 # Skill 1: NotebookLM Notebook Setup
 
+> **STOP -- READ BEFORE DOING ANYTHING ELSE**
+> The FIRST action when setting up any notebook is to READ THIS SKILL IN FULL.
+> Do NOT create a notebook before reading the naming rules below.
+> Failure to apply naming rules at creation is a hard error.
+
 Fully initialises a new NotebookLM notebook: creates it, adds sources,
 optionally runs a research sweep, builds a dual index (studio note + queryable
 source copy), and applies the correct title convention.
@@ -51,7 +56,11 @@ source copy), and applies the correct title convention.
 3. Get today's London date AND time via python3 (needed for index title)
 4. Create notebook: notebooklm-mcp:notebook_create
 5. Log internally: notebook_id, URL, creation_date (FIXED permanently)
-6. IMMEDIATELY create a placeholder index source to claim the top slot:
+6. > **MANDATORY -- DO THIS BEFORE ADDING ANY SOURCES**
+   > Create a placeholder index source IMMEDIATELY after notebook creation.
+   > This claims position 1 in the sources panel permanently.
+   > Once any other source is added, this window is GONE -- the index
+   > will be out of order forever. This is a hard error if missed.
    - notebooklm-mcp:source_add, source_type=text
    - title: Index_Updated:YYYY.MM.DD - HH.MM (use current London time)
    - text: "INDEX PLACEHOLDER -- will be populated once all sources are loaded."
