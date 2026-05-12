@@ -1,175 +1,219 @@
-# NotebookLM CLI Guide
+# NotebookLM CLI Guide - VERIFIED
 
-**Source:** https://github.com/jacob-bd/notebooklm-mcp-cli/blob/main/docs/CLI_GUIDE.md
+**Verified:** 2026.04.28 via `nlm_help_check.py` against installed binary
+**Binary name:** `notebooklm` (NOT `nlm` - the old guide was for a different tool)
+**Note:** A previous version of this guide documented a different tool (`nlm`).
+Everything below is confirmed against what is actually installed.
 
-## Core Commands Overview
+---
 
-The CLI supports two command styles—noun-first (resource-oriented) and verb-first (action-oriented). Both are functionally equivalent.
+## Quick Start
 
-### Authentication
-
-- `nlm login` — Initiates browser-based authentication with automatic cookie extraction
-- `nlm login --check` — Verifies current authentication status
-- Supports multiple named profiles for managing different Google accounts
-- Profile management includes switching, listing, and deletion options
-
-### Notebook Management
-
-Basic operations include creating, listing, renaming, and deleting notebooks. The CLI supports:
-- `nlm notebook list` — Display all notebooks
-- `nlm notebook create "Title"` — Create new notebook
-- `nlm notebook query <id> "question"` — Chat with notebook sources
-- `nlm notebook rename <id> "New Title"` — Rename notebook
-- `nlm notebook delete <id>` — Delete notebook
-
-### Source Management
-
-Users can add sources via URLs, files, YouTube videos, or Google Drive documents. Key flags:
-- `--url`, `--file`, `--youtube`, `--drive` — Specify source type
-- `--wait` — Ensures sources are processed before proceeding
-- Sources can be synchronized or removed as needed
-
-**Examples:**
-```bash
-nlm source add <notebook-id> --url https://example.com
-nlm source add <notebook-id> --file document.pdf --wait
-nlm source add <notebook-id> --youtube https://youtube.com/watch?v=...
+```
+notebooklm login              # Authenticate first
+notebooklm list               # List your notebooks
+notebooklm create "My Notes"  # Create a notebook
+notebooklm ask "Hi"           # Ask the current notebook a question
 ```
 
-### Content Generation
+---
 
-The CLI generates multiple artifact types:
+## Global Options
 
-**Audio**: Podcasts with format options
-- Formats: deep_dive, brief, critique, debate
-- `nlm audio create <notebook-id> --format deep_dive`
-
-**Video**: Explainer or brief formats with multiple visual styles
-- `nlm video create <notebook-id> --format explainer`
-
-**Reports**: Briefing docs, study guides, blog posts
-- `nlm report create <notebook-id> --type study_guide`
-
-**Educational**: Quizzes, flashcards, mind maps, slide decks
-- `nlm quiz create <notebook-id>`
-- `nlm flashcards create <notebook-id>`
-
-**Visual**: Infographics and data tables
-- `nlm infographic create <notebook-id>`
-
-All generation commands use `--confirm` flag to prevent accidental execution.
-
-### Downloads & Exports
-
-Downloads support format-specific output:
-- Audio/video to media files (mp3, mp4)
-- Reports to markdown
-- Interactive formats (quiz, flashcards) to HTML or markdown
-- Data tables to CSV
-
-**Examples:**
-```bash
-nlm audio download <artifact-id> --output podcast.mp3
-nlm report download <artifact-id> --output study-guide.md
+```
+--version       Show version
+--storage PATH  Path to storage_state.json (default: C:\Users\pavey\.notebooklm\storage_state.json)
+-v, --verbose   Increase verbosity (-v INFO, -vv DEBUG)
+--help
 ```
 
-### Advanced Features
+---
 
-#### Research
-`nlm research start <notebook-id> "query"` — Performs fast or deep web searches
-- Status polling with `nlm research status <research-id>`
-- Import discovered sources with `nlm research import <research-id>`
+## Session Commands
 
-#### Sharing
-Control notebook access via public links or email invitations:
-```bash
-nlm notebook share <id> --public
-nlm notebook invite <id> user@example.com --role editor
+```
+notebooklm login                    # Authenticate via browser
+notebooklm use <NOTEBOOK_ID>        # Set active notebook (supports partial IDs)
+notebooklm status                   # Show current notebook + conversation context
+notebooklm clear                    # Clear current notebook context
 ```
 
-#### Configuration
-Customize output format, color, ID display, and default profile:
-```bash
-nlm config set output.format json
-nlm config set display.color false
+---
+
+## Notebook Commands
+
+```
+notebooklm list                     # List all notebooks
+notebooklm create "Title"           # Create a notebook
+notebooklm delete <id>              # Delete a notebook
+notebooklm rename <id> "New Title"  # Rename a notebook
+notebooklm summary                  # AI-generated notebook summary
 ```
 
-#### Aliases
-Create shortcuts for frequently-used notebook IDs:
-```bash
-nlm alias set my-research <notebook-id>
-nlm query my-research "What are the key findings?"
+---
+
+## Source Commands
+
+### Add Sources
+
+```
+notebooklm source add <CONTENT>              # Auto-detects type
+notebooklm source add https://example.com   # URL source
+notebooklm source add ./doc.md              # File (text)
+notebooklm source add "My notes here"       # Inline text
+notebooklm source add "text" --title "Name" # Text with title
 ```
 
-#### Skills & Setup
-Install tools for AI assistants:
-```bash
-nlm skill install claude-code
-nlm skill install cursor
-nlm skill install gemini
+**source add options:**
+```
+-n, --notebook TEXT             Notebook ID (uses current if not set)
+--type [url|text|file|youtube]  Override auto-detection
+--title TEXT                    Title for text sources
+--mime-type TEXT                MIME type for file sources
+--json                          JSON output
 ```
 
-Configure MCP servers with one-command setup:
+**CONFIRMED WORKING in pipeline:**
+- `notebooklm source add <filepath.txt> --title "Title"` - uploads file as text source
+- No --wait flag (use `notebooklm source wait` separately if needed)
+- No --text flag (pass inline text as positional arg, or write to file first)
+
+### Research / Web Search (Fast Search)
+
+**Correct workflow - confirmed from CLI help:**
+
 ```bash
-nlm setup mcp --client claude-code
+# Start research (non-blocking)
+notebooklm source add-research "query" --mode fast --no-wait
+
+# Wait for completion and import all sources
+notebooklm research wait --import-all
 ```
 
-#### Diagnostics
-`nlm doctor` — Troubleshoots:
-- Installation status
-- Authentication status
-- Chrome availability
-- AI tool configuration
-
-## Output Formats
-
-Results display as rich tables by default, with options for:
-- `--json` — JSON output
-- `--quiet` — IDs only
-- `--title` — ID: Title format
-- `--full` — All columns
-
-## Practical Tips
-
-- **Session expiry**: Sessions expire after ~20 minutes; re-run `nlm login` if operations fail
-- **Confirmations**: Use `--confirm` in automated scripts for destructive operations
-- **Source processing**: Employ `--wait` when adding sources before querying
-- **Generation time**: Content generation (audio/video) typically requires 1–5 minutes
-- **Diagnostics**: Run `nlm doctor` to diagnose setup or authentication issues
-- **Context management**: With 29 tools, use `@notebooklm-mcp` in Claude Code to enable only when needed
-
-## Common Workflows
-
-### Research to Podcast Workflow
+OR blocking (waits automatically):
 ```bash
-# 1. Create notebook
-nlm notebook create "AI Research"
-
-# 2. Add sources
-nlm source add <id> --url https://research-paper.com --wait
-
-# 3. Generate podcast
-nlm audio create <id> --format deep_dive
-
-# 4. Check status
-nlm audio status <artifact-id>
-
-# 5. Download when ready
-nlm audio download <artifact-id> --output research-podcast.mp3
+notebooklm source add-research "query" --mode fast
 ```
 
-### Study Material Generation
-```bash
-# 1. Add sources to notebook
-nlm source add <id> --file textbook.pdf --wait
+Modes: `fast` (quick), `deep` (thorough)
 
-# 2. Generate study materials
-nlm quiz create <id>
-nlm flashcards create <id>
-nlm report create <id> --type study_guide
+### Other Source Commands
 
-# 3. Download materials
-nlm quiz download <quiz-id> --output quiz.html
-nlm flashcards download <fc-id> --output flashcards.html
-nlm report download <report-id> --output study-guide.md
 ```
+notebooklm source list              # List all sources in current notebook
+notebooklm source get <id>          # Get source details
+notebooklm source fulltext <id>     # Get full indexed text
+notebooklm source guide <id>        # AI-generated source summary + keywords
+notebooklm source stale <id>        # Check if URL source needs refresh
+notebooklm source refresh <id>      # Refresh a URL/Drive source
+notebooklm source delete <id>       # Delete a source
+notebooklm source delete-by-title "Title"  # Delete by exact title
+notebooklm source rename <id> "New Title"  # Rename a source
+notebooklm source wait <id>         # Wait for source to finish processing
+notebooklm source add-drive <url>   # Add Google Drive document
+```
+
+---
+
+## Chat / Ask
+
+```
+notebooklm ask "question"                        # Ask using current notebook + conversation
+notebooklm ask "question" --new                  # Start a fresh conversation
+notebooklm ask "question" -c <conversation_id>   # Continue a specific conversation
+notebooklm ask "question" -s <source_id>         # Limit to specific source(s)
+notebooklm ask "question" --json                 # Structured output with source references
+notebooklm ask "question" --save-as-note         # Save response as a note
+notebooklm ask "question" --save-as-note --note-title "Title"
+```
+
+**ask options:**
+```
+-n, --notebook TEXT         Notebook ID (uses current if not set)
+-c, --conversation-id TEXT  Continue a specific conversation
+-s, --source TEXT           Limit to source IDs (repeatable)
+--json                      Output as JSON (includes references)
+--save-as-note              Save response as a note
+--note-title TEXT           Note title (with --save-as-note)
+```
+
+---
+
+## Research Commands (monitoring only)
+
+```
+notebooklm research status             # Check research status (non-blocking)
+notebooklm research wait               # Wait for research to complete
+notebooklm research wait --import-all  # Wait AND import all discovered sources
+```
+
+Note: Use `notebooklm source add-research` to START research.
+The `research` command group is only for monitoring.
+
+---
+
+## Artifact Generation
+
+```
+notebooklm generate audio
+notebooklm generate report
+notebooklm generate quiz
+notebooklm generate flashcards
+notebooklm generate slide-deck
+notebooklm generate infographic
+notebooklm generate mind-map
+notebooklm generate data-table
+notebooklm generate video
+notebooklm generate cinematic-video
+```
+
+---
+
+## Notes
+
+```
+notebooklm note create "Title" "Content"
+notebooklm note list
+notebooklm note get <id>
+notebooklm note rename <id> "New Title"
+notebooklm note delete <id>
+notebooklm note save
+```
+
+---
+
+## Sharing
+
+```
+notebooklm share public
+notebooklm share add <email>
+notebooklm share remove <email>
+notebooklm share status
+```
+
+---
+
+## Pipeline Usage Notes (ShareScope)
+
+Commands confirmed working in `sharescope_nlm_researcher.py`:
+
+```python
+# Set notebook context
+run_nlm(["use", notebook_id])
+
+# Upload CSV as text source (temp file approach - CORRECT)
+run_nlm(["source", "add", tmp_path, "--title", source_title])
+
+# Ask a question
+run_nlm(["ask", prompt])
+
+# Fast search for news (Step 2.5)
+run_nlm(["source", "add-research", query, "--mode", "fast", "--no-wait"])
+run_nlm(["research", "wait", "--import-all"])
+```
+
+**Flags that do NOT exist in this version:**
+- `--text` (on source add) - pass inline text as positional arg instead
+- `--wait` (on source add) - use `notebooklm source wait <id>` separately
+- `research start` - use `source add-research` instead
+- `research import` - use `research wait --import-all` instead

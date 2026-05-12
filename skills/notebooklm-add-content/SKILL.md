@@ -15,6 +15,45 @@ description: >
 Adds new sources to an existing NotebookLM notebook, keeps the dual index
 current, and updates the notebook title with today's _Updated: date.
 
+Uses: notebooklm-py CLI (teng-lin/notebooklm-py)
+Auth: notebooklm-auth-monitor handles session monitoring automatically.
+      If auth has lapsed, run: notebooklm login
+
+---
+
+## CLI REFERENCE (key commands for this skill)
+
+```bash
+# List notebooks
+notebooklm list
+
+# Set active notebook context
+notebooklm use <notebook_id>
+
+# Add sources
+notebooklm source add "https://example.com"           # URL
+notebooklm source add "./path/to/file.pdf"            # local file
+notebooklm source add --text "raw text content"       # pasted text
+notebooklm source add "./file.pdf" --wait             # wait for indexing
+
+# List sources in active notebook
+notebooklm source list
+
+# Remove a source
+notebooklm source remove <source_id> --confirm
+
+# Rename notebook
+notebooklm notebook rename <notebook_id> "New Title"
+
+# Research sweep (web)
+notebooklm source add-research "topic query"
+
+# Notes (studio notes)
+notebooklm note list
+notebooklm note create --title "Title" --content "body text"
+notebooklm note delete <note_id> --confirm
+```
+
 ---
 
 ## MANDATORY NAMING RULES
@@ -31,13 +70,15 @@ Identical to notebooklm-notebook-setup skill. Summary:
 ## PHASE 1 -- IDENTIFY THE TARGET NOTEBOOK
 
 1. Ask Mick which notebook to add to, if not specified
-2. Retrieve notebook by name search or direct ID
+2. If no ID known, run: notebooklm list
 3. Get today's London date AND time via python3
-4. Read the existing index source copy to extract:
+4. Set the active notebook: notebooklm use <notebook_id>
+5. Read the existing index source to extract:
    - Notebook Created date (FIXED -- never change this)
    - All existing source entries with their original date_added values
    - Current source count (to continue numbering sequentially)
-5. Log all existing sources in internal source log before adding anything new
+   Run: notebooklm source list  (to see all sources and identify the index copy)
+   Run: notebooklm ask "Show me the full current index" (to read index content)
 
 ---
 
@@ -46,30 +87,37 @@ Identical to notebooklm-notebook-setup skill. Summary:
 Accept new sources in any combination: local file paths, URLs, raw text.
 
 ### Local Files
-- Copy: Filesystem:copy_file_user_to_claude
-- .docx: extract text via bash_tool + python3-docx
-- .md / .txt: read via Filesystem:read_text_file
-- Add: notebooklm-mcp:source_add, source_type=text
-- Title: YYYY.MM.DD - [filename without extension]
+- .docx: extract text via python3 (python-docx) then add as text source
+- .md / .txt: read content then add as text source
+- .pdf / .mp3 / .m4a: add directly as file
+```bash
+notebooklm source add "<windows_path_or_bash_path>" --wait
+```
+- Title format: YYYY.MM.DD - [filename without extension]
 
 ### URLs
-- Research publication date via web_search before adding
-- Add: notebooklm-mcp:source_add, source_type=url
-- Title: YYYY.MM.DD - [descriptive title]
+- Research publication date via web search before adding
+```bash
+notebooklm source add "https://..." --wait
+```
+- Title format: YYYY.MM.DD - [descriptive title]
 
 ### Raw Text
-- Add: notebooklm-mcp:source_add, source_type=text
+```bash
+notebooklm source add --text "content here"
+```
 
 ### Source Log
-Append each new source to the internal log:
+Append each new source to internal log:
   source_number | title | type | date_of_article | date_added | contents_summary
 
 IMPORTANT: Existing entries retain their ORIGINAL date_added. Only new entries
 get today's date as date_added.
 
-After all new sources added:
-- Update notebook title: notebooklm-mcp:notebook_rename
-- New title: [Title without existing _Updated suffix]_Updated:YYYY.MM.DD
+After all new sources added, rename the notebook:
+```bash
+notebooklm notebook rename <notebook_id> "[Title without existing _Updated suffix]_Updated:YYYY.MM.DD"
+```
 
 ---
 
@@ -81,11 +129,11 @@ Always offer after new sources are loaded:
   Deep -- approx 5 minutes, approx 40 sources"
 
 If accepted:
-1. notebooklm-mcp:research_start (mode: fast or deep, source: web)
-2. Poll notebooklm-mcp:research_status until complete
-3. Import results
-4. Append imported sources to internal source log (date_added = today)
-5. Update notebook title _Updated: date
+```bash
+notebooklm source add-research "relevant topic query"
+```
+Append imported sources to internal source log (date_added = today).
+Update notebook title _Updated: date.
 
 If declined: proceed to Phase 4.
 
@@ -110,17 +158,29 @@ Regenerate the full index from the internal source log (existing + new entries).
   ------------------------------------------------------------
 
 ### Update Studio Note:
-1. List existing notes: notebooklm-mcp:note, action=list
-2. Delete old index note: notebooklm-mcp:note, action=delete, confirm=true
-3. Create new note: notebooklm-mcp:note, action=create
-   - title: Index_Updated:YYYY.MM.DD - HH.MM (current London time)
-   - content: full regenerated index
+```bash
+# List existing notes to find old index note ID
+notebooklm note list
+
+# Delete old index note
+notebooklm note delete <old_note_id> --confirm
+
+# Create new note
+notebooklm note create \
+  --title "Index_Updated:YYYY.MM.DD - HH.MM" \
+  --content "<full regenerated index text>"
+```
 
 ### Update Index Source Copy:
-- Add new text source with full index content
-- Title: Index_Updated:YYYY.MM.DD - HH.MM (current London time)
-- Inform Mick the old index source copy can be manually deleted in the UI
-  The newer timestamp makes it obvious which one to keep
+```bash
+# Remove old index source (identified by "Index_Updated" in title)
+notebooklm source remove <old_index_source_id> --confirm
+
+# Add new index source
+notebooklm source add --text "<full index content>" --wait
+# Note: title the source "Index_Updated:YYYY.MM.DD - HH.MM" in the UI
+# (notebooklm-py CLI uses the content as title fallback if not specified)
+```
 
 ---
 
@@ -138,8 +198,9 @@ Output a clean summary:
 
 ## TECHNICAL NOTES
 
-- Always read existing index first to preserve Notebook Created date and
-  existing source entries with original date_added values
+- Always read existing index first to preserve Notebook Created date
 - Source order is chronological only -- new sources always appear after existing
-- Index timestamps (HH.MM) make it unambiguous which copy is current
-- nlm login may be required at the start of each Claude Desktop session
+- notebooklm use <id> sets context for all subsequent commands in that session
+- If a source add times out, run: notebooklm source list to check if it landed
+- Sessions last days to weeks; CSRF tokens auto-refresh transparently
+- If auth expired: notebooklm login (browser opens, 30-second fix)

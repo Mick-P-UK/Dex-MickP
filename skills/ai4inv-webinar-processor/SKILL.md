@@ -16,21 +16,42 @@ Automates the end-to-end workflow for ingesting a monthly "AI for Investors" web
 NotebookLM and producing a Word user guide and updated index. Uses a sub-agent for the
 NotebookLM query so the main chat stays responsive while results are fetched.
 
+Uses: notebooklm-py CLI (teng-lin/notebooklm-py)
+Auth: notebooklm-auth-monitor handles session monitoring automatically.
+      If auth has lapsed, run: notebooklm login
+
 ---
 
 ## Fixed Constants (do not ask Mick for these)
 
 | Item | Value |
 |------|-------|
-| NotebookLM notebook ID | `d3d6216b-352f-474e-8261-a6c23fc36cb3` |
+| NotebookLM notebook ID | d3d6216b-352f-474e-8261-a6c23fc36cb3 |
 | Notebook name | DIY.ai - Monthly Webinars |
-| Webinars base folder (Windows) | `C:\Users\pavey\Documents\0.2 - Areas (n)\03.04.02 - AI-4-Inv-Webinars 2026\` |
-| Webinars base folder (bash) | `/sessions/quirky-nifty-edison/mnt/03.04.02 - AI-4-Inv-Webinars 2026/` |
-| docx node_modules | `/tmp/docx_work/node_modules/docx` |
-| build_docx.js template | `scripts/build_docx.js` (in this skill directory) |
+| Webinars base folder (Windows) | C:\Users\pavey\Documents\0.2 - Areas (n)\03.04.02 - AI-4-Inv-Webinars 2026\ |
+| Webinars base folder (bash) | /sessions/[session]/mnt/03.04.02 - AI-4-Inv-Webinars 2026/ |
+| docx node_modules | /tmp/docx_work/node_modules/docx |
+| build_docx.js template | scripts/build_docx.js (in this skill directory) |
 
-> **Note on index.md source_id:** This changes every time the index is updated (delete + re-add
-> cycle). Always fetch the current source_id via `notebook_get` at runtime - do not hardcode it.
+Note on source IDs: These change every time the index is updated (delete + re-add cycle).
+Always fetch current sources via CLI at runtime - do not hardcode source IDs.
+
+---
+
+## CLI REFERENCE (key commands for this skill)
+
+  notebooklm use <notebook_id>         -- set active notebook
+  notebooklm source list               -- list all sources with IDs
+  notebooklm source add "<path>"       -- add file source
+  notebooklm source add "<path>" --wait  -- add and wait for indexing
+  notebooklm source add --text "..."   -- add text source
+  notebooklm source remove <id> --confirm  -- delete source
+  notebooklm source fulltext <id>      -- get full indexed text of a source
+  notebooklm ask "question"            -- query the notebook
+  notebooklm note list                 -- list studio notes
+  notebooklm note create --title "T" --content "C"   -- create note
+  notebooklm note update <id> --title "T" --content "C"  -- update note
+  notebooklm note delete <id> --confirm  -- delete note
 
 ---
 
@@ -39,9 +60,9 @@ NotebookLM query so the main chat stays responsive while results are fetched.
 Ask Mick for these if not clear from context. If he says "do February" - list the base folder
 to confirm the exact subfolder name before proceeding.
 
-1. **month_name** — Human-readable (e.g., "February 2026")
-2. **webinar_date** — YYYY.MM.DD format (e.g., "2026.02.25")
-3. **folder_name** — Exact subfolder name (e.g., "2026.02.25 - AI-4-Inv Webnr (Feb '26)")
+1. month_name  -- Human-readable (e.g., "February 2026")
+2. webinar_date  -- YYYY.MM.DD format (e.g., "2026.02.25")
+3. folder_name  -- Exact subfolder name (e.g., "2026.02.25 - AI-4-Inv Webnr (Feb '26)")
 
 ---
 
@@ -49,191 +70,154 @@ to confirm the exact subfolder name before proceeding.
 
 Before doing anything, get the current state of the notebook to avoid duplicates:
 
-```
-Tool: mcp__notebooklm-mcp__notebook_get
-  notebook_id: d3d6216b-352f-474e-8261-a6c23fc36cb3
-```
+  notebooklm use d3d6216b-352f-474e-8261-a6c23fc36cb3
+  notebooklm source list
+  notebooklm note list
 
-From the response, note:
+From the output, note:
 - Which audio sources already exist (check titles for month name or date)
-- The current `index.md` source_id (title = "index.md")
-- The current Studio note_id for "Source Index" (use `note action=list` if needed)
+- The current index.md source ID (title contains "index.md")
+- The studio note ID for "Source Index"
 
-If the target month's audio is already present → **skip Steps 1 and 2**, note its source_id.
+If the target month's audio is already present -> skip Steps 1 and 2, note its source_id.
 
 ---
 
 ## STEP 1 - Locate or Extract Audio (skip if already in notebook)
 
 Scan the Recordings subfolder for audio:
-```bash
-find "/sessions/quirky-nifty-edison/mnt/03.04.02 - AI-4-Inv-Webinars 2026/<folder_name>/Recordings/" \
-  -maxdepth 4 \( -iname "*.m4a" -o -iname "*.mp3" \) | sort
-```
 
-**Audio found:** Use it. Prefer .m4a over .mp3 if both exist. Note full Windows and bash paths.
+  find "/sessions/[session]/mnt/03.04.02 - AI-4-Inv-Webinars 2026/<folder_name>/Recordings/" \
+    -maxdepth 4 \( -iname "*.m4a" -o -iname "*.mp3" \) | sort
 
-**No audio (only .mp4):** Extract from the RAW MP4:
-```bash
-# Find RAW MP4
-find "/sessions/quirky-nifty-edison/mnt/03.04.02 - AI-4-Inv-Webinars 2026/<folder_name>/Recordings/" \
-  -maxdepth 1 -iname "*RAW*.mp4" | head -1
+Audio found: Use it. Prefer .m4a over .mp3 if both exist. Note full Windows and bash paths.
 
-# Extract audio (stream copy - no re-encode, very fast)
-ffmpeg -i "<raw_mp4_path>" -vn -acodec copy "<output_m4a_path>" -y
-```
-Name the output M4A by replacing `_RAW_` with `_RAW-Audio_` and changing extension to .m4a,
+No audio (only .mp4): Extract from the RAW MP4:
+
+  ffmpeg -i "<raw_mp4_path>" -vn -acodec copy "<output_m4a_path>" -y
+
+Name the output M4A by replacing _RAW_ with _RAW-Audio_ and changing extension to .m4a,
 saved in the same Recordings folder. Confirm file size after extraction.
-If ffmpeg is not installed: `apt-get install -y ffmpeg`
+If ffmpeg is not installed: apt-get install -y ffmpeg
 
 ---
 
 ## STEP 2 - Upload Audio to NotebookLM (skip if already in notebook)
 
-```
-Tool: mcp__notebooklm-mcp__source_add
-  notebook_id: d3d6216b-352f-474e-8261-a6c23fc36cb3
-  source_type: file
-  file_path: <WINDOWS_PATH_to_audio_file>
-  wait: false
-```
+  notebooklm use d3d6216b-352f-474e-8261-a6c23fc36cb3
+  notebooklm source add "<WINDOWS_PATH_to_audio_file>" --wait
 
-Note the returned `source_id`. Wait 30 seconds to allow NotebookLM to begin indexing before querying.
+Note the source_id returned in the CLI output.
+The --wait flag ensures indexing completes before querying.
+If indexing is slow, wait an additional 30 seconds before querying.
 
 ---
 
 ## STEP 3 - Generate User Guide via Sub-Agent
 
-### Why a sub-agent?
+Why a sub-agent?
 The NotebookLM query on large audio files takes 1-3 minutes. Running it in a sub-agent keeps
 the main chat free while results come back.
 
-### Start the async query
-Critically, pass **only** the target audio source_id to keep the query fast and focused:
+Spawn a sub-agent with this exact briefing (fill in the placeholders):
 
-```
-Tool: mcp__notebooklm-mcp__notebook_query_start
+  -------
+  You are a task runner. Query NotebookLM for a webinar user guide.
+
   notebook_id: d3d6216b-352f-474e-8261-a6c23fc36cb3
-  query: "Create a user guide for the <month_name> webinar covering all key topics and tools demonstrated"
-  source_ids: [<audio_source_id_for_this_month>]
-```
+  month_name: <MONTH_NAME>
 
-Note the returned `query_id`.
+  Your job:
+  1. Run these bash commands:
+       notebooklm use d3d6216b-352f-474e-8261-a6c23fc36cb3
+       notebooklm ask "Create a user guide for the <month_name> webinar covering all key topics and tools demonstrated"
+  2. Wait up to 3 minutes for the response.
+  3. If you receive a full guide text (500+ words): return the FULL response verbatim --
+     every word, do not summarise, truncate, or paraphrase.
+  4. If the command errors, times out, or returns fewer than 100 words: return exactly
+     QUERY_FAILED: <reason or timeout> -- nothing else.
 
-### Spawn a sub-agent with this exact briefing (fill in the placeholders):
+  Do NOT generate, invent, or supplement any content yourself under any circumstances.
+  -------
 
----
-You are a task runner. A NotebookLM query has been started.
-
-- query_id: `<QUERY_ID>`
-- notebook_id: `d3d6216b-352f-474e-8261-a6c23fc36cb3`
-
-Your only job:
-1. Call `mcp__notebooklm-mcp__notebook_query_status` with that query_id
-2. If status is "in_progress", run `bash sleep 20` and poll again
-3. Poll up to 15 times (about 5 minutes total)
-4. When status is "completed": return the FULL response text verbatim — every word, do not
-   summarise, truncate, or paraphrase. The response should be 2000+ words.
-5. If status is "error" or all 15 polls exhaust without completion: return exactly
-   "QUERY_FAILED: <reason or 'timeout'>" — nothing else.
-
-Do NOT generate, invent, or supplement any content yourself under any circumstances.
----
-
-### On receiving the sub-agent result:
-- If it starts with "QUERY_FAILED": stop and tell Mick the query failed — suggest waiting
+On receiving the sub-agent result:
+- If it starts with "QUERY_FAILED": stop and tell Mick the query failed -- suggest waiting
   2 minutes for audio indexing to complete, then retrying. Do NOT proceed to Step 4.
-- If it returns a full guide text: proceed to Step 4 with that text as `guide_text`.
+- If it returns a full guide text: proceed to Step 4 with that text as guide_text.
 
-**The content in guide_text must come from the actual webinar audio. Never substitute
-invented or generic content if the query fails.**
+The content in guide_text must come from the actual webinar audio. Never substitute
+invented or generic content if the query fails.
 
 ---
 
 ## STEP 4 - Build Word Document (only if Step 3 returned real content)
 
 Ensure docx module is installed:
-```bash
-node -e "require('/tmp/docx_work/node_modules/docx'); console.log('ok')" 2>/dev/null || \
-  (cd /tmp && mkdir -p docx_work && cd docx_work && npm install docx 2>&1 | tail -2)
-```
 
-Read `scripts/build_docx.js` from this skill's directory. Adapt it by substituting these
-placeholders with actual values:
+  node -e "require('/tmp/docx_work/node_modules/docx'); console.log('ok')" 2>/dev/null || \
+    (cd /tmp && mkdir -p docx_work && cd docx_work && npm install docx 2>&1 | tail -2)
 
-| Placeholder | Value |
-|-------------|-------|
-| `{{MONTH_NAME}}` | e.g., "February 2026" |
-| `{{WEBINAR_DATE}}` | e.g., "25 February 2026" |
-| `{{OUTPUT_PATH}}` | bash path: `.../Recordings/<webinar_date> - AI-4-Inv_<MonAbbr>-Webinar_User-Guide.docx` |
-| `{{SECTIONS_JSON}}` | Parsed sections array (see below) |
+Read scripts/build_docx.js from this skill's directory. Adapt it by substituting placeholders:
 
-**Parsing guide_text into SECTIONS_JSON:**
-The guide will have markdown headings. Parse each `###` or `##` heading as a new section:
-```json
-[
-  {
-    "heading": "1.  Introduction and Objectives",
-    "body": ["paragraph text...", "second paragraph..."],
-    "bullets": ["bullet item 1", "bullet item 2"],
-    "checkboxes": ["process step 1", "process step 2"]
-  }
-]
-```
-- Plain paragraphs → `body` array
-- Lines starting with `•`, `-`, or `*` → `bullets` array
-- Lines with `□`, `- [ ]`, or checkbox markers → `checkboxes` array
-- Sub-headings within a section → add as `body` entry prefixed with `##`
+  MONTH_NAME   -> e.g., "February 2026"
+  WEBINAR_DATE -> e.g., "25 February 2026"
+  OUTPUT_PATH  -> bash path to Recordings folder + date + filename
+  SECTIONS_JSON -> parsed sections array
 
-Write the adapted script to `/tmp/build_<month>_guide.js` and run it.
+Parsing guide_text into SECTIONS_JSON:
+Parse each ### or ## heading as a new section object:
+  { "heading": "...", "body": ["..."], "bullets": ["..."], "checkboxes": ["..."] }
+- Plain paragraphs -> body array
+- Lines starting with -, *, + -> bullets array
+- Lines with - [ ] checkbox markers -> checkboxes array
+
+Write adapted script to /tmp/build_<month>_guide.js and run it.
 Confirm the .docx file exists in the Recordings folder and is >10KB.
 
 ---
 
 ## STEP 5 - Update index.md Source
 
-Fetch the current index.md content (use the source_id found in Step 0):
-```
-Tool: mcp__notebooklm-mcp__source_get_content
-  source_id: <current_index_md_source_id>
-```
+Get the current index.md content:
+
+  notebooklm source fulltext <current_index_md_source_id>
 
 Build the updated content:
 1. Increment the source # from the last row in the Sources table
-2. Add a new Sources row: `<N> | <today_YYYY.MM.DD> | <audio_filename> | Audio | <month_name> webinar`
-3. Write a 2-3 sentence Webinar Summary from guide_text covering: main themes, key tools, standout workflows
-4. Extract Tags from guide_text — look for: Perplexity, NBLM, System Prompts, User Prompts,
+2. Add a new Sources row: <N> | <today_YYYY.MM.DD> | <audio_filename> | Audio | <month_name> webinar
+3. Write a 2-3 sentence Webinar Summary from guide_text
+4. Extract Tags from guide_text -- look for: Perplexity, NBLM, System Prompts, User Prompts,
    Spaces, Google Sheets, Live Data, Privacy Settings, n8n, Claude, Cowork, ShareScope,
    Portfolio Analysis, Prompting, Mind Maps, TA, Scheduled Tasks, Automation, Descript,
    Otter.ai, Zoom, NotebookLM, Gemini
 5. Update "Last Updated" date at the top
 
 Delete old source and re-add:
-```
-Tool: mcp__notebooklm-mcp__source_delete (confirm: true)
-Tool: mcp__notebooklm-mcp__source_add (source_type: text, title: "index.md")
-```
-Note the new source_id returned.
+
+  notebooklm source remove <old_index_md_source_id> --confirm
+  notebooklm source add --text "<full updated index content>"
+
+Note the new source_id from the CLI output.
 
 ---
 
 ## STEP 6 - Update Studio Note
 
-```
-Tool: mcp__notebooklm-mcp__note
-  action: update
-  notebook_id: d3d6216b-352f-474e-8261-a6c23fc36cb3
-  note_id: <note_id_from_Step_0>
-  title: Source Index
-  content: <identical to updated index.md>
-```
+  notebooklm note update <note_id_from_Step_0> \
+    --title "Source Index" \
+    --content "<identical to updated index.md content>"
+
+If note update is not available, delete and recreate:
+
+  notebooklm note delete <note_id> --confirm
+  notebooklm note create --title "Source Index" --content "<updated index content>"
 
 ---
 
 ## Completion Report to Mick
 
 Report:
-- ✅/❌ status for each of the 6 steps
+- Status for each of the 6 steps (done / skipped / failed)
 - computer:// link to the Word doc
 - NotebookLM link: https://notebooklm.google.com/notebook/d3d6216b-352f-474e-8261-a6c23fc36cb3
 - Tags applied for this month
@@ -246,8 +230,9 @@ Report:
 
 | Problem | Action |
 |---------|--------|
-| ffmpeg not found | `apt-get install -y ffmpeg` |
+| ffmpeg not found | apt-get install -y ffmpeg |
 | NBLM query fails/times out | Stop; tell Mick to wait 2 min and retry |
-| docx module missing | `cd /tmp && mkdir -p docx_work && cd docx_work && npm install docx` |
-| source_add times out | Check `notebook_get` first — it may have landed |
+| docx module missing | cd /tmp && mkdir -p docx_work && cd docx_work && npm install docx |
+| source add times out | Check notebooklm source list -- it may have landed anyway |
 | Audio already in notebook | Skip Steps 1+2; use existing source_id for Step 3 query |
+| Auth expired | Run: notebooklm login (browser opens, 30 seconds) |

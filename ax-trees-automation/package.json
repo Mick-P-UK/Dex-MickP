@@ -1,0 +1,13 @@
+{
+  "name": "ax-trees-automation",
+  "version": "1.0.0",
+  "description": "DIY Investors browser automation using accessibility trees and Playwright",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0",
+    "dotenv": "^16.0.0"
+  }
+}

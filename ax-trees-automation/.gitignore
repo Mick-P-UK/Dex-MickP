@@ -1,0 +1,21 @@
+# Environment - never commit real credentials
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Playwright browser auth sessions - sensitive
+auth/
+
+# Debug screenshots - not needed in repo
+screenshots/debug/
+
+# Playwright cache
+.playwright/
+
+# Temporary files
+*.tmp
+*.log
+__pycache__/
+*.pyc

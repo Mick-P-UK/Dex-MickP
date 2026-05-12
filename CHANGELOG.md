@@ -6,6 +6,21 @@ All notable changes to Dex will be documented in this file.
 
 ---
 
+## [2026-05-09] - SKILLS_REGISTRY.md created (single source of truth for skills)
+
+**Status:** v1.0 committed at vault root.
+
+### What was frustrating before
+Skills lived in five disconnected buckets - vault skills/ folder, /mnt/skills/user/ mirror, Cowork plugin marketplace, claude.ai PAIDA Projects (Pete/Cedric/Poppy), and Cowork scheduled tasks. No single place to ask "what skills do I have?". Switching between claude.ai, Cowork, and Claude Code meant each runtime saw a different subset. Poster Pete's four portfolio post skills (portfolio-post-creator, wordpress-post-publisher, wordpress-image-uploader, benchmark-fetcher) only existed in claude.ai, with no vault mirror, breaking the dual-write rule because they were never built on disk in the first place.
+
+### What is different now
+SKILLS_REGISTRY.md sits at the vault root alongside CEDRIC_MEMORY.md and CHANGELOG.md. Single markdown table per category, ASCII only, GitHub-backed. Every skill row tagged with: source (mick-cedric / mick / anthropic / external), lives-in (V/M/P/C-Pete/C-Cedric/C-Poppy/S), status, description. Visible and queryable from claude.ai (Filesystem MCP), Cowork (mounted), and Claude Code (filesystem). Pending: mirror Pete's four skills into the vault; reconcile eight unverified C-? skills; update CLAUDE.md MANDATORY SKILL DEPLOY PROTOCOL Step 5 to require registry updates.
+
+### Why you'll care
+You can answer "where does skill X live?" in one place instead of five. New skills now have a clear home regardless of where they were built.
+
+---
+
 ## [2026-04-25] - April AI for Investing Webinar Planning Session
 
 ### Session Summary
@@ -63,7 +78,7 @@ See CEDRIC_MEMORY.md -- "RESUME HERE" block for full pickup notes.
 ### Session Summary
 **Date:** 2026-04-04, 16:14-16:40 GMT  
 **Status:** Code complete and functional. Blocked by external service maintenance (Easter weekend).  
-**Progress:** 95% â -- authentication script works, backend unavailable
+**Progress:** 95% ï¿½ -- authentication script works, backend unavailable
 
 ### Issues Resolved
 
@@ -83,7 +98,7 @@ pip install greenlet==3.3.2 --no-cache-dir
 pip install -r requirements.txt --no-cache-dir
 ```
 
-**Result:** âœ... Success
+**Result:** ï¿½... Success
 - Playwright 1.57.0 installed
 - greenlet 3.3.2 installed (Python 3.14 compatible)
 - python-dotenv 1.0.0 installed
@@ -120,13 +135,13 @@ SHARESCOPE_HEADLESS=false
 ### Testing Results
 
 **Successful Actions:**
-- âœ... Dependencies installed
-- âœ... Credentials loaded from correct location
-- âœ... Browser navigated to correct login URL
-- âœ... Login portal visible on screen (confirmed by screenshot)
-- âœ... Error screenshot saved automatically
+- ï¿½... Dependencies installed
+- ï¿½... Credentials loaded from correct location
+- ï¿½... Browser navigated to correct login URL
+- ï¿½... Login portal visible on screen (confirmed by screenshot)
+- ï¿½... Error screenshot saved automatically
 
-**Timeout (Expected â -- External Service Maintenance):**
+**Timeout (Expected ï¿½ -- External Service Maintenance):**
 ```
 ERROR: Login failed: Page.wait_for_selector: Timeout 15000ms exceeded.
 waiting for locator("input[type=\"text\"]") to be visible
@@ -141,9 +156,9 @@ which may cause temporary service disruption."
 ```
 
 ### Files Modified
-- `sharescope_login.py` â -- âœ... FIXED (URL, env path, delay)
-- `requirements.txt` â -- âœ... FIXED (Playwright 1.50.0+)
-- `CEDRIC_MEMORY.md` â -- âœ... UPDATED
+- `sharescope_login.py` ï¿½ -- ï¿½... FIXED (URL, env path, delay)
+- `requirements.txt` ï¿½ -- ï¿½... FIXED (Playwright 1.50.0+)
+- `CEDRIC_MEMORY.md` ï¿½ -- ï¿½... UPDATED
 - Created: `session-logs/2026.04.04-SESSION-LOG.txt` (full session details)
 
 ### What's Ready for Tomorrow
@@ -154,7 +169,7 @@ When ShareScope maintenance ends (likely Monday 7th April):
 4. Test headless mode
 
 ### Meet Cedric Episode Potential
-- **Title:** "Teaching Cedric to Login â -- When External Services Fail"
+- **Title:** "Teaching Cedric to Login ï¿½ -- When External Services Fail"
 - **Themes:** Dependency debugging, API discovery, systematic troubleshooting, graceful failure handling
 - **Demonstrates:** How to maintain momentum when blocked by external factors
 
@@ -190,8 +205,8 @@ When ShareScope maintenance ends (likely Monday 7th April):
 
 **Standing Rule (No Orphan Records):**
 1. Check EPIC in Companies Covered
-2. If YES â†' create & link
-3. If NO â†' auto-stub Companies Covered, create & link, flag to Mick
+2. If YES ï¿½' create & link
+3. If NO ï¿½' auto-stub Companies Covered, create & link, flag to Mick
 
 ---
 

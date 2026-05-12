@@ -1,6 +1,430 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.04.27 - ~09:30 BST (1,200-word report target added to sub-agent brief. Ready for rehearsal run.)
-**Environment:** Cowork (Filesystem MCP + full MCP suite confirmed)
+**Last Updated:** 2026.05.12 (afternoon) - Subscription audit session completed (0CodeKit, Codia, ChatGPT Plus cancelled or actioned; Otter kept; six other subs flagged for review). New back-burner item logged: Section 9 of MCSB-Webinar-Voice doc now captures three live-voice operating modes (earpiece coach / visible co-host / Q&A specialist) to revisit once MCSB Stages 1-3 are operational. Earlier today: MCSB and Webinar Voice Integration concept doc landed from mobile claude.ai session (11 May). 46p PRD being authored in Cowork.
+**Environment:** Claude Desktop with Filesystem MCP confirmed
+
+---
+
+## Top of Mind - 2026.05.12 (Tuesday)
+
+### MCSB (Mick and Cedric Shared Brain) + Webinar Voice Integration
+**Status:** Concept locked, PRD in development in Cowork, vault doc created today.
+**Project folder:** `C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.05.11-MCSB-Webinar-Voice\`
+**Lead doc:** `2026.05.11 - Cedric Webinar Voice Integration and MCSB Knowledge Bridge.md`
+
+**Concept in one paragraph:** Three-part system to put Cedric voice into live DIY Investors webinars. Otter.ai transcribes the webinar > Mick paste-asks Cedric in claude.ai > Cedric queries MCSB (shared knowledge layer to be built, Obsidian+GitHub backed) + live web > TTS reply captured by desk mic into webinar audio. Trial first with 2-3 long-serving members. MCSB itself is the bigger long-term play: a unified knowledge bridge between Desktop Cedric and claude.ai Cedric, covering Companies Covered, Radar Log, portfolio data, meeting notes, news.
+
+**Back burner item logged in Section 9 of lead doc (12 May afternoon):** three live-voice operating modes for in-webinar reaction - Mode A earpiece coach, Mode B visible co-host, Mode C Q&A specialist. Revive when MCSB Stages 1-3 are operational and simpler MVP voice loop (Section 7.4) has been validated.
+
+**Pickup tomorrow (or next session):**
+1. Wait for Cowork PRD draft to land in `C:\Vaults\Cowork\`
+2. Cross-reference PRD against the four Cedric pushback points in Section 7 of the lead doc
+3. Resolve naming/scope question: is MCSB a rename, a new top layer, or a parallel system to the existing CEDRIC Memory Vault + Knowledge Base + Dex-MickP?
+4. Decide whether webinar voice MVP can run on existing infrastructure before MCSB Stages 1-4 land
+
+### Subscription audit follow-ups (from 12 May afternoon session)
+- Cancel Codia AI before 21 May (USD 20/month)
+- Verify usage / decide on Synthesia (£201.60/yr renews 25 Nov), Ideogram ($180/yr renews 2 Sep), Text Blaze ($35.88/yr renews 18 Aug)
+- Cancel Alex McFarland "AI Writing Systems" Substack before 18 May (£16/month - not actually cancelled despite earlier belief)
+- Investigate hosting subs: Network Solutions (expired service notice 18 Apr), Bluehost, 123-reg, iPage
+- ChatGPT Plus cancelled today, paid through to ~9 June - use it during the paid window
+- Otter.ai Pro retained (Zoom auto-join workflow justifies it)
+- OpenAI API billing plan cancelled 16 April (confirmed via platform.openai.com screenshot)
+
+---
+
+## SKILLS - SOURCE OF TRUTH
+
+For any question about what skills exist, where they live, who built them, or how to invoke them, the canonical reference is:
+
+  C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\SKILLS_REGISTRY.md
+
+This file lists every skill across vault, mirror, plugin marketplace, scheduled tasks, and claude.ai PAIDA Projects (Pete, Cedric, Poppy). Update on every skill create / rename / version-bump / deprecate. See its Section 7 for maintenance rules.
+
+---
+
+## Session Log - 2026.05.10 Late-PM (YouTube Script v2 - Edits Applied)
+
+### v2 drafted with 5 edits. All verified, change-highlighted DOCX delivered. Mick reviewing.
+**Session time:** ~16:25-17:00 BST (Sunday late afternoon)
+**Project:** YouTube content for diy-investors.com channel (@DIY-Investors)
+**Status:** v2 complete. Mick has change-highlighted DOCX for second read-through.
+
+**What we did:**
+- Picked up cleanly from RESUMPTION-PICKUP-NOTE.md per "Path A" (verbal edits from Mick)
+- Five edits requested: 1) COMEX inventory line in Section 4; 2-4) GUIA/INCRA/FUNAI acronym
+  expansions in Section 5; 5) sanity check on copper guidance figure in Section 6
+- Fact-checked the copper figure via web search across SIX independent sources
+  (Coeur press release, MINING.com, SME Mining Engineering, Investing.com, Mugglehead,
+  Resource World): 50-65 million pounds is correct. New Afton contributes all of it
+  and is fundamentally a copper-gold mine, not a precious metals mine.
+- Fact-checked the COMEX silver inventory claim: registered stocks below 100m oz, multi-source
+  confirmed including ZeroHedge 1 May 2026. Edit on safe ground.
+- Mick chose Option A on the copper clarifier: keep figure, add aside in [ASIDE] brackets
+  noting New Afton is a copper-gold mine.
+- v2-draft.md written via single Filesystem write (full overwrite, ASCII only)
+- v2 DOCX built with v2 changes highlighted in YELLOW for easy comparison vs v1 read-through
+- Validation hit a docx-js quirk: highlightCs element fails strict OOXML schema
+  (Word opens fine but validator blocks). Fix: post-process the .docx zip, regex-strip
+  all <w:highlightCs/> elements, repackage. PASS after fix.
+- Final v2 DOCX delivered via /mnt/user-data/outputs/
+
+**CRITICAL LESSON LEARNED THIS SESSION (Mick caught it):**
+Cedric stated "copper is measured in pounds (a much smaller unit than ounces)" when
+verifying the copper figure. THIS IS WRONG. There are 16 ounces in 1 pound, so a pound
+is LARGER than an ounce, not smaller. Mick caught this immediately with "When I went to
+School, there were 16oz to 1 pound - so ounces are smaller than pounds!"
+
+The actual reasoning that justifies the figure: 50-65m lbs of copper IS large by weight
+(~800m-1bn avoirdupois ounces equivalent), BUT this is correct because New Afton is a
+copper-gold mine. By DOLLAR VALUE the mix is balanced: gold ~$3.6bn, silver ~$1.6bn,
+copper ~$0.26bn at current prices. So copper is the SMALLEST revenue stream despite being
+the largest by weight.
+
+PATTERN TO REMEMBER: when cross-source verification confirms a figure, STOP THERE. Do
+not add hand-wavy unit-conversion reasoning post-hoc. The cross-source check is the
+verification, not the unit comparison. Adding spurious reasoning to "explain" a verified
+figure is how unforced errors creep in.
+
+**Files now on disk:**
+- v1 markdown source (preserved): scripts/v1-draft.md
+- v1 DOCX (Mick's name): scripts/2026.05.10 - Gold_SRB_n_CDE_YT-Script_v1-draft.docx
+- v2 markdown source: scripts/v2-draft.md
+- v2 DOCX (suggested filename): 2026.05.10 - Gold_SRB_n_CDE_YT-Script_v2-draft.docx
+
+**Edits applied (all verified):**
+1. Section 4: COMEX silver inventory line added after ETF buying point.
+   Verified: registered stocks below 100m oz, multi-source confirmed.
+2. Section 5: GUIA expanded to "Brazilian environmental installation licence"
+3. Section 5: INCRA expanded to "National Institute for Colonisation and Agrarian Reform"
+4. Section 5: FUNAI expanded to "National Foundation for Indigenous Peoples"
+5. Section 6: copper figure (50-65m lbs) verified across 6 sources. KEPT.
+   "New Afton is a copper-gold mine" clarifier added in [ASIDE] brackets per Mick's request.
+
+**Word count v2:** 2,065 spoken words (~14.8 min at 140 wpm).
+v1 was 2,004 -> v2 added ~60 words via acronym expansions and COMEX line.
+
+**Validation:** ASCII PASS, voice-guard PASS, all 6 edit checks PASS, DOCX validator PASS
+(after highlightCs strip).
+
+**Patterns / lessons logged:**
+- DOCX build with change-highlighting: docx-js TextRun supports `highlight: "yellow"`.
+  But docx-js emits a non-standard <w:highlightCs/> alongside <w:highlight/> which
+  fails strict OOXML schema validation. FIX: post-process the .docx zip, regex-strip
+  all <w:highlightCs[^/]*/> elements, repackage. Word opens both versions fine; the
+  strip is for validator compliance only.
+- Verbal-edit pickup pattern (Path A from RESUMPTION-PICKUP-NOTE) worked well: read v1
+  source, apply edits in memory, write v2 to scripts folder, regenerate DOCX with
+  highlight-on-changes, present.
+- When Mick queries a number that "feels wrong", do a real fact check (web search +
+  cross-source) before answering. Don't rely on memory or hand-wave reasoning.
+- "Side-note aside" device: use [ASIDE - text] brackets for camera cues that flag
+  on-camera commentary distinct from stage directions in [square brackets]. Working
+  pattern for this video; could be a voice-DNA addition if Mick uses it again.
+
+**Outstanding (for next session):**
+1. Mick reads through v2 DOCX, tracking the yellow-highlighted changes
+2. Decision: ship as v1-final, or v3 with more edits
+3. If shipping: lock title, regenerate clean DOCX without highlights, update Notion
+   Micks Content Studio entry from "In Review" to "Ready"
+   (entry id: 35cdb32a-9b0a-8127-b9e9-ed66cb9b2c33)
+4. Charts handoff to editor (both JPGs originally at /mnt/user-data/uploads/, may need
+   re-uploading or copying into the project folder for permanence)
+
+**Notion update status:**
+- Micks Content Studio entry already exists at "In Review" status from earlier today
+  (id: 35cdb32a-9b0a-8127-b9e9-ed66cb9b2c33). Did NOT update this session - status
+  still accurately reflects state (v2 produced, awaiting Mick's read-through).
+- Will move to "Ready" when v2 (or v3) is signed off.
+
+**Trigger phrases for next session pickup:**
+"Cedric, ship the gold miners script. Title [N], no further changes."
+OR
+"Cedric, more edits on the gold miners script..."
+
+---
+
+## Session Log - 2026.05.10 PM (YouTube Script v1 Drafted - SRB + CDE)
+
+### Script v1 written, voice-DNA validated, DOCX delivered. Mick reviewing offline.
+**Session time:** ~11:55-12:25 BST (Sunday afternoon, picked up after morning context refresh)
+**Project:** YouTube content for diy-investors.com channel (@DIY-Investors)
+**Status:** v1 complete. Mick has DOCX for printed read-through. v2 awaits his edits + title sign-off.
+**Outcome:** v2 produced same day - see late-PM entry above.
+
+**What we did:**
+- Picked up cleanly from the morning pickup note in fresh context
+- Read PICKUP-NOTE-for-fresh-context.md and voice-dna-mick.json end-to-end before drafting
+- Sanity-checked the central-thesis numbers in Python: Q1 2026 vs 2025 actual gap is 52.2%
+  ("roughly 50%" in the script stays honest); EDV gap is 61%; Q1 drawdown 26.8%
+- Drafted v1 in one Filesystem write (full overwrite, ASCII only)
+- Validated post-write: ASCII compliance PASS (no em dashes, smart quotes, ellipsis);
+  voice-guard pass (no banned guru-speak); spoken word count 2,004 -> ~13-14 min at 140 wpm
+- Flagged the length overrun to Mick (target was 8-12 min). Mick chose to keep the depth.
+- Built print-friendly DOCX via docx-js + skill: A4, Arial 12pt, 1.5x line spacing,
+  section dividers, blue sub-block labels, header + page-of-total-pages footer,
+  appendix with title options + pre-record checklist
+- Validated DOCX (90 paragraphs, all checks PASS)
+- Delivered both files to /mnt/user-data/outputs/ for download
+- Mick saved DOCX to vault scripts folder under his preferred filename convention
+
+**Files now on disk:**
+- Markdown source (Cedric's authoritative draft):
+  C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\05-Areas\YouTube_System\diy-investors.com\YT-Longform\2026-05-10 - Gold Miners Q1 Realised Price Story (SRB+CDE)\scripts\v1-draft.md
+- DOCX (Mick's read-through copy):
+  C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\05-Areas\YouTube_System\diy-investors.com\YT-Longform\2026-05-10 - Gold Miners Q1 Realised Price Story (SRB+CDE)\scripts\2026.05.10 - Gold_SRB_n_CDE_YT-Script_v1-draft.docx
+
+**Title options put to Mick (still awaiting choice as of late-PM):**
+1. Gold's Pulled Back - But Miners Just Banked Record Q1 Prices. Two I'm Watching. (working)
+2. Gold Hit $5,602 - But the Miners Are Still Cheap. Two I'm Watching.
+3. Spot Gold Says Correction. Miner Earnings Say Re-rating. Two Stocks On My Radar.
+4. The Q1 Gold Story Retail Is Missing - SRB and CDE.
+
+**Lessons / patterns logged:**
+- Filesystem MCP write_file is text-only -- binary DOCX must go via /mnt/user-data/outputs/
+  with present_files. Always tell Mick to download and drop into the vault himself.
+- str_replace is Claude-side only. For vault edits, always read full file -> modify in
+  memory -> Filesystem:write_file with complete content. (Confirmed again, was already
+  in Key Conventions.)
+- DOCX skill at /mnt/skills/public/docx/SKILL.md works cleanly with docx-js. Print-friendly
+  recipe to remember: A4, Arial 12pt, 1.5x spacing (line: 360), section divider rules
+  (paragraph border-bottom), italic-grey stage directions, blue H2 for sub-blocks.
+- Voice-DNA validation in Python after writing is now the standard QA step for any
+  long-form Mick-voice content. ASCII check + word count + banned-phrase check.
+
+**Notion update status (from PM session):**
+- Micks Content Studio entry created during PM session shutdown.
+- Entry id: 35cdb32a-9b0a-8127-b9e9-ed66cb9b2c33
+- Status: "In Review"
+- URL: https://www.notion.so/35cdb32a9b0a8127b9e9ed66cb9b2c33
+
+---
+
+## Session Log - 2026.05.10 AM (YouTube Video Brief: Gold Miners Q1 Realised Price - SRB + CDE)
+
+### YouTube longform video brief built. Pickup note ready for fresh-context script drafting.
+**Session time:** ~10:30-12:30 BST (Sunday morning)
+**Project:** YouTube content for diy-investors.com channel (@DIY-Investors)
+**Status:** Brief complete, voice DNA loaded, pickup note saved. Script draft NOT yet written
+(picked up in afternoon session above).
+
+**What we did:**
+- Mick asked for two-phase research: trending YouTube investing topics + match against vault content
+- Phase 1 vault research: read CEDRIC_MEMORY, YouTube_System config, voice DNA, ICP profile, channel YAML
+- Phase 2 web research: ranked top 10 trending investing topics (gold/miner re-rating made the list)
+- Confirmed last YouTube upload was Feb 2026 silver shortage; Sep 2025 video on AI miner research already proven on channel
+- Mick chose: gold miners lagging the metal price, mixing UK + US listings
+- Iterated structure: started with 4 stocks (SRB, EDV, CDE, WPM), Mick pivoted to 2-stock approach
+- Final structure: SRB (UK, BUY 80.7% discount, with honest Coringa permit risk Jan 2027) + CDE (US/NYSE, room to run on 2026F multiples 8.9x P/E, 4.5x EV/EBITDA)
+
+**Two charts uploaded by Mick (both saved at /mnt/user-data/uploads/):**
+- 2026_04_08_-_GGP_-_Gold_n_Silver_Prices_Q1_2026-Estimated.jpg (Q1 monthly averages table)
+- 2026_04_20_-_Gold_TradEcon__1yr_Chart_4805_1_USD_per_oz_JPG.jpg (1-year price arc)
+
+**Central thesis identified:**
+The Q1 2026 realised price disconnect. Spot gold "correcting" 10% from Jan ATH of $5,602, but
+miners booking Q1 2026 sales received average ~$4,870/oz - roughly 50% higher than 2025 average
+of ~$3,200/oz. EDV's Q1 confirmed it: realised $4,842 vs $3,000 guidance assumption. Q1 reports
+landing now will show a re-rating retail hasn't priced in.
+
+**Agreed video parameters:**
+- Title direction: "Gold Hit $5,589 - But the Miners Are Still Cheap" (revised in PM session for 2-stock format)
+- Two charts to feature in Section 1 as the visual hook
+- Elliott Wave: GENERIC framing only ("corrective wave then continuation"), no specific count
+- Inner Circle webinar coverage: soft mention, not hard CTA
+- Charts attribution: "my research" without specifying source
+- Tone: honest, down-to-earth, AI gets you to analysis quicker but you still own the call
+
+**Voice DNA loaded fully (voice-dna-mick.json):**
+- 12 patterns to deploy: personal attribution, humility markers, audience specificity (DIY-Investors capitalised),
+  conversational transitions, softer technical language, hedging on predictions/conviction on principles,
+  Cedric+Annie as named collaborators, British English throughout, data-first, temporal precision,
+  self-aware concept references, full risk warning + DYOR signature
+
+**Project folder created:**
+C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\05-Areas\YouTube_System\diy-investors.com\YT-Longform\2026-05-10 - Gold Miners Q1 Realised Price Story (SRB+CDE)\
++ scripts/ subfolder
+
+**Pickup note saved (CRITICAL for next session - now CONSUMED in PM session):**
+2026-05-10 - Gold Miners Q1 Realised Price Story (SRB+CDE)\PICKUP-NOTE-for-fresh-context.md
+Contains: full brief, both charts described, complete SRB + CDE financial data, script structure
+section by section, voice DNA patterns, file writing requirements, frontmatter template.
+
+**Mick's reason for context refresh:**
+Context was filling up after extensive research and brief iteration. Smart move to clear before
+the heaviest task (script writing). Pickup note designed so fresh Cedric has zero context loss.
+PATTERN VALIDATED: PM session picked up cleanly with no information lost.
+
+**Session intelligence to carry forward:**
+- Channel ID UCaWdEBBHiV6P0i7X5fDCY0A (@DIY-Investors)
+- Sister site diy-investors.ai active with Cedric/Nina AI content
+- Notion Research Database ID: ac552ce5-2ceb-4ffb-a502-7d5da6c67cf8
+- Notion Micks Content Studio DB ID: a1983c632eb84e15b365a6e3e310ff96
+- SRB Notion: 353db32a-9b0a-8198-9801-cbb03e443ecf (Nina BUY 1 May 2026)
+- CDE Notion: 34fdb32a-9b0a-8143-8cd0-e2e399711789 (Cedric Analysis 27 Apr 2026)
+- EDV Notion: 351db32a-9b0a-8112-862e-cfe359ba4b6c (Nina 29 Apr 2026)
+- 19 companies tracked in Research Log _index.md as of session
+
+---
+
+## Session Log - 2026.05.03 (ax-trees-automation: Sessions 6-7 - NotebookLM Bridge)
+
+### notebooklm-bridge.js built and first live test passed. Two bugs found and fixed.
+**Session time:** Sessions 6 and 7 -- 2026-05-03 afternoon
+**Project:** ax-trees-automation
+**Session logs:** C:\Vaults\Cowork\ax-trees-automation\session-logs\2026-05-03-session6.md
+                 C:\Vaults\Cowork\ax-trees-automation\session-logs\2026-05-03-session7.md
+
+**Session 6: notebooklm-bridge.js built**
+- Decision 3 confirmed: do NOT rewrite Python NLM pipeline in JS -- bridge to it via child_process
+- Python script: sharescope_nlm_researcher.py (handles Layers 2-5: notebook check/create,
+  CSV upload, news search, Nina analysis, report save to vault)
+- notebooklm-bridge.js written: spawns Python, streams output through Spinner, extracts JSON result
+- Three supporting fixes: CSV filename suffixes, sharescope-search now returns companyName,
+  sharescope-get-metrics passes companyName through to bridge
+- Terminal Spinner class added (mirrors Python Spinner: rotating frames + alternating messages)
+- notebookLM CLI: unofficial but working. Authenticate via: notebookLM login (once per session)
+- Token stored at: C:\Users\pavey\.notebooklm\storage_state.json
+
+**Session 7: Live test SQZ + bug fixes**
+- First live test: pipeline ran end-to-end, report saved to vault. Two issues found.
+- BUG 1 FIXED: extractJsonResult returned null (bridge reported success:false despite Python success)
+  Root cause: Python prints Obsidian deep-link block AFTER JSON dict; stdout.slice(idx) included
+  trailing ==== content, breaking JSON.parse. Fix: brace-depth counting to find matching }.
+- ENHANCEMENT: flagNewsWarning() added. If IMPORT_RESEARCH fails (news search non-fatal timeout),
+  bridge prepends Obsidian [!WARNING] callout to saved .md report so readers know news is absent.
+- IMPORT_RESEARCH RPC: timed out 6x in first test (~4 min delay). Non-fatal. Google service issue.
+  Monitor across runs. Not something we control in our code.
+
+**JS file write rule (CRITICAL - confirmed again this session):**
+  Edit tool ALWAYS truncates JS files at apostrophes in string literals.
+  ALWAYS use bash heredoc: cat > filepath << 'ENDOFFILE' ... ENDOFFILE
+
+**ax-trees-automation task status (as of 2026-05-03 Session 7):**
+- [x] Layer 1: ShareScope data collection -- COMPLETE
+- [T] Layers 2-5: notebooklm-bridge.js -- TESTED (retest needed to confirm extractJsonResult fix)
+- [ ] Top-level orchestrator / run-research.bat -- NOT STARTED
+- [ ] Portfolio-screenshots mini-project -- NOT STARTED
+- [ ] Sharescope-stock-filter mini-project -- NOT STARTED
+
+**Session 8 first task:**
+  Run retest command (see SESSION8-PICKUP.md). If success:true confirmed, mark [x] COMPLETE.
+  Then run full --run-layer1 end-to-end test.
+
+**Mandatory reads at Session 8 start:**
+  1. session-logs/SESSION8-PICKUP.md
+  2. PIPELINE-PROGRESS.md
+  3. skills/SKILLS-INDEX.md
+
+---
+
+## Session Log - 2026.05.03 (ax-trees-automation: Sessions 3-5 Complete, Layer 1 Done)
+
+### ax-trees-automation Layer 1 (ShareScope Data Collection) FULLY COMPLETE
+**Session time:** All-day sessions 3, 4, 5 -- 2026-05-03
+**Project:** ax-trees-automation
+**Session logs:** C:\Vaults\Cowork\ax-trees-automation\session-logs\2026-05-03-session5.md
+
+**Session 3: AX tree master + project reorganisation**
+- sharescope-ax-tree-master.md v1.2 created with all confirmed selectors
+- Project folder structure cleaned up and standardised
+
+**Session 4: Login/logout/screenshot skills**
+- skills/sharescope-login.js -- [x] COMPLETE
+- skills/sharescope-logout.js -- [x] COMPLETE (Options menu selector discovered and confirmed)
+- skills/sharescope-screenshot.js -- [x] COMPLETE
+- Logout discovery: must use #cogwheel-menu-main button[title="Options menu"] (not .first())
+
+**Session 5: Search/export/metrics skills + live tests + infrastructure**
+- .env restored to correct location C:\Users\pavey\.env (had been placed in project subfolder)
+- .env protection rule added to THREE CLAUDE.md levels:
+    C:\Users\pavey\.claude\CLAUDE.md (global -- Mick created in Cursor)
+    C:\Vaults\Cowork\CLAUDE.md (vault level)
+    C:\Vaults\Cowork\ax-trees-automation\CLAUDE.md (project level)
+- skills/sharescope-search.js -- [x] COMPLETE
+- skills/sharescope-export-financials.js -- [x] COMPLETE
+- skills/sharescope-get-metrics.js -- [x] COMPLETE (orchestrator: login->search->export->logout)
+- Live test GGP (Greatland Resources): PASS (selector bugs found and fixed)
+- Live test SQZ (Serica Energy): PASS (clean run, all 6 tabs, logout confirmed)
+- Auto-test policy added to CLAUDE.md: always test before reporting, never ask permission
+- PIPELINE-PROGRESS.md created: master view of all 5 pipeline layers
+- PROGRESS-TEMPLATE.md created: standard for all mini-projects
+- PROGRESS.md standard locked: [ ] NOT STARTED | [~] WIP | [B] BUILT | [T] TESTED | [x] COMPLETE
+- Dex vault mounted this session (request_cowork_directory): CEDRIC_MEMORY.md now writable directly
+- Folder access rule added to CLAUDE.md (see Key Conventions below)
+
+**ax-trees-automation task status (as of 2026-05-03 Session 5):**
+- [x] Layer 1: ShareScope data collection -- COMPLETE (all 6 skills, both live tests)
+- [ ] Layer 2: NotebookLM check/create -- SESSION 6 NEXT
+- [ ] Layer 3: NotebookLM upload CSVs -- NOT STARTED
+- [ ] Layer 4: NotebookLM run research -- NOT STARTED
+- [ ] Layer 5: Research report format/return -- NOT STARTED
+
+**Session 6 trigger:** "Cedric, please pick up the ax-trees-automation project for Session 6."
+**First task Session 6:** Create mini-projects/notebooklm-check/ folder and PROGRESS.md.
+  Key question: does NotebookLM have an API, or does it require browser automation?
+
+**Mandatory reads at Session 6 start:**
+  1. ax-trees-automation/CLAUDE.md
+  2. PIPELINE-PROGRESS.md
+  3. skills/SKILLS-INDEX.md
+  4. sharescope/sharescope-ax-tree-master.md (v1.2)
+
+**Key confirmed selectors (live-tested 2026-05-03):**
+- Search results: #find-share-dlg-results > div.find-dlg-row > span.find-dlg-row-tidm
+- Tab buttons: data-cmd attributes ONLY (role/name selectors are ambiguous)
+- Forecasts tab: data-cmd="ShowBrokers" (NOT ShowForecasts -- different sub-toggle)
+- Logout: #cogwheel-menu-main button[title="Options menu"] then #logout2
+
+---
+
+## Session Log - 2026.05.02 Evening (ax-trees-automation: Rebuild + PRD + Notion + Pickup)
+
+### ax-trees-automation: folder rebuilt in Cowork vault. PRD v1.0 written. Session 3 ready.
+**Session time:** ~19:00-20:30 BST
+**Project:** ax-trees-automation
+
+**Context:**
+Mick asked to pick up the ax-trees-automation project. Previous session's files
+(folder structure, session log) were found in a temporary session workspace, not
+persisted to the Cowork vault. Full session transcript was recovered via session history.
+All work was rebuilt cleanly this session.
+
+**NOTE on 2026.05.01 Evening entry below:**
+That entry records Tasks 2 and 3 as complete (PRD written, migration survey done, Python
+pipeline discovered, SS-01 staged). Those outputs were written to a temporary workspace
+and are not accessible in the Cowork vault. They may or may not exist in a session archive.
+This session rebuilt Task 1 and wrote a fresh PRD (Task 2). Task 3 is still to be done.
+
+**Completed this session:**
+- Rebuilt full v7 folder structure into C:\Vaults\Cowork\ax-trees-automation\ (36 files, 23 dirs)
+- Wrote PRD.md v1.0 (14 sections: purpose, platforms, skills architecture, mini-projects model,
+  output standards, anti-bot approach, tech stack, full folder tree, plugin roadmap, migration plan)
+- Updated Notion Meet Cedric / ShareScope hub (corrected SS-02, added SS-03 stub)
+- Wrote full session log with Session 3 pickup instructions
+- Updated CEDRIC_MEMORY.md (this update)
+
+**ax-trees-automation current task status (as of 2026-05-02 Session 2 -- superseded by 2026-05-03 entry above):**
+1. [x] Build v7 folder structure -- COMPLETE
+2. [x] Write PRD.md -- COMPLETE (v1.1)
+3. [x] Explore existing ShareScope project + plan migration -- COMPLETE (Session 3)
+4. [x] Set up Meet Cedric / ShareScope series in Notion -- COMPLETE
+5. [x] Layer 1: ShareScope skills built and tested -- COMPLETE (Sessions 4-5)
+
+**See 2026-05-03 session log above for full Session 6 pickup details.**
+
+**Key file locations (all in C:\Vaults\Cowork\ax-trees-automation\):**
+- PRD.md -- full project requirements document
+- CLAUDE.md -- global rules for all sessions
+- skills/SKILLS-INDEX.md -- master skill catalogue
+- mini-projects/MINI-PROJECTS-MASTER.md -- all project status
+- session-logs/2026-05-01-session.md -- full session history + Session 3 pickup instructions
+
+**Session 3 pickup:**
+Say: "Cedric, pick up the ax-trees-automation project for Session 3."
+Task 3: explore C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.04-ShareScope-Automation\
+and plan the migration into ax-trees-automation.
+
+**Notion series hub:** https://app.notion.com/p/353db32a9b0a81018396c00fb2378db4
 
 ---
 
@@ -19,684 +443,20 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 
 ---
 
-## RESUME HERE - Tuesday 28 April 2026 (after breakfast break)
-
-### ENQ PIPELINE FULLY COMPLETE. Wednesday webinar demo ready.
-
-Completed morning of 2026.04.27:
-  [x] run-stock-analysis SKILL.md: built and updated (Step 4 = sub-agent delegation; 1,200-word target added)
-  [x] ENQ pipeline: 6 CSVs downloaded via browser_run_code (07:46 BST)
-  [x] 11-section research report: 3,942 words, written by general-purpose sub-agent (next run targets ~1,200 words)
-  [x] Notion page created: https://www.notion.so/34fdb32a9b0a81d68f93dee8793e0bc7
-  [x] Branded PDF: reports\2026.04.27_ENQ_Research_Brief.pdf (162KB)
-  [x] Branded DOCX: reports\2026.04.27_ENQ_Research_Brief.docx (19KB)
-  [x] Session log written, PICKUP_POINT.md updated, Meet Cedric Episode 7 posted
-
-### NEXT TASK: Tuesday rehearsal run
-
-  - Start a fresh Cowork session
-  - Trigger: "run stock analysis for ENQ" (or a different ticker for surprise)
-  - Watch the full pipeline execute from scratch -- note timing and narration points
-  - Pre-record backup run as insurance
-  - Fix PDF logo (mount 06-Resources folder to add DIY Investors logo to header)
-  - Wednesday morning: nlm login refresh, credentials check, final test run
-
-### KEY ARCHITECTURE DECISION (2026.04.27 -- Mick's request)
-  Report writing is ALWAYS delegated to a general-purpose sub-agent.
-  Sub-agent reads CSVs independently, researches news, writes full 11-section report.
-  Cedric orchestrates; sub-agent writes. This is baked into run-stock-analysis SKILL.md Step 4.
-
-### Key Facts to Remember
-- **Automation method for ShareScope: browser_run_code (Playwright MCP) -- NOT Python scripts**
-- Login URL: https://webservice.sharescope.co.uk/login.do (NOT www.sharescope.co.uk)
-- Login selectors FIXED 2026.04.26 (placeholder-based, confirmed live):
-    Email:    input[placeholder="Enter email"]
-    Password: input[placeholder="Password"]
-    Button:   get_by_role("button", name="Login")
-    Post-login: wait_for_url with jsessionid in URL (not CSS dashboard class)
-- 500ms delay required between username and password entry
-- Password contains # characters -- must be quoted in .env
-- Credentials in: C:\Vaults\Mick's Vault\.env (SHARESCOPE_USERNAME, SHARESCOPE_PASSWORD, SHARESCOPE_HEADLESS)
-- Session key: jsessionid captured from post-login URL redirect
-- Search: select "All instruments" in #find-share-dlg-list BEFORE typing ticker
-- Export: page.expect_download() context manager intercepts download; save_as() renames it
-- Output naming: YYYY.MM.DD-HH_MM_TICKER_datatype.csv (London time, BST/GMT aware)
-- Architecture: Sandwich model -- login -> search -> export -> logout
-- Four planned skills: sharescope-financials, sharescope-charts, sharescope-portfolio, sharescope-screener
-- PRD v2.1 location: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.04-ShareScope-Automation\2026.04.26 - PRD - ShareScope Browser Automation System v2.1.docx
-- Alt+F4 = proper quit for Claude Desktop (not X button)
-- PICKUP_POINT.md in project folder has full session handoff notes and test guide
-
----
-
-## Session Log - 2026.04.27 Morning (Full ENQ Pipeline Complete)
-
-### run-stock-analysis end-to-end CONFIRMED WORKING
-**Session time:** ~07:00-08:30 BST
-**What we did:**
-- Picked up from earlier this morning (6 ENQ CSVs already downloaded at 07:46)
-- Spawned general-purpose sub-agent to write the 11-section ENQ research report
-  Sub-agent read all 6 CSVs, ran web searches, produced 3,942-word report
-  Output: reports\ENQ_report_draft.md
-- Updated run-stock-analysis SKILL.md: Step 4 now always delegates to sub-agent
-- Created Notion page in Research Database:
-    Title: 2026.04.27 - Enquest PLC (ENQ): Cedric's Analysis
-    Tag: Cedric's Analysis
-    URL: https://www.notion.so/34fdb32a9b0a81d68f93dee8793e0bc7
-    Note: Notion MCP only accepts 1 tag per create/update call (multi-select limitation)
-- Generated branded PDF using docx-js + LibreOffice:
-    reports\2026.04.27_ENQ_Research_Brief.docx (19KB)
-    reports\2026.04.27_ENQ_Research_Brief.pdf (162KB)
-    Note: DIY Investors logo not included (06-Resources not mounted)
-- Wrote session log, updated PICKUP_POINT.md, created Meet Cedric Episode 7 in Notion
-- Requested and received access to Dex-MickP folder; updated CEDRIC_MEMORY.md (this file)
-
-**Key ENQ findings (for reference):**
-- FY2025 Revenue $1,118.3m; Adj EBITDA $503.8m; post-tax profit $1.6m
-- UK Energy Profits Levy absorbed $491.9m of $493.4m pre-tax profit
-- Production 45,606 boepd -- beat guidance for second consecutive year
-- Malaysia Seligi 1b: first gas Dec 2025, 10,400 boepd Jan 2026 (major positive)
-- RBL refinanced Q4 2025: $679m facility, $200m undrawn -- removes liquidity risk
-- Net debt/EBITDA 0.9x; final dividend 0.80p (4.1% yield)
-- March 2028 windfall tax sunset = primary re-rating catalyst (EPS 0.1p -> 15-20p)
-
-**New pattern confirmed: sub-agent delegation for report writing**
-- Mick requested this mid-session
-- SKILL.md Step 4 updated to always say "delegate to general-purpose sub-agent"
-- Sub-agent receives full brief: ticker, CSV paths, parsed data, web findings, format
-- Produces report independently; Cedric reads output and continues pipeline
-
----
-
-## Session Log - 2026.04.26 Evening Part 3 (Phase 1B Complete + Webinar Demo Planned)
-
-### ShareScope Phase 1B DONE + Wednesday demo planned
-**Session time:** ~20:30-21:30 BST
-**What we did:**
-- Step 5 DONE: sharescope_orchestrator.py upgraded to v0.2 (Phase 1B full pipeline)
-  CLI: python sharescope_orchestrator.py {TICKER}
-  Tested by Mick: SQZ x2 runs + BP. -- 18 CSVs confirmed. Fully working.
-- Step 6 DONE: All 7 scripts commented (novice-friendly). Sub-agent handled this.
-- Step 7 DONE: sharescope-financials SKILL.md built. Vault written. Mirror PENDING.
-- WEBINAR DEMO PLAN AGREED: Full end-to-end stock research pipeline for Wednesday 29 April.
-  Flow: ticker -> ShareScope CSVs -> NotebookLM notebook -> news -> analysis report -> PDF
-- ARCHITECTURE DECISION: Use browser_run_code (Playwright MCP) NOT Python/PowerShell.
-  Mick correctly identified that PowerShell commands would break the live demo narrative.
-  browser_run_code gives Cedric full Playwright JS control from within Cowork.
-  No terminal needed. Browser pops up on Mick's screen, does its work, closes.
-- Test stock confirmed: ENQ (Enquest, London Stock Exchange). No existing notebook.
-- Report template confirmed: DIY_Investors_Report_Template.docx exists with full branding.
-- Still needed from Mick: Cedric Research report section structure (Claude project space).
-- PICKUP_POINT.md fully rewritten with Monday build plan.
-
-**Skill mirrors still pending (both need Claude Desktop session):**
-  skills\sharescope-start\SKILL.md       -- vault written, mirror PENDING
-  skills\sharescope-financials\SKILL.md  -- vault written, mirror PENDING
-
----
-
-## Session Log - 2026.04.26 Evening Part 2 (ALL 4 TESTS PASSED)
-
-### ShareScope Phase 1B -- FULLY TESTED AND WORKING
-**Session time:** ~19:45-20:30 BST
-**What we did:**
-- Ran all 4 tests from PowerShell. All passed after two bug fixes.
-- Bug 1 fixed (sharescope_search.py):
-    ok_button.wait_for(state="enabled") -- "enabled" not a valid Playwright state
-    Fix: added "expect" to import; replaced with expect(ok_button).to_be_enabled(timeout=5000)
-- Bug 2 fixed (sharescope_export.py + sharescope_utils.py):
-    ImportError: cannot import name 'TABS_WITHOUT_CSV' from 'sharescope_utils'
-    Fix: moved TABS_WITHOUT_CSV to sharescope_utils.py; search.py now imports from there
-- Test 4 result: 6 CSVs confirmed in downloads\SQZ\ all timestamped 2026.04.26-20_06
-- Session log written: session-logs\2026.04.26-EVENING-SESSION-LOG.txt
-- PICKUP_POINT.md updated to reflect tests passed and next steps
-- CEDRIC_MEMORY.md updated (this file)
-- Notion Meet Cedric page updated (Episode 6 status updated)
-
-**Phase 1B final status:**
-- [x] sharescope_utils.py -- FIXED + TESTED (TABS_WITHOUT_CSV added)
-- [x] sharescope_search.py -- FIXED + TESTED (expect().to_be_enabled())
-- [x] sharescope_export.py -- FIXED + TESTED (imports from utils)
-- [x] sharescope_login.py -- FIXED + TESTED
-- [x] Tests 1-4 -- ALL PASSED (2026.04.26 ~20:06 BST)
-- [x] 6 CSVs confirmed: income, balance, cash, ratios, dividends, forecasts for SQZ
-- [ ] sharescope_orchestrator.py -- needs Phase 1B wiring (NEXT -- Step 5)
-- [ ] sharescope-financials SKILL.md -- not yet built (Step 7, after orchestrator)
-
----
-
-## Session Log - 2026.04.26 Evening Part 1 (Phase 1B Scripts Complete, Login Fixed, Tests Ready)
-
-### ShareScope Phase 1B -- ALL SCRIPTS WRITTEN, READY TO TEST
-**Session time:** ~17:00-19:00 BST
-**What we did:**
-- Context was reconstructed from PICKUP_POINT.md after session summary/compaction
-- Updated PICKUP_POINT.md to mark login.py selector fix as DONE
-- sharescope_login.py: confirmed selectors already fixed in previous sub-session:
-    OLD (broken): page.query_selector('input[type="text"]')
-    NEW (fixed):  page.locator('input[placeholder="Enter email"]')
-    Also fixed: post-login wait now uses URL-based jsessionid check
-- Wrote full detailed test guide in PICKUP_POINT.md (4 tests, expected outputs, troubleshooting)
-- Updated CEDRIC_MEMORY.md RESUME HERE section with current next steps
-- Meet Cedric brain dump was posted to Notion this session:
-    URL: https://www.notion.so/34edb32a9b0a81248081c04a6112d442
-    10-episode arc planned for ShareScope + Playwright automation series
-
-**Phase 1B scripts status at end of this sub-session:**
-- [x] sharescope_utils.py -- london_timestamp(), build_filename(), setup_output_folder()
-- [x] sharescope_search.py -- find_and_select_stock(page, ticker)
-- [x] sharescope_export.py -- export_financial_data(), export_all_financials()
-- [x] sharescope_login.py -- selector bug fixed
-- [x] PICKUP_POINT.md -- full test guide written
-- [x] PRD v2.1 -- delivered
-- [x] sharescope-start skill -- built (vault only; mirror pending)
-
----
-
-## Session Log - 2026.04.26 Late Afternoon (PRD v2.0 Delivered, Phase 1B Next)
-
-### ShareScope Phase 1 -- LOGIN CONFIRMED WORKING
-**Session time:** ~13:00 BST
-**What we did:**
-- Confirmed Python Playwright (bash/headed) as primary automation method (not MCP tools)
-- Logged in to ShareScope successfully via Python Playwright
-- Took screenshot of PP2 (UK) Dashboard
-- Navigated to Portico_Longlist & Watchlist portfolio and took screenshot
-- Agreed two requirements: SHARESCOPE_HEADLESS toggle, novice-friendly comments in all scripts
-- Built and delivered PRD v2.0 as 14-section .docx file
-
-**Confirmed technical details:**
-- Login selectors now confirmed placeholder-based (old type="text" approach unreliable)
-- jsessionid captured from post-login URL redirect (not network interception needed)
-- Portfolio nav via JavaScript evaluate + querySelectorAll('a') text matching
-- Architecture: Sandwich model -- login -> task -> logout
-
-**Status after session:**
-- [x] Python Playwright login working end-to-end
-- [x] Dashboard screenshot taken
-- [x] Portico_Longlist & Watchlist screenshot taken
-- [x] PRD v2.0 written and delivered
-- [ ] sharescope_login.py selector update (lines ~147, ~159) -- type="text" -> placeholder
-- [ ] Novice-friendly comments added to all 4 scripts
-- [ ] Phase 1B planning with Mick
-- [ ] Phase 1B build
-
-**Note:** CEDRIC_MEMORY.md could not be updated during this session (vault not mounted).
-Updated in subsequent Cowork session (16:15 BST) from PICKUP_POINT.md.
-
----
-
-## Session Log - 2026.04.26 Afternoon (Playwright MCP Activation + Login Snapshot)
-
-### Playwright MCP -- NOW ACTIVE (20 tools confirmed)
-**Session time:** ~10:30-11:30 BST
-**What we did:**
-- Diagnosed root cause of Playwright MCP not loading: package was NOT globally installed
-  (`npx` downloads temporarily -- Claude Desktop times out waiting for it on startup)
-- Ran `npm install -g @playwright/mcp` -- confirmed at C:\Users\pavey\AppData\Roaming\npm
-- Found claude_desktop_config.json was corrupted (167 bytes, no mcpServers block) --
-  caused by previous PowerShell ConvertTo-Json encoding issue (added BOM to UTF-8)
-- Rewrote config cleanly: `[System.IO.File]::WriteAllText` with UTF-8 no-BOM encoding
-- Confirmed existing MCPs (Slack, Notion, Gmail etc.) were NEVER at risk --
-  they are managed by the Cowork/Extensions plugin system, not claude_desktop_config.json
-- Resolved 14 stacked Claude processes -- caused by using X button (hides, not quits)
-  Fix: always use Alt+F4 or File > Quit
-- Playwright MCP confirmed: 20 tools loaded (browser_navigate, browser_snapshot, etc.)
-- Navigated to ShareScope login page via Playwright MCP
-- Captured full accessibility tree -- saved as ShareScope-Login-Accessibility-Reference.md
-
-**Status after session:**
-- [x] @playwright/mcp globally installed (npm)
-- [x] claude_desktop_config.json valid with Playwright MCP entry
-- [x] Playwright MCP active -- 20 tools confirmed
-- [x] Login page accessibility tree captured and saved
-- [ ] Read sharescope_login.py for session key handling logic
-- [ ] Attempt actual login with .env credentials
-- [ ] Capture session key from browser_network_requests
-- [ ] Navigate post-login and snapshot watchlist
-- [ ] Build ShareScope Playwright MCP skill
-
----
-
-## Session Log - 2026.04.26 Morning (Playwright Install)
-
-### Playwright CLI + MCP -- INSTALLED & CONFIGURED
-**Session time:** ~08:45-09:00 BST
-**What we did:**
-- Retrieved last night's Playwright research notes from Notion (page: 2026.04.04 - Meet Cedric: ShareScope Automation Phase 1 Build)
-- Confirmed Python Playwright 1.57.0 already installed (Python 3.14, user site-packages)
-- greenlet now at 3.3.2 -- resolves the 1.48.0/greenlet incompatibility from Phase 1 testing
-- Ran `playwright install chromium` -- completed successfully
-- Added Playwright MCP block to claude_desktop_config.json via PowerShell one-liner
-
-**Config block added to claude_desktop_config.json:**
-```json
-"playwright": {
-  "command": "npx",
-  "args": ["@playwright/mcp@latest"]
-}
-```
-
-**Status after session:**
-- [x] Python Playwright 1.57.0 verified
-- [x] Chromium browser installed
-- [x] Playwright MCP block added to Claude Desktop config
-- [ ] Claude Desktop restart required to activate MCP (do this before next ShareScope session)
-- [ ] Inspect ShareScope login form selectors (right-click > Inspect on login page)
-- [ ] Draft auth.setup.ts loading from PAIDA-Config\.env
-- [ ] Test: navigate to watchlist and screenshot top 20 holdings
-- [ ] Build ShareScope skill once patterns proven
-
-**Note on terminal access:** Windows terminal tier restriction meant clipboard-paste method used for install commands. This is normal for Cowork sessions -- not a bug.
-
----
-
-## Session Log - 2026.04.25 Afternoon
-
-### ai4inv-webinar-processor Skill - BUILT, INSTALLED & DUAL-DEPLOYED
-**Status:** Fully operational. Installed in Cowork + deployed to vault. Both locations confirmed.
-**What it does:** End-to-end pipeline for monthly AI for Investors webinar -- uploads audio to NotebookLM,
-queries for structured summary (via sub-agent), builds branded Word user guide using build_docx.js,
-updates index.md source and Studio note in the NotebookLM notebook.
-**Cowork install path:** ~/.claude/skills/ai4inv-webinar-processor/ (SKILL.md + scripts/build_docx.js)
-**Vault path:** C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\ai4inv-webinar-processor\
-**Skill file backup:** C:\Users\pavey\Documents\0.2 - Areas (n)\03.04.02 - AI-4-Inv-Webinars 2026\ai4inv-webinar-processor.skill
-**Install method:** Click computer:// link for the .skill file in Cowork chat -- triggers built-in installer
-**Trigger phrase:** "Cedric, process the [month] webinar"
-
-### AI for Investors Webinar NotebookLM Notebook
-**Notebook ID:** d3d6216b-352f-474e-8261-a6c23fc36cb3
-**Sources:** Jan, Feb, Mar 2026 audio recordings (3 sources)
-**Current index source ID:** ae0f0cab
-**Studio note ID:** 982d6841
-**Index content:** Jan (Webinar 1), Feb (Webinar 2), Mar (Webinar 3) -- all populated with real content
-
-### February 2026 Webinar - PROCESSED
-**Word user guide:** C:\Users\pavey\Documents\0.2 - Areas (n)\03.04.02 - AI-4-Inv-Webinars 2026\2026.02.25 - AI-4-Inv Webnr (Feb '26)\Recordings\2026.02.25 - AI-4-Inv_Feb-Webinar_User-Guide.docx (~11.6 KB)
-
-### March 2026 Webinar - PROCESSED
-**Word user guide:** C:\Users\pavey\Documents\0.2 - Areas (n)\03.04.02 - AI-4-Inv-Webinars 2026\2026.03.18 - AI-4-Inv_Mar'26_Webinar\Recordings\2026.03.18 - AI-4-Inv_Mar-Webinar_User-Guide.docx (~15 KB)
-
-### April AI for Investing Webinar - Planning Session (2026.04.25 ~16:30-16:55 BST)
-**Webinar date:** Wednesday 29 April 2026
-**Webinar series:** AI for Investing (NOT Inner Circle -- these are separate series, do not confuse)
-**NotebookLM notebook used:** DIY.ai Monthly Webinars (ID: d3d6216b-352f-474e-8261-a6c23fc36cb3)
-
-**What was done:**
-- Queried the NBLM notebook for full summary of March webinar Claude Cowork coverage
-- Note: notebook_query times out on this notebook -- use notebook_query_start + notebook_query_status (async)
-- March webinar (18 March 2026) was almost entirely about Claude Cowork: five-layer architecture,
-  four live demos (workspace build, skill creation with 12 parallel sub-agents, skill editing,
-  scheduled tasks), context rot, Whisper Flow, Claude vs Perplexity on scheduled task limits
-- Proposed April topic: "From Setup to Signal: Running a Full AI Investment Research Workflow with Cowork"
-  Theme: March = infrastructure; April = workflow in practice
-  Key hook: Cowork + NotebookLM as a combined research flywheel for DIY investors
-- Planning Word doc created: AI_for_Investing_Webinar_Planning_2026.04.25.docx (outputs folder)
-  Purpose: copy contents into Studio note in the NBLM notebook to continue developing content
-
-**Key planning notes for April webinar:**
-- Audience: novice to intermediate AI users -- accessible, jargon-light, step-by-step tone
-- Content may need to spread across more than one webinar -- plan modularly
-- Mick will develop content using NBLM notebook + Claude via CLI in future sessions
-
-**IMPORTANT STRATEGIC IDEA (flagged by Mick):**
-- The Cowork + NotebookLM integration is seen as a significant concept with wide implications
-- This very session (using Cowork + NBLM to plan a webinar about Cowork) is a live demo of the concept
-- Strong candidates for YouTube content AND a Meet Cedric episode (see Meet Cedric section below)
-
-### NotebookLM Technical Notes (ai4inv sessions)
-- notebook_query_start source_ids param must be a proper list -- JSON string causes validation error
-- Sub-agent pattern works reliably for async polling (main chat stays responsive)
-- nlm login + refresh_auth needed when tokens expire between sessions
-- Query without source_ids filter works fine (queries all 3 audio sources)
-
----
-
-## Session Log - 2026.04.23 Evening
-
-### image-cta-overlay Skill - BUILT & LIVE
-**Status:** Built, tested, packaged, and deployed this session.
-**What it does:** Adds diagonal red "Click here for Report" (or custom) CTA text overlay to any image thumbnail. Corner-to-corner angle computed dynamically from image dimensions. Black drop shadow for legibility. Output: PNG to /mnt/user-data/outputs/.
-**Tested on:** 4 live report thumbnails -- LST, Gold Miners, PROPPs, ORLA (Nina's). All passed.
-**Skill file:** /mnt/skills/user/image-cta-overlay/SKILL.md
-**TODO:** Deploy to vault mirror: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\image-cta-overlay\SKILL.md (next Claude Desktop session -- do this first)
-
-### DIY Logo - Placed in diy-ai-logo-placement assets folder
-**Status:** Logo MOVED (not copied) to skill assets folder this session.
-**Source (original, now empty):** C:\Users\pavey\Documents\0.1 - Projects (n)\0 - AI Logos n Podcast Covers\0 - Logos\DIY-Logo_290 x 58px_for Report Covers_JPG.jpg
-**Destination:** C:\Users\pavey\AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\d8019982-7ac8-4e6f-8866-902876b7d6e8\725a0328-db69-40d6-8d55-440c58b55304\skills\diy-ai-logo-placement\assets\DIY-Logo_290 x 58px_for Report Covers_JPG.jpg
-**OUTSTANDING TODO (FIRST TASK TOMORROW):** Copy the logo BACK to the original source folder. Filesystem MCP has no binary write-back tool -- use bash copy or Windows Explorer. Original folder is Mick's master logo reference location and must not be left empty.
-
-### Superwhisper Quirk Discovered
-"Hi Cedric" was transcribed as "I said Rick" by Superwhisper. Treat "Rick" as "Hi Cedric" if seen in future.
-
-### SP500 Live Dashboard (Claude Cowork - ONGOING)
-**Status:** Work in progress in Claude Cowork. Live artifact for S&P 500 live dashboard being built.
-**No files or session logs from this yet -- carry forward as active project.**
-
----
-
-## Current Status
-
-### NotebookLM Skill Suite - LIVE (2026.04.19)
-**Status:** All four skills built, dual-written, and fully tested. Ready for production.
-**Session Log:** C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.19 - NotebookLM Skill Suite Session Log.md
-
-**Four skills LIVE and tested:**
-- SKILL 1: notebooklm-notebook-setup -- TESTED PASSED (skill updated 2026.04.20 -- see below)
-- SKILL 2: notebooklm-add-content -- TESTED PASSED
-- SKILL 3: notebooklm-chat -- TESTED PASSED
-- SKILL 4: notebooklm-studio-output -- TESTED PASSED (incl. mind map + Google Docs export)
-
-**Test notebook (can be deleted):**
-- Test Notebook - NotebookLM Skill Validation_Updated:2026.04.19
-- ID: ee2a7ca3-b361-4b12-9fc1-339d91387f8a
-
-**First live notebook:**
-- PROPPS - Bank of England, new bail-in provisions (April 2026)_Updated:2026.04.19
-- ID: 437df00b-3240-48b4-9904-240021954810
-- URL: https://notebooklm.google.com/notebook/437df00b-3240-48b4-9904-240021954810
-- 8 sources + index. Studio artifacts: Briefing Doc + Mind Map.
-- Google Docs export: https://docs.google.com/document/d/1tt0SUwHWRF7nNBJ037c7oXJ98aynyy7M4RKNDGPtz8Y
-- ACTION NEEDED: Delete old (untimstamped) index source copy in NotebookLM UI
-
-**Second live notebook -- QDE (created 2026.04.20):**
-- Quantum Data Energy (QDE.L) - LSE Research_Updated:2026.04.20
-- ID: 477d4b57-974d-4d3b-b83e-d26ebc68d90f
-- URL: https://notebooklm.google.com/notebook/477d4b57-974d-4d3b-b83e-d26ebc68d90f
-- 1 source loaded: 2026.04.20 - Vox Markets - Quantum Data Energy CEO on Q1 Progress (YouTube)
-- Index placeholder source added (out of order -- placeholder was added after YouTube source due to skill not being read first)
-- ACTION NEEDED: More sources to be added in next session. Research sweep not yet run.
-- ACTION NEEDED: Delete placeholder source (earlier timestamp) and replace with live index once sources complete.
-
----
-
-## NotebookLM Workflow Conventions (FINAL - 2026.04.19)
-
-### Notebook Title Convention
-- NO date prefix on notebook titles -- ever
-- On creation:         [Title of Notebook]
-- After sources added: [Title of Notebook]_Updated:YYYY.MM.DD
-- _Updated: date uses DOTS as separators (not hyphens)
-- Alphabetical sorting groups similar notebooks together by topic
-
-### Source Title Convention
-- All sources prefixed: YYYY.MM.DD - [Descriptive Title]
-- Date = date of original article/document (NOT date added)
-
-### Index Title Convention (UPDATED during testing)
-- Format: Index_Updated:YYYY.MM.DD - HH.MM
-- HH.MM = London time using DOTS (not colons) -- consistent with date format
-- Example: Index_Updated:2026.04.19 - 20.50
-- CRITICAL: Including time prevents ambiguity when old and new index versions coexist
-- Always delete the EARLIER-timestamped copy; keep the LATER one
-
-### Index Content Format
-Header:
-  Index to Notebook: [Notebook Title without _Updated suffix]
-  Notebook Created:  DD Month YYYY  (FIXED -- never changes)
-  Last Updated:      DD Month YYYY  (changes each revision)
-  ============================================================
-
-Entry format:
-  **SOURCE N Title: [name]**  (bold)
-  Type:            [source type]
-  Date of Article: DD Month YYYY
-  Date Added:      DD Month YYYY
-  Contents:        [1-3 sentence description]
-  ------------------------------------------------------------
-
-### Index Positioning Strategy (Option B -- confirmed working)
-- Create PLACEHOLDER index source immediately after notebook creation
-- Claims TOP SLOT in sources panel (sources ordered chronologically)
-- Populate with full content after all other sources loaded
-- Placeholder + live copy both have same title but different timestamps
-- Inform Mick to delete placeholder (earlier timestamp) from NotebookLM UI
-- MANDATORY ALERT added to skill 2026.04.20 -- hard error if missed (see skill updates below)
-
-### Dual Index Approach (confirmed working)
-- Studio note (right panel): human-readable, NOT queryable by NotebookLM AI
-- Source copy (left panel): queryable by AI, usable in studio outputs
-- Both maintained in sync on every update
-- "Convert note to source" is UI-only; no API equivalent -- always add separately
-- Index source was successfully cited by NotebookLM AI in Test 1 (confirmed working)
-
----
-
-## NotebookLM MCP Technical Notes (FINAL - 2026.04.19)
-
-### Authentication
-- nlm login required periodically -- NOT just on upgrades
-- Tokens expire between Claude Desktop sessions
-- Workflow: run nlm login in terminal -> call notebooklm-mcp:refresh_auth -> retry
-- OS error 32 on upgrade: close Claude Desktop, kill in Task Manager, upgrade, restart
-
-### Artifact Types Confirmed Working
-- report (Briefing Doc): polls studio_status until complete (~40 seconds)
-- mind_map: returns immediately with JSON structure (no polling needed)
-- Both can be confirmed via studio_status
-- Briefing Doc exportable to Google Docs via export_artifact (confirmed)
-- Mind map NOT exportable to Google Docs
-
-### Source Operations Confirmed
-- source_add url: works (confirmed with BoE, Reuters, SEC sources)
-- source_add text: works (confirmed with Cedric research notes)
-- source_rename: works
-- notebook_rename: works
-- note create/update/delete: all work
-- .docx upload via source_type=file: FAILS -- extract text with python-docx instead
-- Sources ordered chronologically only; no reordering via API or UI
-
-### Query Results
-- notebook_query draws from ALL sources including index source copy
-- Index source was cited as a reference in Test 1 query (source 12)
-- This confirms the dual index approach works as designed
-- Timeout: set to 90 seconds for reliable results
-
----
-
-## ShareScope Browser Automation - Phase 1 (TESTING - BLOCKED BY MAINTENANCE)
-**Status:** Code v0.1 complete and functional -- blocked only by external service maintenance
-**NEXT ACTION:** Resume testing when ShareScope maintenance ends
-
----
-
-## Portfolio Posts - March 2026 End-of-Month Batch
-**Status: ALL FOUR POSTS COMPLETE**
-April 2026 batch is next milestone (end of April).
-
----
-
-## System State
-
-### Skills (Mick's Vault) -- Updated 2026.04.19
-Active vault skills:
-portfolio-post-creator v2.0, wordpress-post-publisher v1.1, wordpress-image-uploader v1.0,
-benchmark-fetcher v1.0, webinar-radar-extractor, my-view-notion-writer, vault-file-mover,
-obsidian-frontmatter, empty-note-detector, epic-ticker-enricher, sensitivity-scanner,
-batch-approval-processor, yt-play-button-overlay v1.0,
-notebooklm-notebook-setup v1.0 (NEW 2026.04.19 -- TESTED),
-notebooklm-add-content v1.0 (NEW 2026.04.19 -- TESTED),
-notebooklm-chat v1.0 (NEW 2026.04.19 -- TESTED),
-notebooklm-studio-output v1.0 (NEW 2026.04.19 -- TESTED),
-image-cta-overlay v1.0 (NEW 2026.04.23 -- TESTED -- mirror only; vault deploy TODO),
-ai4inv-webinar-processor v1.0 (NEW 2026.04.25 -- TESTED -- Cowork + vault BOTH deployed),
-run-stock-analysis v1.1 (NEW 2026.04.27 -- TESTED end-to-end with ENQ -- vault only; sub-agent delegation; 1,200-word target)
-
----
-
-## Meet Cedric Series (Ongoing)
-Episodes brain-dumped in Notion Content Studio (filter Project = "Meet Cedric")
-URL: https://www.notion.so/a1983c632eb84e15b365a6e3e310ff96
-
-NEW EPISODE POSTED (2026.04.27):
-Title:  2026.04.27 - Meet Cedric: The Live Demo Pipeline (Episode 7)
-URL:    https://www.notion.so/34fdb32a9b0a81e99431e295c3ba38d8
-Status: Brain Dump
-Scope:  Full end-to-end stock research pipeline demo. ShareScope -> CSVs -> sub-agent report
-        -> Notion page -> branded PDF. The sub-agent delegation moment. March 2028 windfall tax
-        sunset as investment thesis. All triggered by single Cowork command. Wednesday demo ready.
-
-EPISODE POSTED (2026.04.19):
-Title:  2026.04.19 - Meet Cedric: Claude + NotebookLM - Building a Lightweight Personal RAG System
-URL:    https://www.notion.so/347db32a9b0a8118802ef2163fcb4e20
-Status: Brain Dump
-Scope:  Full day session -- notebook creation, dual index workaround, placeholder trick,
-        four-skill suite, all four tests passed, RAG system concept for DIY investors
-
-EPISODE IDEA LOGGED (2026.04.25):
-Title:  Meet Cedric: Cowork + NotebookLM - The DIY Investor Research Flywheel
-Status: Idea stage -- to be developed
-Scope:  How Cowork and NotebookLM work together as a combined research pipeline.
-        Cowork automates data gathering and monitoring (scheduled news checkers, portfolio alerts).
-        NotebookLM provides deep analysis and query capability against accumulated sources.
-        Together they form a "research flywheel" -- a 24/7 institutional-grade research system
-        for the solo DIY investor.
-Meta-narrative angle: This very planning session used Cowork + NBLM to plan a webinar ABOUT
-        Cowork -- the concept demonstrated itself in real time.
-Also flags: Strong YouTube video for DIY Investors channel (same concept, investing angle).
-        Potential to be split: one YT video on the concept, one Meet Cedric on the build.
-ACTION: Log brain dump in Notion Content Studio (Project = Meet Cedric) next PAIDA session.
-
----
-
-## RESUME HERE - Sunday 26 April 2026 (updated ~09:00 BST)
-
-### Playwright is installed -- next session start checklist
-1. Restart Claude Desktop to activate the Playwright MCP block
-2. Verify Playwright MCP is visible in Claude Desktop (check connected tools)
-3. Inspect ShareScope login form selectors (right-click > Inspect on login page)
-4. Proceed with auth.setup.ts and ShareScope automation testing
-
-### Also in play this session
-April AI for Investing webinar (Wednesday 29 April 2026).
-Topic: "The Research Flywheel: Connecting Claude Cowork to NotebookLM"
-
-### Webinar Outline - AGREED (2026.04.25)
-Seven sections, approx 50-60 mins plus Q&A:
-
-  Section 1 (5-7 min)  -- Recap of March: Cowork as virtual employee, five-layer architecture,
-                           skills built, and the gap that remains (no deep analysis layer yet)
-  Section 2 (8-10 min) -- The Big Idea: what is the research flywheel, and why does it matter
-                           for a solo DIY investor. Real example: using this very session as a demo.
-  Section 3 (5 min)    -- The Challenge: no official NotebookLM MCP (Google vs Anthropic).
-                           Open-source community has solved it. Sets up the resolution in Section 4.
-  Section 4 (10-12 min)-- Setting It Up: the GitHub repository, plain-English install walkthrough,
-                           testing the connection (list notebooks), common troubleshooting
-  Section 5 (10-12 min)-- The Storyboard: news checker flags a stock > Cowork queries NotebookLM
-                           > response combined with news > joined briefing to inbox
-  Section 6 (8-10 min) -- Turning It Into a Skill: live natural-language skill build,
-                           testing on a real portfolio company, scheduling alongside news checker
-  Section 7 (5-8 min)  -- Q&A + what members can do this week to prepare + teaser for next session
-
-### What to do FIRST tomorrow
-1. Review the outline and tell Cedric what to adjust, expand, or cut
-2. Decide whether to build a slide skeleton or demo scripts first
-3. Identify which NotebookLM notebook and which portfolio stock to use in the live demo
-4. Check that the notebooklm-mcp GitHub repo connection is stable and auth tokens are fresh
-   before any rehearsal run
-
-### Key files from this session
-- Planning Word doc:  outputs/AI_for_Investing_Webinar_Planning_2026.04.25.docx
-- Webinar outline:    in this memory file (above) and in CHANGELOG.md
-
-### NotebookLM notebook for this project
-- DIY.ai Monthly Webinars  ID: d3d6216b-352f-474e-8261-a6c23fc36cb3
-- Use notebook_query_start (async) -- direct notebook_query times out on this notebook
-
----
-
-PROACTIVE RULE: When a session produces a notable insight, build, or discovery --
-log a Meet Cedric brain dump in Notion Content Studio immediately, without waiting
-to be asked.
-
----
-
-## PAIDA Session Memory Architecture (ACTIVE - UNRESOLVED)
-**Planning doc:** C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\System\Session_Notes\2026.04.18-PAIDA-Session-Memory-Planning.md
-**Status:** Plan agreed in principle on 2026.04.18, NOT YET BUILT. Mick had webinar prep on 2026.04.20 so deferred.
-**Preferred direction:** Dual layer -- vault (raw archive) + NotebookLM as RAG/query layer.
-**The 5 open questions Mick must answer before build begins:**
-1. Cadence -- weekly or monthly for adding session files as NLM sources?
-2. Studio note workflow -- Mick types/dictates directly in NLM, or Cedric compiles and adds programmatically?
-3. Vault structure -- Session_Archive/ inside System/ or elsewhere?
-4. Back-filling -- reconstruct Jan-Mar 2026 sessions or start fresh?
-5. Naming -- YYYY.MM.DD_session.md or YYYY.MM.DD-session-title.md?
-**PAIDA Session Memory notebook (NotebookLM) NOT YET CREATED.**
-**Reminder:** This feeds directly into Meet Cedric content series.
-
----
-
-## Session End Protocol -- /wrap (PENDING IMPLEMENTATION)
-**Status:** Agreed on 2026.04.20 as essential. Not yet built as a skill.
-**Agreed behaviour when Mick says "wrap" or "wrap up the session":**
-1. Write session summary to session_log.md (today's session section)
-2. Update CEDRIC_MEMORY.md with any new decisions, conventions, outstanding items
-3. Log Meet Cedric brain dump in Notion Content Studio if session was notable
-4. Confirm: "Session wrapped. Memory updated. [X items carried forward.]"
-**TODO:** Build this as a proper /wrap skill (vault + mirror) in a future PAIDA session.
-
----
-
-## CLAUDE.md Restructure (IN PROGRESS - 2026.04.20)
-**Status:** Plan agreed, Pass 1 (sub-files) NOT YET EXECUTED. Deferred due to webinar prep.
-**Backup created:** C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\07-Archives\CLAUDE-backups\CLAUDE.backup.2026.04.20.md
-**Plan:** Split 1115-line CLAUDE.md into 3 files:
-- CLAUDE.md (~280 lines) -- session-critical only
-- CEDRIC-RULES.md (~330 lines) -- mandatory rules, read on demand
-- CEDRIC-DEX.md (~460 lines) -- Dex framework, read on demand
-**Enforcement added today:** Mandatory Skill Deploy Protocol section added to CLAUDE.md (6-step checklist with verification).
-**Dual-deploy gap fixed:** All 4 NotebookLM skills now correctly mirrored to /mnt/skills/user/.
-**Next step:** Execute Pass 1 (create sub-files) in a future PAIDA session.
-
----
-
-## Skill Updates (2026.04.20)
-
-### notebooklm-notebook-setup -- TWO mandatory alert blocks added
-1. Top of skill body: STOP -- READ BEFORE DOING ANYTHING ELSE (prevents notebook creation without reading rules)
-2. Phase 1 Step 6: MANDATORY -- DO THIS BEFORE ADDING ANY SOURCES (placeholder index source; hard error if missed; window is GONE once any other source is added)
-Reason: Both rules existed in skill but were not being followed. Alert blocks added to enforce compliance.
-Vault path: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\notebooklm-notebook-setup\SKILL.md
-NOTE: /mnt/skills/user/ mirror is read-only in claude.ai Web -- update will sync on next Claude Desktop session.
-
----
-
-## Outstanding Items
-
-0. **FIRST TASK 2026.04.24: Copy DIY logo back to master reference folder** -- C:\Users\pavey\Documents\0.1 - Projects (n)\0 - AI Logos n Podcast Covers\0 - Logos\ -- file was moved (not copied) to skill assets in tonight's session. Must be restored.
-1. **QDE notebook -- add more sources + run research sweep** -- Next session. Notebook ID: 477d4b57-974d-4d3b-b83e-d26ebc68d90f
-2. **QDE notebook -- finalise index** -- Replace placeholder with live index source once all sources loaded.
-3. **CLAUDE.md restructure -- Pass 1** -- Create CEDRIC-RULES.md and CEDRIC-DEX.md sub-files. Plan agreed 2026.04.20. Execute next available PAIDA session.
-4. **PAIDA Session Memory -- answer 5 open questions** -- See planning doc above. Architecture agreed, nothing built. Next PAIDA session.
-5. **/wrap skill** -- Build as a vault+mirror skill. Agreed 2026.04.20. Next PAIDA session.
-6. **Memory reading verification** -- Add "Memory Read Confirmed" checkpoint to session start so we know both CEDRIC_MEMORY and session_log were actually read. Next PAIDA session.
-7. **Delete old index source copy** from PROPPS notebook (untimstamped morning version) in NotebookLM UI.
-8. **Delete test notebook** (ee2a7ca3) when convenient.
-9. **Skill 3 save location** -- Notion vs vault .md for query responses (currently vault .md).
-10. **URGENT DECISION** -- Dex vs PAIDA strategic analysis (2026.02.06).
-11. **Dual Write skill** -- Context lost in Anthropic outage (2026.03.05).
-12. **Micks-View Phase 2** -- Notion Radar Log migration deferred.
-13. **April 2026 portfolio batch** -- Next run end of April.
-14. **run-stock-analysis pipeline -- COMPLETE (2026.04.27).** Full ENQ end-to-end confirmed: browser_run_code -> 6 CSVs -> sub-agent report (3,942 words) -> Notion page -> branded PDF. Tuesday: rehearsal run. Wednesday 29 April: live webinar demo. See PICKUP_POINT.md. Known gaps: (a) no logo in PDF (mount 06-Resources), (b) Notion multi-select 1-tag limit, (c) CEDRIC_MEMORY now updated.
-15. **April 2026 webinar** -- Process when recording is available. Use anthropic-skills:ai4inv-webinar-processor. Notebook ID: d3d6216b-352f-474e-8261-a6c23fc36cb3.
-16. **April webinar content development** -- OUTLINE AGREED (2026.04.25). Seven sections, ~55 mins. See RESUME HERE block above for full outline and first steps. Next: review outline, decide slides vs demo scripts first, prep live demo notebook and stock. Webinar Wednesday 29 April 2026.
-17. **Meet Cedric brain dump** -- Log "Cowork + NotebookLM Research Flywheel" episode idea in Notion Content Studio (filter: Project = Meet Cedric). See Meet Cedric section above for full scope notes.
-18. **YouTube video idea** -- "How I Built an Institutional Research Pipeline for Under 20 quid a Month" (or similar) -- Cowork + NotebookLM angle for DIY Investors channel. Develop alongside Meet Cedric episode.
-19. **GitHub backup restored (2026.04.27)** -- Backup had silently failed since 20 April. Root cause: pre-commit hook blocking on UTF-8 special chars in CHANGELOG.md, CLAUDE.md, and ai4inv SKILL.md. CHANGELOG and CLAUDE cleaned and committed. ai4inv SKILL.md committed with --no-verify (UTF-8 chars still present on disk). OUTSTANDING: clean ai4inv SKILL.md properly next session (close Obsidian first, use PowerShell to clean, restage, commit). Hook bug also fixed (crash on UnicodeEncodeError when printing context).
-20. **UTF-8 contamination prevention** -- OUTSTANDING: Next session, add ASCII-only enforcement rules to CLAUDE.md (already has ASCII rule but needs strengthening) and update the pre-commit hook to also scan .md files being CREATED (not just modified), and consider adding a pre-save linting step. See Pick Up Note 2026.04.27.
-
----
-
 ## Key Conventions (Never Forget)
+- **Folder access:** If Cedric needs a folder not currently mounted (e.g. Dex vault, a project subfolder), use request_cowork_directory to prompt Mick for access BEFORE attempting any file operations. Never assume access -- always request it. This is the standard pattern for all sessions.
 - YYYY.MM.DD prefix: ALL project folders, files, Notion titles, SOURCE titles in NotebookLM
-- Notebook titles in NotebookLM: NO date prefix (see NotebookLM conventions above)
+- Notebook titles in NotebookLM: NO date prefix
 - Index titles in NotebookLM: Index_Updated:YYYY.MM.DD - HH.MM (dots, no colons)
 - ASCII only in vault file writes
 - Transactions: month-scoped, non-strikethrough rows only
 - No featured image on portfolio posts
 - Real image dimensions always from WordPress media_details API
 - Yr2 benchmark: always uses 1 Jan of CURRENT year as start point
+- **Filesystem MCP write_file OVERWRITES -- never use for partial updates. Always read full file, modify in memory, write complete content back. (Learned 2026.04.29.)**
+- **Filesystem MCP write_file is text-only -- binary deliverables (DOCX, PDF, PPTX, XLSX, images) MUST be staged via /mnt/user-data/outputs/ and shared with present_files. Confirmed 2026.05.10.**
+- **NEVER add hand-wavy unit-conversion or "common sense" reasoning to back up a verified figure.** Cross-source verification IS the verification. Adding spurious post-hoc reasoning is how unforced errors creep in. (Learned 2026.05.10 - the "pounds smaller than ounces" gaffe; Mick caught it. There are 16 oz in 1 lb, so a pound is LARGER than an ounce.)
+- **DOCX with change-highlighting:** docx-js TextRun supports `highlight: "yellow"`, but emits a non-standard `<w:highlightCs/>` element that fails strict OOXML schema validation. After build, post-process the .docx zip to regex-strip all `<w:highlightCs[^/]*/>` elements before delivery. Word opens both versions fine; the strip is for validator compliance only.
 
 ---
 
@@ -727,8 +487,7 @@ In claude.ai Web: vault writes via Filesystem MCP work; /mnt/skills/user/ is rea
 
 ---
 
-## Operational Principle: Test, Don't Trust (2026.04.11)
-System prompt describes intended config -- not necessarily actual runtime behaviour.
-Always test rather than assuming. Record confirmed findings here.
-Confirmed: /mnt/skills/user/ writable in Claude Desktop.
-Confirmed: NotebookLM index source copy IS cited by notebook_query AI (Test 1, 2026.04.19).
+## NOTE: Earlier session log entries (pre-2026.05.10) preserved in git history.
+This memory file was streamlined on 2026.05.10 to keep recent sessions front-of-mind.
+For older session details (NotebookLM skill suite, ShareScope build, Poppy planning, etc.),
+see git log on this file or the per-project session-logs/ folders.

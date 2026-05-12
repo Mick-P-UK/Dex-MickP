@@ -20,6 +20,8 @@ tasks. Each skill lives in its own subfolder with a SKILL.md file.
 | my-view-writer | `/my-view-writer` | Writes or updates the "My View" narrative field on Radar Log entries in Notion, based on OCR-extracted commentary from webinar PDF slides. |
 | thumbnail-play-button | (on request) | Add a YouTube-style play button overlay to any image thumbnail. Use for newsletter images, WordPress posts, or any document where a thumbnail should indicate a clickable video link. |
 | yt-weekly-stats | (on request) | Update DIY Investors YouTube channel stats in the tracking Google Sheet. NOTE: enter data cell-by-cell via Name Box - tab-separated entry does not work in browser Sheets (updated 2026.03.14). Mirrored to /mnt/skills/user/yt-weekly-stats/ as of 2026.03.14. |
+| sharescope-nlm-research | `/research [TICKER]` or "research [company]" or "Cedric, research [company]" | Full ShareScope + NotebookLM financial research pipeline (v1.0). Resolves ticker, checks NLM auth, runs orchestrator (~28s, headless, 6 CSVs), runs NLM researcher (parallel upload + news search, Nina analysis), monitors Research Log for report file, returns Obsidian deep-link. Also handles voice-activated runs. Replaces old stock-research skill. Created 2026.04.28. Dual-deployed: vault + .claude/skills mirror. Slash command: .claude/commands/research.md |
+| logo-masking | "mask the logo", "remove the NotebookLM logo", "remove the branding", "clean up this slide" | Remove watermarks and branding logos from PNG/JPG images using auto-sampled colour matching. Designed for NotebookLM infographics (bottom-right logo) but works on any corner. Supports single file and batch processing. Tested 2026.04.29 on 2x NotebookLM infographics at 2752x1536. |
 
 ## IMPORTANT: Two Notion Summary Skills
 

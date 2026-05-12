@@ -1,0 +1,12 @@
+Infographic Brief: Increasing AI Leverage for Investors
+
+Style: LEFT-TO-RIGHT FLOW DIAGRAM (pipeline visual showing a natural sequence). NOT a mindmap. WHITEBOARD-STYLE THEME with light colours and clean design, print-ready.
+
+SECTION 1 - What is AI Leverage?
+Using AI not just as a search tool, but as a personalised thinking partner - one that knows your investing style, your watchlists, your research history, and your decision framework. Leverage increases the more context AI holds about you. Generic AI gives generic answers; a personalised AI gives investor-grade insight.
+
+SECTION 2 - The Four Pillars of a Personal Investing Brain
+ShareScope (stock screening, price data, charting - your data source), NotebookLM (deep research synthesis - turning documents, PDFs and reports into queryable knowledge), Obsidian (permanent note storage - your long-term memory and idea capture), and an AI assistant / Cedric / Claude (the reasoning layer that connects everything). Each tool has a distinct role; power comes from linking them together.
+
+SECTION 3 - Creating a Second Brain for Investing
+A Second Brain is your accumulated knowledge made searchable and actionable - stock notes, RNS summaries, webinar highlights, and personal analysis all connected and retrievable in seconds. The workflow: capture insights in Obsidian, enrich with NotebookLM research, screen and validate with ShareScope, query everything through AI. The result: faster decisions, fewer blind spots, and a compounding knowledge edge over time.
