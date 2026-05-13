@@ -1,25 +1,34 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.05.12 (evening) - GitHub backup pipeline diagnosed and fixed. 14-day commit gap closed - vault now pushed to GitHub at commit cbf6b82. Root cause: stale .git/index.lock from a crashed git process around 28 April had been silently blocking every daily commit. Secondary issue: 21 .md files (20 AI-generated stock research + 1 Poppy pickup note) contained Unicode typographic chars that tripped the pre-commit hook - all cleaned in place (70 chars replaced). Full pickup note for tomorrow: C:\Vaults\Cowork\2026.05.12 - GitHub Backup Diagnosis - Pickup Note.md. Earlier afternoon: Subscription audit session completed (0CodeKit, Codia, ChatGPT Plus cancelled or actioned; Otter kept; six other subs flagged for review). Back-burner item logged: Section 9 of MCSB-Webinar-Voice doc now captures three live-voice operating modes. Earlier: MCSB and Webinar Voice Integration concept doc landed from mobile claude.ai session (11 May). 46p PRD being authored in Cowork.
+**Last Updated:** 2026.05.13 (afternoon) - MCSB PRD v0.3 approved. Full 46-page editorial review completed in a single Cowork session. All open questions resolved or deferred (OQ1-OQ19). Appendix A (folder schema) and Appendix B (API reference) written. PRD saved at PAIDA Master Second Brain/04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.docx. Phase 1 pickup note written. Notion MCSB Build Tracker discussion begun - Option 3 agreed (Notion monitoring dashboard + vault PROGRESS.md operational log). Two Meet Cedric episode brain dumps logged to Content Studio. READY FOR PHASE 1 BUILD.
 **Environment:** Claude Desktop with Filesystem MCP confirmed
 
 ---
 
-## Top of Mind - 2026.05.12 (Tuesday)
+## Top of Mind - 2026.05.13 (Wednesday)
 
-### MCSB (Mick and Cedric Shared Brain) + Webinar Voice Integration
-**Status:** Concept locked, PRD in development in Cowork, vault doc created today.
-**Project folder:** `C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.05.11-MCSB-Webinar-Voice\`
-**Lead doc:** `2026.05.11 - Cedric Webinar Voice Integration and MCSB Knowledge Bridge.md`
+### MCSB (Mick and Cedric Shared Brain) -- PHASE 1 READY
+**Status:** PRD v0.3 APPROVED. Phase 1 build imminent (may be 2026.05.15 or later).
+**PRD v0.3:** `PAIDA Master - Second Brain/04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.docx`
+**Pickup note:** `2026.05.13-MCSB-Phase1-Pickup-Note.md` in same folder
+**Resume phrase:** "Cedric, PRD v0.3 is approved. Let's start Phase 1 of the MCSB build."
 
-**Concept in one paragraph:** Three-part system to put Cedric voice into live DIY Investors webinars. Otter.ai transcribes the webinar > Mick paste-asks Cedric in claude.ai > Cedric queries MCSB (shared knowledge layer to be built, Obsidian+GitHub backed) + live web > TTS reply captured by desk mic into webinar audio. Trial first with 2-3 long-serving members. MCSB itself is the bigger long-term play: a unified knowledge bridge between Desktop Cedric and claude.ai Cedric, covering Companies Covered, Radar Log, portfolio data, meeting notes, news.
+**Phase 1 builds:** vault restructure (Dex in-place) + Cedric Server v0.1 (FastAPI/FastMCP Python) + MCP wrapper + mobile sync (Working Copy/Obsidian Git) + CLAUDE.md core+fragments + agents.md framework + 99-Private gitignored. Target 2-3 weeks.
 
-**Back burner item logged in Section 9 of lead doc (12 May afternoon):** three live-voice operating modes for in-webinar reaction - Mode A earpiece coach, Mode B visible co-host, Mode C Q&A specialist. Revive when MCSB Stages 1-3 are operational and simpler MVP voice loop (Section 7.4) has been validated.
+**Next immediate action (this session):** Set up MCSB Build Tracker -- Notion database (Mick monitors) + vault PROGRESS.md (Cedric ticks off with timestamps). Option 3 agreed by Mick. Cedric to create Notion database, then PROGRESS.md template.
 
-**Pickup tomorrow (or next session):**
-1. Wait for Cowork PRD draft to land in `C:\Vaults\Cowork\`
-2. Cross-reference PRD against the four Cedric pushback points in Section 7 of the lead doc
-3. Resolve naming/scope question: is MCSB a rename, a new top layer, or a parallel system to the existing CEDRIC Memory Vault + Knowledge Base + Dex-MickP?
-4. Decide whether webinar voice MVP can run on existing infrastructure before MCSB Stages 1-4 land
+**Key decisions from today's review (D24-D25):**
+- D24: Notion Research DB, Companies Covered, Memory Vault stay in Notion permanently (bridge not migrate)
+- D25: Cedric Server code tracked in CHANGELOG.md at server root
+- agents.md-history/ + CHANGELOG.md required from Phase 1
+- Obsidian Core Daily Notes (not Periodic Notes); hourly worker deletes blank daily notes
+- website-com has Inner-Circle/ and Plaza/ tiers; website-ai has Free/ and Silver/ tiers
+- Newsletters (plural) with Freedom-Blueprint/ and AI-Newsletter/ subfolders
+- Events/ folder added for Boot Camp and one-day seminars
+
+**Meet Cedric episode arc identified:**
+- Episode A: The 46-page PRD review (brain dump logged to Content Studio)
+- Episode B: Building the progress monitor (brain dump logged to Content Studio)
+- Episode C: Phase 1 build (future)
 
 ### Subscription audit follow-ups (from 12 May afternoon session)
 - Cancel Codia AI before 21 May (USD 20/month)
@@ -39,6 +48,38 @@ For any question about what skills exist, where they live, who built them, or ho
   C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\SKILLS_REGISTRY.md
 
 This file lists every skill across vault, mirror, plugin marketplace, scheduled tasks, and claude.ai PAIDA Projects (Pete, Cedric, Poppy). Update on every skill create / rename / version-bump / deprecate. See its Section 7 for maintenance rules.
+
+---
+
+## Session Log - 2026.05.13 Afternoon (MCSB PRD Review + v0.3 Production)
+
+### MCSB PRD v0.3 approved. 46-page editorial review completed. Phase 1 ready.
+**Session time:** ~16:00-17:30 BST (Wednesday afternoon, Cowork mode)
+**Surfaces used:** Cowork, python-docx via bash sandbox
+
+### What was done
+- Picked up PRD v0.2.2_1 (Mick uploaded docx, 957 paragraphs)
+- Worked through all 46 pages of Mick's markup in page-by-page passes
+- Produced four intermediate versions: V0.2.2_2 (p.30), V0.2.2_3 (pp.31-36), V0.2.2_4 (pp.37-46)
+- Key content changes: channel URLs added, website tier subfolders (Inner-Circle/Plaza, Free/Silver), Newsletters plural with subfolders, Events folder, Portico course, Case-Studies, CRM Address field, ax-trees global skills note, OQ6/7/12/14 resolved, D24-D25 added
+- Produced PRD v0.3 (1,136 paragraphs): version bumped, Appendix A (folder schema ~80 lines) and Appendix B (API reference ~90 lines) written from scratch, Document History updated
+- Phase 1 pickup note written: 2026.05.13-MCSB-Phase1-Pickup-Note.md
+- Cedric memory (project_mcsb.md) updated to reflect Phase 1 ready status
+- Two Meet Cedric episode brain dumps logged to Notion Content Studio
+- Notion MCSB Build Tracker discussion begun; Option 3 agreed (Notion + PROGRESS.md)
+
+### Decisions made this session
+- D24: Notion bridge-not-migrate (Research DB, Companies Covered, Memory Vault stay in Notion)
+- D25: Cedric Server CHANGELOG.md required
+- OQ6 resolved: Backblaze B2 accepted
+- OQ7 resolved: Obsidian Core Daily Notes; blank note deletion by hourly worker
+- OQ12 resolved: agents.md-history/ + CHANGELOG.md
+- OQ14 resolved: Notion permanent coexistence confirmed
+
+### Outstanding / next session
+- Create MCSB Build Tracker Notion database
+- Create vault PROGRESS.md template
+- Then: Phase 1 build (next separate session)
 
 ---
 
