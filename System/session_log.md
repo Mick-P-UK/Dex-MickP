@@ -499,3 +499,55 @@ Mick wrapping up session at 20:44 BST. Will continue tomorrow or day after.
 ### Outstanding for next session
 
 See `PICKUP_NOTE_2026.05.04-Poppy.md` in vault root.
+
+---
+
+## 2026.05.12 Evening - GitHub Backup Pipeline Diagnosis + Fix
+
+**Session time:** ~18:25-19:10 BST (Tuesday evening, Cowork mode)
+**Status:** COMPLETE - vault now backed up to GitHub at commit cbf6b82
+
+### Current Focus
+Closed for tonight. Pickup tomorrow on follow-up items below.
+
+### What Was Done This Session
+1. Mick asked: are git commits actually being pushed to GitHub? Are backups secure?
+2. Cedric diagnosed: NO - last commit was 28 April 2026 (14 days ago)
+3. Root cause: stale `.git/index.lock` from a crashed git process c.28 April
+4. Mick removed lockfiles in PowerShell. Pre-commit hook then surfaced
+   a secondary issue: 21 .md files with Unicode typographic chars
+5. Cedric wrote one-off Python fix to UTF-8-normalise 21 files in place
+   (70 chars replaced total)
+6. Mick re-ran `daily_git_commit.py` - commit cbf6b82 landed cleanly,
+   push to GitHub verified (local HEAD matches ls-remote HEAD)
+
+### Recent Context (key decisions and clues)
+- Pre-commit hook reads bytes not chars - its "Euro sign" labels are
+  misleading; actual chars were em dashes, smart quotes, etc.
+- 20 of the 21 dirty files were AI-generated stock research reports
+  under 06-Resources/Research-Log/Research/[TICKER]/ - strong hint
+  that an AI-research skill writes to disk without ASCII normalisation
+- 21st was a Poppy session pickup note - suggests a previous Cedric
+  session wrote tree diagrams without ASCII normalisation (mea culpa)
+
+### Active Work / Next Steps (TOMORROW)
+See full pickup note:
+  C:\Vaults\Cowork\2026.05.12 - GitHub Backup Diagnosis - Pickup Note.md
+
+1. Problem 1b: trace how Unicode typographic chars got past the
+   "ASCII only" guardrails. Inspect the AI Financial Analysis skill
+   pipeline. Decide on hardening (3 options in pickup note).
+2. Problem 2: ShareScope-Automation repo has NO GitHub remote -
+   decision needed from Mick.
+3. Problem 3: verify Windows Scheduled Task is still firing.
+4. Housekeeping: `git rm .cedric_write_test_2026_05_12.tmp` (Cedric
+   accidentally created during write-perms test, got committed).
+5. Promote fix script to permanent vault tool.
+
+### Resumption Notes
+- Backups ARE safe as of tonight (verified push to GitHub).
+- If `daily_git_commit.py` fails tomorrow, first thing to check is the
+  Windows Scheduled Task - did it fire? Check Task Scheduler history.
+- The fix script lived at /tmp/fix_typographic.py in tonight's session
+  but that's ephemeral. Re-create from Cedric memory if needed.
+

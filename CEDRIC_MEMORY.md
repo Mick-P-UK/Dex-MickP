@@ -1,5 +1,5 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.05.12 (afternoon) - Subscription audit session completed (0CodeKit, Codia, ChatGPT Plus cancelled or actioned; Otter kept; six other subs flagged for review). New back-burner item logged: Section 9 of MCSB-Webinar-Voice doc now captures three live-voice operating modes (earpiece coach / visible co-host / Q&A specialist) to revisit once MCSB Stages 1-3 are operational. Earlier today: MCSB and Webinar Voice Integration concept doc landed from mobile claude.ai session (11 May). 46p PRD being authored in Cowork.
+**Last Updated:** 2026.05.12 (evening) - GitHub backup pipeline diagnosed and fixed. 14-day commit gap closed - vault now pushed to GitHub at commit cbf6b82. Root cause: stale .git/index.lock from a crashed git process around 28 April had been silently blocking every daily commit. Secondary issue: 21 .md files (20 AI-generated stock research + 1 Poppy pickup note) contained Unicode typographic chars that tripped the pre-commit hook - all cleaned in place (70 chars replaced). Full pickup note for tomorrow: C:\Vaults\Cowork\2026.05.12 - GitHub Backup Diagnosis - Pickup Note.md. Earlier afternoon: Subscription audit session completed (0CodeKit, Codia, ChatGPT Plus cancelled or actioned; Otter kept; six other subs flagged for review). Back-burner item logged: Section 9 of MCSB-Webinar-Voice doc now captures three live-voice operating modes. Earlier: MCSB and Webinar Voice Integration concept doc landed from mobile claude.ai session (11 May). 46p PRD being authored in Cowork.
 **Environment:** Claude Desktop with Filesystem MCP confirmed
 
 ---
@@ -39,6 +39,64 @@ For any question about what skills exist, where they live, who built them, or ho
   C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\SKILLS_REGISTRY.md
 
 This file lists every skill across vault, mirror, plugin marketplace, scheduled tasks, and claude.ai PAIDA Projects (Pete, Cedric, Poppy). Update on every skill create / rename / version-bump / deprecate. See its Section 7 for maintenance rules.
+
+---
+
+## Session Log - 2026.05.12 Evening (GitHub Backup Pipeline Diagnosis + Fix)
+
+### Backup pipeline broken for 14 days. Diagnosed, fixed, push verified.
+**Session time:** ~18:25-19:10 BST (Tuesday evening, Cowork mode)
+**Trigger:** Mick asked "are the git commits actually being pushed to GitHub? Are our backups secure?"
+**Answer (initially): NO - last commit was 28 April 2026, 14 days ago.**
+
+### What was wrong
+1. Stale `.git/index.lock` left over from a crashed git process c.28 April.
+   Every subsequent `git add` since had been failing instantly with
+   "Unable to create index.lock: File exists". The daily script silently
+   bailed on this for two weeks.
+2. Once Mick removed the lock, the pre-commit hook then correctly blocked
+   the commit due to 21 .md files containing Unicode typographic chars
+   (em dashes, smart quotes, ellipsis, box-drawing chars). Hook reads
+   bytes not chars so its "Euro sign" / "Right double quote" labels are
+   misleading - actual chars were U+2014 em dash, U+201C/D smart quotes,
+   U+2013 en dash, U+2019 smart apostrophe, U+2500-251C box drawing.
+
+### What was done
+- Mick: removed `.git/index.lock` and `.git/objects/maintenance.lock`
+- Cedric: wrote Python script to UTF-8-normalise 21 files in place
+  (70 chars replaced total, verified clean afterwards)
+- Mick: re-ran `python daily_git_commit.py` from vault root
+- Result: commit cbf6b82 landed (100 files, 10,622 ins, 973 del)
+  Push verified - local HEAD matches `ls-remote` HEAD on GitHub
+
+### Outstanding (captured in pickup note)
+1. **Problem 1b - root cause hunt**: how did Unicode typographic chars get
+   past the "ASCII only" guardrails into 20 AI-research files and 1
+   Poppy pickup note? Suspect: the skill/workflow producing AI Financial
+   Analysis reports writes straight to disk without ASCII normalisation.
+   Three hardening options documented.
+2. **Problem 2 - ShareScope-Automation has no GitHub remote**: separate
+   git repo at 04-Projects/2026.04.04-ShareScope-Automation/ has 2 local
+   commits, 15 dirty files, NO remote configured. Not backed up anywhere.
+   Decision needed from Mick.
+3. **Problem 3 - verify Windows Scheduled Task still firing**: even though
+   today's commit went through manually, the recurring task may have
+   stopped firing. Check Task Scheduler history once Problem 1b is closed.
+4. **Housekeeping**: small empty file `.cedric_write_test_2026_05_12.tmp`
+   in vault root accidentally caught in tonight's commit (Cedric created
+   it for a write-permissions test). `git rm` it tomorrow.
+5. **Suggestion**: promote tonight's one-off fix script to a permanent
+   vault tool at `tools/fix_typographic_chars.py`.
+
+### Pickup note location
+  C:\Vaults\Cowork\2026.05.12 - GitHub Backup Diagnosis - Pickup Note.md
+
+### Lesson for Cedric (relevant to memory)
+- ALWAYS investigate stale .git lockfile warnings rather than dismissing
+  them as permissions quirks. In the first pass tonight Cedric saw the
+  "unable to unlink index.lock" warning from his own `git fetch` and
+  misread it as a Linux-mount artefact. It was actually the smoking gun.
+  Test, Don't Trust - same principle as the dual-write rule.
 
 ---
 
