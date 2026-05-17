@@ -86,3 +86,7 @@ format: structured audit lines
 2026-05-17 14:28:09 | GIT_ERROR              | git add                                            | fatal: Unable to create 'C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/.git/index.loc
 2026-05-17 14:28:09 | WORKER_DONE            | cedric_worker.py                                   | inbox=0 notes_deleted=0 git_files=16 pushed=False
 2026-05-17 14:35:09 | WORKER_START           | cedric_worker.py                                   | dry_run=False
+2026-05-17 14:35:10 | GIT_COMMIT             | vault                                              | files=16
+2026-05-17 14:35:12 | GIT_PUSH               | origin                                             | success
+2026-05-17 14:35:12 | WORKER_DONE            | cedric_worker.py                                   | inbox=0 notes_deleted=0 git_files=16 pushed=True
+2026-05-17 14:43:51 | WORKER_START           | cedric_worker.py                                   | dry_run=False
