@@ -86,3 +86,9 @@ System/.credentials/google_calendar_token.pickle
 System/.credentials/*.json
 System/.credentials/*.pickle
 System/.credentials/*.token
+
+# MCSB Privacy Layer (Phase 1)
+99-Private/
+
+# Python bytecode cache
+__pycache__/

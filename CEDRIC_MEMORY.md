@@ -1,34 +1,61 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.05.13 (afternoon) - MCSB PRD v0.3 approved. Full 46-page editorial review completed in a single Cowork session. All open questions resolved or deferred (OQ1-OQ19). Appendix A (folder schema) and Appendix B (API reference) written. PRD saved at PAIDA Master Second Brain/04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.docx. Phase 1 pickup note written. Notion MCSB Build Tracker discussion begun - Option 3 agreed (Notion monitoring dashboard + vault PROGRESS.md operational log). Two Meet Cedric episode brain dumps logged to Content Studio. READY FOR PHASE 1 BUILD.
-**Environment:** Claude Desktop with Filesystem MCP confirmed
+**Last Updated:** 2026.05.17 (Sun morning) - MCSB Phase 1 Session 4 CLOSED. Cedric Server v0.3.0 PROD-CONFIRMED on Mick's PC at 11:05 London. 1.3d (GET /agents/reload) and 1.3e (PC-only auth tier) both ticked [x] COMPLETE. End-to-end walkthrough: server boot v0.3.0, /health agents block populated, PC token reload 200, mobile token reload 403, dirty-edit triggered snapshot AND drift detection, CHANGELOG auto-entry written, clean shutdown. Real bug caught by sandbox before deploy: snapshot filename collision (fixed with seconds + 6-char hash). New feedback memory: PowerShell apostrophe quoting (Mick's vault path requires double quotes). Next: 1.3g (embed cedric_worker.py as background task) -- closes out the Cedric Server v0.1 series.
+**Environment:** Cowork (Claude desktop app)
 
 ---
 
-## Top of Mind - 2026.05.13 (Wednesday)
+## Top of Mind - 2026.05.17 (Sunday)
 
-### MCSB (Mick and Cedric Shared Brain) -- PHASE 1 READY
-**Status:** PRD v0.3 APPROVED. Phase 1 build imminent (may be 2026.05.15 or later).
-**PRD v0.3:** `PAIDA Master - Second Brain/04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.docx`
-**Pickup note:** `2026.05.13-MCSB-Phase1-Pickup-Note.md` in same folder
-**Resume phrase:** "Cedric, PRD v0.3 is approved. Let's start Phase 1 of the MCSB build."
+### MCSB (Mick and Cedric Shared Brain) -- PHASE 1 IN PROGRESS
+**Status:** Phases 1.1, 1.2, 1.3a, 1.3b, 1.3c, 1.3d, 1.3e, 1.3f all COMPLETE and PROD-confirmed. Server at v0.3.0. Next: Phase 1.3g (worker embed) -- after which the Cedric Server v0.1 series is fully done.
+**PRD v0.3:** `PAIDA Master - Second Brain/04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.docx` (includes D26)
+**Pickup note:** `2026.05.17-MCSB-Phase1-Session4-Pickup-Note.md` in same folder -- READ THIS to resume
+**Resume phrase:** "Cedric, I'm back. Let's continue Phase 1 -- ready for 1.3g (embed cedric_worker.py as a background scheduler task inside the server)."
 
-**Phase 1 builds:** vault restructure (Dex in-place) + Cedric Server v0.1 (FastAPI/FastMCP Python) + MCP wrapper + mobile sync (Working Copy/Obsidian Git) + CLAUDE.md core+fragments + agents.md framework + 99-Private gitignored. Target 2-3 weeks.
+**Build Tracker (Notion):** https://www.notion.so/b2462f490c7448cf8af9b51e91f1d159
+**PROGRESS.md:** PAIDA Master - Second Brain/04-Projects/2026.05.09 - MCSB/PROGRESS.md
+**Rule:** Both trackers updated together at end of every session / context refresh.
 
-**Next immediate action (this session):** Set up MCSB Build Tracker -- Notion database (Mick monitors) + vault PROGRESS.md (Cedric ticks off with timestamps). Option 3 agreed by Mick. Cedric to create Notion database, then PROGRESS.md template.
+**Completed this session (2026.05.15 Session 3):**
+- cedric_server.py rewritten to v0.2.0: bearer-auth scaffold + POST /memory/note endpoint.
+- POST /memory/note implemented per PRD Appendix B: text/source/type/tags body, writes 00-Inbox/raw/YYYY.MM.DDTHHmm-<hash>.md with PRD section 10.2 frontmatter (ASCII-only, dashed-ISO dates).
+- Two-tier auth scaffold (1.3e): MCSB_PC_TOKEN + MCSB_MOBILE_TOKEN loaded from C:\Users\pavey\.env on every request (rotate without restart). 401 on missing/invalid. 403 reserved for PC-only endpoints.
+- generate_tokens.py helper added -- mints 32-byte hex tokens for .env (prints lines only, never writes the file).
+- /health now reports pc_token_configured + mobile_token_configured booleans.
+- CHANGELOG.md v0.2.0 entry added (D25 format).
+- Live test: 7/7 paths pass against sandboxed copy (no token, bogus token, mobile token, PC token, empty text -> 422, bad type -> 422, /health no-auth).
+- Token env-var names decided: MCSB_PC_TOKEN / MCSB_MOBILE_TOKEN (Mick chose MCSB_ prefix over CEDRIC_).
 
-**Key decisions from today's review (D24-D25):**
-- D24: Notion Research DB, Companies Covered, Memory Vault stay in Notion permanently (bridge not migrate)
-- D25: Cedric Server code tracked in CHANGELOG.md at server root
-- agents.md-history/ + CHANGELOG.md required from Phase 1
-- Obsidian Core Daily Notes (not Periodic Notes); hourly worker deletes blank daily notes
-- website-com has Inner-Circle/ and Plaza/ tiers; website-ai has Free/ and Silver/ tiers
-- Newsletters (plural) with Freedom-Blueprint/ and AI-Newsletter/ subfolders
-- Events/ folder added for Boot Camp and one-day seminars
+**Token env-var contract (locked Session 3):**
+- MCSB_PC_TOKEN: full access including private + /search_all
+- MCSB_MOBILE_TOKEN: restricted, no private, no /search_all
+- Both live in C:\Users\pavey\.env -- NEVER copy elsewhere
+- Mint with: `python generate_tokens.py` (helper in vault root)
 
-**Meet Cedric episode arc identified:**
-- Episode A: The 46-page PRD review (brain dump logged to Content Studio)
-- Episode B: Building the progress monitor (brain dump logged to Content Studio)
-- Episode C: Phase 1 build (future)
+**Pre-flight for next session: NONE -- already done Session 3.**
+Server v0.2.0 is prod-installed, tokens are in C:\Users\pavey\.env, /health
+returns all true, /memory/note returns 201 with PC token. Next session
+opens directly with 1.3d work -- no setup steps needed.
+
+**Important: SECURITY ROTATION pending.**
+The two tokens minted Session 3 were pasted into chat during the
+walkthrough. Practical risk = zero today (server is 127.0.0.1 only),
+but BEFORE the Cloudflare tunnel goes up, Mick must:
+  cd C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP
+  python generate_tokens.py
+and swap the new tokens into .env. Flag this when tunnel work begins.
+
+**Outstanding / Deferred:**
+- Windows service install for Cedric Server.
+- Phase 1.3d (/agents/reload), 1.3e finish (403 on PC-only endpoints), 1.3g (embed worker as background task).
+
+**Meet Cedric episode arc:**
+- Episode A: The 46-page PRD review (Content Studio logged 2026.05.13)
+- Episode B: Building the Build Tracker (Content Studio logged 2026.05.13)
+- Episode C: Building the Foundation -- vault restructure + hourly worker (Content Studio logged 2026.05.14)
+- Episode D: The Server Awakens -- first endpoint live + final PRD decision logged (Content Studio logged 2026.05.15)
+- Episode E: First Capture -- /memory/note plus two-tier bearer auth (Content Studio logged 2026.05.15 Session 3)
+- Episode F: Cedric Catches His Own Bug -- 1.3d /agents/reload sandbox save (Content Studio logged 2026.05.17 Session 4). Bonus B-segment: PowerShell apostrophe quoting gotcha hit during PROD walkthrough.
 
 ### Subscription audit follow-ups (from 12 May afternoon session)
 - Cancel Codia AI before 21 May (USD 20/month)
@@ -48,6 +75,51 @@ For any question about what skills exist, where they live, who built them, or ho
   C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\SKILLS_REGISTRY.md
 
 This file lists every skill across vault, mirror, plugin marketplace, scheduled tasks, and claude.ai PAIDA Projects (Pete, Cedric, Poppy). Update on every skill create / rename / version-bump / deprecate. See its Section 7 for maintenance rules.
+
+---
+
+## Session Log - 2026.05.17 Morning (MCSB Phase 1 Session 4 - 1.3d and 1.3e CLOSED)
+
+### What we did
+- Reviewed PROGRESS.md and the relevant PRD sections (Appendix B for the /agents/reload spec, sections 8.6 + 11.2 for agents.md and the hourly worker, section 20 for the phased plan).
+- Built Cedric Server v0.3.0 (cedric_server.py 12,967 -> 22,017 bytes).
+  - GET /agents/reload endpoint per PRD Appendix B, PC-token only (mobile token returns 403).
+  - require_pc_token FastAPI dependency -- closes off 1.3e and provides a reusable PC-only auth tier for later /search_all and /briefing/today.
+  - agents.md loader: parses frontmatter version, counts top-level rule blocks, hashes content for drift detection.
+  - @app.on_event("startup") hook loads agents.md once on boot and writes a baseline snapshot.
+  - Snapshot system: writes a versioned copy to agents.md-history/ on every content change, with filenames including seconds and a 6-char content hash so same-minute reloads do not collide. Auto-appends to agents.md-history/CHANGELOG.md (newest first).
+  - Drift detection: when content changes but the frontmatter version does NOT, response sets content_drift: true and the CHANGELOG entry is tagged "(content drift -- version not bumped)".
+  - /health enriched with an agents block (version, rules_loaded, loaded_at, snapshot_count).
+- Sandbox tests: 18/18 paths green.
+- Real bug caught by the sandbox: snapshot filenames using minute-level timestamps collided when two reloads happened in the same minute. Fixed by adding seconds + 6-char hash. Sandbox proved 6 rapid reloads now produce 6 unique files. This is the Meet Cedric Episode F hero arc.
+
+### PROD walkthrough (10:48-11:05 London, on Mick's PC)
+- Stumble at Step 2: unquoted vault path triggered PowerShell continuation prompt because of the apostrophe in "Mick's-Dex-2nd-Brain". Recovered with Ctrl+C + retry with the path in double quotes. New feedback memory saved so this never recurs.
+- /health: confirmed v0.3.0, agents v1.0, 3 rules, baseline snapshot_count 1, both tokens configured.
+- /agents/reload with PC token -> 200 + correct PRD-spec JSON, snapshot_written false (idempotent -- no content change since startup).
+- /agents/reload with mobile token -> 403, detail "PC token required for this endpoint." 1.3e PROVEN in PROD.
+- Cedric appended a 3-line test comment to agents.md (no version bump). Mick hit reload -> content_drift: true, snapshot_written: true, agents_version still 1.0. Two real snapshot files now in agents.md-history/. CHANGELOG auto-entry appeared at the top with the drift marker. Cedric reverted agents.md silently to its 1822-byte baseline.
+- Server stopped cleanly with Ctrl+C and Y.
+
+### Files changed in vault this session
+- cedric_server.py (v0.2.0 -> v0.3.0)
+- CHANGELOG.md (v0.3.0 entry added at top, D25 format)
+- agents.md-history/CHANGELOG.md (2 new auto-entries: server-startup + manual-reload with drift marker)
+- agents.md-history/agents-v1.0-2026.05.17T104843-c40c6f.md (baseline snapshot, retained as PROD evidence)
+- agents.md-history/agents-v1.0-2026.05.17T105856-08a5a2.md (drift-edit snapshot, retained as PROD evidence)
+- PAIDA Master/04-Projects/2026.05.09 - MCSB/PROGRESS.md (Session 4 entry, 1.3d [x], 1.3e [x], header date/status)
+- PAIDA Master/04-Projects/2026.05.09 - MCSB/2026.05.17-MCSB-Phase1-Session4-Pickup-Note.md (new)
+
+### Notion Content Studio
+- New page: "2026.05.17 - Cedric Catches His Own Bug (1.3d Sandbox Save)". Project: Meet Cedric. Format: Video. Status: Brain Dump. Includes PROD success postscript and the apostrophe B-segment angle.
+
+### Outstanding / next session
+- Phase 1.3g: embed cedric_worker.py as a FastAPI background scheduler task inside the server (replaces the Windows Task Scheduler dependency). After 1.3g, the Cedric Server v0.1 series is fully complete.
+- Then Phase 1.4 (agents.md framework finalisation), 1.5 (MCP wrapper v0.1), 1.6 (mobile sync), 1.7 (CLAUDE.md core + fragments + assembly script), 1.8 (private-content audit).
+- Still deferred: Windows service install, token rotation before Cloudflare tunnel work.
+
+### Resume phrase
+"Cedric, I'm back. Let's continue Phase 1 -- ready for 1.3g (embed cedric_worker.py as a background scheduler task inside the server)."
 
 ---
 
