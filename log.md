@@ -90,3 +90,6 @@ format: structured audit lines
 2026-05-17 14:35:12 | GIT_PUSH               | origin                                             | success
 2026-05-17 14:35:12 | WORKER_DONE            | cedric_worker.py                                   | inbox=0 notes_deleted=0 git_files=16 pushed=True
 2026-05-17 14:43:51 | WORKER_START           | cedric_worker.py                                   | dry_run=False
+2026-05-17 14:43:51 | GIT_COMMIT             | vault                                              | files=1
+2026-05-17 14:43:53 | GIT_PUSH               | origin                                             | success
+2026-05-17 14:43:53 | WORKER_DONE            | cedric_worker.py                                   | inbox=0 notes_deleted=0 git_files=1 pushed=True

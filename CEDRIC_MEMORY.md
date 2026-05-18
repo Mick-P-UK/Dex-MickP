@@ -7,24 +7,31 @@
 ## Top of Mind - 2026.05.17 (Sunday)
 
 ### MCSB (Mick and Cedric Shared Brain) -- PHASE 1 IN PROGRESS
-**Status:** Phases 1.1, 1.2, 1.3a, 1.3b, 1.3c, 1.3d, 1.3e, 1.3f all COMPLETE and PROD-confirmed. Server at v0.3.0. Next: Phase 1.3g (worker embed) -- after which the Cedric Server v0.1 series is fully done.
+**Status:** Phases 1.1, 1.2, 1.3a-1.3g all COMPLETE and PROD-confirmed. Server at v0.4.0. Phase 1.3 (Cedric Server v0.1 series) is now FULLY COMPLETE. Phase 1 first publish to GitHub also done (16 files in milestone commit 2026-05-17 14:35 London). Next: Phase 1.4 (mostly done already, just needs ratification) + Phase 1.5 (MCP wrapper v0.1).
 **PRD v0.3:** `PAIDA Master - Second Brain/04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.docx` (includes D26)
-**Pickup note:** `2026.05.17-MCSB-Phase1-Session4-Pickup-Note.md` in same folder -- READ THIS to resume
-**Resume phrase:** "Cedric, I'm back. Let's continue Phase 1 -- ready for 1.3g (embed cedric_worker.py as a background scheduler task inside the server)."
+**Pickup note:** `2026.05.17-MCSB-Phase1-Session5-Pickup-Note.md` in same folder -- READ THIS to resume
+**Resume phrase:** "Cedric, I'm back. Session 6 -- let's confirm the autonomous tick fired since Session 5, then move to Phase 1.5 (MCP wrapper v0.1)."
 
 **Build Tracker (Notion):** https://www.notion.so/b2462f490c7448cf8af9b51e91f1d159
 **PROGRESS.md:** PAIDA Master - Second Brain/04-Projects/2026.05.09 - MCSB/PROGRESS.md
 **Rule:** Both trackers updated together at end of every session / context refresh.
 
-**Completed this session (2026.05.15 Session 3):**
-- cedric_server.py rewritten to v0.2.0: bearer-auth scaffold + POST /memory/note endpoint.
-- POST /memory/note implemented per PRD Appendix B: text/source/type/tags body, writes 00-Inbox/raw/YYYY.MM.DDTHHmm-<hash>.md with PRD section 10.2 frontmatter (ASCII-only, dashed-ISO dates).
-- Two-tier auth scaffold (1.3e): MCSB_PC_TOKEN + MCSB_MOBILE_TOKEN loaded from C:\Users\pavey\.env on every request (rotate without restart). 401 on missing/invalid. 403 reserved for PC-only endpoints.
-- generate_tokens.py helper added -- mints 32-byte hex tokens for .env (prints lines only, never writes the file).
-- /health now reports pc_token_configured + mobile_token_configured booleans.
-- CHANGELOG.md v0.2.0 entry added (D25 format).
-- Live test: 7/7 paths pass against sandboxed copy (no token, bogus token, mobile token, PC token, empty text -> 422, bad type -> 422, /health no-auth).
-- Token env-var names decided: MCSB_PC_TOKEN / MCSB_MOBILE_TOKEN (Mick chose MCSB_ prefix over CEDRIC_).
+**Completed this session (2026.05.17 Session 5 -- afternoon):**
+- cedric_server.py rewritten to v0.4.0 (22,017 -> 34,244 bytes): embedded the hourly worker as a FastAPI background scheduler task. Closes Phase 1.3g and seals the Cedric Server v0.1 series.
+- APScheduler (AsyncIOScheduler) drives an hourly tick from inside the server, replacing the Windows Task Scheduler dependency.
+- threading.Lock around each tick: non-blocking acquire so a slow tick can never overlap with the next; second call is recorded as status=skipped rather than queued.
+- New endpoints (both PC-only via require_pc_token):
+    GET  /worker/status   -- enabled / scheduler_started / lock_held / next_run / counts / last_run / last_skip / last_error
+    POST /worker/run_now  -- manual trigger; optional ?dry_run=true override
+- /health enriched with a worker block (next_run, lock_held, counts, last_run_summary).
+- Clean @app.on_event("shutdown") hook so Ctrl+C exits the scheduler cleanly.
+- Worker shim added (cedric_worker.py +1,401 bytes): run_worker_pipeline(dry_run, verbose) -- CLI-independent entry point. main() is now a 4-line CLI wrapper around it; CLI behaviour unchanged.
+- Env vars: CEDRIC_WORKER_ENABLED / CEDRIC_WORKER_INTERVAL_MIN / CEDRIC_WORKER_DRY_RUN (sensible defaults).
+- Sandbox tests: 25/25 paths green.
+- PROD walkthrough (13:43-14:35 London on Mick's PC): every endpoint proven, scheduler started with first auto-tick scheduled, dry-run and real-run ticks both fired through, MCSB Phase 1 published to GitHub for the first time (16 files in milestone commit).
+- Mid-walk hygiene: __pycache__/ added to .gitignore (line 94, confirmed by git check-ignore).
+- Bug arc: stale .git/index.lock from old Task Scheduler racing first real tick. Recovered by Admin PowerShell + lock removal. Saved as the new "scheduler handover" feedback memory (always disable old driver BEFORE first real tick).
+- Tooling note: Edit-tool apostrophe truncation hit again (Python this time). Memory broadened beyond JS to all languages. Used /tmp Python scripts as the apostrophe-safe alternative.
 
 **Token env-var contract (locked Session 3):**
 - MCSB_PC_TOKEN: full access including private + /search_all
@@ -32,10 +39,8 @@
 - Both live in C:\Users\pavey\.env -- NEVER copy elsewhere
 - Mint with: `python generate_tokens.py` (helper in vault root)
 
-**Pre-flight for next session: NONE -- already done Session 3.**
-Server v0.2.0 is prod-installed, tokens are in C:\Users\pavey\.env, /health
-returns all true, /memory/note returns 201 with PC token. Next session
-opens directly with 1.3d work -- no setup steps needed.
+**Pre-flight for next session: NONE.**
+Server v0.4.0 is prod-installed and running with embedded scheduler. apscheduler dep installed. Old Windows Task Scheduler "Cedric Hourly Worker" job is DISABLED (still present, will be DELETED in Session 6 after one observation cycle). __pycache__/ now properly excluded from git. Phase 1 is on GitHub.
 
 **Important: SECURITY ROTATION pending.**
 The two tokens minted Session 3 were pasted into chat during the
@@ -46,8 +51,11 @@ but BEFORE the Cloudflare tunnel goes up, Mick must:
 and swap the new tokens into .env. Flag this when tunnel work begins.
 
 **Outstanding / Deferred:**
-- Windows service install for Cedric Server.
-- Phase 1.3d (/agents/reload), 1.3e finish (403 on PC-only endpoints), 1.3g (embed worker as background task).
+- Session 6 priorities: (1) confirm autonomous tick fired (tick_count > 3 with trigger=scheduler somewhere), (2) DELETE the disabled "Cedric Hourly Worker" Task Scheduler job via Admin PowerShell.
+- Minor patch: surface git push failures as error_count++ rather than swallowing as pushed=False.
+- Lifespan refactor (cedric_server uses deprecated @app.on_event; FastAPI 0.110+ prefers lifespan context manager). ~5 min, low priority.
+- Windows service install for Cedric Server (still foreground dev mode).
+- Token rotation before Cloudflare tunnel work.
 
 **Meet Cedric episode arc:**
 - Episode A: The 46-page PRD review (Content Studio logged 2026.05.13)
@@ -56,6 +64,7 @@ and swap the new tokens into .env. Flag this when tunnel work begins.
 - Episode D: The Server Awakens -- first endpoint live + final PRD decision logged (Content Studio logged 2026.05.15)
 - Episode E: First Capture -- /memory/note plus two-tier bearer auth (Content Studio logged 2026.05.15 Session 3)
 - Episode F: Cedric Catches His Own Bug -- 1.3d /agents/reload sandbox save (Content Studio logged 2026.05.17 Session 4). Bonus B-segment: PowerShell apostrophe quoting gotcha hit during PROD walkthrough.
+- Episode G: Cedric Catches Phase 1 Crashing Lock-File Bug -- 1.3g handover race condition (Content Studio logged 2026.05.17 Session 5). Hero arc: deploying embedded scheduler raced the old Task Scheduler over .git/index.lock; teaches "disable old driver BEFORE first real tick". Bonus: milestone first publish of MCSB Phase 1 to GitHub.
 
 ### Subscription audit follow-ups (from 12 May afternoon session)
 - Cancel Codia AI before 21 May (USD 20/month)
@@ -75,6 +84,58 @@ For any question about what skills exist, where they live, who built them, or ho
   C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\SKILLS_REGISTRY.md
 
 This file lists every skill across vault, mirror, plugin marketplace, scheduled tasks, and claude.ai PAIDA Projects (Pete, Cedric, Poppy). Update on every skill create / rename / version-bump / deprecate. See its Section 7 for maintenance rules.
+
+---
+
+## Session Log - 2026.05.17 Afternoon (MCSB Phase 1 Session 5 - 1.3g CLOSED, Phase 1.3 SERIES COMPLETE)
+
+### What we did
+- Built Cedric Server v0.4.0 (cedric_server.py 22,017 -> 34,244 bytes): embedded the hourly worker as a FastAPI background scheduler task. Closes Phase 1.3g and seals the Cedric Server v0.1 series.
+- APScheduler (AsyncIOScheduler) drives an hourly tick from inside the server. threading.Lock guards re-entry (skipped, never queued). Two new PC-only endpoints: GET /worker/status, POST /worker/run_now. /health enriched with a worker block. Clean shutdown hook.
+- Worker shim added: cedric_worker.run_worker_pipeline() is the CLI-independent entry point; main() is now a thin CLI wrapper. CLI behaviour unchanged.
+- Env-var config: CEDRIC_WORKER_ENABLED / CEDRIC_WORKER_INTERVAL_MIN / CEDRIC_WORKER_DRY_RUN.
+- Sandbox tests: 25/25 paths green (auth matrices on both new endpoints, dry-run tick, lock contention, regression on /memory/note and /agents/reload).
+
+### PROD walkthrough (13:43-14:35 London, on Mick's PC)
+- pip install apscheduler -> 3.11.2 clean.
+- Server v0.4.0 booted with the new "embedded worker scheduler started (every 60 min, dry_run=False)" message.
+- /health returned v0.4.0 + worker block populated + next_run 14:43:51.
+- Auth matrix proven on both new endpoints (401/403/200).
+- Dry-run tick completed -> tick_count=1, last_run populated.
+- Mid-walk: noticed __pycache__/ untracked. Added to .gitignore via Add-Content. Line 94 confirmed by git check-ignore. Status dropped from 17 to 16 files.
+- Real-run tick attempt 1: completed but pushed=False. Window A revealed "fatal: Unable to create '.git/index.lock': File exists." -- old Task Scheduler had raced our test (still enabled).
+- Disabled Task Scheduler via Admin PowerShell (user mode denied). Removed lock file. Retry -> pushed=True, 14:35:09-14:35:12 (3 sec).
+- MCSB Phase 1 published to GitHub for the first time (16 files in milestone commit).
+- Final /worker/status: tick_count=3, last_run.git_pushed=true.
+
+### Design decisions logged this session
+- DEC-S5-01: APScheduler chosen over hand-rolled asyncio loop. Reason: scales cleanly when Phase 5 adds /briefing/today and Phase 6 adds theme-mining cadence; tiny dep; battle-tested.
+- DEC-S5-02: First tick offset by WORKER_INTERVAL_MIN (no boot tick). Matches prior Task Scheduler behaviour and keeps the startup hook cheap.
+
+### Lesson saved as feedback memory
+- Scheduler handover rule: when moving a scheduled job from one driver to another, ALWAYS disable the old driver BEFORE the first real-run tick of the new one. The dry-run path won't catch this because it skips git add. (Saved as feedback_scheduler_handover.md in Cedric's auto-memory.)
+
+### Files changed in vault this session
+- cedric_server.py (v0.3.0 -> v0.4.0)
+- cedric_worker.py (+ run_worker_pipeline shim, 16,451 bytes)
+- CHANGELOG.md (v0.4.0 entry added at top, D25 format)
+- .gitignore (+ __pycache__/ exclusion at line 94)
+- PAIDA Master/04-Projects/2026.05.09 - MCSB/PROGRESS.md (Session 5 entry, 1.3g [x], header date/status)
+- PAIDA Master/04-Projects/2026.05.09 - MCSB/2026.05.17-MCSB-Phase1-Session5-Pickup-Note.md (new)
+- GitHub remote: first push of MCSB Phase 1 (16 files in milestone commit).
+
+### Notion Content Studio
+- New page: "2026.05.17 - Cedric Catches Phase 1 Crashing Lock-File Bug". Project: Meet Cedric. Format: Video. Status: Brain Dump. Hero arc + teachable rule + first-publish-to-GitHub bonus.
+
+### Outstanding / next session
+- Confirm autonomous tick fired (check tick_count > 3 with a trigger=scheduler entry in history).
+- DELETE the disabled "Cedric Hourly Worker" Task Scheduler job via Admin PowerShell.
+- Minor: surface git push failures as error_count++ rather than swallowing as pushed=False.
+- Lifespan refactor (deprecated @app.on_event -> FastAPI 0.110+ lifespan context manager).
+- Still deferred: Windows service install, token rotation before Cloudflare tunnel work.
+
+### Resume phrase
+"Cedric, I'm back. Session 6 -- let's confirm the autonomous tick fired since Session 5, then move to Phase 1.5 (MCP wrapper v0.1)."
 
 ---
 
