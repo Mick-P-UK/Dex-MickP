@@ -2,7 +2,7 @@
 
 **Single source of truth for every skill Mick can run from any runtime.**
 
-- Last updated: 2026-05-09 (v1.0 - initial build)
+- Last updated: 2026-05-30 (portfolio-post-creator v2.3 + wordpress-post-publisher v1.2; vault corruption repaired)
 - Maintained by: Cedric (PAIDA)
 - Update rule: see CLAUDE.md "MANDATORY SKILL DEPLOY PROTOCOL". This file MUST be updated on every skill create, rename, version-bump, or deprecation.
 
@@ -74,6 +74,10 @@ Each row tells you four things: who built it, where it lives, how to invoke it, 
 | week-plan-print | /week-plan-print | mick-cedric | V, M | active | Print-ready A4 Word doc of current week's calendar |
 | yt-play-button-overlay | (on request) | mick-cedric | V, M | active | YouTube play button overlay (image processing) |
 | yt-weekly-stats-v2 | "log YouTube stats" / "update YT stats" | mick-cedric | V, M, P | active | Pull DIY Investors channel analytics from YouTube Studio and write to Google Sheets tracker |
+| portfolio-post-creator | (monthly portfolio batch) | mick-cedric | C-Pete, V, M | active | Orchestrator (v2.3): builds HTML post bodies for the four DIY Investors portfolio pages; calls benchmark-fetcher + wordpress-image-uploader, hands off to wordpress-post-publisher. v2.3 (2026-05-30) added blue-line month-boundary rule and portfolio tag rule. |
+| benchmark-fetcher | (called by portfolio-post-creator) | mick-cedric | C-Pete, V, M | active | v1.0: month-end FTSE All-Share + S&P 500 closes from Yahoo Finance; updates Indices spreadsheet. Migrated to V+M 2026-05-30. |
+| wordpress-image-uploader | (called by portfolio-post-creator) | mick-cedric | C-Pete, V, M | active | v1.0: upload portfolio screenshots to WordPress media library; returns real media IDs + dimensions. Migrated to V+M 2026-05-30. |
+| wordpress-post-publisher | (called by portfolio-post-creator, or ad-hoc) | mick-cedric | C-Pete, V, M | active | v1.2: push post objects to WordPress as drafts via REST API. Content-agnostic. v1.2 (2026-05-30) added tags field to payload for portfolio post tagging. |
 
 ### 1b. claude.ai PAIDA Project skills (NOT yet mirrored to vault)
 
@@ -81,10 +85,6 @@ These were referenced in CEDRIC_MEMORY.md (line 920-933, snapshot 2026-04-19) bu
 
 | Name | Source | Lives In | Status | Description | Mirror priority |
 |------|--------|----------|--------|-------------|-----------------|
-| portfolio-post-creator v2.0 | mick-cedric | C-Pete | active | Generates DIY Investors monthly portfolio post draft | HIGH (used end of every month) |
-| wordpress-post-publisher v1.1 | mick-cedric | C-Pete | active | Publishes draft to diy-investors.com via WordPress REST API | HIGH |
-| wordpress-image-uploader v1.0 | mick-cedric | C-Pete | active | Uploads portfolio chart images to WordPress media library | HIGH |
-| benchmark-fetcher v1.0 | mick-cedric | C-Pete | active | Pulls benchmark numbers used in portfolio post commentary | HIGH |
 | webinar-radar-extractor | mick-cedric | C-? | unverified | Extracts entries for Radar Log (likely superseded by /process-webinar) | LOW - check for overlap |
 | my-view-notion-writer | mick-cedric | C-? | unverified | Writes "My View" narrative on Radar Log entries (possibly same as micks-stocknote/micks-view-query family) | MEDIUM - check for overlap |
 | vault-file-mover | mick-cedric | C-? | unverified | Move files within the vault | LOW |
@@ -192,7 +192,8 @@ Live at: C:\Users\pavey\OneDrive\Documents\Claude\Scheduled\
 
 ## Section 8 - Pending actions (as of 2026-05-09)
 
-1. **Mirror Poster Pete's four skills** (portfolio-post-creator, wordpress-post-publisher, wordpress-image-uploader, benchmark-fetcher) from C-Pete to V + M. Priority HIGH - end of April batch is due in ~3 weeks.
+0. **DONE (2026-05-30, later)**: portfolio-post-creator bumped to v2.3 (blue-line month-boundary rule + portfolio tag rule) and wordpress-post-publisher bumped to v1.2 (tags field added to payload). Both promoted to V + M and verified byte-identical. NOTE: the portfolio-post-creator vault file had been corrupted in a separate manual session (it contained wordpress-post-publisher content at 35,267 bytes); fully overwritten from Mick's clean download and confirmed healthy at 27,758 bytes. Portfolio tag IDs (UK A10 = 513, UK A10 Yr2 = 890, US A10 = 512, US A10 Yr2 = 891) were auto-pulled by another Cedric instance and are ASSUMED correct; to be visually confirmed on the draft posts during the end-of-June run.
+1. **DONE (2026-05-30)**: Poster Pete's four end-of-month skills (portfolio-post-creator, wordpress-post-publisher, wordpress-image-uploader v1.0, benchmark-fetcher v1.0) migrated from C-Pete to V + M. Vault and mirror verified byte-identical. Credentials: by Mick's decision (2026-05-30) the .env stays solely in C:\Vaults\Mick's Vault\.env as the single source of truth - deliberately NOT duplicated into the Dex vault, so passwords can be changed in one place with no risk of divergence. The two WordPress skills correctly point at that single .env. Original copies left in C:\Vaults\Mick's Vault\.claude\skills\ for now (not deleted).
 2. **Verify and reconcile** the eight `unverified` C-? rows in Section 1b. Several may be superseded by current vault skills (e.g. micks-stocknote and micks-view-query may already cover my-view-notion-writer).
 3. **Confirm which PAIDA project hosts each unverified skill** so the C-? cells can be replaced with C-Pete / C-Cedric / C-Poppy.
 4. **Add registry update step to CLAUDE.md MANDATORY SKILL DEPLOY PROTOCOL** (currently Step 5 says "Update skills/README.md" - change to "Update SKILLS_REGISTRY.md and skills/README.md").

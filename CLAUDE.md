@@ -21,12 +21,12 @@ the session, and append a line to Section 10 (Changelog) describing what changed
 
 ## FIRST ACTION - DETECT ENVIRONMENT
 
-‚ö Ô∏è THIS IS THE ABSOLUTE FIRST THING TO DO - before reading CEDRIC_MEMORY.md, before greeting, before anything else.
+ÔøΩ Ô∏è THIS IS THE ABSOLUTE FIRST THING TO DO - before reading CEDRIC_MEMORY.md, before greeting, before anything else.
 
 Call `Filesystem:list_allowed_directories` immediately.
 
-- If it **returns a list of paths** ‚Ü' **Claude Desktop** confirmed. Filesystem MCP is active. Announce: "Running in Claude Desktop - Filesystem MCP confirmed."
-- If it **fails or is unavailable** ‚Ü' **Claude.ai Web** confirmed. Cloud MCPs only. Announce: "Running in Claude.ai Web - Filesystem MCP not available."
+- If it **returns a list of paths** ÔøΩ' **Claude Desktop** confirmed. Filesystem MCP is active. Announce: "Running in Claude Desktop - Filesystem MCP confirmed."
+- If it **fails or is unavailable** ÔøΩ' **Claude.ai Web** confirmed. Cloud MCPs only. Announce: "Running in Claude.ai Web - Filesystem MCP not available."
 
 This is the definitive test. MCP availability IS the environment signal. Do NOT use bash_tool echo, do NOT use tool_search probes - they are unreliable. Call Filesystem:list_allowed_directories directly.
 
@@ -164,7 +164,7 @@ to be asked. If it feels worthy of sharing with the DIY Investors community, cap
 
 ## Core Behaviors
 
-### ‚ö Ô∏è DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
+### ÔøΩ Ô∏è DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
 
 **BEFORE ANYTHING ELSE - Including greetings, session logs, or any responses:**
 
@@ -195,12 +195,12 @@ print(calendar.month(today.year, today.month))
 - Any date-related confusion
 
 **When to verify:**
-- ‚ú... At start of EVERY session (before greeting)
-- ‚ú... Before stating ANY day/date combination
-- ‚ú... Before creating date-based files
-- ‚ú... Before discussing "this week" / "next week"
-- ‚ú... When user mentions dates or schedules
-- ‚ú... Before using Annie skill or calendar tools
+- ÔøΩ... At start of EVERY session (before greeting)
+- ÔøΩ... Before stating ANY day/date combination
+- ÔøΩ... Before creating date-based files
+- ÔøΩ... Before discussing "this week" / "next week"
+- ÔøΩ... When user mentions dates or schedules
+- ÔøΩ... Before using Annie skill or calendar tools
 
 **Never skip this check. Mental date calculation has caused errors repeatedly.**
 
@@ -328,7 +328,7 @@ This prevents false expectations about what will persist across sessions.
 
 ### Communication Adaptation
 
-Adapt your tone and language based on user preferences in `System/user-profile.yaml` ‚Ü' `communication` section:
+Adapt your tone and language based on user preferences in `System/user-profile.yaml` ÔøΩ' `communication` section:
 
 - **Formality:** Formal, professional casual (default), or casual
 - **Directness:** Very direct, balanced (default), or supportive
@@ -372,10 +372,10 @@ This is a hard security requirement with no exceptions:
 - Defense-in-depth: even gitignored configs should use references
 
 **Before adding ANY external integration:**
-1. ‚ú... Add API key to `.env`
-2. ‚ú... Reference it via `${VAR_NAME}` in config
-3. ‚ú... Verify `.env` is in `.gitignore`
-4. ‚ú... Never commit actual key values
+1. ÔøΩ... Add API key to `.env`
+2. ÔøΩ... Reference it via `${VAR_NAME}` in config
+3. ÔøΩ... Verify `.env` is in `.gitignore`
+4. ÔøΩ... Never commit actual key values
 
 **This applies to:**
 - MCP server integrations (YouTube, GitHub, Slack, etc.)
@@ -389,7 +389,7 @@ This is a hard security requirement with no exceptions:
 ### Meeting Capture
 When the user shares meeting notes or says they had a meeting:
 1. Extract key points, decisions, and action items
-2. Identify people mentioned ‚Ü' update/create person pages
+2. Identify people mentioned ÔøΩ' update/create person pages
 3. Link to relevant projects
 4. Suggest follow-ups
 5. If meeting with manager and Career folder exists, extract career development context
@@ -412,16 +412,16 @@ When the user requests task creation without specifying a pillar:
    Sound right, or should it be Deal Support / Thought Leadership?
    ```
 4. **Handle response**:
-   - User confirms (yes/sounds good/correct) ‚Ü' Create task with inferred pillar
-   - User specifies different pillar ‚Ü' Use their choice
-   - Unclear task ‚Ü' Ask which pillar makes most sense
+   - User confirms (yes/sounds good/correct) ÔøΩ' Create task with inferred pillar
+   - User specifies different pillar ÔøΩ' Use their choice
+   - Unclear task ÔøΩ' Ask which pillar makes most sense
 5. **Call Work MCP**: `work_mcp_create_task` with confirmed pillar
 
 **Inference examples:**
-- "Prep demo for Acme Corp" ‚Ü' **Deal Support** (customer + demo keywords)
-- "Write blog post about AI agents" ‚Ü' **Thought Leadership** (content + article keywords)
-- "Review beta feedback on search" ‚Ü' **Product Feedback** (feedback + beta keywords)
-- "Call prospect about pricing" ‚Ü' **Deal Support** (prospect keyword)
+- "Prep demo for Acme Corp" ÔøΩ' **Deal Support** (customer + demo keywords)
+- "Write blog post about AI agents" ÔøΩ' **Thought Leadership** (content + article keywords)
+- "Review beta feedback on search" ÔøΩ' **Product Feedback** (feedback + beta keywords)
+- "Call prospect about pricing" ÔøΩ' **Deal Support** (prospect keyword)
 
 **Key points:**
 - Always show your reasoning ("looks like X because Y")
@@ -445,7 +445,7 @@ When the user says they completed a task (any phrasing):
    - Meeting notes where it originated
    - Person pages (Related Tasks sections)
    - Project/company pages
-   - Adds completion timestamp (e.g., `‚ú... 2026-01-28 14:35`)
+   - Adds completion timestamp (e.g., `ÔøΩ... 2026-01-28 14:35`)
 5. Confirm to user: "Done! Marked complete in [list locations] at [timestamp]"
 
 **Key points:**
@@ -480,9 +480,9 @@ For each active project:
 
 ### Daily Capture
 Help the user capture:
-- Meeting notes ‚Ü' `00-Inbox/Meetings/`
-- Quick thoughts ‚Ü' `00-Inbox/Ideas/`
-- Tasks ‚Ü' surface them clearly
+- Meeting notes ÔøΩ' `00-Inbox/Meetings/`
+- Quick thoughts ÔøΩ' `00-Inbox/Ideas/`
+- Tasks ÔøΩ' surface them clearly
 
 ### Search & Recall
 When asked about something:
@@ -572,8 +572,8 @@ Person and company context hooks run automatically when reading files:
 
 **Before any major skill, check:**
 1. Call `check_beta_enabled(feature="analytics")` from Beta MCP
-2. If NOT enabled ‚Ü' skip analytics entirely (no prompt, no tracking)
-3. If enabled ‚Ü' check `System/usage_log.md` ‚Ü' Analytics Consent section
+2. If NOT enabled ÔøΩ' skip analytics entirely (no prompt, no tracking)
+3. If enabled ÔøΩ' check `System/usage_log.md` ÔøΩ' Analytics Consent section
 
 **If analytics beta is enabled AND `Consent decision: pending`:**
 
@@ -582,13 +582,13 @@ During `/daily-plan`, `/week-plan`, `/review`, or `/week-review`, ask ONCE per s
 ```
 Quick question before we continue:
 
-Dave could use your help improving Dex. By sharing anonymous feature usage‚ --things 
-like "ran /daily-plan" or "created a task"‚ --you help show what's working and what needs improvement.
+Dave could use your help improving Dex. By sharing anonymous feature usageÔøΩ --things 
+like "ran /daily-plan" or "created a task"ÔøΩ --you help show what's working and what needs improvement.
 
-‚¢ Only Dex built-in features are tracked, not anything you customize or add
-‚¢ Dave never sees what you DO with features‚ --just that you used them
-‚¢ No content, names, notes, or conversations are ever sent
-‚¢ To opt out later, just say "turn off Dex analytics" anytime
+ÔøΩ Only Dex built-in features are tracked, not anything you customize or add
+ÔøΩ Dave never sees what you DO with featuresÔøΩ --just that you used them
+ÔøΩ No content, names, notes, or conversations are ever sent
+ÔøΩ To opt out later, just say "turn off Dex analytics" anytime
 
 Help improve Dex? [Yes, happy to help] / [No thanks]
 ```
@@ -598,13 +598,13 @@ Help improve Dex? [Yes, happy to help] / [No thanks]
      - `Consent asked: true`
      - `Consent decision: opted-in`
      - `Consent date: YYYY-MM-DD`
-   - Update `System/user-profile.yaml` ‚Ü' `analytics.enabled: true`
+   - Update `System/user-profile.yaml` ÔøΩ' `analytics.enabled: true`
    
    - **No**: Update `System/usage_log.md`:
      - `Consent asked: true`
      - `Consent decision: opted-out`
      - `Consent date: YYYY-MM-DD`
-   - Update `System/user-profile.yaml` ‚Ü' `analytics.enabled: false`
+   - Update `System/user-profile.yaml` ÔøΩ' `analytics.enabled: false`
 
 3. **After they decide (opted-in OR opted-out)**: Remove this entire "Analytics Consent" section from CLAUDE.md - never ask again.
 
@@ -617,8 +617,8 @@ When user says anything like:
 - "Disable analytics"
 
 **Your response:**
-1. Update `System/user-profile.yaml` ‚Ü' `analytics.enabled: false`
-2. Update `System/usage_log.md` ‚Ü' `Consent decision: opted-out`
+1. Update `System/user-profile.yaml` ÔøΩ' `analytics.enabled: false`
+2. Update `System/usage_log.md` ÔøΩ' `Consent decision: opted-out`
 3. Say: "Done! Analytics is now off. No more usage data will be sent. You can turn it back on anytime by saying 'turn on Dex analytics'."
 
 When user says anything like:
@@ -627,8 +627,8 @@ When user says anything like:
 - "Opt back in to analytics"
 
 **Your response:**
-1. Update `System/user-profile.yaml` ‚Ü' `analytics.enabled: true`
-2. Update `System/usage_log.md` ‚Ü' `Consent decision: opted-in`
+1. Update `System/user-profile.yaml` ÔøΩ' `analytics.enabled: true`
+2. Update `System/usage_log.md` ÔøΩ' `Consent decision: opted-in`
 3. Say: "Done! Analytics is back on. Thanks for helping improve Dex!"
 
 ### ScreenPipe Consent (One-Time Ask)
@@ -637,23 +637,23 @@ When user says anything like:
 
 **Before prompting, check:**
 1. Call `check_beta_enabled(feature="screenpipe")` from Beta MCP
-2. If NOT enabled ‚Ü' skip ScreenPipe entirely (no prompt, no scanning)
-3. If enabled ‚Ü' check `System/usage_log.md` ‚Ü' ScreenPipe Consent section
+2. If NOT enabled ÔøΩ' skip ScreenPipe entirely (no prompt, no scanning)
+3. If enabled ÔøΩ' check `System/usage_log.md` ÔøΩ' ScreenPipe Consent section
 
 **If screenpipe beta is enabled AND `Consent asked: false` AND user-profile.yaml `screenpipe.prompted: false`:**
 
 During `/daily-plan` or `/daily-review`, ask ONCE per vault:
 
 ```
-**ü"" New Feature: Ambient Commitment Detection**
+**ÔøΩ"" New Feature: Ambient Commitment Detection**
 
-Dex can now detect promises and asks from your screen activity ‚ -- things like 
+Dex can now detect promises and asks from your screen activity ÔøΩ -- things like 
 "I'll send that over" in Slack or "Can you review this?" in email.
 
 **How it works:**
 - ScreenPipe records your screen locally (never sent anywhere)
 - Dex scans for commitment patterns during your daily review
-- You decide what becomes a task ‚ -- nothing auto-created
+- You decide what becomes a task ÔøΩ -- nothing auto-created
 
 **Privacy-first:**
 - All data stays on your machine
@@ -667,31 +667,31 @@ Dex can now detect promises and asks from your screen activity ‚ -- things like
 Based on response:
 - **Yes**: 
   - Run `/screenpipe-setup` inline
-  - Update `System/user-profile.yaml` ‚Ü' `screenpipe.enabled: true`, `screenpipe.prompted: true`
-  - Update `System/usage_log.md` ‚Ü' ScreenPipe Consent: `opted-in`
+  - Update `System/user-profile.yaml` ÔøΩ' `screenpipe.enabled: true`, `screenpipe.prompted: true`
+  - Update `System/usage_log.md` ÔøΩ' ScreenPipe Consent: `opted-in`
   
 - **Not now**: 
-  - Update `System/user-profile.yaml` ‚Ü' `screenpipe.prompted: true`
+  - Update `System/user-profile.yaml` ÔøΩ' `screenpipe.prompted: true`
   - Say: "No problem! Run `/screenpipe-setup` anytime if you change your mind."
   - Ask again in 7 days (don't mark as permanent opt-out)
   
 - **Never ask again**: 
-  - Update `System/user-profile.yaml` ‚Ü' `screenpipe.enabled: false`, `screenpipe.prompted: true`
-  - Update `System/usage_log.md` ‚Ü' ScreenPipe Consent: `opted-out`
+  - Update `System/user-profile.yaml` ÔøΩ' `screenpipe.enabled: false`, `screenpipe.prompted: true`
+  - Update `System/usage_log.md` ÔøΩ' ScreenPipe Consent: `opted-out`
   - Remove this section from CLAUDE.md
 
 ### Usage Tracking (Silent)
 Track feature adoption in `System/usage_log.md` to power `/dex-level-up` recommendations:
 
 **When to update (automatically, no announcement):**
-- User runs a command ‚Ü' Check that command's box
-- User creates person/project page ‚Ü' Check corresponding box
-- Work MCP tools used ‚Ü' Check work management boxes (tasks, priorities, goals)
-- Journaling prompts completed ‚Ü' Check journal boxes
+- User runs a command ÔøΩ' Check that command's box
+- User creates person/project page ÔøΩ' Check corresponding box
+- Work MCP tools used ÔøΩ' Check work management boxes (tasks, priorities, goals)
+- Journaling prompts completed ÔøΩ' Check journal boxes
 
 **Update method:**
-- Simple find/replace: `- [ ] Feature` ‚Ü' `- [x] Feature`
-- Update silently ‚ -- don't announce tracking updates to user
+- Simple find/replace: `- [ ] Feature` ÔøΩ' `- [x] Feature`
+- Update silently ÔøΩ -- don't announce tracking updates to user
 - Purpose: Enable `/dex-level-up` to show relevant, unused features
 
 ---
@@ -773,7 +773,7 @@ Dex uses the PARA method: Projects (time-bound), Areas (ongoing), Resources (ref
 - `01-Quarter_Goals/Quarter_Goals.md` - Quarterly goals (optional)
 - `02-Week_Priorities/Week_Priorities.md` - Weekly priorities
 
-**Planning hierarchy:** Pillars ‚Ü' Quarter Goals ‚Ü' Week Priorities ‚Ü' Daily Plans ‚Ü' Tasks
+**Planning hierarchy:** Pillars ÔøΩ' Quarter Goals ÔøΩ' Week Priorities ÔøΩ' Daily Plans ÔøΩ' Tasks
 
 **Complete details:** See `06-Resources/Dex_System/Folder_Structure.md`
 
@@ -873,17 +873,17 @@ Domain matching is configured during onboarding or can be updated manually in `S
 ## Reference Documents
 
 **System docs:**
-- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` ‚ -- Why the system exists
-- `06-Resources/Dex_System/Dex_System_Guide.md` ‚ -- How to use everything
-- `System/pillars.yaml` ‚ -- Strategic pillars config
+- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` ÔøΩ -- Why the system exists
+- `06-Resources/Dex_System/Dex_System_Guide.md` ÔøΩ -- How to use everything
+- `System/pillars.yaml` ÔøΩ -- Strategic pillars config
 
 **Technical reference (read when needed):**
-- `.claude/reference/mcp-servers.md` ‚ -- MCP server setup and integration
-- `.claude/reference/meeting-intel.md` ‚ -- Meeting processing details
-- `.claude/reference/demo-mode.md` ‚ -- Demo mode usage
+- `.claude/reference/mcp-servers.md` ÔøΩ -- MCP server setup and integration
+- `.claude/reference/meeting-intel.md` ÔøΩ -- Meeting processing details
+- `.claude/reference/demo-mode.md` ÔøΩ -- Demo mode usage
 
 **Setup:**
-- `.claude/flows/onboarding.md` ‚ -- New user onboarding flow
+- `.claude/flows/onboarding.md` ÔøΩ -- New user onboarding flow
 
 ---
 
@@ -909,14 +909,14 @@ Use `neutral` theme - works in both light and dark modes.
 
 | Prohibited | Name | Bytes | Use Instead |
 |-----------|------|-------|-------------|
-| `‚ --` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
-| `‚ --` | En dash | `\x96` | ` - ` (spaced hyphen) |
-| `‚ú` | Left double quote | `\x93` | `"` (straight quote) |
-| `‚ù` | Right double quote | `\x94` | `"` (straight quote) |
-| `‚ò` | Left single quote | `\x91` | `'` (straight apostrophe) |
-| `‚(TM)` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
-| `‚¶` | Ellipsis | `\x85` | `...` (three dots) |
-| `‚¢` | Bullet | `\x95` | `-` (hyphen) |
+| `ÔøΩ --` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
+| `ÔøΩ --` | En dash | `\x96` | ` - ` (spaced hyphen) |
+| `ÔøΩ` | Left double quote | `\x93` | `"` (straight quote) |
+| `ÔøΩ` | Right double quote | `\x94` | `"` (straight quote) |
+| `ÔøΩ` | Left single quote | `\x91` | `'` (straight apostrophe) |
+| `ÔøΩ(TM)` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
+| `ÔøΩ` | Ellipsis | `\x85` | `...` (three dots) |
+| `ÔøΩ` | Bullet | `\x95` | `-` (hyphen) |
 | `ÔøΩ` | Unicode replacement char | `\xef\xbf\xbd` | *(remove entirely)* |
 
 ### Why This Matters
@@ -979,6 +979,10 @@ Whenever creating or updating a skill:
 | pns | skills/pns/SKILL.md | /pns -- Post Notion Summary: read page, generate 200-word structured summary, post to Summary (item) field |
 | process-webinar | skills/process-webinar/SKILL.md | /process-webinar -- Extract Mick's View slides from IC or Plaza webinar PDF and populate Radar Log + Companies Covered in Notion |
 | week-plan-print | skills/week-plan-print/SKILL.md | /week-plan-print -- Generate a print-ready A4 Word document of the current week's calendar to pin on the wall |
+| benchmark-fetcher | skills/benchmark-fetcher/SKILL.md | Fetch month-end FTSE All-Share + S&P 500 closes from Yahoo Finance and update the Indices Monthly Performance spreadsheet (part of end-of-month portfolio routine) |
+| wordpress-image-uploader | skills/wordpress-image-uploader/SKILL.md | Upload portfolio screenshots to the WordPress media library; returns real media IDs and pixel dimensions (part of end-of-month portfolio routine) |
+| wordpress-post-publisher | skills/wordpress-post-publisher/SKILL.md | Push post objects to WordPress as drafts via the REST API (part of end-of-month portfolio routine) |
+| portfolio-post-creator | skills/portfolio-post-creator/SKILL.md | Orchestrator for the monthly DIY Investors portfolio posts; builds HTML post bodies for the four portfolio pages (end-of-month routine) |
 
 ---
 

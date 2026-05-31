@@ -1,6 +1,24 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.05.17 (Sun morning) - MCSB Phase 1 Session 4 CLOSED. Cedric Server v0.3.0 PROD-CONFIRMED on Mick's PC at 11:05 London. 1.3d (GET /agents/reload) and 1.3e (PC-only auth tier) both ticked [x] COMPLETE. End-to-end walkthrough: server boot v0.3.0, /health agents block populated, PC token reload 200, mobile token reload 403, dirty-edit triggered snapshot AND drift detection, CHANGELOG auto-entry written, clean shutdown. Real bug caught by sandbox before deploy: snapshot filename collision (fixed with seconds + 6-char hash). New feedback memory: PowerShell apostrophe quoting (Mick's vault path requires double quotes). Next: 1.3g (embed cedric_worker.py as background task) -- closes out the Cedric Server v0.1 series.
+**Last Updated:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
+**Prior update:** 2026.05.17 (Sun morning) - MCSB Phase 1 Session 4 CLOSED. Cedric Server v0.3.0 PROD-CONFIRMED on Mick's PC at 11:05 London. 1.3d (GET /agents/reload) and 1.3e (PC-only auth tier) both ticked [x] COMPLETE. End-to-end walkthrough: server boot v0.3.0, /health agents block populated, PC token reload 200, mobile token reload 403, dirty-edit triggered snapshot AND drift detection, CHANGELOG auto-entry written, clean shutdown. Real bug caught by sandbox before deploy: snapshot filename collision (fixed with seconds + 6-char hash). New feedback memory: PowerShell apostrophe quoting (Mick's vault path requires double quotes). Next: 1.3g (embed cedric_worker.py as background task) -- closes out the Cedric Server v0.1 series.
 **Environment:** Cowork (Claude desktop app)
+
+---
+
+## Recent session: 2026.05.30 (Saturday) - End-of-month skills migrated to Dex vault
+
+Migrated the four DIY Investors end-of-month portfolio skills from the Poster Pete
+(C-Pete) claude.ai project into the Dex vault + mirror:
+- Skills: portfolio-post-creator v2.2, benchmark-fetcher v1.0,
+  wordpress-image-uploader v1.0, wordpress-post-publisher v1.1.
+- Dual-registered V + M (verified byte-identical). In-file path headers fixed to Dex paths.
+- Registry updated: CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md (Section 1b -> 1a,
+  portfolio-post-creator v2.0 -> v2.2, Pending Action #1 closed).
+- Credentials: .env stays single-source in C:\Vaults\Mick's Vault\.env (Mick's decision -
+  not duplicated to Dex, avoids drift when passwords change). WordPress skills point there.
+- Originals left in C:\Vaults\Mick's Vault\.claude\skills\ for now (not deleted).
+- CHANGELOG.md left as a pure Cedric Server CODE / SemVer log (Mick's decision 2026-05-30); this housekeeping recorded in this memory, the session log, and SKILLS_REGISTRY.
+Full detail: System/session_log.md (2026-05-30 entry).
 
 ---
 

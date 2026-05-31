@@ -2,6 +2,115 @@
 
 ---
 
+## Session: 2026-05-30 (Saturday evening) - Skill revisions + corruption repair
+
+_Environment: Claude Desktop - Filesystem MCP_
+
+### Context
+
+- End-of-May portfolio run already completed by Mick; that run surfaced two improvements which Mick made to the skills on the chat side of Claude Desktop and downloaded.
+- Mick asked Cedric to promote the two amended skills into V + M and reconcile the registry.
+
+### Actions Taken
+
+1. **Two skill revisions promoted (V + M, verified byte-identical):**
+   - portfolio-post-creator v2.2 -> v2.3: added (a) blue-line month-boundary rule (a horizontal blue line in the transactions screenshot marks the month boundary; count only rows above it - this fixed the UK Active 10 Yr2 miscount of 3 where there were 2), and (b) portfolio tag rule with four tag IDs.
+   - wordpress-post-publisher v1.1 -> v1.2: added `tags` field to the WP payload plus input-format example and a matching standing rule, so the tag IDs from the portfolio skill are actually applied at publish time.
+
+2. **Vault corruption found and repaired:**
+   - During promotion, a Filesystem MCP multi-edit call timed out, and the connector became unresponsive (Mick restarted Claude Desktop).
+   - On resume, the portfolio-post-creator vault file was found CORRUPTED: 35,267 bytes containing wordpress-post-publisher content. Root cause: a manual edit Mick attempted in a separate earlier session.
+   - Fixed by fully overwriting from Mick's clean download (`C:\Users\pavey\Downloads\2026.05.30 - Updated Portfolio Posting Skills\`). File confirmed healthy at 27,758 bytes, correct header, v2.3.
+   - The wordpress-post-publisher vault file was undamaged (8,177 bytes, untouched since the morning migration); updated in place to v1.2 via small single edits.
+
+3. **Verification:** both skills confirmed V == M byte-identical; both pure ASCII; correct version headers.
+
+4. **Registry updated:** SKILLS_REGISTRY.md header date, the two version rows (v2.3 / v1.2), and a new Section 8 pending-action entry recording the bumps, the corruption repair, and the assumed-correct tag IDs.
+
+### Decisions
+
+- Tag IDs (513 / 890 / 512 / 891) auto-pulled by another Cedric instance; Mick is confident they are correct and will visually confirm on the draft posts during the end-of-June run (a wrong tag would show on the draft, not go live).
+- CHANGELOG.md left untouched (Cedric Server CODE / SemVer scope only) per Mick's earlier decision.
+
+### Lesson logged
+
+- Filesystem MCP multi-edit calls on large files can time out and leave the connector unresponsive. Prefer small single edits, or full write_file overwrite for large/corrupted files. Always verify with get_file_info (size) plus a content diff after any write.
+
+_Session active as of 2026-05-30 evening_
+
+---
+
+## Session: 2026-05-30 (Saturday afternoon)
+
+_Session started: ~16:05 BST_
+_Environment: Claude Desktop - Filesystem MCP confirmed_
+
+### Context at Session Start
+
+- Mick asked to migrate the four end-of-month portfolio-routine skills out of the
+  "Poster Pete" project (C:\Vaults\Mick's Vault\.claude\skills\) into the Dex vault
+  so they can run from other environments.
+- Skills: portfolio-post-creator v2.2, benchmark-fetcher v1.0,
+  wordpress-image-uploader v1.0, wordpress-post-publisher v1.1.
+- Matches SKILLS_REGISTRY.md Section 8 Pending Action #1.
+
+### Actions Taken This Session
+
+1. **Inventory** of the source project: 20 skills found (not 4). Full inventory delivered
+   to Mick. The four end-of-month skills are each a single SKILL.md (Python embedded
+   inline, no separate scripts/templates/assets).
+
+2. **Migration (V + M dual registration, per MANDATORY SKILL DEPLOY PROTOCOL):**
+   - Wrote all four SKILL.md files to Dex vault skills\ (V). Verified byte-identical to
+     source (CRLF normalised). All four are pure ASCII - no conversion needed.
+   - Fixed in-file path headers on the Dex copies: Location (vault) now points to the
+     Dex path; portfolio-post-creator Feedback Loop path updated to the Dex copy.
+   - Wrote all four (path-fixed) to /mnt/skills/user\ (M). head-verified. Confirmed
+     V == M byte-identical for all four.
+
+3. **Registry updated:**
+   - CLAUDE.md "Current Skills" table: 4 rows added.
+   - skills/README.md "Available Skills" table: 4 rows added.
+   - SKILLS_REGISTRY.md: four moved from Section 1b to Section 1a (Lives In C-Pete, V, M);
+     portfolio-post-creator corrected v2.0 -> v2.2; Pending Action #1 closed as DONE.
+
+4. **Decisions confirmed by Mick:**
+   - .env stays solely in C:\Vaults\Mick's Vault\.env as the single source of truth for
+     credentials - never duplicated to Dex, so passwords change in one place with no
+     risk of divergence. The two WordPress skills correctly point at that single .env.
+   - Original copies left in place at C:\Vaults\Mick's Vault\.claude\skills\ for now
+     (Mick may delete later; not deleted this session).
+
+### Current Status
+
+- All four skills live in both V and M, verified identical. Registry consistent across
+  CLAUDE.md, skills/README.md and SKILLS_REGISTRY.md.
+- CHANGELOG.md left untouched by Mick's decision (2026-05-30): it stays a pure Cedric
+  Server CODE / SemVer log. This housekeeping is recorded in CEDRIC_MEMORY, this session
+  log, and SKILLS_REGISTRY instead.
+
+### Resumption Notes
+
+- MCSB Phase 1 Session 6 remains the active project pickup (see CEDRIC_MEMORY Top of Mind).
+- Mirror (M) is writable from Claude Desktop but may need re-confirming in a future
+  claude.ai Web / Cowork session if it does not persist.
+- All writes are ASCII-clean (pre-commit hook safe); changes will be captured by the
+  normal daily git commit.
+
+### Next session (planned)
+
+- Mick to run the END-OF-MONTH PORTFOLIO ROUTINE for end of May 2026 in a NEW Cowork
+  session (portfolio images are ready). Entry point: portfolio-post-creator (orchestrator),
+  which calls benchmark-fetcher (May month-end FTSE All-Share + S&P 500; updates the Indices
+  DRAFT spreadsheet) and wordpress-image-uploader, then hands off to wordpress-post-publisher
+  (creates WordPress DRAFTS only - never auto-publishes).
+- Inputs Cedric will need from Mick: portfolio id(s), portfolio month-end date (2026-05-31),
+  post date, and any optional commentary. Credentials are read from C:\Vaults\Mick's Vault\.env.
+
+_Session closed 2026-05-30 ~16:40 BST_
+
+---
+
 ## Session: 2026-05-01 (Friday afternoon)
 
 _Session started: ~17:20 BST_
