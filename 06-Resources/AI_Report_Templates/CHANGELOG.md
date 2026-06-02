@@ -42,3 +42,33 @@
 - Three large NotebookLM banner PNGs (3176x800) are high-res; likely for web/slide use rather than docx headers
 
 ---
+
+## 2026-06-01 | Session: Sector Screen Report Example
+
+### Actions
+
+**CREATE** - New report type: Sector Screen Report
+- `Sector_Screen_Report/` subfolder created alongside Research_Brief/
+- Purpose: multi-company sector screening / ranking reports (landscape), distinct
+  from the single-company portrait Research Brief
+- `Sector_Screen_Report/README.md` - structure, house style, methodology and build
+  notes documented for reproducibility
+
+**PENDING (Mick to action)** - Worked example .docx
+- `Sector_Screen_Report/PM_Miners_Quarterly_Growth_Consolidated.docx` to be saved
+  into the folder by Mick from the chat download
+- Reason: no Claude-to-user binary-copy tool exists; write_file is text-only, so
+  Cedric cannot place the binary .docx into the vault directly
+- File: US Precious Metal Miners (63-stock ShareScope universe) quarterly growth
+  report - 5 tables + 3 quadrant charts, 12 pages, Aptos 12pt landscape
+
+### Notes
+- New standing style rule recorded this session: Word/.docx documents default to
+  Aptos font at 12pt body (headings scaled proportionally) unless specified otherwise
+- Worked example demonstrates: SEC-XBRL-plus-web-research turnover methodology,
+  de-cumulation of YTD figures, explicit exclusion (never estimate) handling, and
+  performance/valuation overlay with embedded matplotlib quadrant charts
+- Key analytical finding preserved in the example: sequential turnover growth had
+  near-zero correlation with YTD share-price performance (r approx 0.02)
+
+---

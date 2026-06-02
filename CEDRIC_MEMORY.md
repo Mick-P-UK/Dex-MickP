@@ -1,7 +1,31 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
-**Prior update:** 2026.05.17 (Sun morning) - MCSB Phase 1 Session 4 CLOSED. Cedric Server v0.3.0 PROD-CONFIRMED on Mick's PC at 11:05 London. 1.3d (GET /agents/reload) and 1.3e (PC-only auth tier) both ticked [x] COMPLETE. End-to-end walkthrough: server boot v0.3.0, /health agents block populated, PC token reload 200, mobile token reload 403, dirty-edit triggered snapshot AND drift detection, CHANGELOG auto-entry written, clean shutdown. Real bug caught by sandbox before deploy: snapshot filename collision (fixed with seconds + 6-char hash). New feedback memory: PowerShell apostrophe quoting (Mick's vault path requires double quotes). Next: 1.3g (embed cedric_worker.py as background task) -- closes out the Cedric Server v0.1 series.
+**Last Updated:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
+**Prior update:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
+**Earlier update:** 2026.05.17 (Sun morning) - MCSB Phase 1 Session 4 CLOSED. Cedric Server v0.3.0 PROD-CONFIRMED on Mick's PC at 11:05 London. 1.3d (GET /agents/reload) and 1.3e (PC-only auth tier) both ticked [x] COMPLETE. End-to-end walkthrough: server boot v0.3.0, /health agents block populated, PC token reload 200, mobile token reload 403, dirty-edit triggered snapshot AND drift detection, CHANGELOG auto-entry written, clean shutdown. Real bug caught by sandbox before deploy: snapshot filename collision (fixed with seconds + 6-char hash). New feedback memory: PowerShell apostrophe quoting (Mick's vault path requires double quotes). Next: 1.3g (embed cedric_worker.py as background task) -- closes out the Cedric Server v0.1 series.
 **Environment:** Cowork (Claude desktop app)
+
+---
+
+## Recent session: 2026.06.01 (Monday) - AI report template library extended + Aptos font rule
+
+Set up a reusable reference for sector-wide screening reports and locked in a font standard.
+- New template type: `06-Resources/AI_Report_Templates/Sector_Screen_Report/` created
+  alongside the existing `Research_Brief/`. Purpose: multi-company sector screens / rankings
+  (landscape), distinct from the single-company portrait Research Brief.
+- Worked example saved there by Mick: `PM_Miners_Quarterly_Growth_Consolidated.docx` - US
+  Precious Metal Miners (63-stock ShareScope universe) quarterly growth report. 5 tables
+  (OCF Top 10, turnover Top 10, full 23-name ranking, performance overlay, valuation overlay)
+  + 3 matplotlib quadrant charts (turnover vs YTD price; turnover vs forecast PE; turnover
+  vs PSR). 12 pages, landscape, Aptos 12pt.
+- `Sector_Screen_Report/README.md` written: structure, house style (hex codes), methodology
+  (sequential QoQ turnover, de-cumulation, SEC-XBRL-plus-web-research for foreign filers,
+  state-exclusions-never-estimate), and build approach (docx-js + matplotlib).
+- `AI_Report_Templates/CHANGELOG.md` updated with a 2026-06-01 entry.
+- New standing style rule recorded: all .docx default to Aptos 12pt body (see Key Conventions).
+- Key analytical finding from the example worth recalling: sequential turnover growth had
+  near-zero correlation with YTD share-price performance (Pearson r approx 0.02) - the
+  turnover ranking is an operational-momentum / candidate-generation tool, not a price-timing
+  signal. The dual-metric names (Coeur, Kinross, Agnico) screened most internally consistent.
 
 ---
 
@@ -386,11 +410,6 @@ v1 was 2,004 -> v2 added ~60 words via acronym expansions and COMEX line.
   still accurately reflects state (v2 produced, awaiting Mick's read-through).
 - Will move to "Ready" when v2 (or v3) is signed off.
 
-**Trigger phrases for next session pickup:**
-"Cedric, ship the gold miners script. Title [N], no further changes."
-OR
-"Cedric, more edits on the gold miners script..."
-
 ---
 
 ## Session Log - 2026.05.10 PM (YouTube Script v1 Drafted - SRB + CDE)
@@ -704,7 +723,9 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 - Real image dimensions always from WordPress media_details API
 - Yr2 benchmark: always uses 1 Jan of CURRENT year as start point
 - **Filesystem MCP write_file OVERWRITES -- never use for partial updates. Always read full file, modify in memory, write complete content back. (Learned 2026.04.29.)**
-- **Filesystem MCP write_file is text-only -- binary deliverables (DOCX, PDF, PPTX, XLSX, images) MUST be staged via /mnt/user-data/outputs/ and shared with present_files. Confirmed 2026.05.10.**
+- **Filesystem MCP write_file is text-only -- binary deliverables (DOCX, PDF, PPTX, XLSX, images) MUST be staged via /mnt/user-data/outputs/ and shared with present_files. Confirmed 2026.05.10. (Note: there is no Claude-to-user binary-copy tool, so Cedric cannot place a binary file straight into the vault - Mick downloads and drops it in. Reconfirmed 2026.06.01.)**
+- **AI report templates live at C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\06-Resources\AI_Report_Templates. Two report types so far: (1) Research_Brief/ - single-company portrait stock brief (DIY_Investors_Report_Template.docx); (2) Sector_Screen_Report/ - multi-company landscape sector screen / ranking, with a worked example (PM_Miners_Quarterly_Growth_Consolidated.docx) and a README documenting structure, house style and methodology. Each report type has its own README.md; the folder has a top-level README.md and CHANGELOG.md. Check here before building any new report so style stays consistent. (Added 2026.06.01.)**
+- **DOCX font default: always Aptos 12pt for body text, headings scaled proportionally, unless Mick specifies otherwise. For wide tables, keep cell text at a size that fits the page rather than forcing 12pt (do not let columns wrap); small-print caveat notes may be one point smaller than body. This is also stored as a cross-project memory edit. (Locked 2026.06.01, superseding the earlier Arial 12pt print-DOCX recipe.)**
 - **NEVER add hand-wavy unit-conversion or "common sense" reasoning to back up a verified figure.** Cross-source verification IS the verification. Adding spurious post-hoc reasoning is how unforced errors creep in. (Learned 2026.05.10 - the "pounds smaller than ounces" gaffe; Mick caught it. There are 16 oz in 1 lb, so a pound is LARGER than an ounce.)
 - **DOCX with change-highlighting:** docx-js TextRun supports `highlight: "yellow"`, but emits a non-standard `<w:highlightCs/>` element that fails strict OOXML schema validation. After build, post-process the .docx zip to regex-strip all `<w:highlightCs[^/]*/>` elements before delivery. Word opens both versions fine; the strip is for validator compliance only.
 
