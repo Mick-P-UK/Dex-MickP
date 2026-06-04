@@ -1,8 +1,59 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
-**Prior update:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
-**Earlier update:** 2026.05.17 (Sun morning) - MCSB Phase 1 Session 4 CLOSED. Cedric Server v0.3.0 PROD-CONFIRMED on Mick's PC at 11:05 London. 1.3d (GET /agents/reload) and 1.3e (PC-only auth tier) both ticked [x] COMPLETE. End-to-end walkthrough: server boot v0.3.0, /health agents block populated, PC token reload 200, mobile token reload 403, dirty-edit triggered snapshot AND drift detection, CHANGELOG auto-entry written, clean shutdown. Real bug caught by sandbox before deploy: snapshot filename collision (fixed with seconds + 6-char hash). New feedback memory: PowerShell apostrophe quoting (Mick's vault path requires double quotes). Next: 1.3g (embed cedric_worker.py as background task) -- closes out the Cedric Server v0.1 series.
-**Environment:** Cowork (Claude desktop app)
+**Last Updated:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
+**Prior update:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
+**Earlier update:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
+**Environment:** Claude Desktop (Filesystem MCP confirmed) - this session. (Prior sessions: Cowork.)
+
+---
+
+## Recent session: 2026.06.03 (Wednesday late morning) - Skill dual-write audit (PAUSED for webinar)
+
+Started with a routine task (add red "Click here for Report" CTA to a Coeur Mining CDE
+report image via image-cta-overlay). Noticed the mirror copy of image-cta-overlay was a
+STALE v1 (fixed 52px font, overflow bug) vs the correct v2.2 in PRIMARY. Synced it, then
+ran a FULL audit of every skill across the three locations.
+
+### Locations and headline
+- MIRROR  /mnt/skills/user/                                 21 skills
+- PRIMARY C:\Vaults\Mick's Vault\.claude\skills\            20 skills
+- DEX     C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\skills\  28 skills
+Of the 12 skills that live in 2+ locations, only 2 were byte-identical
+(yt-play-button-overlay; image-cta-overlay after today's fix).
+
+### Fixed and VERIFIED this session (mirror writes only)
+- image-cta-overlay: Mirror <- PRIMARY v2.2 (md5 6f5e4c5f).
+- annie: Mirror <- PRIMARY (md5 9f133960). Fixed a FUNCTIONAL BUG - mirror used dead
+  tool names (list_gcal_events, find_free_time); now Google Calendar:gcal_list_events etc.
+- pdf-to-pptx-converter: Mirror <- DEX v1.1 (md5 fff2a7a3).
+WARNING: these are mirror-only writes, not version-controlled. If the mirror resets they
+are lost again.
+
+### Important reconciliation with existing memory
+- The "Mandatory Skill Deployment Protocol" already mandates DEX (master) + mirror, and
+  SKILLS_REGISTRY.md is the declared source of truth. So the canonical model is NOT an
+  open question - it is Dex + mirror.
+- BUT in practice PRIMARY is still the live source for annie + image-cta-overlay, so the
+  model is only partially realised on disk.
+- The four skills migrated to Dex+mirror on 2026.05.30 are NOT in this project's mirror
+  now. Either the mirror is project-scoped (that work was in the Poster Pete project) or
+  it reset. This must be clarified before the mirror can be trusted as half the pair.
+
+### Still open (deferred to after tonight's webinar)
+- Re-establish the four migrated skills in the mirror from Dex; retire stale PRIMARY strays.
+- Decide annie + image-cta-overlay home (migrate to Dex, or sanction PRIMARY as 2nd master).
+- session-start FORK: PRIMARY v1.1 (correct) vs DEX (no frontmatter, OLD tool_search probe
+  for env detection - contradicts the current Filesystem:list_allowed_directories protocol).
+  Drop the Dex method.
+- ai4inv-webinar-processor and notion-summary: parallel edits, manual pick needed.
+- notion-summary vs notion-summary-generator namespace overlap to clarify.
+- 15 mirror-only skills have NO disk backup anywhere - backup policy decision.
+
+### Deliverables written
+- Pickup note (comprehensive): PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root) - READ THIS to resume.
+- Full report: /mnt/user-data/outputs/2026.06.03 - Skill Dual-Write Audit.md (Mick downloaded).
+
+### Resume phrase
+"Cedric, I'm back. Let's pick up the skill dual-write audit from the pickup note."
 
 ---
 
@@ -43,6 +94,9 @@ Migrated the four DIY Investors end-of-month portfolio skills from the Poster Pe
 - Originals left in C:\Vaults\Mick's Vault\.claude\skills\ for now (not deleted).
 - CHANGELOG.md left as a pure Cedric Server CODE / SemVer log (Mick's decision 2026-05-30); this housekeeping recorded in this memory, the session log, and SKILLS_REGISTRY.
 Full detail: System/session_log.md (2026-05-30 entry).
+[2026.06.03 note: portfolio-post-creator is now v2.3 and wordpress-post-publisher v1.2 in
+Dex (2026.05.30 tag rules); and these four are not visible in this project's mirror - see
+the 2026.06.03 audit entry above.]
 
 ---
 
@@ -126,6 +180,10 @@ For any question about what skills exist, where they live, who built them, or ho
   C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\SKILLS_REGISTRY.md
 
 This file lists every skill across vault, mirror, plugin marketplace, scheduled tasks, and claude.ai PAIDA Projects (Pete, Cedric, Poppy). Update on every skill create / rename / version-bump / deprecate. See its Section 7 for maintenance rules.
+
+[2026.06.03: A full audit found the on-disk reality has drifted from this registry's
+intent - see the 2026.06.03 session entry and PICKUP_NOTE_2026.06.03-Skill-Audit.md.
+Re-reconcile SKILLS_REGISTRY.md against all three locations when the audit resumes.]
 
 ---
 
@@ -728,6 +786,7 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 - **DOCX font default: always Aptos 12pt for body text, headings scaled proportionally, unless Mick specifies otherwise. For wide tables, keep cell text at a size that fits the page rather than forcing 12pt (do not let columns wrap); small-print caveat notes may be one point smaller than body. This is also stored as a cross-project memory edit. (Locked 2026.06.01, superseding the earlier Arial 12pt print-DOCX recipe.)**
 - **NEVER add hand-wavy unit-conversion or "common sense" reasoning to back up a verified figure.** Cross-source verification IS the verification. Adding spurious post-hoc reasoning is how unforced errors creep in. (Learned 2026.05.10 - the "pounds smaller than ounces" gaffe; Mick caught it. There are 16 oz in 1 lb, so a pound is LARGER than an ounce.)
 - **DOCX with change-highlighting:** docx-js TextRun supports `highlight: "yellow"`, but emits a non-standard `<w:highlightCs/>` element that fails strict OOXML schema validation. After build, post-process the .docx zip to regex-strip all `<w:highlightCs[^/]*/>` elements before delivery. Word opens both versions fine; the strip is for validator compliance only.
+- **Skill dual-write integrity (2026.06.03):** A full audit found the mirror /mnt/skills/user/ drifts from the vault and is not reliably populated per project. NEVER trust the mirror as authoritative; treat the vault as source of truth and verify (md5, normalised for CRLF) after any mirror write. When fixing a skill, confirm which of the three locations (Mirror, PRIMARY .claude/skills, DEX skills) is canonical FIRST - see PICKUP_NOTE_2026.06.03-Skill-Audit.md.
 
 ---
 
@@ -755,6 +814,9 @@ EVERY skill MUST be deployed to BOTH locations. No exceptions.
 Verify both copies match after deployment.
 /mnt/skills/user/ IS writable from bash_tool in Claude Desktop (confirmed).
 In claude.ai Web: vault writes via Filesystem MCP work; /mnt/skills/user/ is read-only.
+[2026.06.03 audit caveat: this protocol is the INTENT, but on-disk reality has drifted -
+some skills' newest copy lives in PRIMARY (Mick's Vault\.claude\skills) not DEX, and the
+mirror does not always retain skills across projects/resets. Reconcile when the audit resumes.]
 
 ---
 
