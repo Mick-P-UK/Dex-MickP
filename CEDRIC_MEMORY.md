@@ -1,9 +1,60 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
-**Prior update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
-**Earlier update:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
-**Older update:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
+**Last Updated:** 2026.07.01 (Wed early evening, Claude Desktop) - Built the ShareScope CHART + REPORT automation. NEW: sharescope-get-chart (v1.0, native 12-month PNG export), sharescope_session.py session runner (ONE login, many tickers/tasks, ONE logout - confirmed on HDD: chart + 6 CSVs in 26s), and sharescope-report (v0.1, chart embedded in the branded DIY template - proven on a Hardide brief). Selectors confirmed + logged. Produced a webinar crib sheet + a Meet Cedric episode (Content Studio, Draft). URGENT open item: strip the ShareScope password from PLAIN TEXT in sharescope-financials SKILL.md. NOTE: .env SHARESCOPE_HEADLESS is currently FALSE for tonight's live demo - flip back to true after. Full detail: 04-Projects\2026.07.01-ShareScope-Chart-Export\BUILD_LOG.md.
+**Prior update:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
+**Earlier update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
+**Older update:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
 **Environment:** Claude Desktop (Filesystem MCP confirmed) - this session. (Prior sessions: Cowork.)
+
+---
+
+## Recent session: 2026.07.01 (Wednesday early evening, Claude Desktop) - ShareScope chart + report automation
+
+Started from "find the old ShareScope work"; ended with a working single-session automation
+that captures a chart, pulls financials, and folds the chart into a branded report. Built on
+the existing 04-Projects\2026.04.04-ShareScope-Automation modules (login/search/export/logout/
+utils reused UNCHANGED - only new orchestration + a chart module were added).
+
+### Built this session
+- sharescope-get-chart skill (v1.0): native 12-month "Save chart as PNG (bitmap)" export for
+  any ticker. Files: sharescope_chart.py + sharescope_chart_orchestrator.py.
+- sharescope_session.py (SESSION RUNNER): one login, many tickers/tasks, one logout. The
+  standard multi-task entry point; report skills import run_sharescope_session(). Confirmed
+  on HDD: chart + 6 financial CSVs in a single 26s session.
+- sharescope-report skill (v0.1): embeds the chart into DIY_Investors_Report_Template.docx.
+  Proven with a real Hardide (HDD) Stock Research Brief - chart embedded, branding intact.
+
+### Selectors confirmed live (2026.07.01)
+- Chart view button: button[data-cmd="ViewChart"] (name "Chart" matches TWO elements).
+- 12-month period control: labelled "1 year".
+- Save item: "Save chart as PNG (bitmap)..." (a scaling dialog appears - click OK).
+
+### Deliverables
+- 2026.07.01 - HDD - Stock Research Brief.docx (sample report with embedded chart).
+- 2026.07.01 - ShareScope Demo - Webinar Crib Sheet (pdf + docx) - six-step live runsheet.
+- Meet Cedric episode in Content Studio (Draft, Video):
+  https://app.notion.com/p/390db32a9b0a81b0a74dfab05fe44686
+- Build record + pickup + episode pack: 04-Projects\2026.07.01-ShareScope-Chart-Export\
+  (BUILD_LOG.md is the primary handoff doc).
+
+### URGENT open item
+- Strip the ShareScope password from PLAIN TEXT in skills\sharescope-financials\SKILL.md
+  (vault is GitHub-backed + mirrored). Replace with a pointer to the .env only; check other
+  sharescope docs for the same leak. (Also saved as a memory task.)
+
+### Other open items (post-webinar)
+- Fold the 6 financial CSVs into the report as summary tables (sharescope-report v0.2).
+- COWORK GOAL: (a) TEST whether Cowork can execute the local headless Playwright automation
+  before assuming it (Test, Don't Trust); (b) bundle each skill's scripts into its own folder
+  so they are self-contained/portable rather than pointing at the April project.
+- Fix the harmless sharescope_logout.py cleanup warnings (project-wide, non-blocking).
+- Dual-write the new SKILL.md files to the /mnt/skills/user mirror.
+
+### Note for next session
+- .env SHARESCOPE_HEADLESS is currently FALSE (set for tonight's live webinar demo so the
+  browser is visible). Flip back to true for hands-off runs after the webinar.
+
+### Resume phrase
+"Cedric, I'm back. Let's pick up the ShareScope report automation - financials tables next."
 
 ---
 
