@@ -18,6 +18,16 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
+def log_message(message):
+    """Append a timestamped line to the daily commit log (_git-commit.log)."""
+    try:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_git-commit.log")
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(f"[{timestamp}] {message}\n")
+    except Exception as e:
+        print(f"Could not write to log: {e}")
+
 def run_command(cmd, description, capture_output=True):
     """Run a git command and return result"""
     try:
@@ -111,6 +121,31 @@ def create_commit_message(changed_files):
     
     return "\n".join(message_parts)
 
+def count_unpushed():
+    """Return the number of local commits not yet on the remote, or None if unknown."""
+    result = run_command("git rev-list --count @{u}..HEAD", "Counting unpushed commits")
+    if result and result.returncode == 0:
+        try:
+            return int(result.stdout.strip())
+        except ValueError:
+            return None
+    return None
+
+def push_to_remote():
+    """Push to the remote and report the outcome. Returns True on success."""
+    print("Pushing to GitHub...", end=" ", flush=True)
+    push_result = run_command("git push", "Pushing to remote")
+    if push_result and push_result.returncode == 0:
+        print("Done")
+        log_message("Push succeeded")
+        return True
+    print("Failed")
+    err = push_result.stderr.strip() if push_result else "unknown error"
+    print(f"  Error: {err}")
+    print("[WARNING] Push to GitHub failed - check authentication or network")
+    log_message(f"Push FAILED: {err}")
+    return False
+
 def main():
     """Main automation function"""
     script_dir = Path(__file__).parent.absolute()
@@ -130,6 +165,13 @@ def main():
 
     if not changed_files:
         print("[OK] No changes to commit")
+        unpushed = count_unpushed()
+        if unpushed and unpushed > 0:
+            print(f"However {unpushed} earlier commit(s) have not reached GitHub - pushing now...")
+            log_message(f"No new changes; {unpushed} unpushed commit(s) found - attempting catch-up push")
+            push_to_remote()
+        else:
+            log_message("No changes to commit; nothing to push")
         return 0
     
     print(f"Found {len(changed_files)} changed file(s):")
@@ -164,24 +206,15 @@ def main():
         print("Done")
         print(f"  {result.stdout.strip()}")
         print()
+        log_message(f"Committed {len(changed_files)} change(s)")
 
-        # Push to remote (GitHub)
-        print("Pushing to GitHub...", end=" ", flush=True)
-        push_result = run_command("git push", "Pushing to remote")
-
-        if push_result and push_result.returncode == 0:
-            print("Done")
-            print(f"  {push_result.stdout.strip() if push_result.stdout.strip() else 'Everything up-to-date'}")
-            print()
+        # Push to remote (GitHub) - this sends the new commit plus any earlier unpushed ones
+        if push_to_remote():
             print("[SUCCESS] Daily commit and push completed successfully")
             return 0
         else:
-            print("Failed")
-            if push_result:
-                print(f"  Error: {push_result.stderr.strip()}")
-                print()
-                print("[WARNING] Commit created locally but push to GitHub failed")
-                print("  You may need to check your GitHub authentication or network connection")
+            print("[WARNING] Commit created locally but push to GitHub failed")
+            print("  It will be retried automatically on the next run.")
             return 1
     else:
         print("Failed")

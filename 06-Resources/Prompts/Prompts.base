@@ -1,0 +1,40 @@
+views:
+  - type: table
+    name: All Prompts
+    filters:
+      and:
+        - file.tags.contains("prompt")
+    order:
+      - category
+      - code
+      - file.name
+      - version
+      - status
+      - operational
+  - type: table
+    name: By Status
+    filters:
+      and:
+        - file.tags.contains("prompt")
+    order:
+      - status
+      - category
+      - file.name
+  - type: table
+    name: Operational
+    filters:
+      and:
+        - file.tags.contains("prompt")
+        - operational == true
+    order:
+      - code
+      - file.name
+  - type: table
+    name: Drafts
+    filters:
+      and:
+        - file.tags.contains("prompt")
+        - status == "draft"
+    order:
+      - category
+      - file.name

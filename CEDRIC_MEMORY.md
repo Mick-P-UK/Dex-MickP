@@ -1,8 +1,41 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
-**Prior update:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
-**Earlier update:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
+**Last Updated:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
+**Prior update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
+**Earlier update:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
+**Older update:** 2026.05.30 (Sat afternoon) - Migrated Poster Pete's four end-of-month skills (portfolio-post-creator v2.2, benchmark-fetcher v1.0, wordpress-image-uploader v1.0, wordpress-post-publisher v1.1) from C-Pete into the Dex vault (V) + /mnt/skills/user mirror (M), both verified byte-identical; in-file path headers fixed; registry updated (CLAUDE.md, skills/README.md, SKILLS_REGISTRY.md); .env stays single-source in Mick's Vault by Mick's decision; originals left in place. MCSB Phase 1 Session 6 is still the active project pickup (see Top of Mind below).
 **Environment:** Claude Desktop (Filesystem MCP confirmed) - this session. (Prior sessions: Cowork.)
+
+---
+
+## Recent session: 2026.06.30 (Tuesday evening, Cowork) - Prompt Library single-source-of-truth + Git fix
+
+Mick asked where to store his prompt markdown notes (currently a dumping ground in Mick's
+Vault) so they live in ONE place and are GitHub-backed. Agreed model: MOVE (not copy) them
+into Dex-MickP\06-Resources\Prompts\ as the human-friendly SOURCE; keep PROMPT_LIBRARY.md
+(C:\Vaults\Cowork) as the single OPERATIONAL file AHK + demos read.
+
+### Built this session (scaffolding only - 141-file migration NOT started)
+- 06-Resources\Prompts\README.md, _Prompt-Template.md, 00-Index.md, Prompts.base.
+- Frontmatter schema aligned 1:1 with PROMPT_LIBRARY.md, linked by a shared `code` (CAT-NN).
+  Fields: title, code, category (NBLM INV SUM CON ANL COM WEB GEN), ahk, version,
+  date_created, date_updated, status, operational, tags (always starts with `prompt`).
+
+### Git automation detour (now fixed)
+- Repo had 7 local commits never pushed to GitHub. Pushed them (now in sync).
+- Cause = holiday 12-24 June (PC off) + a logic gap (daily script skipped the push on
+  no-change days) + scheduled push failing on commit days.
+- Edited daily_git_commit.py: pushes whenever local is ahead (self-heals backlog), logs to
+  _git-commit.log. Verified py_compile on Mick's PC. Enabled Task Scheduler history.
+- LESSON: do NOT run git from the Cowork sandbox on this mount - it left a stale
+  .git\index.lock that the sandbox could not remove (Mick deleted it on Windows). Sandbox
+  also reads half-synced (truncated) copies of files on the cloud drive - trust the host
+  Read tool, not bash, for file integrity on C:\Vaults.
+
+### Still open (the actual job)
+- Migrate 141 prompt .md files from Mick's Vault (131 in 0.0 - Inbox, 9 in Projects, 1
+  template). Pilot ONE group first (NBLM or Perplexity), normalise frontmatter, dedupe
+  near-identicals (flag before deleting), regenerate 00-Index.md, confirm Base in Obsidian.
+- READ TO RESUME: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
 
 ---
 
