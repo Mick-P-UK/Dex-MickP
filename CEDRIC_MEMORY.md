@@ -36,10 +36,12 @@ utils reused UNCHANGED - only new orchestration + a chart module were added).
 - Build record + pickup + episode pack: 04-Projects\2026.07.01-ShareScope-Chart-Export\
   (BUILD_LOG.md is the primary handoff doc).
 
-### URGENT open item
-- Strip the ShareScope password from PLAIN TEXT in skills\sharescope-financials\SKILL.md
-  (vault is GitHub-backed + mirrored). Replace with a pointer to the .env only; check other
-  sharescope docs for the same leak. (Also saved as a memory task.)
+### RESOLVED 2026.07.02
+- DONE: Stripped the ShareScope username + password from PLAIN TEXT in
+  skills\sharescope-financials\SKILL.md - replaced with <your-sharescope-username> /
+  <your-sharescope-password> placeholders pointing at the .env only. Swept the other
+  four sharescope skills and reference files - no other copies of those credentials.
+  Mick to rotate the exposed ShareScope password and update C:\Vaults\Mick's Vault\.env.
 
 ### Other open items (post-webinar)
 - Fold the 6 financial CSVs into the report as summary tables (sharescope-report v0.2).

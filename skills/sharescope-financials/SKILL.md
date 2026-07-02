@@ -125,10 +125,11 @@ ShareScope may have changed its UI. Check the selector reference files:
 Report to Cedric and the selectors will be updated.
 
 ### Browser closes immediately / credentials error
-Verify the .env file exists and contains the right values:
+Verify the .env file exists and contains the right values (the actual
+username and password live only in the .env, never in this skill):
   C:\Vaults\Mick's Vault\.env
-  SHARESCOPE_USERNAME=mick@diy-investors.com
-  SHARESCOPE_PASSWORD="SPad#m1045"
+  SHARESCOPE_USERNAME=<your-sharescope-username>
+  SHARESCOPE_PASSWORD=<your-sharescope-password>
   SHARESCOPE_HEADLESS=false
 
 ---
