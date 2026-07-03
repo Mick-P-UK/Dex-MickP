@@ -28,7 +28,7 @@ This skill handles ALL WordPress interaction. It has no knowledge of post conten
 
 ## Credentials
 
-Read from `.env` file at: `C:\Vaults\Mick's Vault\.env`
+Read from `.env` file at: `C:\Users\pavey\.env`
 
 **NEVER hard-code credentials in this skill or in any script.**
 
@@ -48,7 +48,7 @@ def load_env(env_path):
                 env[key.strip()] = value.strip()
     return env
 
-env_path = r"C:\Vaults\Mick's Vault\.env"
+env_path = r"C:\Users\pavey\.env"
 credentials = load_env(env_path)
 ```
 

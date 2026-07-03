@@ -338,7 +338,9 @@ Apply consistently across all interactions (planning, reviews, meetings, project
 
 ### Security & API Keys (CRITICAL - NON-NEGOTIABLE)
 
-**ALL API keys, tokens, and credentials MUST be stored in `.env` file - NEVER in config files.**
+**ALL API keys, tokens, and credentials MUST be stored in the SINGLE canonical .env file at C:\Users\pavey\.env - NEVER in config files, and NEVER in a new or per-project .env.**
+
+(SINGLE-SOURCE rule: the master config C:\Users\pavey\.claude\CLAUDE.md - CRITICAL RULE: Credentials - Single Source, v1.3+ - is authoritative. There is ONE .env for all local scripts and skills; do not create another anywhere. Read it with load_dotenv(override=True). The generic per-project ".env (gitignored)" guidance below is inherited from the Dex template - throughout this section treat "the .env" as that single canonical file, not a new one.)
 
 This is a hard security requirement with no exceptions:
 

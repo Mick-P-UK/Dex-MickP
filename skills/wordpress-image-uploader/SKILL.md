@@ -149,7 +149,7 @@ Once filenames are identified, copy them from Mick's PC to Claude's environment:
 Read credentials from `.env`:
 
 ```python
-def load_env(env_path=r"C:\Vaults\Mick's Vault\.env"):
+def load_env(env_path=r"C:\Users\pavey\.env"):
     env = {}
     with open(env_path, 'r') as f:
         for line in f:

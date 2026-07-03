@@ -1,9 +1,94 @@
 # CEDRIC MEMORY
-**Last Updated:** 2026.07.01 (Wed early evening, Claude Desktop) - Built the ShareScope CHART + REPORT automation. NEW: sharescope-get-chart (v1.0, native 12-month PNG export), sharescope_session.py session runner (ONE login, many tickers/tasks, ONE logout - confirmed on HDD: chart + 6 CSVs in 26s), and sharescope-report (v0.1, chart embedded in the branded DIY template - proven on a Hardide brief). Selectors confirmed + logged. Produced a webinar crib sheet + a Meet Cedric episode (Content Studio, Draft). URGENT open item: strip the ShareScope password from PLAIN TEXT in sharescope-financials SKILL.md. NOTE: .env SHARESCOPE_HEADLESS is currently FALSE for tonight's live demo - flip back to true after. Full detail: 04-Projects\2026.07.01-ShareScope-Chart-Export\BUILD_LOG.md.
-**Prior update:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
-**Earlier update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
-**Older update:** 2026.06.01 (Mon afternoon) - Added two Key Conventions: (1) AI report template location + the new Sector_Screen_Report type, (2) mandatory Aptos 12pt default for all .docx body text. Created Sector_Screen_Report/ template folder (README + worked example: US Precious Metal Miners quarterly growth + performance/valuation overlay, 5 tables + 3 quadrant charts). CHANGELOG in AI_Report_Templates updated. MCSB Phase 1 Session 6 remains the active project pickup (see Top of Mind below).
+**Last Updated:** 2026.07.02 (Thu late morning, Claude Desktop) - ShareScope chart shape + .env fixes. (1) CHART now exports true 16:9: sharescope_chart.py ticks the bitmap dialog's Custom option and sets 1200x675 - CONFIRMED exactly 1200x675 on HDD (right proportions for docx + 16:9 slides). (2) LOGIN failed after Mick rotated the ShareScope password because the script read the WRONG .env (a stale old Vault copy); repointed sharescope_login.py to C:\Users\pavey\.env (the single canonical creds file), added load_dotenv(override=True) + path logging - CONFIRMED working. (3) Credential SWEEP: repointed wordpress-post-publisher + wordpress-image-uploader to C:\Users\pavey\.env. (4) Added a top-level CREDENTIALS SINGLE-SOURCE rule to the master CLAUDE.md (v1.3) and reconciled all lower-level CLAUDE.md files to point at it; verified Poster Pete/WP creds are safely in the canonical .env before Mick deletes the redundant Vault copy. Detail in the 2026.07.02 session block below.
+**Prior update:** 2026.07.01 (Wed early evening, Claude Desktop) - Built the ShareScope CHART + REPORT automation. NEW: sharescope-get-chart (v1.0, native 12-month PNG export), sharescope_session.py session runner (ONE login, many tickers/tasks, ONE logout - confirmed on HDD: chart + 6 CSVs in 26s), and sharescope-report (v0.1, chart embedded in the branded DIY template - proven on a Hardide brief). Selectors confirmed + logged. Produced a webinar crib sheet + a Meet Cedric episode (Content Studio, Draft). URGENT open item: strip the ShareScope password from PLAIN TEXT in sharescope-financials SKILL.md. NOTE: .env SHARESCOPE_HEADLESS is currently FALSE for tonight's live demo - flip back to true after. Full detail: 04-Projects\2026.07.01-ShareScope-Chart-Export\BUILD_LOG.md.
+**Earlier update:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
+**Older update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
 **Environment:** Claude Desktop (Filesystem MCP confirmed) - this session. (Prior sessions: Cowork.)
+
+---
+
+## Recent session: 2026.07.02 (Thursday late morning, Claude Desktop) - ShareScope 16:9 chart + .env consolidation
+
+Continuation of the ShareScope automation WIP. Two fixes plus a credential-path sweep.
+
+### 1. Chart now exports true 16:9 (docx + PowerPoint ready)
+- Problem: the chart PNG came out near-square (~631x560) because the export took the default
+  on-screen size.
+- First attempt (reverted): widening the browser viewport before capture. Mick then spotted
+  the real lever - the "Save chart as PNG (bitmap)" dialog has a Custom size option.
+- Fix (sharescope_chart.py): the save step now ticks Custom and sets CHART_PNG_WIDTH x
+  CHART_PNG_HEIGHT (1200 x 675) then clicks OK. Diagnostic logging added for the dialog fields.
+- CONFIRMED: HDD chart came out exactly 1200 x 675 (aspect 1.778 = 16:9). Tunable via the two
+  constants at the top of sharescope_chart.py.
+
+### 2. Login .env fix (password rotation exposed a two-.env problem)
+- Mick rotated the ShareScope password and thought he had updated the .env, but login kept
+  failing "invalid password". Cause: the script read C:\Vaults\Mick's Vault\.env which still
+  held the OLD password. Mick's real/canonical creds file is C:\Users\pavey\.env (the same file
+  MCSB tokens + ax-trees already use). The Vault copy was a stale second file.
+- Fix (sharescope_login.py): primary env_path repointed to C:\Users\pavey\.env; old Vault path
+  dropped as primary. Added load_dotenv(env_path, override=True) so the .env always beats any
+  stale OS env var, plus a "Reading credentials from: <path>" log line so the file in use is
+  never ambiguous. CONFIRMED working - login clean, chart saved.
+
+### 3. Credential-path SWEEP (repoint scripts off the old Vault .env)
+- Canonical creds file is now C:\Users\pavey\.env for everything.
+- Repointed to C:\Users\pavey\.env:
+    - skills\wordpress-post-publisher\SKILL.md (2 refs: Credentials note + load_env code)
+    - skills\wordpress-image-uploader\SKILL.md (1 ref: load_env default)
+- Checked, NO change needed:
+    - benchmark-fetcher (uses Yahoo Finance + a local xlsx, no .env)
+    - portfolio-post-creator (delegates creds to the two WP skills, no .env of its own)
+    - sharescope_login.py (already repointed in fix 2)
+- NOTE: mirror copies (/mnt/skills/user/) NOT updated - vault is source of truth; mirror sync
+  is part of the deferred 2026.06.03 skill audit and is unreliable anyway.
+
+### 4. Credentials SINGLE-SOURCE rule added at the top level + all CLAUDE.md files reconciled
+- Root cause of the recurring stray/stale .env problem: no top-level rule saying WHERE the one
+  .env lives, so copies keep appearing (a project-subfolder copy on 2026-05-03; today's stale
+  Vault copy). Fix = one authoritative rule at the highest level, everything else points to it.
+- MASTER config C:\Users\pavey\.claude\CLAUDE.md bumped to v1.3 (changelog updated) with a new
+  CRITICAL RULE: "Credentials - Single Source". In brief: ALL local script/skill credentials,
+  keys and tokens live in ONE file only, C:\Users\pavey\.env; never create another .env; never
+  hardcode; read with load_dotenv(override=True); FAIL (do not fall back) if a key is missing.
+  Scoped to LOCAL contexts (claude.ai Web / Cowork sandbox have no local disk - secrets there
+  arrive via connectors, not this file).
+- Condensed copy added to CEDRIC_MEMORY.md Key Conventions (loaded every session).
+- Reconciled every older/duplicate .env mention to POINT AT the master rule (stops drift):
+    - C:\Users\pavey\.claude\.CLAUDE.md               -> converted to a pointer
+    - C:\Vaults\Cowork\CLAUDE.md                      -> pointer (old block had em dashes)
+    - C:\Vaults\Cowork\ax-trees-automation\CLAUDE.md  -> pointer (kept its placeholder-.env note)
+    - C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\CLAUDE.md -> reframed its generic "Security & API
+      Keys" section. That section was inherited from the Dex template and actually taught the
+      OPPOSITE habit (create a per-project gitignored .env); now it defers to the single-source rule.
+
+### 5. Verified Poster Pete / WordPress creds are safe BEFORE deleting the old .env
+- Mick spotted Poster Pete (WordPress user 'posterpete', Editor) credentials in the redundant
+  Vault .env and asked whether a routine would break when he deletes them.
+- Traced: the only Poster Pete users are the wordpress-post-publisher + wordpress-image-uploader
+  skills (called by the monthly portfolio-post-creator routine). BOTH were repointed to
+  C:\Users\pavey\.env in the sweep (fix 3).
+- CONFIRMED the WP keys are present in C:\Users\pavey\.env (WP_DIY_INVESTORS_URL/USER/APP_PASSWORD
+  and WP_DIY_AI_URL/USER/APP_PASSWORD). So deleting the old Vault copy is SAFE - the monthly
+  WordPress posting routine will still find its credentials. Values not recorded here.
+- Note: WP_DIY_AI_APP_PASSWORD is still a placeholder (posting to diy-investors.ai was never
+  wired up) - pre-existing, unaffected by the move.
+
+### Endgame for Mick
+- Once satisfied, DELETE / empty the ShareScope + WP credentials from the redundant
+  C:\Vaults\Mick's Vault\.env so there is genuinely one source. Any straggler script still
+  pointing there will then fail loudly with "missing credentials" - which flushes it out
+  safely. Mick to locate any such stragglers (news checkers etc. - not confirmed to use .env).
+
+### Still open (carried forward)
+- Flip .env SHARESCOPE_HEADLESS back to true (currently false from the demo/testing).
+- Fold the 6 financial CSVs into sharescope-report as tables (v0.2).
+- Fix the harmless sharescope_logout.py cleanup warnings (project-wide, non-blocking).
+- COWORK: test whether Cowork can run the local Playwright automation; bundle skill scripts.
+- ASCII clean-up of the Cowork + Dex CLAUDE.md rulebooks (legacy em dashes + mangled tick marks) - logged as a non-urgent memory task 2026.07.02.
+
+### Resume phrase
+"Cedric, I'm back. Let's pick up the ShareScope work - report financials tables next."
 
 ---
 
@@ -857,6 +942,7 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 ---
 
 ## Key Conventions (Never Forget)
+- **Credentials single source (MANDATORY):** All LOCAL script/skill credentials, API keys and tokens live ONLY in C:\Users\pavey\.env. Never create another .env (no project-subfolder or vault copies), never hardcode secrets in any skill/script/doc/CLAUDE.md, read with load_dotenv(override=True), and FAIL clearly if a key is missing (never fall back to another location). Local contexts only - in claude.ai Web / Cowork sandbox there is no local disk, so secrets arrive via connectors. Full rule in the master C:\Users\pavey\.claude\CLAUDE.md (v1.3, 2026.07.02). (Added 2026.07.02 after a stale second .env caused silent login failures.)
 - **Folder access:** If Cedric needs a folder not currently mounted (e.g. Dex vault, a project subfolder), use request_cowork_directory to prompt Mick for access BEFORE attempting any file operations. Never assume access -- always request it. This is the standard pattern for all sessions.
 - YYYY.MM.DD prefix: ALL project folders, files, Notion titles, SOURCE titles in NotebookLM
 - Notebook titles in NotebookLM: NO date prefix
