@@ -10,6 +10,7 @@ tasks. Each skill lives in its own subfolder with a SKILL.md file.
 | Skill | Command | Description |
 |-------|---------|-------------|
 | session-start | (automatic) | Mandatory session start protocol. Probe MCP availability via tool_search and announce environment (Claude Desktop vs claude.ai) before any other action. |
+| ax-mapper | "map [app] with ax-mapper" or `/ax-mapper` | Generic READ-ONLY accessibility-tree UI mapper for ANY Playwright-drivable web app. Engine + per-app adapters (ShareScope is one adapter). Generalised fork of the ShareScope mapper. Offline-tested (15 checks pass); live harvest is a Desktop task. Created 2026.07.04. |
 | sharescope-start | "sharescope start" or `/sharescope-start` | ShareScope session opener. Connects vault + project folder, reads PICKUP_POINT.md and CEDRIC_MEMORY.md, delivers a clean briefing so work resumes immediately. Created 2026.04.26. Mirror: TODO (Claude Desktop session needed). |
 | sharescope-financials | "download [TICKER] financials" or `/sharescope-financials [TICKER]` | Financial data export for any ShareScope stock. Gives PowerShell command, verifies 6 CSV files land in downloads\{TICKER}\, reports back with filenames. Created 2026.04.26. Mirror: TODO (Claude Desktop session needed). |
 | pns | `/pns` | Post Notion Summary: reads a Notion page, generates a 200-word structured summary, posts it to the Summary (item) property field. Adapts headings to content type (financial results, trading updates, articles). |

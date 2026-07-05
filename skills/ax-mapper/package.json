@@ -1,0 +1,16 @@
+{
+  "name": "ax-mapper",
+  "version": "1.0.0",
+  "description": "Generic read-only accessibility-tree UI mapper for any Playwright-drivable web app (engine + per-app adapters). Generalised fork of the ShareScope mapper.",
+  "private": true,
+  "scripts": {
+    "dry-run": "node engine/mapper.js --adapter ./adapters/adapter-template.js --dry-run",
+    "test": "node test/render.test.js"
+  },
+  "peerDependencies": {
+    "playwright": ">=1.40.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright": { "optional": true }
+  }
+}

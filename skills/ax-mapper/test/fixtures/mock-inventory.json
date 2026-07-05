@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-07-04T09:30:00.000Z",
+  "source_app": "mockapp",
+  "target": "DEMO",
+  "custom_attribute": "data-cmd",
+  "state_count": 3,
+  "states": [
+    {
+      "state_key": "home",
+      "captured_at": "2026-07-04T09:30:01.000Z",
+      "url": "https://mockapp.example/home",
+      "ax_snapshot": "- document:\n  - heading \"Home\"",
+      "controls": [
+        { "tag": "button", "role": "button", "name": "Search", "visible": true },
+        { "tag": "button", "role": "button", "name": "Financials", "visible": true }
+      ],
+      "custom_controls": [
+        { "value": "ShowSummary", "label": "Summary", "role": "button", "visible": true, "denied": false },
+        { "value": "Logout", "label": "Log out", "role": "button", "visible": true, "denied": true }
+      ],
+      "suggested_selectors": ["button[data-cmd=\"ShowSummary\"]"],
+      "main_dom_html": "<div>home</div>",
+      "screenshot_path": "screenshots/home.png"
+    },
+    {
+      "state_key": "financials-income",
+      "captured_at": "2026-07-04T09:30:05.000Z",
+      "url": "https://mockapp.example/financials",
+      "ax_snapshot": "- document:\n  - table \"Income\"",
+      "controls": [
+        { "tag": "button", "role": "button", "name": "Financials", "visible": true }
+      ],
+      "custom_controls": [
+        { "value": "ShowIncomeStatement", "label": "Income", "role": "button", "visible": true, "denied": false }
+      ],
+      "suggested_selectors": ["button[data-cmd=\"ShowIncomeStatement\"]"],
+      "main_dom_html": "<div>income</div>",
+      "screenshot_path": "screenshots/financials-income.png"
+    },
+    {
+      "state_key": "broken-state",
+      "error": "reach failed: selector not found",
+      "captured_at": "2026-07-04T09:30:09.000Z"
+    }
+  ]
+}

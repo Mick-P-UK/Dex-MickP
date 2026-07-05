@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-07-04T12:05:42.591Z",
+  "source_app": "sharescope",
+  "target": "GGP",
+  "custom_attribute": "data-cmd",
+  "state_count": 3,
+  "only_filter": "portfolio-pp1-holdings,portfolio-pp1-transactions,portfolio-export-options",
+  "states": [
+    {
+      "state_key": "portfolio-pp1-holdings",
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)' }) resolved to 2 elements:\n    1) <button drop-cmd=\"3\" type=\"button\" class=\"btn ss-btn-toolbar ss-btn-list active\">0 - 0 - 2026 - PP1 (UK)</button> aka getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)', exact: true })\n    2) <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - PP1 (UK)</button> aka getByRole('button', { name: 'Port: 0 - 0 - 2026 - PP1 (UK)' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)' })\u001b[22m\n",
+      "captured_at": "2026-07-04T12:05:35.645Z"
+    },
+    {
+      "state_key": "portfolio-pp1-transactions",
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)' }) resolved to 2 elements:\n    1) <button drop-cmd=\"3\" type=\"button\" class=\"btn ss-btn-toolbar ss-btn-list active\">0 - 0 - 2026 - PP1 (UK)</button> aka getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)', exact: true })\n    2) <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - PP1 (UK)</button> aka getByRole('button', { name: 'Port: 0 - 0 - 2026 - PP1 (UK)' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)' })\u001b[22m\n",
+      "captured_at": "2026-07-04T12:05:38.919Z"
+    },
+    {
+      "state_key": "portfolio-export-options",
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)' }) resolved to 2 elements:\n    1) <button drop-cmd=\"3\" type=\"button\" class=\"btn ss-btn-toolbar ss-btn-list active\">0 - 0 - 2026 - PP1 (UK)</button> aka getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)', exact: true })\n    2) <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - PP1 (UK)</button> aka getByRole('button', { name: 'Port: 0 - 0 - 2026 - PP1 (UK)' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '0 - 0 - 2026 - PP1 (UK)' })\u001b[22m\n",
+      "captured_at": "2026-07-04T12:05:41.665Z"
+    }
+  ]
+}
