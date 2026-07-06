@@ -1,0 +1,34 @@
+views:
+  - type: table
+    name: Everything
+    order:
+      - file.name
+      - file.folder
+      - type
+      - author
+      - file.tags
+      - created
+  - type: table
+    name: Notes only
+    filters:
+      or:
+        - file.inFolder("00-Inbox")
+        - file.inFolder("01-Quarter_Goals")
+        - file.inFolder("02-Week_Priorities")
+        - file.inFolder("03-Tasks")
+        - file.inFolder("04-Projects")
+        - file.inFolder("05-Areas")
+        - file.inFolder("06-Resources")
+        - file.inFolder("07-Archives")
+        - file.inFolder("08-People")
+        - file.inFolder("09-Entities")
+        - file.inFolder("99-Private")
+        - file.inFolder("journal")
+        - file.inFolder("Micks-View")
+    order:
+      - file.name
+      - file.folder
+      - type
+      - author
+      - file.tags
+      - created

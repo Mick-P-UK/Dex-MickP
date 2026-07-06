@@ -2,6 +2,136 @@
 
 ---
 
+## Session: 2026-07-05 (Sunday, Cowork, afternoon 2) - Schema harmonisation + request-access rule
+
+_Environment: Cowork (Claude Desktop app)_
+
+### Context
+- After the scheduled gmail-self-notes sweep filed 8 YouTube notes and a 24h backfill (2 more),
+  Mick added a _templates folder and asked to reconcile the sweep-note YAML with those templates.
+
+### Actions Taken
+1. Ran the scheduled gmail-self-notes-sweep (8 YouTube notes filed) + a 24h backfill (2 more).
+2. Explained the two schemas (operational Inbox.base vs manual _templates) and the quoted
+   "date_created:" key bug (a colon baked into the property name). Fixed it across 6 templates.
+3. SCHEMA HARMONISATION (Mick's 7 points):
+   - build_vault_note.py: author (was By), date_created (was created), url lowercase, empty
+     Category/status/topics placeholders, body now ## Summary / ## Key Takeaways / ## Notes.
+     Updated in BOTH the vault (V) AND the read-only mirror (M). Reached M by calling
+     request_cowork_directory on its backing folder (skills-plugin/.../skills/gmail-self-notes);
+     verified byte-identical + compiles.
+   - _templates: By->author, Reference Link->url.
+   - Inbox.base: order key created -> date_created.
+   - Migrated ALL 70 existing 00-Inbox notes: frontmatter harmonised + key order normalised to
+     FM_ORDER; body headings only for youtube/attachment; plain text notes and ## Related blocks
+     left intact. Idempotent, ASCII-clean, verified.
+4. Fixed 3 non-ASCII files: 00-Index Template.md (em dash), Ideas/README.md + Meetings/README.md
+   (em dashes, arrows, box-drawing folder tree redrawn in plain ASCII).
+5. NEW MANDATORY RULE added to vault CLAUDE.md (near the session-start actions): ALWAYS request
+   file/folder access (request_cowork_directory) BEFORE reporting a file/folder as unavailable /
+   read-only / needs-a-restart. Root cause: wrongly reported the skill mirror as un-syncable when
+   a single folder request fixed it instantly.
+6. NEW behaviour: whenever a non-ASCII file is found, flag it AND offer to fix it (not just mention).
+
+### OUTSTANDING (carried across the reboot - DO NEXT SESSION)
+- DONE (after reboot): the MASTER global config C:\Users\pavey\.claude\CLAUDE.md now carries the
+  same mandatory request-access rule. Could not mount .claude (overlaps protected scheduled-tasks), so
+  Mick ran a PowerShell block that backed the file up to CLAUDE.md.bak-20260705 then appended the rule
+  (ASCII). PowerShell confirmed "Done - rule appended". Rule is now in all three: vault CLAUDE.md,
+  CEDRIC_MEMORY.md, and the master global config.
+- Older (>24h) self-note backlog still unfiled (~26 YouTube + ~9 photo/attachment emails) - offer a
+  wider backfill if wanted. Also: click Run-now once to pre-approve tools; bookmark the base.
+
+### Session CLOSED - 16:29 BST, 2026-07-05
+- All work saved. Master global CLAUDE.md rule confirmed appended (post-reboot).
+- Everything from today is complete; nothing carried forward except the optional wider
+  self-note backfill (>24h backlog) if Mick wants it later.
+
+**Resume phrase:** "Cedric, what did we finish last session?" -> schema harmonisation +
+the request-access-first rule (now in all three CLAUDE homes). Next optional job: wider
+gmail-self-notes backfill; and the daily sweep now uses the new note schema.
+
+_Session closed for the day, 16:29 BST BST. Mick resting._
+
+---
+
+## Session: 2026-07-05 (Sunday, Cowork) - Gmail self-note ingestion skills + vault Bases
+
+_Environment: Cowork (Claude Desktop app)_
+
+### Context
+- Grew out of the scheduled morning briefing. Mick asked to download a late-night self-note
+  (body text + docx attachment "DIY-Investors-Income-Plan.docx") from Gmail.
+- Confirmed pattern: the Gmail connector reads mail but cannot download attachments; bridge via
+  browser "Add to Drive" then pull the bytes down through the Google Drive connector.
+
+### Actions Taken
+1. Built + installed cedric-note-fetcher (on-demand: fetch a self-note attachment to outputs).
+   Helper decode_attachment.py decodes + validates (zip test for Office, %PDF for PDFs).
+2. Built + installed gmail-self-notes (scheduled + on-demand vault ingestion). Decomposes each
+   self-sent email into separate Obsidian notes in 00-Inbox:
+   body note (author Mick); attachment note (converted to markdown, author MCSB when built with
+   Cedric else Mick); YouTube note (url in frontmatter, channel, add-to-nblm action, summary:
+   pending placeholder). Shared xref datetime key (YYYY.MM.DD-HH-mm-ss London) + two-way related
+   wikilinks across siblings (link_siblings.py). All ASCII; filenames YYYY.MM.DD - Title.
+   Inbox path baked in (00-Inbox). Catch-up-on-wake schedule (since-last-run window; scheduler
+   confirmed to run missed jobs on next app launch). Helpers all tested; YouTube oEmbed title OK.
+3. Created two Obsidian Bases: _All-Notes.base at vault ROOT (Everything + Notes only views) and
+   00-Inbox/Inbox.base (All Inbox, By Type, YouTube, Attachments, Needs summary). YAML validated.
+4. Backed both skills into vault skills/ (V). Both installed as Cowork skills (P).
+
+### OPEN DECISION (important, before scheduling)
+- gmail-self-notes YouTube handling OVERLAPS existing skill yt-inbox-sweeper, which sweeps the SAME
+  self-sent YouTube emails to a Google Sheet ("YouTube Queue"), labels them YT-Processed, daily
+  06:30. Both would process the same emails. MUST reconcile: YouTube links to the VAULT
+  (gmail-self-notes) or the SHEET (yt-inbox-sweeper), or split. gmail-self-notes NOT yet scheduled.
+
+### Next steps
+- Reconcile the YouTube overlap. Confirm Chrome signed into Gmail. Manual test ("sweep my notes")
+  before enabling any 06:45 schedule. Mirror (M) write of both skills pending (needs writable
+  /mnt/skills/user session). Bases bookmark: Mick adding manually.
+
+### Update (midday) - YouTube overlap RESOLVED + migration done
+- Decision: vault wins. gmail-self-notes owns YouTube capture; yt-inbox-sweeper retired for that role.
+- Migrated all 44 rows from the old "YouTube Queue" Google Sheet into 00-Inbox/YouTube-Queue/ as
+  atomic YouTube notes (url/channel/duration/your tag/Cedric's take/queue_status in frontmatter,
+  summary: pending, NBLM directives auto-detected). They surface in the Inbox.base YouTube view.
+- Old Google Sheet renamed to "[ARCHIVED 2026.07.05] YouTube Queue - Email Sweep".
+- yt-inbox-sweeper-daily scheduled task already disabled (was paused) - leave disabled / deprecate.
+- TODO (Mick to enable / next Desktop session): mirror both new skills to /mnt/skills/user (M);
+  then schedule gmail-self-notes ~06:20 London (before the 06:45 briefing).
+
+### Update (early afternoon) - test sweep + schedule + MCSB-Filed label
+- Created two Obsidian Bases (root _All-Notes.base: Everything + Notes-only; 00-Inbox/Inbox.base:
+  5 views). Filed as loose base at vault root (confirmed it is the .obsidian vault root); explained
+  Obsidian lists folders before files so a root .base sits below folders - use a bookmark to pin it
+  (Mick doing manually).
+- Ran a REPRESENTATIVE 48h test sweep into the live vault: 5 YouTube notes (00-Inbox/YouTube-Queue,
+  NBLM auto-detected), 1 text note, 1 attachment pair (23.48BST body + income plan, MCSB author,
+  two-way [[links]], shared xref). All ASCII. Pathways proven.
+- Two skill fixes found in testing + applied to canonical SKILL.md: (1) YouTube title comes from the
+  email SUBJECT, NOT web_fetch oEmbed (self-sent URLs are provenance-blocked); (2) YouTube notes go
+  in 00-Inbox/YouTube-Queue subfolder.
+- Scheduled task gmail-self-notes-sweep created: cron 20 6 * * * (shows ~06:24 with jitter), daily,
+  self-contained prompt. Seeded processed-log last_run=2026-07-05T13:07 + the 9 test threads so the
+  first run will not duplicate them.
+- NEW behaviour added (Mick request): on success the skill applies Gmail label "MCSB-Filed"
+  (labelId Label_534, light grey/black) then archives the email out of the inbox (removes INBOX;
+  stays in All Mail; NEVER deletes, never marks read). Search now excludes -label:MCSB-Filed as a
+  2nd dedupe. Applied+archived the 9 test threads as a live demo. SKILL.md + scheduled prompt updated.
+
+### OUTSTANDING (next session)
+- Backfill the remaining ~35 emails in the 48h window (more YouTube + ~9 photo/attachment emails;
+  photos need the browser Add-to-Drive step).
+- Re-sync the Cowork-installed .skill AND the /mnt/skills/user mirror (M) with ALL of today's changes
+  (oEmbed->subject, YouTube subfolder, label+archive). Vault copy (V) is the correct source.
+- Click "Run now" on the scheduled task once to pre-approve Gmail/Drive/Chrome/filesystem + label tools.
+- Bookmark _All-Notes.base to the top of the sidebar (Mick, manual).
+
+_Session paused for lunch, 2026-07-05 early afternoon BST_
+
+---
+
 ## Session: 2026-05-30 (Saturday evening) - Skill revisions + corruption repair
 
 _Environment: Claude Desktop - Filesystem MCP_

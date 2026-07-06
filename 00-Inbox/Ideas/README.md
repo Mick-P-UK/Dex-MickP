@@ -16,9 +16,9 @@ Quick thoughts and ideas to process later.
 
 ## Workflow
 
-1. **Capture** — Drop ideas here without overthinking
-2. **Triage** — Run `/triage` to process and organize
-3. **Move** — Actionable ideas become tasks or projects, reference ideas move to 06-Resources/
+1. **Capture** - Drop ideas here without overthinking
+2. **Triage** - Run `/triage` to process and organize
+3. **Move** - Actionable ideas become tasks or projects, reference ideas move to 06-Resources/
 
 ## Dex System Ideas
 
@@ -34,7 +34,7 @@ For ideas about improving Dex itself, you can use the `capture_idea` MCP tool wh
 ## Processing Ideas
 
 During triage, ask:
-- **Actionable now?** → Create task or project
-- **Need research?** → Add to reading list or research backlog
-- **Reference material?** → Move to 06-Resources/
-- **Not important?** → Delete
+- **Actionable now?** -> Create task or project
+- **Need research?** -> Add to reading list or research backlog
+- **Reference material?** -> Move to 06-Resources/
+- **Not important?** -> Delete
