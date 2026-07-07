@@ -29,6 +29,7 @@ tasks. Each skill lives in its own subfolder with a SKILL.md file.
 | benchmark-fetcher | (called by portfolio-post-creator) | Fetch month-end FTSE All-Share + S&P 500 closes from Yahoo Finance and update the Indices Monthly Performance spreadsheet. Migrated from Poster Pete project 2026.05.30. |
 | wordpress-image-uploader | (called by portfolio-post-creator) | Find portfolio screenshots on the PC and upload to the WordPress media library; returns real media IDs and pixel dimensions. Migrated from Poster Pete project 2026.05.30. |
 | wordpress-post-publisher | (called by portfolio-post-creator, or ad-hoc) | Push post objects to WordPress as drafts via the REST API. Content-agnostic and reusable. Migrated from Poster Pete project 2026.05.30. |
+| portfolio-formatter | "format the portfolio image" / "run the portfolio formatter" | Turns a raw ShareScope Current holdings screenshot (JPG/PNG, any size) into a branded portfolio image: trims to the holdings panel, grey border, top-right annotation box with calculated gain/loss + TRUNCATED percentage, red underline under the Total, and a red bottom label box (blue border) that preserves the date/time stamp. OCR reads currency, portfolio name, date and Total (header thresholded to beat white-on-green); gain = Total minus 10k notional (overridable). Verified on UK Active 10 (+23.67%), US Active 10 (-1.72%), US Active 10 Yr2 (+85.41%). Created 2026.07.06. |
 
 ## IMPORTANT: Two Notion Summary Skills
 
