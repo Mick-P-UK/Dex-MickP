@@ -2,36 +2,27 @@
 """
 portfolio-formatter - annotate a ShareScope portfolio screenshot.
 
-Takes a raw ShareScope "Current holdings" screenshot (JPG or PNG, ANY size) and
-produces a trimmed, branded image matching Mick's manual style:
-
-  1. Trim to the holdings panel (drop the empty area, button row and taskbar,
-     stopping at the grey "Total" summary bar of the holdings list)
-  2. Grey border around the whole image
-  3. Bottom portfolio label box (blue border/text), inset from the right so it
-     never covers the date/time stamp preserved in the bottom-right corner
-  4. Top-right annotation box: red title line (portfolio + date) and blue gain
-     line (headline gain/loss + percentage)
+Raw ShareScope "Current holdings" screenshot (JPG/PNG, ANY size) -> trimmed,
+branded image in Mick's house style:
+  1. Trim to the holdings panel, stopping at the grey "Total" summary bar
+  2. Grey border
+  3. Bottom label box (blue border, RED text), inset so it never covers the
+     date/time stamp preserved in the bottom-right corner
+  4. Top-right annotation box: red title (portfolio + date) + blue gain line
   5. Red underline under the summary Total value
 
-Headline gain = Total - base (base defaults to 10,000 in the portfolio's
-currency). Percentages are TRUNCATED to 2dp, not rounded, matching Mick's
-examples (23.6762 -> 23.67, 1.7282 -> 1.72).
+Gain = Total - base (base default 10000). Percentage TRUNCATED to 2dp, not
+rounded. Detection is by feature/OCR (not fixed pixels), so it copes with
+different sizes and short grabs where the taskbar follows the Total bar.
 
-Everything is detected from the image by feature (proportional, not fixed
-pixels) so it works across different screenshot sizes. Values are read by OCR
-(tesseract) and every reading is printed; any can be overridden on the CLI.
+DATE NOTE: Mick snapshots the morning after the close (before the US re-opens),
+so an early-morning stamp is the PREVIOUS day's close. Do not blindly use the
+OCR stamp date; pass --label with the correct close date.
 
 USAGE
   python3 annotate_portfolio.py SOURCE.jpg [options]
-
-OPTIONS (all optional - OCR fills them in when omitted)
-  --out PATH          output PNG path
-  --label "TEXT"      full label, e.g. "US Active 10 (Yr2): 6th July 2026"
-  --total N           summary Total value (float), overrides OCR
-  --currency GBP|USD  overrides OCR-detected symbol
-  --base N            notional starting stake (default 10000)
-  --jpg               also write a quality-95 JPG alongside the PNG
+OPTIONS
+  --out PATH  --label "TEXT"  --total N  --currency GBP|USD  --base N  --jpg
 """
 
 import numpy as np, argparse, os, re, sys, math
@@ -40,10 +31,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 import pytesseract
 from pytesseract import Output
 
-# Colours - closest match to Mick's example "after" images
-RED  = (197, 0, 0)      # annotation title + Total underline
-BLUE = (0, 0, 197)      # annotation/label box borders + gain line + label text
-GREY = (128, 128, 128)  # outer frame
+RED  = (197, 0, 0)      # title, Total underline, bottom label text
+BLUE = (0, 0, 197)      # box borders + gain line
+GREY = (128, 128, 128)
 WHITE = (255, 255, 255)
 
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -53,9 +43,7 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July",
 def font(sz, bold=True):
     p = ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold
          else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
-    if os.path.exists(p):
-        return ImageFont.truetype(p, sz)
-    return ImageFont.load_default()
+    return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.load_default()
 
 
 def trunc2(x):
@@ -67,18 +55,6 @@ def ordinal(n):
     return f"{n}{suf}"
 
 
-def detect_table_bottom(a, H):
-    """First tall run of near-white full-width rows below 35% height = table end."""
-    white = (a[:, :, 0] > 245) & (a[:, :, 1] > 245) & (a[:, :, 2] > 245)
-    rw = white.mean(axis=1)
-    run = 0
-    for y in range(int(0.35 * H), H):
-        run = run + 1 if rw[y] > 0.97 else 0
-        if run >= 40:
-            return y - run + 1
-    return int(0.5 * H)
-
-
 def ocr_all(im):
     d = pytesseract.image_to_data(im, output_type=Output.DICT, config="--psm 6")
     return [(d['text'][i].strip(), d['left'][i], d['top'][i], d['width'][i], d['height'][i])
@@ -86,7 +62,6 @@ def ocr_all(im):
 
 
 def _bw_ocr(crop, whitelist=None, thresh=150, scale=3):
-    """Upscale + threshold (both polarities) then OCR - for small/low-contrast text."""
     c = crop.convert("L").resize((crop.width * scale, crop.height * scale))
     a = np.asarray(c).astype(int)
     outs = []
@@ -98,25 +73,50 @@ def _bw_ocr(crop, whitelist=None, thresh=150, scale=3):
     return outs
 
 
+def detect_table_bottom(im, a, H):
+    """Crop just below the holdings 'Total' row (lowest 'Total' whose line has
+    >=3 money sums). Works for tall (white gap) and short (taskbar) grabs.
+    Fallback: white-gap run, then 0.55*H."""
+    money = re.compile(r"[GBPUSD$]?[\d,]+\.\d{2}")
+    words = ocr_all(im)
+    best = None
+    for t, l, tp, wd, ht in words:
+        if t.lower().startswith("total"):
+            sums = [w for w in words
+                    if abs(w[2] - tp) < ht and w[1] > l and money.search(w[0])]
+            if len(sums) >= 3:
+                bottom = tp + ht + 12
+                best = bottom if best is None else max(best, bottom)
+    if best is not None:
+        return min(H, best)
+    white = (a[:, :, 0] > 245) & (a[:, :, 1] > 245) & (a[:, :, 2] > 245)
+    rw = white.mean(axis=1)
+    run = 0
+    for y in range(int(0.35 * H), H):
+        run = run + 1 if rw[y] > 0.97 else 0
+        if run >= 40:
+            return y - run + 1
+    return int(0.55 * H)
+
+
 def detect_portfolio(im, currency):
-    """Read the green header bar (white-on-green). Threshold to black-on-white first.
-    Falls back to currency (GBP->UK, USD->US) if the header cannot be parsed."""
+    """Read the green header (white-on-green) by thresholding to black-on-white.
+    Falls back to currency (GBP->UK, USD->US)."""
     W, H = im.size
     hdr = im.crop((0, int(0.028 * H), W, int(0.070 * H))).convert("RGB")
     lum = np.asarray(hdr).astype(int).mean(axis=2)
     inv = Image.fromarray((255 - (lum > 180).astype(np.uint8) * 255).astype("uint8"))
     ht = pytesseract.image_to_string(inv, config="--psm 7").strip()
-    m = re.search(r"Active\s*10\s*[-–]\s*([A-Za-z]{2})\s*(\(Yr\d\))?", ht)
+    m = re.search(r"Active\s*10\s*[-]\s*([A-Za-z]{2})\s*(\(Yr\d\))?", ht)
     if m:
         region, yr = m.group(1).upper(), (m.group(2) or "")
         return f"{region} Active 10{(' ' + yr) if yr else ''}".strip()
-    region = "UK" if currency == "GBP" else "US"
-    return f"{region} Active 10"
+    return f"{'UK' if currency == 'GBP' else 'US'} Active 10"
 
 
 def detect_date(im):
-    """Read the valuation date. Prefers the bottom-right clock (dd/mm/yyyy),
-    falls back to the holdings date column."""
+    """Raw stamp date from the bottom-right clock (fallback: holdings date column).
+    Apply Mick's previous-day convention before putting it on a label."""
     W, H = im.size
     regions = [im.crop((int(W - 0.16 * W), int(H - 0.05 * H), W, H)),
                im.crop((0, int(0.20 * H), int(0.09 * W), int(0.30 * H)))]
@@ -131,15 +131,12 @@ def detect_date(im):
     return None
 
 
-def read_values(im, gap):
+def read_values(im):
     words = ocr_all(im)
     txt = " ".join(w[0] for w in words)
-    currency = "USD" if ("$" in txt and "£" not in txt) else "GBP"
-
+    currency = "USD" if ("$" in txt and "GBP" not in txt and "£" not in txt) else "GBP"
     portfolio = detect_portfolio(im, currency)
     datestr = detect_date(im)
-
-    # Summary Total value + bbox: OCR the top-left value block
     block = im.crop((0, 80, int(im.width * 0.26), 145))
     bd = pytesseract.image_to_data(block, output_type=Output.DICT, config="--psm 6")
     cand = []
@@ -150,21 +147,18 @@ def read_values(im, gap):
                          bd['left'][i], bd['top'][i] + 80, bd['width'][i], bd['height'][i]))
     total, tbbox = None, None
     if cand:
-        cand.sort(key=lambda c: c[2])          # lowest row = Total
-        v, l, tp, wd, ht = cand[-1]
-        total, tbbox = v, (l, tp, l + wd, tp + ht)
-
-    return dict(currency=currency, portfolio=portfolio, date=datestr,
-                total=total, tbbox=tbbox)
+        cand.sort(key=lambda c: c[2])
+        vv, l, tp, wd, ht = cand[-1]
+        total, tbbox = vv, (l, tp, l + wd, tp + ht)
+    return dict(currency=currency, portfolio=portfolio, date=datestr, total=total, tbbox=tbbox)
 
 
 def build(args):
     im = Image.open(args.source).convert("RGB")
     W, H = im.size
     a = np.asarray(im).astype(int)
-
-    gap = detect_table_bottom(a, H)
-    v = read_values(im, gap)
+    gap = detect_table_bottom(im, a, H)
+    v = read_values(im)
 
     currency = args.currency or v["currency"]
     sym = "$" if currency == "USD" else "£"
@@ -172,7 +166,6 @@ def build(args):
     if total is None:
         sys.exit("ERROR: could not read Total value - pass --total N")
     label = args.label or (f"{v['portfolio']}: {v['date']}" if v["date"] else v["portfolio"])
-
     print(f"[OCR ] portfolio={v['portfolio']} currency={currency} date={v['date']} total={total}")
 
     gain = total - args.base
@@ -181,7 +174,6 @@ def build(args):
     line2 = f"({word} by {sym}{abs(gain):,.2f}   [{pct:+.2f}%])"
     print(f"[CALC] {line2}  (base {sym}{args.base:,.0f})")
 
-    # crop table + preserve clock
     crop = im.crop((0, 0, W, gap))
     cw, ch = crop.size
     clk_w, clk_h = int(0.093 * W), int(0.042 * H)
@@ -199,20 +191,16 @@ def build(args):
     canvas.paste(clock, (cw - clock.width - 4, ch + (strip_h - clock.height) // 2))
     draw = ImageDraw.Draw(canvas)
 
-    # red underline under summary Total
     if v["tbbox"]:
         x0, _, x1, y1 = v["tbbox"]
         draw.line([(x0, y1 + 1), (x1, y1 + 1)], fill=RED, width=2)
 
-    # bottom label box, inset from clock
     avail = cw - clock.width - 16
     bx0 = (avail - (lw + pad * 2)) // 2
     by0 = ch + (strip_h - (lh + pad * 2)) // 2
-    draw.rectangle([bx0, by0, bx0 + lw + pad * 2, by0 + lh + pad * 2],
-                   fill=WHITE, outline=BLUE, width=2)
+    draw.rectangle([bx0, by0, bx0 + lw + pad * 2, by0 + lh + pad * 2], fill=WHITE, outline=BLUE, width=2)
     draw.text((bx0 + pad, by0 + pad), label, font=lab_font, fill=RED)
 
-    # top-right annotation box (red title, blue gain)
     af = font(max(15, int(cw * 0.021)))
     b1 = draw.textbbox((0, 0), label, font=af)
     b2 = draw.textbbox((0, 0), line2, font=af)
@@ -228,7 +216,6 @@ def build(args):
         draw.text((ax1 + (bw - tw) // 2, ay0 + 8 + i * (lh1 + 8)), ln, font=af, fill=col)
 
     out_img = ImageOps.expand(canvas, border=3, fill=GREY)
-
     out = args.out or default_out(label)
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     out_img.save(out, "PNG")
