@@ -2,6 +2,43 @@
 
 ---
 
+## Session: 2026-07-09 (Thursday, Cowork) - SOP library started + June posts held for Desktop
+
+_Environment: Cowork_
+
+### Context
+- Mick asked to be reminded how the end-of-month portfolios get posted to diy-investors.com.
+  Found the process documented as a four-skill chain in the Dex vault (not in the Cowork vault).
+
+### Actions Taken
+1. Explained the routine: portfolio-post-creator (orchestrator) reads the month-end + transactions
+   snapshots, calls benchmark-fetcher (ASX / S&P 500) and wordpress-image-uploader, assembles the
+   HTML, then hands off to wordpress-post-publisher which creates WordPress DRAFTS only. Mick
+   reviews each draft via its wp-admin edit URL and publishes manually. Four portfolios: UK/US
+   Active 10, Year 1 and Year 2.
+2. Requested and mounted two folders: the DIY - Portfolios parent (snapshots) and attempted the
+   home folder for .env. The home-folder mount was BLOCKED (Cowork reserves C:\Users\pavey as its
+   own internal session storage) and a direct read of C:\Users\pavey\.env was refused. Verified the
+   WP API is reachable from the sandbox (HTTP 200) and Yahoo returned 429 (rate-limited, not fatal).
+3. Decision point put to Mick. He chose to MOVE THE WHOLE JUNE RUN TO CLAUDE DESKTOP rather than
+   have Cowork build the content and Desktop publish. Nothing built in Cowork for the posts.
+   Re-issue in Desktop: "Run the end-of-month portfolio posts for 30 June, all four portfolios,
+   post date 9 July." Posts headed/worded for 30 June, dated 9 July, drafts for review.
+4. Created the first SOP: 06-Resources\SOPs\SOP - End-of-Month Portfolio Posting.md (new SOPs
+   folder). YAML tag "SOP"; ASCII-clean; grounded entirely in the four source skills. Built via a
+   sub-agent, verified written and ASCII-clean.
+5. Updated CEDRIC_MEMORY.md (top Last Updated line + a recent-session block), this session log,
+   the Cowork auto-memory, and logged a Meet Cedric brain dump on SOP creation.
+
+### Outstanding / Next steps
+- Mick to run the June portfolio posts in Claude Desktop (see phrase above).
+- Offered a second SOP documenting "which environment runs what" (Desktop vs Cowork vs claude.ai)
+  because the .env-access split affects any credential-touching skill - pending Mick's go-ahead.
+
+_Session active as of 2026-07-09, Cowork._
+
+---
+
 ## Session: 2026-07-05 (Sunday, Cowork, afternoon 2) - Schema harmonisation + request-access rule
 
 _Environment: Cowork (Claude Desktop app)_
