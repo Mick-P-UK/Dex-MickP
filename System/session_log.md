@@ -25,11 +25,14 @@ _Environment: Claude Code CLI (Mick's PC)_
 6. Updated CEDRIC_MEMORY.md (top Last Updated line + new session block) and this session log.
 
 ### Outstanding / Next steps
-- June end-of-month portfolio posting run (month-end 30 Jun, post date 9 Jul, all four portfolios)
-  still needs Claude Desktop - Cowork cannot reach the WordPress credentials in
-  C:\Users\pavey\.env. Carried forward unchanged from 2026-07-09.
 - Second SOP on "which environment runs what" (Desktop vs Cowork vs claude.ai) still offered,
   not yet built.
+
+### Correction (later same session)
+- Mick confirmed the June end-of-month portfolio posting run is NOT outstanding: he checked the
+  WordPress drafts on 2026-07-09 and published all four portfolios that day, using that day's date.
+  The item carried in memory as "held for Desktop" since 2026-07-09 is now CLOSED. Removed from
+  outstanding above; CEDRIC_MEMORY.md corrected to match.
 
 _Session active as of 2026-07-10, Claude Code CLI._
 
