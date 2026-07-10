@@ -2,6 +2,39 @@
 
 ---
 
+## Session: 2026-07-10 (Friday, Claude Code CLI) - PATH file ASCII cleanup closed out
+
+_Environment: Claude Code CLI (Mick's PC)_
+
+### Context
+- Picked up the SOP note "2026.07.10 - NOTE - Clean the PATH UiPath File for ASCII (Local)_v1.0.md",
+  which flagged that "2026.07.08 - PATH - UiPath Inc. - AI - Financial Analysis.md" had been held
+  back from the same-day GitHub commit because the Dex-MickP pre-commit hook blocks non-ASCII bytes.
+
+### Actions Taken
+1. Read the SOP note and the PATH research file in full.
+2. Grepped the research file for non-ASCII bytes: found exactly ONE offending character used twice
+   - an em dash (U+2014) in the "Overall Summary and Recommendation" section ("share repurchases-
+   deploying" / "authorization-will").
+3. Replaced both instances with spaced ASCII hyphens via targeted Edit; meaning unchanged. Re-grepped
+   and confirmed zero non-ASCII bytes remain.
+4. Confirmed both the research file and the SOP note were untracked in git (first commit, not edits
+   of a previously-tracked file) - checked with Mick before committing per risky-action guidance.
+5. Staged and committed both files together (commit 2312d47): pre-commit hook reported "UTF-8 check
+   passed (2 .md file(s) clean)". Pushed to origin main (10b5a83..2312d47).
+6. Updated CEDRIC_MEMORY.md (top Last Updated line + new session block) and this session log.
+
+### Outstanding / Next steps
+- June end-of-month portfolio posting run (month-end 30 Jun, post date 9 Jul, all four portfolios)
+  still needs Claude Desktop - Cowork cannot reach the WordPress credentials in
+  C:\Users\pavey\.env. Carried forward unchanged from 2026-07-09.
+- Second SOP on "which environment runs what" (Desktop vs Cowork vs claude.ai) still offered,
+  not yet built.
+
+_Session active as of 2026-07-10, Claude Code CLI._
+
+---
+
 ## Session: 2026-07-09 (Thursday, Cowork) - SOP library started + June posts held for Desktop
 
 _Environment: Cowork_
