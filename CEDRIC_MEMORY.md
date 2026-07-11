@@ -1077,3 +1077,19 @@ mirror does not always retain skills across projects/resets. Reconcile when the 
 This memory file was streamlined on 2026.05.10 to keep recent sessions front-of-mind.
 For older session details (NotebookLM skill suite, ShareScope build, Poppy planning, etc.),
 see git log on this file or the per-project session-logs/ folders.
+
+---
+
+## Session 2026.07.11 (PM) - Personal Content Backup executed
+- Decision reversed: NO separate personal repo. Dex-MickP is now ONE PRIVATE repo holding
+  everything, never published; a scrubbed DEMO repo would be derived if structure is shared.
+- .gitignore rewritten: ignore only machine junk + secrets (.env, .mcp.json,
+  System/.credentials/, tokens, pickles, *.log except _changelog/). All PARA content now tracked.
+- Pre-commit ASCII hook rescoped to work-mcp inputs only (03-Tasks, 02-Week_Priorities,
+  01-Quarter_Goals, 00-Inbox/Meetings, 05-Areas/People). Creative content backs up with typography.
+- Fixed a corrupted Week_Priorities.md (injected python fragment) + 4 other in-scope files.
+- First full backup committed + pushed (7e02ee7, 291 files). Repo current with GitHub.
+- Auto-push FIXED: nightly daily_git_commit.py always pushed but GCM/wincredman failed headlessly.
+  Switched origin to SSH (dedicated ed25519 key on Mick-P-UK). Verified push works (commit 1ca585c).
+- Still open: ShareScope-Automation own private repo (unbacked-up); minor cruft tidy; point
+  Cowork default folder at Dex-MickP.
