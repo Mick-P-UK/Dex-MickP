@@ -153,6 +153,14 @@ durable facts and decisions - things that matter beyond today. Convert relative 
 to absolute. ASCII only. If `CEDRIC_MEMORY.md` is not reachable (subfolder mount),
 update auto-memory only and record the deferral in the daily note per step 0.
 
+PLACEMENT (critical). CEDRIC_MEMORY.md is read top-down at session start, so the newest
+material MUST go at the TOP and never be appended at the bottom: prepend a new
+"**Last Updated:** YYYY.MM.DD ..." line to the stack directly under the "# CEDRIC MEMORY"
+heading, and prepend a new "## Recent session: YYYY.MM.DD ..." block immediately after
+the first "---" divider. After writing, the top Last Updated line and the first Recent
+session block must both be today's. Never append to the end of the file (that orphans the
+entry where session-start does not see it).
+
 ### 8. Append the changelog
 
 Append one line per create/update/delete to `_changelog/YYYY-MM.log` in the house

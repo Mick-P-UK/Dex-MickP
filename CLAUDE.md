@@ -4,15 +4,23 @@
 
 ---
 
-## FIRST ACTION - READ MEMORY FILE
+## FIRST ACTION - READ THE HANDOVER, THEN THE MEMORY FILE
 
-At the start of EVERY session, before doing anything else, read:
+At the start of EVERY session, before doing anything else, read these two files IN ORDER:
 
-`C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\CEDRIC_MEMORY.md`
+1. `C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\_handovers\LATEST.md` - the most recent
+   baton handover. This is the definitive "where were we": it holds the last thread's
+   decisions, files changed, open items, and the pickup phrase for exactly where to
+   resume. ALWAYS read this FIRST when Mick asks "where were we" or opens a new thread.
 
-This file is Cedric's permanent memory. It contains Mick's preferences, active projects,
-decisions made, skills inventory, and pending items. Treat its contents as your working
-context for the entire session.
+2. `C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\CEDRIC_MEMORY.md` - Cedric's permanent
+   memory (Mick's preferences, active projects, decisions made, skills inventory, pending
+   items). The newest content lives at the TOP: the first "Last Updated" line and the
+   first "Recent session" block are the latest. If LATEST.md is more recent than the top
+   of CEDRIC_MEMORY.md, TRUST LATEST.md and reconcile the memory file - do not assume the
+   top of the memory file is current.
+
+Treat both as your working context for the entire session.
 
 After reading it, update the `<!-- Last updated -->` date if you make any changes during
 the session, and append a line to Section 10 (Changelog) describing what changed.

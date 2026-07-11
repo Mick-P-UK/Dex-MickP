@@ -1,4 +1,5 @@
 # CEDRIC MEMORY
+**Last Updated:** 2026.07.11 (Sat, Cowork, afternoon) - Personal Content Backup executed. Reversed the two-repo plan: Dex-MickP is now ONE PRIVATE everything-repo (never published; a scrubbed DEMO repo is derived only if a structure is shared). First full backup pushed to GitHub (7e02ee7, 291 files). Fixed the silently-failing nightly auto-push by switching origin to SSH (dedicated ed25519 key dex-mickp-autocommit on Mick-P-UK). .gitignore slimmed to secrets + machine junk; pre-commit ASCII hook rescoped to work-mcp inputs only so creative content keeps its typography. Still open: ShareScope-Automation needs its own private repo (backed up nowhere); point Cowork default folder at Dex-MickP. NOTE: this entry was originally appended at the FILE BOTTOM by the wrap and has been moved to the top; the two wrap skills are now fixed to prepend so it will not recur.
 **Last Updated:** 2026.07.10 (Fri, Claude Code CLI, evening) - ASCII cleanup closed out. Fixed the
 PATH UiPath analysis file that was held back from the 2026.07.10 GitHub commit by the pre-commit
 ASCII hook: found ONE offending character (em dash U+2014, used twice in the "Overall Summary"
@@ -19,6 +20,24 @@ carried in memory since 2026.07.09 is now CLOSED; drafts must have existed from 
 **Earlier update:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
 **Older update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
 **Environment:** Claude Code CLI (this session, on Mick's PC). (Prior sessions: Cowork, Claude Desktop.)
+
+---
+
+## Recent session: 2026.07.11 (Saturday, Cowork, afternoon) - Personal Content Backup executed
+
+- Decision reversed: NO separate personal repo. Dex-MickP is now ONE PRIVATE repo holding
+  everything, never published; a scrubbed DEMO repo would be derived if structure is shared.
+- .gitignore rewritten: ignore only machine junk + secrets (.env, .mcp.json,
+  System/.credentials/, tokens, pickles, *.log except _changelog/). All PARA content now tracked.
+- Pre-commit ASCII hook rescoped to work-mcp inputs only (03-Tasks, 02-Week_Priorities,
+  01-Quarter_Goals, 00-Inbox/Meetings, 05-Areas/People). Creative content backs up with typography.
+- Fixed a corrupted Week_Priorities.md (injected python fragment) + 4 other in-scope files.
+- First full backup committed + pushed (7e02ee7, 291 files). Repo current with GitHub.
+- Auto-push FIXED: nightly daily_git_commit.py always pushed but GCM/wincredman failed headlessly.
+  Switched origin to SSH (dedicated ed25519 key on Mick-P-UK). Verified push works (commit 1ca585c).
+- Still open: ShareScope-Automation own private repo (unbacked-up); minor cruft tidy; point
+  Cowork default folder at Dex-MickP.
+- Handover baton: _handovers/archive/2026.07.11 - 1404 - baton - Personal Content Backup.md.
 
 ---
 
@@ -1077,19 +1096,3 @@ mirror does not always retain skills across projects/resets. Reconcile when the 
 This memory file was streamlined on 2026.05.10 to keep recent sessions front-of-mind.
 For older session details (NotebookLM skill suite, ShareScope build, Poppy planning, etc.),
 see git log on this file or the per-project session-logs/ folders.
-
----
-
-## Session 2026.07.11 (PM) - Personal Content Backup executed
-- Decision reversed: NO separate personal repo. Dex-MickP is now ONE PRIVATE repo holding
-  everything, never published; a scrubbed DEMO repo would be derived if structure is shared.
-- .gitignore rewritten: ignore only machine junk + secrets (.env, .mcp.json,
-  System/.credentials/, tokens, pickles, *.log except _changelog/). All PARA content now tracked.
-- Pre-commit ASCII hook rescoped to work-mcp inputs only (03-Tasks, 02-Week_Priorities,
-  01-Quarter_Goals, 00-Inbox/Meetings, 05-Areas/People). Creative content backs up with typography.
-- Fixed a corrupted Week_Priorities.md (injected python fragment) + 4 other in-scope files.
-- First full backup committed + pushed (7e02ee7, 291 files). Repo current with GitHub.
-- Auto-push FIXED: nightly daily_git_commit.py always pushed but GCM/wincredman failed headlessly.
-  Switched origin to SSH (dedicated ed25519 key on Mick-P-UK). Verified push works (commit 1ca585c).
-- Still open: ShareScope-Automation own private repo (unbacked-up); minor cruft tidy; point
-  Cowork default folder at Dex-MickP.

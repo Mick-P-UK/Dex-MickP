@@ -68,6 +68,18 @@ Update CEDRIC_MEMORY.md and the auto-memory index with only durable facts and
 decisions - things that matter beyond this thread. Do not record ephemeral chatter.
 Convert any relative dates to absolute. ASCII only.
 
+PLACEMENT (critical). CEDRIC_MEMORY.md is read top-down at session start, so the newest
+material MUST go at the TOP and never be appended at the bottom:
+1. Prepend a new one-line "**Last Updated:** YYYY.MM.DD (day, surface, part-of-day) -
+   <summary>" entry to the Last Updated stack directly under the "# CEDRIC MEMORY"
+   heading, above the previous newest line.
+2. Prepend a new "## Recent session: YYYY.MM.DD (weekday, surface, part-of-day) -
+   <topic>" block immediately after the first "---" divider, above the previous newest
+   Recent session block.
+After writing, the top Last Updated line and the first Recent session block must both be
+today's. Never append to the end of the file (that orphans the entry where session-start
+does not see it).
+
 ### 4. Append the changelog
 
 Append one line per create/update/delete to `_changelog/YYYY-MM.log` in the house
