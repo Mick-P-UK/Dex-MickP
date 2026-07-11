@@ -1,0 +1,67 @@
+# DIY-Investors.ai YouTube Channel Configuration
+
+channel:
+  name: "DIY Investors AI"
+  youtube_id: ""  # Add your channel ID here (optional - looks like UC...)
+  url: "https://www.youtube.com/@AI-for-diy-investors"
+  handle: "@AI-for-diy-investors"
+
+branding:
+  intro_length: "5 seconds"
+  outro_template: "DIY-Investors.ai outro with AI tools showcase"
+  color_scheme: "AI-focused with tech aesthetic"
+  thumbnail_style: "AI/tech imagery, futuristic feel, clear benefit statement"
+
+content_strategy:
+  posting_frequency: "Bi-weekly (every 2 weeks)"
+  typical_length: "10-15 minutes"
+  audience:
+    - ai_members
+    - inner_circle
+    - plaza_group
+    - public
+
+content_mix:
+  ai_tools_demos: 50%
+  ai_strategy: 30%
+  case_studies: 20%
+
+content_pillars:
+  - "AI tools for stock research"
+  - "ChatGPT prompts for investors"
+  - "AI-powered portfolio analysis"
+  - "Automating investment research"
+  - "AI for news sentiment analysis"
+
+seo_strategy:
+  primary_keywords:
+    - "AI for investing"
+    - "ChatGPT stock analysis"
+    - "AI investment tools"
+    - "automated stock research"
+    - "AI portfolio management"
+  target_viewer: "DIY investors who want to leverage AI for better investment decisions"
+
+production_notes:
+  filming_location: "Home office with screen capture"
+  equipment: "Screen recording software + standard setup"
+  editing_style: "Tech-forward, screen demos, step-by-step walkthroughs"
+  music: "Modern, tech-inspired background music"
+
+community_engagement:
+  comments_strategy: "Share AI prompts and tools in comments"
+  community_posts: "Weekly AI tool recommendations"
+  member_recognition: "Showcase AI for Investing members' success stories"
+
+ai_specific:
+  demo_tools:
+    - ChatGPT
+    - Claude
+    - Perplexity
+    - Custom AI workflows
+  prompt_library_location: "05-Areas/YouTube_System/context/ai-prompts/"
+  use_cases:
+    - Stock screening with AI
+    - Earnings call analysis
+    - News sentiment tracking
+    - Portfolio optimization

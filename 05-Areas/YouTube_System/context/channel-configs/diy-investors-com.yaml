@@ -1,0 +1,53 @@
+# DIY-Investors.com YouTube Channel Configuration
+
+channel:
+  name: "DIY Investors"
+  youtube_id: ""  # Add your channel ID here (optional - looks like UC...)
+  url: "https://www.youtube.com/@DIY-Investors"
+  handle: "@DIY-Investors"
+
+branding:
+  intro_length: "5 seconds"
+  outro_template: "Standard DIY-Investors outro with call-to-action"
+  color_scheme: "DIY-Investors brand colors"
+  thumbnail_style: "Bold text, high contrast, person visible"
+
+content_strategy:
+  posting_frequency: "Weekly (Sundays)"
+  typical_length: "8-12 minutes"
+  audience:
+    - inner_circle
+    - plaza_group
+    - public
+
+content_mix:
+  educational: 60%
+  market_analysis: 30%
+  q_and_a: 10%
+
+content_pillars:
+  - "Fundamental Analysis deep dives"
+  - "Technical Analysis tutorials"
+  - "News-Flow interpretation"
+  - "Stock screening methods"
+  - "Live Q&A sessions (weekly webinars)"
+
+seo_strategy:
+  primary_keywords:
+    - "DIY investing"
+    - "stock market analysis"
+    - "fundamental analysis"
+    - "technical analysis"
+    - "investment strategy"
+  target_viewer: "DIY investors who want to manage their own portfolios"
+
+production_notes:
+  filming_location: "Home office"
+  equipment: "Standard setup"
+  editing_style: "Educational, clear cuts, on-screen graphics for key points"
+  music: "Upbeat but professional background music"
+
+community_engagement:
+  comments_strategy: "Respond to all questions within 24 hours"
+  community_posts: "Weekly market updates and polls"
+  member_recognition: "Highlight Inner Circle and Plaza Group members"

@@ -1,0 +1,103 @@
+# Tasks
+
+Your task backlog organized by priority and pillar.
+
+## P0 - Critical/Urgent (Max 3)
+
+> Tasks that are blocking others or have hard deadlines.
+
+
+## P1 - Important (Max 5)
+
+> High-impact tasks aligned with your weekly priorities.
+
+
+## P2 - Normal
+
+> Everything else worth doing.
+
+- [ ] Draft February Newsletter "The Freedom Blueprint" ^task-20260215-001
+  - **Due:** 20th February 2026
+  - **What:** Create February newsletter content
+  - **Pillar:** Writing
+  - **Created:** 2026-02-15
+
+- [ ] Connect YouTube MCP for content research and competitive intelligence ^task-20260212-001
+  - **What:** Integrate @kirbah/mcp-youtube MCP server for YouTube Data API access
+  - **Why:** Research trending topics in investing sector, analyze competitor videos, get video metadata
+  - **How:**
+    1. Get YouTube API key from Google Cloud Console (enable YouTube Data API v3)
+    2. Add key to `.env` file: `YOUTUBE_API_KEY=AIza...`
+    3. Add MCP config to `.mcp.json` referencing env var: `${YOUTUBE_API_KEY}`
+    4. Test connection with video search
+  - **Capabilities:** Video search, trending topics, transcripts, metadata, channel analysis
+  - **Effort:** 15-20 minutes (API key setup + config + testing)
+  - **Benefit:** Research DIY investing trends, competitor analysis, topic discovery
+  - **Security:** API key MUST be in .env, never hardcoded in configs
+  - **Pillar:** DIY-Investors.com
+  - **Created:** 2026-02-12
+  - **Source:** Content research discussion
+  - **Reference:** https://github.com/kirbah/mcp-youtube
+
+- [x] Enable SessionStart hook for automatic session context ^task-20260211-001 ✅ 2026-02-13 18:43
+  - **What:** Auto-display session log at every session start
+  - **Why:** Never start a session cold - instant context on "where we left off"
+  - **How:** Add SessionStart hook to `.claude/settings.json`
+  - **Effort:** 5 minutes
+  - **Benefit:** Saves 30 seconds + mental context-loading every session
+  - **Pillar:** Personal/Hobbies
+  - **Created:** 2026-02-11
+  - **Source:** /dex-improve capability audit
+
+- [x] Add daily review to end-of-day routine ^task-20260211-002 ✅ 2026-02-13 19:15
+  - **What:** Run `/review` at end of work day
+  - **Why:** Systematic learning capture + surfaces open loops for tomorrow
+  - **How:** Run `/review` at end of Wednesday after video work
+  - **Effort:** 10 minutes (2 min per day once established)
+  - **Benefit:** Better daily plans, pattern detection, no lost insights
+  - **Pillar:** Personal/Hobbies
+  - **Created:** 2026-02-11
+  - **Source:** /dex-improve capability audit
+  - **Resolution:** First daily review completed
+    - Captured Friday routine (RNS check, Foundry Artists, Dex setup)
+    - Auto-extracted 4 session learnings
+    - Set up next week priorities (Plaza webinar prep)
+    - Routine established - takes ~10 minutes
+
+- [x] Connect calendar integration for meeting intelligence ^task-20260211-003 ✅ 2026-02-13 18:50
+  - **What:** Enable calendar MCP to auto-load meeting context
+  - **Why:** Stop manual diary checking, get automatic meeting prep
+  - **How:** Run `/getting-started` or manually connect Google Calendar
+  - **Effort:** 15 minutes
+  - **Benefit:** Automatic meeting context, prep suggestions, person pages from attendees
+  - **Pillar:** Personal/Hobbies
+  - **Created:** 2026-02-11
+  - **Source:** /dex-improve capability audit
+  - **Resolution:** Security-hardened Google Calendar integration
+    - Moved OAuth credentials to .env file (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET)
+    - Updated calendar_server.py to read from environment variables
+    - Sanitized credentials.json file (removed hardcoded secrets)
+    - Tested successfully - found 2 events for today
+    - Granola integration parked (not currently used)
+
+- [x] Review Writing System directory structure - duplicate drafts folders ^task-20260209-001 ✅ 2026-02-09 12:57
+  - **Context:** Writing_System/knowledge has both "drafts" (lowercase) and "1-Drafts" (numbered) folders
+  - **Issue:** Causes confusion when saving files - unclear which to use
+  - **Action:** Review purpose of each, consolidate to single location, update docs
+  - **Pillar:** Personal/Hobbies
+  - **Created:** 2026-02-09
+  - **Resolution:** Consolidated successfully
+    - Moved SP500 reports (3 files) to knowledge/Archive/
+    - Moved Python scripts (3 files) to new tools/pdf-generation/ folder
+    - Removed empty lowercase drafts/ folder
+    - Only 1-Drafts/ remains as the single drafts location
+
+
+## Someday/Maybe
+
+> Ideas and tasks you're not ready to commit to yet.
+
+
+---
+
+*Use Cedric to manage tasks: "Create a task to...", "Mark X as done", "What's on my plate?"*

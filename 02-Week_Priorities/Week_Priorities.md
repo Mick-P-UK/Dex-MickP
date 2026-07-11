@@ -1,0 +1,207 @@
+# Week Priorities
+
+**Week of:** February 16 - February 20, 2026 (Week 8)
+
+---
+
+## Week Shape
+
+| Day | Main Activity |
+|-----|---------------|
+| **Mon 16** | Plaza prep + dancing |
+| **Tue 17** | Elstead Investors meeting + Plaza prep |
+| **Wed 18** | Plaza Group Webinar (7:30pm) |
+| **Thu 19** | Chiro + Sort webinar recordings |
+| **Fri 20** | Petersfield trip + Ruth appointment |
+
+**Week focus:** Plaza Group webinar preparation & delivery, Freedom Blueprint newsletter if time permits
+
+---
+
+## Top 3 This Week
+
+### Priority 1: Plaza Group Webinar Preparation & Delivery
+**Pillar:** DIY-Investors.com
+**Due:** Wednesday, February 18 @ 19:30
+^week-2026-W08-p1
+
+**Why this week:** Main deliverable - live webinar for Plaza Group members
+
+**Success criteria:**
+- [ ] Content/presentation finalized (Monday-Tuesday)
+- [ ] Tech setup tested (Zoom, slides, screen share)
+- [ ] Webinar delivered Wednesday 7:30pm
+- [ ] Recording processed Thursday
+
+**Timeline:**
+- **Monday-Tuesday:** Prep time scheduled (10:30-17:30 each day)
+- **Wednesday:** Morning prep, deliver 7:30pm
+- **Thursday:** Sort recordings (scheduled 1pm-8:45pm)
+
+**Resources:**
+- Zoom link: https://us02web.zoom.us/j/83456137441
+- Scheduled prep blocks in calendar
+
+---
+
+### Priority 2: Draft "The Freedom Blueprint" Newsletter
+**Pillar:** Writing
+**Due:** Friday, February 20
+^week-2026-W08-p2
+
+**Why this week:** Newsletter deadline, but secondary to webinar prep
+
+**Success criteria:**
+- [ ] Draft completed by Friday EOD
+- [ ] Ready for review/publish
+
+**Notes:**
+- **Lower priority** than webinar - fit in around prep work
+- Squeeze in Thursday/Friday if webinar prep allows
+- May need to extend deadline if week gets packed
+- Task created: ^task-20260215-001
+
+---
+
+### Priority 3: Elstead Investors Group Meeting
+**Pillar:** DIY-Investors.com
+**When:** Tuesday, February 17 @ 11:30-15:00
+^week-2026-W08-p3
+
+**Why this week:** Scheduled group meeting
+
+**Success criteria:**
+- [ ] Meeting attended
+- [ ] Notes captured
+- [ ] Action items identified
+
+**Notes:**
+- Mid-week meeting during Plaza prep period
+- 3.5 hour session
+- May provide content ideas for Plaza webinar
+
+---
+
+## Key Tasks This Week
+
+### Must Complete (P0)
+- [ ] **Finalize Plaza webinar content** - Mon-Tue - Priority #1
+- [ ] **Test Zoom/tech setup** - Wed morning - Priority #1
+- [ ] **Deliver Plaza Group webinar** - Wed 7:30pm - Priority #1 (done)
+- [ ] **Process webinar recording** - Thu - Priority #1
+
+### Should Complete (P1)
+- [ ] **Attend Elstead meeting** - Tue 11:30am - Priority #3
+- [ ] **Draft Freedom Blueprint newsletter** - If time permits - Priority #2
+
+### If Time Permits (P2)
+- [ ] Review week's market activity for newsletter content
+- [ ] Prepare next week's content ideas
+
+---
+
+## Heads Up
+
+**Webinar Week:**
+- Plaza Group webinar is the primary focus
+- Prep time blocked Mon-Tue-Wed mornings
+- Recording processing scheduled Thursday
+
+**Newsletter Timeline:**
+- Due Friday but may need flexibility
+- Secondary priority to webinar delivery
+- Can extend if needed
+
+**Personal Commitments:**
+- Friday: Petersfield overnight trip + Ruth appointment
+- Thursday: Chiro 10am
+- Evening: Dancing classes Monday, possible Ceroc Tuesday
+
+**Calendar Working:**
+- Calendar integration active and showing events (done)
+- All key events visible
+
+---
+
+## Pillar Balance
+
+| Pillar | This Week | Balance |
+|--------|-----------|---------|
+| DIY-Investors.com | Plaza webinar + Elstead meeting | Green - Strong focus |
+| DIY-Investors.ai | No active work | Amber - Light |
+| Personal/Hobbies | Petersfield trip + dancing | Green - Good |
+| Writing | Freedom Blueprint newsletter | Amber - Stretch goal |
+
+**Notes:**
+- Heavy DIY-Investors.com week (webinar focus)
+- Writing is secondary - newsletter may slip if needed
+- Personal time protected Friday
+
+---
+
+## Plaza Webinar Prep Checklist
+
+**Content Preparation (Mon-Tue):**
+- [ ] Review topic/outline for webinar
+- [ ] Update slides/presentation materials
+- [ ] Prepare examples/charts/data
+- [ ] Write speaker notes/talking points
+- [ ] Identify Q&A likely topics
+
+**Technical Setup (Wed morning):**
+- [ ] Test Zoom connection
+- [ ] Test screen sharing
+- [ ] Check audio/video quality
+- [ ] Prepare backup links
+- [ ] Test presentation materials display
+
+**Delivery (Wed evening):**
+- [ ] Join 15 min early
+- [ ] Run tech check
+- [ ] Deliver webinar 7:30pm
+- [ ] Save chat/Q&A notes
+- [ ] Download recording
+
+**Post-Processing (Thu):**
+- [ ] Review recording quality
+- [ ] Trim/edit if needed
+- [ ] Upload to platform
+- [ ] Share with Plaza Group
+- [ ] Archive materials
+
+---
+
+## Carried Over from Week 7
+
+**Silver Video Production:**
+- Status: Published Thursday (Week 7)? (done)
+- Follow-up: Monitor performance, comments
+- Next: Plan next YouTube content
+
+**Three Pillars Newsletter:**
+- Status: In progress
+- Note: Different from "Freedom Blueprint" (this week's newsletter)
+
+---
+
+## End of Week Review
+
+*Fill in on Friday evening or Saturday*
+
+### Completed
+-
+
+### Didn't Finish
+-
+
+### Learnings
+-
+
+### Next Week Focus
+-
+
+---
+
+*Generated: 2026-02-15 21:20*
+*Week: 8 (Feb 16-20)*
+*Mode: Webinar delivery week - Plaza Group priority*

@@ -1,0 +1,6 @@
+2026-05-09 16:35 [CREATE] 04-Projects/2026.05.09 - MCSB/2026.05.09 - MCSB PRD v0.1.md - Initial draft of Mick & Cedric Shared Brain PRD after four brain dump sessions. Author: Cedric. Status: Draft, awaiting Mick's review.
+2026-05-09 18:00 [CREATE] 04-Projects/2026.05.09 - MCSB/2026.05.09 - Session Log - MCSB Design Day.md - Closing session log for MCSB design day. Includes pickup phrase for tomorrow.
+2026-05-09 18:00 [CREATE] memory/project_mcsb.md - New persistent memory entry for MCSB project. Captures status (PRD v0.1 awaiting review), key decisions, what NOT to do, pickup phrase.
+2026-05-09 18:00 [UPDATE] memory/MEMORY.md - Added MCSB project to memory index.
+2026-05-09 18:00 [CREATE] Notion / Micks Content Studio - "2026.05.09 - Meet Cedric: Building MCSB - A Shared Brain Across Every Device" (Status: Brain Dump, Project: Meet Cedric, Format: Video).
+2026-05-10 12:55 [CREATE] 04-Projects/2026.05.09 - MCSB/2026.05.10 - MCSB PRD v0.2.md - PRD v0.2 integrating Interactive Journaling layer, agents.md framework, Active CRM, immutable raw->processed pipeline, and hourly server-side sync. Sources: 8 NotebookLM analysis documents authored by Mick on 2026-05-10. v0.2 supersedes v0.1.

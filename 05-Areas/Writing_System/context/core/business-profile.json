@@ -1,0 +1,181 @@
+{
+  "_meta": {
+    "type": "business_profile",
+    "updated_at": "2026-01-29"
+  },
+  "data": {
+    "company": {
+      "name": "DIY-Investors",
+      "divisions": [
+        "diy-investors.com",
+        "diy-investors.ai"
+      ],
+      "mission": "Serving DIY investors who want to manage their own stock market investments to secure their financial future",
+      "founder_background": "Full-time investor, retired Chartered Quantity Surveyor, entrepreneur, and small business owner",
+      "target_audience": "DIY investors managing their own portfolios who want control over their financial future"
+    },
+    "problem_solved": {
+      "primary": "Providing timely information and education to make better, more informed investment decisions",
+      "solutions": [
+        "Education on combining fundamental and technical analysis",
+        "Daily advice for paying members",
+        "Monthly webinars with investing education and real-world insights",
+        "Monthly PDF newsletter",
+        "AI augmentation for investing techniques"
+      ]
+    },
+    "offerings": {
+      "ai_for_investing": {
+        "type": "membership",
+        "division": "diy-investors.ai",
+        "description": "Monthly webinars, access to recordings, prompts and tutorial resources for applying AI to investing. No stock-specific information (only examples).",
+        "pricing": {
+          "monthly": {
+            "amount": 30,
+            "currency": "GBP",
+            "model": "monthly",
+            "annual_total": 360
+          },
+          "annual": {
+            "amount": 300,
+            "currency": "GBP",
+            "model": "annual"
+          }
+        },
+        "target_audience": "Investors who want to gain the advantage AI offers but aren't sure where to start or how to apply AI for investing"
+      },
+      "inner_circle": {
+        "type": "membership",
+        "division": "diy-investors.com",
+        "description": "Monthly webinars, access to recordings, annual stock filtering, choice of portfolio shares for each calendar year, access to demonstration portfolios.",
+        "pricing": {
+          "monthly": {
+            "amount": 42,
+            "currency": "GBP",
+            "model": "monthly",
+            "annual_total": 504
+          },
+          "annual": {
+            "amount": 380,
+            "currency": "GBP",
+            "model": "annual"
+          }
+        },
+        "target_audience": "Serious DIY investors who want to invest on their own account"
+      },
+      "plaza_group": {
+        "type": "membership",
+        "division": "diy-investors.com",
+        "description": "Everything in Inner Circle PLUS 4 extra quarterly webinars per year, daily access via Slack with weekday morning updates on two real money portfolios (ring-fenced within SIPP). All ups and downs shared. Portfolios have more than tripled in value since 27th January 2020.",
+        "pricing": {
+          "annual": {
+            "amount": 720,
+            "currency": "GBP",
+            "model": "annual",
+            "note": "Includes Inner Circle membership"
+          }
+        },
+        "target_audience": "More experienced DIY investors who want daily access and real-world portfolio insights"
+      },
+      "boot_camp": {
+        "type": "workshop",
+        "description": "Occasional in-person workshop events (not regular offering). Last held: Birmingham, 17 January 2026; previous: November 2023.",
+        "pricing": {
+          "note": "Varies by event"
+        },
+        "target_audience": "Members seeking intensive, in-person training"
+      }
+    },
+    "value_ladder": {
+      "description": "Most members start with Inner Circle, then some upgrade to Plaza Group. AI for Investing is a separate track that attracts both existing members and new people from YouTube channels.",
+      "tiers": [
+        {
+          "level": "Entry",
+          "offering": "Inner Circle",
+          "price": "£380/year",
+          "goal": "Get serious DIY investors started with webinars, portfolio guidance, and education"
+        },
+        {
+          "level": "Premium",
+          "offering": "Plaza Group",
+          "price": "£720/year",
+          "goal": "Provide experienced investors with daily access and real money portfolio transparency"
+        },
+        {
+          "level": "Parallel Track",
+          "offering": "AI for Investing",
+          "price": "£300/year",
+          "goal": "Help investors leverage AI regardless of their investing experience level"
+        }
+      ],
+      "youtube_channels": [
+        "diy-investors.com YouTube channel",
+        "diy-investors.ai YouTube channel"
+      ]
+    },
+    "brand_positioning": {
+      "unique_angle": "Combining fundamental and technical analysis with AI augmentation, plus live interactive Q&A sessions at webinars",
+      "core_philosophy": "The market is manipulated by insiders and brokers to profit from retail investors. DIY investors need independent thinking, facts, and rational analysis to succeed.",
+      "differentiators": [
+        "Combines fundamental and technical analysis (not just one approach)",
+        "Uses AI to augment investing methods and techniques",
+        "Live Q&A sessions at end of every webinar (interactive, not aware of others doing this)",
+        "Daily Slack access to real money portfolios (Plaza Group)",
+        "Transparent about both wins and losses"
+      ]
+    },
+    "content_philosophy": {
+      "principles": [
+        "Do Your Own Research (DYOR) - the essence of DIY investing",
+        "Get the facts, ignore opinion",
+        "Make your own mind up",
+        "Don't be afraid to go against herd mentality",
+        "Apply analysis and rational thinking over emotion"
+      ],
+      "stands_for": [
+        "Independent thinking",
+        "Financial self-determination",
+        "Analysis and rational thinking",
+        "Transparency (sharing wins and losses)",
+        "Empowering retail investors"
+      ],
+      "stands_against": [
+        "Unfairness and market manipulation",
+        "Pushy stories and pump and dump operations",
+        "Coordinated media campaigns from market makers (word-for-word stories across outlets)",
+        "Herd mentality",
+        "Opinion over facts",
+        "Brokers profiting at retail investors' expense"
+      ],
+      "contrarian_belief": "Insiders manipulate 'Joe Public' to buy when they want to sell, and drop prices to shake out insecure retail investors. Ever seen a poor broker? Me neither!"
+    },
+    "brand_frameworks": {
+      "portico_investing": {
+        "name": "Portico Investing",
+        "description": "The application of knowledge about Market Makers' activities to make better investment decisions"
+      },
+      "three_pillars": {
+        "name": "Three Pillars of DIY-Investing",
+        "pillars": [
+          "Fundamental Analysis",
+          "Technical Analysis",
+          "News-Flow"
+        ]
+      }
+    },
+    "terminology": {
+      "brand_terms": [
+        "Portico Investing",
+        "Three Pillars of DIY-Investing",
+        "DYOR (Do Your Own Research)",
+        "Market Makers",
+        "Pump and dump"
+      ],
+      "avoided_terms": [
+        "Certainty",
+        "Guaranteed",
+        "Guarantees"
+      ]
+    }
+  }
+}

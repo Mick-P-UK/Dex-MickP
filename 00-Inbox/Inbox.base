@@ -1,0 +1,57 @@
+views:
+  - type: table
+    name: All Inbox
+    filters:
+      and:
+        - file.inFolder("00-Inbox")
+    order:
+      - file.name
+      - type
+      - author
+      - xref
+      - file.tags
+      - date_created
+    columnSize:
+      file.name: 524
+  - type: table
+    name: By Type
+    filters:
+      and:
+        - file.inFolder("00-Inbox")
+    order:
+      - type
+      - file.name
+      - author
+      - date_created
+  - type: table
+    name: YouTube
+    filters:
+      and:
+        - file.inFolder("00-Inbox")
+        - type == "youtube"
+    order:
+      - file.name
+      - channel
+      - url
+      - nblm_topic
+      - summary
+  - type: table
+    name: Attachments
+    filters:
+      and:
+        - file.inFolder("00-Inbox")
+        - type == "attachment"
+    order:
+      - file.name
+      - author
+      - attachment
+  - type: table
+    name: Needs summary
+    filters:
+      and:
+        - file.inFolder("00-Inbox")
+        - summary == "pending"
+    order:
+      - file.name
+      - url
+      - nblm_topic

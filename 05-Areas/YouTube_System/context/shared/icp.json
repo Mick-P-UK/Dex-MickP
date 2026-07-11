@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "type": "icp_profile",
+    "updated_at": "2026-01-29"
+  },
+  "data": {
+    "identity": {
+      "description": "DIY investors managing their own portfolios of stocks and investments. They want control over their finances and plan for their own financial security. Could be employed, self-employed, or own a small to medium-sized business. Generally over 35 years old and homeowners.",
+      "experience_level": "mixed (majority intermediate)",
+      "influences": [
+        "The Naked Trader (Robby Burns)",
+        "ShareScope writers: Maynard Paton, Richard Beddard, Bruce Packard, Michael Taylor",
+        "Stockopedia writers: Graham Neary, Roland Head, Edmund Shing",
+        "Warren Buffett"
+      ]
+    },
+    "pain_points": {
+      "primary_problem": "Picking winning stocks and beating the market",
+      "secondary_problems": [
+        "Information overload - deluge of data from the internet",
+        "Getting caught up in hype of 'hot stocks'",
+        "Not applying rational subjective thinking",
+        "Navigating inflation, global economic uncertainty, and geopolitical instability"
+      ],
+      "failed_solutions": [
+        "Financial press (influenced by market makers and brokers)",
+        "Bulletin boards (full of BS and misinformation)",
+        "Waiting for uptrends and buying at the wrong time",
+        "Panic selling during corrections and getting whipsawed out"
+      ]
+    },
+    "aspirations": {
+      "dream_outcome": "More winners than losers, better results than achieved before, and a feeling of being in control of their finances and their future",
+      "short_term_goals": [
+        "Useful insights to navigate uncertain times",
+        "Guidance through inflation and economic uncertainty",
+        "Help understanding geopolitical impacts on markets"
+      ],
+      "long_term_goals": [
+        "Steady stream of advice and informed commentary",
+        "Topical suggestions for choosing sectors and individual stocks",
+        "Empowerment to DYOR (Do Your Own Research)"
+      ]
+    },
+    "objections": {
+      "doubts": [
+        "Self doubt about their abilities",
+        "Family pressures from risk-averse spouse/partner or family members",
+        "Lack of spare cash to invest (inflation eroding spending power)"
+      ],
+      "fears": [
+        "Worry about losses",
+        "Getting the risk/reward balance wrong for their stage of life",
+        "Making emotional rather than rational decisions"
+      ],
+      "excuses": [
+        "Waiting for confirmation before buying (missing early opportunities)",
+        "Panic selling during corrections",
+        "Getting whipsawed out of positions",
+        "Talking up small successes instead of analyzing failures"
+      ]
+    },
+    "language_patterns": {
+      "problem_language": [
+        "I wish I'd bought earlier",
+        "I missed that one",
+        "Got my fingers burnt",
+        "Too much emotion, not enough analysis"
+      ],
+      "goal_language": [
+        "Make money, not lose money",
+        "Beat the market",
+        "Better returns than bank/building society accounts",
+        "Do your own research (DYOR)"
+      ],
+      "venting_statements": [
+        "I got burnt on that sector, I'm staying away",
+        "I missed the rebound because I was too scared to get back in",
+        "I keep talking about my winners but don't analyze what went wrong with my losers",
+        "I know I'm being too emotional and not analytical enough"
+      ]
+    }
+  }
+}

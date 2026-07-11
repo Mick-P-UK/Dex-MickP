@@ -1,11 +1,11 @@
 # People
 
-Everyone you work with—colleagues, customers, partners, stakeholders.
+Everyone you work with-colleagues, customers, partners, stakeholders.
 
 ## Subfolders
 
-- **Internal/** — Colleagues, teammates, managers, cross-functional partners
-- **External/** — Customers, prospects, partners, vendors, community
+- **Internal/** - Colleagues, teammates, managers, cross-functional partners
+- **External/** - Customers, prospects, partners, vendors, community
 
 ## What Goes Here
 
@@ -30,9 +30,9 @@ Person pages aggregate everything related to someone in one place. Instead of se
 
 ## Workflow
 
-1. **Auto-creation** — Dex creates/updates person pages when processing meetings (via `/process-meetings`)
-2. **Prep** — Before meetings, check their page for context (via `/meeting-prep`)
-3. **Manual updates** — Add context as you learn more about them
+1. **Auto-creation** - Dex creates/updates person pages when processing meetings (via `/process-meetings`)
+2. **Prep** - Before meetings, check their page for context (via `/meeting-prep`)
+3. **Manual updates** - Add context as you learn more about them
 
 ## Pro Tip
 
