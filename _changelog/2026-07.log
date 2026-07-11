@@ -20,3 +20,15 @@
 2026-07-11 18:40 [CREATE] 00-Inbox/2026.05.13 - MCSB Phase 1 - Pickup Note for Implementation Phase.md - lifted from the PAIDA Master docx and ASCII-normalised. Author: Cedric.
 2026-07-11 18:40 [CREATE] (PAIDA Master) 04-Projects/2026.05.09 - MCSB/2026.05.13-MCSB-PRD_V0.3.pdf - PDF of the canonical MCSB PRD v0.3 for printing. Author: Cedric. Status: outside git repo.
 2026-07-11 18:40 [BATON] Thread wrap - Session-start continuity fix + MCSB prep. Handover to _handovers/LATEST.md + archive/2026.07.11 - 1840 - baton - Session-Start Continuity Fix.md. CEDRIC_MEMORY prepended (new placement rule proven live). Git left for the 9pm sweep. Author: Cedric.
+2026-07-11 19:47 [CREATE] 04-Projects/2026.07.11 - Hermes-Claude-Obsidian/2026.07.11 - Hermes-Claude-Obsidian.md - project index note; paired NotebookLM notebook fa003870. Author: Cedric.
+2026-07-11 19:47 [CREATE] 04-Projects/2026.07.11 - Hermes-Claude-Obsidian/2026.07.11 - Meet Cedric - Investigating Hermes for MCSB.md - episode draft (investigate Hermes for MCSB). Author: Cedric.
+2026-07-11 19:47 [UPDATE] 04-Projects/README.md - added Active Projects section + linked Hermes project; ASCII cleaned. Author: Cedric.
+2026-07-11 19:47 [UPDATE] 04-Projects/2026.05.11-MCSB-Webinar-Voice/2026.05.11 - Cedric Webinar Voice Integration and MCSB Knowledge Bridge.md - added Section 10 cross-link to Hermes project. Author: Cedric.
+2026-07-11 19:47 [CREATE] System/Debug_Logs/2026.07.11 - Vault ASCII Cleanup Report.md - full ASCII cleanup report. Author: Cedric.
+2026-07-11 19:47 [UPDATE] (vault-wide) 413 files ASCII-cleaned (typography + currency/emoji/accents per Mick's choices); verified zero non-ASCII in decodable text. Author: Cedric.
+2026-07-11 19:47 [CREATE] skills/non-ascii-sweep/SKILL.md + scripts/ascii_sweep.py - new non-ascii-sweep skill (scan/safe/full; pure-ASCII script). Author: Cedric.
+2026-07-11 19:47 [CREATE] scheduled task non-ascii-sweep-weekly (Sat 10:00 London, SAFE mode). Author: Cedric.
+2026-07-11 19:47 [UPDATE] SKILLS_REGISTRY.md - registered non-ascii-sweep (Section 1a) + non-ascii-sweep-weekly (Section 5); last-updated bumped. Author: Cedric.
+2026-07-11 19:47 [UPDATE] daily_git_commit.py - commit via -F tempfile (fixes Windows command-line-length failure); capped file lists; backup .bak-2026-07-11. Author: Cedric.
+2026-07-11 19:47 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated stack + Recent session block. Author: Cedric.
+2026-07-11 19:47 [BATON] Thread wrap - Vault ASCII Cleanup and Sweep Skill (+ Hermes project). Handover to LATEST.md + archive 2026.07.11 - 1947. Main body pushed (5e10b38); wrap edits ride 9pm sweep. Author: Cedric.

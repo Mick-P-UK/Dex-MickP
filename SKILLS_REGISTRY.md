@@ -2,7 +2,7 @@
 
 **Single source of truth for every skill Mick can run from any runtime.**
 
-- Last updated: 2026-05-30 (portfolio-post-creator v2.3 + wordpress-post-publisher v1.2; vault corruption repaired)
+- Last updated: 2026-07-11 (added non-ascii-sweep skill in V + scheduled task non-ascii-sweep-weekly; full vault ASCII cleanup completed)
 - Maintained by: Cedric (PAIDA)
 - Update rule: see CLAUDE.md "MANDATORY SKILL DEPLOY PROTOCOL". This file MUST be updated on every skill create, rename, version-bump, or deprecation.
 
@@ -60,6 +60,7 @@ Each row tells you four things: who built it, where it lives, how to invoke it, 
 | micks-stocknote | (Micks-View write command) | mick-cedric | V, M | active | Capture brain dump on a stock and write as structured Obsidian note to Micks-View Inbox |
 | micks-view-query | (Micks-View query command) | mick-cedric | V, M | active | Read mechanism for Micks-View library; chronological results |
 | nina-to-notion | "post Nina's report to Notion" / "log this to Notion" | mick-cedric | V, M | active | Post Nina's research markdown to Notion Research Database with EPIC, summary, tags |
+| non-ascii-sweep | "run the non-ascii sweep" / "clean the vault for non-ascii" / weekly Sat ~10am | mick-cedric | V, S (M pending) | active - scan/safe/full modes; SAFE auto-fixes typography and reports meaningful for review; script ascii_sweep.py is pure-ASCII by design (chr code points) so it cannot corrupt its own maps; weekly SAFE schedule non-ascii-sweep-weekly | Sweep the whole Dex-MickP vault for non-ASCII (corrupt) characters and clean them; dated report to System/Debug_Logs |
 | notebooklm-add-content | (on request) | mick-cedric | V, M | active | Add content to a NotebookLM notebook |
 | notebooklm-chat | (on request) | mick-cedric | V, M | active | Chat with a NotebookLM notebook |
 | notebooklm-notebook-setup | (on request) | mick-cedric | V, M | active | Set up a new NotebookLM notebook |
@@ -169,6 +170,7 @@ Live at: C:\Users\pavey\OneDrive\Documents\Claude\Scheduled\
 | morning-daily-briefing | 06:50 daily | mick-cedric | S | active | Daily briefing: calendar, email, Slack, portfolio/markets highlights |
 | uk-portfolios-daily | 07:34 Mon-Fri | mick-cedric | S | active | UK Active 10 / Yr2 LSE RNS news summary (uses lse-news-checker) |
 | us-portfolios-daily | 14:04 Mon-Fri | mick-cedric | S | active | US Active 10 / Yr2 news digest (uses us-news-checker) |
+| non-ascii-sweep-weekly | 10:00 Sat (cron 0 10 * * 6) | mick-cedric | S | active | Weekly SAFE non-ASCII sweep of the vault (uses non-ascii-sweep skill); reports meaningful non-ASCII for review |
 
 ---
 

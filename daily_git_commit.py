@@ -15,6 +15,7 @@ Run this daily via Windows Task Scheduler or cron.
 import subprocess
 import os
 import sys
+import tempfile
 from pathlib import Path
 from datetime import datetime
 
@@ -102,14 +103,18 @@ def create_commit_message(changed_files):
     
     if config_files:
         message_parts.append("Configuration changes:")
-        for f in config_files:
+        for f in config_files[:10]:
             message_parts.append(f"  - {f}")
+        if len(config_files) > 10:
+            message_parts.append(f"  ... and {len(config_files) - 10} more")
         message_parts.append("")
     
     if docs_files:
         message_parts.append("Documentation updates:")
-        for f in docs_files:
+        for f in docs_files[:10]:
             message_parts.append(f"  - {f}")
+        if len(docs_files) > 10:
+            message_parts.append(f"  ... and {len(docs_files) - 10} more")
         message_parts.append("")
     
     if other_files:
@@ -195,12 +200,25 @@ def main():
     # Create commit message
     commit_message = create_commit_message(changed_files)
     
-    # Commit
+    # Commit. Write the message to a temp file and use -F so a large file
+    # list can never exceed the Windows ~8191-char command-line limit.
     print("Creating commit...", end=" ", flush=True)
-    result = run_command(
-        f'git commit -m "{commit_message}"',
-        "Creating commit"
-    )
+    msg_file = None
+    try:
+        with tempfile.NamedTemporaryFile("w", suffix=".gitmsg", delete=False,
+                                         encoding="utf-8", newline="\n") as _mf:
+            _mf.write(commit_message)
+            msg_file = _mf.name
+        result = run_command(
+            f'git commit -F "{msg_file}"',
+            "Creating commit"
+        )
+    finally:
+        if msg_file and os.path.exists(msg_file):
+            try:
+                os.remove(msg_file)
+            except OSError:
+                pass
     
     if result and result.returncode == 0:
         print("Done")
