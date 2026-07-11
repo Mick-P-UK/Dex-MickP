@@ -38,6 +38,25 @@ _Session active as of 2026-07-10, Claude Code CLI._
 
 ---
 
+## Session: 2026-07-10 (Friday, Cursor) - PATH ASCII bug verified; obsolete SOP removed
+
+_Environment: Cursor IDE_
+
+### Context
+- Bug report: PATH UiPath analysis file should meet ASCII-only rule before commit; SOP workaround
+  should not remain in vault.
+
+### Actions Taken
+1. Byte-scanned working tree and HEAD commit of the PATH research file: zero non-ASCII bytes (hook PASS).
+2. Confirmed lines 173-174 already use ASCII spaced hyphens, not em dashes or smart quotes.
+3. Deleted obsolete one-off SOP "2026.07.10 - NOTE - Clean the PATH UiPath File for ASCII (Local)_v1.0.md"
+   (task was already completed in commit 2312d47; SOP was anti-pattern technical debt).
+
+### Outstanding / Next steps
+- Stage and commit SOP deletion when Mick is ready (not auto-committed).
+
+---
+
 ## Session: 2026-07-09 (Thursday, Cowork) - SOP library started + June posts held for Desktop
 
 _Environment: Cowork_
