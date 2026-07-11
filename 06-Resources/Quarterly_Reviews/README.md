@@ -6,11 +6,11 @@ End-of-quarter reviews and retrospectives.
 
 When you run `/quarter-review` at the end of each quarter, Dex creates a comprehensive review document here covering:
 
-- **Goal completion** — What you achieved against quarterly goals
-- **Pillar alignment** — How work distributed across strategic pillars
-- **Key learnings** — Insights to carry forward
-- **What worked / didn't work** — Process and workflow reflections
-- **Next quarter setup** — Context for planning ahead
+- **Goal completion** - What you achieved against quarterly goals
+- **Pillar alignment** - How work distributed across strategic pillars
+- **Key learnings** - Insights to carry forward
+- **What worked / didn't work** - Process and workflow reflections
+- **Next quarter setup** - Context for planning ahead
 
 ## Naming Convention
 

@@ -59,7 +59,7 @@ Claude performs better with pure XML because:
 - Consistent structure across skills reduces cognitive load
 - Progressive disclosure works more reliably
 
-Pure XML structure is not just a style preference—it's a performance optimization.
+Pure XML structure is not just a style preference-it's a performance optimization.
 </claude_performance>
 </why_xml>
 
@@ -256,8 +256,8 @@ The key is matching specificity to fragility:
 - **Creative operations** (code review, content generation, analysis): High freedom, heuristics and principles
 
 Mismatched specificity causes problems:
-- Too much freedom on fragile tasks → errors and failures
-- Too little freedom on creative tasks → rigid, suboptimal outputs
+- Too much freedom on fragile tasks -> errors and failures
+- Too little freedom on creative tasks -> rigid, suboptimal outputs
 </matching_specificity>
 </degrees_of_freedom_principle>
 

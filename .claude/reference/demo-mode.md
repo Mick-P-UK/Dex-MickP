@@ -70,7 +70,7 @@ Demo mode uses content from `System/Demo/` which includes:
 
 ### Career Development (Job 7)
 - Current_Role.md (L4 Senior PM)
-- Career_Ladder.md (L4 → L5 progression framework)
+- Career_Ladder.md (L4 -> L5 progression framework)
 - Review_History.md (2025 annual review)
 - Growth_Goals.md (3 priority development areas)
 - Evidence folder with achievements, feedback, and skill tracking
@@ -113,7 +113,7 @@ Run through all 12 scenarios in order, spending 3-4 minutes per scenario.
 - Start with the persona introduction (Alex Chen context) so they understand the role/situation
 - For each scenario, reference the "talking points" to highlight what matters
 - Show existing demo files first, then run commands to demonstrate the workflow
-- Emphasize how daily work connects to strategic priorities (pillars → quarters → weeks → days)
+- Emphasize how daily work connects to strategic priorities (pillars -> quarters -> weeks -> days)
 - Point out unique features: career evidence capture, learning system, company intelligence
 - End with Q&A about how they'd adapt it to their role
 

@@ -7,9 +7,9 @@ description: Workshop an improvement idea into implementation plan
 
 **In plain English:** Your design partner for making Dex better. Three ways to use it:
 
-1. **Workshop an idea** — Bring a fuzzy improvement idea, we'll shape it into a concrete plan
-2. **Review what's new** — See recent Claude Code changes and how they could improve your system
-3. **Full capability audit** — Find features you're not using that could help with your jobs-to-be-done
+1. **Workshop an idea** - Bring a fuzzy improvement idea, we'll shape it into a concrete plan
+2. **Review what's new** - See recent Claude Code changes and how they could improve your system
+3. **Full capability audit** - Find features you're not using that could help with your jobs-to-be-done
 
 **When to use it:**
 - "I have an idea but don't know how to implement it"
@@ -31,9 +31,9 @@ When invoked, offer these options:
 ```
 How would you like to explore improvements?
 
-1. **I have an idea** — Workshop a specific improvement
-2. **What's new?** — Review Claude Code changes since [last check: DATE]
-3. **Full audit** — Review all capabilities vs. your current usage
+1. **I have an idea** - Workshop a specific improvement
+2. **What's new?** - Review Claude Code changes since [last check: DATE]
+3. **Full audit** - Review all capabilities vs. your current usage
 
 Or just describe your idea and I'll start workshopping.
 ```
@@ -44,7 +44,7 @@ If user provides $IDEA argument, skip to Mode 1 directly.
 
 ## Mode 1: Workshop an Idea
 
-**Arguments:** $IDEA — High-level description of what you want to improve
+**Arguments:** $IDEA - High-level description of what you want to improve
 
 ### Phase 1: Understand
 
@@ -118,7 +118,7 @@ Drive toward concrete requirements through focused questions:
 - Confirm implementation approach preference
 - Identify acceptance criteria
 
-Loop between Research → Expand → Refine until requirements are solid.
+Loop between Research -> Expand -> Refine until requirements are solid.
 
 ### Phase 6: Plan + Update
 
@@ -138,7 +138,7 @@ Review recent Claude Code changes and suggest improvements.
 ### Process
 
 1. **Read state file:** `System/claude-code-state.json`
-   - If missing, this is first run — do a full scan instead
+   - If missing, this is first run - do a full scan instead
 
 2. **Fetch current changelog:** Use WebSearch to find latest Claude Code changelog/releases
 
@@ -152,7 +152,7 @@ Review recent Claude Code changes and suggest improvements.
 5. **Present findings:**
 
 ```
-📢 Claude Code Updates (since [last check date])
+ Claude Code Updates (since [last check date])
 
 === NEW CAPABILITIES ===
 
@@ -226,18 +226,18 @@ Review all known Claude Code capabilities against your current system.
 ```
 === CAPABILITY AUDIT ===
 
-✅ Using Well:
+[x] Using Well:
 - Commands (12 defined)
 - Skills (person-lookup)
 
-⚠️ Underutilized:
-- Hooks — No hooks configured. Could automate:
+[!] Underutilized:
+- Hooks - No hooks configured. Could automate:
   - Session start: Load context automatically
   - Post-edit: Update related files
 
-❌ Not Using:
-- Sub-agents — Could parallelize research tasks
-- MCP beyond tasks — Calendar, email integrations possible
+[ ] Not Using:
+- Sub-agents - Could parallelize research tasks
+- MCP beyond tasks - Calendar, email integrations possible
 
 === RECOMMENDATIONS ===
 
@@ -264,7 +264,7 @@ Create at: `plans/dex-improvement-[slug].md`
 # Dex Improvement: [Title]
 
 **Created:** [Date]
-**Status:** Planning → In Progress → Complete
+**Status:** Planning -> In Progress -> Complete
 **Pillar:** [pillar name if configured]
 
 ## Overview
@@ -342,7 +342,7 @@ Create at: `plans/dex-improvement-[slug].md`
 > - Sub-agent could parallel process: action items, follow-ups, person updates
 >
 > **Questions:**
-> 1. Where are items getting lost—during capture, or in follow-through?
+> 1. Where are items getting lost-during capture, or in follow-through?
 > 2. Would auto-drafted follow-up emails be valuable?
 ```
 
@@ -351,10 +351,10 @@ Create at: `plans/dex-improvement-[slug].md`
 /dex-improve
 > [selects "What's new?"]
 
-> 📢 Claude Code Updates (since 2026-01-15)
+>  Claude Code Updates (since 2026-01-15)
 >
 > === NEW CAPABILITIES ===
-> 1. Async Hooks — Hooks can now run without blocking
+> 1. Async Hooks - Hooks can now run without blocking
 >    - How it could help: Faster session startup
 >    - Effort: Low
 >
@@ -373,12 +373,12 @@ Create at: `plans/dex-improvement-[slug].md`
 
 > === CAPABILITY AUDIT ===
 >
-> ✅ Using Well: Commands (12), Skills (1)
-> ⚠️ Underutilized: Hooks (0 configured)
-> ❌ Not Using: Sub-agents, Advanced MCP
+> [x] Using Well: Commands (12), Skills (1)
+> [!] Underutilized: Hooks (0 configured)
+> [ ] Not Using: Sub-agents, Advanced MCP
 >
 > === TOP RECOMMENDATION ===
-> Add SessionStart hook — saves context loading time every session
+> Add SessionStart hook - saves context loading time every session
 >
 > Want me to workshop this improvement?
 ```
@@ -403,7 +403,7 @@ Create at: `plans/dex-improvement-[slug].md`
 
 ## Philosophy
 
-This isn't just requirements gathering—it's capability-aware design. The goal is to help you leverage Claude Code's full potential while building exactly what you need, nothing more.
+This isn't just requirements gathering-it's capability-aware design. The goal is to help you leverage Claude Code's full potential while building exactly what you need, nothing more.
 
 ---
 

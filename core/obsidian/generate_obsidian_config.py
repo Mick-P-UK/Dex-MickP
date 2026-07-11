@@ -94,7 +94,7 @@ def generate_config(vault_path: Path):
     
     (obsidian_dir / 'workspace.json').write_text(json.dumps(workspace, indent=2))
     
-    print("✅ Obsidian config generated")
+    print("[x] Obsidian config generated")
     print("   - Optimized settings for Dex")
     print("   - Keyboard shortcuts configured")
     print("   - Default workspace layout")

@@ -10,7 +10,7 @@
       "state_key": "portfolio-pp1-holdings",
       "captured_at": "2026-07-04T11:55:01.142Z",
       "url": "https://engine-5.sharescope.co.uk/SSWeb/app.do;jsessionid=1DF7BD968F779C1F91606F4790973E28",
-      "ax_snapshot": "- img\n- button \"Maximise list view\":\n  - img\n- button \"Show both views\":\n  - img\n- button \"Maximise green view\":\n  - img\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"?\"\n- 'button \"Layout: Default layout\"'\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"FTSE 100\"\n- button \"FTSE All\"\n- button \"US 500\"\n- button \"0 - 0 - 2026 - PP1 (UK)\"\n- button \"0 - 0 - 2026 - PP2 (UK)\"\n- button \"Other lists\"\n- button \"Portfolios\"\n- button \"Search\"\n- button \"\"\n- button \"Chart\"\n- button \"Financials\"\n- button \"News\"\n- button \"DD\"\n- button \"Alarms\"\n- button \"More\"\n- button \"\" [disabled]\n- button \"\"\n- button \"Add col...\"\n- button \"Delete\"\n- button \"Add to port\"\n- button \"Filter\"\n- button \"Sector\"\n- button\n- button \"My Ports\"\n- button \"Sharing\"\n- text: \"Portfolio: 0 - 0 - 2026 - PP1 (UK) sorted by Price % from Close (18 items)  No. TIDM Name Price +/- % from Close▾ %chg 5td %chg 31/12/25 MCap. (current) Shares in issue (m) TTM Net debt to MCAP (inc. p.d.) fc Net debt to MCAP (inc. p.d.) %chg 31/12/24 to 31/12/25 PSR (TTM) PSR (fc) Operating cash flow (m) Latest Q Op. c/flow 1y %chg (ann) Latest Q Op. cash flow %chg TTM Free cash flow (m) Latest Q FCF ps %chg Price to FCF Op cash conversion 1y %chg (ann) PEG PE fc PE TTM PE ROCE CROCI Price to NTAV TTM price to NTAV 1 TXP Touchstone Exploration Inc 2 IQE IQE PLC 3 ENQ EnQuest PLC 4 RBW Rainbow Rare Earths Ltd 5 ATM Andrada Mining Ltd 6 VALT Valterra Platinum Ltd 7 CPI Capita PLC 8 EDV Endeavour Mining PLC 9 GGP Greatland Resources Ltd 10 CNE Capricorn Energy PLC 11 CEG#2 Challenger Energy Group PLC 12 EAH Eco Animal Health Group PLC 13 IRON Ironveld PLC 14 RMM#1 Rambler Metals and Mining PLC 15 SAVE Savannah Energy PLC 16 SQZ Serica Energy PLC 17 THX Thor Explorations Ltd 18 HBR Harbour Energy PLC 7.25p ▲0.5p ▲7.41 ▲7.41 ▲5.07 £27.2 351.365 179.5 315.5 ▼-72.4 0.7 0.2 20.1 ▼-14.7 ▼-14.7 -5.6 -3.1 3.9 6.5 0.2 -4.9 0.3 0.3 44.85p ▲2.85p ▲6.79 ▼-4.17 ▲797 £597.0 1,331.033 12.7 3.5 ▼-55 5.1 4.2 8.1 ▲14.0 ▲529.5 -10.3 -48.4 -13.2 -3.4 6.1 6.1 23.25p ▲1.25p ▲5.68 ▲1.75 ▲119 £432.7 1,861.081 140.8 61.9 ▼-15.6 0.4 0.4 497.8 ▼-10.9 ▼-27.4 8.7 ▼-79.4 55.7 ▲4.8 8.1 3.4 1.5 1.5 21.5p ▲0.5p ▲2.38 ▲1.18 ▲21.1 £150.4 699.692 -0.3 -6.1 ▲44.9 -3.1 -4.6 -32.2 ▼-0.9 -15.5 -32.1 13.9 24.5 3.7p ▲0.08p ▲2.21 ▼-1.33 ▲7.25 £81.4 2,198.915 24.0 11.7 ▲62.4 2.5 2.1 -4.0 -12.6 -3.0 ▲44.8 -14.0 -32.2 2.6 2.7 £54.65 ▲115p ▲2.15 ▲4 ▼-12.1 £14,288.0 263.964 -3.1 -3.8 2.7 2.1 32,142.0 ▲60.3 ▲5.5 11,536.0 ▲37.9 27.1 ▼-34.0 0.2 18.8 9.6 18.8 17.8 9.4 3.2 3.2 311.5p ▲5.5p ▲1.80 ▲4.88 ▼-23.2 £373.1 119.780 123.2 127.9 ▲92.8 0.2 0.2 47.8 ▲198.7 -87.7 -4.0 6.3 7.2 6.3 -13.3 -5.1 -1.1 -1.1 £40.42 ▲46p ▲1.15 ▲4.93 ▲4.39 £9,402.1 241.055 -2.6 -13.5 ▲172 2.9 1.7 2,312.7 ▲39.1 ▲39.1 1,206.6 ▲60.9 13.6 ▼-25.5 0.2 16.7 8.1 16.7 35.8 23.4 4.5 4.1 606p ▲5.5p ▲0.92 ▼-5.9 ▲16.2 £3,874.9 672.906 ▲310 346p ▲1p ▲0.29 ▲23.6 ▲77.3 £237.6 68.666 -9.9 -44.1 ▼-33.4 2.4 1.7 149.9 ▲450.6 ▲74.1 52.5 ▲52.4 6.3 ▲53.8 0.07 13.5 4.6 13.5 4.0 13.1 0.9 0.9 10.1p 0p 0.00 0 0 ▲61.6 95.5p 0p 0.00 ▲7.91 ▼-8.61 £64.1 67.085 -21.2 -18.9 ▲47.2 0.8 0.8 12.1 3.0 14.2 ▲44.4 0.6 63.7 32.0 20.3 3.5 5.1 1.5 1.5 0.021p 0p 0.00 0 ▼-51.7 £4.5 20,719.867 -1.1 ▲13 831.1 -2.1 -2.2 -0.9 ▲222.5 -5.0 -7.9 0.2 0.2 5.375p 0p 0.00 0 £8.7 162.041 5.51p 0p 0.00 ▼-9.67 ▼-21.8 £115.1 2,088.591 414.2 426.5 ▼-73.1 0.5 0.4 121.7 ▲11.1 ▲11.1 -68.2 ▲1986.8 -1.1 ▲127.7 3.2 9.7 6.9 0.3 216.4p ▼-1.2p ▼-0.55 ▼-0.916 ▲23.8 £845.2 390.555 18.5 -6.7 ▲29.3 1.9 0.9 179.9 ▼-48.4 ▼-60.2 -29.2 -38.8 ▲113.3 5.3 3.1 -0.7 1.8 1.8 58.5p ▼-0.5p ▼-0.85 ▲0.862 ▼-16.4 £399.1 666.573 -29.7 -87.9 ▲324 1.6 1.0 185.7 ▲74.0 ▲74.0 200.0 ▲76.1 2.9 ▲51.5 0.1 2.6 2.0 2.4 66.5 60.1 1.4 1.3 214.2p ▼-3p ▼-1.38 ▼-2.19 ▲8.95 £3,361.5 1,569.332 112.5 147.0 ▼-23 0.4 0.3 7,260.0 ▲52.8 ▲113.7 982.0 4.2 ▲19.5 0.08 9.2 4.2 9.2 14.2 4.7 4.1 4.1\"\n- button \"Design...\"\n- 'button \"Setting: Equities - Start Layout\"'\n- button \"Equities - Main View\"\n- button \"Banking\"\n- button \"Equities - Start Layout\"\n- button \"Equities - Elstead Layout\"\n- button \"Key Data Layout\"\n- button \"Inv Trust Layout\"\n- button \"Share\"\n- button \"List\"\n- button \"All\"\n- button \"Filter\"\n- button \"\"\n- button \"\" [disabled]\n- button \"Latest\" [disabled]\n- textbox: 2026-07-04\n- button \"Go to date\"\n- button \"Sharing\"\n- text: News for Touchstone Exploration Inc - 13/08/24 to 03/07/26 Fri 3\n- superscript: rd\n- text: July 2026 07:00:16 RNS Touchstone Explrtn. - PURCHASE OF COMMON SHARES AND PDMR SHAREHOLDING Thu 11\n- superscript: th\n- text: June 2026 07:00:35 RNS Touchstone Explrtn. - Closing of the Fundraise and Notice of AGM Mon 8\n- superscript: th\n- text: \"June 2026 20:14:42 AN TRADING UPDATES: Forgent option agreement to buy Mount Sholl project 07:00:29 RNS Touchstone Explrtn. - Final Results of Fundraise and Wrap Retail Offer Fri 5\"\n- superscript: th\n- text: \"June 2026 19:28:11 AN TRADING UPDATES: Bluebird Mining NAV climbs 63% in month to June 2 07:00:02 RNS Touchstone Explrtn. - Initial Results of Fundraise Thu 4\"\n- superscript: th\n- text: June 2026 16:36:01 RNS Touchstone Explrtn. - Wrap Retail Offer for up to US$1.0m 16:35:01 RNS Touchstone Explrtn. - Proposed fundraise of US$10m to US$15m Fri 29\n- superscript: th\n- text: \"May 2026 19:50:52 AN EARNINGS AND TRADING: Petra cost cuts, business rescue at Finsch mine Thu 28\"\n- superscript: th\n- text: May 2026 07:00:17 RNS Touchstone Explrtn. - OPERATIONAL UPDATE Thu 14\n- superscript: th\n- text: \"May 2026 16:10:04 AN EARNINGS AND TRADING: CT Automotive lowers full-year profit forecast 10:58:56 AN WINNERS & LOSERS: Auction upgrades guidance; Aquila talks break down 10:58:28 MTN *Earnings Flash (TXP.TO) Touchstone Exploration Reports Q1 Revenue $12.5M; Recorded Net Loss of $2.38M. $0.01 Per Basic Share 07:00:40 RNS Touchstone Explrtn. - First Quarter 2026 Results and Operational Update Wed 1\"\n- superscript: st\n- text: \"April 2026 14:25:05 AN EARNINGS: Litigation Capital interim loss widens; Aurora UK NAV rises Tue 31\"\n- superscript: st\n- text: March 2026 07:00:57 RNS Touchstone Explrtn. - Annual 2025 Financial and Operating Results Mon 30\n- superscript: th\n- text: \"March 2026 20:39:21 AN TRADING UPDATES: Adalan restructures capital ahead of reverse takeover 12:05:16 MTN Touchstone Exploration Provides Update on Trinidad and Tobago Operations 07:00:46 RNS Touchstone Explrtn. - Touchstone Exploration Operational Update Fri 13\"\n- superscript: th\n- text: \"March 2026 10:15:42 AN SMALL-CAP WINNERS & LOSERS: CLS Holdings narrows annual loss Thu 12\"\n- superscript: th\n- text: March 2026 07:00:50 RNS Touchstone Explrtn. - Notification of Major Holdings Wed 25\n- superscript: th\n- text: February 2026 12:59:00 MTN Touchstone Exploration Reports 2025 Year-End Reserves 07:00:58 RNS Touchstone Explrtn. - 2025 YEAR-END RESERVES Thu 8\n- superscript: th\n- text: January 2026 08:15:03 RNS Touchstone Explrtn. - APPOINTMENT OF NON-EXECUTIVE DIRECTOR Mon 5\n- superscript: th\n- text: \"January 2026 10:52:04 AN AIM WINNERS & LOSERS: MobilityOne up; accesso expects to lose contract 07:00:34 RNS Touchstone Explrtn. - CARAPAL RIDGE-3 DRILLING RESULTS Tue 2\"\n- superscript: nd\n- text: December 2025 07:00:47 RNS Touchstone Explrtn. - PURCHASE OF SHARES & DIRECTOR / PDMR SHAREHOLDING Fri 21\n- superscript: st\n- text: November 2025 07:16:19 RNS Touchstone Explrtn. - DIRECTOR SHARE PURCHASE Wed 19\n- superscript: th\n- text: \"November 2025 15:06:41 AN DIRECTOR DEALINGS: B&M CEO buys GBP100,000 in shares after profit fall 07:00:40 RNS Touchstone Explrtn. - DIRECTOR SHARE PURCHASE Mon 17\"\n- superscript: th\n- text: November 2025 07:00:58 RNS Touchstone Explrtn. - NOTICE OF INVESTOR MEET COMPANY PRESENTATION Thu 13\n- superscript: th\n- text: \"November 2025 12:54:52 AN EARNINGS: Marks Electrical revenue falls; IDH profit improves 11:04:52 AN AIM WINNERS & LOSERS: WH Ireland receives takeover proposal 07:00:43 RNS Touchstone Explrtn. - APPOINTMENT OF NOMAD AND JOINT BROKERS 07:00:35 RNS Touchstone Explrtn. - THIRD QUARTER 2025 RESULTS Mon 10\"\n- superscript: th\n- text: November 2025 07:00:37 RNS Touchstone Explrtn. - MANAGEMENT CHANGE Wed 5\n- superscript: th\n- text: November 2025 07:21:56 RNS Touchstone Explrtn. - Executive Share Purchase Wed 29\n- superscript: th\n- text: October 2025 07:00:29 RNS Touchstone Explrtn. - Result of Retail Offer Fri 24\n- superscript: th\n- text: \"October 2025 13:30:30 AN IN BRIEF: Touchstone Exploration raises funds for capital programme 07:05:01 RNS Touchstone Explrtn. - TOUCHSTONE EXPLORATION RETAIL OFFER 07:00:34 RNS Touchstone Explrtn. - PRIVATE PLACEMENT AND RETAIL OFFER Fri 3\"\n- superscript: rd\n- text: October 2025 09:12:42 RNS Touchstone Explrtn. - Executive Share Purchase Mon 29\n- superscript: th\n- text: September 2025 07:00:00 RNS Touchstone Explrtn. - Cascadura-4ST2X Well Results and Operations Update Wed 24\n- superscript: th\n- text: \"September 2025 12:15:27 AN DIRECTOR DEALINGS: PureTech Health team buy GBP300,000 in shares Mon 22\"\n- superscript: nd\n- text: September 2025 07:00:00 RNS Touchstone Explrtn. - Purchase of Common Shares Thu 4\n- superscript: th\n- text: September 2025 07:00:00 RNS Touchstone Explrtn. - Executive share purchases Wed 27\n- superscript: th\n- text: August 2025 07:20:52 RNS Touchstone Explrtn. - GRANT OF LONG-TERM SHARE AWARDS Mon 18\n- superscript: th\n- text: August 2025 07:00:51 RNS Touchstone Explrtn. - Notice of Investor Presentation Thu 14\n- superscript: th\n- text: August 2025 18:22:25 AN Touchstone Exploration swings to loss and cuts output view 07:00:38 RNS Touchstone Explrtn. - Second Quarter 2025 Results Wed 13\n- superscript: th\n- text: August 2025 14:51:13 RNS Touchstone Explrtn. - US$12.5M CONVERTIBLE DEBENTURE ISSUANCE Wed 6\n- superscript: th\n- text: August 2025 07:00:00 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN AND PDMR PURCHASES Mon 14\n- superscript: th\n- text: \"July 2025 21:53:52 AN TRADING UPDATES: Great Southern Copper to prioritise Especularita 07:00:48 RNS Touchstone Explrtn. - CENTRAL BLOCK OPERATIONAL UPDATE Thu 10\"\n- superscript: th\n- text: July 2025 07:00:34 RNS Touchstone Explrtn. - TOTAL VOTING RIGHTS Mon 7\n- superscript: th\n- text: July 2025 07:00:32 RNS Touchstone Explrtn. - CASCADURA-5 WELL DRILLING RESULTS Fri 4\n- superscript: th\n- text: July 2025 07:00:26 RNS Touchstone Explrtn. - Employee Share Purchase Plan & PDMR Purchases Mon 30\n- superscript: th\n- text: June 2025 07:00:55 RNS Touchstone Explrtn. - Private Placement Update Mon 23\n- superscript: rd\n- text: June 2025 07:00:39 RNS Touchstone Explrtn. - PRIVATE PLACEMENT UPDATE Fri 20\n- superscript: th\n- text: June 2025 07:00:26 RNS Touchstone Explrtn. - RESULTS OF 2025 SHAREHOLDERS' MEETING Mon 16\n- superscript: th\n- text: June 2025 07:00:52 RNS Touchstone Explrtn. - Private Placement Update Thu 12\n- superscript: th\n- text: June 2025 13:54:45 AN UK shareholder meetings calendar - next 7 days Thu 5\n- superscript: th\n- text: June 2025 07:00:51 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN Tue 27\n- superscript: th\n- text: May 2025 07:00:00 RNS Touchstone Explrtn. - Notice of Investor Presentation Fri 16\n- superscript: th\n- text: May 2025 11:14:36 AN Touchstone Exploration completes USD28.4 million purchase of STCBL 07:00:38 RNS Touchstone Explrtn. - Closing of Acquisition Wed 14\n- superscript: th\n- text: \"May 2025 13:25:22 AN TRADING UPDATES: TPXimpact \\\"cautiously optimistic\\\"; Journeo wins deal 07:00:31 RNS Touchstone Explrtn. - First Quarter 2025 Financial and Operating Results Tue 13\"\n- superscript: th\n- text: May 2025 07:00:35 RNS Touchstone Explrtn. - Amended loan agreement to support acquisition Thu 8\n- superscript: th\n- text: May 2025 17:25:57 RNS Touchstone Explrtn. - Correction Announcement Private Placement 07:00:37 RNS Touchstone Explrtn. - Announcement of private placement Fri 2\n- superscript: nd\n- text: May 2025 07:00:30 RNS Touchstone Explrtn. - SHARE PURCHASE PLAN AND DIRECTOR / PDMR PURCHASES Tue 29\n- superscript: th\n- text: April 2025 07:00:40 RNS Touchstone Explrtn. - ACQUISITION UPDATE Mon 14\n- superscript: th\n- text: \"April 2025 14:25:49 AN EXECUTIVE CHANGES: New chairs for Wilmington, Touchstone, and EGT Wed 9\"\n- superscript: th\n- text: April 2025 07:00:57 RNS Touchstone Explrtn. - Changes to the Board of Directors Thu 3\n- superscript: rd\n- text: April 2025 07:00:37 RNS Touchstone Explrtn. - Employee Share Purchase & Director/PDMR Purchases Thu 20\n- superscript: th\n- text: \"March 2025 11:40:19 AN EARNINGS: James Fisher swings to profit; Eurocell expects Alunet boost 07:00:50 RNS Touchstone Explrtn. - ANNUAL 2024 FINANCIAL AND OPERATING RESULTS Thu 6\"\n- superscript: th\n- text: March 2025 07:00:52 RNS Touchstone Explrtn. - 2024 YEAR-END RESERVES Wed 5\n- superscript: th\n- text: March 2025 07:00:38 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN Tue 4\n- superscript: th\n- text: February 2025 07:00:24 RNS Touchstone Explrtn. - Executive Share Purchase Fri 3\n- superscript: rd\n- text: January 2025 07:00:18 RNS Touchstone Explrtn. - Employee Share Purchase Plan and PDMR Purchases Fri 13\n- superscript: th\n- text: \"December 2024 16:54:11 MTN Update: Touchstone Exploration Rises Nearly 9% as Says to Acquire Shell Trinidad Central Block for $23 Million 11:47:26 MTN Touchstone Exploration to Acquire Shell Trinidad Central Block for $23 Million 07:00:22 RNS Touchstone Explrtn. - ACQUISITION OF CENTRAL BLOCK Mon 9\"\n- superscript: th\n- text: December 2024 07:00:19 RNS Touchstone Explrtn. - Preliminary 2025 Guidance Thu 5\n- superscript: th\n- text: December 2024 09:14:21 RNS Touchstone Explrtn. - NOTICE OF INVESTOR PRESENTATION Wed 4\n- superscript: th\n- text: December 2024 07:00:26 RNS Touchstone Explrtn. - Executive Share Purchase Wed 13\n- superscript: th\n- text: \"November 2024 14:17:05 AN Touchstone cuts production guidance on Cascadura delays 10:43:58 AN AIM WINNERS & LOSERS: Biome revenue drops to hit full-year profits 07:00:28 RNS Touchstone Explrtn. - 3rd Quarter Results Mon 11\"\n- superscript: th\n- text: November 2024 07:00:39 RNS Touchstone Explrtn. - Cascadura Well Test Results Tue 5\n- superscript: th\n- text: November 2024 13:14:21 AN Touchstone Exploration touts new Rio Claro licence for Primera Oil 07:26:27 RNS Touchstone Explrtn. - Executive Share Purchase 07:00:27 RNS Touchstone Explrtn. - Execution of Rio Claro Licence Mon 4\n- superscript: th\n- text: November 2024 07:00:32 RNS Touchstone Explrtn. - Initial production from Cascadura C Tue 22\n- superscript: nd\n- text: \"October 2024 14:17:58 RNS Touchstone Explrtn. - TR-1: Notification of major holdings Wed 2\"\n- superscript: nd\n- text: October 2024 07:00:28 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN Mon 30\n- superscript: th\n- text: September 2024 10:12:33 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:00:00 RNS Touchstone Explrtn. - Cascadura well test results & operational update Fri 27\n- superscript: th\n- text: September 2024 11:45:32 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Thu 26\n- superscript: th\n- text: September 2024 11:26:29 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 10:42:31 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:00:13 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Wed 25\n- superscript: th\n- text: September 2024 16:32:03 RNS Touchstone Explrtn. - Offer Update confirmation of lapsing of offer 09:33:25 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 08:51:20 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Tue 24\n- superscript: th\n- text: \"September 2024 16:12:59 RNS Trinity Exploration - Court Hearing Details re: Withdrawal of TXP Scheme 08:24:16 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:29:52 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Mon 23\"\n- superscript: rd\n- text: September 2024 08:21:45 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 08:01:17 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Fri 20\n- superscript: th\n- text: September 2024 08:32:17 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:00:12 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Thu 19\n- superscript: th\n- text: September 2024 08:31:03 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:00:28 RNS Touchstone Explrtn. - Offer update lapsing of Acquisition 07:00:14 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 18\n- superscript: th\n- text: September 2024 08:53:57 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:58:44 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:25 RNS Trinity Exploration - Notice of Intention to Withdraw Touchstone Scheme Tue 17\n- superscript: th\n- text: September 2024 09:32:19 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 09:01:54 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 08:37:45 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Mon 16\n- superscript: th\n- text: September 2024 08:55:10 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Fri 13\n- superscript: th\n- text: September 2024 10:16:50 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:05:14 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:00:18 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Thu 12\n- superscript: th\n- text: September 2024 08:07:26 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:02:40 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:00:16 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 11\n- superscript: th\n- text: September 2024 09:37:41 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:53:30 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Tue 10\n- superscript: th\n- text: September 2024 10:26:23 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:42:50 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 08:29:59 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Mon 9\n- superscript: th\n- text: September 2024 09:19:43 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 07:42:16 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Fri 6\n- superscript: th\n- text: September 2024 09:15:02 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:35:34 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Thu 5\n- superscript: th\n- text: September 2024 11:25:52 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:11:07 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:43:17 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:51 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN 07:00:41 RNS Touchstone Explrtn. - EXERCISE OF STOCK OPTIONS & RULE 2.9 ANNOUNCEMENT Wed 4\n- superscript: th\n- text: September 2024 17:29:19 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure 10:24:09 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:20:41 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 08:09:31 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:20 RNS Touchstone Explrtn. - ALL SHARE OFFER Tue 3\n- superscript: rd\n- text: September 2024 08:58:19 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:48:12 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) - Touchstone Exploration In Mon 2\n- superscript: nd\n- text: September 2024 09:46:04 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 09:16:15 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Fri 30\n- superscript: th\n- text: August 2024 15:17:29 RNS Touchstone Explrtn. - All Share Offer 14:56:00 RNS Andrew Byles - Form 8.3 - Touchstone Exploration Inc. 09:22:20 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 08:54:31 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:31:51 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Thu 29\n- superscript: th\n- text: August 2024 09:44:23 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:43:06 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:38:49 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 28\n- superscript: th\n- text: August 2024 14:29:29 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure 12:48:29 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 11:27:47 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 09:45:39 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:09:09 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Tue 27\n- superscript: th\n- text: August 2024 09:59:12 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Fri 23\n- superscript: rd\n- text: \"August 2024 20:43:21 AN IN BRIEF: Touchstone has backing of 41% of Trinity shareholders 18:33:11 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure update 15:17:31 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 15:16:34 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 09:30:40 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 09:23:28 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Thu 22\"\n- superscript: nd\n- text: August 2024 10:28:25 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:03:04 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:06:10 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Wed 21\n- superscript: st\n- text: \"August 2024 12:15:52 AN IN BRIEF: Touchstone says takeover offer for Trinity won't be raised 11:20:31 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 09:18:14 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 08:27:15 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:33 RNS Touchstone Explrtn. - Waiver of Condition and Offer Declared Final 07:00:33 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure Tue 20\"\n- superscript: th\n- text: August 2024 11:10:43 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:00:12 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Mon 19\n- superscript: th\n- text: August 2024 10:04:53 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:10:07 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Fri 16\n- superscript: th\n- text: August 2024 09:49:12 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:07:01 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Thu 15\n- superscript: th\n- text: August 2024 10:51:31 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:22:53 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 07:00:07 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 14\n- superscript: th\n- text: August 2024 10:10:24 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) - Touchstone Exploration Inc 09:46:25 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 07:00:15 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Tue 13\n- superscript: th\n- text: \"August 2024 14:15:04 AN Touchstone Exploration profit soars as quarterly production ramps up 11:52:44 AN LONDON MARKET MIDDAY: Stocks turn red as sentiment sours before US PPI 11:27:50 AN CORRECT: SMALL-CAP WINNERS & LOSERS: Touchstone postponement at Coho 11:10:05 AN AIM WINNERS & LOSERS: Oriole Resources firms new gold targets at Mbe 10:57:59 AN SMALL-CAP WINNERS & LOSERS: Touchstone postpones Coho capital program 07:00:51 RNS Touchstone Explrtn. - TOUCHSTONE REPORTS SECOND QUARTER 2024 RESULTS\"\n- button \" Older\"\n- button \"Newer \"\n- button \"Back to top \"\n- button \"Design...\"\n- button \"AN\"\n- button \"MTN\"\n- button \"RNS\"\n- button \"Mentions\"\n- button \"Hot\"\n- button \"Corporate actions\"\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button \"?\"",
+      "ax_snapshot": "- img\n- button \"Maximise list view\":\n  - img\n- button \"Show both views\":\n  - img\n- button \"Maximise green view\":\n  - img\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"?\"\n- 'button \"Layout: Default layout\"'\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"FTSE 100\"\n- button \"FTSE All\"\n- button \"US 500\"\n- button \"0 - 0 - 2026 - PP1 (UK)\"\n- button \"0 - 0 - 2026 - PP2 (UK)\"\n- button \"Other lists\"\n- button \"Portfolios\"\n- button \"Search\"\n- button \"\"\n- button \"Chart\"\n- button \"Financials\"\n- button \"News\"\n- button \"DD\"\n- button \"Alarms\"\n- button \"More\"\n- button \"\" [disabled]\n- button \"\"\n- button \"Add col...\"\n- button \"Delete\"\n- button \"Add to port\"\n- button \"Filter\"\n- button \"Sector\"\n- button\n- button \"My Ports\"\n- button \"Sharing\"\n- text: \"Portfolio: 0 - 0 - 2026 - PP1 (UK) sorted by Price % from Close (18 items)  No. TIDM Name Price +/- % from Closev %chg 5td %chg 31/12/25 MCap. (current) Shares in issue (m) TTM Net debt to MCAP (inc. p.d.) fc Net debt to MCAP (inc. p.d.) %chg 31/12/24 to 31/12/25 PSR (TTM) PSR (fc) Operating cash flow (m) Latest Q Op. c/flow 1y %chg (ann) Latest Q Op. cash flow %chg TTM Free cash flow (m) Latest Q FCF ps %chg Price to FCF Op cash conversion 1y %chg (ann) PEG PE fc PE TTM PE ROCE CROCI Price to NTAV TTM price to NTAV 1 TXP Touchstone Exploration Inc 2 IQE IQE PLC 3 ENQ EnQuest PLC 4 RBW Rainbow Rare Earths Ltd 5 ATM Andrada Mining Ltd 6 VALT Valterra Platinum Ltd 7 CPI Capita PLC 8 EDV Endeavour Mining PLC 9 GGP Greatland Resources Ltd 10 CNE Capricorn Energy PLC 11 CEG#2 Challenger Energy Group PLC 12 EAH Eco Animal Health Group PLC 13 IRON Ironveld PLC 14 RMM#1 Rambler Metals and Mining PLC 15 SAVE Savannah Energy PLC 16 SQZ Serica Energy PLC 17 THX Thor Explorations Ltd 18 HBR Harbour Energy PLC 7.25p ^0.5p ^7.41 ^7.41 ^5.07 GBP27.2 351.365 179.5 315.5 v-72.4 0.7 0.2 20.1 v-14.7 v-14.7 -5.6 -3.1 3.9 6.5 0.2 -4.9 0.3 0.3 44.85p ^2.85p ^6.79 v-4.17 ^797 GBP597.0 1,331.033 12.7 3.5 v-55 5.1 4.2 8.1 ^14.0 ^529.5 -10.3 -48.4 -13.2 -3.4 6.1 6.1 23.25p ^1.25p ^5.68 ^1.75 ^119 GBP432.7 1,861.081 140.8 61.9 v-15.6 0.4 0.4 497.8 v-10.9 v-27.4 8.7 v-79.4 55.7 ^4.8 8.1 3.4 1.5 1.5 21.5p ^0.5p ^2.38 ^1.18 ^21.1 GBP150.4 699.692 -0.3 -6.1 ^44.9 -3.1 -4.6 -32.2 v-0.9 -15.5 -32.1 13.9 24.5 3.7p ^0.08p ^2.21 v-1.33 ^7.25 GBP81.4 2,198.915 24.0 11.7 ^62.4 2.5 2.1 -4.0 -12.6 -3.0 ^44.8 -14.0 -32.2 2.6 2.7 GBP54.65 ^115p ^2.15 ^4 v-12.1 GBP14,288.0 263.964 -3.1 -3.8 2.7 2.1 32,142.0 ^60.3 ^5.5 11,536.0 ^37.9 27.1 v-34.0 0.2 18.8 9.6 18.8 17.8 9.4 3.2 3.2 311.5p ^5.5p ^1.80 ^4.88 v-23.2 GBP373.1 119.780 123.2 127.9 ^92.8 0.2 0.2 47.8 ^198.7 -87.7 -4.0 6.3 7.2 6.3 -13.3 -5.1 -1.1 -1.1 GBP40.42 ^46p ^1.15 ^4.93 ^4.39 GBP9,402.1 241.055 -2.6 -13.5 ^172 2.9 1.7 2,312.7 ^39.1 ^39.1 1,206.6 ^60.9 13.6 v-25.5 0.2 16.7 8.1 16.7 35.8 23.4 4.5 4.1 606p ^5.5p ^0.92 v-5.9 ^16.2 GBP3,874.9 672.906 ^310 346p ^1p ^0.29 ^23.6 ^77.3 GBP237.6 68.666 -9.9 -44.1 v-33.4 2.4 1.7 149.9 ^450.6 ^74.1 52.5 ^52.4 6.3 ^53.8 0.07 13.5 4.6 13.5 4.0 13.1 0.9 0.9 10.1p 0p 0.00 0 0 ^61.6 95.5p 0p 0.00 ^7.91 v-8.61 GBP64.1 67.085 -21.2 -18.9 ^47.2 0.8 0.8 12.1 3.0 14.2 ^44.4 0.6 63.7 32.0 20.3 3.5 5.1 1.5 1.5 0.021p 0p 0.00 0 v-51.7 GBP4.5 20,719.867 -1.1 ^13 831.1 -2.1 -2.2 -0.9 ^222.5 -5.0 -7.9 0.2 0.2 5.375p 0p 0.00 0 GBP8.7 162.041 5.51p 0p 0.00 v-9.67 v-21.8 GBP115.1 2,088.591 414.2 426.5 v-73.1 0.5 0.4 121.7 ^11.1 ^11.1 -68.2 ^1986.8 -1.1 ^127.7 3.2 9.7 6.9 0.3 216.4p v-1.2p v-0.55 v-0.916 ^23.8 GBP845.2 390.555 18.5 -6.7 ^29.3 1.9 0.9 179.9 v-48.4 v-60.2 -29.2 -38.8 ^113.3 5.3 3.1 -0.7 1.8 1.8 58.5p v-0.5p v-0.85 ^0.862 v-16.4 GBP399.1 666.573 -29.7 -87.9 ^324 1.6 1.0 185.7 ^74.0 ^74.0 200.0 ^76.1 2.9 ^51.5 0.1 2.6 2.0 2.4 66.5 60.1 1.4 1.3 214.2p v-3p v-1.38 v-2.19 ^8.95 GBP3,361.5 1,569.332 112.5 147.0 v-23 0.4 0.3 7,260.0 ^52.8 ^113.7 982.0 4.2 ^19.5 0.08 9.2 4.2 9.2 14.2 4.7 4.1 4.1\"\n- button \"Design...\"\n- 'button \"Setting: Equities - Start Layout\"'\n- button \"Equities - Main View\"\n- button \"Banking\"\n- button \"Equities - Start Layout\"\n- button \"Equities - Elstead Layout\"\n- button \"Key Data Layout\"\n- button \"Inv Trust Layout\"\n- button \"Share\"\n- button \"List\"\n- button \"All\"\n- button \"Filter\"\n- button \"\"\n- button \"\" [disabled]\n- button \"Latest\" [disabled]\n- textbox: 2026-07-04\n- button \"Go to date\"\n- button \"Sharing\"\n- text: News for Touchstone Exploration Inc - 13/08/24 to 03/07/26 Fri 3\n- superscript: rd\n- text: July 2026 07:00:16 RNS Touchstone Explrtn. - PURCHASE OF COMMON SHARES AND PDMR SHAREHOLDING Thu 11\n- superscript: th\n- text: June 2026 07:00:35 RNS Touchstone Explrtn. - Closing of the Fundraise and Notice of AGM Mon 8\n- superscript: th\n- text: \"June 2026 20:14:42 AN TRADING UPDATES: Forgent option agreement to buy Mount Sholl project 07:00:29 RNS Touchstone Explrtn. - Final Results of Fundraise and Wrap Retail Offer Fri 5\"\n- superscript: th\n- text: \"June 2026 19:28:11 AN TRADING UPDATES: Bluebird Mining NAV climbs 63% in month to June 2 07:00:02 RNS Touchstone Explrtn. - Initial Results of Fundraise Thu 4\"\n- superscript: th\n- text: June 2026 16:36:01 RNS Touchstone Explrtn. - Wrap Retail Offer for up to US$1.0m 16:35:01 RNS Touchstone Explrtn. - Proposed fundraise of US$10m to US$15m Fri 29\n- superscript: th\n- text: \"May 2026 19:50:52 AN EARNINGS AND TRADING: Petra cost cuts, business rescue at Finsch mine Thu 28\"\n- superscript: th\n- text: May 2026 07:00:17 RNS Touchstone Explrtn. - OPERATIONAL UPDATE Thu 14\n- superscript: th\n- text: \"May 2026 16:10:04 AN EARNINGS AND TRADING: CT Automotive lowers full-year profit forecast 10:58:56 AN WINNERS & LOSERS: Auction upgrades guidance; Aquila talks break down 10:58:28 MTN *Earnings Flash (TXP.TO) Touchstone Exploration Reports Q1 Revenue $12.5M; Recorded Net Loss of $2.38M. $0.01 Per Basic Share 07:00:40 RNS Touchstone Explrtn. - First Quarter 2026 Results and Operational Update Wed 1\"\n- superscript: st\n- text: \"April 2026 14:25:05 AN EARNINGS: Litigation Capital interim loss widens; Aurora UK NAV rises Tue 31\"\n- superscript: st\n- text: March 2026 07:00:57 RNS Touchstone Explrtn. - Annual 2025 Financial and Operating Results Mon 30\n- superscript: th\n- text: \"March 2026 20:39:21 AN TRADING UPDATES: Adalan restructures capital ahead of reverse takeover 12:05:16 MTN Touchstone Exploration Provides Update on Trinidad and Tobago Operations 07:00:46 RNS Touchstone Explrtn. - Touchstone Exploration Operational Update Fri 13\"\n- superscript: th\n- text: \"March 2026 10:15:42 AN SMALL-CAP WINNERS & LOSERS: CLS Holdings narrows annual loss Thu 12\"\n- superscript: th\n- text: March 2026 07:00:50 RNS Touchstone Explrtn. - Notification of Major Holdings Wed 25\n- superscript: th\n- text: February 2026 12:59:00 MTN Touchstone Exploration Reports 2025 Year-End Reserves 07:00:58 RNS Touchstone Explrtn. - 2025 YEAR-END RESERVES Thu 8\n- superscript: th\n- text: January 2026 08:15:03 RNS Touchstone Explrtn. - APPOINTMENT OF NON-EXECUTIVE DIRECTOR Mon 5\n- superscript: th\n- text: \"January 2026 10:52:04 AN AIM WINNERS & LOSERS: MobilityOne up; accesso expects to lose contract 07:00:34 RNS Touchstone Explrtn. - CARAPAL RIDGE-3 DRILLING RESULTS Tue 2\"\n- superscript: nd\n- text: December 2025 07:00:47 RNS Touchstone Explrtn. - PURCHASE OF SHARES & DIRECTOR / PDMR SHAREHOLDING Fri 21\n- superscript: st\n- text: November 2025 07:16:19 RNS Touchstone Explrtn. - DIRECTOR SHARE PURCHASE Wed 19\n- superscript: th\n- text: \"November 2025 15:06:41 AN DIRECTOR DEALINGS: B&M CEO buys GBP100,000 in shares after profit fall 07:00:40 RNS Touchstone Explrtn. - DIRECTOR SHARE PURCHASE Mon 17\"\n- superscript: th\n- text: November 2025 07:00:58 RNS Touchstone Explrtn. - NOTICE OF INVESTOR MEET COMPANY PRESENTATION Thu 13\n- superscript: th\n- text: \"November 2025 12:54:52 AN EARNINGS: Marks Electrical revenue falls; IDH profit improves 11:04:52 AN AIM WINNERS & LOSERS: WH Ireland receives takeover proposal 07:00:43 RNS Touchstone Explrtn. - APPOINTMENT OF NOMAD AND JOINT BROKERS 07:00:35 RNS Touchstone Explrtn. - THIRD QUARTER 2025 RESULTS Mon 10\"\n- superscript: th\n- text: November 2025 07:00:37 RNS Touchstone Explrtn. - MANAGEMENT CHANGE Wed 5\n- superscript: th\n- text: November 2025 07:21:56 RNS Touchstone Explrtn. - Executive Share Purchase Wed 29\n- superscript: th\n- text: October 2025 07:00:29 RNS Touchstone Explrtn. - Result of Retail Offer Fri 24\n- superscript: th\n- text: \"October 2025 13:30:30 AN IN BRIEF: Touchstone Exploration raises funds for capital programme 07:05:01 RNS Touchstone Explrtn. - TOUCHSTONE EXPLORATION RETAIL OFFER 07:00:34 RNS Touchstone Explrtn. - PRIVATE PLACEMENT AND RETAIL OFFER Fri 3\"\n- superscript: rd\n- text: October 2025 09:12:42 RNS Touchstone Explrtn. - Executive Share Purchase Mon 29\n- superscript: th\n- text: September 2025 07:00:00 RNS Touchstone Explrtn. - Cascadura-4ST2X Well Results and Operations Update Wed 24\n- superscript: th\n- text: \"September 2025 12:15:27 AN DIRECTOR DEALINGS: PureTech Health team buy GBP300,000 in shares Mon 22\"\n- superscript: nd\n- text: September 2025 07:00:00 RNS Touchstone Explrtn. - Purchase of Common Shares Thu 4\n- superscript: th\n- text: September 2025 07:00:00 RNS Touchstone Explrtn. - Executive share purchases Wed 27\n- superscript: th\n- text: August 2025 07:20:52 RNS Touchstone Explrtn. - GRANT OF LONG-TERM SHARE AWARDS Mon 18\n- superscript: th\n- text: August 2025 07:00:51 RNS Touchstone Explrtn. - Notice of Investor Presentation Thu 14\n- superscript: th\n- text: August 2025 18:22:25 AN Touchstone Exploration swings to loss and cuts output view 07:00:38 RNS Touchstone Explrtn. - Second Quarter 2025 Results Wed 13\n- superscript: th\n- text: August 2025 14:51:13 RNS Touchstone Explrtn. - US$12.5M CONVERTIBLE DEBENTURE ISSUANCE Wed 6\n- superscript: th\n- text: August 2025 07:00:00 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN AND PDMR PURCHASES Mon 14\n- superscript: th\n- text: \"July 2025 21:53:52 AN TRADING UPDATES: Great Southern Copper to prioritise Especularita 07:00:48 RNS Touchstone Explrtn. - CENTRAL BLOCK OPERATIONAL UPDATE Thu 10\"\n- superscript: th\n- text: July 2025 07:00:34 RNS Touchstone Explrtn. - TOTAL VOTING RIGHTS Mon 7\n- superscript: th\n- text: July 2025 07:00:32 RNS Touchstone Explrtn. - CASCADURA-5 WELL DRILLING RESULTS Fri 4\n- superscript: th\n- text: July 2025 07:00:26 RNS Touchstone Explrtn. - Employee Share Purchase Plan & PDMR Purchases Mon 30\n- superscript: th\n- text: June 2025 07:00:55 RNS Touchstone Explrtn. - Private Placement Update Mon 23\n- superscript: rd\n- text: June 2025 07:00:39 RNS Touchstone Explrtn. - PRIVATE PLACEMENT UPDATE Fri 20\n- superscript: th\n- text: June 2025 07:00:26 RNS Touchstone Explrtn. - RESULTS OF 2025 SHAREHOLDERS' MEETING Mon 16\n- superscript: th\n- text: June 2025 07:00:52 RNS Touchstone Explrtn. - Private Placement Update Thu 12\n- superscript: th\n- text: June 2025 13:54:45 AN UK shareholder meetings calendar - next 7 days Thu 5\n- superscript: th\n- text: June 2025 07:00:51 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN Tue 27\n- superscript: th\n- text: May 2025 07:00:00 RNS Touchstone Explrtn. - Notice of Investor Presentation Fri 16\n- superscript: th\n- text: May 2025 11:14:36 AN Touchstone Exploration completes USD28.4 million purchase of STCBL 07:00:38 RNS Touchstone Explrtn. - Closing of Acquisition Wed 14\n- superscript: th\n- text: \"May 2025 13:25:22 AN TRADING UPDATES: TPXimpact \\\"cautiously optimistic\\\"; Journeo wins deal 07:00:31 RNS Touchstone Explrtn. - First Quarter 2025 Financial and Operating Results Tue 13\"\n- superscript: th\n- text: May 2025 07:00:35 RNS Touchstone Explrtn. - Amended loan agreement to support acquisition Thu 8\n- superscript: th\n- text: May 2025 17:25:57 RNS Touchstone Explrtn. - Correction Announcement Private Placement 07:00:37 RNS Touchstone Explrtn. - Announcement of private placement Fri 2\n- superscript: nd\n- text: May 2025 07:00:30 RNS Touchstone Explrtn. - SHARE PURCHASE PLAN AND DIRECTOR / PDMR PURCHASES Tue 29\n- superscript: th\n- text: April 2025 07:00:40 RNS Touchstone Explrtn. - ACQUISITION UPDATE Mon 14\n- superscript: th\n- text: \"April 2025 14:25:49 AN EXECUTIVE CHANGES: New chairs for Wilmington, Touchstone, and EGT Wed 9\"\n- superscript: th\n- text: April 2025 07:00:57 RNS Touchstone Explrtn. - Changes to the Board of Directors Thu 3\n- superscript: rd\n- text: April 2025 07:00:37 RNS Touchstone Explrtn. - Employee Share Purchase & Director/PDMR Purchases Thu 20\n- superscript: th\n- text: \"March 2025 11:40:19 AN EARNINGS: James Fisher swings to profit; Eurocell expects Alunet boost 07:00:50 RNS Touchstone Explrtn. - ANNUAL 2024 FINANCIAL AND OPERATING RESULTS Thu 6\"\n- superscript: th\n- text: March 2025 07:00:52 RNS Touchstone Explrtn. - 2024 YEAR-END RESERVES Wed 5\n- superscript: th\n- text: March 2025 07:00:38 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN Tue 4\n- superscript: th\n- text: February 2025 07:00:24 RNS Touchstone Explrtn. - Executive Share Purchase Fri 3\n- superscript: rd\n- text: January 2025 07:00:18 RNS Touchstone Explrtn. - Employee Share Purchase Plan and PDMR Purchases Fri 13\n- superscript: th\n- text: \"December 2024 16:54:11 MTN Update: Touchstone Exploration Rises Nearly 9% as Says to Acquire Shell Trinidad Central Block for $23 Million 11:47:26 MTN Touchstone Exploration to Acquire Shell Trinidad Central Block for $23 Million 07:00:22 RNS Touchstone Explrtn. - ACQUISITION OF CENTRAL BLOCK Mon 9\"\n- superscript: th\n- text: December 2024 07:00:19 RNS Touchstone Explrtn. - Preliminary 2025 Guidance Thu 5\n- superscript: th\n- text: December 2024 09:14:21 RNS Touchstone Explrtn. - NOTICE OF INVESTOR PRESENTATION Wed 4\n- superscript: th\n- text: December 2024 07:00:26 RNS Touchstone Explrtn. - Executive Share Purchase Wed 13\n- superscript: th\n- text: \"November 2024 14:17:05 AN Touchstone cuts production guidance on Cascadura delays 10:43:58 AN AIM WINNERS & LOSERS: Biome revenue drops to hit full-year profits 07:00:28 RNS Touchstone Explrtn. - 3rd Quarter Results Mon 11\"\n- superscript: th\n- text: November 2024 07:00:39 RNS Touchstone Explrtn. - Cascadura Well Test Results Tue 5\n- superscript: th\n- text: November 2024 13:14:21 AN Touchstone Exploration touts new Rio Claro licence for Primera Oil 07:26:27 RNS Touchstone Explrtn. - Executive Share Purchase 07:00:27 RNS Touchstone Explrtn. - Execution of Rio Claro Licence Mon 4\n- superscript: th\n- text: November 2024 07:00:32 RNS Touchstone Explrtn. - Initial production from Cascadura C Tue 22\n- superscript: nd\n- text: \"October 2024 14:17:58 RNS Touchstone Explrtn. - TR-1: Notification of major holdings Wed 2\"\n- superscript: nd\n- text: October 2024 07:00:28 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN Mon 30\n- superscript: th\n- text: September 2024 10:12:33 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:00:00 RNS Touchstone Explrtn. - Cascadura well test results & operational update Fri 27\n- superscript: th\n- text: September 2024 11:45:32 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Thu 26\n- superscript: th\n- text: September 2024 11:26:29 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 10:42:31 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:00:13 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Wed 25\n- superscript: th\n- text: September 2024 16:32:03 RNS Touchstone Explrtn. - Offer Update confirmation of lapsing of offer 09:33:25 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 08:51:20 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Tue 24\n- superscript: th\n- text: \"September 2024 16:12:59 RNS Trinity Exploration - Court Hearing Details re: Withdrawal of TXP Scheme 08:24:16 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:29:52 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Mon 23\"\n- superscript: rd\n- text: September 2024 08:21:45 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 08:01:17 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Fri 20\n- superscript: th\n- text: September 2024 08:32:17 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:00:12 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Thu 19\n- superscript: th\n- text: September 2024 08:31:03 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:00:28 RNS Touchstone Explrtn. - Offer update lapsing of Acquisition 07:00:14 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 18\n- superscript: th\n- text: September 2024 08:53:57 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:58:44 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:25 RNS Trinity Exploration - Notice of Intention to Withdraw Touchstone Scheme Tue 17\n- superscript: th\n- text: September 2024 09:32:19 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 09:01:54 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 08:37:45 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Mon 16\n- superscript: th\n- text: September 2024 08:55:10 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Fri 13\n- superscript: th\n- text: September 2024 10:16:50 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:05:14 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:00:18 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Thu 12\n- superscript: th\n- text: September 2024 08:07:26 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:02:40 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:00:16 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 11\n- superscript: th\n- text: September 2024 09:37:41 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 07:53:30 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Tue 10\n- superscript: th\n- text: September 2024 10:26:23 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:42:50 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 08:29:59 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Mon 9\n- superscript: th\n- text: September 2024 09:19:43 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 07:42:16 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Fri 6\n- superscript: th\n- text: September 2024 09:15:02 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:35:34 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Thu 5\n- superscript: th\n- text: September 2024 11:25:52 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:11:07 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 07:43:17 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:51 RNS Touchstone Explrtn. - EMPLOYEE SHARE PURCHASE PLAN 07:00:41 RNS Touchstone Explrtn. - EXERCISE OF STOCK OPTIONS & RULE 2.9 ANNOUNCEMENT Wed 4\n- superscript: th\n- text: September 2024 17:29:19 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure 10:24:09 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:20:41 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 08:09:31 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:20 RNS Touchstone Explrtn. - ALL SHARE OFFER Tue 3\n- superscript: rd\n- text: September 2024 08:58:19 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:48:12 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) - Touchstone Exploration In Mon 2\n- superscript: nd\n- text: September 2024 09:46:04 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 09:16:15 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Fri 30\n- superscript: th\n- text: August 2024 15:17:29 RNS Touchstone Explrtn. - All Share Offer 14:56:00 RNS Andrew Byles - Form 8.3 - Touchstone Exploration Inc. 09:22:20 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 08:54:31 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:31:51 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Thu 29\n- superscript: th\n- text: August 2024 09:44:23 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:43:06 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:38:49 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 28\n- superscript: th\n- text: August 2024 14:29:29 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure 12:48:29 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 11:27:47 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 09:45:39 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:09:09 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Tue 27\n- superscript: th\n- text: August 2024 09:59:12 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. Fri 23\n- superscript: rd\n- text: \"August 2024 20:43:21 AN IN BRIEF: Touchstone has backing of 41% of Trinity shareholders 18:33:11 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure update 15:17:31 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 15:16:34 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 09:30:40 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc. 09:23:28 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Thu 22\"\n- superscript: nd\n- text: August 2024 10:28:25 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:03:04 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 08:06:10 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Wed 21\n- superscript: st\n- text: \"August 2024 12:15:52 AN IN BRIEF: Touchstone says takeover offer for Trinity won't be raised 11:20:31 RNS Andrew Byles - Form 8.3 - Touchstone Exploration plc 09:18:14 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 08:27:15 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) 07:00:33 RNS Touchstone Explrtn. - Waiver of Condition and Offer Declared Final 07:00:33 RNS Touchstone Explrtn. - Rule 2.10(c) disclosure Tue 20\"\n- superscript: th\n- text: August 2024 11:10:43 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:00:12 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc Mon 19\n- superscript: th\n- text: August 2024 10:04:53 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:10:07 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Fri 16\n- superscript: th\n- text: August 2024 09:49:12 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 09:07:01 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) Thu 15\n- superscript: th\n- text: August 2024 10:51:31 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) 09:22:53 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 07:00:07 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Wed 14\n- superscript: th\n- text: August 2024 10:10:24 RNS Cavendish Securities - Form 8.5 (EPT/NON-RI) - Touchstone Exploration Inc 09:46:25 RNS Form 8.5 (EPT/RI) - Touchstone Exploration Inc 07:00:15 RNS Canaccord GenuityLtd - Form 8.5 (EPT/RI) Tue 13\n- superscript: th\n- text: \"August 2024 14:15:04 AN Touchstone Exploration profit soars as quarterly production ramps up 11:52:44 AN LONDON MARKET MIDDAY: Stocks turn red as sentiment sours before US PPI 11:27:50 AN CORRECT: SMALL-CAP WINNERS & LOSERS: Touchstone postponement at Coho 11:10:05 AN AIM WINNERS & LOSERS: Oriole Resources firms new gold targets at Mbe 10:57:59 AN SMALL-CAP WINNERS & LOSERS: Touchstone postpones Coho capital program 07:00:51 RNS Touchstone Explrtn. - TOUCHSTONE REPORTS SECOND QUARTER 2024 RESULTS\"\n- button \" Older\"\n- button \"Newer \"\n- button \"Back to top \"\n- button \"Design...\"\n- button \"AN\"\n- button \"MTN\"\n- button \"RNS\"\n- button \"Mentions\"\n- button \"Hot\"\n- button \"Corporate actions\"\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button \"?\"",
       "controls": [
         {
           "tag": "button",
@@ -993,7 +993,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jul 1",
+          "name": "@ShareScope - Jul 1",
           "visible": false
         },
         {
@@ -1011,7 +1011,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jul 1",
+          "name": "@ShareScope - Jul 1",
           "visible": false
         },
         {
@@ -1023,7 +1023,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 24/06/2026 | OPT, OMG, SAAS | Surely we can …",
+          "name": "Bi-Weekly Market Commentary | 24/06/2026 | OPT, OMG, SAAS | Surely we can ...",
           "visible": false
         },
         {
@@ -1035,7 +1035,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@RebelHQ · Jun 30",
+          "name": "@RebelHQ - Jun 30",
           "visible": false
         },
         {
@@ -1053,7 +1053,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 30",
+          "name": "@ShareScope - Jun 30",
           "visible": false
         },
         {
@@ -1131,7 +1131,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 29",
+          "name": "@ShareScope - Jun 29",
           "visible": false
         },
         {
@@ -1155,7 +1155,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 29",
+          "name": "@ShareScope - Jun 29",
           "visible": false
         },
         {
@@ -1179,7 +1179,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 26",
+          "name": "@ShareScope - Jun 26",
           "visible": false
         },
         {
@@ -1197,7 +1197,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 25",
+          "name": "@ShareScope - Jun 25",
           "visible": false
         },
         {
@@ -1233,7 +1233,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 24",
+          "name": "@ShareScope - Jun 24",
           "visible": false
         },
         {
@@ -1257,7 +1257,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 23",
+          "name": "@ShareScope - Jun 23",
           "visible": false
         },
         {
@@ -1275,7 +1275,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 22",
+          "name": "@ShareScope - Jun 22",
           "visible": false
         },
         {
@@ -1299,7 +1299,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 22",
+          "name": "@ShareScope - Jun 22",
           "visible": false
         },
         {
@@ -1377,7 +1377,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 19",
+          "name": "@ShareScope - Jun 19",
           "visible": false
         },
         {
@@ -1413,7 +1413,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 17",
+          "name": "@ShareScope - Jun 17",
           "visible": false
         },
         {
@@ -1437,7 +1437,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 10/06/2026 | ACSO, GTLY, MEGP | Cash versus …",
+          "name": "Bi-Weekly Market Commentary | 10/06/2026 | ACSO, GTLY, MEGP | Cash versus ...",
           "visible": false
         },
         {
@@ -1449,7 +1449,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 15",
+          "name": "@ShareScope - Jun 15",
           "visible": false
         },
         {
@@ -1527,7 +1527,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@RebelHQ · Jun 15",
+          "name": "@RebelHQ - Jun 15",
           "visible": false
         },
         {
@@ -1635,7 +1635,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@JamieCDubya · Jun 12",
+          "name": "@JamieCDubya - Jun 12",
           "visible": false
         },
         {
@@ -1653,7 +1653,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 12",
+          "name": "@ShareScope - Jun 12",
           "visible": false
         },
         {
@@ -1677,7 +1677,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Monthly Fund Focus: A defensive income and growth fund, Agentic AI and a F…",
+          "name": "Monthly Fund Focus: A defensive income and growth fund, Agentic AI and a F...",
           "visible": false
         },
         {
@@ -1689,7 +1689,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 10",
+          "name": "@ShareScope - Jun 10",
           "visible": false
         },
         {
@@ -1701,7 +1701,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "5 Strikes: Resellers join the IT component gold rush | CCC, KEYS, QTX - Sh…",
+          "name": "5 Strikes: Resellers join the IT component gold rush | CCC, KEYS, QTX - Sh...",
           "visible": false
         },
         {
@@ -1713,7 +1713,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@annabelbrodies · Jun 5",
+          "name": "@annabelbrodies - Jun 5",
           "visible": false
         },
         {
@@ -1749,7 +1749,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 3",
+          "name": "@ShareScope - Jun 3",
           "visible": false
         },
         {
@@ -1773,7 +1773,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 27/05/2026 |KNOS, KLR, DXRX | Energy costs a…",
+          "name": "Bi-Weekly Market Commentary | 27/05/2026 |KNOS, KLR, DXRX | Energy costs a...",
           "visible": false
         },
         {
@@ -1785,7 +1785,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@HTVIOLA · Jun 2",
+          "name": "@HTVIOLA - Jun 2",
           "visible": false
         },
         {
@@ -1803,7 +1803,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 2",
+          "name": "@ShareScope - Jun 2",
           "visible": false
         },
         {
@@ -1881,7 +1881,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@JamieCDubya · Jun 1",
+          "name": "@JamieCDubya - Jun 1",
           "visible": false
         },
         {
@@ -1917,7 +1917,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 1",
+          "name": "@ShareScope - Jun 1",
           "visible": false
         },
         {
@@ -1941,7 +1941,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 1",
+          "name": "@ShareScope - Jun 1",
           "visible": false
         },
         {
@@ -1965,7 +1965,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 29",
+          "name": "@ShareScope - May 29",
           "visible": false
         },
         {
@@ -1983,7 +1983,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@annabelbrodies · May 28",
+          "name": "@annabelbrodies - May 28",
           "visible": false
         },
         {
@@ -2007,7 +2007,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 28",
+          "name": "@ShareScope - May 28",
           "visible": false
         },
         {
@@ -2025,7 +2025,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 27",
+          "name": "@ShareScope - May 27",
           "visible": false
         },
         {
@@ -2049,7 +2049,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "5 Strikes: 2026 the journey so far & how big is significant? - ShareScope …",
+          "name": "5 Strikes: 2026 the journey so far & how big is significant? - ShareScope ...",
           "visible": false
         },
         {
@@ -2109,7 +2109,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2139,7 +2139,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2175,7 +2175,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2826,7 +2826,7 @@
     },
     {
       "state_key": "portfolio-pp1-transactions",
-      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[data-cmd=\"ViewTransactions\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" title=\"Transactions\" data-cmd=\"ViewTransactions\" class=\"btn ss-btn-toolbar ss-btn-view\">Transactions</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[data-cmd=\"ViewTransactions\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" title=\"Transactions\" data-cmd=\"ViewTransactions\" class=\"btn ss-btn-toolbar ss-btn-view\">Transactions</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
       "captured_at": "2026-07-04T11:55:42.205Z"
     },
     {

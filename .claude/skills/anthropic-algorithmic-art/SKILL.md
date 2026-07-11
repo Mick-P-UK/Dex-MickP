@@ -102,7 +102,7 @@ This is **VERY IMPORTANT**: The reference must be so refined that it enhances th
 
 With the philosophy AND conceptual framework established, express it through code. Pause to gather thoughts before proceeding. Use only the algorithmic philosophy created and the instructions below.
 
-### ⚠️ STEP 0: READ THE TEMPLATE FIRST ⚠️
+### [!] STEP 0: READ THE TEMPLATE FIRST [!]
 
 **CRITICAL: BEFORE writing any HTML:**
 
@@ -113,16 +113,16 @@ With the philosophy AND conceptual framework established, express it through cod
 5. **Replace only the VARIABLE sections** marked in the file's comments (algorithm, parameters, UI controls for parameters)
 
 **Avoid:**
-- ❌ Creating HTML from scratch
-- ❌ Inventing custom styling or color schemes
-- ❌ Using system fonts or dark themes
-- ❌ Changing the sidebar structure
+- [ ] Creating HTML from scratch
+- [ ] Inventing custom styling or color schemes
+- [ ] Using system fonts or dark themes
+- [ ] Changing the sidebar structure
 
 **Follow these practices:**
-- ✅ Copy the template's exact HTML structure
-- ✅ Keep Anthropic branding (Poppins/Lora fonts, light colors, gradient backdrop)
-- ✅ Maintain the sidebar layout (Seed → Parameters → Colors? → Actions)
-- ✅ Replace only the p5.js algorithm and parameter controls
+- [x] Copy the template's exact HTML structure
+- [x] Keep Anthropic branding (Poppins/Lora fonts, light colors, gradient backdrop)
+- [x] Maintain the sidebar layout (Seed -> Parameters -> Colors? -> Actions)
+- [x] Replace only the p5.js algorithm and parameter controls
 
 The template is the foundation. Build on it, don't rebuild it.
 
@@ -358,7 +358,7 @@ This is like creating a series of prints from the same plate - the algorithm is 
 
 ## THE CREATIVE PROCESS
 
-**User request** → **Algorithmic philosophy** → **Implementation**
+**User request** -> **Algorithmic philosophy** -> **Implementation**
 
 Each request is unique. The process involves:
 

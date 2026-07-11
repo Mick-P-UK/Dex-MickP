@@ -12,13 +12,13 @@ Agents and users should work in the same data space, not separate sandboxes. Whe
 Many agent implementations isolate the agent:
 
 ```
-┌─────────────────┐     ┌─────────────────┐
-│   User Space    │     │   Agent Space   │
-├─────────────────┤     ├─────────────────┤
-│ Documents/      │     │ agent_output/   │
-│ user_files/     │  ←→ │ temp_files/     │
-│ settings.json   │sync │ cache/          │
-└─────────────────┘     └─────────────────┘
++-----------------+     +-----------------+
+|   User Space    |     |   Agent Space   |
++-----------------+     +-----------------+
+| Documents/      |     | agent_output/   |
+| user_files/     |  <--> | temp_files/     |
+| settings.json   |sync | cache/          |
++-----------------+     +-----------------+
 ```
 
 Problems:
@@ -31,19 +31,19 @@ Problems:
 ### The Shared Workspace Pattern
 
 ```
-┌─────────────────────────────────────────┐
-│           Shared Workspace              │
-├─────────────────────────────────────────┤
-│ Documents/                              │
-│ ├── Research/                           │
-│ │   └── {bookId}/        ← Agent writes │
-│ │       ├── full_text.txt               │
-│ │       ├── introduction.md  ← User can edit │
-│ │       └── sources/                    │
-│ ├── Chats/               ← Both read/write │
-│ └── profile.md           ← Agent generates, user refines │
-└─────────────────────────────────────────┘
-         ↑                    ↑
++-----------------------------------------+
+|           Shared Workspace              |
++-----------------------------------------+
+| Documents/                              |
+| +-- Research/                           |
+| |   +-- {bookId}/        <- Agent writes |
+| |       +-- full_text.txt               |
+| |       +-- introduction.md  <- User can edit |
+| |       +-- sources/                    |
+| +-- Chats/               <- Both read/write |
+| +-- profile.md           <- Agent generates, user refines |
++-----------------------------------------+
+         ^                    ^
        User                 Agent
        (UI)               (Tools)
 ```
@@ -65,18 +65,18 @@ Organize by what the data represents, not who created it:
 
 ```
 Documents/
-├── Research/
-│   └── {bookId}/
-│       ├── full_text.txt        # Agent downloads
-│       ├── introduction.md      # Agent generates, user can edit
-│       ├── notes.md             # User adds, agent can read
-│       └── sources/
-│           └── {source}.md      # Agent gathers
-├── Chats/
-│   └── {conversationId}.json    # Both read/write
-├── Exports/
-│   └── {date}/                  # Agent generates for user
-└── profile.md                   # Agent generates from photos
++-- Research/
+|   +-- {bookId}/
+|       +-- full_text.txt        # Agent downloads
+|       +-- introduction.md      # Agent generates, user can edit
+|       +-- notes.md             # User adds, agent can read
+|       +-- sources/
+|           +-- {source}.md      # Agent gathers
++-- Chats/
+|   +-- {conversationId}.json    # Both read/write
++-- Exports/
+|   +-- {date}/                  # Agent generates for user
++-- profile.md                   # Agent generates from photos
 ```
 
 ### Don't Structure by Actor
@@ -84,12 +84,12 @@ Documents/
 ```
 # BAD - Separates by who created it
 Documents/
-├── user_created/
-│   └── notes.md
-├── agent_created/
-│   └── research.md
-└── system/
-    └── config.json
++-- user_created/
+|   +-- notes.md
++-- agent_created/
+|   +-- research.md
++-- system/
+    +-- config.json
 ```
 
 This creates artificial boundaries and makes collaboration harder.
@@ -332,13 +332,13 @@ Use files for content, database for indexing:
 
 ```
 Documents/
-├── Research/
-│   └── book_123/
-│       └── introduction.md   # Actual content (file)
++-- Research/
+|   +-- book_123/
+|       +-- introduction.md   # Actual content (file)
 
 Database:
-├── research_index
-│   └── { bookId: "book_123", path: "Research/book_123/introduction.md", ... }
++-- research_index
+|   +-- { bookId: "book_123", path: "Research/book_123/introduction.md", ... }
 ```
 
 ```swift
@@ -381,7 +381,7 @@ The agent's system prompt should acknowledge this:
 ## Working with User Content
 
 When you create content (introductions, research notes, etc.), the user may
-edit it afterward. Always read existing files before modifying them—the user
+edit it afterward. Always read existing files before modifying them-the user
 may have made improvements you should preserve.
 
 If a file exists and has been modified by the user (check the metadata or
@@ -479,17 +479,17 @@ The Every Reader app uses shared workspace for research:
 
 ```
 Documents/
-├── Research/
-│   └── book_moby_dick/
-│       ├── full_text.txt           # Agent downloads from Gutenberg
-│       ├── introduction.md         # Agent generates, personalized
-│       ├── sources/
-│       │   ├── whale_symbolism.md  # Agent researches
-│       │   └── melville_bio.md     # Agent researches
-│       └── user_notes.md           # User can add their own notes
-├── Chats/
-│   └── 2024-01-15.json             # Chat history
-└── profile.md                       # Agent generated from photos
++-- Research/
+|   +-- book_moby_dick/
+|       +-- full_text.txt           # Agent downloads from Gutenberg
+|       +-- introduction.md         # Agent generates, personalized
+|       +-- sources/
+|       |   +-- whale_symbolism.md  # Agent researches
+|       |   +-- melville_bio.md     # Agent researches
+|       +-- user_notes.md           # User can add their own notes
++-- Chats/
+|   +-- 2024-01-15.json             # Chat history
++-- profile.md                       # Agent generated from photos
 ```
 
 **How it works:**
@@ -562,20 +562,20 @@ class SharedWorkspace {
 
 ```
 iCloud Drive/
-└── YourApp/                          # Your app's container
-    └── Documents/                    # Visible in Files.app
-        ├── Journal/
-        │   ├── user/
-        │   │   └── 2025-01-15.md     # Syncs across devices
-        │   └── agent/
-        │       └── 2025-01-15.md     # Agent observations sync too
-        ├── Experiments/
-        │   └── magnesium-sleep/
-        │       ├── config.json
-        │       └── log.json
-        └── Research/
-            └── {topic}/
-                └── sources.md
++-- YourApp/                          # Your app's container
+    +-- Documents/                    # Visible in Files.app
+        +-- Journal/
+        |   +-- user/
+        |   |   +-- 2025-01-15.md     # Syncs across devices
+        |   +-- agent/
+        |       +-- 2025-01-15.md     # Agent observations sync too
+        +-- Experiments/
+        |   +-- magnesium-sleep/
+        |       +-- config.json
+        |       +-- log.json
+        +-- Research/
+            +-- {topic}/
+                +-- sources.md
 ```
 
 ### Handling Sync Conflicts
@@ -614,10 +614,10 @@ func writeJournalEntry(_ entry: JournalEntry, to url: URL) throws {
 
 ### What This Enables
 
-1. **User starts experiment on iPhone** → Agent creates `Experiments/sleep-tracking/config.json`
-2. **User opens app on iPad** → Same experiment visible, no sync code needed
-3. **Agent logs observation on iPhone** → Syncs to iPad automatically
-4. **User edits journal on iPad** → iPhone sees the edit
+1. **User starts experiment on iPhone** -> Agent creates `Experiments/sleep-tracking/config.json`
+2. **User opens app on iPad** -> Same experiment visible, no sync code needed
+3. **Agent logs observation on iPhone** -> Syncs to iPad automatically
+4. **User edits journal on iPad** -> iPhone sees the edit
 
 ### Entitlements Required
 

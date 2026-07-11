@@ -31,13 +31,13 @@ data = {
     "include_last_viewed_panel": True
 }
 
-print(f"→ Fetching 100 meetings from API...")
+print(f"-> Fetching 100 meetings from API...")
 response = requests.post(url, headers=headers, json=data)
 
 if response.status_code == 200:
     result = response.json()
     docs = result.get("docs", [])
-    print(f"✓ Retrieved {len(docs)} documents\n")
+    print(f"[x] Retrieved {len(docs)} documents\n")
     
     # Sort by date to find oldest
     meetings_by_date = []
@@ -51,7 +51,7 @@ if response.status_code == 200:
     # Check oldest meeting
     if meetings_by_date:
         oldest_date, oldest_doc = meetings_by_date[0]
-        print(f"→ OLDEST MEETING:")
+        print(f"-> OLDEST MEETING:")
         print(f"  - Title: {oldest_doc.get('title', 'Untitled')}")
         print(f"  - Date: {oldest_date}")
         print(f"  - ID: {oldest_doc.get('id', 'N/A')}")
@@ -66,14 +66,14 @@ if response.status_code == 200:
                 content_blocks = len(panel['content']['content'])
         
         if has_content:
-            print(f"  - ✓ HAS FULL CONTENT: {content_blocks} blocks")
+            print(f"  - [x] HAS FULL CONTENT: {content_blocks} blocks")
         else:
-            print(f"  - ✗ NO CONTENT AVAILABLE")
+            print(f"  - [ ] NO CONTENT AVAILABLE")
         
         # Check a middle one (around 50th)
         if len(meetings_by_date) > 50:
             mid_date, mid_doc = meetings_by_date[50]
-            print(f"\n→ MIDDLE MEETING (50th oldest):")
+            print(f"\n-> MIDDLE MEETING (50th oldest):")
             print(f"  - Title: {mid_doc.get('title', 'Untitled')}")
             print(f"  - Date: {mid_date}")
             
@@ -86,13 +86,13 @@ if response.status_code == 200:
                     content_blocks = len(panel['content']['content'])
             
             if has_content:
-                print(f"  - ✓ HAS FULL CONTENT: {content_blocks} blocks")
+                print(f"  - [x] HAS FULL CONTENT: {content_blocks} blocks")
             else:
-                print(f"  - ✗ NO CONTENT AVAILABLE")
+                print(f"  - [ ] NO CONTENT AVAILABLE")
         
         # Check most recent
         newest_date, newest_doc = meetings_by_date[-1]
-        print(f"\n→ NEWEST MEETING:")
+        print(f"\n-> NEWEST MEETING:")
         print(f"  - Title: {newest_doc.get('title', 'Untitled')}")
         print(f"  - Date: {newest_date}")
         
@@ -105,12 +105,12 @@ if response.status_code == 200:
                 content_blocks = len(panel['content']['content'])
         
         if has_content:
-            print(f"  - ✓ HAS FULL CONTENT: {content_blocks} blocks")
+            print(f"  - [x] HAS FULL CONTENT: {content_blocks} blocks")
         else:
-            print(f"  - ✗ NO CONTENT AVAILABLE")
+            print(f"  - [ ] NO CONTENT AVAILABLE")
         
         # Summary stats
-        print(f"\n→ SUMMARY:")
+        print(f"\n-> SUMMARY:")
         has_content_count = 0
         no_content_count = 0
         for _, doc in meetings_by_date:
@@ -130,5 +130,5 @@ if response.status_code == 200:
         print(f"  - Success rate: {(has_content_count/len(meetings_by_date)*100):.1f}%")
         
 else:
-    print(f"✗ API call failed: {response.status_code}")
+    print(f"[ ] API call failed: {response.status_code}")
     print(f"Response: {response.text}")

@@ -23,8 +23,8 @@ Your review approach follows these principles:
 ## 3. TYPE SAFETY CONVENTION
 
 - NEVER use `any` without strong justification and a comment explaining why
-- 🔴 FAIL: `const data: any = await fetchData()`
-- ✅ PASS: `const data: User[] = await fetchData<User[]>()`
+- [red] FAIL: `const data: any = await fetchData()`
+- [x] PASS: `const data: User[] = await fetchData<User[]>()`
 - Use proper type inference instead of explicit types when TypeScript can infer correctly
 - Leverage union types, discriminated unions, and type guards
 
@@ -49,8 +49,8 @@ For each deletion, verify:
 
 If you can't understand what a component/function does in 5 seconds from its name:
 
-- 🔴 FAIL: `doStuff`, `handleData`, `process`
-- ✅ PASS: `validateUserEmail`, `fetchUserProfile`, `transformApiResponse`
+- [red] FAIL: `doStuff`, `handleData`, `process`
+- [x] PASS: `validateUserEmail`, `fetchUserProfile`, `transformApiResponse`
 
 ## 7. MODULE EXTRACTION SIGNALS
 
@@ -65,8 +65,8 @@ Consider extracting to a separate module when you see multiple of these:
 
 - Group imports: external libs, internal modules, types, styles
 - Use named imports over default exports for better refactoring
-- 🔴 FAIL: Mixed import order, wildcard imports
-- ✅ PASS: Organized, explicit imports
+- [red] FAIL: Mixed import order, wildcard imports
+- [x] PASS: Organized, explicit imports
 
 ## 9. MODERN TYPESCRIPT PATTERNS
 

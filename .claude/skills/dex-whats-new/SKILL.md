@@ -36,21 +36,21 @@ $MODE: Optional flags
 3. Read `06-Resources/Learnings/Working_Preferences.md` - check for trends
 
 **Extract improvement opportunities:**
-- Recurring mistakes → suggest preventive measures
-- Gaps in documentation → suggest additions
-- Workflow inefficiencies → suggest automations
-- User patterns → suggest customizations
+- Recurring mistakes -> suggest preventive measures
+- Gaps in documentation -> suggest additions
+- Workflow inefficiencies -> suggest automations
+- User patterns -> suggest customizations
 
 **Present findings:**
 
 ```
-🧠 LEARNINGS FROM YOUR USAGE
+ LEARNINGS FROM YOUR USAGE
 
 Since last review: [X] session learnings captured
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-📊 PATTERNS IDENTIFIED
+ PATTERNS IDENTIFIED
 
 1. [Pattern name]
    Observed: [frequency] times
@@ -60,9 +60,9 @@ Since last review: [X] session learnings captured
 2. [Pattern name]
    ...
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-💡 SUGGESTED IMPROVEMENTS
+ SUGGESTED IMPROVEMENTS
 
 Based on what you've learned, here's how to improve Dex:
 
@@ -125,14 +125,14 @@ Identify what's new since `last_check`:
 **If Claude Code updates found:**
 
 ```
-🆕 CLAUDE CODE UPDATES
+ CLAUDE CODE UPDATES
 
 Last checked: [date] (X days ago)
 Current version: [version]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-🆕 NEW FEATURES
+ NEW FEATURES
 
 1. [Feature Name]
    What: [Plain English description]
@@ -144,9 +144,9 @@ Current version: [version]
    For you: [Specific improvement idea]
    Effort: Medium
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-💡 SUGGESTED IMPROVEMENTS
+ SUGGESTED IMPROVEMENTS
 
 Based on what's new, here are concrete things you could add to Dex:
 
@@ -162,7 +162,7 @@ Or run `/dex-improve` to workshop custom ideas.
 **If no Claude updates:**
 
 ```
-✅ Claude Code is up to date!
+[x] Claude Code is up to date!
 
 Last checked: Today
 Current version: [version]
@@ -177,21 +177,21 @@ No new features since your last check.
 When running without flags, show BOTH sections:
 
 ```
-🔄 DEX SYSTEM IMPROVEMENT REVIEW
+ DEX SYSTEM IMPROVEMENT REVIEW
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-🧠 FROM YOUR USAGE
+ FROM YOUR USAGE
 [Session learnings section]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-🆕 FROM CLAUDE CODE
+ FROM CLAUDE CODE
 [Claude updates section]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-💡 COMBINED IMPROVEMENTS
+ COMBINED IMPROVEMENTS
 
 Pulling together learnings + new capabilities:
 
@@ -241,7 +241,7 @@ When `--full` is provided, include educational deep-dives:
 For each feature, add:
 
 ```
-📚 DEEP DIVE: [Feature Name]
+ DEEP DIVE: [Feature Name]
 
 **What it is:**
 [2-3 paragraph explanation of the capability]
@@ -300,18 +300,18 @@ Current Claude Code features to track:
 ## Example Output
 
 ```
-📢 Claude Code Updates
+ Claude Code Updates
 
 Last checked: 2026-01-15 (8 days ago)
 Current version: 1.0.32
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-🆕 NEW FEATURES
+ NEW FEATURES
 
 1. Async Hooks
    What: Hooks can now run without blocking the main conversation
-   For you: Faster session starts — load context in background
+   For you: Faster session starts - load context in background
    Effort: Low
 
 2. Sub-agent Communication
@@ -324,9 +324,9 @@ Current version: 1.0.32
    For you: Get notified when calendar changes, tasks update
    Effort: High (requires MCP server changes)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-----------------------------------
 
-💡 SUGGESTED IMPROVEMENTS
+ SUGGESTED IMPROVEMENTS
 
 1. Background Context Loading
    Uses: Async Hooks
@@ -376,5 +376,5 @@ Then proceed with first-run behavior.
 
 ## Related Commands
 
-- `/dex-improve` — Full design partner (includes this + workshopping + audit)
-- `/create-mcp` — Build new integrations when new MCP features enable them
+- `/dex-improve` - Full design partner (includes this + workshopping + audit)
+- `/create-mcp` - Build new integrations when new MCP features enable them

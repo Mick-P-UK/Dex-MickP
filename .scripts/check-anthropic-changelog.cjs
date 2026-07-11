@@ -199,7 +199,7 @@ async function detectChanges(state) {
 // ============================================================================
 
 function createPendingAlert(changes) {
-  const content = `# 🆕 Claude Code Updates Detected
+  const content = `#  Claude Code Updates Detected
 
 **Detected:** ${new Date().toISOString()}
 **Source:** ${changes.source}

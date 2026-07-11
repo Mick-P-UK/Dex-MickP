@@ -31,8 +31,8 @@ mkdir -p ~/.claude/skills/{skill-name}/templates
 
 Gather requirements:
 - What sections does the output need?
-- What information varies between uses? (→ placeholders)
-- What stays constant? (→ static structure)
+- What information varies between uses? (-> placeholders)
+- What stays constant? (-> static structure)
 
 ## Step 5: Write Template File
 

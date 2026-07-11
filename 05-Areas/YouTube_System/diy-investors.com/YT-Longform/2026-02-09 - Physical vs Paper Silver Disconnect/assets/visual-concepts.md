@@ -416,10 +416,10 @@ On-screen calculation showing the math behind paper claims on silver. Build step
 
 **Data Points:**
 - **Step 1:** Open Interest = 143,180 contracts (as of Feb 3, 2026)
-- **Step 2:** 143,180 × 5,000 oz/contract = **715,900,000 oz**
+- **Step 2:** 143,180 x 5,000 oz/contract = **715,900,000 oz**
 - **Step 3:** Total Paper Claims = 715.9 million oz
 - **Step 4:** Registered Inventory = 82 million oz
-- **Step 5:** Leverage Ratio = 715.9M ÷ 82M = **8.7:1**
+- **Step 5:** Leverage Ratio = 715.9M / 82M = **8.7:1**
 
 **Style:**
 - Colors: Black background, white text, gold for final answer
@@ -707,18 +707,18 @@ Side-by-side pros and cons of owning physical silver. Balanced, educational pres
 **Data Points:**
 
 **PROS:**
-- ✓ Own actual metal (no counterparty risk)
-- ✓ Protected from paper market manipulation
-- ✓ Premiums may increase in shortage
-- ✓ Resale value regardless of paper price
-- ✓ Tangible asset
+- [x] Own actual metal (no counterparty risk)
+- [x] Protected from paper market manipulation
+- [x] Premiums may increase in shortage
+- [x] Resale value regardless of paper price
+- [x] Tangible asset
 
 **CONS:**
-- ✗ Paying current premiums (5-19% over spot)
-- ✗ Storage and security costs
-- ✗ Lower liquidity than paper
-- ✗ Premiums can collapse if supply normalizes
-- ✗ No income or yield
+- [ ] Paying current premiums (5-19% over spot)
+- [ ] Storage and security costs
+- [ ] Lower liquidity than paper
+- [ ] Premiums can collapse if supply normalizes
+- [ ] No income or yield
 
 **Style:**
 - Colors: Green checkmarks for pros, red X's for cons
@@ -747,18 +747,18 @@ Pros and cons of paper silver investments (ETFs, futures, mining stocks).
 **Data Points:**
 
 **PROS:**
-- ✓ Liquid, easy to trade
-- ✓ Lower transaction costs
-- ✓ No storage hassle
-- ✓ Leverage available (futures)
-- ✓ Exposure without physical possession
+- [x] Liquid, easy to trade
+- [x] Lower transaction costs
+- [x] No storage hassle
+- [x] Leverage available (futures)
+- [x] Exposure without physical possession
 
 **CONS:**
-- ✗ Counterparty risk (ETF, broker, exchange)
-- ✗ May not convert to physical in shortage
-- ✗ Paper price may not capture premium expansion
-- ✗ Subject to manipulation concerns
-- ✗ Margin calls/forced liquidation risk
+- [ ] Counterparty risk (ETF, broker, exchange)
+- [ ] May not convert to physical in shortage
+- [ ] Paper price may not capture premium expansion
+- [ ] Subject to manipulation concerns
+- [ ] Margin calls/forced liquidation risk
 
 **Style:**
 - Colors: Green checkmarks, red X's
@@ -856,8 +856,8 @@ Multi-panel dashboard showing key metrics to track the silver disconnect. Should
 
 **COMEX REGISTERED INVENTORY**
 - Current: 82M oz
-- Trend: ⬇️ Down 75% since 2020
-- Alert: 🔴 RED (historic lows)
+- Trend: v Down 75% since 2020
+- Alert: [red] RED (historic lows)
 
 **PHYSICAL PREMIUMS**
 - Generic Rounds: 5-7% over spot
@@ -867,7 +867,7 @@ Multi-panel dashboard showing key metrics to track the silver disconnect. Should
 **ETF HOLDINGS**
 - SLV: 510+ M oz (stable/slight growth)
 - PSLV: 214.7M oz (stable)
-- Trend: ➡️ Steady
+- Trend: -> Steady
 
 **SILVER:GOLD RATIO**
 - Current: ~33:1
@@ -878,7 +878,7 @@ Multi-panel dashboard showing key metrics to track the silver disconnect. Should
 - Total OI: 143,180 contracts (715.9M oz)
 - Leverage Ratio: 8.7:1
 - March Ratio: 5.2-5.5:1
-- Trend: 🔴 Extreme
+- Trend: [red] Extreme
 
 **Style:**
 - Colors: Green (healthy), yellow (caution), red (alert) - traffic light system
@@ -996,7 +996,7 @@ Standard DIY Investors end screen with subscribe button, Inner Circle CTA, and n
 
 **Elements:**
 - Price chart with dramatic spike and crash (red line)
-- "$121 → $81" text with arrow
+- "$121 -> $81" text with arrow
 - "31% CRASH" text overlay
 - Mick's face (shocked expression, prominent)
 - Color scheme: Red/black for drama
@@ -1103,12 +1103,12 @@ Based on script structure:
 ## PRODUCTION TIMELINE & RESOURCE ALLOCATION
 
 ### Phase 1: Pre-Production (Estimated 15-20 hours)
-- Script finalization: 2 hours ✓ (COMPLETED)
-- Visual concept design: 3 hours ✓ (THIS DOCUMENT)
+- Script finalization: 2 hours [x] (COMPLETED)
+- Visual concept design: 3 hours [x] (THIS DOCUMENT)
 - Stock footage sourcing: 2 hours
 - Screen recording sessions: 2 hours
 - Custom graphic design setup: 3 hours
-- Thumbnail design: 6 hours (3 variants × 2 hours each)
+- Thumbnail design: 6 hours (3 variants x 2 hours each)
 - Opening title card: 1.5 hours
 
 ### Phase 2: Production (Estimated 25-30 hours)

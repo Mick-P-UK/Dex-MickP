@@ -92,19 +92,19 @@
         {
           "level": "Entry",
           "offering": "Inner Circle",
-          "price": "£380/year",
+          "price": "GBP380/year",
           "goal": "Get serious DIY investors started with webinars, portfolio guidance, and education"
         },
         {
           "level": "Premium",
           "offering": "Plaza Group",
-          "price": "£720/year",
+          "price": "GBP720/year",
           "goal": "Provide experienced investors with daily access and real money portfolio transparency"
         },
         {
           "level": "Parallel Track",
           "offering": "AI for Investing",
-          "price": "£300/year",
+          "price": "GBP300/year",
           "goal": "Help investors leverage AI regardless of their investing experience level"
         }
       ],

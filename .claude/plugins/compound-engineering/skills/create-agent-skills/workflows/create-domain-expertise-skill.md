@@ -1,7 +1,7 @@
 # Workflow: Create Exhaustive Domain Expertise Skill
 
 <objective>
-Build a comprehensive execution skill that does real work in a specific domain. Domain expertise skills are full-featured build skills with exhaustive domain knowledge in references, complete workflows for the full lifecycle (build → debug → optimize → ship), and can be both invoked directly by users AND loaded by other skills (like create-plans) for domain knowledge.
+Build a comprehensive execution skill that does real work in a specific domain. Domain expertise skills are full-featured build skills with exhaustive domain knowledge in references, complete workflows for the full lifecycle (build -> debug -> optimize -> ship), and can be both invoked directly by users AND loaded by other skills (like create-plans) for domain knowledge.
 </objective>
 
 <critical_distinction>
@@ -15,11 +15,11 @@ Examples:
 - `expertise/web-scraping` - Build scrapers, handle all edge cases, deploy at scale
 
 Domain expertise skills:
-- ✅ Execute tasks (build, debug, optimize, ship)
-- ✅ Have comprehensive domain knowledge in references
-- ✅ Are invoked directly by users ("build a macOS app")
-- ✅ Can be loaded by other skills (create-plans reads references for planning)
-- ✅ Cover the FULL lifecycle, not just getting started
+- [x] Execute tasks (build, debug, optimize, ship)
+- [x] Have comprehensive domain knowledge in references
+- [x] Are invoked directly by users ("build a macOS app")
+- [x] Can be loaded by other skills (create-plans reads references for planning)
+- [x] Cover the FULL lifecycle, not just getting started
 </critical_distinction>
 
 <required_reading>
@@ -149,41 +149,41 @@ Structure references by domain concerns, NOT by arbitrary categories.
 **For game development example:**
 ```
 references/
-├── architecture.md         # ECS, component-based, state machines
-├── libraries.md           # Pygame, Arcade, Panda3D (when to use each)
-├── graphics-rendering.md  # 2D/3D rendering, sprites, shaders
-├── physics.md             # Collision, physics engines
-├── audio.md               # Sound effects, music, spatial audio
-├── input.md               # Keyboard, mouse, gamepad, touch
-├── ui-menus.md            # HUD, menus, dialogs
-├── game-loop.md           # Update/render loop, fixed timestep
-├── state-management.md    # Game states, scene management
-├── networking.md          # Multiplayer, client-server, P2P
-├── asset-pipeline.md      # Loading, caching, optimization
-├── testing-debugging.md   # Unit tests, profiling, debugging tools
-├── performance.md         # Optimization, profiling, benchmarking
-├── packaging.md           # Building executables, installers
-├── distribution.md        # Steam, itch.io, app stores
-└── anti-patterns.md       # Common mistakes, what NOT to do
++-- architecture.md         # ECS, component-based, state machines
++-- libraries.md           # Pygame, Arcade, Panda3D (when to use each)
++-- graphics-rendering.md  # 2D/3D rendering, sprites, shaders
++-- physics.md             # Collision, physics engines
++-- audio.md               # Sound effects, music, spatial audio
++-- input.md               # Keyboard, mouse, gamepad, touch
++-- ui-menus.md            # HUD, menus, dialogs
++-- game-loop.md           # Update/render loop, fixed timestep
++-- state-management.md    # Game states, scene management
++-- networking.md          # Multiplayer, client-server, P2P
++-- asset-pipeline.md      # Loading, caching, optimization
++-- testing-debugging.md   # Unit tests, profiling, debugging tools
++-- performance.md         # Optimization, profiling, benchmarking
++-- packaging.md           # Building executables, installers
++-- distribution.md        # Steam, itch.io, app stores
++-- anti-patterns.md       # Common mistakes, what NOT to do
 ```
 
 **For macOS app development example:**
 ```
 references/
-├── app-architecture.md     # State management, dependency injection
-├── swiftui-patterns.md     # Declarative UI patterns
-├── appkit-integration.md   # Using AppKit with SwiftUI
-├── concurrency-patterns.md # Async/await, actors, structured concurrency
-├── data-persistence.md     # Storage strategies
-├── networking.md           # URLSession, async networking
-├── system-apis.md          # macOS-specific frameworks
-├── testing-tdd.md          # Testing patterns
-├── testing-debugging.md    # Debugging tools and techniques
-├── performance.md          # Profiling, optimization
-├── design-system.md        # Platform conventions
-├── macos-polish.md         # Native feel, accessibility
-├── security-code-signing.md # Signing, notarization
-└── project-scaffolding.md  # CLI-based setup
++-- app-architecture.md     # State management, dependency injection
++-- swiftui-patterns.md     # Declarative UI patterns
++-- appkit-integration.md   # Using AppKit with SwiftUI
++-- concurrency-patterns.md # Async/await, actors, structured concurrency
++-- data-persistence.md     # Storage strategies
++-- networking.md           # URLSession, async networking
++-- system-apis.md          # macOS-specific frameworks
++-- testing-tdd.md          # Testing patterns
++-- testing-debugging.md    # Debugging tools and techniques
++-- performance.md          # Profiling, optimization
++-- design-system.md        # Platform conventions
++-- macos-polish.md         # Native feel, accessibility
++-- security-code-signing.md # Signing, notarization
++-- project-scaffolding.md  # CLI-based setup
 ```
 
 **For each reference file:**
@@ -265,7 +265,7 @@ Example for compiled languages:
 ```
 
 Report to the user:
-- "Build: ✓"
+- "Build: [x]"
 - "Tests: X pass, Y fail"
 - "Ready for you to check [specific thing]"
 </verification_loop>
@@ -462,7 +462,7 @@ Ask: "Could a user build a professional {domain thing} from scratch through ship
 **Must answer YES to:**
 - [ ] All major libraries/frameworks covered?
 - [ ] All architectural approaches documented?
-- [ ] Complete lifecycle addressed (build → debug → test → optimize → ship)?
+- [ ] Complete lifecycle addressed (build -> debug -> test -> optimize -> ship)?
 - [ ] Platform-specific considerations included?
 - [ ] "When to use X vs Y" guidance provided?
 - [ ] Common pitfalls documented?
@@ -571,7 +571,7 @@ Domain expertise skill is complete when:
 - [ ] Each workflow has required_reading + implementation steps + verification
 - [ ] Each reference has decision trees and comparisons
 - [ ] Anti-patterns documented throughout
-- [ ] Full lifecycle covered (build → debug → test → optimize → ship)
+- [ ] Full lifecycle covered (build -> debug -> test -> optimize -> ship)
 - [ ] Platform-specific considerations included
 - [ ] Located in ~/.claude/skills/expertise/{domain-name}/
 - [ ] Referenced in create-plans domain inference table
@@ -594,7 +594,7 @@ Domain expertise skill is complete when:
 
 **DO:**
 - Verify everything is current
-- Include complete lifecycle (build → ship)
+- Include complete lifecycle (build -> ship)
 - Provide decision guidance
 - Document anti-patterns
 - Make workflows execute real tasks

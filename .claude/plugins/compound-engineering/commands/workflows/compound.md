@@ -63,11 +63,11 @@ This command launches multiple specialized subagents IN PARALLEL to maximize eff
 
 ### 7. **Optional: Specialized Agent Invocation** (Post-Documentation)
    Based on problem type detected, automatically invoke applicable agents:
-   - **performance_issue** → `performance-oracle`
-   - **security_issue** → `security-sentinel`
-   - **database_issue** → `data-integrity-guardian`
-   - **test_failure** → `cora-test-reviewer`
-   - Any code-heavy issue → `kieran-rails-reviewer` + `code-simplicity-reviewer`
+   - **performance_issue** -> `performance-oracle`
+   - **security_issue** -> `security-sentinel`
+   - **database_issue** -> `data-integrity-guardian`
+   - **test_failure** -> `cora-test-reviewer`
+   - Any code-heavy issue -> `kieran-rails-reviewer` + `code-simplicity-reviewer`
 
 ## What It Captures
 
@@ -113,21 +113,21 @@ This command launches multiple specialized subagents IN PARALLEL to maximize eff
 ## Success Output
 
 ```
-✓ Parallel documentation generation complete
+[x] Parallel documentation generation complete
 
 Primary Subagent Results:
-  ✓ Context Analyzer: Identified performance_issue in brief_system
-  ✓ Solution Extractor: Extracted 3 code fixes
-  ✓ Related Docs Finder: Found 2 related issues
-  ✓ Prevention Strategist: Generated test cases
-  ✓ Category Classifier: docs/solutions/performance-issues/
-  ✓ Documentation Writer: Created complete markdown
+  [x] Context Analyzer: Identified performance_issue in brief_system
+  [x] Solution Extractor: Extracted 3 code fixes
+  [x] Related Docs Finder: Found 2 related issues
+  [x] Prevention Strategist: Generated test cases
+  [x] Category Classifier: docs/solutions/performance-issues/
+  [x] Documentation Writer: Created complete markdown
 
 Specialized Agent Reviews (Auto-Triggered):
-  ✓ performance-oracle: Validated query optimization approach
-  ✓ kieran-rails-reviewer: Code examples meet Rails standards
-  ✓ code-simplicity-reviewer: Solution is appropriately minimal
-  ✓ every-style-editor: Documentation style verified
+  [x] performance-oracle: Validated query optimization approach
+  [x] kieran-rails-reviewer: Code examples meet Rails standards
+  [x] code-simplicity-reviewer: Solution is appropriately minimal
+  [x] every-style-editor: Documentation style verified
 
 File created:
 - docs/solutions/performance-issues/n-plus-one-brief-generation.md
@@ -147,20 +147,20 @@ What's next?
 
 This creates a compounding knowledge system:
 
-1. First time you solve "N+1 query in brief generation" → Research (30 min)
-2. Document the solution → docs/solutions/performance-issues/n-plus-one-briefs.md (5 min)
-3. Next time similar issue occurs → Quick lookup (2 min)
-4. Knowledge compounds → Team gets smarter
+1. First time you solve "N+1 query in brief generation" -> Research (30 min)
+2. Document the solution -> docs/solutions/performance-issues/n-plus-one-briefs.md (5 min)
+3. Next time similar issue occurs -> Quick lookup (2 min)
+4. Knowledge compounds -> Team gets smarter
 
 The feedback loop:
 
 ```
-Build → Test → Find Issue → Research → Improve → Document → Validate → Deploy
-    ↑                                                                      ↓
-    └──────────────────────────────────────────────────────────────────────┘
+Build -> Test -> Find Issue -> Research -> Improve -> Document -> Validate -> Deploy
+    ^                                                                      v
+    +----------------------------------------------------------------------+
 ```
 
-**Each unit of engineering work should make subsequent units of work easier—not harder.**
+**Each unit of engineering work should make subsequent units of work easier-not harder.**
 
 ## Auto-Invoke
 

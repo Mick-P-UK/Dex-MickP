@@ -100,7 +100,7 @@ After understanding the idea, propose 2-3 concrete approaches.
 **Guidelines:**
 - Lead with a recommendation and explain why
 - Be honest about trade-offs
-- Consider YAGNI—simpler is usually better
+- Consider YAGNI-simpler is usually better
 - Reference codebase patterns when relevant
 
 ### Phase 3: Capture the Design
@@ -118,7 +118,7 @@ topic: <kebab-case-topic>
 # <Topic Title>
 
 ## What We're Building
-[Concise description—1-2 paragraphs max]
+[Concise description-1-2 paragraphs max]
 
 ## Why This Approach
 [Brief explanation of approaches considered and why this one was chosen]
@@ -131,7 +131,7 @@ topic: <kebab-case-topic>
 - [Any unresolved questions for the planning phase]
 
 ## Next Steps
-→ `/workflows:plan` for implementation details
+-> `/workflows:plan` for implementation details
 ```
 
 **Output Location:** `docs/brainstorms/YYYY-MM-DD-<topic>-brainstorm.md`
@@ -140,9 +140,9 @@ topic: <kebab-case-topic>
 
 Present clear options for what to do next:
 
-1. **Proceed to planning** → Run `/workflows:plan`
-2. **Refine further** → Continue exploring the design
-3. **Done for now** → User will return later
+1. **Proceed to planning** -> Run `/workflows:plan`
+2. **Refine further** -> Continue exploring the design
+3. **Done for now** -> User will return later
 
 ## YAGNI Principles
 
@@ -156,7 +156,7 @@ During brainstorming, actively resist complexity:
 
 ## Incremental Validation
 
-Keep sections short—200-300 words maximum. After each section of output, pause to validate understanding:
+Keep sections short-200-300 words maximum. After each section of output, pause to validate understanding:
 
 - "Does this match what you had in mind?"
 - "Any adjustments before we continue?"
@@ -173,7 +173,7 @@ This prevents wasted effort on misaligned designs.
 | Proposing overly complex solutions | Start simple, add complexity only if needed |
 | Ignoring existing codebase patterns | Research what exists first |
 | Making assumptions without validating | State assumptions explicitly and confirm |
-| Creating lengthy design documents | Keep it concise—details go in the plan |
+| Creating lengthy design documents | Keep it concise-details go in the plan |
 
 ## Integration with Planning
 

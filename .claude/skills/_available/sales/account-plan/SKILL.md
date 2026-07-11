@@ -136,7 +136,7 @@ Create structured account plan document:
 
 ---
 
-## 📋 Executive Summary
+##  Executive Summary
 
 **Account status:** [Strategic / Growing / Stable / At-Risk]
 **Primary goal:** [Main objective for this account]
@@ -151,7 +151,7 @@ Create structured account plan document:
 
 ---
 
-## 👥 Stakeholder Map
+##  Stakeholder Map
 
 ### Key Champions
 
@@ -186,7 +186,7 @@ Create structured account plan document:
 
 ---
 
-## 📊 Current State
+##  Current State
 
 ### Product Adoption
 
@@ -211,7 +211,7 @@ Create structured account plan document:
 
 ---
 
-## 🎯 Growth Opportunities
+##  Growth Opportunities
 
 ### Near-term (This Quarter)
 
@@ -235,7 +235,7 @@ Create structured account plan document:
 
 ---
 
-## 🚨 Risk Factors
+##  Risk Factors
 
 ### Active Risks
 
@@ -254,7 +254,7 @@ Create structured account plan document:
 
 ---
 
-## 💡 Strategic Initiatives
+##  Strategic Initiatives
 
 ### This Quarter
 
@@ -271,7 +271,7 @@ Create structured account plan document:
 
 ---
 
-## 📅 Engagement Plan
+##  Engagement Plan
 
 ### Regular Touchpoints
 
@@ -287,7 +287,7 @@ Create structured account plan document:
 
 ---
 
-## 📚 Account History
+##  Account History
 
 ### Key Milestones
 
@@ -306,21 +306,21 @@ Create structured account plan document:
 
 ---
 
-## 🎯 Success Metrics
+##  Success Metrics
 
 **Primary metrics:**
-- Revenue: $[Current] → $[Target]
-- Users: [Current] → [Target]
-- Adoption: [Current %] → [Target %]
+- Revenue: $[Current] -> $[Target]
+- Users: [Current] -> [Target]
+- Adoption: [Current %] -> [Target %]
 
 **Relationship metrics:**
-- Executive contacts: [Current] → [Target]
-- Meeting frequency: [Current] → [Target]
-- Advocacy: [Current state] → [Target state]
+- Executive contacts: [Current] -> [Target]
+- Meeting frequency: [Current] -> [Target]
+- Advocacy: [Current state] -> [Target state]
 
 ---
 
-## 📝 Next Actions
+##  Next Actions
 
 **Immediate (This Week):**
 - [ ] [Action 1] - [Owner] - [Date]
@@ -385,7 +385,7 @@ If account plan already exists:
 
 ---
 
-## 📋 Executive Summary
+##  Executive Summary
 
 **Account status:** Strategic (Top-tier customer, high growth potential)
 **Primary goal:** Expand from Product team (current) to Engineering + Marketing (3x ARR potential)
@@ -400,7 +400,7 @@ If account plan already exists:
 
 ---
 
-## 👥 Stakeholder Map
+##  Stakeholder Map
 
 ### Key Champions
 
@@ -447,7 +447,7 @@ If account plan already exists:
 
 ---
 
-## 📊 Current State
+##  Current State
 
 ### Product Adoption
 
@@ -468,13 +468,13 @@ If account plan already exists:
 - **Advocacy:** High - Referred 2 companies this quarter, case study participant
 
 **Recent feedback:**
-- ✅ "Love the product" - Sarah, multiple times
-- ✅ "Best tool our team uses" - Data analyst quote
-- ⚠️ "Reporting takes too long" - Pain point (opportunity for Analytics upgrade)
+- [x] "Love the product" - Sarah, multiple times
+- [x] "Best tool our team uses" - Data analyst quote
+- [!] "Reporting takes too long" - Pain point (opportunity for Analytics upgrade)
 
 ---
 
-## 🎯 Growth Opportunities
+##  Growth Opportunities
 
 ### Near-term (This Quarter)
 
@@ -509,7 +509,7 @@ If account plan already exists:
 
 ---
 
-## 🚨 Risk Factors
+##  Risk Factors
 
 ### Active Risks
 
@@ -526,7 +526,7 @@ If account plan already exists:
 
 **2. Reporting pain point unaddressed**
 - **Type:** Churn Risk (low but growing)
-- **Severity:** Low (currently) → Medium (if unaddressed)
+- **Severity:** Low (currently) -> Medium (if unaddressed)
 - **Evidence:** Mentioned 3x in past month, called "frustrating"
 - **Mitigation:** Analytics upgrade proposal, show real-time dashboard solution
 - **Owner:** Dave
@@ -539,7 +539,7 @@ If account plan already exists:
 
 ---
 
-## 💡 Strategic Initiatives
+##  Strategic Initiatives
 
 ### This Quarter
 
@@ -563,7 +563,7 @@ If account plan already exists:
 
 ---
 
-## 📅 Engagement Plan
+##  Engagement Plan
 
 ### Regular Touchpoints
 
@@ -581,7 +581,7 @@ If account plan already exists:
 
 ---
 
-## 📚 Account History
+##  Account History
 
 ### Key Milestones
 
@@ -603,21 +603,21 @@ If account plan already exists:
 
 ---
 
-## 🎯 Success Metrics
+##  Success Metrics
 
 **Primary metrics:**
-- Revenue: $180K → $396K (2.2x) by end of Q2
-- Users: 45 → 100+ (Product + Engineering + Marketing) by end of year
-- Adoption: 89% → 95% (get data team to advanced features)
+- Revenue: $180K -> $396K (2.2x) by end of Q2
+- Users: 45 -> 100+ (Product + Engineering + Marketing) by end of year
+- Adoption: 89% -> 95% (get data team to advanced features)
 
 **Relationship metrics:**
-- Executive contacts: 2 (Sarah, Tom) → 4 (add Jennifer, CMO when hired)
-- Meeting frequency: Monthly with Sarah → Add monthly with Jennifer
-- Advocacy: Case study done → Video testimonial by mid-year
+- Executive contacts: 2 (Sarah, Tom) -> 4 (add Jennifer, CMO when hired)
+- Meeting frequency: Monthly with Sarah -> Add monthly with Jennifer
+- Advocacy: Case study done -> Video testimonial by mid-year
 
 ---
 
-## 📝 Next Actions
+##  Next Actions
 
 **Immediate (This Week):**
 - [ ] Confirm Feb 2 coffee with Jennifer - Dave - Jan 29

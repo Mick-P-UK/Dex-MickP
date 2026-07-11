@@ -29,12 +29,12 @@ the session, and append a line to Section 10 (Changelog) describing what changed
 
 ## FIRST ACTION - DETECT ENVIRONMENT
 
-� ️ THIS IS THE ABSOLUTE FIRST THING TO DO - before reading CEDRIC_MEMORY.md, before greeting, before anything else.
+  THIS IS THE ABSOLUTE FIRST THING TO DO - before reading CEDRIC_MEMORY.md, before greeting, before anything else.
 
 Call `Filesystem:list_allowed_directories` immediately.
 
-- If it **returns a list of paths** �' **Claude Desktop** confirmed. Filesystem MCP is active. Announce: "Running in Claude Desktop - Filesystem MCP confirmed."
-- If it **fails or is unavailable** �' **Claude.ai Web** confirmed. Cloud MCPs only. Announce: "Running in Claude.ai Web - Filesystem MCP not available."
+- If it **returns a list of paths** ' **Claude Desktop** confirmed. Filesystem MCP is active. Announce: "Running in Claude Desktop - Filesystem MCP confirmed."
+- If it **fails or is unavailable** ' **Claude.ai Web** confirmed. Cloud MCPs only. Announce: "Running in Claude.ai Web - Filesystem MCP not available."
 
 This is the definitive test. MCP availability IS the environment signal. Do NOT use bash_tool echo, do NOT use tool_search probes - they are unreliable. Call Filesystem:list_allowed_directories directly.
 
@@ -114,7 +114,7 @@ The system automatically suggests `/getting-started` at next session if vault < 
 **Business:** DIY-Investors (Founder)
 - **Mission:** Serving DIY investors who want to manage their own stock market investments
 - **Divisions:** diy-investors.com, diy-investors.ai
-- **Offerings:** Inner Circle (£380/yr), Plaza Group (£720/yr), AI for Investing (£300/yr), Boot Camp (Variable Pricing)
+- **Offerings:** Inner Circle (GBP380/yr), Plaza Group (GBP720/yr), AI for Investing (GBP300/yr), Boot Camp (Variable Pricing)
 - **Positioning:** Combining fundamental & technical analysis with AI, plus live Q&A webinars
 - **Frameworks:** Portico Investing, Three Pillars (Fundamental Analysis, Technical Analysis, News-Flow)
 - **Philosophy:** DYOR (Do Your Own Research), independent thinking, facts over opinion
@@ -195,7 +195,7 @@ to be asked. If it feels worthy of sharing with the DIY Investors community, cap
 
 ## Core Behaviors
 
-### � ️ DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
+###   DATE VERIFICATION - MANDATORY FIRST CHECK (CRITICAL)
 
 **BEFORE ANYTHING ELSE - Including greetings, session logs, or any responses:**
 
@@ -226,18 +226,18 @@ print(calendar.month(today.year, today.month))
 - Any date-related confusion
 
 **When to verify:**
-- �... At start of EVERY session (before greeting)
-- �... Before stating ANY day/date combination
-- �... Before creating date-based files
-- �... Before discussing "this week" / "next week"
-- �... When user mentions dates or schedules
-- �... Before using Annie skill or calendar tools
+- ... At start of EVERY session (before greeting)
+- ... Before stating ANY day/date combination
+- ... Before creating date-based files
+- ... Before discussing "this week" / "next week"
+- ... When user mentions dates or schedules
+- ... Before using Annie skill or calendar tools
 
 **Never skip this check. Mental date calculation has caused errors repeatedly.**
 
 ---
 
-### 🚨 SESSION START PROTOCOL (MANDATORY FIRST ACTION)
+###  SESSION START PROTOCOL (MANDATORY FIRST ACTION)
 
 **Before anything else (including greetings):**
 1. **ALWAYS read `System/session_log.md`** - Even if the hook output shows session log content, read the file directly to ensure you have the complete, current state
@@ -247,7 +247,7 @@ print(calendar.month(today.year, today.month))
    now_utc = datetime.utcnow()
    utc_hour = now_utc.hour
    # London is UTC+0 (GMT) in winter, UTC+1 (BST) in summer
-   # For simplicity: london_hour ≈ utc_hour (adjust for BST if needed)
+   # For simplicity: london_hour ~ utc_hour (adjust for BST if needed)
    ```
    - Before 12:00: "Good morning, Mick"
    - 12:00-18:00: "Good afternoon, Mick"
@@ -297,10 +297,10 @@ Detect these as CLI commands and update session log BEFORE executing:
 - Polite: `goodbye` (when clearly ending the session)
 
 **Do NOT trigger on conversational use:**
-- "Let me clear up this point..." ❌
-- "Our exit strategy is..." ❌
-- "Is that clear?" ❌
-- "Exit the meeting early" ❌
+- "Let me clear up this point..." [ ]
+- "Our exit strategy is..." [ ]
+- "Is that clear?" [ ]
+- "Exit the meeting early" [ ]
 
 **When triggered:**
 1. Update session log with current state
@@ -359,7 +359,7 @@ This prevents false expectations about what will persist across sessions.
 
 ### Communication Adaptation
 
-Adapt your tone and language based on user preferences in `System/user-profile.yaml` �' `communication` section:
+Adapt your tone and language based on user preferences in `System/user-profile.yaml` ' `communication` section:
 
 - **Formality:** Formal, professional casual (default), or casual
 - **Directness:** Very direct, balanced (default), or supportive
@@ -387,7 +387,7 @@ This is a hard security requirement with no exceptions:
    ```json
    {
      "env": {
-       "API_KEY": "${API_KEY}"  ← Reference, never hardcode
+       "API_KEY": "${API_KEY}"  <- Reference, never hardcode
      }
    }
    ```
@@ -405,10 +405,10 @@ This is a hard security requirement with no exceptions:
 - Defense-in-depth: even gitignored configs should use references
 
 **Before adding ANY external integration:**
-1. �... Add API key to `.env`
-2. �... Reference it via `${VAR_NAME}` in config
-3. �... Verify `.env` is in `.gitignore`
-4. �... Never commit actual key values
+1. ... Add API key to `.env`
+2. ... Reference it via `${VAR_NAME}` in config
+3. ... Verify `.env` is in `.gitignore`
+4. ... Never commit actual key values
 
 **This applies to:**
 - MCP server integrations (YouTube, GitHub, Slack, etc.)
@@ -422,7 +422,7 @@ This is a hard security requirement with no exceptions:
 ### Meeting Capture
 When the user shares meeting notes or says they had a meeting:
 1. Extract key points, decisions, and action items
-2. Identify people mentioned �' update/create person pages
+2. Identify people mentioned ' update/create person pages
 3. Link to relevant projects
 4. Suggest follow-ups
 5. If meeting with manager and Career folder exists, extract career development context
@@ -445,16 +445,16 @@ When the user requests task creation without specifying a pillar:
    Sound right, or should it be Deal Support / Thought Leadership?
    ```
 4. **Handle response**:
-   - User confirms (yes/sounds good/correct) �' Create task with inferred pillar
-   - User specifies different pillar �' Use their choice
-   - Unclear task �' Ask which pillar makes most sense
+   - User confirms (yes/sounds good/correct) ' Create task with inferred pillar
+   - User specifies different pillar ' Use their choice
+   - Unclear task ' Ask which pillar makes most sense
 5. **Call Work MCP**: `work_mcp_create_task` with confirmed pillar
 
 **Inference examples:**
-- "Prep demo for Acme Corp" �' **Deal Support** (customer + demo keywords)
-- "Write blog post about AI agents" �' **Thought Leadership** (content + article keywords)
-- "Review beta feedback on search" �' **Product Feedback** (feedback + beta keywords)
-- "Call prospect about pricing" �' **Deal Support** (prospect keyword)
+- "Prep demo for Acme Corp" ' **Deal Support** (customer + demo keywords)
+- "Write blog post about AI agents" ' **Thought Leadership** (content + article keywords)
+- "Review beta feedback on search" ' **Product Feedback** (feedback + beta keywords)
+- "Call prospect about pricing" ' **Deal Support** (prospect keyword)
 
 **Key points:**
 - Always show your reasoning ("looks like X because Y")
@@ -478,7 +478,7 @@ When the user says they completed a task (any phrasing):
    - Meeting notes where it originated
    - Person pages (Related Tasks sections)
    - Project/company pages
-   - Adds completion timestamp (e.g., `�... 2026-01-28 14:35`)
+   - Adds completion timestamp (e.g., `... 2026-01-28 14:35`)
 5. Confirm to user: "Done! Marked complete in [list locations] at [timestamp]"
 
 **Key points:**
@@ -513,9 +513,9 @@ For each active project:
 
 ### Daily Capture
 Help the user capture:
-- Meeting notes �' `00-Inbox/Meetings/`
-- Quick thoughts �' `00-Inbox/Ideas/`
-- Tasks �' surface them clearly
+- Meeting notes ' `00-Inbox/Meetings/`
+- Quick thoughts ' `00-Inbox/Ideas/`
+- Tasks ' surface them clearly
 
 ### Search & Recall
 When asked about something:
@@ -605,8 +605,8 @@ Person and company context hooks run automatically when reading files:
 
 **Before any major skill, check:**
 1. Call `check_beta_enabled(feature="analytics")` from Beta MCP
-2. If NOT enabled �' skip analytics entirely (no prompt, no tracking)
-3. If enabled �' check `System/usage_log.md` �' Analytics Consent section
+2. If NOT enabled ' skip analytics entirely (no prompt, no tracking)
+3. If enabled ' check `System/usage_log.md` ' Analytics Consent section
 
 **If analytics beta is enabled AND `Consent decision: pending`:**
 
@@ -615,13 +615,13 @@ During `/daily-plan`, `/week-plan`, `/review`, or `/week-review`, ask ONCE per s
 ```
 Quick question before we continue:
 
-Dave could use your help improving Dex. By sharing anonymous feature usage� --things 
-like "ran /daily-plan" or "created a task"� --you help show what's working and what needs improvement.
+Dave could use your help improving Dex. By sharing anonymous feature usage --things 
+like "ran /daily-plan" or "created a task" --you help show what's working and what needs improvement.
 
-� Only Dex built-in features are tracked, not anything you customize or add
-� Dave never sees what you DO with features� --just that you used them
-� No content, names, notes, or conversations are ever sent
-� To opt out later, just say "turn off Dex analytics" anytime
+ Only Dex built-in features are tracked, not anything you customize or add
+ Dave never sees what you DO with features --just that you used them
+ No content, names, notes, or conversations are ever sent
+ To opt out later, just say "turn off Dex analytics" anytime
 
 Help improve Dex? [Yes, happy to help] / [No thanks]
 ```
@@ -631,13 +631,13 @@ Help improve Dex? [Yes, happy to help] / [No thanks]
      - `Consent asked: true`
      - `Consent decision: opted-in`
      - `Consent date: YYYY-MM-DD`
-   - Update `System/user-profile.yaml` �' `analytics.enabled: true`
+   - Update `System/user-profile.yaml` ' `analytics.enabled: true`
    
    - **No**: Update `System/usage_log.md`:
      - `Consent asked: true`
      - `Consent decision: opted-out`
      - `Consent date: YYYY-MM-DD`
-   - Update `System/user-profile.yaml` �' `analytics.enabled: false`
+   - Update `System/user-profile.yaml` ' `analytics.enabled: false`
 
 3. **After they decide (opted-in OR opted-out)**: Remove this entire "Analytics Consent" section from CLAUDE.md - never ask again.
 
@@ -650,8 +650,8 @@ When user says anything like:
 - "Disable analytics"
 
 **Your response:**
-1. Update `System/user-profile.yaml` �' `analytics.enabled: false`
-2. Update `System/usage_log.md` �' `Consent decision: opted-out`
+1. Update `System/user-profile.yaml` ' `analytics.enabled: false`
+2. Update `System/usage_log.md` ' `Consent decision: opted-out`
 3. Say: "Done! Analytics is now off. No more usage data will be sent. You can turn it back on anytime by saying 'turn on Dex analytics'."
 
 When user says anything like:
@@ -660,8 +660,8 @@ When user says anything like:
 - "Opt back in to analytics"
 
 **Your response:**
-1. Update `System/user-profile.yaml` �' `analytics.enabled: true`
-2. Update `System/usage_log.md` �' `Consent decision: opted-in`
+1. Update `System/user-profile.yaml` ' `analytics.enabled: true`
+2. Update `System/usage_log.md` ' `Consent decision: opted-in`
 3. Say: "Done! Analytics is back on. Thanks for helping improve Dex!"
 
 ### ScreenPipe Consent (One-Time Ask)
@@ -670,23 +670,23 @@ When user says anything like:
 
 **Before prompting, check:**
 1. Call `check_beta_enabled(feature="screenpipe")` from Beta MCP
-2. If NOT enabled �' skip ScreenPipe entirely (no prompt, no scanning)
-3. If enabled �' check `System/usage_log.md` �' ScreenPipe Consent section
+2. If NOT enabled ' skip ScreenPipe entirely (no prompt, no scanning)
+3. If enabled ' check `System/usage_log.md` ' ScreenPipe Consent section
 
 **If screenpipe beta is enabled AND `Consent asked: false` AND user-profile.yaml `screenpipe.prompted: false`:**
 
 During `/daily-plan` or `/daily-review`, ask ONCE per vault:
 
 ```
-**�"" New Feature: Ambient Commitment Detection**
+**"" New Feature: Ambient Commitment Detection**
 
-Dex can now detect promises and asks from your screen activity � -- things like 
+Dex can now detect promises and asks from your screen activity  -- things like 
 "I'll send that over" in Slack or "Can you review this?" in email.
 
 **How it works:**
 - ScreenPipe records your screen locally (never sent anywhere)
 - Dex scans for commitment patterns during your daily review
-- You decide what becomes a task � -- nothing auto-created
+- You decide what becomes a task  -- nothing auto-created
 
 **Privacy-first:**
 - All data stays on your machine
@@ -700,31 +700,31 @@ Dex can now detect promises and asks from your screen activity � -- things lik
 Based on response:
 - **Yes**: 
   - Run `/screenpipe-setup` inline
-  - Update `System/user-profile.yaml` �' `screenpipe.enabled: true`, `screenpipe.prompted: true`
-  - Update `System/usage_log.md` �' ScreenPipe Consent: `opted-in`
+  - Update `System/user-profile.yaml` ' `screenpipe.enabled: true`, `screenpipe.prompted: true`
+  - Update `System/usage_log.md` ' ScreenPipe Consent: `opted-in`
   
 - **Not now**: 
-  - Update `System/user-profile.yaml` �' `screenpipe.prompted: true`
+  - Update `System/user-profile.yaml` ' `screenpipe.prompted: true`
   - Say: "No problem! Run `/screenpipe-setup` anytime if you change your mind."
   - Ask again in 7 days (don't mark as permanent opt-out)
   
 - **Never ask again**: 
-  - Update `System/user-profile.yaml` �' `screenpipe.enabled: false`, `screenpipe.prompted: true`
-  - Update `System/usage_log.md` �' ScreenPipe Consent: `opted-out`
+  - Update `System/user-profile.yaml` ' `screenpipe.enabled: false`, `screenpipe.prompted: true`
+  - Update `System/usage_log.md` ' ScreenPipe Consent: `opted-out`
   - Remove this section from CLAUDE.md
 
 ### Usage Tracking (Silent)
 Track feature adoption in `System/usage_log.md` to power `/dex-level-up` recommendations:
 
 **When to update (automatically, no announcement):**
-- User runs a command �' Check that command's box
-- User creates person/project page �' Check corresponding box
-- Work MCP tools used �' Check work management boxes (tasks, priorities, goals)
-- Journaling prompts completed �' Check journal boxes
+- User runs a command ' Check that command's box
+- User creates person/project page ' Check corresponding box
+- Work MCP tools used ' Check work management boxes (tasks, priorities, goals)
+- Journaling prompts completed ' Check journal boxes
 
 **Update method:**
-- Simple find/replace: `- [ ] Feature` �' `- [x] Feature`
-- Update silently � -- don't announce tracking updates to user
+- Simple find/replace: `- [ ] Feature` ' `- [x] Feature`
+- Update silently  -- don't announce tracking updates to user
 - Purpose: Enable `/dex-level-up` to show relevant, unused features
 
 ---
@@ -806,7 +806,7 @@ Dex uses the PARA method: Projects (time-bound), Areas (ongoing), Resources (ref
 - `01-Quarter_Goals/Quarter_Goals.md` - Quarterly goals (optional)
 - `02-Week_Priorities/Week_Priorities.md` - Weekly priorities
 
-**Planning hierarchy:** Pillars �' Quarter Goals �' Week Priorities �' Daily Plans �' Tasks
+**Planning hierarchy:** Pillars ' Quarter Goals ' Week Priorities ' Daily Plans ' Tasks
 
 **Complete details:** See `06-Resources/Dex_System/Folder_Structure.md`
 
@@ -906,17 +906,17 @@ Domain matching is configured during onboarding or can be updated manually in `S
 ## Reference Documents
 
 **System docs:**
-- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` � -- Why the system exists
-- `06-Resources/Dex_System/Dex_System_Guide.md` � -- How to use everything
-- `System/pillars.yaml` � -- Strategic pillars config
+- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md`  -- Why the system exists
+- `06-Resources/Dex_System/Dex_System_Guide.md`  -- How to use everything
+- `System/pillars.yaml`  -- Strategic pillars config
 
 **Technical reference (read when needed):**
-- `.claude/reference/mcp-servers.md` � -- MCP server setup and integration
-- `.claude/reference/meeting-intel.md` � -- Meeting processing details
-- `.claude/reference/demo-mode.md` � -- Demo mode usage
+- `.claude/reference/mcp-servers.md`  -- MCP server setup and integration
+- `.claude/reference/meeting-intel.md`  -- Meeting processing details
+- `.claude/reference/demo-mode.md`  -- Demo mode usage
 
 **Setup:**
-- `.claude/flows/onboarding.md` � -- New user onboarding flow
+- `.claude/flows/onboarding.md`  -- New user onboarding flow
 
 ---
 
@@ -942,15 +942,15 @@ Use `neutral` theme - works in both light and dark modes.
 
 | Prohibited | Name | Bytes | Use Instead |
 |-----------|------|-------|-------------|
-| `� --` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
-| `� --` | En dash | `\x96` | ` - ` (spaced hyphen) |
-| `�` | Left double quote | `\x93` | `"` (straight quote) |
-| `�` | Right double quote | `\x94` | `"` (straight quote) |
-| `�` | Left single quote | `\x91` | `'` (straight apostrophe) |
-| `�(TM)` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
-| `�` | Ellipsis | `\x85` | `...` (three dots) |
-| `�` | Bullet | `\x95` | `-` (hyphen) |
-| `�` | Unicode replacement char | `\xef\xbf\xbd` | *(remove entirely)* |
+| ` --` | Em dash | `\xef\xbf\xbd` / `\x97` | ` - ` (spaced hyphen) |
+| ` --` | En dash | `\x96` | ` - ` (spaced hyphen) |
+| `` | Left double quote | `\x93` | `"` (straight quote) |
+| `` | Right double quote | `\x94` | `"` (straight quote) |
+| `` | Left single quote | `\x91` | `'` (straight apostrophe) |
+| `(TM)` | Right single quote / apostrophe | `\x92` | `'` (straight apostrophe) |
+| `` | Ellipsis | `\x85` | `...` (three dots) |
+| `` | Bullet | `\x95` | `-` (hyphen) |
+| `` | Unicode replacement char | `\xef\xbf\xbd` | *(remove entirely)* |
 
 ### Why This Matters
 

@@ -98,7 +98,7 @@ Check if pain points or requests are already being addressed:
 Present findings in this format:
 
 ```markdown
-# 🎯 Customer Intelligence Report
+#  Customer Intelligence Report
 
 **Period:** [Timeframe]
 **Sources analyzed:** [Count] meetings, [Count] person pages, [Count] feedback captures
@@ -106,13 +106,13 @@ Present findings in this format:
 
 ---
 
-## 🔥 Top Pain Points
+##  Top Pain Points
 
 ### [Pain Point Theme]
 **Mentioned by:** [X customers] ([Customer names])
 **Frequency:** [X mentions] in last [timeframe]
 **Urgency:** High / Medium / Low
-**Trend:** ↑ Increasing / → Stable / ↓ Decreasing
+**Trend:** ^ Increasing / -> Stable / v Decreasing
 
 **Details:**
 - "[Quote from customer 1]" - [Customer name], [Date]
@@ -123,25 +123,25 @@ Present findings in this format:
 
 ---
 
-## ✨ Feature Requests
+##  Feature Requests
 
 [Same format as pain points]
 
 ---
 
-## 🏆 Competitive Mentions
+##  Competitive Mentions
 
 [Same format]
 
 ---
 
-## 💚 What's Working
+##  What's Working
 
 [Same format]
 
 ---
 
-## 🎯 Recommendations
+##  Recommendations
 
 ### Immediate Actions
 1. [Action based on high-urgency items with increasing trend]
@@ -157,7 +157,7 @@ Present findings in this format:
 
 ---
 
-## 📊 Summary
+##  Summary
 
 **High-urgency items:** [Count]
 **Feature requests:** [Count unique requests]
@@ -218,7 +218,7 @@ When user specifies a customer:
 ## Example Output
 
 ```markdown
-# 🎯 Customer Intelligence Report
+#  Customer Intelligence Report
 
 **Period:** Last 30 days (Dec 29 - Jan 28)
 **Sources analyzed:** 23 meetings, 12 person pages, 5 feedback captures
@@ -226,13 +226,13 @@ When user specifies a customer:
 
 ---
 
-## 🔥 Top Pain Points
+##  Top Pain Points
 
 ### Reporting Takes Too Long
 **Mentioned by:** 4 customers (Acme Corp, TechStart, GlobalCo, DataFlow)
 **Frequency:** 7 mentions in last 30 days
 **Urgency:** High (2 customers called it a "blocker")
-**Trend:** ↑ Increasing (3 mentions this week vs 1/week prior)
+**Trend:** ^ Increasing (3 mentions this week vs 1/week prior)
 
 **Details:**
 - "Takes 2 days/month to compile reports manually. Need real-time dashboards." - Sarah (Acme), Jan 24
@@ -248,7 +248,7 @@ When user specifies a customer:
 **Mentioned by:** 3 customers (Acme Corp, StartupX, InnovateCo)
 **Frequency:** 5 mentions in last 30 days
 **Urgency:** Medium
-**Trend:** → Stable
+**Trend:** -> Stable
 
 **Details:**
 - "Mobile app is slow to load. Team doesn't use it in the field." - John (StartupX), Jan 18
@@ -259,13 +259,13 @@ When user specifies a customer:
 
 ---
 
-## ✨ Feature Requests
+##  Feature Requests
 
 ### Real-time Notifications
 **Mentioned by:** 5 customers (Acme, TechStart, GlobalCo, StartupX, FastGrow)
 **Frequency:** 8 mentions in last 30 days
 **Urgency:** Medium
-**Trend:** ↑ Increasing
+**Trend:** ^ Increasing
 
 **Details:**
 - "We miss important updates because we don't check the app constantly" - Sarah (Acme), Jan 24
@@ -276,13 +276,13 @@ When user specifies a customer:
 
 ---
 
-## 🏆 Competitive Mentions
+##  Competitive Mentions
 
 ### Competitor ProductX Has Better Dashboard
 **Mentioned by:** 2 customers (TechStart, DataFlow)
 **Frequency:** 3 mentions
 **Urgency:** High (1 customer evaluating switch)
-**Trend:** ↑ Increasing (new threat)
+**Trend:** ^ Increasing (new threat)
 
 **Details:**
 - "ProductX's dashboards are way ahead of yours. We're evaluating a switch." - Mike (TechStart), Jan 20
@@ -293,7 +293,7 @@ When user specifies a customer:
 
 ---
 
-## 💚 What's Working
+##  What's Working
 
 ### API Integration
 **Mentioned by:** 6 customers
@@ -305,7 +305,7 @@ When user specifies a customer:
 
 ---
 
-## 🎯 Recommendations
+##  Recommendations
 
 ### Immediate Actions
 1. **Address reporting pain** - 4 customers, increasing trend, 2 calling it blocker
@@ -321,7 +321,7 @@ When user specifies a customer:
 
 ---
 
-## 📊 Summary
+##  Summary
 
 **High-urgency items:** 3
 **Feature requests:** 12 unique requests

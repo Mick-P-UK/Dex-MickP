@@ -43,7 +43,7 @@ Track month-end close progress, identify blockers, and ensure timely completion.
 ## Output Format
 
 ```markdown
-# 📊 Close Status: [Month Year]
+#  Close Status: [Month Year]
 
 **Close deadline:** [Date]
 **Days remaining:** [X]

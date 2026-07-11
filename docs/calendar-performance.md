@@ -30,7 +30,7 @@ Here's what actually happens under the hood:
    - No database indexes are used
 
 3. **Slow Bridge Calls:** Every property access (title, date, location) requires a round-trip:
-   - AppleScript → Calendar.app → Back to AppleScript
+   - AppleScript -> Calendar.app -> Back to AppleScript
    - Each call takes milliseconds, which adds up
 
 4. **Recurring Event Bug:** Recurring events return all historical instances
@@ -139,21 +139,21 @@ For the same calendar with 3,000 events:
 
 ```
 User Request
-    ↓
+    v
 MCP Server (Python)
-    ↓
+    v
 AppleScript (.sh wrapper)
-    ↓
+    v
 osascript (AppleScript interpreter)
-    ↓
+    v
 Calendar.app (load ALL events)
-    ↓
+    v
 AppleScript memory (filter 10,000 events)
-    ↓
+    v
 String formatting (|TITLE:|START:|END:)
-    ↓
+    v
 Parse in Python (regex/split)
-    ↓
+    v
 Return to user (30 seconds later)
 ```
 
@@ -168,21 +168,21 @@ Return to user (30 seconds later)
 
 ```
 User Request
-    ↓
+    v
 MCP Server (Python)
-    ↓
+    v
 calendar_eventkit.py
-    ↓
+    v
 PyObjC Bridge
-    ↓
+    v
 EventKit (native Objective-C)
-    ↓
+    v
 Calendar.app SQLite database
-    ↓ (indexed query)
+    v (indexed query)
 Native EKEvent objects
-    ↓
+    v
 JSON serialization
-    ↓
+    v
 Return to user (0.5 seconds)
 ```
 
@@ -242,8 +242,8 @@ store.requestAccessToEntityType_completion_(
 
 Our implementation supports both:
 
-1. **EventKit (preferred):** If permission granted → fast queries
-2. **AppleScript (fallback):** If no permission → slow but functional
+1. **EventKit (preferred):** If permission granted -> fast queries
+2. **AppleScript (fallback):** If no permission -> slow but functional
 
 This ensures:
 - Existing users don't break
@@ -292,11 +292,11 @@ Potential further improvements:
    - Could reduce repeated queries to ~0ms
 
 2. **Batch Queries:** If multiple date ranges needed, fetch once
-   - Current: 3 separate queries = 3 × 0.5s = 1.5s
+   - Current: 3 separate queries = 3 x 0.5s = 1.5s
    - Optimized: 1 wide query + filter = 0.7s
 
 3. **Background Refresh:** Pre-fetch tomorrow's events in background
-   - User asks "what's tomorrow?" → instant response
+   - User asks "what's tomorrow?" -> instant response
    - Requires persistent process (Pi extension candidate)
 
 **Current performance is good enough** - these are nice-to-haves.

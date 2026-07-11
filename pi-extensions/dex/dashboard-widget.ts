@@ -27,20 +27,20 @@ export function renderDashboard(data: DashboardData, width: number): string[] {
   const lines: string[] = [];
   
   // Top border
-  lines.push("┌─ Your Day at a Glance " + "─".repeat(Math.max(0, width - 26)) + "┐");
-  lines.push("│" + " ".repeat(width - 2) + "│");
+  lines.push("+- Your Day at a Glance " + "-".repeat(Math.max(0, width - 26)) + "+");
+  lines.push("|" + " ".repeat(width - 2) + "|");
   
   // Column headers
   const leftHeader = "Week Priorities";
   const rightHeader = "Top Tasks";
   const headerGap = Math.floor((width - leftHeader.length - rightHeader.length - 4) / 2);
-  const header = `│  ${leftHeader}${" ".repeat(headerGap)}${rightHeader}${" ".repeat(Math.max(0, width - 4 - leftHeader.length - headerGap - rightHeader.length))}│`;
+  const header = `|  ${leftHeader}${" ".repeat(headerGap)}${rightHeader}${" ".repeat(Math.max(0, width - 4 - leftHeader.length - headerGap - rightHeader.length))}|`;
   lines.push(header);
   
   // Underlines
-  const leftUnderline = "─".repeat(leftHeader.length);
-  const rightUnderline = "─".repeat(rightHeader.length);
-  const underline = `│  ${leftUnderline}${" ".repeat(headerGap)}${rightUnderline}${" ".repeat(Math.max(0, width - 4 - leftUnderline.length - headerGap - rightUnderline.length))}│`;
+  const leftUnderline = "-".repeat(leftHeader.length);
+  const rightUnderline = "-".repeat(rightHeader.length);
+  const underline = `|  ${leftUnderline}${" ".repeat(headerGap)}${rightUnderline}${" ".repeat(Math.max(0, width - 4 - leftUnderline.length - headerGap - rightUnderline.length))}|`;
   lines.push(underline);
   
   // Data rows (up to 3)
@@ -50,7 +50,7 @@ export function renderDashboard(data: DashboardData, width: number): string[] {
     const rightItem = data.topTasks[i];
     
     const leftText = leftItem
-      ? `${leftItem.completed ? "☑" : "□"} ${truncate(leftItem.text, 25)}`
+      ? `${leftItem.completed ? "[x]" : "[ ]"} ${truncate(leftItem.text, 25)}`
       : "";
     const rightText = rightItem
       ? `${getPriorityIcon(rightItem.priority)} ${truncate(rightItem.text, 30)}`
@@ -58,22 +58,22 @@ export function renderDashboard(data: DashboardData, width: number): string[] {
     
     const leftPadded = leftText.padEnd(27); // Fixed width for left column
     const gap = " ".repeat(Math.max(0, headerGap - 2));
-    const row = `│  ${leftPadded}${gap}${rightText}${" ".repeat(Math.max(0, width - 4 - leftPadded.length - gap.length - rightText.length))}│`;
+    const row = `|  ${leftPadded}${gap}${rightText}${" ".repeat(Math.max(0, width - 4 - leftPadded.length - gap.length - rightText.length))}|`;
     lines.push(row);
   }
   
   // Empty line
-  lines.push("│" + " ".repeat(width - 2) + "│");
+  lines.push("|" + " ".repeat(width - 2) + "|");
   
   // Focus time
-  const focusText = `📅 Focus Time Available: ${formatHours(data.focusHoursAvailable)}`;
-  lines.push(`│  ${focusText}${" ".repeat(Math.max(0, width - 4 - focusText.length))}│`);
+  const focusText = ` Focus Time Available: ${formatHours(data.focusHoursAvailable)}`;
+  lines.push(`|  ${focusText}${" ".repeat(Math.max(0, width - 4 - focusText.length))}|`);
   
   // Empty line
-  lines.push("│" + " ".repeat(width - 2) + "│");
+  lines.push("|" + " ".repeat(width - 2) + "|");
   
   // Bottom border
-  lines.push("└" + "─".repeat(width - 2) + "┘");
+  lines.push("+" + "-".repeat(width - 2) + "+");
   
   return lines;
 }
@@ -84,11 +84,11 @@ export function renderDashboard(data: DashboardData, width: number): string[] {
 function getPriorityIcon(priority: "P0" | "P1" | "P2"): string {
   switch (priority) {
     case "P0":
-      return "🔥";
+      return "";
     case "P1":
-      return "⚡";
+      return "";
     case "P2":
-      return "○";
+      return "o";
   }
 }
 

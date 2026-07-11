@@ -12,7 +12,7 @@ This skill provides guidance for creating effective skills.
 
 Skills are modular, self-contained packages that extend Claude's capabilities by providing
 specialized knowledge, workflows, and tools. Think of them as "onboarding guides" for specific
-domains or tasks—they transform Claude from a general-purpose agent into a specialized agent
+domains or tasks-they transform Claude from a general-purpose agent into a specialized agent
 equipped with procedural knowledge that no model can fully possess.
 
 ### What Skills Provide
@@ -50,15 +50,15 @@ Every skill consists of a required SKILL.md file and optional bundled resources:
 
 ```
 skill-name/
-├── SKILL.md (required)
-│   ├── YAML frontmatter metadata (required)
-│   │   ├── name: (required)
-│   │   └── description: (required)
-│   └── Markdown instructions (required)
-└── Bundled Resources (optional)
-    ├── scripts/          - Executable code (Python/Bash/etc.)
-    ├── references/       - Documentation intended to be loaded into context as needed
-    └── assets/           - Files used in output (templates, icons, fonts, etc.)
++-- SKILL.md (required)
+|   +-- YAML frontmatter metadata (required)
+|   |   +-- name: (required)
+|   |   +-- description: (required)
+|   +-- Markdown instructions (required)
++-- Bundled Resources (optional)
+    +-- scripts/          - Executable code (Python/Bash/etc.)
+    +-- references/       - Documentation intended to be loaded into context as needed
+    +-- assets/           - Files used in output (templates, icons, fonts, etc.)
 ```
 
 #### SKILL.md (required)
@@ -88,7 +88,7 @@ Documentation and reference material intended to be loaded as needed into contex
 - **Use cases**: Database schemas, API documentation, domain knowledge, company policies, detailed workflow guides
 - **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed
 - **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md
-- **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
+- **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill-this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
 
 ##### Assets (`assets/`)
 
@@ -150,12 +150,12 @@ For Skills with multiple domains, organize content by domain to avoid loading ir
 
 ```
 bigquery-skill/
-├── SKILL.md (overview and navigation)
-└── reference/
-    ├── finance.md (revenue, billing metrics)
-    ├── sales.md (opportunities, pipeline)
-    ├── product.md (API usage, features)
-    └── marketing.md (campaigns, attribution)
++-- SKILL.md (overview and navigation)
++-- reference/
+    +-- finance.md (revenue, billing metrics)
+    +-- sales.md (opportunities, pipeline)
+    +-- product.md (API usage, features)
+    +-- marketing.md (campaigns, attribution)
 ```
 
 When a user asks about sales metrics, Claude only reads sales.md.
@@ -164,11 +164,11 @@ Similarly, for skills supporting multiple frameworks or variants, organize by va
 
 ```
 cloud-deploy/
-├── SKILL.md (workflow + provider selection)
-└── references/
-    ├── aws.md (AWS deployment patterns)
-    ├── gcp.md (GCP deployment patterns)
-    └── azure.md (Azure deployment patterns)
++-- SKILL.md (workflow + provider selection)
++-- references/
+    +-- aws.md (AWS deployment patterns)
+    +-- gcp.md (GCP deployment patterns)
+    +-- azure.md (Azure deployment patterns)
 ```
 
 When the user chooses AWS, Claude only reads aws.md.
@@ -235,7 +235,7 @@ To turn concrete examples into an effective skill, analyze each example by:
 
 1. Considering how to execute on the example from scratch
 2. Identifying what scripts, references, and assets would be helpful when executing these workflows repeatedly
-3. **Checking if dates are involved** - If yes, plan to include date verification step (see Step 4 → Date Verification Checklist)
+3. **Checking if dates are involved** - If yes, plan to include date verification step (see Step 4 -> Date Verification Checklist)
 
 Example: When building a `pdf-editor` skill to handle queries like "Help me rotate this PDF," the analysis shows:
 
@@ -306,11 +306,11 @@ Any example files and directories not needed for the skill should be deleted. Th
 
 **Before writing SKILL.md, check if the skill involves dates:**
 
-- ✅ Creating files with dates in filenames (e.g., `YYYY-MM-DD-report.md`)
-- ✅ Daily/weekly/monthly/quarterly operations
-- ✅ References to "today", "this week", "this quarter"
-- ✅ Date-based calculations or comparisons
-- ✅ Time-based workflows or scheduling
+- [x] Creating files with dates in filenames (e.g., `YYYY-MM-DD-report.md`)
+- [x] Daily/weekly/monthly/quarterly operations
+- [x] References to "today", "this week", "this quarter"
+- [x] Date-based calculations or comparisons
+- [x] Time-based workflows or scheduling
 
 **If ANY of the above apply, the skill MUST include Step 0: Date Verification.**
 
@@ -341,7 +341,7 @@ Any example files and directories not needed for the skill should be deleted. Th
 
 **Use `date_str` and `day_name` throughout** - never hardcode dates.
 
-**Why:** See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** See CLAUDE.md -> File Conventions -> Date Verification for details.
 ```
 
 **For weekly operations:** Calculate Monday from actual date

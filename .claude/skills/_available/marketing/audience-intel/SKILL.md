@@ -58,7 +58,7 @@ Aggregate audience insights from all sources to refine persona understanding and
 ## Output Format
 
 ```markdown
-# 👥 Audience Intelligence
+#  Audience Intelligence
 
 **Period:** [Timeframe]
 **Interactions analyzed:** [Count]

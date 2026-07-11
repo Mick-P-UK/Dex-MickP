@@ -29,20 +29,20 @@ Dex is designed to work cross-platform on **Windows, macOS, and Linux**. However
 ### Core Features (All Platforms)
 
 These work identically on all platforms:
-- ✅ **PARA file structure** - Markdown files, YAML configs
-- ✅ **Skills system** - All skills work cross-platform
-- ✅ **Work MCP** - Task syncing across files
-- ✅ **Task management** - Tasks.md, task IDs, backlinks
-- ✅ **Person/Company pages** - Knowledge management
-- ✅ **Daily/Weekly planning** - `/daily-plan`, `/week-plan`, `/review`
-- ✅ **Git integration** - Version control, updates via `/dex-update`
+- [x] **PARA file structure** - Markdown files, YAML configs
+- [x] **Skills system** - All skills work cross-platform
+- [x] **Work MCP** - Task syncing across files
+- [x] **Task management** - Tasks.md, task IDs, backlinks
+- [x] **Person/Company pages** - Knowledge management
+- [x] **Daily/Weekly planning** - `/daily-plan`, `/week-plan`, `/review`
+- [x] **Git integration** - Version control, updates via `/dex-update`
 
 ### Calendar Integration
 
 **Current status:**
-- ✅ **Google Calendar API** - Cross-platform (Windows, macOS, Linux)
-- ⚙️ **Setup required** - First-time OAuth 2.0 credentials setup
-- 📄 **Guide:** `System/.credentials/GOOGLE_CALENDAR_SETUP.md`
+- [x] **Google Calendar API** - Cross-platform (Windows, macOS, Linux)
+-  **Setup required** - First-time OAuth 2.0 credentials setup
+-  **Guide:** `System/.credentials/GOOGLE_CALENDAR_SETUP.md`
 
 **Python dependencies:**
 - **Windows/Linux:** `google-api-python-client`, `google-auth-httplib2`, `google-auth-oauthlib`
@@ -58,12 +58,12 @@ These work identically on all platforms:
 ### Background Automation
 
 **Current status:**
-- ✅ **macOS** - Launch Agents for background tasks
+- [x] **macOS** - Launch Agents for background tasks
   - Changelog checks (every 6 hours)
   - Learning reviews (daily at 5pm)
   - Meeting intel sync (daily)
-- ⏳ **Windows** - Task Scheduler implementation planned (not yet available)
-- ℹ️ **Fallback** - Background checks run inline during session start (still fast, <1 second)
+- [~] **Windows** - Task Scheduler implementation planned (not yet available)
+- [i] **Fallback** - Background checks run inline during session start (still fast, <1 second)
 
 **What this means:**
 - **macOS users:** Get continuous background checks for optimal performance
@@ -72,9 +72,9 @@ These work identically on all platforms:
 ### Obsidian Sync Daemon
 
 **Current status:**
-- ✅ **Python watchdog** - Cross-platform file monitoring (works on all platforms)
-- ✅ **macOS** - Launch Agent installation available
-- ⏳ **Windows** - Task Scheduler installation planned
+- [x] **Python watchdog** - Cross-platform file monitoring (works on all platforms)
+- [x] **macOS** - Launch Agent installation available
+- [~] **Windows** - Task Scheduler installation planned
 
 **What this means:**
 - The sync logic works everywhere (Python watchdog is cross-platform)
@@ -133,15 +133,15 @@ System/            # Configuration
 
 **Why numbered?** Three reasons:
 
-1. **Sort order:** Folders appear in workflow order (capture → plan → execute)
+1. **Sort order:** Folders appear in workflow order (capture -> plan -> execute)
 2. **Intentional hierarchy:** Numbers signal "these are the core structure, don't mess with them"
 3. **Reference stability:** Can say "03-Tasks" and everyone knows what you mean
 
 **Why PARA?** It maps to how knowledge flows:
 
-- **Inbox (00)** → Raw capture, zero friction
-- **Planning (01-03)** → Strategic → Tactical hierarchy
-- **PARA (04-07)** → Active work → Long-term storage → Historical record
+- **Inbox (00)** -> Raw capture, zero friction
+- **Planning (01-03)** -> Strategic -> Tactical hierarchy
+- **PARA (04-07)** -> Active work -> Long-term storage -> Historical record
 
 ### File vs. Database Trade-offs
 
@@ -275,7 +275,7 @@ Result:
 - Task created with proper ID (`^task-20260128-001`)
 - Pillar tag validated against `System/pillars.yaml`
 - Task added to `03-Tasks/Tasks.md`
-- Task added to `05-Areas/People/Internal/John_Doe.md` → Related Tasks section
+- Task added to `05-Areas/People/Internal/John_Doe.md` -> Related Tasks section
 - All atomic, all validated
 
 ### Dex's 7 MCP Servers
@@ -288,7 +288,7 @@ Result:
 - Task ID generation (`^task-YYYYMMDD-XXX`)
 - Pillar validation (checks `System/pillars.yaml`)
 - Deduplication (fuzzy matching to detect similar tasks)
-- Bidirectional syncing (task ↔ person page ↔ meeting notes)
+- Bidirectional syncing (task <-> person page <-> meeting notes)
 
 **Code snippet from `task_server.py`:**
 
@@ -452,7 +452,7 @@ If interrupted, calling `start_onboarding_session()` resumes from the last compl
 **Purpose:** Product analytics for Pendo customers - track guide performance, feature adoption, visitor/account engagement.
 
 **Setup:**
-1. Admin must enable in Pendo: Settings → Subscription Settings → AI Features → Pendo MCP Server
+1. Admin must enable in Pendo: Settings -> Subscription Settings -> AI Features -> Pendo MCP Server
 2. Add to AI client config (Cursor example):
 ```json
 {
@@ -578,8 +578,8 @@ for (const personFile of foundPeople) {
 === Dex Session Context ===
 
 --- Strategic Pillars ---
-• Product — Ship features that delight users
-• Growth — 10X user base in 2026
+- Product - Ship features that delight users
+- Growth - 10X user base in 2026
 
 --- Quarter Goals ---
 ### 1. Launch mobile app (Q1)
@@ -594,10 +594,10 @@ for (const personFile of foundPeople) {
 - [ ] Review PR #245 (P0)
 
 --- Working Preferences ---
-• Writing: Terse, bullet points, no preamble
+- Writing: Terse, bullet points, no preamble
 
 --- Active Mistake Patterns (2) ---
-• Over-promising timelines without checking with eng
+- Over-promising timelines without checking with eng
 
 === End Session Context ===
 ```
@@ -700,7 +700,7 @@ def update_task_status(task_id: str, status: str):
     content = tasks_file.read_text()
     content = re.sub(
         rf'- \[ \] (.*){task_id}',
-        rf'- [x] \1{task_id} ✅ {datetime.now():%Y-%m-%d %H:%M}',
+        rf'- [x] \1{task_id} [x] {datetime.now():%Y-%m-%d %H:%M}',
         content
     )
     tasks_file.write_text(content)
@@ -742,13 +742,13 @@ Dex's planning structure is:
 
 ```
 Strategic Pillars (System/pillars.yaml)
-    ↓
+    v
 Quarter Goals (01-Quarter_Goals/)
-    ↓
+    v
 Week Priorities (02-Week_Priorities/)
-    ↓
+    v
 Daily Plan (07-Archives/Plans/)
-    ↓
+    v
 Tasks (03-Tasks/)
 ```
 
@@ -767,7 +767,7 @@ Tasks (03-Tasks/)
 
 ### Example Flow
 
-**User's pillar:** "Product — Ship features that delight users"
+**User's pillar:** "Product - Ship features that delight users"
 
 **Quarter goal (Q1):** "Launch mobile app beta with 5 core features"
 
@@ -833,8 +833,8 @@ Tasks use three tag types:
    ]
    ```
 4. Skill cross-references attendees with person pages:
-   - `john@company.com` → `05-Areas/People/Internal/John_Doe.md`
-   - `maya@company.com` → `05-Areas/People/Internal/Maya_Patel.md`
+   - `john@company.com` -> `05-Areas/People/Internal/John_Doe.md`
+   - `maya@company.com` -> `05-Areas/People/Internal/Maya_Patel.md`
 5. Skill reads person pages, extracts context:
    - John: Tech Lead, last 1:1 was about API architecture
    - Maya: Designer, working on onboarding flow redesign
@@ -1113,13 +1113,13 @@ bash .scripts/learning-review-prompt.sh
 #### Cursor Feasibility Gate
 
 Ideas must be implementable using Cursor's actual capabilities:
-- ✅ File operations (read, write, search)
-- ✅ MCP tools and servers
-- ✅ Command/skill creation
-- ✅ Hook scripts
-- ❌ Edit tracking or change detection
-- ❌ Internal event listeners
-- ❌ Real-time UI modifications
+- [x] File operations (read, write, search)
+- [x] MCP tools and servers
+- [x] Command/skill creation
+- [x] Hook scripts
+- [ ] Edit tracking or change detection
+- [ ] Internal event listeners
+- [ ] Real-time UI modifications
 
 Ideas requiring unavailable capabilities are rejected with explanation.
 
@@ -1165,9 +1165,9 @@ Understanding these constraints explains why Dex is designed the way it is.
 **Implication:** Can't "accumulate knowledge" across sessions without writing to files.
 
 **Dex's approach:**
-- Session learnings → written to files
-- Strategic context → injected via session start hook
-- Preferences → stored in `System/user-profile.yaml`
+- Session learnings -> written to files
+- Strategic context -> injected via session start hook
+- Preferences -> stored in `System/user-profile.yaml`
 
 #### 4. No Background Processes
 
@@ -1199,7 +1199,7 @@ Understanding these constraints explains why Dex is designed the way it is.
 
 #### 4. Tool Composition
 
-**Strength:** Claude can chain tool calls (read file → call MCP → write file → read another file).
+**Strength:** Claude can chain tool calls (read file -> call MCP -> write file -> read another file).
 
 **Dex's leverage:** Skills orchestrate complex workflows. `/process-meetings` calls Granola MCP, parses output, creates tasks via Work MCP, updates person pages, all in one flow.
 

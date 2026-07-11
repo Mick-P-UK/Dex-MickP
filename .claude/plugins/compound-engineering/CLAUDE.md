@@ -10,9 +10,9 @@
 
 ### Version Bumping Rules
 
-- **MAJOR** (1.0.0 → 2.0.0): Breaking changes, major reorganization
-- **MINOR** (1.0.0 → 1.1.0): New agents, commands, or skills
-- **PATCH** (1.0.0 → 1.0.1): Bug fixes, doc updates, minor improvements
+- **MAJOR** (1.0.0 -> 2.0.0): Breaking changes, major reorganization
+- **MINOR** (1.0.0 -> 1.1.0): New agents, commands, or skills
+- **PATCH** (1.0.0 -> 1.0.1): Bug fixes, doc updates, minor improvements
 
 ### Pre-Commit Checklist
 
@@ -28,18 +28,18 @@ Before committing ANY changes:
 
 ```
 agents/
-├── review/     # Code review agents
-├── research/   # Research and analysis agents
-├── design/     # Design and UI agents
-├── workflow/   # Workflow automation agents
-└── docs/       # Documentation agents
++-- review/     # Code review agents
++-- research/   # Research and analysis agents
++-- design/     # Design and UI agents
++-- workflow/   # Workflow automation agents
++-- docs/       # Documentation agents
 
 commands/
-├── workflows/  # Core workflow commands (workflows:plan, workflows:review, etc.)
-└── *.md        # Utility commands
++-- workflows/  # Core workflow commands (workflows:plan, workflows:review, etc.)
++-- *.md        # Utility commands
 
 skills/
-└── *.md        # All skills at root level
++-- *.md        # All skills at root level
 ```
 
 ## Command Naming Convention

@@ -26,7 +26,7 @@ Ideas are automatically ranked on 5 dimensions:
 
 <!-- Auto-ranked by /review-ideas command -->
 
-### 🔥 High Priority (Score: 85+)
+###  High Priority (Score: 85+)
 
 - **[idea-001]** Meeting context cache with smart summaries
   - **Score:** 92 (Impact: 95, Alignment: 85, Token: 95, Memory: 90, Proactive: 85)
@@ -42,7 +42,7 @@ Ideas are automatically ranked on 5 dimensions:
   - **Why ranked here:** Pure system learning + proactive behavior. Analyzes session learnings to detect patterns, then proactively suggests improvements before you ask. System gets smarter over time, compounds knowledge.
   - **Description:** Background process that analyzes `System/Session_Learnings/` to identify recurring patterns (same mistakes, common workflows, repeated pain points). Builds a learning model that proactively surfaces relevant past learnings during relevant contexts. Example: If you're editing a command, it shows "Last time you worked on commands, you learned X."
 
-### ⚡ Medium Priority (Score: 60-84)
+###  Medium Priority (Score: 60-84)
 
 - **[idea-003]** Preference learning from edit patterns
   - **Score:** 82 (Impact: 80, Alignment: 85, Token: 70, Memory: 90, Proactive: 75)
@@ -55,10 +55,10 @@ Ideas are automatically ranked on 5 dimensions:
   - **Score:** 78 (Impact: 75, Alignment: 80, Token: 90, Memory: 70, Proactive: 65)
   - **Category:** system
   - **Captured:** 2026-01-28
-  - **Why ranked here:** Massive token efficiency gains. Convert verbose markdown to structured data (JSON/YAML) for frequently accessed info. Example: Person pages → structured records, enabling O(1) lookup instead of full file reads.
+  - **Why ranked here:** Massive token efficiency gains. Convert verbose markdown to structured data (JSON/YAML) for frequently accessed info. Example: Person pages -> structured records, enabling O(1) lookup instead of full file reads.
   - **Description:** Create structured indexes for high-frequency data: person pages, project metadata, task status. Store in lightweight format (YAML/JSON). Use for quick lookups, fall back to full markdown when needed. Estimated 60% token reduction for common operations.
 
-### 💡 Low Priority (Score: <60)
+###  Low Priority (Score: <60)
 
 - **[idea-005]** Export weekly summaries to blog
   - **Score:** 48 (Impact: 55, Alignment: 40, Token: 45, Memory: 50, Proactive: 40)

@@ -106,36 +106,36 @@ export class ProgressIndicator {
     const lines: string[] = [];
 
     // Top border
-    lines.push(this.theme.fg("border", "┌─ " + this.options.title + " " + "─".repeat(Math.max(0, width - this.options.title.length - 4)) + "┐"));
+    lines.push(this.theme.fg("border", "+- " + this.options.title + " " + "-".repeat(Math.max(0, width - this.options.title.length - 4)) + "+"));
 
     // Empty line
-    lines.push(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"));
+    lines.push(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"));
 
     // Status message
     const statusMsg = this.getStatusMessage();
-    lines.push(this.theme.fg("border", "│") + "  " + truncateToWidth(statusMsg, width - 4) + " ".repeat(Math.max(0, width - 4 - statusMsg.length)) + this.theme.fg("border", "│"));
+    lines.push(this.theme.fg("border", "|") + "  " + truncateToWidth(statusMsg, width - 4) + " ".repeat(Math.max(0, width - 4 - statusMsg.length)) + this.theme.fg("border", "|"));
 
     // Empty line
-    lines.push(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"));
+    lines.push(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"));
 
     // Scout progress bars
     for (const scout of this.scouts.values()) {
       const line = this.renderScoutLine(scout, width);
-      lines.push(this.theme.fg("border", "│") + "  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + this.theme.fg("border", "│"));
+      lines.push(this.theme.fg("border", "|") + "  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + this.theme.fg("border", "|"));
     }
 
     // Empty line
-    lines.push(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"));
+    lines.push(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"));
 
     // Summary line if showing estimate
     if (this.options.showEstimate && this.completedCount > 0) {
       const summary = this.getSummaryLine();
-      lines.push(this.theme.fg("border", "│") + "  " + truncateToWidth(summary, width - 4) + " ".repeat(Math.max(0, width - 4 - summary.length)) + this.theme.fg("border", "│"));
-      lines.push(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"));
+      lines.push(this.theme.fg("border", "|") + "  " + truncateToWidth(summary, width - 4) + " ".repeat(Math.max(0, width - 4 - summary.length)) + this.theme.fg("border", "|"));
+      lines.push(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"));
     }
 
     // Bottom border
-    lines.push(this.theme.fg("border", "└" + "─".repeat(width - 2) + "┘"));
+    lines.push(this.theme.fg("border", "+" + "-".repeat(width - 2) + "+"));
 
     this.cachedWidth = width;
     this.cachedLines = lines;
@@ -149,7 +149,7 @@ export class ProgressIndicator {
     if (completed === 0) {
       return this.theme.fg("dim", `Spawning ${total} parallel scouts...`);
     } else if (completed === total) {
-      return this.theme.fg("success", "✅ All scouts complete!");
+      return this.theme.fg("success", "[x] All scouts complete!");
     } else {
       return this.theme.fg("accent", `Processing: ${completed}/${total} complete`);
     }
@@ -172,13 +172,13 @@ export class ProgressIndicator {
   private getStatusIcon(status: ScoutProgress["status"]): string {
     switch (status) {
       case "pending":
-        return this.theme.fg("dim", "⏸");
+        return this.theme.fg("dim", "[||]");
       case "running":
-        return this.theme.fg("accent", "⏳");
+        return this.theme.fg("accent", "[~]");
       case "complete":
-        return this.theme.fg("success", "✅");
+        return this.theme.fg("success", "[x]");
       case "error":
-        return this.theme.fg("error", "❌");
+        return this.theme.fg("error", "[ ]");
     }
   }
 
@@ -227,7 +227,7 @@ export class ProgressIndicator {
       estText && this.theme.fg("dim", estText),
     ].filter(Boolean);
 
-    return parts.join(this.theme.fg("dim", " • "));
+    return parts.join(this.theme.fg("dim", " - "));
   }
 
   private getVisibleWidth(str: string): number {

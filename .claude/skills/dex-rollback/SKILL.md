@@ -27,7 +27,7 @@ Run: `git --version`
 
 If Git not found:
 ```
-❌ Git not detected
+[ ] Git not detected
 
 Rollback requires Git. Your data is safe, but automated rollback isn't available.
 
@@ -44,7 +44,7 @@ Run: `git tag | grep backup-before`
 
 If no backup found:
 ```
-❌ No backup found
+[ ] No backup found
 
 Looks like you haven't updated recently, or the backup wasn't created.
 
@@ -66,7 +66,7 @@ Example: `backup-before-v1.3.0` means restore to before v1.3.0 update.
 ### Step 2: Confirm Rollback
 
 ```
-🔙 Rollback Dex Update
+ Rollback Dex Update
 
 You're about to restore Dex to the version before your last update.
 
@@ -74,14 +74,14 @@ Current version: v1.3.0
 Will restore to: v1.2.0 (last backup)
 
 **What happens:**
-✓ Dex features restored to v1.2.0
-✓ Your notes, tasks, projects stay as they are
-✓ Any new skills from v1.3.0 will be removed
+[x] Dex features restored to v1.2.0
+[x] Your notes, tasks, projects stay as they are
+[x] Any new skills from v1.3.0 will be removed
 
 **This is safe:**
-• Your data folders (00-07) are not affected
-• Your configuration (user-profile, pillars) stays
-• You can update again later if you want
+- Your data folders (00-07) are not affected
+- Your configuration (user-profile, pillars) stays
+- You can update again later if you want
 
 [Confirm rollback]
 [Cancel]
@@ -94,7 +94,7 @@ Will restore to: v1.2.0 (last backup)
 Before rolling back, save any uncommitted changes:
 
 ```
-💾 Saving current state...
+ Saving current state...
 ```
 
 Run:
@@ -110,7 +110,7 @@ git tag before-rollback-$(date +%Y%m%d-%H%M%S)
 ```
 
 ```
-✓ Current state saved
+[x] Current state saved
 ```
 
 ---
@@ -118,7 +118,7 @@ git tag before-rollback-$(date +%Y%m%d-%H%M%S)
 ### Step 4: Perform Rollback
 
 ```
-🔄 Rolling back to v1.2.0...
+ Rolling back to v1.2.0...
 ```
 
 Run:
@@ -139,7 +139,7 @@ This restores all Dex files to the state before update.
 **A. Remove dependencies from newer version**
 
 ```
-📦 Cleaning up...
+ Cleaning up...
 ```
 
 Run:
@@ -162,7 +162,7 @@ rm -f .migration-version
 ### Step 6: Verification
 
 ```
-✓ Rollback complete! Now testing...
+[x] Rollback complete! Now testing...
 ```
 
 **Quick checks:**
@@ -184,12 +184,12 @@ rm -f .migration-version
 
 **If all pass:**
 ```
-✅ Rollback successful!
+[x] Rollback successful!
 ```
 
 **If issues:**
 ```
-⚠️ Rollback completed but found an issue
+[!] Rollback completed but found an issue
 
 [Details]
 
@@ -204,9 +204,9 @@ Your data is safe. You may want to:
 ### Step 7: Summary
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Rolled Back: v1.3.0 → v1.2.0
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+--------------------------------------
+[x] Rolled Back: v1.3.0 -> v1.2.0
+--------------------------------------
 
 Dex restored to: v1.2.0
 Your data: All preserved (notes, tasks, projects)
@@ -214,12 +214,12 @@ Your data: All preserved (notes, tasks, projects)
 You're back to the version from before your last update.
 
 **What now?**
-• Everything should work as before
-• You can try updating again later with /dex-update
-• If issues persist, try /setup to verify configuration
+- Everything should work as before
+- You can try updating again later with /dex-update
+- If issues persist, try /setup to verify configuration
 
 **Want to report what went wrong?**
-[Open issue on GitHub] — Help improve future updates
+[Open issue on GitHub] - Help improve future updates
 ```
 
 ---
@@ -233,8 +233,8 @@ Did you roll back by mistake?
 
 We saved your state before rollback. You can restore it:
 
-[Restore to v1.3.0] — Undo this rollback
-[Stay on v1.2.0] — Keep rollback
+[Restore to v1.3.0] - Undo this rollback
+[Stay on v1.2.0] - Keep rollback
 ```
 
 If user chooses restore:
@@ -251,7 +251,7 @@ git reset --hard $RESTORE_TAG
 If Git not available or no backup tags:
 
 ```
-📥 Manual Rollback Method
+ Manual Rollback Method
 
 To restore an older version without Git:
 
@@ -266,28 +266,28 @@ To restore an older version without Git:
    
    From CURRENT Dex, copy to DOWNLOADED Dex:
    
-   ✓ System/user-profile.yaml
-   ✓ System/pillars.yaml
-   ✓ 00-Inbox/
-   ✓ 01-Quarter_Goals/
-   ✓ 02-Week_Priorities/
-   ✓ 03-Tasks/
-   ✓ 04-Projects/
-   ✓ 05-Areas/
-   ✓ 07-Archives/
-   ✓ .env (if exists)
+   [x] System/user-profile.yaml
+   [x] System/pillars.yaml
+   [x] 00-Inbox/
+   [x] 01-Quarter_Goals/
+   [x] 02-Week_Priorities/
+   [x] 03-Tasks/
+   [x] 04-Projects/
+   [x] 05-Areas/
+   [x] 07-Archives/
+   [x] .env (if exists)
 
 3. **Replace folders:**
    
-   • Move current Dex folder to trash (or rename to dex-old)
-   • Rename downloaded folder to 'dex'
-   • Open in Cursor
+   - Move current Dex folder to trash (or rename to dex-old)
+   - Rename downloaded folder to 'dex'
+   - Open in Cursor
 
 4. **Verify:**
    
    Run /setup to check everything works
 
-[See version history] — All Dex releases
+[See version history] - All Dex releases
 [Copy instructions]
 ```
 
@@ -296,21 +296,21 @@ To restore an older version without Git:
 ## Rollback Limitations
 
 **What rollback restores:**
-- ✓ Dex skills
-- ✓ MCP servers
-- ✓ Core features
-- ✓ Documentation
+- [x] Dex skills
+- [x] MCP servers
+- [x] Core features
+- [x] Documentation
 
 **What rollback preserves (doesn't touch):**
-- ✓ Your notes (00-Inbox, 04-Projects, 05-Areas)
-- ✓ Your tasks (03-Tasks/)
-- ✓ Your configuration (user-profile, pillars)
-- ✓ Your API keys (.env)
+- [x] Your notes (00-Inbox, 04-Projects, 05-Areas)
+- [x] Your tasks (03-Tasks/)
+- [x] Your configuration (user-profile, pillars)
+- [x] Your API keys (.env)
 
 **What you might lose:**
-- ⚠️ New features added since v1.2.0
-- ⚠️ Bug fixes introduced in v1.3.0
-- ⚠️ New skills that came with update
+- [!] New features added since v1.2.0
+- [!] Bug fixes introduced in v1.3.0
+- [!] New skills that came with update
 
 ---
 

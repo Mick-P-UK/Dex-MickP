@@ -112,7 +112,7 @@ Different content works better on different platforms:
 
 | # | Title | Subject Line | Type | Description | Key Points | Word Count |
 |---|-------|--------------|------|-------------|------------|------------|
-| 1 | [Compelling title] | [Email subject that gets opens] | Thought Leadership / How-To | [2-3 sentence description] | • Point 1 • Point 2 • Point 3 | 800-1200 |
+| 1 | [Compelling title] | [Email subject that gets opens] | Thought Leadership / How-To | [2-3 sentence description] | - Point 1 - Point 2 - Point 3 | 800-1200 |
 
 **Top Pick:** Idea #[X] - "[Title]" with reasoning
 
@@ -129,12 +129,12 @@ Different content works better on different platforms:
 **Threads:**
 | # | Hook Tweet | Thread Structure | Key Points | Engagement Angle |
 |---|------------|------------------|------------|------------------|
-| 1 | [First tweet that stops the scroll] | [Number] tweets: Hook → Setup → Points → CTA | • Point 1 • Point 2 • Point 3 | [Why people will engage] |
+| 1 | [First tweet that stops the scroll] | [Number] tweets: Hook -> Setup -> Points -> CTA | - Point 1 - Point 2 - Point 3 | [Why people will engage] |
 
 **Standalone Posts:**
 | # | Tweet | Type | Why It Works |
 |---|-------|------|--------------|
-| 1 | [Full tweet, ≤280 chars] | Hot take / Insight / Tip | [Engagement reasoning] |
+| 1 | [Full tweet, <=280 chars] | Hot take / Insight / Tip | [Engagement reasoning] |
 
 **Top Pick:** [Thread/Post] #[X] with virality reasoning
 
@@ -142,7 +142,7 @@ Different content works better on different platforms:
 
 | # | Opening Line | Angle | Key Points | CTA | Post Type |
 |---|--------------|-------|------------|-----|-----------|
-| 1 | [Hook that stops LinkedIn scroll] | [Professional angle] | • Point 1 • Point 2 • Point 3 | [Action to prompt] | Story / Insight / Lesson / List |
+| 1 | [Hook that stops LinkedIn scroll] | [Professional angle] | - Point 1 - Point 2 - Point 3 | [Action to prompt] | Story / Insight / Lesson / List |
 
 **Top Pick:** Idea #[X] with LinkedIn-specific reasoning
 

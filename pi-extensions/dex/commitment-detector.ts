@@ -116,25 +116,25 @@ function formatCommitmentSuggestions(commitments: Commitment[]): string {
   let output = "";
   
   if (promises.length > 0) {
-    output += "💡 **Detected commitments you made:**\n";
+    output += " **Detected commitments you made:**\n";
     for (const p of promises.slice(0, 3)) {
-      output += `  • "${p.text}"\n`;
+      output += `  - "${p.text}"\n`;
     }
     output += "\n";
   }
   
   if (asks.length > 0) {
-    output += "📋 **Things asked of you:**\n";
+    output += " **Things asked of you:**\n";
     for (const a of asks.slice(0, 3)) {
-      output += `  • "${a.text}"\n`;
+      output += `  - "${a.text}"\n`;
     }
     output += "\n";
   }
   
   if (deadlines.length > 0) {
-    output += "⏰ **Deadlines mentioned:**\n";
+    output += " **Deadlines mentioned:**\n";
     for (const d of deadlines.slice(0, 3)) {
-      output += `  • ${d.text}\n`;
+      output += `  - ${d.text}\n`;
     }
     output += "\n";
   }
@@ -170,7 +170,7 @@ export function registerCommitmentDetector(pi: ExtensionAPI) {
       
       if (suggestions && ctx.hasUI) {
         ctx.ui.setWidget("dex-commitments", [
-          "─── Dex Detected ───",
+          "--- Dex Detected ---",
           suggestions
         ]);
       }

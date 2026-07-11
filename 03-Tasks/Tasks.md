@@ -41,6 +41,15 @@ Your task backlog organized by priority and pillar.
 
 > High-impact tasks aligned with your weekly priorities.
 
+- [ ] Give ShareScope-Automation its own private GitHub repo ^task-20260711-001
+  - **What:** ShareScope-Automation (04-Projects/2026.04.04-ShareScope-Automation) has no git remote and is backed up nowhere. Create its own PRIVATE GitHub repo, keep its history/branches (currently post-webinar-dev), add the remote, push.
+  - **First check:** Confirm whether C:\Vaults\Cowork\ax-trees-automation and 04-Projects/2026.04.04-ShareScope-Automation are the same project before creating the repo.
+  - **Why:** Only unbacked-up code left after today's single-repo Dex-MickP backup. May become a member-distributable product, so it stays out of Dex-MickP.
+  - **Pillar:** PAIDA
+  - **Created:** 2026-07-11
+  - **Priority:** High - unbacked-up code at risk. Mick may do this evening.
+  - **Ref:** 00-Inbox/2026.07.11 - Brain Dump - MCSB PRD Reconciliation and ShareScope Repo.md; _handovers/LATEST.md
+
 - [ ] Consolidate /daily and /daily-plan commands ^task-20260301-003
   - **What:** /daily (PAIDA custom briefing) and /daily-plan (Dex morning planner) overlap. Merge custom briefing behaviour INTO /daily-plan rather than the other way around, to avoid breaking Dex planner.
   - **Why:** Cleaner command set, one morning command not two
@@ -88,6 +97,16 @@ Your task backlog organized by priority and pillar.
 ## P2 - Normal
 
 > Everything else worth doing.
+
+- [ ] Reconcile MCSB PRD with recent work + update progress tracker ^task-20260711-002
+  - **What:** Compare recent work against the MCSB PRD (latest on record: v0.3, 13 May 2026), reconcile, mark completed items, and bring the progress tracker up to date.
+  - **Threads to fold in:** Dex-MickP now ONE private repo + SSH auto-push (2026.07.11); ax-trees-automation (ax-mapper generic UI mapper); ShareScope automation (chart/financials/report skills).
+  - **Progress tracker (already exists):** PROGRESS.md at 04-Projects/2026.05.09 - MCSB/PROGRESS.md and the Notion MCSB Build Tracker (https://www.notion.so/b2462f490c7448cf8af9b51e91f1d159) - update both together.
+  - **First check:** Confirm the current PRD version on disk (Mick recalled v0.2.1; Cedric's record says v0.3 is the latest).
+  - **Pillar:** PAIDA
+  - **Created:** 2026-07-11
+  - **Priority:** Medium - housekeeping, not blocking, but many threads to consolidate.
+  - **Ref:** 00-Inbox/2026.07.11 - Brain Dump - MCSB PRD Reconciliation and ShareScope Repo.md
 
 - [ ] Fix yt-weekly-stats skill - browser navigation broken ^task-20260301-002
   - **What:** Skill fails when switching from 28-day to 365-day period in YT Studio. Dropdown click navigates away to Google Sheet. URL manipulation for period-365day also unreliable.

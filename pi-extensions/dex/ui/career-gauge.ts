@@ -65,42 +65,42 @@ export class CareerReadinessGauge {
 
     // Title
     const title = this.getTitle();
-    container.addChild(new Text(this.theme.fg("border", "┌─ " + title + " " + "─".repeat(Math.max(0, width - title.length - 4)) + "┐"), 0, 0));
-    container.addChild(new Text(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "+- " + title + " " + "-".repeat(Math.max(0, width - title.length - 4)) + "+"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"), 0, 0));
 
     // Overall score
     this.addOverallScore(container, width);
-    container.addChild(new Text(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"), 0, 0));
 
     // Competency breakdown section
-    container.addChild(new Text(this.theme.fg("border", "│ ") + this.theme.fg("accent", this.theme.bold("─── Competency Breakdown ───")) + " ".repeat(Math.max(0, width - 32)) + this.theme.fg("border", "│"), 0, 0));
-    container.addChild(new Text(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "| ") + this.theme.fg("accent", this.theme.bold("--- Competency Breakdown ---")) + " ".repeat(Math.max(0, width - 32)) + this.theme.fg("border", "|"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"), 0, 0));
 
     // Competencies
     for (const comp of this.readiness.competencies) {
       this.addCompetencyLine(container, comp, width);
     }
-    container.addChild(new Text(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"), 0, 0));
 
     // Gap analysis if present
     if (this.readiness.gaps.length > 0) {
-      container.addChild(new Text(this.theme.fg("border", "│ ") + this.theme.fg("accent", this.theme.bold("─── Gap Analysis ───")) + " ".repeat(Math.max(0, width - 24)) + this.theme.fg("border", "│"), 0, 0));
-      container.addChild(new Text(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"), 0, 0));
+      container.addChild(new Text(this.theme.fg("border", "| ") + this.theme.fg("accent", this.theme.bold("--- Gap Analysis ---")) + " ".repeat(Math.max(0, width - 24)) + this.theme.fg("border", "|"), 0, 0));
+      container.addChild(new Text(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"), 0, 0));
 
-      container.addChild(new Text(this.theme.fg("border", "│ ") + this.theme.fg("text", "Focus Areas:") + " ".repeat(Math.max(0, width - 16)) + this.theme.fg("border", "│"), 0, 0));
+      container.addChild(new Text(this.theme.fg("border", "| ") + this.theme.fg("text", "Focus Areas:") + " ".repeat(Math.max(0, width - 16)) + this.theme.fg("border", "|"), 0, 0));
       for (let i = 0; i < this.readiness.gaps.length; i++) {
         this.addGapLine(container, this.readiness.gaps[i]!, i + 1, width);
       }
-      container.addChild(new Text(this.theme.fg("border", "│") + " ".repeat(width - 2) + this.theme.fg("border", "│"), 0, 0));
+      container.addChild(new Text(this.theme.fg("border", "|") + " ".repeat(width - 2) + this.theme.fg("border", "|"), 0, 0));
     }
 
     // Actions
     const actions = "[View Evidence] [Capture New Evidence] [Export Assessment]";
-    const actionsLine = this.theme.fg("border", "│ ") + this.theme.fg("dim", truncateToWidth(actions, width - 4)) + " ".repeat(Math.max(0, width - 4 - actions.length)) + this.theme.fg("border", "│");
+    const actionsLine = this.theme.fg("border", "| ") + this.theme.fg("dim", truncateToWidth(actions, width - 4)) + " ".repeat(Math.max(0, width - 4 - actions.length)) + this.theme.fg("border", "|");
     container.addChild(new Text(actionsLine, 0, 0));
 
     // Bottom border
-    container.addChild(new Text(this.theme.fg("border", "└" + "─".repeat(width - 2) + "┘"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "+" + "-".repeat(width - 2) + "+"), 0, 0));
 
     this.cachedWidth = width;
     this.cachedLines = container.render(width);
@@ -110,7 +110,7 @@ export class CareerReadinessGauge {
   private getTitle(): string {
     const { currentLevel, targetLevel } = this.readiness;
     if (currentLevel && targetLevel) {
-      return `Promotion Readiness: ${currentLevel} → ${targetLevel}`;
+      return `Promotion Readiness: ${currentLevel} -> ${targetLevel}`;
     }
     return "Promotion Readiness";
   }
@@ -126,11 +126,11 @@ export class CareerReadinessGauge {
     const bar = renderProgressBar(overallScore, barWidth, progressBarTheme);
     const scoreLine = `Overall: ${overallScore}/100    [${bar}] ${overallScore}%`;
     const padding = " ".repeat(Math.max(0, width - 4 - scoreLine.length));
-    container.addChild(new Text(this.theme.fg("border", "│ ") + scoreLine + padding + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "| ") + scoreLine + padding + this.theme.fg("border", "|"), 0, 0));
 
     const statusText = `Status: ${this.getStatusLabel(status)}`;
     const statusPadding = " ".repeat(Math.max(0, width - 4 - statusText.length));
-    container.addChild(new Text(this.theme.fg("border", "│ ") + this.getOverallStatusColor(status)(statusText) + statusPadding + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "| ") + this.getOverallStatusColor(status)(statusText) + statusPadding + this.theme.fg("border", "|"), 0, 0));
   }
 
   private addCompetencyLine(container: Container, comp: CompetencyProgress, width: number): void {
@@ -145,14 +145,14 @@ export class CareerReadinessGauge {
     const label = comp.name.padEnd(18);
     const line = `${label} [${bar}] ${Math.round(comp.score).toString().padStart(3)}%   ${statusIcon}`;
     const padding = " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line)));
-    container.addChild(new Text(this.theme.fg("border", "│ ") + line + padding + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "| ") + line + padding + this.theme.fg("border", "|"), 0, 0));
   }
 
   private addGapLine(container: Container, gap: GapAnalysis, index: number, width: number): void {
     const line = `${index}. ${gap.competency} - ${gap.recommendation}`;
     const truncated = truncateToWidth(line, width - 6);
     const padding = " ".repeat(Math.max(0, width - 6 - truncated.length));
-    container.addChild(new Text(this.theme.fg("border", "│   ") + this.theme.fg("text", truncated) + padding + this.theme.fg("border", "│"), 0, 0));
+    container.addChild(new Text(this.theme.fg("border", "|   ") + this.theme.fg("text", truncated) + padding + this.theme.fg("border", "|"), 0, 0));
   }
 
   private getStatusLabel(status: CareerReadiness["status"]): string {
@@ -184,15 +184,15 @@ export class CareerReadinessGauge {
   private getCompetencyStatusIcon(status: CompetencyProgress["status"]): string {
     switch (status) {
       case "weak":
-        return this.theme.fg("error", "⚠️ Needs more evidence");
+        return this.theme.fg("error", "[!] Needs more evidence");
       case "building":
-        return this.theme.fg("warning", "🔄 Building");
+        return this.theme.fg("warning", " Building");
       case "on-track":
-        return this.theme.fg("accent", "✅ On track");
+        return this.theme.fg("accent", "[x] On track");
       case "strong":
-        return this.theme.fg("success", "✅ Strong");
+        return this.theme.fg("success", "[x] Strong");
       case "excellent":
-        return this.theme.fg("success", "✅ Excellent");
+        return this.theme.fg("success", "[x] Excellent");
     }
   }
 

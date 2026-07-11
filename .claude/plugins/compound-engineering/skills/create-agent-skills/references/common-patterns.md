@@ -220,7 +220,7 @@ Common mistakes to avoid when authoring skills.
 </description>
 
 <pitfall name="markdown_headings_in_body">
-❌ **BAD**: Using markdown headings in skill body:
+[ ] **BAD**: Using markdown headings in skill body:
 
 ```markdown
 # PDF Processing
@@ -232,7 +232,7 @@ Extract text with pdfplumber...
 Form filling requires additional setup...
 ```
 
-✅ **GOOD**: Using pure XML structure:
+[x] **GOOD**: Using pure XML structure:
 
 ```xml
 <objective>
@@ -252,12 +252,12 @@ Form filling requires additional setup...
 </pitfall>
 
 <pitfall name="vague_descriptions">
-❌ **BAD**:
+[ ] **BAD**:
 ```yaml
 description: Helps with documents
 ```
 
-✅ **GOOD**:
+[x] **GOOD**:
 ```yaml
 description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
 ```
@@ -266,12 +266,12 @@ description: Extract text and tables from PDF files, fill forms, merge documents
 </pitfall>
 
 <pitfall name="inconsistent_pov">
-❌ **BAD**:
+[ ] **BAD**:
 ```yaml
 description: I can help you process Excel files and generate reports
 ```
 
-✅ **GOOD**:
+[x] **GOOD**:
 ```yaml
 description: Processes Excel files and generates reports. Use when analyzing spreadsheets or .xlsx files.
 ```
@@ -280,12 +280,12 @@ description: Processes Excel files and generates reports. Use when analyzing spr
 </pitfall>
 
 <pitfall name="wrong_naming_convention">
-❌ **BAD**: Directory name doesn't match skill name or verb-noun convention:
+[ ] **BAD**: Directory name doesn't match skill name or verb-noun convention:
 - Directory: `facebook-ads`, Name: `facebook-ads-manager`
 - Directory: `stripe-integration`, Name: `stripe`
 - Directory: `helper-scripts`, Name: `helper`
 
-✅ **GOOD**: Consistent verb-noun convention:
+[x] **GOOD**: Consistent verb-noun convention:
 - Directory: `manage-facebook-ads`, Name: `manage-facebook-ads`
 - Directory: `setup-stripe-payments`, Name: `setup-stripe-payments`
 - Directory: `process-pdfs`, Name: `process-pdfs`
@@ -294,14 +294,14 @@ description: Processes Excel files and generates reports. Use when analyzing spr
 </pitfall>
 
 <pitfall name="too_many_options">
-❌ **BAD**:
+[ ] **BAD**:
 ```xml
 <quick_start>
 You can use pypdf, or pdfplumber, or PyMuPDF, or pdf2image, or pdfminer, or tabula-py...
 </quick_start>
 ```
 
-✅ **GOOD**:
+[x] **GOOD**:
 ```xml
 <quick_start>
 Use pdfplumber for text extraction:
@@ -318,30 +318,30 @@ For scanned PDFs requiring OCR, use pdf2image with pytesseract instead.
 </pitfall>
 
 <pitfall name="deeply_nested_references">
-❌ **BAD**: References nested multiple levels:
+[ ] **BAD**: References nested multiple levels:
 ```
-SKILL.md → advanced.md → details.md → examples.md
+SKILL.md -> advanced.md -> details.md -> examples.md
 ```
 
-✅ **GOOD**: References one level deep from SKILL.md:
+[x] **GOOD**: References one level deep from SKILL.md:
 ```
-SKILL.md → advanced.md
-SKILL.md → details.md
-SKILL.md → examples.md
+SKILL.md -> advanced.md
+SKILL.md -> details.md
+SKILL.md -> examples.md
 ```
 
 **Why it matters**: Claude may only partially read deeply nested files. Keep references one level deep from SKILL.md.
 </pitfall>
 
 <pitfall name="windows_paths">
-❌ **BAD**:
+[ ] **BAD**:
 ```xml
 <reference_guides>
 See scripts\validate.py for validation
 </reference_guides>
 ```
 
-✅ **GOOD**:
+[x] **GOOD**:
 ```xml
 <reference_guides>
 See scripts/validate.py for validation
@@ -354,7 +354,7 @@ See scripts/validate.py for validation
 <pitfall name="dynamic_context_and_file_reference_execution">
 **Problem**: When showing examples of dynamic context syntax (exclamation mark + backticks) or file references (@ prefix), the skill loader executes these during skill loading.
 
-❌ **BAD** - These execute during skill load:
+[ ] **BAD** - These execute during skill load:
 ```xml
 <examples>
 Load current status with: !`git status`
@@ -362,7 +362,7 @@ Review dependencies in: @package.json
 </examples>
 ```
 
-✅ **GOOD** - Add space to prevent execution:
+[x] **GOOD** - Add space to prevent execution:
 ```xml
 <examples>
 Load current status with: ! `git status` (remove space before backtick in actual usage)
@@ -379,14 +379,14 @@ Review dependencies in: @ package.json (remove space after @ in actual usage)
 </pitfall>
 
 <pitfall name="missing_required_tags">
-❌ **BAD**: Missing required tags:
+[ ] **BAD**: Missing required tags:
 ```xml
 <quick_start>
 Use this tool for processing...
 </quick_start>
 ```
 
-✅ **GOOD**: All required tags present:
+[x] **GOOD**: All required tags present:
 ```xml
 <objective>
 Process data files with validation and transformation.
@@ -407,7 +407,7 @@ Use this tool for processing...
 </pitfall>
 
 <pitfall name="hybrid_xml_markdown">
-❌ **BAD**: Mixing XML tags with markdown headings:
+[ ] **BAD**: Mixing XML tags with markdown headings:
 ```markdown
 <objective>
 PDF processing capabilities
@@ -422,7 +422,7 @@ Extract text with pdfplumber...
 Form filling...
 ```
 
-✅ **GOOD**: Pure XML throughout:
+[x] **GOOD**: Pure XML throughout:
 ```xml
 <objective>
 PDF processing capabilities
@@ -441,7 +441,7 @@ Form filling...
 </pitfall>
 
 <pitfall name="unclosed_xml_tags">
-❌ **BAD**: Forgetting to close XML tags:
+[ ] **BAD**: Forgetting to close XML tags:
 ```xml
 <objective>
 Process PDF files
@@ -451,7 +451,7 @@ Use pdfplumber...
 </quick_start>
 ```
 
-✅ **GOOD**: Properly closed tags:
+[x] **GOOD**: Properly closed tags:
 ```xml
 <objective>
 Process PDF files

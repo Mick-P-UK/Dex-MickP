@@ -52,7 +52,7 @@ Inventory technical debt, assess impact/effort, and prioritize what to address.
 ## Output Format
 
 ```markdown
-# 🔧 Technical Debt Inventory
+#  Technical Debt Inventory
 
 **Items identified:** [Count]
 **Critical items:** [Count]

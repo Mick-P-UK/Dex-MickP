@@ -77,8 +77,8 @@ function validateDimensions(bodyDimensions, pres) {
 
     if (Math.abs(layoutWidth - widthInches) > 0.1 || Math.abs(layoutHeight - heightInches) > 0.1) {
       errors.push(
-        `HTML dimensions (${widthInches.toFixed(1)}" × ${heightInches.toFixed(1)}") ` +
-        `don't match presentation layout (${layoutWidth.toFixed(1)}" × ${layoutHeight.toFixed(1)}")`
+        `HTML dimensions (${widthInches.toFixed(1)}" x ${heightInches.toFixed(1)}") ` +
+        `don't match presentation layout (${layoutWidth.toFixed(1)}" x ${layoutHeight.toFixed(1)}")`
       );
     }
   }
@@ -290,13 +290,13 @@ async function extractSlideData(page) {
       let angle = 0;
 
       // Handle writing-mode first
-      // PowerPoint: 90° = text rotated 90° clockwise (reads top to bottom, letters upright)
-      // PowerPoint: 270° = text rotated 270° clockwise (reads bottom to top, letters upright)
+      // PowerPoint: 90 deg = text rotated 90 deg clockwise (reads top to bottom, letters upright)
+      // PowerPoint: 270 deg = text rotated 270 deg clockwise (reads bottom to top, letters upright)
       if (writingMode === 'vertical-rl') {
-        // vertical-rl alone = text reads top to bottom = 90° in PowerPoint
+        // vertical-rl alone = text reads top to bottom = 90 deg in PowerPoint
         angle = 90;
       } else if (writingMode === 'vertical-lr') {
-        // vertical-lr alone = text reads bottom to top = 270° in PowerPoint
+        // vertical-lr alone = text reads bottom to top = 270 deg in PowerPoint
         angle = 270;
       }
 
@@ -331,7 +331,7 @@ async function extractSlideData(page) {
         return { x: rect.left, y: rect.top, w: rect.width, h: rect.height };
       }
 
-      // For 90° or 270° rotations, swap width and height
+      // For 90 deg or 270 deg rotations, swap width and height
       // because PowerPoint applies rotation to the original (unrotated) box
       const isVertical = rotation === 90 || rotation === 270;
 
@@ -758,7 +758,7 @@ async function extractSlideData(page) {
           const runs = parseInlineFormatting(li, { breakLine: false });
           // Clean manual bullets from first run
           if (runs.length > 0) {
-            runs[0].text = runs[0].text.replace(/^[•\-\*▪▸]\s*/, '');
+            runs[0].text = runs[0].text.replace(/^[-\-\*->]\s*/, '');
             runs[0].options.bullet = { indent: textIndent };
           }
           // Set breakLine on last run
@@ -806,7 +806,7 @@ async function extractSlideData(page) {
       if (rect.width === 0 || rect.height === 0 || !text) return;
 
       // Validate: Check for manual bullet symbols in text elements (not in lists)
-      if (el.tagName !== 'LI' && /^[•\-\*▪▸○●◆◇■□]\s/.test(text.trimStart())) {
+      if (el.tagName !== 'LI' && /^[-\-\*->o-**[x][ ]]\s/.test(text.trimStart())) {
         errors.push(
           `Text element <${el.tagName.toLowerCase()}> starts with bullet symbol "${text.substring(0, 20)}...". ` +
           'Use <ul> or <ol> lists instead of manual bullet symbols.'

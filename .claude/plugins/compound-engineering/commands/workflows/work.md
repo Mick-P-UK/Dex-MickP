@@ -94,7 +94,7 @@ This command takes a work document (plan, specification, or todo file) and execu
      - Write tests for new functionality
      - Run tests after changes
      - Mark task as completed in TodoWrite
-     - Mark off the corresponding checkbox in the plan file ([ ] → [x])
+     - Mark off the corresponding checkbox in the plan file ([ ] -> [x])
      - Evaluate for incremental commit (see below)
    ```
 
@@ -108,7 +108,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    |----------------|---------------------|
    | Logical unit complete (model, service, component) | Small part of a larger unit |
    | Tests pass + meaningful progress | Tests failing |
-   | About to switch contexts (backend → frontend) | Purely scaffolding with no behavior |
+   | About to switch contexts (backend -> frontend) | Purely scaffolding with no behavior |
    | About to attempt risky/uncertain changes | Would need a "WIP" commit message |
 
    **Heuristic:** "Can I write a commit message that describes a complete, valuable change? If yes, commit. If the message would be 'WIP' or 'partial X', wait."
@@ -215,7 +215,7 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    Brief explanation if needed.
 
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
+    Generated with [Claude Code](https://claude.com/claude-code)
 
    Co-Authored-By: Claude <noreply@anthropic.com>
    EOF
@@ -279,7 +279,7 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    ---
 
-   [![Compound Engineered](https://img.shields.io/badge/Compound-Engineered-6366f1)](https://github.com/EveryInc/compound-engineering-plugin) 🤖 Generated with [Claude Code](https://claude.com/claude-code)
+   [![Compound Engineered](https://img.shields.io/badge/Compound-Engineered-6366f1)](https://github.com/EveryInc/compound-engineering-plugin)  Generated with [Claude Code](https://claude.com/claude-code)
    EOF
    )"
    ```

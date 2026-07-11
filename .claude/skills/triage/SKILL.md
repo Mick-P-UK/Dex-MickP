@@ -31,7 +31,7 @@ Before executing, check if demo mode is active:
 
 1. Read `System/user-profile.yaml` and check `demo_mode`
 2. **If `demo_mode: true`:**
-   - Display: "Demo Mode Active — Using sample data"
+   - Display: "Demo Mode Active - Using sample data"
    - Use `System/Demo/` paths instead of root paths
    - Write any output to `System/Demo/` subdirectories
 3. **If `demo_mode: false`:** Use normal vault paths
@@ -130,7 +130,7 @@ Organize standalone files in the `00-Inbox/` folder by suggesting where they bel
    ```
    File: [filename]
    Strategic Context: [Week Priority/Q Goal if matched]
-   Match: [entity type] → [specific entity name]
+   Match: [entity type] -> [specific entity name]
    Destination: [exact path]
    Confidence: [high/medium/low] ([score]/100)
    Action: [suggested action]
@@ -172,9 +172,9 @@ Extract uncompleted tasks from notes and route them appropriately.
 3. **Match Tasks to Entities**
 
    For each task:
-   - Check if it mentions a known project → suggest adding to that project
-   - Check if it mentions a known person → suggest linking to person page
-   - Check if it mentions a known company → suggest linking to company
+   - Check if it mentions a known project -> suggest adding to that project
+   - Check if it mentions a known person -> suggest linking to person page
+   - Check if it mentions a known company -> suggest linking to company
 
 4. **Deduplication Check**
 
@@ -230,24 +230,24 @@ Process all orphaned items:
 ## Example Output
 
 ```
-📬 Triage Report
+ Triage Report
 
 === STRATEGIC CONTEXT ===
 Week Priorities:
-• Mobile App Launch (beta by Friday)
-• Q2 Planning finalization
-• Sarah's team onboarding
+- Mobile App Launch (beta by Friday)
+- Q2 Planning finalization
+- Sarah's team onboarding
 
 Quarterly Goals:
-• Launch mobile app beta (Q1)
-• Expand into EMEA market (Q2)
-• Build product marketing team (Q1)
+- Launch mobile app beta (Q1)
+- Expand into EMEA market (Q2)
+- Build product marketing team (Q1)
 
 === STRUCTURE DISCOVERED ===
-• 4 projects found in 04-Projects/
-• 12 people found in 05-Areas/People/
-• 3 companies found in 05-Areas/Companies/
-• 3 pillars configured
+- 4 projects found in 04-Projects/
+- 12 people found in 05-Areas/People/
+- 3 companies found in 05-Areas/Companies/
+- 3 pillars configured
 
 === FILES (2) ===
 
@@ -257,40 +257,40 @@ Quarterly Goals:
    Suggested: Review manually or describe context
    
 2. "Q1_Planning_Notes.md"
-   Strategic Context: ✓ Week Priority "Q2 Planning" (related)
-   Match: PROJECT → "Q2 Planning"
+   Strategic Context: [x] Week Priority "Q2 Planning" (related)
+   Match: PROJECT -> "Q2 Planning"
    Destination: 04-Projects/Q2_Planning.md
    Confidence: MEDIUM (70/100)
    Action: Merge into Q2 Planning project?
 
 === TASKS (4) ===
 
-🎯 HIGH PRIORITY - MATCHES WEEK PRIORITIES (1):
+ HIGH PRIORITY - MATCHES WEEK PRIORITIES (1):
 
 1. "- [ ] Finalize mobile app pricing model"
    Found in: 04-Projects/Mobile_App_Launch.md
-   Strategic Context: ✓ Week Priority "Mobile App Launch" + Q1 Goal
+   Strategic Context: [x] Week Priority "Mobile App Launch" + Q1 Goal
    Match: Already in correct project
    Confidence: HIGH (95/100)
    Action: Extract to Week Priorities for visibility?
 
-📋 NEEDS ROUTING (2):
+ NEEDS ROUTING (2):
 
 2. "- [ ] Follow up with Sarah about timeline concerns"
    Found in: random meeting note
-   Strategic Context: ✓ Week Priority "Sarah's team onboarding"
-   Match: PERSON → "Sarah Chen"
+   Strategic Context: [x] Week Priority "Sarah's team onboarding"
+   Match: PERSON -> "Sarah Chen"
    Destination: Add to Sarah's person page action items
    Confidence: HIGH (85/100)
 
 3. "- [ ] Review competitor pricing"
    Found in: scattered note
    Strategic Context: (no direct priority match)
-   Match: PILLAR → "Product Strategy"
+   Match: PILLAR -> "Product Strategy"
    Destination: Week Priorities or Tasks.md?
    Confidence: MEDIUM (60/100)
 
-⚠️ DUPLICATE (1):
+[!] DUPLICATE (1):
 
 4. "- [ ] Reach out to Sarah"
    Found in: old meeting note
@@ -299,25 +299,25 @@ Quarterly Goals:
 
 === TASKS (5 items) ===
 
-✅ READY TO ROUTE (3):
+[x] READY TO ROUTE (3):
 1. "Follow up with Sarah about Q1 budget"
-   → Week Priorities
+   -> Week Priorities
    Links: People/External/Sarah_Chen.md
 
 2. "Prep slides for conference"
-   → Week Priorities
+   -> Week Priorities
    Pillar: Thought Leadership
 
 3. "Review competitor analysis for Acme deal"
-   → 04-Projects/Acme_Deal.md (project match)
+   -> 04-Projects/Acme_Deal.md (project match)
    Links: 05-Areas/Companies/Acme_Corp.md
 
-⚠️ POTENTIAL DUPLICATE (1):
+[!] POTENTIAL DUPLICATE (1):
 4. "Contact Tom about implementation"
-   → 78% match with "Reach out to Tom" in Week Priorities
+   -> 78% match with "Reach out to Tom" in Week Priorities
    [s]kip / [m]erge / [k]eep both?
 
-❓ NEEDS CLARIFICATION (1):
+[?] NEEDS CLARIFICATION (1):
 5. "Fix the bug"
    - Too vague. Which bug? What system?
 

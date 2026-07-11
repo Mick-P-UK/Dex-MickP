@@ -59,18 +59,18 @@ Based on answers, recommend structure:
 **If 1 workflow, simple knowledge:**
 ```
 skill-name/
-└── SKILL.md (everything in one file)
++-- SKILL.md (everything in one file)
 ```
 
 **If 2+ workflows, shared knowledge:**
 ```
 skill-name/
-├── SKILL.md (router)
-├── workflows/
-│   ├── workflow-a.md
-│   └── workflow-b.md
-└── references/
-    └── shared-knowledge.md
++-- SKILL.md (router)
++-- workflows/
+|   +-- workflow-a.md
+|   +-- workflow-b.md
++-- references/
+    +-- shared-knowledge.md
 ```
 
 ## Step 6: Identify Essential Principles
@@ -94,8 +94,8 @@ Summarize:
 
 Ask: "Does this structure make sense? Ready to build it?"
 
-If yes → offer to switch to "Create a new skill" workflow
-If no → clarify and iterate
+If yes -> offer to switch to "Create a new skill" workflow
+If no -> clarify and iterate
 </process>
 
 <decision_framework>

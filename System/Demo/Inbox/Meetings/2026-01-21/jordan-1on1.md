@@ -32,9 +32,9 @@ Weekly sync with Jordan on mobile app progress and team dynamics.
 
 ## Action Items
 
-- [ ] Get firm push notification timeline by Wed → Jordan
-- [ ] Schedule platform rewrite discussion for Feb → Alex
-- [ ] Review Android test results → Jordan
+- [ ] Get firm push notification timeline by Wed -> Jordan
+- [ ] Schedule platform rewrite discussion for Feb -> Alex
+- [ ] Review Android test results -> Jordan
 
 ---
 

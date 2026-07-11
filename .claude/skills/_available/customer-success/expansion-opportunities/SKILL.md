@@ -49,7 +49,7 @@ Systematically identify and prioritize account expansion opportunities.
 ## Output Format
 
 ```markdown
-# 🎯 Expansion Opportunities
+#  Expansion Opportunities
 
 **Accounts reviewed:** [Count]
 **Total expansion potential:** $[Amount]

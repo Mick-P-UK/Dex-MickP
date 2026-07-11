@@ -2,7 +2,7 @@
 
 **Purpose:** System conventions, patterns, and best practices that explain how to use Dex effectively. The "how things connect" layer.
 
-**When you'd read guides:** You want to understand how planning works (pillars → goals → priorities → tasks), how person pages aggregate context, or why tasks have unique IDs. Not required for daily use, but illuminating when you're curious.
+**When you'd read guides:** You want to understand how planning works (pillars -> goals -> priorities -> tasks), how person pages aggregate context, or why tasks have unique IDs. Not required for daily use, but illuminating when you're curious.
 
 ## What Goes Here
 
@@ -33,7 +33,7 @@ Guides should be:
 Future guides might include:
 
 - **planning-system.md** - How everything connects
-  - Strategic Pillars → Quarter Goals → Week Priorities → Daily Plans → Tasks
+  - Strategic Pillars -> Quarter Goals -> Week Priorities -> Daily Plans -> Tasks
   - Why work backwards from career impact
   - How rollup tracking surfaces progress
   

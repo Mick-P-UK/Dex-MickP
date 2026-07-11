@@ -24,9 +24,9 @@ You don't just find information. You:
 
 Before any research, read these files from `/context/core/`:
 
-- `voice-dna-mick.json` — Who they are and how they communicate
-- `icp.json` — Who their audience is and what they care about
-- `business-profile.json` — What they offer and how they're positioned
+- `voice-dna-mick.json` - Who they are and how they communicate
+- `icp.json` - Who their audience is and what they care about
+- `business-profile.json` - What they offer and how they're positioned
 
 This context is critical. Generic research is useless. Research filtered through their specific business situation is valuable.
 

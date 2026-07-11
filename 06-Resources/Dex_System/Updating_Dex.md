@@ -59,9 +59,9 @@ Just like Dropbox stores your files in the cloud, GitHub stores Dex's files. But
 **Do you need a GitHub account?**
 
 Not for basic updates! You can:
-- ✓ Check for updates (no account needed)
-- ✓ Download updates (no account needed)
-- ✓ Use all of Dex (no account needed)
+- [x] Check for updates (no account needed)
+- [x] Download updates (no account needed)
+- [x] Use all of Dex (no account needed)
 
 **When you DO need an account:**
 - If you want to save your copy of Dex on GitHub (like a backup)
@@ -108,7 +108,7 @@ You'll see one of two things:
 
 **Option A: You're up to date**
 ```
-✅ You're already on the latest version (v1.2.0)
+[x] You're already on the latest version (v1.2.0)
 
 No update needed!
 ```
@@ -117,7 +117,7 @@ Great! You're done. Come back in a few weeks.
 
 **Option B: An update is available**
 ```
-🎁 Dex v1.3.0 is available
+ Dex v1.3.0 is available
 
 You're on: v1.2.0
 Latest: v1.3.0
@@ -152,7 +152,7 @@ Usually yes! Updates make things better. But you can cancel if:
 
 **Note about "breaking changes":**
 
-Sometimes you'll see: ⚠️ **BREAKING CHANGES**
+Sometimes you'll see: [!] **BREAKING CHANGES**
 
 This means the update changes how something works in a big way. These are rare and come with extra instructions. Don't worry - the update process will guide you.
 
@@ -178,12 +178,12 @@ Dex will walk you through the update. Here's what to expect:
 
 **You'll see:**
 ```
-✓ Git detected
+[x] Git detected
 ```
 
 **If you see this instead:**
 ```
-❌ Git not detected
+[ ] Git not detected
 
 Dex updates require Git. Here's how to install...
 ```
@@ -213,7 +213,7 @@ This only happens once. After this, updates are automatic.
 
 **You'll see:**
 ```
-✓ Setup verified
+[x] Setup verified
 ```
 
 If this is your first time updating, Dex might configure a few things behind the scenes. This is normal and automatic.
@@ -228,8 +228,8 @@ Dex is telling Git where to look for updates (on GitHub). Think of it like savin
 
 **You'll see:**
 ```
-⬇️ Downloading updates from GitHub...
-✓ Updates downloaded
+v Downloading updates from GitHub...
+[x] Updates downloaded
 ```
 
 **What's happening:**
@@ -244,8 +244,8 @@ Dex is getting the new files from GitHub and bringing them to your computer.
 
 **You'll see:**
 ```
-💾 Saving your work...
-✓ Your work is saved
+ Saving your work...
+[x] Your work is saved
 ```
 
 **What's happening:**
@@ -264,7 +264,7 @@ This makes updating completely safe. You can always go back.
 
 **You'll see:**
 ```
-🔄 Applying updates...
+ Applying updates...
 ```
 
 **What's happening:**
@@ -275,7 +275,7 @@ Dex is carefully updating its own files (the application) while leaving your fil
 
 **Outcome 1: Clean update (most common)**
 ```
-✓ Updates applied successfully
+[x] Updates applied successfully
 ```
 
 This means the update fit perfectly with your setup. No problems. This happens 95% of the time.
@@ -288,7 +288,7 @@ Sometimes both you AND the main version changed the same file. For example:
 
 **You'll see:**
 ```
-🔍 Resolving overlapping changes...
+ Resolving overlapping changes...
 
 Found changes in the same files:
 - CLAUDE.md (your version vs update version)
@@ -296,7 +296,7 @@ Found changes in the same files:
 Automatically keeping: Your customizations
 Automatically updating: Core Dex features
 
-✓ Resolved automatically
+[x] Resolved automatically
 ```
 
 **What Dex does automatically:**
@@ -321,8 +321,8 @@ For each file with overlapping changes:
 
 **You'll see:**
 ```
-📦 Updating dependencies...
-✓ Dependencies updated
+ Updating dependencies...
+[x] Dependencies updated
 ```
 
 **What are dependencies?**
@@ -343,8 +343,8 @@ This takes 30 seconds to 2 minutes depending on your internet.
 
 **You'll see:**
 ```
-✓ Update complete! Now testing...
-✅ Update successful!
+[x] Update complete! Now testing...
+[x] Update successful!
 ```
 
 **What's happening:**
@@ -363,19 +363,19 @@ If anything fails, Dex will offer to undo the update automatically.
 **You'll see a summary:**
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Dex Updated: v1.2.0 → v1.3.0
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+--------------------------------------
+[x] Dex Updated: v1.2.0 -> v1.3.0
+--------------------------------------
 
 What's new:
-• Career coach improvements
-• Task deduplication fix
-• Meeting intelligence enhancement
+- Career coach improvements
+- Task deduplication fix
+- Meeting intelligence enhancement
 
 Your data:
-✓ All notes preserved
-✓ All tasks preserved
-✓ All customizations preserved
+[x] All notes preserved
+[x] All tasks preserved
+[x] All customizations preserved
 
 Time taken: 2 minutes
 ```
@@ -420,8 +420,8 @@ Dex instantly restores everything to exactly how it was before you updated.
 **How long it takes:** 30 seconds
 
 **What gets restored:**
-- ✓ Dex features go back to old version
-- ✓ All your notes, tasks, projects stay as they are
+- [x] Dex features go back to old version
+- [x] All your notes, tasks, projects stay as they are
 
 **Translation:** You tried the update, didn't like it, and now you're back to the old version. Your work is completely safe.
 
@@ -518,7 +518,7 @@ This is why updates can't hurt your data. Git literally doesn't see it.
 Every 7 days, during `/daily-plan`, Dex automatically checks GitHub and tells you if an update is available:
 
 ```
-🎁 Dex v1.3.0 is available. Run /dex-update to see what's new and update.
+ Dex v1.3.0 is available. Run /dex-update to see what's new and update.
 
 ---
 
@@ -598,7 +598,7 @@ Very rarely (maybe once a year), an update changes something in a big way. Examp
 - Changing how a feature works
 - Updating the configuration format
 
-These are marked with ⚠️ **BREAKING CHANGES** in the release notes.
+These are marked with [!] **BREAKING CHANGES** in the release notes.
 
 **What to do:**
 

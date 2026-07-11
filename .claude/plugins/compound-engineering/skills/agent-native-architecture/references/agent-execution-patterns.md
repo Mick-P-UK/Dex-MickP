@@ -77,15 +77,15 @@ extension ToolResult {
 ```typescript
 // Examples:
 read_file("/missing.txt")
-// → { success: false, output: "File not found", shouldContinue: true }
+// -> { success: false, output: "File not found", shouldContinue: true }
 // Agent can try a different file or ask for clarification
 
 complete_task("Organized all downloads into folders")
-// → { success: true, output: "...", shouldContinue: false }
+// -> { success: true, output: "...", shouldContinue: false }
 // Agent is done
 
 write_file("/output.md", content)
-// → { success: true, output: "Wrote file", shouldContinue: true }
+// -> { success: true, output: "Wrote file", shouldContinue: true }
 // Agent keeps working toward the goal
 ```
 
@@ -150,11 +150,11 @@ Show users what's happening:
 
 ```
 Progress: 3/5 tasks complete (60%)
-✅ [1] Find source materials
-✅ [2] Download full text
-✅ [3] Extract key passages
-❌ [4] Generate summary - Error: context limit exceeded
-⏳ [5] Create outline - Pending
+[x] [1] Find source materials
+[x] [2] Download full text
+[x] [3] Extract key passages
+[ ] [4] Generate summary - Error: context limit exceeded
+[~] [5] Create outline - Pending
 ```
 
 ### Partial Completion Scenarios
@@ -284,10 +284,10 @@ Agent sessions can extend indefinitely, but context windows don't. Design for bo
 ### The Problem
 
 ```
-Turn 1: User asks question → 500 tokens
-Turn 2: Agent reads file → 10,000 tokens
-Turn 3: Agent reads another file → 10,000 tokens
-Turn 4: Agent researches → 20,000 tokens
+Turn 1: User asks question -> 500 tokens
+Turn 2: Agent reads file -> 10,000 tokens
+Turn 3: Agent reads another file -> 10,000 tokens
+Turn 4: Agent researches -> 20,000 tokens
 ...
 Turn 10: Context window exceeded
 ```
@@ -296,7 +296,7 @@ Turn 10: Context window exceeded
 
 **1. Tools should support iterative refinement**
 
-Instead of all-or-nothing, design for summary → detail → full:
+Instead of all-or-nothing, design for summary -> detail -> full:
 
 ```typescript
 // Good: Supports iterative refinement

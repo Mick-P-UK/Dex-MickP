@@ -4,33 +4,33 @@ Configuration and system files for Dex.
 
 ## Key Files
 
-- **pillars.yaml** — Your strategic pillars (main focus areas)
-- **user-profile.yaml** — User preferences and settings (created during onboarding)
-- **user-profile-template.yaml** — Template for user profile structure
-- **Dex_Backlog.md** — AI-ranked improvement backlog (ideas from you + AI discoveries)
-- **usage_log.md** — Feature adoption tracking (used by `/dex-level-up`)
-- **.mcp.json.example** — Example MCP server configuration
-- **.last-learning-check** — Timestamp for learning review prompts
-- **claude-code-state.json** — Tracks Anthropic changelog checks
+- **pillars.yaml** - Your strategic pillars (main focus areas)
+- **user-profile.yaml** - User preferences and settings (created during onboarding)
+- **user-profile-template.yaml** - Template for user profile structure
+- **Dex_Backlog.md** - AI-ranked improvement backlog (ideas from you + AI discoveries)
+- **usage_log.md** - Feature adoption tracking (used by `/dex-level-up`)
+- **.mcp.json.example** - Example MCP server configuration
+- **.last-learning-check** - Timestamp for learning review prompts
+- **claude-code-state.json** - Tracks Anthropic changelog checks
 
 ## Subfolders
 
-- **Templates/** — Note templates for consistent formatting
-- **Session_Learnings/** — Daily learning capture from `/review` sessions
-- **Demo/** — Demo mode configuration and sample data
+- **Templates/** - Note templates for consistent formatting
+- **Session_Learnings/** - Daily learning capture from `/review` sessions
+- **Demo/** - Demo mode configuration and sample data
 
 ## What to Edit
 
 **You should modify:**
-- `pillars.yaml` — Update your strategic focus areas as they evolve
-- `user-profile.yaml` — Adjust preferences and settings
-- `Dex_Backlog.md` — Mark ideas as implemented, add notes
+- `pillars.yaml` - Update your strategic focus areas as they evolve
+- `user-profile.yaml` - Adjust preferences and settings
+- `Dex_Backlog.md` - Mark ideas as implemented, add notes
 
 **Don't modify:**
-- Demo/ — Managed by `/dex-demo` command
-- usage_log.md — Auto-updated by system
-- .last-learning-check — Auto-updated by learning prompt system
-- claude-code-state.json — Auto-updated by changelog monitoring
+- Demo/ - Managed by `/dex-demo` command
+- usage_log.md - Auto-updated by system
+- .last-learning-check - Auto-updated by learning prompt system
+- claude-code-state.json - Auto-updated by changelog monitoring
 
 ## Key Concepts
 
@@ -64,4 +64,4 @@ After onboarding, run `/getting-started` for an interactive tour of available fe
 
 ## Usage
 
-Most of the time you won't interact with System/ directly — Dex manages it. But when you want to adjust strategic direction or preferences, the key files are here.
+Most of the time you won't interact with System/ directly - Dex manages it. But when you want to adjust strategic direction or preferences, the key files are here.

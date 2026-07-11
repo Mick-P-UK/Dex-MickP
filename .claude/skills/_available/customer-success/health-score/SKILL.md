@@ -46,21 +46,21 @@ Monitor portfolio health, identify at-risk accounts, and prioritize proactive en
 ## Output Format
 
 ```markdown
-# 💚 Portfolio Health Score
+#  Portfolio Health Score
 
 **Accounts:** [Total]
 **Health distribution:** Green: [X] | Yellow: [X] | Red: [X]
 
-## 🚨 At-Risk (Red)
+##  At-Risk (Red)
 ### [Account Name]
 - **Risk factors:** No contact in 45 days, support ticket open 2 weeks
 - **Renewal:** [Date] (X days away)
 - **Action:** Schedule check-in call this week
 
-## ⚠️ Watch List (Yellow)
+## [!] Watch List (Yellow)
 [Similar format]
 
-## ✅ Healthy (Green)
+## [x] Healthy (Green)
 [Count] accounts in good standing
 
 ## Proactive Outreach Needed

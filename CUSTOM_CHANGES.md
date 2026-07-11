@@ -13,13 +13,13 @@ Changed all Dex system files to use date-prefixed naming format: `YYYY.MM.DD-Fil
 
 ### Files Renamed
 1. **Projects:**
-   - `04-Projects/DEX_Setup.md` → `04-Projects/2026.02.07-DEX_Setup.md`
+   - `04-Projects/DEX_Setup.md` -> `04-Projects/2026.02.07-DEX_Setup.md`
 
 2. **Tasks:**
-   - `03-Tasks/Tasks.md` → `03-Tasks/2026.02.07-Tasks.md`
+   - `03-Tasks/Tasks.md` -> `03-Tasks/2026.02.07-Tasks.md`
 
 3. **Week Priorities:**
-   - `02-Week_Priorities/Week_Priorities.md` → `02-Week_Priorities/2026.02.07-Week_Priorities.md`
+   - `02-Week_Priorities/Week_Priorities.md` -> `02-Week_Priorities/2026.02.07-Week_Priorities.md`
 
 ### Code Changes Made
 
@@ -66,9 +66,9 @@ Changed all Dex system files to use date-prefixed naming format: `YYYY.MM.DD-Fil
 
 ### Rollback Instructions
 If needed, rename files back to original names:
-- `2026.02.07-DEX_Setup.md` → `DEX_Setup.md`
-- `2026.02.07-Tasks.md` → `Tasks.md`
-- `2026.02.07-Week_Priorities.md` → `Week_Priorities.md`
+- `2026.02.07-DEX_Setup.md` -> `DEX_Setup.md`
+- `2026.02.07-Tasks.md` -> `Tasks.md`
+- `2026.02.07-Week_Priorities.md` -> `Week_Priorities.md`
 
 Code changes can be reverted by removing the helper functions and restoring original file path constants.
 

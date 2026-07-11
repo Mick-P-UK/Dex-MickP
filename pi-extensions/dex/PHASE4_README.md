@@ -1,6 +1,6 @@
 # Dex for Pi - Phase 4: Rich TUI Components
 
-**Status:** ✅ Complete  
+**Status:** [x] Complete  
 **Date:** February 5, 2026
 
 ## What Was Built
@@ -11,14 +11,14 @@ Phase 4 adds rich, interactive TUI components that transform Dex from a function
 
 | Component | File | Purpose | Status |
 |-----------|------|---------|--------|
-| **Progress Bar** | `ui/progress-bar.ts` | Helper for rendering progress bars | ✅ Complete |
-| **Progress Indicator** | `ui/progress-indicator.ts` | Real-time parallel scout progress | ✅ Complete |
-| **Week Progress Bar** | `ui/week-progress.ts` | Week/priority progress (footer + widget) | ✅ Complete |
-| **Collapsible Section** | `ui/collapsible-section.ts` | Expandable/collapsible UI sections | ✅ Complete |
-| **Career Gauge** | `ui/career-gauge.ts` | Promotion readiness visualization | ✅ Complete |
-| **Task Board** | `ui/task-board.ts` | Kanban-style task visualization | ✅ Complete |
-| **Daily Plan Wizard** | `wizards/daily-plan-wizard.ts` | Interactive daily planning | ✅ Complete |
-| **Daily Review Wizard** | `wizards/daily-review-wizard.ts` | End-of-day review with inline actions | ✅ Complete |
+| **Progress Bar** | `ui/progress-bar.ts` | Helper for rendering progress bars | [x] Complete |
+| **Progress Indicator** | `ui/progress-indicator.ts` | Real-time parallel scout progress | [x] Complete |
+| **Week Progress Bar** | `ui/week-progress.ts` | Week/priority progress (footer + widget) | [x] Complete |
+| **Collapsible Section** | `ui/collapsible-section.ts` | Expandable/collapsible UI sections | [x] Complete |
+| **Career Gauge** | `ui/career-gauge.ts` | Promotion readiness visualization | [x] Complete |
+| **Task Board** | `ui/task-board.ts` | Kanban-style task visualization | [x] Complete |
+| **Daily Plan Wizard** | `wizards/daily-plan-wizard.ts` | Interactive daily planning | [x] Complete |
+| **Daily Review Wizard** | `wizards/daily-review-wizard.ts` | End-of-day review with inline actions | [x] Complete |
 
 ---
 
@@ -31,7 +31,7 @@ cd ~/Claudesidian
 pi
 ```
 
-The Dex extension should load automatically and show `● Dex` in the footer.
+The Dex extension should load automatically and show `- Dex` in the footer.
 
 ### 2. Try the Wizards
 
@@ -46,10 +46,10 @@ The Dex extension should load automatically and show `● Dex` in the footer.
 - Displays free blocks for focus time
 - Week progress with priority status
 - Suggested focus tasks with checkbox selection
-- Keyboard navigation: ↑↓ to navigate, Space to toggle, Enter to generate
+- Keyboard navigation: ^v to navigate, Space to toggle, Enter to generate
 
 **Keyboard:**
-- `↑`/`↓` - Navigate focus suggestions
+- `^`/`v` - Navigate focus suggestions
 - `Space` - Toggle task selection
 - `Enter` - Generate plan
 - `c` - Customize (future: more options)
@@ -62,15 +62,15 @@ The Dex extension should load automatically and show `● Dex` in the footer.
 ```
 
 **Features:**
-- ✅ Completed tasks section (auto-populated)
-- 📋 Still open tasks with inline [Done] [Reschedule] actions
-- ⚡ Commitments detected from conversations
-- 🏆 Career evidence suggestions
+- [x] Completed tasks section (auto-populated)
+-  Still open tasks with inline [Done] [Reschedule] actions
+-  Commitments detected from conversations
+-  Career evidence suggestions
 - Collapsible sections
 - Keyboard-driven workflow
 
 **Keyboard:**
-- `↑`/`↓` - Navigate items
+- `^`/`v` - Navigate items
 - `Tab` - Next section
 - `Shift+Tab` - Previous section
 - `Enter` - Execute action (complete, create task, capture evidence)
@@ -90,7 +90,7 @@ The Dex extension should load automatically and show `● Dex` in the footer.
 Shows persistent widget above editor with:
 - Day X/5 indicator
 - Progress bars for each priority
-- Status icons (✅ on-track, ⚠️ behind, ❗ not-started)
+- Status icons ([x] on-track, [!] behind, [!] not-started)
 
 **Clear widget:**
 ```
@@ -125,8 +125,8 @@ Interactive kanban board with:
 - Real-time visual updates
 
 **Keyboard:**
-- `←`/`→` - Switch columns
-- `↑`/`↓` - Navigate cards
+- `<-`/`->` - Switch columns
+- `^`/`v` - Navigate cards
 - `Enter` - View card details
 - `d` - Mark done
 - `m` - Move to next column
@@ -298,19 +298,19 @@ Now that the UI components are built and tested, integrate them with actual data
 
 ```
 ~/.pi/agent/extensions/dex/
-├── ui/
-│   ├── progress-bar.ts          # 1,239 bytes - Helper
-│   ├── progress-indicator.ts    # 7,571 bytes - Parallel scout progress
-│   ├── week-progress.ts         # 5,361 bytes - Week/priority progress
-│   ├── collapsible-section.ts   # 2,191 bytes - Expandable sections
-│   ├── career-gauge.ts          # 8,697 bytes - Promotion readiness
-│   ├── task-board.ts            # 8,036 bytes - Kanban board
-│   └── index.ts                 # 683 bytes - Exports
-├── wizards/
-│   ├── daily-plan-wizard.ts     # 12,038 bytes - Daily planning
-│   ├── daily-review-wizard.ts   # 15,512 bytes - Daily review
-│   └── index.ts                 # 473 bytes - Exports
-└── PHASE4_README.md             # This file
++-- ui/
+|   +-- progress-bar.ts          # 1,239 bytes - Helper
+|   +-- progress-indicator.ts    # 7,571 bytes - Parallel scout progress
+|   +-- week-progress.ts         # 5,361 bytes - Week/priority progress
+|   +-- collapsible-section.ts   # 2,191 bytes - Expandable sections
+|   +-- career-gauge.ts          # 8,697 bytes - Promotion readiness
+|   +-- task-board.ts            # 8,036 bytes - Kanban board
+|   +-- index.ts                 # 683 bytes - Exports
++-- wizards/
+|   +-- daily-plan-wizard.ts     # 12,038 bytes - Daily planning
+|   +-- daily-review-wizard.ts   # 15,512 bytes - Daily review
+|   +-- index.ts                 # 473 bytes - Exports
++-- PHASE4_README.md             # This file
 ```
 
 **Total:** ~62KB of new code across 11 files
@@ -321,14 +321,14 @@ Now that the UI components are built and tested, integrate them with actual data
 
 | Metric | Target | Status |
 |--------|--------|--------|
-| All 6 components render correctly | ✅ | Complete |
-| Keyboard navigation works throughout | ✅ | Complete |
-| Actions trigger appropriate effects | ✅ | Mocked (ready for real integration) |
-| Error states handled gracefully | ✅ | Complete |
-| Components integrate with existing tools | ⏳ | Pending Phase 5 |
-| Wizards load in <500ms | ✅ | Instant |
-| Keyboard input response <50ms | ✅ | Immediate |
-| Progress updates in real-time | ✅ | Works with mock data |
+| All 6 components render correctly | [x] | Complete |
+| Keyboard navigation works throughout | [x] | Complete |
+| Actions trigger appropriate effects | [x] | Mocked (ready for real integration) |
+| Error states handled gracefully | [x] | Complete |
+| Components integrate with existing tools | [~] | Pending Phase 5 |
+| Wizards load in <500ms | [x] | Instant |
+| Keyboard input response <50ms | [x] | Immediate |
+| Progress updates in real-time | [x] | Works with mock data |
 
 ---
 
@@ -346,7 +346,7 @@ Now that the UI components are built and tested, integrate them with actual data
 - [x] Theme colors consistent throughout
 - [ ] File output matches expectations (pending real integration)
 - [ ] Inline task completion works (pending real integration)
-- [ ] Commitment → task flow works (pending real integration)
+- [ ] Commitment -> task flow works (pending real integration)
 
 ---
 
@@ -364,7 +364,7 @@ Now that the UI components are built and tested, integrate them with actual data
 
 ---
 
-**Phase 4 Complete!** 🎉
+**Phase 4 Complete!** 
 
 All rich TUI components are built, integrated, and ready for testing. The system now has delightful visual experiences for planning, review, and career development.
 

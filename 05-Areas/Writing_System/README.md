@@ -5,22 +5,22 @@
 This system helps you create high-quality content that sounds like you and resonates with your target audience.
 
 **Enhanced with:**
-- ✅ Complete content workflow (Ideas → Draft → Ready → Published → Derivatives)
-- ✅ Destination tracking (diy-investors.com vs diy-investors.ai)
-- ✅ Content repurposing framework
-- ✅ Obsidian Bases integration for database views
+- [x] Complete content workflow (Ideas -> Draft -> Ready -> Published -> Derivatives)
+- [x] Destination tracking (diy-investors.com vs diy-investors.ai)
+- [x] Content repurposing framework
+- [x] Obsidian Bases integration for database views
 
 ---
 
 ## Content Workflow Overview
 
 ```
-0-Ideas/        → Messy thoughts, outlines, writing brainstorms
-1-Drafts/       → Formal drafts from AI or you
-2-Ready/        → Approved content ready to publish
-3-Published/    → Published parent content (newsletters, articles)
-4-Derivatives/  → Repurposed content (social posts, snippets)
-Archive/        → Retired content
+0-Ideas/        -> Messy thoughts, outlines, writing brainstorms
+1-Drafts/       -> Formal drafts from AI or you
+2-Ready/        -> Approved content ready to publish
+3-Published/    -> Published parent content (newsletters, articles)
+4-Derivatives/  -> Repurposed content (social posts, snippets)
+Archive/        -> Retired content
 ```
 
 **See:** `Bases Configuration Guide.md` for Obsidian database setup
@@ -181,9 +181,9 @@ Claude: [Produces newsletter in your voice, for your audience]
 ### What Gets Loaded Automatically
 
 When you use any writing skill:
-- ✅ Your voice DNA (how you sound)
-- ✅ Your ICP (who you write for)
-- ✅ Your business profile (what you offer)
+- [x] Your voice DNA (how you sound)
+- [x] Your ICP (who you write for)
+- [x] Your business profile (what you offer)
 
 **You don't need to remind me** - the system handles context injection.
 
@@ -232,7 +232,7 @@ To update your voice, audience, or business context:
 This Writing System integrates with Dex workflows:
 
 - **Daily Plan** - Block time for content creation
-- **Tasks** - "Write newsletter" → auto-suggests `/thought-leadership`
+- **Tasks** - "Write newsletter" -> auto-suggests `/thought-leadership`
 - **Projects** - Content series tracked as projects
 - **Person Pages** - Write for specific people in your network
 

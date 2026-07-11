@@ -79,7 +79,7 @@ Anonymize customer feedback for quarterly review presentation.
 
 <quick_start>
 <instructions>
-1. Replace all customer names with "CUSTOMER_[ID]" (e.g., "Jane Doe" → "CUSTOMER_001")
+1. Replace all customer names with "CUSTOMER_[ID]" (e.g., "Jane Doe" -> "CUSTOMER_001")
 2. Replace email addresses with "EMAIL_[ID]@example.com"
 3. Redact phone numbers as "PHONE_[ID]"
 4. If a message mentions a specific product (e.g., "AcmeCloud"), leave it intact
@@ -180,28 +180,28 @@ Eliminate words and phrases that create ambiguity or leave decisions open.
 </principle>
 
 <ambiguous_phrases>
-❌ **"Try to..."** - Implies optional
-✅ **"Always..."** or **"Never..."** - Clear requirement
+[ ] **"Try to..."** - Implies optional
+[x] **"Always..."** or **"Never..."** - Clear requirement
 
-❌ **"Should probably..."** - Unclear obligation
-✅ **"Must..."** or **"May optionally..."** - Clear obligation level
+[ ] **"Should probably..."** - Unclear obligation
+[x] **"Must..."** or **"May optionally..."** - Clear obligation level
 
-❌ **"Generally..."** - When are exceptions allowed?
-✅ **"Always... except when..."** - Clear rule with explicit exceptions
+[ ] **"Generally..."** - When are exceptions allowed?
+[x] **"Always... except when..."** - Clear rule with explicit exceptions
 
-❌ **"Consider..."** - Should Claude always do this or only sometimes?
-✅ **"If X, then Y"** or **"Always..."** - Clear conditions
+[ ] **"Consider..."** - Should Claude always do this or only sometimes?
+[x] **"If X, then Y"** or **"Always..."** - Clear conditions
 </ambiguous_phrases>
 
 <example>
-❌ **Ambiguous**:
+[ ] **Ambiguous**:
 ```xml
 <validation>
 You should probably validate the output and try to fix any errors.
 </validation>
 ```
 
-✅ **Clear**:
+[x] **Clear**:
 ```xml
 <validation>
 Always validate output before proceeding:
@@ -451,14 +451,14 @@ If a human with minimal context struggles, Claude will too.
 
 <practical_examples>
 <example domain="data_processing">
-❌ **Unclear**:
+[ ] **Unclear**:
 ```xml
 <quick_start>
 Clean the data and remove bad entries.
 </quick_start>
 ```
 
-✅ **Clear**:
+[x] **Clear**:
 ```xml
 <quick_start>
 <data_cleaning>
@@ -481,14 +481,14 @@ Clean the data and remove bad entries.
 </example>
 
 <example domain="code_generation">
-❌ **Unclear**:
+[ ] **Unclear**:
 ```xml
 <quick_start>
 Write a function to process user input.
 </quick_start>
 ```
 
-✅ **Clear**:
+[x] **Clear**:
 ```xml
 <quick_start>
 <function_specification>

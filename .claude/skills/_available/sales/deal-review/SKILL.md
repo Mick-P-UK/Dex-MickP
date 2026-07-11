@@ -48,14 +48,14 @@ Search for deal-related files:
 For each deal, assess health:
 
 ### Staleness Check
-- **Fresh:** Updated within last 5 days - ✅
-- **Aging:** 6-10 days without update - ⚠️
-- **Stale:** 11+ days without update - 🚨
+- **Fresh:** Updated within last 5 days - [x]
+- **Aging:** 6-10 days without update - [!]
+- **Stale:** 11+ days without update - 
 
 ### Next Steps Check
-- **Clear:** Next step defined with owner and date - ✅
-- **Vague:** Next step exists but unclear - ⚠️
-- **Missing:** No next step documented - 🚨
+- **Clear:** Next step defined with owner and date - [x]
+- **Vague:** Next step exists but unclear - [!]
+- **Missing:** No next step documented - 
 
 ### Risk Indicators
 - Keywords: "ghosting", "went dark", "waiting", "blocked", "concern", "competitor"
@@ -94,7 +94,7 @@ Enhance deal intelligence:
 Present findings in this format:
 
 ```markdown
-# 💼 Deal Review
+#  Deal Review
 
 **Date:** [Today's date]
 **Active deals:** [Count]
@@ -103,7 +103,7 @@ Present findings in this format:
 
 ---
 
-## 🚨 Needs Immediate Attention
+##  Needs Immediate Attention
 
 ### [Company Name] - [Deal Size if known]
 **Status:** Stale (15 days since update)
@@ -115,7 +115,7 @@ Present findings in this format:
 
 ---
 
-## ⚠️ Watch List
+## [!] Watch List
 
 [Deals that need attention soon but not urgent]
 
@@ -129,7 +129,7 @@ Present findings in this format:
 
 ---
 
-## ✅ On Track
+## [x] On Track
 
 [Deals with recent activity and clear next steps]
 
@@ -142,7 +142,7 @@ Present findings in this format:
 
 ---
 
-## 📅 Closing Soon (Next 7 Days)
+##  Closing Soon (Next 7 Days)
 
 ### [Company Name] - $XX,XXX
 **Close date:** [Date] (4 days)
@@ -155,7 +155,7 @@ Present findings in this format:
 
 ---
 
-## 🎯 Key Insights
+##  Key Insights
 
 **Stage distribution:**
 - Discovery: [X deals]
@@ -175,13 +175,13 @@ Present findings in this format:
 
 ---
 
-## 📊 Pipeline Health Score
+##  Pipeline Health Score
 
 **Overall health:** [Good / Needs Attention / At Risk]
 
-- ✅ Healthy deals: [X]
-- ⚠️ Watch list: [X]
-- 🚨 At risk: [X]
+- [x] Healthy deals: [X]
+- [!] Watch list: [X]
+-  At risk: [X]
 - Stale (10+ days): [X]
 - Missing next steps: [X]
 ```
@@ -240,7 +240,7 @@ When user specifies timeframe:
 ## Example Output
 
 ```markdown
-# 💼 Deal Review
+#  Deal Review
 
 **Date:** 2026-01-28
 **Active deals:** 12
@@ -249,7 +249,7 @@ When user specifies timeframe:
 
 ---
 
-## 🚨 Needs Immediate Attention
+##  Needs Immediate Attention
 
 ### TechStart Inc - $75K
 **Status:** Stale (18 days since update)
@@ -269,7 +269,7 @@ When user specifies timeframe:
 
 ---
 
-## ⚠️ Watch List
+## [!] Watch List
 
 ### GlobalCo - $95K
 **Status:** Aging (9 days since update)
@@ -289,7 +289,7 @@ When user specifies timeframe:
 
 ---
 
-## ✅ On Track
+## [x] On Track
 
 ### Acme Corp - $180K
 **Stage:** Contract Review
@@ -314,7 +314,7 @@ When user specifies timeframe:
 
 ---
 
-## 📅 Closing Soon (Next 7 Days)
+##  Closing Soon (Next 7 Days)
 
 ### StartupX - $40K
 **Close date:** Jan 30 (2 days)
@@ -328,7 +328,7 @@ When user specifies timeframe:
 
 ---
 
-## 🎯 Key Insights
+##  Key Insights
 
 **Stage distribution:**
 - Discovery: 3 deals ($220K)
@@ -348,13 +348,13 @@ When user specifies timeframe:
 
 ---
 
-## 📊 Pipeline Health Score
+##  Pipeline Health Score
 
 **Overall health:** Needs Attention
 
-- ✅ Healthy deals: 6 ($387K)
-- ⚠️ Watch list: 4 ($260K)
-- 🚨 At risk: 2 ($195K)
+- [x] Healthy deals: 6 ($387K)
+- [!] Watch list: 4 ($260K)
+-  At risk: 2 ($195K)
 - Stale (10+ days): 1 ($75K)
 - Missing next steps: 2 ($140K)
 

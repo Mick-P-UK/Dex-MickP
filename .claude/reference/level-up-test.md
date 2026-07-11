@@ -4,7 +4,7 @@
 
 ---
 
-## Test 1: Fresh Install → First Command
+## Test 1: Fresh Install -> First Command
 
 **Starting State:**
 
@@ -24,7 +24,7 @@
 1. Command executes, generates daily plan
 2. At Step 7, command silently updates `System/usage_log.md`:
    ```markdown
-   - [x] Daily planning (/daily-plan)  ← Changed from [ ] to [x]
+   - [x] Daily planning (/daily-plan)  <- Changed from [ ] to [x]
    ```
 3. Also updates metadata:
    ```markdown
@@ -41,7 +41,7 @@ grep "Daily planning" System/usage_log.md
 
 ---
 
-## Test 2: Seven Days Later → Smart Trigger
+## Test 2: Seven Days Later -> Smart Trigger
 
 **Starting State:**
 
@@ -78,7 +78,7 @@ grep "Daily planning" System/usage_log.md
    ```markdown
    ---
    
-   💡 **Tip:** You're using 1 of 25 Dex features. Run `/dex-level-up` to see what you might be missing.
+    **Tip:** You're using 1 of 25 Dex features. Run `/dex-level-up` to see what you might be missing.
    ```
 4. Updates usage log metadata:
    ```markdown
@@ -88,7 +88,7 @@ grep "Daily planning" System/usage_log.md
 **Verification:**
 ```bash
 # Check daily plan output includes tip
-grep "💡 Tip" 00-Inbox/Daily_Plans/2026-01-28.md
+grep " Tip" 00-Inbox/Daily_Plans/2026-01-28.md
 
 # Check metadata was updated
 grep "Last dex-level-up prompt" System/usage_log.md
@@ -156,7 +156,7 @@ grep "Last dex-level-up prompt" System/usage_log.md
 4. Displays output (Step 4):
 
 ```markdown
-# 🚀 Level Up Your Dex System
+#  Level Up Your Dex System
 
 Based on your usage, here are **3 ways to get more value** from Dex:
 
@@ -179,8 +179,8 @@ completes the loop and makes your planning smarter.
 
 ## 2. Person Pages - Never Walk Into Meetings Cold
 
-**What you're missing:** Person pages aggregate everything about someone — 
-meeting history, open items, context — so you're never scrambling before calls.
+**What you're missing:** Person pages aggregate everything about someone - 
+meeting history, open items, context - so you're never scrambling before calls.
 
 **Why it's relevant:** Building relationship context helps you prepare for 
 meetings and track commitments.
@@ -194,7 +194,7 @@ meetings and track commitments.
 ## 3. Meeting Processing - Extract Value from Your Meetings
 
 **What you're missing:** `/process-meetings` extracts action items, decisions, 
-and key points from meetings — then routes them to the right places.
+and key points from meetings - then routes them to the right places.
 
 **Why it's relevant:** Ensures nothing from your calls gets lost.
 
@@ -232,7 +232,7 @@ Just say the number or feature name, and I'll guide you through it.
 At end of `/review` command (Step 6):
 1. Silently updates `System/usage_log.md`:
    ```markdown
-   - [x] Daily review (/review)  ← Changed from [ ] to [x]
+   - [x] Daily review (/review)  <- Changed from [ ] to [x]
    ```
 2. No announcement about tracking update
 3. User sees only the daily review output
@@ -240,8 +240,8 @@ At end of `/review` command (Step 6):
 **Next Time User Runs `/dex-level-up`:**
 
 System recognizes:
-- Daily planning: ✅
-- Daily review: ✅
+- Daily planning: [x]
+- Daily review: [x]
 - Pattern: User completes the planning/review loop
 
 New recommendations:
@@ -288,8 +288,8 @@ grep "Daily review" System/usage_log.md
 1. User runs `/daily-plan`
 2. At Step 3.5:
    - Reads `last_dex_level_up_prompt: 2026-01-28`
-   - Calculates: 8 days since last prompt ✅
-   - Checks unused features: Still 3+ unchecked ✅
+   - Calculates: 8 days since last prompt [x]
+   - Checks unused features: Still 3+ unchecked [x]
 3. Adds tip to daily plan again
 4. Updates metadata to 2026-02-05
 
@@ -355,9 +355,9 @@ grep "Daily review" System/usage_log.md
 4. Shows advanced recommendations:
 
 ```markdown
-# 🚀 Level Up Your Dex System
+#  Level Up Your Dex System
 
-You're using Dex like a pro! 🎉 Here are **2 advanced capabilities** that could 
+You're using Dex like a pro!  Here are **2 advanced capabilities** that could 
 take your system even further:
 
 ---
@@ -409,28 +409,28 @@ could help someone just getting started.
 
 ## Summary: What We've Verified
 
-✅ **Data Collection Works**
+[x] **Data Collection Works**
 - Commands update usage_log.md correctly
 - Updates are silent (no user announcements)
 - Metadata tracking (dates, first use) works
 
-✅ **Smart Triggers Work**
+[x] **Smart Triggers Work**
 - 7-day cooldown respected
 - Only triggers when 3+ features unused
 - Updates cooldown date after triggering
 
-✅ **Recommendations Are Contextual**
+[x] **Recommendations Are Contextual**
 - New users get basics (daily review, person pages)
 - Intermediate users get progressions (weekly planning, projects)
 - Power users get advanced (custom MCPs, system improvements)
 
-✅ **User Experience Is Smooth**
+[x] **User Experience Is Smooth**
 - No interruption to normal workflow
 - Tracking happens in background
 - Recommendations are helpful, not pushy
 - 2-3 suggestions at a time (never overwhelming)
 
-✅ **System Is Maintainable**
+[x] **System Is Maintainable**
 - Simple markdown checkboxes (no complex database)
 - Adding new features is easy
 - Core commands have explicit tracking

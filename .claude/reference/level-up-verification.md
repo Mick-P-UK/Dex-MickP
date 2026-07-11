@@ -7,7 +7,7 @@
 ## Data Flow Architecture
 
 ```
-User Action → Command Execution → Usage Log Update → /dex-level-up Analysis → Recommendations
+User Action -> Command Execution -> Usage Log Update -> /dex-level-up Analysis -> Recommendations
 ```
 
 ---
@@ -38,10 +38,10 @@ CLAUDE.md (lines 173-186) instructs Dex to track usage automatically:
 > Track feature adoption in `System/usage_log.md` to power `/dex-level-up` recommendations:
 > 
 > **When to update (automatically, no announcement):**
-> - User runs a command → Check that command's box
-> - User creates person/project page → Check corresponding box
-> - Work MCP tools used → Check task management boxes
-> - Journaling prompts completed → Check journal boxes
+> - User runs a command -> Check that command's box
+> - User creates person/project page -> Check corresponding box
+> - Work MCP tools used -> Check task management boxes
+> - Journaling prompts completed -> Check journal boxes
 
 **Verification:**
 - Guidance exists in CLAUDE.md
@@ -69,7 +69,7 @@ Some features are tracked by detecting their existence in the vault:
 ### Scenario 1: New User (Week 1)
 
 **Actions:**
-1. User completes onboarding → No boxes checked yet
+1. User completes onboarding -> No boxes checked yet
 2. Runs `/daily-plan` for 7 consecutive days
 3. Creates 2 tasks via MCP
 4. Runs `/dex-level-up`
@@ -78,14 +78,14 @@ Some features are tracked by detecting their existence in the vault:
 
 ```markdown
 ## Core Workflows
-- [x] Daily planning (/daily-plan)  ← Checked after first run
+- [x] Daily planning (/daily-plan)  <- Checked after first run
 - [ ] Daily review (/review)
 - [ ] Weekly planning (/week-plan)
 - [ ] Weekly review (/week-review)
 ...
 
 ## System Features
-- [x] Task created (via MCP)  ← Detected from 03-Tasks/Tasks.md
+- [x] Task created (via MCP)  <- Detected from 03-Tasks/Tasks.md
 - [ ] Task completed (via MCP)
 ...
 
@@ -128,20 +128,20 @@ Recommendations:
 - [x] Daily planning (/daily-plan)
 - [x] Daily review (/review)
 - [x] Weekly planning (/week-plan)
-- [ ] Weekly review (/week-review)  ← Not used yet
+- [ ] Weekly review (/week-review)  <- Not used yet
 - [ ] Quarterly planning (/quarter-plan)
 - [ ] Quarterly review (/quarter-review)
 
 ## Meeting Workflows
 - [ ] Meeting prep (/meeting-prep)
 - [x] Meeting processing (/process-meetings)
-- [x] Person page created  ← 5 created
+- [x] Person page created  <- 5 created
 - [x] Person page updated
 
 ## System Features
 - [x] Task created (via MCP)
 - [x] Task completed (via MCP)
-- [ ] Project page created  ← Missing
+- [ ] Project page created  <- Missing
 ...
 ```
 
@@ -208,7 +208,7 @@ Recommendations:
 - [x] Relationship tracking used
 
 ## Advanced
-- [ ] Custom MCP created (/create-mcp)  ← Only unchecked advanced feature
+- [ ] Custom MCP created (/create-mcp)  <- Only unchecked advanced feature
 - [ ] System improvements (/dex-improve)
 - [ ] Prompt improvement (/prompt-improver)
 - [x] Demo mode (/dex-demo)
@@ -220,7 +220,7 @@ Recommendations:
 1. **Custom MCP Integration** - Automate CRM sync
 2. **System Customization** - Make Dex yours
 
-Celebration message: "You're using Dex like a pro! 🎉"
+Celebration message: "You're using Dex like a pro! "
 
 **Verification Steps:**
 1. System recognizes power user status (21+ features checked)
@@ -232,12 +232,12 @@ Celebration message: "You're using Dex like a pro! 🎉"
 
 ## Critical Verification Points
 
-### ✅ 1. Usage Log Gets Updated
+### [x] 1. Usage Log Gets Updated
 
 **Test:**
-- Fresh install → `usage_log.md` has all boxes unchecked
-- Run `/daily-plan` → Box gets checked
-- Run again → Box stays checked (idempotent)
+- Fresh install -> `usage_log.md` has all boxes unchecked
+- Run `/daily-plan` -> Box gets checked
+- Run again -> Box stays checked (idempotent)
 
 **Files:**
 - `System/usage_log.md` (the data)
@@ -245,7 +245,7 @@ Celebration message: "You're using Dex like a pro! 🎉"
 
 ---
 
-### ✅ 2. /dex-level-up Can Read Usage Log
+### [x] 2. /dex-level-up Can Read Usage Log
 
 **Test:**
 - `/dex-level-up` command reads `System/usage_log.md`
@@ -257,12 +257,12 @@ Celebration message: "You're using Dex like a pro! 🎉"
 
 ---
 
-### ✅ 3. Recommendations Are Contextual
+### [x] 3. Recommendations Are Contextual
 
 **Test:**
-- New user with only daily planning → Suggests daily review (close the loop)
-- User with daily + weekly planning → Suggests weekly review (natural next step)
-- User with tasks but no projects → Suggests project tracking
+- New user with only daily planning -> Suggests daily review (close the loop)
+- User with daily + weekly planning -> Suggests weekly review (natural next step)
+- User with tasks but no projects -> Suggests project tracking
 
 **Files:**
 - `.claude/skills/dex-level-up/SKILL.md` Step 2 (pattern analysis)
@@ -270,7 +270,7 @@ Celebration message: "You're using Dex like a pro! 🎉"
 
 ---
 
-### ✅ 4. Smart Triggers Work
+### [x] 4. Smart Triggers Work
 
 **Test:**
 - Day 1-6: No prompt in `/daily-plan`
@@ -284,13 +284,13 @@ Celebration message: "You're using Dex like a pro! 🎉"
 
 ---
 
-### ✅ 5. Tracking Is Silent
+### [x] 5. Tracking Is Silent
 
 **Test:**
 - User runs `/daily-plan`
 - Gets daily plan output
 - No mention of "Updated usage log" or tracking
-- Check `usage_log.md` → Box is checked
+- Check `usage_log.md` -> Box is checked
 
 **Behavior:**
 - All tracking updates are silent
@@ -310,7 +310,7 @@ Celebration message: "You're using Dex like a pro! 🎉"
 ### All Features Used
 
 **Expected:**
-- `/dex-level-up` shows celebration: "You're using every feature in Dex! 🎉"
+- `/dex-level-up` shows celebration: "You're using every feature in Dex! "
 - Suggests custom MCPs, system improvements, sharing knowledge
 
 ### User Says "Show Me Everything"
@@ -352,11 +352,11 @@ Celebration message: "You're using Dex like a pro! 🎉"
 
 ## Success Criteria
 
-✅ New users discover features they didn't know existed
-✅ Intermediate users progress naturally through workflows
-✅ Power users find advanced capabilities when ready
-✅ No feature blindness — everyone gets to full value
-✅ Never overwhelming — 2-3 suggestions at a time
-✅ Tracking is silent — no interruption to user flow
+[x] New users discover features they didn't know existed
+[x] Intermediate users progress naturally through workflows
+[x] Power users find advanced capabilities when ready
+[x] No feature blindness - everyone gets to full value
+[x] Never overwhelming - 2-3 suggestions at a time
+[x] Tracking is silent - no interruption to user flow
 
 **Result:** Users get to value faster, system delivers on its promise, no FOMO.

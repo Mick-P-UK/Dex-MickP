@@ -35,13 +35,13 @@ Add your event to `System/PRDs/dex-analytics-events.md`:
 ```
 
 Find the right section:
-- Core Skills → daily workflows
-- Task Management → Work MCP operations
-- People & Meetings → meeting/person related
-- Career → career development
-- Projects → project tracking
-- System Evolution → meta/improvement skills
-- Integrations → external tool connections
+- Core Skills -> daily workflows
+- Task Management -> Work MCP operations
+- People & Meetings -> meeting/person related
+- Career -> career development
+- Projects -> project tracking
+- System Evolution -> meta/improvement skills
+- Integrations -> external tool connections
 
 ---
 

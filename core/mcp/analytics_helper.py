@@ -379,7 +379,7 @@ def mark_feature_used(feature_name: str):
         content = f.read()
     
     # Find and check the checkbox for this feature
-    # Pattern: - [ ] Feature name... → - [x] Feature name...
+    # Pattern: - [ ] Feature name... -> - [x] Feature name...
     pattern = rf'- \[ \] ([^(\n]*{re.escape(feature_name)}[^(\n]*)'
     
     def replace_checkbox(match):

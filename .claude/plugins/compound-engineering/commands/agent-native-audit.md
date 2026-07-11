@@ -164,7 +164,7 @@ Tasks:
 
 Format:
 ## UI Integration Audit
-### Agent Action → UI Update Analysis
+### Agent Action -> UI Update Analysis
 | Agent Action | UI Mechanism | Immediate? | Notes |
 ### Score: X/Y (percentage%)
 ### Silent Actions (anti-pattern)
@@ -228,21 +228,21 @@ After all agents complete, compile a summary with:
 
 | Core Principle | Score | Percentage | Status |
 |----------------|-------|------------|--------|
-| Action Parity | X/Y | Z% | ✅/⚠️/❌ |
-| Tools as Primitives | X/Y | Z% | ✅/⚠️/❌ |
-| Context Injection | X/Y | Z% | ✅/⚠️/❌ |
-| Shared Workspace | X/Y | Z% | ✅/⚠️/❌ |
-| CRUD Completeness | X/Y | Z% | ✅/⚠️/❌ |
-| UI Integration | X/Y | Z% | ✅/⚠️/❌ |
-| Capability Discovery | X/Y | Z% | ✅/⚠️/❌ |
-| Prompt-Native Features | X/Y | Z% | ✅/⚠️/❌ |
+| Action Parity | X/Y | Z% | [x]/[!]/[ ] |
+| Tools as Primitives | X/Y | Z% | [x]/[!]/[ ] |
+| Context Injection | X/Y | Z% | [x]/[!]/[ ] |
+| Shared Workspace | X/Y | Z% | [x]/[!]/[ ] |
+| CRUD Completeness | X/Y | Z% | [x]/[!]/[ ] |
+| UI Integration | X/Y | Z% | [x]/[!]/[ ] |
+| Capability Discovery | X/Y | Z% | [x]/[!]/[ ] |
+| Prompt-Native Features | X/Y | Z% | [x]/[!]/[ ] |
 
 **Overall Agent-Native Score: X%**
 
 ### Status Legend
-- ✅ Excellent (80%+)
-- ⚠️ Partial (50-79%)
-- ❌ Needs Work (<50%)
+- [x] Excellent (80%+)
+- [!] Partial (50-79%)
+- [ ] Needs Work (<50%)
 
 ### Top 10 Recommendations by Impact
 

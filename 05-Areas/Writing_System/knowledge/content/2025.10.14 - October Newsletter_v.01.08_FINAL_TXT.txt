@@ -1,48 +1,48 @@
 
-Welcome to the October 2025 Newsletter. In the past month, I’ve been re-assessing my investing strategies, together with experimenting with AI to speed up my research processes. Note that I’m not expecting AI to give me any ‘answers’ in terms of individual stocks. Any concept that AI is capable of doing so is just plain ‘daft’ as far as I’m concerned… for the simple reason that we’re all at different stages of life, with different objectives, circumstances and risk tolerance.
+Welcome to the October 2025 Newsletter. In the past month, I've been re-assessing my investing strategies, together with experimenting with AI to speed up my research processes. Note that I'm not expecting AI to give me any 'answers' in terms of individual stocks. Any concept that AI is capable of doing so is just plain 'daft' as far as I'm concerned... for the simple reason that we're all at different stages of life, with different objectives, circumstances and risk tolerance.
 
-In big picture terms, quite rightly, everyone pays a lot of attention to what is happening in the United States. With US inflation expectations easing to 4.6% for the year ahead, down from 4.7% in September, there is a widespread expectation that the ‘Fed' will continue rate-cutting, supporting US economic growth forecasts of 1.8% for 2025. This doesn’t get away from the fact that the US markets have experienced an unprecedented bull run that most of us acknowledge can’t continue for ever!
+In big picture terms, quite rightly, everyone pays a lot of attention to what is happening in the United States. With US inflation expectations easing to 4.6% for the year ahead, down from 4.7% in September, there is a widespread expectation that the 'Fed' will continue rate-cutting, supporting US economic growth forecasts of 1.8% for 2025. This doesn't get away from the fact that the US markets have experienced an unprecedented bull run that most of us acknowledge can't continue for ever!
 
-At the start of 2025, I suggested that the UK seemed to me to offer better value than the US and the portfolios initially backed that up. In the past two months, the DIY-Investors’ US Portfolios have staged a significant growth spurt, as you’ll see below. This now means that there is little difference between them but I’m pleased to say that (currently) we’re heading for a very good year!
-As ever, a quick reminder that we welcome suggestions for improvements and/or topics that you’d like us to cover. Mick (15th October 2025)
+At the start of 2025, I suggested that the UK seemed to me to offer better value than the US and the portfolios initially backed that up. In the past two months, the DIY-Investors' US Portfolios have staged a significant growth spurt, as you'll see below. This now means that there is little difference between them but I'm pleased to say that (currently) we're heading for a very good year!
+As ever, a quick reminder that we welcome suggestions for improvements and/or topics that you'd like us to cover. Mick (15th October 2025)
 
-Mick’s Musings
+Mick's Musings
 October has seen the continuation of gold and silver prices increasing, not surprisingly Gold and silver miners are experiencing remarkable performance, with some companies like Coeur Mining [CDE] up 58.4% and Hecla Mining [HL] up 47.7% over the past 30 days. Gold has reached new highs above $4,000 per ounce, while silver prices have surged 75% year-to-date. 
 
-Notwithstanding the performance of gold & silver miners, It can only be a matter of time until the market breaks downwards. My (famous?) ‘Rubber Band’ is stretched almost to breaking point, as markets remain very elevated. Perhaps a time to be doing some ‘profit taking’ (as I did within the US Active 10)? 
+Notwithstanding the performance of gold & silver miners, It can only be a matter of time until the market breaks downwards. My (famous?) 'Rubber Band' is stretched almost to breaking point, as markets remain very elevated. Perhaps a time to be doing some 'profit taking' (as I did within the US Active 10)? 
 
-UK ‘Small Caps’ - Market Outlook and Catalysts
+UK 'Small Caps' - Market Outlook and Catalysts
 Several factors still seem to support a positive outlook for UK small-caps over the next year.
 Valuation Advantage: UK small-caps are trading at significant discounts to historical averages and international peers, with the FTSE Small Cap Index at a 60% discount to its 10-year average. 
-Policy Support: The Mansion House Accord is expected to channel £25 billion into UK assets, including AIM shares, by 2030. 
+Policy Support: The Mansion House Accord is expected to channel GBP25 billion into UK assets, including AIM shares, by 2030. 
 Interest Rate Environment: Falling interest rates should benefit small-caps, which typically have higher debt levels and benefit from lower borrowing costs. 
 Domestic Recovery: UK economic data seems to show some resilience, with small-caps positioned to benefit from any improvement in domestic sentiment. 
 International Recognition: US investors have increased UK equity allocations, suggesting international recognition of the value opportunity. 
 The combination of attractive valuations, improving fundamentals, and supportive policy measures seem to create a compelling case for selective investment in quality UK small-cap companies with strong balance sheets and clear competitive advantages.
-Perplexity Tasks – Automation in my ‘Day to Day’ Investing
-Researching the Precious Metals Sector is an ongoing (periodic) activity, as we all observe the seemingly relentless rise of the gold and silver prices. I’ve automated this, using Perplexity Tasks to re-evaluate the sector each month. I’ve shared details of this within the video (below). I pleased to say that I now have a series of routine tasks set up, covering a variety of reports, including; daily, weekly and monthly reports. These cover portfolio monitoring, sector analysis and daily RNS checking. Further sequential tasks are semi-automated by calling a string of sub-tasks using either; Comet Browser ‘Shortcuts’ and/or a hotkey (or ‘hotstring’). This results in increased efficiency and saves a ton of time too!  I mentioned last month that I’ll be launching a coaching programme called 'Perplexity AI for Investing’, which will take place over 12 weeks. This will provide you with a ‘quick start’ boost to using Perplexity Tasks & Comet Browser in your own investing. Details will be issued to those of you that have expressed interest this coming weekend. 
+Perplexity Tasks - Automation in my 'Day to Day' Investing
+Researching the Precious Metals Sector is an ongoing (periodic) activity, as we all observe the seemingly relentless rise of the gold and silver prices. I've automated this, using Perplexity Tasks to re-evaluate the sector each month. I've shared details of this within the video (below). I pleased to say that I now have a series of routine tasks set up, covering a variety of reports, including; daily, weekly and monthly reports. These cover portfolio monitoring, sector analysis and daily RNS checking. Further sequential tasks are semi-automated by calling a string of sub-tasks using either; Comet Browser 'Shortcuts' and/or a hotkey (or 'hotstring'). This results in increased efficiency and saves a ton of time too!  I mentioned last month that I'll be launching a coaching programme called 'Perplexity AI for Investing', which will take place over 12 weeks. This will provide you with a 'quick start' boost to using Perplexity Tasks & Comet Browser in your own investing. Details will be issued to those of you that have expressed interest this coming weekend. 
 Course Outline:
-'Perplexity AI for Investing’, which will take place over 12 weeks.
+'Perplexity AI for Investing', which will take place over 12 weeks.
 Topics that the coaching course will cover include:
 * How to set up and use Perplexity
 * Prompting (both system & task prompts)
 * Setting up Perplexity Spaces 
 * When and how to use Perplexity Tasks
 * Using Comet Browser
-* ‘Customising’ perplexity to your investing needs (according to your style)
-* Perplexity ‘Shortcuts’
-* The ‘magic sauce’ to put complex and detailed tasks together
+* 'Customising' perplexity to your investing needs (according to your style)
+* Perplexity 'Shortcuts'
+* The 'magic sauce' to put complex and detailed tasks together
 To find out more, including cost and resources provided, check out the free details HERE! 
 Note: To allow for maximum attendance on the Zoom Coaching Sessions, the webinars will run on Wednesday evenings, starting at 7.30pm. 
-DIY-Investors’ Portfolios: Monthly Update
+DIY-Investors' Portfolios: Monthly Update
 
 UK Active 10 Portfolio (2025): 14th October 2025
 
-Transactions since the last newsletter (15th September 2025): The only transaction during the past month was the purchase of Greatland Resources [GGP] on 22nd September, at 335p/share… reducing the cash holding to £1,030.11.
+Transactions since the last newsletter (15th September 2025): The only transaction during the past month was the purchase of Greatland Resources [GGP] on 22nd September, at 335p/share... reducing the cash holding to GBP1,030.11.
 
 
 
-The Portfolio, at the time of writing (14th October ’25), has risen to £15,681.88, a gain of £5,681.88 (+56.81%). It continues to move strongly upwards, headed by four precious metal miners (FRES, OMI, EDV and SRB). At the bottom of the portfolio, Zinc Media Group, has dropped in the past month… getting perilously close to the ‘cull zone’ (my 30% stop loss level)!
+The Portfolio, at the time of writing (14th October '25), has risen to GBP15,681.88, a gain of GBP5,681.88 (+56.81%). It continues to move strongly upwards, headed by four precious metal miners (FRES, OMI, EDV and SRB). At the bottom of the portfolio, Zinc Media Group, has dropped in the past month... getting perilously close to the 'cull zone' (my 30% stop loss level)!
  
 US Active 10 Portfolio (2025): 14th October 2025
 
@@ -52,13 +52,13 @@ The US Active 10 Portfolio has continued to benefit from the high percentage of 
 
 There was just one transaction within this portfolio, since 14th September 2025. The sale of part of IAM Gold Corp [IAG] on 6th October (at $13.80/share, for a profit of 170.6%). 
 
-Well, that’s almost it for the October Newsletter. For Inner Circle Members, please note that the next webinar is on Thursday 6th November 2025 at the usual time of 7.30pm.
+Well, that's almost it for the October Newsletter. For Inner Circle Members, please note that the next webinar is on Thursday 6th November 2025 at the usual time of 7.30pm.
 
 Boot Camp (Change of Date):
 
 The date of the DIY-Investors Boot Camp has been changed to Saturday 17th January 2026 at the NCC, Birmingham. If you would like to be kept informed of the details, please drop an e-mail to Mick and your name will be added to our waiting list (Note: Plaza & Inner Circle Members get priority access and are eligible for a 25% discount on the price).
  
-Got feedback or a topic you want to explore? Just send us a message HERE!  - we’d love to hear from you!
+Got feedback or a topic you want to explore? Just send us a message HERE!  - we'd love to hear from you!
 
 
 

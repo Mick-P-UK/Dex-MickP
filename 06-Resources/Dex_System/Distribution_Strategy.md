@@ -116,11 +116,11 @@ package.json
 Keep custom work separate:
 
 ```
-.claude/skills/           ← Our skills (updateable)
-.claude/skills-custom/    ← User skills (protected)
+.claude/skills/           <- Our skills (updateable)
+.claude/skills-custom/    <- User skills (protected)
 
-core/mcp/                 ← Our servers (updateable)
-core/mcp-custom/          ← User servers (protected)
+core/mcp/                 <- Our servers (updateable)
+core/mcp-custom/          <- User servers (protected)
 ```
 
 ### Pattern 2: Override Files
@@ -128,7 +128,7 @@ core/mcp-custom/          ← User servers (protected)
 Instead of editing `CLAUDE.md`, users create:
 
 ```
-CLAUDE-custom.md          ← Gitignored, user-specific
+CLAUDE-custom.md          <- Gitignored, user-specific
 ```
 
 At end of `CLAUDE.md`:
@@ -158,7 +158,7 @@ User creates `System/my-customizations.md` documenting their changes. Helps reso
 
 **User experience:**
 ```
-🎁 Dex v1.3.0 is available. Run /dex-whats-new for details.
+ Dex v1.3.0 is available. Run /dex-whats-new for details.
 
 ---
 
@@ -190,9 +190,9 @@ Here's your plan for today...
 ### Version Numbering
 
 **Semantic Versioning:**
-- **Patch (v1.2.3 → v1.2.4):** Bug fixes, no migration
-- **Minor (v1.2.0 → v1.3.0):** New features, backwards compatible
-- **Major (v1.x → v2.0.0):** Breaking changes, migration required
+- **Patch (v1.2.3 -> v1.2.4):** Bug fixes, no migration
+- **Minor (v1.2.0 -> v1.3.0):** New features, backwards compatible
+- **Major (v1.x -> v2.0.0):** Breaking changes, migration required
 
 ### Migration Scripts
 
@@ -221,9 +221,9 @@ git merge upstream/main
 ```markdown
 ## [2.0.0] - 2026-03-15
 
-### ⚠️ BREAKING CHANGES
+### [!] BREAKING CHANGES
 
-**Folder Rename:** 03-Tasks/ → 03-Backlog/
+**Folder Rename:** 03-Tasks/ -> 03-Backlog/
 
 **Migration required:**
 1. Back up your vault
@@ -278,7 +278,7 @@ This prevents future conflicts while preserving user customizations.
 ### Regular Updates (Minor/Patch)
 
 **Step 1:** Get notified
-- During `/daily-plan`: "🎁 Dex v1.3.0 is available"
+- During `/daily-plan`: " Dex v1.3.0 is available"
 - Or run: `/dex-whats-new`
 
 **Step 2:** Save work
@@ -305,7 +305,7 @@ pip3 install -r core/mcp/requirements.txt
 ### Major Updates (Breaking Changes)
 
 **Step 1:** Read release notes
-- Check for ⚠️ BREAKING CHANGES warning
+- Check for [!] BREAKING CHANGES warning
 - Understand what's changing
 
 **Step 2:** Back up
@@ -355,7 +355,7 @@ git merge upstream/main
 
 **State:**
 - Last check time: `System/.last-update-check`
-- Current version: `package.json` → `version` field
+- Current version: `package.json` -> `version` field
 
 ### Integration with `/daily-plan`
 

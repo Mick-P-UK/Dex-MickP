@@ -26,7 +26,7 @@ export function renderProgressBar(
   const filled = Math.round((clampedProgress / 100) * width);
   const empty = width - filled;
   
-  return theme.filled("█".repeat(filled)) + theme.empty("░".repeat(empty));
+  return theme.filled("#".repeat(filled)) + theme.empty("-".repeat(empty));
 }
 
 /**
@@ -35,7 +35,7 @@ export function renderProgressBar(
  * @param progress - Percentage (0-100)
  * @param width - Total width for bar (excluding percentage text)
  * @param theme - Theme functions
- * @returns "[███░░] 60%"
+ * @returns "[###--] 60%"
  */
 export function renderProgressBarWithPercentage(
   progress: number,

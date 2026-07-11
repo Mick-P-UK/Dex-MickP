@@ -3,7 +3,7 @@ name: save-insight
 description: Capture learnings from completed work for future reference
 ---
 
-Capture what you learned from completing work. This is the "compound" step—making future similar work easier.
+Capture what you learned from completing work. This is the "compound" step-making future similar work easier.
 
 ## Arguments
 
@@ -48,7 +48,7 @@ Append to the appropriate file:
 ```markdown
 ---
 
-## [Short Title] — [Date]
+## [Short Title] - [Date]
 
 **Context:** [1 sentence on what you were doing]
 
@@ -58,7 +58,7 @@ Append to the appropriate file:
 [The approach that succeeded]
 
 **Key Insight:** 
-> [The memorable takeaway—something you'd tell past-you]
+> [The memorable takeaway-something you'd tell past-you]
 
 **See Also:** [Related notes if any]
 ```
@@ -66,9 +66,9 @@ Append to the appropriate file:
 ### 4. Cross-Link (Optional)
 
 If the learning relates to:
-- A person → Add to their person page
-- A project → Add link in project's note
-- A recurring workflow → Update relevant template
+- A person -> Add to their person page
+- A project -> Add link in project's note
+- A recurring workflow -> Update relevant template
 
 ## Output
 
@@ -79,9 +79,9 @@ If the learning relates to:
 
 ## Philosophy
 
-> "The palest ink is better than the best memory." — Chinese proverb
+> "The palest ink is better than the best memory." - Chinese proverb
 
-This isn't documentation for others—it's a gift to future-you. 
+This isn't documentation for others-it's a gift to future-you. 
 Be specific. Include the gotcha. Make it searchable.
 
 ---

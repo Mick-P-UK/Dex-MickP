@@ -24,13 +24,13 @@ Templates live in `templates/` within the skill directory:
 
 ```
 skill-name/
-├── SKILL.md
-├── workflows/
-├── references/
-└── templates/
-    ├── plan-template.md
-    ├── spec-template.md
-    └── report-template.md
++-- SKILL.md
++-- workflows/
++-- references/
++-- templates/
+    +-- plan-template.md
+    +-- spec-template.md
+    +-- report-template.md
 ```
 
 A template file contains:

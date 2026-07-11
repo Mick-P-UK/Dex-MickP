@@ -41,10 +41,10 @@ Also check:
 
 | Mode | Status | Model |
 |------|--------|-------|
-| Premium | ✅ Ready | Claude Sonnet |
-| Budget Cloud | {{✅ Ready / ❌ Not set up}} | {{Kimi K2.5 / —}} |
-| Offline | {{✅ Ready / ❌ Not set up}} | {{Qwen 2.5 14B / —}} |
-| Smart Routing | {{✅ Enabled / ❌ Disabled}} | |
+| Premium | [x] Ready | Claude Sonnet |
+| Budget Cloud | {{[x] Ready / [ ] Not set up}} | {{Kimi K2.5 / -}} |
+| Offline | {{[x] Ready / [ ] Not set up}} | {{Qwen 2.5 14B / -}} |
+| Smart Routing | {{[x] Enabled / [ ] Disabled}} | |
 
 **Currently using:** {{current_model}}
 
@@ -52,14 +52,14 @@ Also check:
 **OpenRouter credits:** ${{balance}} remaining
 
 {{If Ollama configured:}}
-**Ollama:** {{Running ✅ / Not running ⚠️}}
+**Ollama:** {{Running [x] / Not running [!]}}
 
 ---
 
 **Quick actions:**
-- `/model` — Switch models
-- `/ai-setup` — Configure more options
-- "Use budget model" — Quick switch for this task
+- `/model` - Switch models
+- `/ai-setup` - Configure more options
+- "Use budget model" - Quick switch for this task
 ```
 
 ### Step 3: Offer Help if Issues
@@ -67,7 +67,7 @@ Also check:
 If something isn't working:
 
 ```
-**⚠️ Issues detected:**
+**[!] Issues detected:**
 
 {{If OpenRouter not working:}}
 - Budget cloud: API key may be invalid or no credits
@@ -92,8 +92,8 @@ Need help? Run `/ai-setup` to reconfigure.
 Currently using **Claude** (premium) only.
 
 Want to save money or work offline? Run `/ai-setup` to configure:
-- 💰 Budget cloud (80% cheaper for routine tasks)
-- ✈️ Offline mode (works without internet)
+-  Budget cloud (80% cheaper for routine tasks)
+-  Offline mode (works without internet)
 ```
 
 ### Currently Offline
@@ -101,13 +101,13 @@ Want to save money or work offline? Run `/ai-setup` to configure:
 ```
 **Your AI Configuration**
 
-⚠️ **Currently offline** — Using local model
+[!] **Currently offline** - Using local model
 
 | Mode | Status |
 |------|--------|
-| Premium (Claude) | ❌ No internet |
-| Budget Cloud | ❌ No internet |
-| **Offline** | ✅ Active |
+| Premium (Claude) | [ ] No internet |
+| Budget Cloud | [ ] No internet |
+| **Offline** | [x] Active |
 
 **Using:** Qwen 2.5 14B (local)
 

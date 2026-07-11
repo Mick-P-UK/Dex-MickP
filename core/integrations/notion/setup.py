@@ -114,7 +114,7 @@ hooks:
 """)
     
     return True, f"""
-✅ **Notion Integration Configured!**
+[x] **Notion Integration Configured!**
 
 **What's set up:**
 - MCP Server: `{PACKAGE}`

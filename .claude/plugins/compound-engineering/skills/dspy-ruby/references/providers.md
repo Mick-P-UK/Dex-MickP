@@ -130,14 +130,14 @@ end
 
 | Feature | OpenAI | Anthropic | Gemini | Ollama |
 |---------|--------|-----------|--------|--------|
-| Structured Output | ✅ | ✅ | ✅ | ✅ |
-| Vision (Images) | ✅ | ✅ | ✅ | ⚠️ Limited |
-| Image URLs | ✅ | ❌ | ❌ | ❌ |
-| Tool Calling | ✅ | ✅ | ✅ | Varies |
-| Streaming | ❌ | ❌ | ❌ | ❌ |
-| Function Calling | ✅ | ✅ | ✅ | Varies |
+| Structured Output | [x] | [x] | [x] | [x] |
+| Vision (Images) | [x] | [x] | [x] | [!] Limited |
+| Image URLs | [x] | [ ] | [ ] | [ ] |
+| Tool Calling | [x] | [x] | [x] | Varies |
+| Streaming | [ ] | [ ] | [ ] | [ ] |
+| Function Calling | [x] | [x] | [x] | Varies |
 
-**Legend**: ✅ Full support | ⚠️ Partial support | ❌ Not supported
+**Legend**: [x] Full support | [!] Partial support | [ ] Not supported
 
 ### Vision Capabilities
 
@@ -295,9 +295,9 @@ begin
     api_key: ENV['OPENAI_API_KEY']) }
   predictor = DSPy::Predict.new(TestSignature)
   predictor.forward(test: "data")
-  puts "✅ Connection successful"
+  puts "[x] Connection successful"
 rescue => e
-  puts "❌ Connection failed: #{e.message}"
+  puts "[ ] Connection failed: #{e.message}"
 end
 ```
 

@@ -1,5 +1,5 @@
 <overview>
-How to inject dynamic runtime context into agent system prompts. The agent needs to know what exists in the app to know what it can work with. Static prompts aren't enough—the agent needs to see the same context the user sees.
+How to inject dynamic runtime context into agent system prompts. The agent needs to know what exists in the app to know what it can work with. Static prompts aren't enough-the agent needs to see the same context the user sees.
 
 **Core principle:** The user's context IS the agent's context.
 </overview>
@@ -316,8 +316,8 @@ func getChatAgentSystemPrompt() -> String {
 ```
 
 **Result:** When user says "write a little thing about Catherine the Great in my reading feed", the agent:
-1. Sees "reading feed" → knows to use `publish_to_feed`
-2. Sees available books → finds the relevant book ID
+1. Sees "reading feed" -> knows to use `publish_to_feed`
+2. Sees available books -> finds the relevant book ID
 3. Creates appropriate content for the Feed tab
 </examples>
 

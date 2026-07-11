@@ -38,19 +38,19 @@ Git Repository Setup for Dex Customizations
 
 Working directory: c:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP
 
-Checking git installation... ✓
+Checking git installation... [x]
   git version 2.x.x
 
-  Initializing git repository... ✓
+  Initializing git repository... [x]
     Initialized empty Git repository in ...
 
-  Staging files... ✓
+  Staging files... [x]
 
-  Creating initial commit... ✓
+  Creating initial commit... [x]
     [main (root-commit) abc1234] Initial commit: Dex setup...
 
 ============================================================
-✓ Git repository setup complete!
+[x] Git repository setup complete!
 ============================================================
 ```
 

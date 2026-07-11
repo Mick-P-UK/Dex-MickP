@@ -223,7 +223,7 @@ This calendar tracks planned and published videos across both YouTube channels t
 ### Adding New Videos
 1. Choose target publish date
 2. Add row to appropriate month
-3. Set status: `idea → planned → research → scripting → draft → edited → final → published`
+3. Set status: `idea -> planned -> research -> scripting -> draft -> edited -> final -> published`
 4. Link to project folder once created
 
 ### Moving Dates

@@ -82,15 +82,15 @@ claude mcp add --scope user work-mcp python "..." --env VAULT_PATH="C:\Vaults\Mi
 ```
 
 **Pros:**
-- ✅ Uses official Claude Code CLI API
-- ✅ Properly updates `~/.claude.json`
-- ✅ Should work immediately
-- ✅ Commands are idempotent (can run multiple times safely)
+- [x] Uses official Claude Code CLI API
+- [x] Properly updates `~/.claude.json`
+- [x] Should work immediately
+- [x] Commands are idempotent (can run multiple times safely)
 
 **Cons:**
-- ⚠️ Manual process (9 commands to run)
-- ⚠️ Need to verify exact command syntax
-- ⚠️ Need to confirm how to pass environment variables
+- [!] Manual process (9 commands to run)
+- [!] Need to verify exact command syntax
+- [!] Need to confirm how to pass environment variables
 
 **Testing steps:**
 1. Exit this Claude Code session
@@ -140,15 +140,15 @@ claude mcp add --scope user work-mcp python "..." --env VAULT_PATH="C:\Vaults\Mi
 ```
 
 **Pros:**
-- ✅ Direct control over configuration
-- ✅ Can copy entire MCP definitions from project `.mcp.json`
-- ✅ One-time edit
+- [x] Direct control over configuration
+- [x] Can copy entire MCP definitions from project `.mcp.json`
+- [x] One-time edit
 
 **Cons:**
-- ❌ Manual JSON editing (error-prone)
-- ❌ Need to escape backslashes properly
-- ❌ May conflict with Claude Code CLI's config management
-- ❌ Might get overwritten by CLI
+- [ ] Manual JSON editing (error-prone)
+- [ ] Need to escape backslashes properly
+- [ ] May conflict with Claude Code CLI's config management
+- [ ] Might get overwritten by CLI
 
 ---
 
@@ -162,14 +162,14 @@ claude mcp add --scope project work-mcp python "C:\Vaults\Mick's-Dex-2nd-Brain\D
 ```
 
 **Pros:**
-- ✅ Would update `~/.claude.json` project-specific config
-- ✅ Keeps MCPs scoped to this project only
-- ✅ Uses official CLI
+- [x] Would update `~/.claude.json` project-specific config
+- [x] Keeps MCPs scoped to this project only
+- [x] Uses official CLI
 
 **Cons:**
-- ⚠️ Unknown if `--scope project` is supported
-- ⚠️ Documentation only mentions `--scope user`
-- ⚠️ May fail with "unknown scope" error
+- [!] Unknown if `--scope project` is supported
+- [!] Documentation only mentions `--scope user`
+- [!] May fail with "unknown scope" error
 
 **Testing steps:**
 1. Exit this Claude session
@@ -247,21 +247,21 @@ After running commands, verify:
 ## Next Steps
 
 **Immediate (this session):**
-1. ✅ Log all findings
-2. ✅ Create this investigation document
-3. ⏳ Present findings and recommendation to user
+1. [x] Log all findings
+2. [x] Create this investigation document
+3. [~] Present findings and recommendation to user
 
 **After this session (user actions):**
-1. ⏳ Exit Claude Code CLI
-2. ⏳ Test `claude mcp add --scope project` (Phase 1)
-3. ⏳ Run full migration commands (Phase 2)
-4. ⏳ Restart Claude and verify all MCPs load
-5. ⏳ Report back findings
+1. [~] Exit Claude Code CLI
+2. [~] Test `claude mcp add --scope project` (Phase 1)
+3. [~] Run full migration commands (Phase 2)
+4. [~] Restart Claude and verify all MCPs load
+5. [~] Report back findings
 
 **Future (Dex system improvements):**
-1. ⏳ Update Dex installation to use `claude mcp add` commands
-2. ⏳ Document this issue for other users
-3. ⏳ Consider filing feature request with Claude Code team for better project `.mcp.json` support
+1. [~] Update Dex installation to use `claude mcp add` commands
+2. [~] Document this issue for other users
+3. [~] Consider filing feature request with Claude Code team for better project `.mcp.json` support
 
 ---
 

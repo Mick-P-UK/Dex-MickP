@@ -1,5 +1,5 @@
 <overview>
-A structured discipline for ensuring agents can do everything users can do. Every UI action should have an equivalent agent tool. This isn't a one-time check—it's an ongoing practice integrated into your development workflow.
+A structured discipline for ensuring agents can do everything users can do. Every UI action should have an equivalent agent tool. This isn't a one-time check-it's an ongoing practice integrated into your development workflow.
 
 **Core principle:** When adding a UI feature, add the corresponding tool in the same PR.
 </overview>
@@ -13,7 +13,7 @@ User: "Write something about Catherine the Great in my reading feed"
 Agent: "What system are you referring to? I'm not sure what reading feed means."
 ```
 
-The user could publish to their feed through the UI. But the agent had no `publish_to_feed` tool. The fix was simple—add the tool. But the insight is profound:
+The user could publish to their feed through the UI. But the agent had no `publish_to_feed` tool. The fix was simple-add the tool. But the insight is profound:
 
 **Every action a user can take through the UI must have an equivalent tool the agent can call.**
 
@@ -32,11 +32,11 @@ Maintain a structured map of UI actions to agent tools:
 | UI Action | UI Location | Agent Tool | System Prompt Reference |
 |-----------|-------------|------------|-------------------------|
 | View library | Library tab | `read_library` | "View books and highlights" |
-| Add book | Library → Add | `add_book` | "Add books to library" |
+| Add book | Library -> Add | `add_book` | "Add books to library" |
 | Publish insight | Analysis view | `publish_to_feed` | "Create insights for Feed tab" |
 | Start research | Book detail | `start_research` | "Research books via web search" |
 | Edit profile | Settings | `write_file(profile.md)` | "Update reading profile" |
-| Take screenshot | Camera | N/A (user action) | — |
+| Take screenshot | Camera | N/A (user action) | - |
 | Search web | Chat | `web_search` | "Search the internet" |
 
 **Update this table whenever adding features.**
@@ -48,15 +48,15 @@ Maintain a structured map of UI actions to agent tools:
 
 | UI Action | UI Location | Agent Tool | System Prompt | Status |
 |-----------|-------------|------------|---------------|--------|
-| | | | | ⚠️ Missing |
-| | | | | ✅ Done |
-| | | | | 🚫 N/A |
+| | | | | [!] Missing |
+| | | | | [x] Done |
+| | | | |  N/A |
 ```
 
 Status meanings:
-- ✅ Done: Tool exists and is documented in system prompt
-- ⚠️ Missing: UI action exists but no agent equivalent
-- 🚫 N/A: User-only action (e.g., biometric auth, camera capture)
+- [x] Done: Tool exists and is documented in system prompt
+- [!] Missing: UI action exists but no agent equivalent
+-  N/A: User-only action (e.g., biometric auth, camera capture)
 </capability_mapping>
 
 <parity_workflow>
@@ -68,23 +68,23 @@ Before merging any PR that adds UI functionality:
 
 ```
 1. What action is this?
-   → "User can publish an insight to their reading feed"
+   -> "User can publish an insight to their reading feed"
 
 2. Does an agent tool exist for this?
-   → Check tool definitions
-   → If NO: Create the tool
+   -> Check tool definitions
+   -> If NO: Create the tool
 
 3. Is it documented in the system prompt?
-   → Check system prompt capabilities section
-   → If NO: Add documentation
+   -> Check system prompt capabilities section
+   -> If NO: Add documentation
 
 4. Is the context available?
-   → Does agent know what "feed" means?
-   → Does agent see available books?
-   → If NO: Add to context injection
+   -> Does agent know what "feed" means?
+   -> Does agent see available books?
+   -> If NO: Add to context injection
 
 5. Update the capability map
-   → Add row to tracking document
+   -> Add row to tracking document
 ```
 
 ### PR Checklist
@@ -147,22 +147,22 @@ Settings:
 For each action, verify:
 
 ```
-✅ View list of books      → read_library
-✅ Search books            → read_library (with query param)
-⚠️ Filter by category     → MISSING (add filter param to read_library)
-⚠️ Add new book           → MISSING (need add_book tool)
-✅ Delete book             → delete_book
-✅ Open book detail        → read_library (single book)
+[x] View list of books      -> read_library
+[x] Search books            -> read_library (with query param)
+[!] Filter by category     -> MISSING (add filter param to read_library)
+[!] Add new book           -> MISSING (need add_book tool)
+[x] Delete book             -> delete_book
+[x] Open book detail        -> read_library (single book)
 
-✅ Start research          → start_research
-✅ View highlights         → read_library (includes highlights)
-⚠️ Add highlight          → MISSING (need add_highlight tool)
-⚠️ Share book             → MISSING (or N/A if sharing is UI-only)
+[x] Start research          -> start_research
+[x] View highlights         -> read_library (includes highlights)
+[!] Add highlight          -> MISSING (need add_highlight tool)
+[!] Share book             -> MISSING (or N/A if sharing is UI-only)
 
-✅ View insights           → read_library (includes feed)
-✅ Create new insight      → publish_to_feed
-⚠️ Edit insight           → MISSING (need update_feed_item tool)
-⚠️ Delete insight         → MISSING (need delete_feed_item tool)
+[x] View insights           -> read_library (includes feed)
+[x] Create new insight      -> publish_to_feed
+[!] Edit insight           -> MISSING (need update_feed_item tool)
+[!] Delete insight         -> MISSING (need delete_feed_item tool)
 ```
 
 ### Step 3: Prioritize Gaps
@@ -288,7 +288,7 @@ For each screen in your app:
 NEW_ACTIONS=$(git diff --cached --name-only | xargs grep -l "Button\|onTapGesture")
 
 if [ -n "$NEW_ACTIONS" ]; then
-    echo "⚠️  New UI actions detected. Did you add corresponding agent tools?"
+    echo "[!]  New UI actions detected. Did you add corresponding agent tools?"
     echo "Files: $NEW_ACTIONS"
     echo ""
     echo "Checklist:"
@@ -345,10 +345,10 @@ Agent: "I'm not sure what system you're referring to. Could you clarify?"
 ```
 
 **Diagnosis:**
-- ✅ UI action: User can publish insights from the analysis view
-- ❌ Agent tool: No `publish_to_feed` tool
-- ❌ System prompt: No mention of "feed" or how to publish
-- ❌ Context: Agent didn't know what "feed" meant
+- [x] UI action: User can publish insights from the analysis view
+- [ ] Agent tool: No `publish_to_feed` tool
+- [ ] System prompt: No mention of "feed" or how to publish
+- [ ] Context: Agent didn't know what "feed" meant
 
 **Fix:**
 

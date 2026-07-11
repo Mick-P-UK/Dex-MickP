@@ -35,7 +35,7 @@ git --version
 
 **If Git not found:**
 ```
-❌ Git not detected
+[ ] Git not detected
 
 Dex updates require Git. Here's how to install:
 
@@ -51,7 +51,7 @@ Dex updates require Git. Here's how to install:
 3. Restart Cursor
 4. Try /dex-update again
 
-[Skip update] — I'll do this later
+[Skip update] - I'll do this later
 ```
 
 If user skips, exit gracefully.
@@ -64,7 +64,7 @@ Run: `git remote -v`
 
 **Scenario 1: Downloaded as ZIP (no Git)**
 ```
-❌ Not a Git repository
+[ ] Not a Git repository
 
 Looks like you downloaded Dex as a ZIP file instead of cloning it.
 
@@ -72,21 +72,21 @@ Looks like you downloaded Dex as a ZIP file instead of cloning it.
 1. Download latest version: https://github.com/davekilleen/dex/archive/refs/heads/main.zip
 2. Unzip to a new folder
 3. Copy these folders from your current Dex to the new one:
-   • System/user-profile.yaml
-   • System/pillars.yaml
-   • 00-Inbox/
-   • 01-Quarter_Goals/
-   • 02-Week_Priorities/
-   • 03-Tasks/
-   • 04-Projects/
-   • 05-Areas/
-   • 07-Archives/
+   - System/user-profile.yaml
+   - System/pillars.yaml
+   - 00-Inbox/
+   - 01-Quarter_Goals/
+   - 02-Week_Priorities/
+   - 03-Tasks/
+   - 04-Projects/
+   - 05-Areas/
+   - 07-Archives/
 4. Delete old Dex folder
 5. Rename new folder to 'dex'
 6. Open in Cursor
 
-[Show detailed guide] — Open step-by-step instructions
-[Cancel] — I'll do this later
+[Show detailed guide] - Open step-by-step instructions
+[Cancel] - I'll do this later
 ```
 
 If detailed guide selected, open `06-Resources/Dex_System/Updating_Dex.md` (Manual Update section).
@@ -98,7 +98,7 @@ If detailed guide selected, open `06-Resources/Dex_System/Updating_Dex.md` (Manu
 If `git remote -v` shows only "origin" pointing to github.com/davekilleen/dex:
 
 ```
-✓ Git repository detected
+[x] Git repository detected
 
 Setting up automatic updates...
 ```
@@ -127,7 +127,7 @@ check_for_updates(force=True)
 
 **If no updates available:**
 ```
-✅ You're already on the latest version (v1.2.0)
+[x] You're already on the latest version (v1.2.0)
 
 No update needed!
 ```
@@ -135,7 +135,7 @@ Exit.
 
 **If updates available, show summary:**
 ```
-🎁 Dex v1.3.0 is available
+ Dex v1.3.0 is available
 
 You're on: v1.2.0
 Latest: v1.3.0
@@ -160,7 +160,7 @@ Run: `git status --porcelain`
 
 **If there are changes:**
 ```
-💾 Saving your work...
+ Saving your work...
 
 Dex found unsaved changes in your vault.
 Let me save them before updating.
@@ -174,7 +174,7 @@ git commit -m "Auto-save before Dex update to v1.3.0"
 
 Show:
 ```
-✓ Your work is saved
+[x] Your work is saved
 ```
 
 **B. Create backup reference (safety net)**
@@ -191,7 +191,7 @@ This creates a snapshot user can revert to if needed.
 ### Step 4: Download Updates
 
 ```
-⬇️ Downloading updates from GitHub...
+v Downloading updates from GitHub...
 ```
 
 Run:
@@ -201,7 +201,7 @@ git fetch upstream
 
 **If network error:**
 ```
-❌ Couldn't connect to GitHub
+[ ] Couldn't connect to GitHub
 
 Please check your internet connection and try again.
 
@@ -211,7 +211,7 @@ Please check your internet connection and try again.
 
 **Success:**
 ```
-✓ Updates downloaded
+[x] Updates downloaded
 ```
 
 ---
@@ -223,19 +223,19 @@ Parse the update response from Step 2.
 **If `breaking_changes: true`:**
 
 ```
-⚠️ Important: This update includes major changes
+[!] Important: This update includes major changes
 
 Dex v2.0.0 includes breaking changes that require extra steps:
 
 [Show what's changing]
 
 This is safe to proceed, but:
-• Some folders may be renamed
-• Configuration format may change  
-• Migration will run automatically
+- Some folders may be renamed
+- Configuration format may change  
+- Migration will run automatically
 
 [Continue with update]
-[Cancel — I'll read the details first]
+[Cancel - I'll read the details first]
 ```
 
 If cancelled:
@@ -248,7 +248,7 @@ If cancelled:
 ### Step 6: Apply Updates
 
 ```
-🔄 Applying updates...
+ Applying updates...
 ```
 
 **A. Merge updates**
@@ -262,7 +262,7 @@ git merge upstream/main --no-edit
 
 **Case 1: Clean merge (no conflicts)**
 ```
-✓ Updates applied successfully
+[x] Updates applied successfully
 ```
 
 Continue to Step 7.
@@ -340,8 +340,8 @@ Options:
 - If user types an invalid choice, re-prompt once and default to "Use Dex version".
 
 **If user chooses "Keep both":**
-- MCP: `name` → `name-custom`
-- Skill folder: `name/` → `name-custom/`
+- MCP: `name` -> `name-custom`
+- Skill folder: `name/` -> `name-custom/`
 
 **After resolving all conflicts:**
 ```bash
@@ -351,12 +351,12 @@ git commit --no-edit
 
 **Show to user:**
 ```
-✓ Updates applied successfully
+[x] Updates applied successfully
 
 Handled conflicts:
-• Preserved your protected blocks
-• Updated core Dex features
-• Resolved overlapping changes with your choice
+- Preserved your protected blocks
+- Updated core Dex features
+- Resolved overlapping changes with your choice
 
 [See what changed]
 ```
@@ -366,7 +366,7 @@ Handled conflicts:
 **Case 3: Merge failed (rare)**
 
 ```
-❌ Update couldn't complete automatically
+[ ] Update couldn't complete automatically
 
 This is rare, but sometimes updates need manual review.
 
@@ -374,8 +374,8 @@ This is rare, but sometimes updates need manual review.
 [Error message]
 
 **Options:**
-[Restore to before update] — Uses the backup we created
-[Get help] — Opens GitHub issue template
+[Restore to before update] - Uses the backup we created
+[Get help] - Opens GitHub issue template
 ```
 
 If restore:
@@ -398,7 +398,7 @@ ls core/migrations/v*-to-v*.sh
 
 If found:
 ```
-🔧 Running migration...
+ Running migration...
 
 This update requires a one-time migration to update your data structure.
 This is safe and automatic.
@@ -414,7 +414,7 @@ Show migration output.
 **B. Update dependencies**
 
 ```
-📦 Updating dependencies...
+ Updating dependencies...
 ```
 
 Run:
@@ -445,7 +445,7 @@ If not installed:
 cd .scripts/meeting-intel && ./install-automation.sh 2>/dev/null
 ```
 
-Add to summary if installed: "✓ Enabled automatic meeting sync (runs every 30 min)"
+Add to summary if installed: "[x] Enabled automatic meeting sync (runs every 30 min)"
 
 **Future automations:** This pattern extends to other background services. Check for the prerequisite (e.g., app installed, API key present), then run the installer silently.
 
@@ -454,7 +454,7 @@ Add to summary if installed: "✓ Enabled automatic meeting sync (runs every 30 
 ### Step 8: Verification
 
 ```
-✓ Update complete! Now testing...
+[x] Update complete! Now testing...
 ```
 
 **Quick smoke test:**
@@ -476,12 +476,12 @@ Add to summary if installed: "✓ Enabled automatic meeting sync (runs every 30 
 
 **If all pass:**
 ```
-✅ Update successful!
+[x] Update successful!
 ```
 
 **If something fails:**
 ```
-⚠️ Update completed but found an issue
+[!] Update completed but found an issue
 
 [Details of what failed]
 
@@ -496,19 +496,19 @@ Your data is safe, but you may want to:
 ### Step 9: Summary
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Dex Updated: v1.2.0 → v1.3.0
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+--------------------------------------
+[x] Dex Updated: v1.2.0 -> v1.3.0
+--------------------------------------
 
 What's new:
-• Career coach improvements
-• Task deduplication fix
-• Meeting intelligence enhancement
+- Career coach improvements
+- Task deduplication fix
+- Meeting intelligence enhancement
 
 Your data:
-✓ All notes preserved
-✓ All tasks preserved
-✓ All customizations preserved
+[x] All notes preserved
+[x] All tasks preserved
+[x] All customizations preserved
 
 [View full changelog]
 [Start using new features]
@@ -516,16 +516,16 @@ Your data:
 
 **If new automations were enabled:**
 ```
-🤖 New automations enabled:
-✓ Automatic meeting sync (runs every 30 min)
+ New automations enabled:
+[x] Automatic meeting sync (runs every 30 min)
 ```
 
 **If there were conflicts:**
 ```
-🔍 Changes applied:
-• Updated 12 core files
-• Kept 5 of your customized files
-• Protected all your data folders
+ Changes applied:
+- Updated 12 core files
+- Kept 5 of your customized files
+- Protected all your data folders
 
 [See detailed change list]
 ```
@@ -549,16 +549,16 @@ if should_show_integration_prompt():
 ```
 ---
 
-## 🔌 New: Productivity Integrations
+##  New: Productivity Integrations
 
 This update includes integrations for your favorite tools:
 
-- **Notion** — Search your workspace, pull docs into meeting prep
-- **Slack** — Search conversations, get context about people
-- **Google** — Gmail search, email context in person pages
+- **Notion** - Search your workspace, pull docs into meeting prep
+- **Slack** - Search conversations, get context about people
+- **Google** - Gmail search, email context in person pages
 
 **Set up now?** These are optional but unlock powerful features like:
-- "What did Sarah say about the Q1 budget?" → Searches Slack
+- "What did Sarah say about the Q1 budget?" -> Searches Slack
 - Meeting prep pulls relevant docs from Notion
 - Person pages show email/Slack history
 
@@ -569,7 +569,7 @@ Run `/integrate-notion`, `/integrate-slack`, or `/integrate-google` to set up.
 ```
 ---
 
-## 🔄 Integration Upgrade Available
+##  Integration Upgrade Available
 
 You have some integrations that could be upgraded to Dex recommended packages:
 
@@ -579,8 +579,8 @@ You have some integrations that could be upgraded to Dex recommended packages:
 - **Benefits:** Official from Notion, Best maintained, Full API coverage
 
 **Options:**
-1. **Keep existing** — Your current setup works fine
-2. **Upgrade** — Run `/integrate-notion` to switch to recommended
+1. **Keep existing** - Your current setup works fine
+2. **Upgrade** - Run `/integrate-notion` to switch to recommended
 ```
 
 ---
@@ -590,7 +590,7 @@ You have some integrations that could be upgraded to Dex recommended packages:
 Update usage log:
 ```
 System/usage_log.md
-- [ ] Update Dex (/dex-update) → [x] Update Dex (/dex-update)
+- [ ] Update Dex (/dex-update) -> [x] Update Dex (/dex-update)
 ```
 
 ---
@@ -602,7 +602,7 @@ System/usage_log.md
 User always has escape hatch:
 
 ```
-🔙 Restoring to before update...
+ Restoring to before update...
 ```
 
 Run:
@@ -613,7 +613,7 @@ git clean -fd
 ```
 
 ```
-✓ Restored to v1.2.0
+[x] Restored to v1.2.0
 
 Nothing was changed. Your Dex is exactly as it was.
 
@@ -645,7 +645,7 @@ If migration script supports `--auto` flag, run non-interactively:
 If script doesn't support `--auto`:
 
 ```
-⚠️ Manual step required
+[!] Manual step required
 
 This update needs you to run a migration script.
 
@@ -657,7 +657,7 @@ Don't worry - it's one command and takes 30 seconds.
 
 **Then come back here when it's done.**
 
-[I've run the migration — continue]
+[I've run the migration - continue]
 [Show me what the migration does]
 [Cancel update]
 ```
@@ -669,7 +669,7 @@ Don't worry - it's one command and takes 30 seconds.
 For users who can't/won't use Git, provide manual instructions:
 
 ```
-📥 Manual Update Method
+ Manual Update Method
 
 If automatic updates don't work, you can update manually:
 
@@ -679,24 +679,24 @@ If automatic updates don't work, you can update manually:
 2. **Copy your data and custom blocks:**
    From OLD Dex folder, copy these to NEW Dex folder:
    
-   ✓ System/user-profile.yaml
-   ✓ System/pillars.yaml
-   ✓ 00-Inbox/ (entire folder)
-   ✓ 01-Quarter_Goals/ (entire folder)
-   ✓ 02-Week_Priorities/ (entire folder)
-   ✓ 03-Tasks/ (entire folder)
-   ✓ 04-Projects/ (entire folder)
-   ✓ 05-Areas/ (entire folder)
-   ✓ 07-Archives/ (entire folder)
-   ✓ .env (if it exists)
-   ✓ Your `USER_EXTENSIONS` block from `CLAUDE.md`
-   ✓ Any custom MCP entries named `custom-*` from `.mcp.json`
-   ✓ Any custom skills ending with `-custom`
+   [x] System/user-profile.yaml
+   [x] System/pillars.yaml
+   [x] 00-Inbox/ (entire folder)
+   [x] 01-Quarter_Goals/ (entire folder)
+   [x] 02-Week_Priorities/ (entire folder)
+   [x] 03-Tasks/ (entire folder)
+   [x] 04-Projects/ (entire folder)
+   [x] 05-Areas/ (entire folder)
+   [x] 07-Archives/ (entire folder)
+   [x] .env (if it exists)
+   [x] Your `USER_EXTENSIONS` block from `CLAUDE.md`
+   [x] Any custom MCP entries named `custom-*` from `.mcp.json`
+   [x] Any custom skills ending with `-custom`
 
 3. **DON'T copy:**
-   ✗ .claude/skills/ (use new version)
-   ✗ core/mcp/ (use new version)
-   ✗ README.md (use new version)
+   [ ] .claude/skills/ (use new version)
+   [ ] core/mcp/ (use new version)
+   [ ] README.md (use new version)
 
 4. **Open new folder in Cursor**
 
@@ -734,7 +734,7 @@ updates:
 
 **User sees in daily plan:**
 ```
-🎁 Dex v1.3.0 is available. Run /dex-whats-new for details.
+ Dex v1.3.0 is available. Run /dex-whats-new for details.
 ```
 
 **User runs:**
@@ -744,11 +744,11 @@ updates:
 
 **User sees:**
 ```
-✓ Git detected
-✓ Updates downloaded
-✓ No conflicts
-✓ Dependencies updated
-✅ Update complete! v1.2.0 → v1.3.0
+[x] Git detected
+[x] Updates downloaded
+[x] No conflicts
+[x] Dependencies updated
+[x] Update complete! v1.2.0 -> v1.3.0
 ```
 
 **Total clicks:** 1 (just ran the command)

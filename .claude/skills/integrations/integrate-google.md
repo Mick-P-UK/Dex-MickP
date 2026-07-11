@@ -24,9 +24,9 @@ status = detect_integration("google", load_claude_config() or {})
 
 if status["installed"]:
     if status["is_dex_recommended"]:
-        print("✅ Google Workspace is already set up!")
+        print("[x] Google Workspace is already set up!")
     else:
-        print(f"⚠️ You have Google configured using: {status['package']}")
+        print(f"[!] You have Google configured using: {status['package']}")
         print(f"Recommendation: {status['recommendation']}")
 ```
 
@@ -69,12 +69,12 @@ Explain that first use will trigger browser OAuth flow:
 ## Key Messages
 
 **Success:**
-> ✅ Google Workspace configured!
+> [x] Google Workspace configured!
 >
 > **What's connected:**
-> - 📧 Gmail (read-only)
-> - 📅 Calendar (read-only)
-> - 👥 Contacts (read-only)
+> -  Gmail (read-only)
+> -  Calendar (read-only)
+> -  Contacts (read-only)
 >
 > **Next step:** When you first use a Google feature, you'll see an OAuth prompt. Click "Allow" to authorize.
 >

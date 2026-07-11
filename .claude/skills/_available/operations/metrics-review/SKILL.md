@@ -57,7 +57,7 @@ Monitor key metrics, identify anomalies, and document analysis.
 ### [Metric Name]
 - **Current:** [Value]
 - **vs. Target:** [On track / Behind / Ahead]
-- **Trend:** ↑/→/↓
+- **Trend:** ^/->/v
 - **Analysis:** [Context]
 
 ## Anomalies

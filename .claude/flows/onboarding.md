@@ -30,7 +30,7 @@ When this flow says to present a structured choice, you MUST use the correct too
 
 Say: "Welcome to Dex! I'm your personal knowledge assistant.
 
-**What Dex does:** I help you organize your professional life—meetings, projects, people, ideas, and tasks—all in markdown files you own. Think of me as your executive assistant who never forgets context.
+**What Dex does:** I help you organize your professional life-meetings, projects, people, ideas, and tasks-all in markdown files you own. Think of me as your executive assistant who never forgets context.
 
 Let's get you set up. First, what's your name?"
 
@@ -131,7 +131,7 @@ Ask: "What's your company size?"
 
 ## Step 4: Email Domain (MANDATORY)
 
-**⚠️ DO NOT SKIP THIS STEP - Required for Internal/External person routing**
+**[!] DO NOT SKIP THIS STEP - Required for Internal/External person routing**
 
 Ask: "What's your company email domain? This helps me automatically:
 - Identify internal colleagues vs external contacts
@@ -158,7 +158,7 @@ Ask: "What's your company email domain? This helps me automatically:
 
 **This step is AUTOMATIC - no user input needed unless multiple calendars detected.**
 
-**Purpose:** Optimize calendar queries for performance (45s → 0.3s) by identifying the user's work calendar.
+**Purpose:** Optimize calendar queries for performance (45s -> 0.3s) by identifying the user's work calendar.
 
 **How to check calendar count:**
 
@@ -198,7 +198,7 @@ calendar:
   lazy_load: true
 ```
 
-3. Say: "✓ Found your work calendar. Calendar queries will be much faster now."
+3. Say: "[x] Found your work calendar. Calendar queries will be much faster now."
 
 **If calendar not found:**
 
@@ -227,7 +227,7 @@ calendar:
 
 Ask: "What are the 2-3 long-term areas of focus for your role? Think broad themes, not specific goals.
 
-These are your **strategic pillars**—the ongoing areas you'll always focus on, regardless of what specific projects or goals you're working on. They're NOT time-bound.
+These are your **strategic pillars**-the ongoing areas you'll always focus on, regardless of what specific projects or goals you're working on. They're NOT time-bound.
 
 **Examples of what pillars ARE:**
 - 'Pipeline generation' (ongoing area)
@@ -249,9 +249,9 @@ These are your **strategic pillars**—the ongoing areas you'll always focus on,
 - **For other roles:** Adapt based on their role - think about what they focus on day-to-day
 
 Say: "These pillars organize everything you do. Here's how it flows:
-- **Pillars** (ongoing areas) → inform your **quarterly goals** (specific 3-month outcomes)
-- **Quarterly goals** → inform your **weekly priorities** (this week's focus)
-- **Weekly priorities** → inform your **daily work** (today's tasks)
+- **Pillars** (ongoing areas) -> inform your **quarterly goals** (specific 3-month outcomes)
+- **Quarterly goals** -> inform your **weekly priorities** (this week's focus)
+- **Weekly priorities** -> inform your **daily work** (today's tasks)
 
 You'll see this hierarchy in action as you use the system."
 
@@ -261,7 +261,7 @@ You'll see this hierarchy in action as you use the system."
 
 ## Step 6: Communication Preferences
 
-Say: "Quick preferences check—how should I communicate with you?"
+Say: "Quick preferences check-how should I communicate with you?"
 
 **CALL the interactive question tool** (see "Interactive Questions" section above) to present these 3 questions. If the tool is not available, ask the same questions as numbered text options:
 
@@ -285,14 +285,14 @@ Say: "Quick preferences check—how should I communicate with you?"
 Explain: "This helps me match my tone and language to what works for you. You can always change these later by editing `System/user-profile.yaml`."
 
 **After receiving responses:**
-1. Save to `System/user-profile.yaml` → `communication` section
+1. Save to `System/user-profile.yaml` -> `communication` section
 2. Map formality to: formal, professional_casual, casual
 3. Map directness to: very_direct, balanced, supportive
 4. Map career level to: junior, mid, senior, leadership, c_suite
 5. Set default coaching_style based on career level:
-   - Early career → encouraging
-   - Mid-level → collaborative
-   - Senior/Leadership/Executive → challenging
+   - Early career -> encouraging
+   - Mid-level -> collaborative
+   - Senior/Leadership/Executive -> challenging
 
 **After receiving preferences:** Call `validate_and_save_step(step_number=6, step_data={"communication": {...}, "obsidian_mode": true/false})` to validate and save.
 
@@ -300,7 +300,7 @@ Explain: "This helps me match my tone and language to what works for you. You ca
 
 ## Step 6.5: Obsidian Integration (Optional)
 
-Say: "One more thing—do you use **Obsidian** to view your notes?
+Say: "One more thing-do you use **Obsidian** to view your notes?
 
 **What is Obsidian?** It's a free markdown editor with a graph view that shows connections between notes. Think of it like a visual map of your knowledge.
 
@@ -355,11 +355,11 @@ Say: "One more thing—do you use **Obsidian** to view your notes?
 Say: "Perfect! I'm creating your workspace now. Here's what you're getting:
 
 **Dex uses the PARA method:**
-- **04-Projects/** — Time-bound work with clear outcomes
-- **05-Areas/** — Ongoing responsibilities (People/, Career/, plus role-specific areas)
-- **06-Resources/** — Reference material (learnings, quarterly reviews, system docs)
-- **07-Archives/** — Historical records (plans, reviews, completed projects)
-- **00-Inbox/** — Capture zone (meetings, ideas, notes)
+- **04-Projects/** - Time-bound work with clear outcomes
+- **05-Areas/** - Ongoing responsibilities (People/, Career/, plus role-specific areas)
+- **06-Resources/** - Reference material (learnings, quarterly reviews, system docs)
+- **07-Archives/** - Historical records (plans, reviews, completed projects)
+- **00-Inbox/** - Capture zone (meetings, ideas, notes)
 
 This separates active work from reference material and keeps your capture zone lightweight."
 
@@ -377,7 +377,7 @@ Call `finalize_onboarding()` from onboarding-mcp. This single call handles:
 
 The MCP returns a summary of what was created (folders, files, configs).
 
-**After creation, say:** "✓ Workspace created! You now have a structure tailored for [their role]."
+**After creation, say:** "[x] Workspace created! You now have a structure tailored for [their role]."
 
 Show the summary from the MCP response.
 
@@ -385,10 +385,10 @@ Show the summary from the MCP response.
 
 Say: "The core system is ready. A couple optional add-ons you can set up now or skip:
 
-- **Journaling** — Daily/weekly reflection prompts (2-3 min/day)
-- **Granola** — Automatic meeting processing (if you use it)
-- **Pendo** — Product analytics integration (if you're a Pendo customer)
-- **Background Learning** — Automatic checks for new Claude features and pending learnings (macOS only)
+- **Journaling** - Daily/weekly reflection prompts (2-3 min/day)
+- **Granola** - Automatic meeting processing (if you use it)
+- **Pendo** - Product analytics integration (if you're a Pendo customer)
+- **Background Learning** - Automatic checks for new Claude features and pending learnings (macOS only)
 
 Want to set up any of these now, or skip and discover them later?"
 
@@ -405,15 +405,15 @@ Ask: "Which journaling prompts do you want?"
 **Then:**
 1. Create `00-Inbox/Journals/` folder
 2. Update `System/user-profile.yaml` with selections
-3. Say: "✓ Journaling enabled. You'll see prompts in `/daily-plan` and `/review`"
+3. Say: "[x] Journaling enabled. You'll see prompts in `/daily-plan` and `/review`"
 
 ### Granola Setup (if selected):
 
 Say: "Granola captures your meeting notes and transcripts. I can help you process them.
 
 **Processing modes:**
-- **Manual** (recommended) — Run `/process-meetings` when you want. No API key needed.
-- **Automatic** — Background sync every 30 minutes. Requires API key (Gemini/Anthropic/OpenAI).
+- **Manual** (recommended) - Run `/process-meetings` when you want. No API key needed.
+- **Automatic** - Background sync every 30 minutes. Requires API key (Gemini/Anthropic/OpenAI).
 
 **What gets processed:**
 When you first connect Granola (or later via `/getting-started`), you'll choose:
@@ -424,13 +424,13 @@ Want to set up manual or automatic processing?"
 
 **If manual:** 
 1. Update `System/user-profile.yaml` with `meeting_processing: manual`
-2. Say: "✓ Manual processing enabled. Run `/process-meetings` or `/getting-started` to process your Granola data."
+2. Say: "[x] Manual processing enabled. Run `/process-meetings` or `/getting-started` to process your Granola data."
 
 **If automatic:**
 1. Ask which provider (Gemini has free tier)
 2. Get their API key
 3. Update `System/user-profile.yaml` and `.env`
-4. Say: "✓ Automatic processing enabled. I'll sync every 30 minutes. You can still use `/getting-started` for historical data."
+4. Say: "[x] Automatic processing enabled. I'll sync every 30 minutes. You can still use `/getting-started` for historical data."
 
 ### Analytics Consent (Always Ask):
 
@@ -438,12 +438,12 @@ Want to set up manual or automatic processing?"
 
 Say: "One quick question before we finish:
 
-**Dave could use your help improving Dex.** By sharing anonymous feature usage—things like 'ran /daily-plan' or 'created a task'—you help show what's working and what needs improvement.
+**Dave could use your help improving Dex.** By sharing anonymous feature usage-things like 'ran /daily-plan' or 'created a task'-you help show what's working and what needs improvement.
 
-• **What's tracked:** Only Dex built-in features (not anything you customize or add)
-• **What Dave never sees:** What you DO with features—just that you used them
-• **Never sent:** Your content, names, notes, conversations, or anything personal
-• **Your control:** You can change this anytime in System/user-profile.yaml
+- **What's tracked:** Only Dex built-in features (not anything you customize or add)
+- **What Dave never sees:** What you DO with features-just that you used them
+- **Never sent:** Your content, names, notes, conversations, or anything personal
+- **Your control:** You can change this anytime in System/user-profile.yaml
 
 **Help improve Dex?**"
 
@@ -477,7 +477,7 @@ Say: "One quick question before we finish:
    - `Consent decision: opted-in`
    - `Consent date: YYYY-MM-DD`
 3. Fire `analytics_consent_given` event (first event!)
-4. Say: "Thanks! This really helps Dave make Dex better. 🙏"
+4. Say: "Thanks! This really helps Dave make Dex better. "
 
 **If NO:**
 1. Update `System/user-profile.yaml`:
@@ -502,7 +502,7 @@ Ask: "Are you a Pendo customer? Pendo's MCP integration gives you:
 - Product usage insights
 
 **What you'll need:**
-- Pendo subscription with MCP enabled (admin must enable in Settings → Subscription Settings → AI Features)
+- Pendo subscription with MCP enabled (admin must enable in Settings -> Subscription Settings -> AI Features)
 - Your Pendo login credentials for OAuth
 
 Want to connect Pendo now?"
@@ -514,7 +514,7 @@ Want to connect Pendo now?"
 
 **For Cursor:**
 ```
-1. Go to Cursor → Settings → Cursor Settings
+1. Go to Cursor -> Settings -> Cursor Settings
 2. In Tools & MCP, select "+ New MCP Server"
 3. Add this configuration to your mcp.json:
 
@@ -531,13 +531,13 @@ Want to connect Pendo now?"
 ```
 
 **For Claude Desktop:**
-- Admin must first add Pendo connector in Admin Settings → Connectors
-- Then users can connect via Settings → Connectors → Pendo → Connect
+- Admin must first add Pendo connector in Admin Settings -> Connectors
+- Then users can connect via Settings -> Connectors -> Pendo -> Connect
 
 **For other clients:** Provide the regional URL (US: `https://app.pendo.io/mcp/v0/shttp`) and OAuth instructions.
 
 4. Update `System/user-profile.yaml` with `pendo_mcp_enabled: true` to track that it's configured
-5. Say: "✓ Pendo MCP configured! Once you authenticate, you can query product analytics. Try asking about guide performance or feature adoption."
+5. Say: "[x] Pendo MCP configured! Once you authenticate, you can query product analytics. Try asking about guide performance or feature adoption."
 
 **If no:**
 Say: "No problem! You can connect Pendo MCP later. Full instructions: https://support.pendo.io/hc/en-us/articles/41102236924955"
@@ -555,7 +555,7 @@ Ask: "Install background automation?"
 **If yes:**
 1. Run: `bash .scripts/install-learning-automation.sh`
 2. Verify installation completed successfully
-3. Say: "✓ Background automation installed. Checks will run automatically."
+3. Say: "[x] Background automation installed. Checks will run automatically."
 
 **If no:**
 Say: "No problem! Self-learning checks will still run inline during session start and `/daily-plan`. You can install later with `bash .scripts/install-learning-automation.sh`"
@@ -570,12 +570,12 @@ Before the completion message, check if user is using Cursor < 2.4:
 
 **If Cursor < 2.4 detected:**
 
-Say: "⚠️ **Important: Cursor Version Update Needed**
+Say: "[!] **Important: Cursor Version Update Needed**
 
 I noticed you're using Cursor [version]. Dex skills (like `/daily-plan`, `/meeting-prep`, etc.) require **Cursor 2.4 or later**.
 
 **To update:**
-1. Cursor menu → Check for Updates, OR
+1. Cursor menu -> Check for Updates, OR
 2. Download latest from [cursor.com](https://cursor.com)
 
 After updating, all Dex skills will work automatically. For now, you can continue setup, but skills won't appear in the `/` menu until you upgrade.
@@ -589,7 +589,7 @@ After updating, all Dex skills will work automatically. For now, you can continu
 
 ### Completion Message
 
-Say: "✓ **Your workspace is ready, [Name]!**
+Say: "[x] **Your workspace is ready, [Name]!**
 
 I've configured your system with:
 - Strategic pillars: [list their pillars]
@@ -600,10 +600,10 @@ I've configured your system with:
 **Here's what happens next:**
 
 I'm going to analyze your calendar and recent meetings to:
-• Create your weekly plan with actual meeting data
-• Build person pages for your frequent contacts  
-• Show you what's on your plate this week
-• Get you oriented with quick wins
+- Create your weekly plan with actual meeting data
+- Build person pages for your frequent contacts  
+- Show you what's on your plate this week
+- Get you oriented with quick wins
 
 This takes about 2 minutes and shows you what Dex can really do.
 
@@ -655,7 +655,7 @@ Ask: "What are your top 3-5 goals for this quarter? These should be specific out
 **Then:**
 1. Create `01-Quarter_Goals/Quarter_Goals.md` with their goals
 2. Tag each goal to a pillar
-3. Say: "✓ Goals set! You can update these anytime with `/quarter-plan`"
+3. Say: "[x] Goals set! You can update these anytime with `/quarter-plan`"
 
 **If no:**
 Say: "No problem! You can set them up later with `/quarter-plan`."

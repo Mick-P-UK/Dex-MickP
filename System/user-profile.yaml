@@ -37,19 +37,19 @@ business:
     inner_circle:
       division: "diy-investors.com"
       type: "membership"
-      price_annual: "£380"
+      price_annual: "GBP380"
       audience: "Serious DIY investors who want to invest on their own account"
 
     plaza_group:
       division: "diy-investors.com"
       type: "premium_membership"
-      price_annual: "£720"
+      price_annual: "GBP720"
       audience: "Experienced DIY investors wanting daily access and real money portfolio insights"
 
     ai_for_investing:
       division: "diy-investors.ai"
       type: "membership"
-      price_annual: "£300"
+      price_annual: "GBP300"
       audience: "Investors who want to gain the advantage AI offers for investing"
 
     boot_camp:

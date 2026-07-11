@@ -50,18 +50,18 @@ For each project folder or file:
 
 | Project | Status | Issue | Days Since Activity |
 |---------|--------|-------|---------------------|
-| [Project A] | 🟢 | On track | 2 |
-| [Project B] | 🟡 | No active tasks | 8 |
-| [Project C] | 🔴 | Blocked - waiting on [X] | 15 |
+| [Project A] | [green] | On track | 2 |
+| [Project B] | [amber] | No active tasks | 8 |
+| [Project C] | [red] | Blocked - waiting on [X] | 15 |
 
-**Summary:** [N] projects ([X] 🟢 / [Y] 🟡 / [Z] 🔴)
+**Summary:** [N] projects ([X] [green] / [Y] [amber] / [Z] [red])
 ```
 
 ## Status Meanings
 
-- 🟢 **Green**: Active, clear next steps, no blockers
-- 🟡 **Yellow**: Stale 7-14 days, OR no active tasks, OR unclear next step
-- 🔴 **Red**: Blocked, OR stale 14+ days
+- [green] **Green**: Active, clear next steps, no blockers
+- [amber] **Yellow**: Stale 7-14 days, OR no active tasks, OR unclear next step
+- [red] **Red**: Blocked, OR stale 14+ days
 
 ## When to Use
 

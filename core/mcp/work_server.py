@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 MCP Server for Dex Work Management System
-Manages the complete planning hierarchy: quarterly goals → weekly priorities → daily tasks.
+Manages the complete planning hierarchy: quarterly goals -> weekly priorities -> daily tasks.
 
 Provides deterministic operations through structured tools with:
 - Schema validation
@@ -414,17 +414,17 @@ def update_task_status_everywhere(task_id: str, completed: bool) -> Dict[str, An
                 
                 # Add completion timestamp after task ID if not already present
                 # Remove any existing timestamp first
-                new_line = re.sub(r'\s*✅\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}', '', new_line)
+                new_line = re.sub(r'\s*[x]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}', '', new_line)
                 
                 # Find position after task ID to insert timestamp
                 task_id_match = re.search(r'\^' + re.escape(task_id), new_line)
                 if task_id_match:
                     insert_pos = task_id_match.end()
-                    new_line = new_line[:insert_pos] + f' ✅ {completion_timestamp}' + new_line[insert_pos:]
+                    new_line = new_line[:insert_pos] + f' [x] {completion_timestamp}' + new_line[insert_pos:]
             else:
                 # Uncompleting: change checkbox and remove timestamp
                 new_line = old_line.replace('- [x]', '- [ ]')
-                new_line = re.sub(r'\s*✅\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}', '', new_line)
+                new_line = re.sub(r'\s*[x]\s*\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}', '', new_line)
             
             if new_line != old_line:
                 lines[line_idx] = new_line
@@ -614,13 +614,13 @@ def update_related_tasks_section(page_path: str, tasks: List[Dict[str, Any]]) ->
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M')
     
     # Build the new Related Tasks section
-    section_content = f"## Related Tasks\n*Synced from 03-Tasks/Tasks.md — {timestamp}*\n\n"
+    section_content = f"## Related Tasks\n*Synced from 03-Tasks/Tasks.md - {timestamp}*\n\n"
     
     if tasks:
         section_content += "| Status | Task | Priority |\n"
         section_content += "|--------|------|----------|\n"
         for task in tasks:
-            status = "✅" if task['completed'] else "⏳"
+            status = "[x]" if task['completed'] else "[~]"
             section_content += f"| {status} | {task['title']} | {task['priority']} |\n"
     else:
         section_content += "*No related tasks*\n"
@@ -876,12 +876,12 @@ def refresh_company_page(company_path: str) -> Dict[str, Any]:
     # Build Related Tasks section
     tasks_section = "## Related Tasks\n\n"
     tasks_section += "<!-- Synced from 03-Tasks/Tasks.md via task MCP -->\n\n"
-    tasks_section += f"*Synced from 03-Tasks/Tasks.md — {timestamp}*\n\n"
+    tasks_section += f"*Synced from 03-Tasks/Tasks.md - {timestamp}*\n\n"
     if tasks:
         tasks_section += "| Status | Task | Priority |\n"
         tasks_section += "|--------|------|----------|\n"
         for task in tasks:
-            status = "✅" if task['completed'] else "⏳"
+            status = "[x]" if task['completed'] else "[~]"
             tasks_section += f"| {status} | {task['title']} | {task['priority']} |\n"
     else:
         tasks_section += "*No related tasks*\n"
@@ -1028,7 +1028,7 @@ def create_company_page(name: str, website: str = '', industry: str = '',
 
 <!-- Synced from 03-Tasks/Tasks.md via task MCP -->
 
-*Synced from 03-Tasks/Tasks.md — never*
+*Synced from 03-Tasks/Tasks.md - never*
 
 | Status | Task | Priority |
 |--------|------|----------|
@@ -1153,14 +1153,14 @@ def parse_quarterly_goals(filepath: Path) -> List[Dict[str, Any]]:
         except Exception as e:
             logger.error(f"Error parsing frontmatter: {e}")
     
-    # Parse goal sections (### 1. Goal Title — **Pillar** ^goal-id)
+    # Parse goal sections (### 1. Goal Title - **Pillar** ^goal-id)
     lines = content.split('\n')
     i = 0
     while i < len(lines):
         line = lines[i]
         
-        # Match goal headers like ### 1. Launch Product v2.0 — **Growth** ^Q1-2026-goal-1
-        goal_match = re.match(r'###\s+(\d+)\.\s+(.+?)\s+—\s+\*\*(.+?)\*\*(?:\s+\^(Q\d+-\d{4}-goal-\d+))?', line)
+        # Match goal headers like ### 1. Launch Product v2.0 - **Growth** ^Q1-2026-goal-1
+        goal_match = re.match(r'###\s+(\d+)\.\s+(.+?)\s+-\s+\*\*(.+?)\*\*(?:\s+\^(Q\d+-\d{4}-goal-\d+))?', line)
         if goal_match:
             goal_num = int(goal_match.group(1))
             title = goal_match.group(2).strip()
@@ -1262,7 +1262,7 @@ def find_linked_priorities(goal_id: str) -> List[Dict[str, Any]]:
                 priority_id = extract_priority_id(line)
                 
                 # Extract title
-                title_match = re.search(r'(?:\d+\.\s+)?(.+?)\s+—', line)
+                title_match = re.search(r'(?:\d+\.\s+)?(.+?)\s+-', line)
                 if not title_match:
                     title_match = re.search(r'\*\*(.+?)\*\*', line)
                 title = title_match.group(1).strip() if title_match else line.strip()
@@ -1328,7 +1328,7 @@ def update_goal_in_file(goal_id: str, updates: Dict[str, Any]) -> bool:
         for i in range(goal_line_idx, min(goal_line_idx + 30, len(lines))):
             if '**Progress:**' in lines[i]:
                 # Update progress percentage and emoji
-                emoji = '🟢' if progress >= 75 else '🟡' if progress >= 40 else '🔴'
+                emoji = '[green]' if progress >= 75 else '[amber]' if progress >= 40 else '[red]'
                 lines[i] = f"**Progress:** {progress}% {emoji}"
                 break
     
@@ -1360,7 +1360,7 @@ created: {datetime.now().strftime('%Y-%m-%d')}
 
 ---
 
-## 🎯 Quarter Objectives
+##  Quarter Objectives
 
 """
         goals_file.write_text(content)
@@ -1374,7 +1374,7 @@ created: {datetime.now().strftime('%Y-%m-%d')}
     milestones_md = '\n'.join([f"- [ ] {m['title']}" for m in goal_data.get('milestones', [])])
     
     goal_section = f"""
-### {goal_num}. {goal_data['title']} — **{goal_data['pillar']}** ^{goal_id}
+### {goal_num}. {goal_data['title']} - **{goal_data['pillar']}** ^{goal_id}
 
 **What success looks like:**
 {goal_data.get('success_criteria', '[Define success criteria]')}
@@ -1382,7 +1382,7 @@ created: {datetime.now().strftime('%Y-%m-%d')}
 **Key milestones:**
 {milestones_md if milestones_md else '- [ ] [Milestone 1]'}
 
-**Progress:** 0% 🔴
+**Progress:** 0% [red]
 """
     
     # Add career metadata if provided
@@ -1393,7 +1393,7 @@ created: {datetime.now().strftime('%Y-%m-%d')}
         skills_list = ', '.join(goal_data['skills_developed'])
         career_metadata.append(f"- **Skills developing:** {skills_list}")
     if goal_data.get('impact_level'):
-        impact_emoji = {"high": "🔥", "medium": "⭐", "low": "📋"}
+        impact_emoji = {"high": "", "medium": "*", "low": ""}
         emoji = impact_emoji.get(goal_data['impact_level'], "")
         career_metadata.append(f"- **Impact level:** {goal_data['impact_level']} {emoji}")
     
@@ -1402,10 +1402,10 @@ created: {datetime.now().strftime('%Y-%m-%d')}
     
     goal_section += "\n---\n"
     
-    # Insert before "## 📊 Pillar Alignment" or at end
+    # Insert before "##  Pillar Alignment" or at end
     content = goals_file.read_text(encoding='utf-8')
     
-    insert_marker = "## 📊 Pillar Alignment"
+    insert_marker = "##  Pillar Alignment"
     if insert_marker in content:
         content = content.replace(insert_marker, goal_section + "\n" + insert_marker)
     else:
@@ -1458,10 +1458,10 @@ def parse_weekly_priorities(filepath: Path) -> List[Dict[str, Any]]:
     lines = content.split('\n')
     for i, line in enumerate(lines):
         # Match priority lines like:
-        # 1. Priority Title — **Pillar** ^week-2026-W05-p1
+        # 1. Priority Title - **Pillar** ^week-2026-W05-p1
         # Or task-style: - [ ] **Priority Title** ^week-2026-W05-p1
         
-        priority_match = re.match(r'(\d+)\.\s+(.+?)\s+—\s+\*\*(.+?)\*\*(?:\s+\^(week-\d{4}-W\d{2}-p\d+))?', line)
+        priority_match = re.match(r'(\d+)\.\s+(.+?)\s+-\s+\*\*(.+?)\*\*(?:\s+\^(week-\d{4}-W\d{2}-p\d+))?', line)
         if priority_match:
             priority_num = int(priority_match.group(1))
             title = priority_match.group(2).strip()
@@ -1658,7 +1658,7 @@ def migrate_quarterly_goals() -> Dict[str, Any]:
     # Find goals without IDs and add them
     for i, line in enumerate(lines):
         # Match goal headers without IDs
-        goal_match = re.match(r'(###\s+\d+\.\s+.+?\s+—\s+\*\*.*?\*\*)(?!\s+\^)', line)
+        goal_match = re.match(r'(###\s+\d+\.\s+.+?\s+-\s+\*\*.*?\*\*)(?!\s+\^)', line)
         if goal_match:
             # This goal doesn't have an ID, add one
             goal_header = goal_match.group(1)
@@ -1711,7 +1711,7 @@ def migrate_weekly_priorities() -> Dict[str, Any]:
     # Find priorities without IDs and add them
     for i, line in enumerate(lines):
         # Match priority lines without IDs (numbered 1-3)
-        priority_match = re.match(r'(\d+\.\s+.+?\s+—\s+\*\*.*?\*\*)(?!\s+\^)', line)
+        priority_match = re.match(r'(\d+\.\s+.+?\s+-\s+\*\*.*?\*\*)(?!\s+\^)', line)
         if priority_match:
             # This priority doesn't have an ID, add one
             priority_header = priority_match.group(1)
@@ -3383,7 +3383,7 @@ async def handle_call_tool(
             priority_num = 3  # Cap at 3 for Top 3
         
         pillar_name = PILLARS[pillar]['name']
-        priority_line = f"{priority_num}. {title} — **{pillar_name}** ^{priority_id}"
+        priority_line = f"{priority_num}. {title} - **{pillar_name}** ^{priority_id}"
         
         priority_entry = priority_line
         if success_criteria:
@@ -3397,10 +3397,10 @@ async def handle_call_tool(
         else:
             # Create new file
             priorities_file.parent.mkdir(parents=True, exist_ok=True)
-            content = f"# Week Priorities\n\n**Week of:** {week_date}\n\n---\n\n## 🎯 Top 3 This Week\n\n"
+            content = f"# Week Priorities\n\n**Week of:** {week_date}\n\n---\n\n##  Top 3 This Week\n\n"
         
-        # Insert after "## 🎯 Top 3 This Week" section
-        top3_marker = "## 🎯 Top 3 This Week"
+        # Insert after "##  Top 3 This Week" section
+        top3_marker = "##  Top 3 This Week"
         if top3_marker in content:
             parts = content.split(top3_marker)
             new_content = parts[0] + top3_marker + "\n\n" + priority_entry + "\n" + parts[1]

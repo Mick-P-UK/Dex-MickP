@@ -21,17 +21,17 @@ def run_command(cmd, description):
             cwd=os.path.dirname(os.path.abspath(__file__))
         )
         if result.returncode == 0:
-            print("✓")
+            print("[x]")
             if result.stdout.strip():
                 print(f"    {result.stdout.strip()}")
             return True
         else:
-            print("✗")
+            print("[ ]")
             if result.stderr.strip():
                 print(f"    Error: {result.stderr.strip()}")
             return False
     except Exception as e:
-        print(f"✗ (Exception: {e})")
+        print(f"[ ] (Exception: {e})")
         return False
 
 def main():
@@ -57,15 +57,15 @@ def main():
             text=True
         )
         if result.returncode == 0:
-            print("✓")
+            print("[x]")
             print(f"  {result.stdout.strip()}")
         else:
-            print("✗")
+            print("[ ]")
             print("  Git is not installed or not in PATH.")
             print("  Please install Git from https://git-scm.com/")
             return 1
     except FileNotFoundError:
-        print("✗")
+        print("[ ]")
         print("  Git is not installed or not in PATH.")
         print("  Please install Git from https://git-scm.com/")
         return 1
@@ -75,7 +75,7 @@ def main():
     # Check if .git already exists
     git_dir = script_dir / ".git"
     if git_dir.exists():
-        print("⚠ Git repository already exists")
+        print("[!] Git repository already exists")
         response = input("  Continue anyway? (y/n): ").strip().lower()
         if response != 'y':
             print("  Aborted.")
@@ -121,22 +121,22 @@ Code changes:
             cwd=script_dir
         )
         if result.returncode == 0:
-            print("✓")
+            print("[x]")
             print(f"  {result.stdout.strip()}")
         else:
-            print("✗")
+            print("[ ]")
             if "nothing to commit" in result.stdout:
                 print("  Nothing to commit (all files may be ignored by .gitignore)")
             else:
                 print(f"  Error: {result.stderr.strip()}")
             return 1
     except Exception as e:
-        print(f"✗ (Exception: {e})")
+        print(f"[ ] (Exception: {e})")
         return 1
     
     print()
     print("=" * 60)
-    print("✓ Git repository setup complete!")
+    print("[x] Git repository setup complete!")
     print("=" * 60)
     print()
     print("Useful commands:")

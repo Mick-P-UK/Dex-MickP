@@ -173,7 +173,7 @@ TechCorp uses a competency-based career framework with 6 levels for Product Mana
 | Product Strategy | 65% | 85%+ | Platform thinking, company influence |
 | Execution | 80% | 85%+ | Multi-team examples |
 | Cross-Functional Leadership | 60% | 85%+ | Exec influence, broader partnerships |
-| Customer Insight | 70% | 80%+ | Insights → strategy connection |
+| Customer Insight | 70% | 80%+ | Insights -> strategy connection |
 | Technical Judgment | 55% | 75%+ | Architectural influence |
 | Communication | 65% | 85%+ | Written narratives, board-level |
 | Team Development | 70% | 75%+ | Team-level impact |

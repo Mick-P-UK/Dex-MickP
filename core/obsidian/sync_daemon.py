@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Bidirectional sync daemon for Obsidian ↔ Dex
+Bidirectional sync daemon for Obsidian <-> Dex
 Monitors file changes and syncs task states using Work MCP
 """
 import os
@@ -83,7 +83,7 @@ class DexSyncHandler(FileSystemEventHandler):
             try:
                 from core.mcp.work_server import update_task_status_everywhere
                 result = update_task_status_everywhere(task_id, status == 'd')
-                logger.info(f"Synced {task_id} → {status}")
+                logger.info(f"Synced {task_id} -> {status}")
             except Exception as e:
                 logger.error(f"Failed to sync {task_id}: {e}")
 

@@ -4,27 +4,27 @@
 
 ```
 lib/
-├── gemname.rb          # Entry point, config, errors
-└── gemname/
-    ├── helper.rb       # Core functionality
-    ├── engine.rb       # Rails engine (if needed)
-    └── version.rb      # VERSION constant only
++-- gemname.rb          # Entry point, config, errors
++-- gemname/
+    +-- helper.rb       # Core functionality
+    +-- engine.rb       # Rails engine (if needed)
+    +-- version.rb      # VERSION constant only
 ```
 
 ## Complex Gem Layout (PgHero pattern)
 
 ```
 lib/
-├── pghero.rb
-└── pghero/
-    ├── database.rb     # Main class
-    ├── engine.rb       # Rails engine
-    └── methods/        # Functional decomposition
-        ├── basic.rb
-        ├── connections.rb
-        ├── indexes.rb
-        ├── queries.rb
-        └── replication.rb
++-- pghero.rb
++-- pghero/
+    +-- database.rb     # Main class
+    +-- engine.rb       # Rails engine
+    +-- methods/        # Functional decomposition
+        +-- basic.rb
+        +-- connections.rb
+        +-- indexes.rb
+        +-- queries.rb
+        +-- replication.rb
 ```
 
 ## Method Decomposition Pattern

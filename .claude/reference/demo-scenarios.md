@@ -50,7 +50,7 @@
 **Expected outcome:**
 - Plan generated with calendar, tasks, and focus areas
 - Saved to `07-Archives/Plans/Daily/YYYY-MM-DD.md`
-- Clear connection between quarterly goals → weekly priorities → today's work
+- Clear connection between quarterly goals -> weekly priorities -> today's work
 
 **Talking points:**
 - "Notice how tasks are prioritized by pillar and linked to weekly goals"
@@ -266,7 +266,7 @@ Read: 05-Areas/Companies/Acme_Corp.md
 **What it demonstrates:**
 - Task structure with pillar tags, goal links, and priority levels
 - Career skill tagging (linking tasks to skill development)
-- Task completion workflow (natural language → MCP tool)
+- Task completion workflow (natural language -> MCP tool)
 - Task surfacing in daily plans
 - Week/Quarter promotion system
 
@@ -320,7 +320,7 @@ Read: 05-Areas/Career/Evidence/Achievements/2026_Mobile_App_Launch.md
 
 **Expected outcome:**
 - Complete career development infrastructure
-- Alex's L4→L5 promotion path clearly documented
+- Alex's L4->L5 promotion path clearly documented
 - Evidence accumulating in structured folders
 - Career skill tags on tasks demonstrating skill development
 
@@ -354,7 +354,7 @@ Read: 05-Areas/Career/Evidence/Achievements/2026_Mobile_App_Launch.md
 **Expected outcome:**
 - Menu of 4 coaching modes
 - User selects mode (try "weekly" or "monthly")
-- Personalized guidance based on Alex's L4→L5 path
+- Personalized guidance based on Alex's L4->L5 path
 - Actionable recommendations with evidence capture prompts
 
 **Talking points:**

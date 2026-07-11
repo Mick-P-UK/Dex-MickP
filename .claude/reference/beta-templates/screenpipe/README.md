@@ -19,7 +19,7 @@ ScreenPipe enables **ambient work intelligence** - Dex learns what you're workin
 
 **Work apps only.** Everything personal is blocked by default:
 
-| ✅ Captured | ❌ Blocked |
+| [x] Captured | [ ] Blocked |
 |-------------|------------|
 | VS Code, Terminal, IDEs | All web browsers |
 | Slack, Teams, Zoom | Password managers |
@@ -59,7 +59,7 @@ ScreenPipe enables **ambient work intelligence** - Dex learns what you're workin
 ## Local Model Option
 
 For maximum privacy (nothing to Anthropic):
-1. Run `/ai-setup` → Choose "Offline/Local"
+1. Run `/ai-setup` -> Choose "Offline/Local"
 2. Then enable ScreenPipe
 3. All queries stay on your machine
 

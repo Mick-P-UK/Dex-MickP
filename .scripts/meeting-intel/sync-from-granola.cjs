@@ -254,7 +254,7 @@ function extractCompanyFromTitle(title) {
   const companyPatterns = [
     /^([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)\s*(?:call|meeting|sync|1:1|check-?in)/i,
     /meeting with ([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)/i,
-    /^([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)\s*[-–—]/,
+    /^([A-Z][a-zA-Z]+(?:\s+[A-Z][a-zA-Z]+)*)\s*[---]/,
   ];
   
   for (const pattern of companyPatterns) {
@@ -661,13 +661,13 @@ async function main() {
         ...result
       });
       
-      log(`  ✓ Done: ${result.wikilink}`);
+      log(`  [x] Done: ${result.wikilink}`);
       
       // Small delay between API calls
       await new Promise(r => setTimeout(r, 1000));
       
     } catch (err) {
-      log(`  ✗ Failed: ${err.message}`);
+      log(`  [ ] Failed: ${err.message}`);
     }
   }
   

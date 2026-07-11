@@ -256,29 +256,29 @@ When a test fails:
 After all tests complete, present summary:
 
 ```markdown
-## 📱 Xcode Test Results
+##  Xcode Test Results
 
 **Project:** [project name]
 **Scheme:** [scheme name]
 **Simulator:** [simulator name]
 
-### Build: ✅ Success / ❌ Failed
+### Build: [x] Success / [ ] Failed
 
 ### Screens Tested: [count]
 
 | Screen | Status | Notes |
 |--------|--------|-------|
-| Launch | ✅ Pass | |
-| Home | ✅ Pass | |
-| Settings | ❌ Fail | Crash on tap |
-| Profile | ⏭️ Skip | Requires login |
+| Launch | [x] Pass | |
+| Home | [x] Pass | |
+| Settings | [ ] Fail | Crash on tap |
+| Profile |  Skip | Requires login |
 
 ### Console Errors: [count]
 - [List any errors found]
 
 ### Human Verifications: [count]
-- Sign in with Apple: ✅ Confirmed
-- Push notifications: ✅ Confirmed
+- Sign in with Apple: [x] Confirmed
+- Push notifications: [x] Confirmed
 
 ### Failures: [count]
 - Settings screen - crash on navigation

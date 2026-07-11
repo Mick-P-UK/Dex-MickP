@@ -6,12 +6,12 @@ Use this template when adding a pattern to `docs/solutions/patterns/critical-pat
 
 ## N. [Pattern Name] (ALWAYS REQUIRED)
 
-### ❌ WRONG ([Will cause X error])
+### [ ] WRONG ([Will cause X error])
 ```[language]
 [code showing wrong approach]
 ```
 
-### ✅ CORRECT
+### [x] CORRECT
 ```[language]
 [code showing correct approach]
 ```

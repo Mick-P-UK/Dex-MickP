@@ -4,9 +4,9 @@ Reference material you consult but aren't actively working on.
 
 ## Subfolders
 
-- **Learnings/** — Compound knowledge organized by topic
-- **Dex_System/** — Documentation about how Dex works
-- **Quarterly_Reviews/** — Quarterly reflection and strategic reviews
+- **Learnings/** - Compound knowledge organized by topic
+- **Dex_System/** - Documentation about how Dex works
+- **Quarterly_Reviews/** - Quarterly reflection and strategic reviews
 
 ## What Goes Here
 
@@ -18,11 +18,11 @@ Reference material that:
 
 ## Examples
 
-- **Learnings** — Frameworks, mental models, lessons learned
-- **Documentation** — System guides, how-tos, process docs
-- **Quarterly Reviews** — Strategic reflections and quarterly retrospectives
-- **Research** — Industry research, competitive analysis
-- **Policies** — Company policies, guidelines
+- **Learnings** - Frameworks, mental models, lessons learned
+- **Documentation** - System guides, how-tos, process docs
+- **Quarterly Reviews** - Strategic reflections and quarterly retrospectives
+- **Research** - Industry research, competitive analysis
+- **Policies** - Company policies, guidelines
 
 **Note:** Templates are stored in `System/Templates/` for easy access during file creation.
 
@@ -36,9 +36,9 @@ If you haven't looked at something in 6+ months, consider archiving it.
 ## Workflow
 
 Content flows here from:
-- **Weekly reviews** → Learnings/
-- **Project completion** → Extract learnings and frameworks
-- **Career tracking** → Frameworks and mental models
+- **Weekly reviews** -> Learnings/
+- **Project completion** -> Extract learnings and frameworks
+- **Career tracking** -> Frameworks and mental models
 
 ## Organization
 

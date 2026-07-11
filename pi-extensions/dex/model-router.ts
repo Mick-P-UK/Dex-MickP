@@ -105,7 +105,7 @@ export function registerModelRouter(pi: ExtensionAPI) {
             
             // Update status to show model switch
             if (ctx.hasUI) {
-              ctx.ui.setStatus("dex-model", `🔀 ${model.id.split("-").slice(-2).join("-")}`);
+              ctx.ui.setStatus("dex-model", ` ${model.id.split("-").slice(-2).join("-")}`);
             }
           }
         }
@@ -134,7 +134,7 @@ export function registerModelRouter(pi: ExtensionAPI) {
     handler: async (args, ctx) => {
       if (lastModelSwitch) {
         ctx.ui.notify(
-          `Last switch: ${lastModelSwitch.from} → ${lastModelSwitch.to}\n` +
+          `Last switch: ${lastModelSwitch.from} -> ${lastModelSwitch.to}\n` +
           `Reason: ${lastModelSwitch.reason}`,
           "info"
         );

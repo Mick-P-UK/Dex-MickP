@@ -29,7 +29,7 @@ Led complete redesign of TechCorp's customer portal to improve self-service capa
 - Coordinated with Customer Success on rollout plan
 
 ### Launch & Iteration
-- Phased rollout: beta (20 customers) → general availability
+- Phased rollout: beta (20 customers) -> general availability
 - Daily monitoring of adoption and support tickets
 - Quick iteration based on early feedback (3 critical fixes in first week)
 - Post-launch communication to customers and internal teams
@@ -39,8 +39,8 @@ Led complete redesign of TechCorp's customer portal to improve self-service capa
 ## Results
 
 **Adoption:**
-- Self-service adoption: 35% → 55% (+20 percentage points)
-- Active portal users: 2,500 → 6,200 (+148%)
+- Self-service adoption: 35% -> 55% (+20 percentage points)
+- Active portal users: 2,500 -> 6,200 (+148%)
 
 **Support Impact:**
 - Support tickets: -30% reduction
@@ -103,12 +103,12 @@ Led complete redesign of TechCorp's customer portal to improve self-service capa
 
 ## Promotion Relevance
 
-**L4 → L5 Evidence:**
-- ✅ High-impact strategic work
-- ✅ Cross-functional leadership
-- ✅ Data-driven decision making
-- ✅ Measurable business results
-- ⚠️ Single-team coordination (not multi-team)
+**L4 -> L5 Evidence:**
+- [x] High-impact strategic work
+- [x] Cross-functional leadership
+- [x] Data-driven decision making
+- [x] Measurable business results
+- [!] Single-team coordination (not multi-team)
 
 **Gap:** Need similar examples that span multiple teams/products for L5
 

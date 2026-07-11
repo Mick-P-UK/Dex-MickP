@@ -123,7 +123,7 @@ description: {user's description}
 
 **Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 ```
 
 **For weekly operations, also calculate Monday:**
@@ -144,7 +144,7 @@ monday_str = monday.strftime('%Y-%m-%d')
 ### Step 4: Confirm
 
 ```
-✅ Created skill: /{{name}}-custom
+[x] Created skill: /{{name}}-custom
 
 Your skill is ready to use. Run /{name}-custom to try it.
 

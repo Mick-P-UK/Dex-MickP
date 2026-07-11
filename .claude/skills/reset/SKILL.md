@@ -10,7 +10,7 @@ Re-run the onboarding flow to restructure your Dex system. Useful when:
 - Your role changes (promotion, new job, pivot)
 - You want to reorganize after using Dex for a while
 - You're experimenting with different structures
-- Your company size tier changes (startup → scaling, etc.)
+- Your company size tier changes (startup -> scaling, etc.)
 
 ## Behavior
 
@@ -131,26 +131,26 @@ After completion, show:
 **NEVER delete user content during reset.** Follow these rules:
 
 1. **Exact matches** - If old folder name matches new structure, keep content in place
-2. **Similar matches** - If folders are similar (e.g., `Pipeline/` → `Opportunities/`), move content
+2. **Similar matches** - If folders are similar (e.g., `Pipeline/` -> `Opportunities/`), move content
 3. **No match** - Move to `00-Inbox/To_Sort/` with a note about original location
 4. **Person pages** - Always preserve `People/` folder structure
 5. **Meeting notes** - Always preserve `00-Inbox/Meetings/` content
 
 ## Example Migrations
 
-### PM at Startup → PM at Enterprise
+### PM at Startup -> PM at Enterprise
 - Add `Governance/` folder
 - Expand `Relationships/` with more stakeholder categories
 - Add enterprise-specific templates
 - Keep all existing content in place
 
-### Sales → Customer Success
-- Rename `Pipeline/` → `Portfolio/`
+### Sales -> Customer Success
+- Rename `Pipeline/` -> `Portfolio/`
 - Add `Health/`, `Renewals/` folders
 - Move account folders to new structure
 - Add CS-specific templates
 
-### Engineer → Engineering Manager
+### Engineer -> Engineering Manager
 - Add `Team/` folder for 1:1s, hiring
 - Keep `04-Projects/` and `Systems/`
 - Add management templates

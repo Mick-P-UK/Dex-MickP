@@ -6,10 +6,10 @@ Welcome to the Pi Integration beta! Pi is a minimal, self-extending coding agent
 
 Pi is different from other coding agents:
 
-- **Minimal core** — Under 1,000 tokens of system prompt (vs thousands in other tools)
-- **Self-extending** — Instead of waiting for features, you describe what you want and Pi builds it
-- **Transparent** — You can see exactly what Pi is doing, no "black box" magic
-- **Powers OpenClaw** — The viral AI assistant with 145k+ GitHub stars is built on Pi
+- **Minimal core** - Under 1,000 tokens of system prompt (vs thousands in other tools)
+- **Self-extending** - Instead of waiting for features, you describe what you want and Pi builds it
+- **Transparent** - You can see exactly what Pi is doing, no "black box" magic
+- **Powers OpenClaw** - The viral AI assistant with 145k+ GitHub stars is built on Pi
 
 Tobi Lutke (Shopify CEO) called it the *"Dawn of the age of malleable software."*
 
@@ -51,7 +51,7 @@ Pi will:
 
 ## How Pi Connects to Dex
 
-Pi has **native MCP (Model Context Protocol) support** — it can directly access your Dex MCP servers without any bridge code.
+Pi has **native MCP (Model Context Protocol) support** - it can directly access your Dex MCP servers without any bridge code.
 
 This means tools Pi builds can:
 - Access your task list
@@ -71,14 +71,14 @@ Pi excels at **analytical and cross-cutting tools**:
 - Ad-hoc dashboards
 - Role-specific workflows
 
-For **deterministic operations** (task CRUD, calendar writes), continue using Dex directly — reliability matters more than flexibility there.
+For **deterministic operations** (task CRUD, calendar writes), continue using Dex directly - reliability matters more than flexibility there.
 
 ## Pi vs Claude Code
 
 | | Claude Code (Dex) | Pi |
 |---|---|---|
 | **Add features** | Edit skill files | Describe what you want |
-| **Iteration** | Find file → edit → test | "Also do X" → done |
+| **Iteration** | Find file -> edit -> test | "Also do X" -> done |
 | **Best for** | Structured workflows | Custom tools |
 | **Reliability** | High (deterministic) | Good (probabilistic) |
 
@@ -90,10 +90,10 @@ For **deterministic operations** (task CRUD, calendar writes), continue using De
 
 Pi connects directly to these Dex MCP servers:
 
-- **work-mcp** — For task/goal/priority operations
-- **calendar-mcp** — For calendar access
-- **career-mcp** — For career development tracking
-- **commitment-mcp** — For commitment detection
+- **work-mcp** - For task/goal/priority operations
+- **calendar-mcp** - For calendar access
+- **career-mcp** - For career development tracking
+- **commitment-mcp** - For commitment detection
 - And all other Dex MCP servers
 
 These are configured automatically during beta activation.

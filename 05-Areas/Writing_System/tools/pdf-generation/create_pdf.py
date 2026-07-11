@@ -149,7 +149,7 @@ def markdown_to_flowables(content, styles):
             bullet_text = line[2:].strip()
             # Convert markdown bold to reportlab
             bullet_text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', bullet_text)
-            flowables.append(Paragraph(f"• {bullet_text}", styles['Bullet']))
+            flowables.append(Paragraph(f"- {bullet_text}", styles['Bullet']))
             i += 1
             continue
 

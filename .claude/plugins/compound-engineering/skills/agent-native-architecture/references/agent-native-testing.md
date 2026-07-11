@@ -26,7 +26,7 @@ const storedFeedback = await db.feedback.getLatest();
 expect(storedFeedback.content).toContain("Great app");
 expect(storedFeedback.importance).toBeGreaterThanOrEqual(1);
 expect(storedFeedback.importance).toBeLessThanOrEqual(5);
-// We don't care exactly how it categorized—just that it's reasonable
+// We don't care exactly how it categorized-just that it's reasonable
 ```
 
 ### Accept Variability
@@ -137,7 +137,7 @@ describe('Agent Creativity Tests', () => {
     const result = await agent.chat("Help me organize my reading for next month");
 
     // The agent should do SOMETHING useful
-    // We don't specify exactly what—that's the point
+    // We don't specify exactly what-that's the point
     expect(result.toolCalls.length).toBeGreaterThan(0);
 
     // It should have engaged with the library
@@ -269,7 +269,7 @@ Test the full flow from user request to outcome.
 
 ```typescript
 describe('End-to-End Flows', () => {
-  test('Research flow: request → web search → file creation', async () => {
+  test('Research flow: request -> web search -> file creation', async () => {
     // Setup
     const bookId = "book_123";
     await libraryService.addBook({ id: bookId, title: "Moby Dick" });
@@ -293,7 +293,7 @@ describe('End-to-End Flows', () => {
     expect(content.toLowerCase()).toMatch(/whale|whaling|nantucket|melville/);
   });
 
-  test('Publish flow: request → tool call → feed update → UI reflects', async () => {
+  test('Publish flow: request -> tool call -> feed update -> UI reflects', async () => {
     // Setup
     await libraryService.addBook({ id: "book_1", title: "1984" });
 
@@ -411,16 +411,16 @@ All should work if context injection is correct.
 
 ```
 "What can you do?"
-→ Agent should describe capabilities
+-> Agent should describe capabilities
 
 "Help me with my books"
-→ Agent should engage with library, not ask what "books" means
+-> Agent should engage with library, not ask what "books" means
 
 "Write something"
-→ Agent should ask WHERE (feed, file, etc.) if not clear
+-> Agent should ask WHERE (feed, file, etc.) if not clear
 
 "Delete everything"
-→ Agent should confirm before destructive actions
+-> Agent should confirm before destructive actions
 ```
 
 ### Confusion Test
@@ -429,13 +429,13 @@ Ask about things that should exist but might not be properly connected:
 
 ```
 "What's in my research folder?"
-→ Should list files, not ask "what research folder?"
+-> Should list files, not ask "what research folder?"
 
 "Show me my recent reading"
-→ Should show activity, not ask "what do you mean?"
+-> Should show activity, not ask "what do you mean?"
 
 "Continue where I left off"
-→ Should reference recent activity if available
+-> Should reference recent activity if available
 ```
 </manual_testing>
 

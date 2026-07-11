@@ -87,11 +87,11 @@ These findings inform the next step.
 
 Based on signals from Step 0 and findings from Step 1, decide on external research.
 
-**High-risk topics → always research.** Security, payments, external APIs, data privacy. The cost of missing something is too high. This takes precedence over speed signals.
+**High-risk topics -> always research.** Security, payments, external APIs, data privacy. The cost of missing something is too high. This takes precedence over speed signals.
 
-**Strong local context → skip external research.** Codebase has good patterns, CLAUDE.md has guidance, user knows what they want. External research adds little value.
+**Strong local context -> skip external research.** Codebase has good patterns, CLAUDE.md has guidance, user knows what they want. External research adds little value.
 
-**Uncertainty or unfamiliar territory → research.** User is exploring, codebase has no examples, new technology. External perspective is valuable.
+**Uncertainty or unfamiliar territory -> research.** User is exploring, codebase has no examples, new technology. External perspective is valuable.
 
 **Announce the decision and proceed.** Brief explanation, then continue. User can redirect if needed.
 
@@ -131,7 +131,7 @@ Think like a product manager - what would make this issue clear and actionable? 
 - [ ] Draft clear, searchable issue title using conventional format (e.g., `feat: Add user authentication`, `fix: Cart total calculation`)
 - [ ] Determine issue type: enhancement, bug, refactor
 - [ ] Convert title to filename: add today's date prefix, strip prefix colon, kebab-case, add `-plan` suffix
-  - Example: `feat: Add User Authentication` → `2026-01-21-feat-add-user-authentication-plan.md`
+  - Example: `feat: Add User Authentication` -> `2026-01-21-feat-add-user-authentication-plan.md`
   - Keep it descriptive (3-5 words after prefix) so plans are findable by context
 
 **Stakeholder Analysis:**
@@ -162,7 +162,7 @@ After planning the issue structure, run SpecFlow Analyzer to validate and refine
 
 Select how comprehensive you want the issue to be, simpler is mostly better.
 
-#### 📄 MINIMAL (Quick Issue)
+####  MINIMAL (Quick Issue)
 
 **Best for:** Simple bugs, small improvements, clear features
 
@@ -212,7 +212,7 @@ end
 - Documentation: [relevant_docs_url]
 ````
 
-#### 📋 MORE (Standard Issue)
+####  MORE (Standard Issue)
 
 **Best for:** Most features, complex bugs, team collaboration
 
@@ -274,7 +274,7 @@ date: YYYY-MM-DD
 - Related PRs: #[pr_number]
 ```
 
-#### 📚 A LOT (Comprehensive Issue)
+####  A LOT (Comprehensive Issue)
 
 **Best for:** Major features, architectural changes, complex integrations
 
@@ -417,7 +417,7 @@ Apply best practices for clarity and actionability, making the issue easy to sca
 - [ ] Add screenshots/mockups if UI-related (drag & drop or use image hosting)
 - [ ] Use task lists (- [ ]) for trackable items that can be checked off
 - [ ] Add collapsible sections for lengthy logs or optional details using `<details>` tags
-- [ ] Apply appropriate emoji for visual scanning (🐛 bug, ✨ feature, 📚 docs, ♻️ refactor)
+- [ ] Apply appropriate emoji for visual scanning ( bug,  feature,  docs,  refactor)
 
 **Cross-Referencing:**
 
@@ -481,13 +481,13 @@ docs/plans/YYYY-MM-DD-<type>-<descriptive-name>-plan.md
 ```
 
 Examples:
-- ✅ `docs/plans/2026-01-15-feat-user-authentication-flow-plan.md`
-- ✅ `docs/plans/2026-02-03-fix-checkout-race-condition-plan.md`
-- ✅ `docs/plans/2026-03-10-refactor-api-client-extraction-plan.md`
-- ❌ `docs/plans/2026-01-15-feat-thing-plan.md` (not descriptive - what "thing"?)
-- ❌ `docs/plans/2026-01-15-feat-new-feature-plan.md` (too vague - what feature?)
-- ❌ `docs/plans/2026-01-15-feat: user auth-plan.md` (invalid characters - colon and space)
-- ❌ `docs/plans/feat-user-auth-plan.md` (missing date prefix)
+- [x] `docs/plans/2026-01-15-feat-user-authentication-flow-plan.md`
+- [x] `docs/plans/2026-02-03-fix-checkout-race-condition-plan.md`
+- [x] `docs/plans/2026-03-10-refactor-api-client-extraction-plan.md`
+- [ ] `docs/plans/2026-01-15-feat-thing-plan.md` (not descriptive - what "thing"?)
+- [ ] `docs/plans/2026-01-15-feat-new-feature-plan.md` (too vague - what feature?)
+- [ ] `docs/plans/2026-01-15-feat: user auth-plan.md` (invalid characters - colon and space)
+- [ ] `docs/plans/feat-user-auth-plan.md` (missing date prefix)
 
 ## Post-Generation Options
 
@@ -505,14 +505,14 @@ After writing the plan file, use the **AskUserQuestion tool** to present these o
 7. **Simplify** - Reduce detail level
 
 Based on selection:
-- **Open plan in editor** → Run `open docs/plans/<plan_filename>.md` to open the file in the user's default editor
-- **`/deepen-plan`** → Call the /deepen-plan command with the plan file path to enhance with research
-- **`/plan_review`** → Call the /plan_review command with the plan file path
-- **`/workflows:work`** → Call the /workflows:work command with the plan file path
-- **`/workflows:work` on remote** → Run `/workflows:work docs/plans/<plan_filename>.md &` to start work in background for Claude Code web
-- **Create Issue** → See "Issue Creation" section below
-- **Simplify** → Ask "What should I simplify?" then regenerate simpler version
-- **Other** (automatically provided) → Accept free text for rework or specific changes
+- **Open plan in editor** -> Run `open docs/plans/<plan_filename>.md` to open the file in the user's default editor
+- **`/deepen-plan`** -> Call the /deepen-plan command with the plan file path to enhance with research
+- **`/plan_review`** -> Call the /plan_review command with the plan file path
+- **`/workflows:work`** -> Call the /workflows:work command with the plan file path
+- **`/workflows:work` on remote** -> Run `/workflows:work docs/plans/<plan_filename>.md &` to start work in background for Claude Code web
+- **Create Issue** -> See "Issue Creation" section below
+- **Simplify** -> Ask "What should I simplify?" then regenerate simpler version
+- **Other** (automatically provided) -> Accept free text for rework or specific changes
 
 **Note:** If running `/workflows:plan` with ultrathink enabled, automatically run `/deepen-plan` after plan creation for maximum depth and grounding.
 

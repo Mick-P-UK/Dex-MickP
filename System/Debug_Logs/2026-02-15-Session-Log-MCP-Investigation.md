@@ -27,22 +27,22 @@ grep -i "mcp\|starting.*server\|loaded.*server" ~/.claude/debug/d58617a8-26b5-45
 
 1. **gdrive** (user-level MCP)
    - Type: stdio server
-   - Status: ✅ Successfully connected in 2136ms
+   - Status: [x] Successfully connected in 2136ms
    - Capabilities: tools, resources
 
 2. **claude.ai Vercel** (cloud MCP)
-   - Status: ✅ Connected in 806ms
+   - Status: [x] Connected in 806ms
    - Capabilities: tools, prompts
 
 3. **claude.ai Notion** (cloud MCP)
-   - Status: ✅ Connected in 1222ms
+   - Status: [x] Connected in 1222ms
    - Capabilities: tools, resources
 
 4. **claude.ai Canva** (cloud MCP)
-   - Status: ❌ Auth error - "no OAuth token configured"
+   - Status: [ ] Auth error - "no OAuth token configured"
 
 5. **claude.ai Sentry** (cloud MCP)
-   - Status: ❌ Auth error - "no OAuth token configured"
+   - Status: [ ] Auth error - "no OAuth token configured"
 
 ### MCPs That Did NOT Load (9 missing)
 
@@ -107,16 +107,16 @@ grep -i "mcp\|starting.*server\|loaded.*server" ~/.claude/debug/d58617a8-26b5-45
 ### Key Architectural Differences
 
 **Dex MCPs:**
-- ✅ Vault-specific (use `VAULT_PATH` environment variable)
-- ✅ Point to absolute paths within the vault
-- ✅ Designed for project-scope (only work for this vault)
-- ❌ Moving to user-level would break architecture (would point to wrong vault in other directories)
+- [x] Vault-specific (use `VAULT_PATH` environment variable)
+- [x] Point to absolute paths within the vault
+- [x] Designed for project-scope (only work for this vault)
+- [ ] Moving to user-level would break architecture (would point to wrong vault in other directories)
 
 **NotebookLM MCP:**
-- ✅ Vault-agnostic (no `VAULT_PATH`)
-- ✅ Uses global executable path
-- ✅ Official docs say `--scope user`
-- ✅ Safe to move to user-level (won't affect Dex)
+- [x] Vault-agnostic (no `VAULT_PATH`)
+- [x] Uses global executable path
+- [x] Official docs say `--scope user`
+- [x] Safe to move to user-level (won't affect Dex)
 
 ---
 
@@ -142,8 +142,8 @@ From `06-Resources/Dex_System/Dex_Technical_Guide.md`:
 ### Q1: "Will moving to user-level mess up Dex or NotebookLM?"
 
 **Answer:**
-- **NotebookLM:** ✅ Safe to move to user-level (matches its design)
-- **Dex MCPs:** ⚠️ Would work but breaks architecture (vault-specific should stay project-scoped)
+- **NotebookLM:** [x] Safe to move to user-level (matches its design)
+- **Dex MCPs:** [!] Would work but breaks architecture (vault-specific should stay project-scoped)
 
 ### Q2: "Does this fix the enterprise authorization issue?"
 
@@ -155,7 +155,7 @@ From `06-Resources/Dex_System/Dex_Technical_Guide.md`:
 ### Q3: "If we load NotebookLM to user system, will Dex (writing newsletters etc) still work?"
 
 **Answer:**
-- **Yes** ✅ - Writing system is file-based, not MCP-dependent
+- **Yes** [x] - Writing system is file-based, not MCP-dependent
 - Writing agents read from `05-Areas/Writing_System/context/` (files)
 - Voice DNA, ICP, business profile = all file-based
 - **NotebookLM MCP is completely independent** (no Dex dependencies)
@@ -175,11 +175,11 @@ From `06-Resources/Dex_System/Dex_Technical_Guide.md`:
 Mick is currently testing Claude Desktop to verify if Dex MCPs work there.
 
 **Test checklist:**
-1. ✅ Set working directory to vault
-2. ✅ Read `System/pillars.yaml`
-3. ✅ Create test task (checks if work-mcp loads)
-4. ✅ List available MCPs
-5. ✅ Test calendar (if time)
+1. [x] Set working directory to vault
+2. [x] Read `System/pillars.yaml`
+3. [x] Create test task (checks if work-mcp loads)
+4. [x] List available MCPs
+5. [x] Test calendar (if time)
 
 **Expected outcomes:**
 
@@ -263,15 +263,15 @@ If Claude Desktop works but Claude Code CLI doesn't:
 **Test 1: List available MCP servers**
 Mick asked Claude Desktop: "What MCP servers do you have access to?"
 
-**Result: ✅ ALL MCPs WORKING**
+**Result: [x] ALL MCPs WORKING**
 
 **Dex MCPs (3 loaded):**
-1. ✅ **work-mcp** - Task management, goals, priorities, company/contact management
-2. ✅ **calendar-mcp** - Google Calendar integration with full attendee details
-3. ✅ **granola-mcp** - Meeting transcripts and search
+1. [x] **work-mcp** - Task management, goals, priorities, company/contact management
+2. [x] **calendar-mcp** - Google Calendar integration with full attendee details
+3. [x] **granola-mcp** - Meeting transcripts and search
 
 **NotebookLM MCP:**
-4. ✅ **notebooklm** - All 29 tools available (notebooks, sources, research, studio artifacts)
+4. [x] **notebooklm** - All 29 tools available (notebooks, sources, research, studio artifacts)
 
 **Additional MCPs (7 more):**
 5. Notion - Full CRUD operations
@@ -286,20 +286,20 @@ Mick asked Claude Desktop: "What MCP servers do you have access to?"
 
 ### Key Findings
 
-**✅ Dex is properly configured:**
+**[x] Dex is properly configured:**
 - All core MCPs work in Claude Desktop
 - Task management available (work-mcp)
 - Calendar integration working (calendar-mcp)
 - Meeting intelligence active (granola-mcp)
 
-**✅ NotebookLM already set up:**
+**[x] NotebookLM already set up:**
 - Fully functional in Claude Desktop
 - All 29 tools available
 - Can use immediately (no additional setup needed)
 
-**❌ Claude Code CLI bug confirmed:**
-- Desktop loads all MCPs ✅
-- CLI loads only user-level MCPs ❌
+**[ ] Claude Code CLI bug confirmed:**
+- Desktop loads all MCPs [x]
+- CLI loads only user-level MCPs [ ]
 - Same vault, different behavior
 - Bug is specific to Claude Code CLI when run from Cursor terminal
 
@@ -310,12 +310,12 @@ Mick asked Claude Desktop: "What MCP servers do you have access to?"
 **Claude Desktop:**
 - Config location: Unknown (to be investigated)
 - Loads: User-level + Project MCPs (all 11 servers)
-- Status: ✅ Fully functional
+- Status: [x] Fully functional
 
 **Claude Code CLI (in Cursor):**
 - Config location: Project `.mcp.json` + `~/.claude.json`
 - Loads: Only user-level MCPs (1 server - gdrive)
-- Status: ❌ Not loading project MCPs
+- Status: [ ] Not loading project MCPs
 
 ### Practical Solution
 
@@ -335,9 +335,9 @@ Mick asked Claude Desktop: "What MCP servers do you have access to?"
 ### Next Steps
 
 **Immediate (16:25):**
-- ✅ Mick testing Claude Desktop functionality
-- ✅ Exploring NotebookLM, tasks, calendar in Desktop
-- ⏳ Will report back on experience
+- [x] Mick testing Claude Desktop functionality
+- [x] Exploring NotebookLM, tasks, calendar in Desktop
+- [~] Will report back on experience
 
 **Follow-up:**
 - Investigate Claude Desktop MCP config location

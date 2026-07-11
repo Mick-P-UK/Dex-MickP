@@ -30,27 +30,27 @@
 
 **Progress on L5 competencies:**
 
-**Product Strategy:** ⭐⭐⭐⭐⭐
+**Product Strategy:** *****
 - Mobile vision is platform-level thinking
 - Contributing to Series D narrative is company-level strategy
 - Keep this up
 
-**Execution:** ⭐⭐⭐⭐⭐
+**Execution:** *****
 - On track for high-stakes deadline
 - Multi-team coordination strong
 - This is L5-level execution
 
-**Cross-Functional Leadership:** ⭐⭐⭐⭐
+**Cross-Functional Leadership:** ****
 - Great with Eng/Design
 - Good progress with Marketing
 - **Opportunity:** Build stronger Sales relationships
 
-**Executive Communication:** ⭐⭐⭐⭐
+**Executive Communication:** ****
 - Exec presentations improved significantly
 - CEO confidence is high
 - **Opportunity:** Write more strategy memos (practice written narratives)
 
-**Technical Depth:** ⭐⭐⭐
+**Technical Depth:** ***
 - Good partnership with Jordan
 - Understanding trade-offs well
 - **Opportunity:** Get more involved in architectural discussions

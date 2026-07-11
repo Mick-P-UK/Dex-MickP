@@ -125,7 +125,7 @@ while i < len(lines):
         text = line[2:].strip()
         # Handle bold within bullets
         text = text.replace('**', '<b>').replace('**', '</b>')
-        story.append(Paragraph('• ' + text, bullet_style))
+        story.append(Paragraph('- ' + text, bullet_style))
 
     # Tables
     elif line.startswith('|'):

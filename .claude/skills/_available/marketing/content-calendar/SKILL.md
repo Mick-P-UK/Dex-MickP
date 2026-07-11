@@ -54,7 +54,7 @@ Get a comprehensive view of your content pipeline - what's published, what's in 
 ## Output Format
 
 ```markdown
-# 📅 Content Calendar
+#  Content Calendar
 
 **Period:** [Timeframe]
 **Content pieces reviewed:** [Count]

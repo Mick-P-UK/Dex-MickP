@@ -1,7 +1,7 @@
 <overview>
 How to design MCP tools following prompt-native principles. Tools should be primitives that enable capability, not workflows that encode decisions.
 
-**Core principle:** Whatever a user can do, the agent should be able to do. Don't artificially limit the agent—give it the same primitives a power user would have.
+**Core principle:** Whatever a user can do, the agent should be able to do. Don't artificially limit the agent-give it the same primitives a power user would have.
 </overview>
 
 <principle name="primitives-not-workflows">
@@ -215,7 +215,7 @@ export const serverName = createSdkMcpServer({
 <example name="feedback-server">
 ## Example: Feedback Storage Server
 
-This server provides primitives for storing feedback. It does NOT decide how to categorize or organize feedback—that's the agent's job via the prompt.
+This server provides primitives for storing feedback. It does NOT decide how to categorize or organize feedback-that's the agent's job via the prompt.
 
 ```typescript
 export const feedbackMcpServer = createSdkMcpServer({
@@ -306,7 +306,7 @@ Use your judgment about importance ratings.
 <principle name="dynamic-capability-discovery">
 ## Dynamic Capability Discovery vs Static Tool Mapping
 
-**This pattern is specifically for agent-native apps** where you want the agent to have full access to an external API—the same access a user would have. It follows the core agent-native principle: "Whatever the user can do, the agent can do."
+**This pattern is specifically for agent-native apps** where you want the agent to have full access to an external API-the same access a user would have. It follows the core agent-native principle: "Whatever the user can do, the agent can do."
 
 If you're building a constrained agent with limited capabilities, static tool mapping may be intentional. But for agent-native apps integrating with HealthKit, HomeKit, GraphQL, or similar APIs:
 
@@ -314,7 +314,7 @@ If you're building a constrained agent with limited capabilities, static tool ma
 Build individual tools for each API capability. Always out of date, limits agent to only what you anticipated.
 
 ```typescript
-// ❌ Static: Every API type needs a hardcoded tool
+// [ ] Static: Every API type needs a hardcoded tool
 tool("read_steps", async ({ startDate, endDate }) => {
   return healthKit.query(HKQuantityType.stepCount, startDate, endDate);
 });
@@ -334,7 +334,7 @@ tool("read_sleep", async ({ startDate, endDate }) => {
 Build a meta-tool that discovers what's available, and a generic tool that can access anything.
 
 ```typescript
-// ✅ Dynamic: Agent discovers and uses any capability
+// [x] Dynamic: Agent discovers and uses any capability
 
 // Discovery tool - returns what's available at runtime
 tool("list_available_capabilities", async () => {
@@ -450,15 +450,15 @@ Every data type the agent can create, it should be able to read, update, and del
 
 **Anti-pattern: Create-only tools**
 ```typescript
-// ❌ Can create but not modify or delete
+// [ ] Can create but not modify or delete
 tool("create_experiment", { hypothesis, variable, metric })
 tool("write_journal_entry", { content, author, tags })
-// User: "Delete that experiment" → Agent: "I can't do that"
+// User: "Delete that experiment" -> Agent: "I can't do that"
 ```
 
 **Correct: Full CRUD for each entity**
 ```typescript
-// ✅ Complete CRUD
+// [x] Complete CRUD
 tool("create_experiment", { hypothesis, variable, metric })
 tool("read_experiment", { id })
 tool("update_experiment", { id, updates: { hypothesis?, status?, endDate? } })

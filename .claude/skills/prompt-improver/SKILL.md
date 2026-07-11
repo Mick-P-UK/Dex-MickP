@@ -52,19 +52,19 @@ Check if $PROMPT starts with a flag (`-p`, `-v`) and extract:
 **Check in this order:**
 
 1. **Script available?** Check if `.scripts/improve-prompt.cjs` exists
-   - If yes → Use script (calls Anthropic API directly)
-   - If no → Check for API key
+   - If yes -> Use script (calls Anthropic API directly)
+   - If no -> Check for API key
 
 2. **API key available?** Check if `ANTHROPIC_API_KEY` is set in environment
-   - If yes → Use Anthropic Messages API inline
-   - If no → Fall back to current LLM
+   - If yes -> Use Anthropic Messages API inline
+   - If no -> Fall back to current LLM
 
 **The fallback cascade:**
 ```
 Script (.scripts/improve-prompt.cjs)
-    ↓ (if not available)
+    v (if not available)
 Anthropic Messages API (direct call)
-    ↓ (if no API key)
+    v (if no API key)
 Current LLM (Opus 4.5, Sonnet, etc.)
 ```
 
@@ -84,7 +84,7 @@ Make API call with:
 
 **Method C: Current LLM Fallback**
 Use the current session's LLM to improve the prompt inline:
-- Notify user: `"💡 Using inline improvement (no API key configured). For best results, add ANTHROPIC_API_KEY to .env"`
+- Notify user: `" Using inline improvement (no API key configured). For best results, add ANTHROPIC_API_KEY to .env"`
 - Apply the same prompt engineering system prompt
 - Continue with the improved result
 
@@ -100,7 +100,7 @@ Use the current session's LLM to improve the prompt inline:
 2. Show the **enhanced_prompt** in a collapsible block:
    ```html
    <details>
-   <summary>📝 Improved Prompt (click to expand)</summary>
+   <summary> Improved Prompt (click to expand)</summary>
 
    [enhanced_prompt]
 
@@ -143,16 +143,16 @@ Return ONLY the improved prompt. Do not explain your changes or add meta-comment
 
 ```
 /prompt-improver -p critique this strategy doc
-→ Shows improved prompt only, doesn't execute
+-> Shows improved prompt only, doesn't execute
 
 /prompt-improver -v critique this strategy doc
-→ Shows improved prompt, then executes it
+-> Shows improved prompt, then executes it
 
 /prompt-improver critique this strategy doc
-→ Just executes the improved prompt
+-> Just executes the improved prompt
 
 /prompt-improver -v "review this code" "Focus on security issues"
-→ Shows improved prompt focused on security, then executes
+-> Shows improved prompt focused on security, then executes
 ```
 
 ---

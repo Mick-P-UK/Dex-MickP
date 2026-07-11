@@ -32,9 +32,9 @@ Sarah shared feedback from her team's first week using the mobile app beta. Over
 
 ## Action Items
 
-- [ ] Send next beta build (v2.3) when ready → Alex
-- [ ] Compile full feedback list from ops team → Sarah
-- [ ] Schedule follow-up in 2 weeks → Alex
+- [ ] Send next beta build (v2.3) when ready -> Alex
+- [ ] Compile full feedback list from ops team -> Sarah
+- [ ] Schedule follow-up in 2 weeks -> Alex
 
 ---
 

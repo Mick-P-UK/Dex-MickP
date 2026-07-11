@@ -35,7 +35,7 @@ Here are your options:
 
 ---
 
-**1. 💰 Budget Cloud Mode** — Cheaper AI when online
+**1.  Budget Cloud Mode** - Cheaper AI when online
    
    **What it is:** Use models like Kimi or DeepSeek that cost 80-97% less than Claude
    
@@ -48,12 +48,12 @@ Here are your options:
 
 ---
 
-**2. ✈️ Offline Mode** — AI that runs on your computer
+**2.  Offline Mode** - AI that runs on your computer
    
    **What it is:** Download a free AI model that works without internet
    
    **The catch:** Uses your computer's memory and processing power
-   - Requires ~8GB RAM minimum (you have 36GB ✅)
+   - Requires ~8GB RAM minimum (you have 36GB [x])
    - One-time download of 8-20GB
    - Slightly lower quality than Claude
    
@@ -63,18 +63,18 @@ Here are your options:
 
 ---
 
-**3. 🎯 Smart Routing** — Automatic model selection
+**3.  Smart Routing** - Automatic model selection
    
-   This automatically picks the best model for each task. It works with whatever you set up above — if you only set up offline mode, it'll use that for simple tasks.
+   This automatically picks the best model for each task. It works with whatever you set up above - if you only set up offline mode, it'll use that for simple tasks.
 
 ---
 
 **Which would you like to set up?**
 
-- "Budget cloud" — I'll walk you through the payment setup
-- "Offline" — Free, no payment needed, let's do it
-- "Both" — Get the most flexibility
-- "Neither" — Stick with Claude for now
+- "Budget cloud" - I'll walk you through the payment setup
+- "Offline" - Free, no payment needed, let's do it
+- "Both" - Get the most flexibility
+- "Neither" - Stick with Claude for now
 ```
 
 Wait for user response, then branch accordingly.
@@ -82,7 +82,7 @@ Wait for user response, then branch accordingly.
 ### If User Chooses "Both"
 
 ```
-Great choice — you'll have maximum flexibility!
+Great choice - you'll have maximum flexibility!
 
 Let's start with **offline mode** first (it's free and quick), then we'll do budget cloud.
 
@@ -92,15 +92,15 @@ Let's start with **offline mode** first (it's free and quick), then we'll do bud
 Then run Branch 2 (Offline), and when complete, transition:
 
 ```
-**Offline mode is ready!** ✅
+**Offline mode is ready!** [x]
 
 Now let's set up budget cloud so you can save money when you're online.
 
 Budget cloud requires adding ~$5-10 to an OpenRouter account.
 
 **Ready to continue, or want to stop here?**
-- "Continue" — Let's set up budget cloud
-- "Stop here" — Offline is enough for now (you can add budget cloud later)
+- "Continue" - Let's set up budget cloud
+- "Stop here" - Offline is enough for now (you can add budget cloud later)
 ```
 
 If they continue, run Branch 1. If they stop, skip to smart routing offer.
@@ -121,8 +121,8 @@ If user can't do offline (old hardware, not enough RAM):
 With your current setup, local AI would be quite slow. 
 
 Your best options are:
-1. **Stick with Claude** — Best quality, you're already set up
-2. **Budget cloud** — Much cheaper than Claude, but does need that initial payment
+1. **Stick with Claude** - Best quality, you're already set up
+2. **Budget cloud** - Much cheaper than Claude, but does need that initial payment
 
 What sounds better?
 ```
@@ -139,16 +139,16 @@ Before diving into setup, confirm:
 **Quick check before we start:**
 
 Budget cloud requires:
-✓ Creating an account at OpenRouter.ai
-✓ Adding ~$5-10 in credits (credit card or Apple Pay)
-✓ About 5 minutes to set up
+[x] Creating an account at OpenRouter.ai
+[x] Adding ~$5-10 in credits (credit card or Apple Pay)
+[x] About 5 minutes to set up
 
 This is a one-time setup. That $5-10 will last you weeks or months.
 
 **Ready to proceed?**
-- "Yes" — Let's do it
-- "Actually, let's do offline instead" — No problem, that's free
-- "Maybe later" — We can come back to this anytime
+- "Yes" - Let's do it
+- "Actually, let's do offline instead" - No problem, that's free
+- "Maybe later" - We can come back to this anytime
 ```
 
 If they want to pivot to offline, go to Branch 2.
@@ -156,17 +156,17 @@ If they want to pivot to offline, go to Branch 2.
 ### Step 1.1: Explain the Options (Plain Language)
 
 ```
-**Budget Cloud Models — What Are Your Options?**
+**Budget Cloud Models - What Are Your Options?**
 
 These are AI models from other companies that cost much less:
 
 | Model | Monthly Savings | Quality | Best For |
 |-------|-----------------|---------|----------|
-| **Kimi K2.5** | ~80% cheaper | ⭐⭐⭐⭐ Great | General tasks, thinking |
-| **DeepSeek V3** | ~95% cheaper | ⭐⭐⭐⭐ Great | Coding, analysis |
-| **Gemini Flash** | ~97% cheaper | ⭐⭐⭐ Good | Long documents |
+| **Kimi K2.5** | ~80% cheaper | **** Great | General tasks, thinking |
+| **DeepSeek V3** | ~95% cheaper | **** Great | Coding, analysis |
+| **Gemini Flash** | ~97% cheaper | *** Good | Long documents |
 
-**My recommendation:** Start with **Kimi K2.5** — it's the closest to Claude in quality.
+**My recommendation:** Start with **Kimi K2.5** - it's the closest to Claude in quality.
 
 **Real cost example:**
 If you currently spend ~$90/month on Claude, Kimi would cost ~$18/month for similar tasks.
@@ -270,9 +270,9 @@ Say:
 **Done! Budget models are ready.**
 
 I've added three models you can switch to anytime:
-- **Kimi K2.5** — Best quality budget option
-- **DeepSeek V3** — Super cheap, great for coding
-- **Gemini Flash** — Google's free tier (with limits)
+- **Kimi K2.5** - Best quality budget option
+- **DeepSeek V3** - Super cheap, great for coding
+- **Gemini Flash** - Google's free tier (with limits)
 
 **How to use them:**
 
@@ -310,7 +310,7 @@ ai_models:
 ### Step 2.1: Check System Requirements
 
 ```
-**Offline Mode — Let's Check Your Setup**
+**Offline Mode - Let's Check Your Setup**
 
 To run AI on your computer, I need to know what you're working with.
 
@@ -333,7 +333,7 @@ Based on response, check RAM:
 On Mac:
 1. Click the Apple menu (top-left corner)
 2. Click "About This Mac"
-3. Look for "Memory" — what number do you see?
+3. Look for "Memory" - what number do you see?
 
 On Windows:
 1. Right-click the Start button
@@ -377,16 +377,16 @@ With **{{RAM}} GB** of memory, you can run **Qwen 2.5 {{size}}**.
 - Speed: {{speed based on chip}}
 
 **What works great offline:**
-✅ Daily planning and reviews
-✅ Meeting summaries
-✅ Task management
-✅ Note organization
-✅ Simple analysis
+[x] Daily planning and reviews
+[x] Meeting summaries
+[x] Task management
+[x] Note organization
+[x] Simple analysis
 
 **What's better with Claude:**
-⚠️ Complex strategic planning
-⚠️ Nuanced writing
-⚠️ Multi-step reasoning
+[!] Complex strategic planning
+[!] Nuanced writing
+[!] Multi-step reasoning
 
 Ready to set this up? It takes about 10-15 minutes (mostly download time).
 ```
@@ -484,7 +484,7 @@ Try this:
 2. In Pi, type `/model` and select "{{model_name}} (Offline)"
 3. Ask me something simple like "What day is it?"
 
-If I respond, offline mode works! 🎉
+If I respond, offline mode works! 
 
 Go ahead and test, then turn WiFi back on and let me know how it went.
 ```
@@ -495,8 +495,8 @@ Go ahead and test, then turn WiFi back on and let me know how it went.
 **Offline mode is ready!**
 
 What happens now:
-- When you have internet → Dex uses Claude (best quality)
-- When you're offline → Dex can use your local model
+- When you have internet -> Dex uses Claude (best quality)
+- When you're offline -> Dex can use your local model
 - You can also manually switch anytime with `/model`
 
 **For your next flight or train ride:**
@@ -537,9 +537,9 @@ Then adapt the explanation:
 **If both budget cloud and offline are configured:**
 
 ```
-**Smart Routing — I'll Pick the Best Model Automatically**
+**Smart Routing - I'll Pick the Best Model Automatically**
 
-You've got all three tiers set up — nice! Here's how I'll use them:
+You've got all three tiers set up - nice! Here's how I'll use them:
 
 | Task Type | Model | Why |
 |-----------|-------|-----|
@@ -549,14 +549,14 @@ You've got all three tiers set up — nice! Here's how I'll use them:
 | When you're offline | Qwen (local) | Only option! |
 
 **Want to enable smart routing?**
-- "Yes" — I'll pick automatically (you can always override)
-- "No" — I'll always ask before switching
+- "Yes" - I'll pick automatically (you can always override)
+- "No" - I'll always ask before switching
 ```
 
 **If only offline is configured:**
 
 ```
-**Smart Routing — I'll Pick Based on What You Have**
+**Smart Routing - I'll Pick Based on What You Have**
 
 Since you set up offline mode, here's how routing works:
 
@@ -569,14 +569,14 @@ Since you set up offline mode, here's how routing works:
 **Tip:** If you add budget cloud later, I can start using cheaper models for simple tasks automatically.
 
 **Want to enable smart routing?**
-- "Yes" — Claude when online, local when offline
-- "No" — I'll always ask
+- "Yes" - Claude when online, local when offline
+- "No" - I'll always ask
 ```
 
 **If only budget cloud is configured:**
 
 ```
-**Smart Routing — I'll Pick Based on What You Have**
+**Smart Routing - I'll Pick Based on What You Have**
 
 Since you set up budget cloud, here's how routing works:
 
@@ -584,26 +584,26 @@ Since you set up budget cloud, here's how routing works:
 |-----------|-------|-----|
 | Complex tasks | Claude | When you need the best |
 | Simple tasks | Kimi (budget) | Saves money! |
-| Offline | ❌ Not available | (not configured) |
+| Offline | [ ] Not available | (not configured) |
 
 **Tip:** If you add offline mode later, you'll have a backup for travel.
 
 **Want to enable smart routing?**
-- "Yes" — Claude for complex, Kimi for simple
-- "No" — I'll always ask
+- "Yes" - Claude for complex, Kimi for simple
+- "No" - I'll always ask
 ```
 
 **If neither is configured:**
 
 ```
-**Smart Routing — Nothing to Route Yet!**
+**Smart Routing - Nothing to Route Yet!**
 
 Smart routing works best when you have alternatives set up. Right now you only have Claude.
 
 Would you like to set up:
-- "Offline mode" — Free, works without internet
-- "Budget cloud" — Cheaper models, needs ~$5-10 upfront
-- "Neither for now" — Stick with Claude
+- "Offline mode" - Free, works without internet
+- "Budget cloud" - Cheaper models, needs ~$5-10 upfront
+- "Neither for now" - Stick with Claude
 ```
 
 ### Step 3.2: Configure Smart Routing
@@ -631,9 +631,9 @@ If budget + offline:
 **Smart routing is enabled!**
 
 Here's what I'll do:
-- Complex tasks (planning, coaching) → Claude
-- Simple tasks (summaries, quick questions) → Kimi (saves money)
-- When offline → Your local model
+- Complex tasks (planning, coaching) -> Claude
+- Simple tasks (summaries, quick questions) -> Kimi (saves money)
+- When offline -> Your local model
 
 You can always override by saying "use Claude for this" or "switch to budget".
 ```
@@ -643,8 +643,8 @@ If only offline:
 **Smart routing is enabled!**
 
 Here's what I'll do:
-- When online → Claude (best quality)
-- When offline → Your local model (automatic fallback)
+- When online -> Claude (best quality)
+- When offline -> Your local model (automatic fallback)
 
 If you add budget cloud later, I can start saving you money on simple tasks.
 ```
@@ -654,8 +654,8 @@ If only budget:
 **Smart routing is enabled!**
 
 Here's what I'll do:
-- Complex tasks → Claude (best quality)
-- Simple tasks → Kimi (saves money)
+- Complex tasks -> Claude (best quality)
+- Simple tasks -> Kimi (saves money)
 
 If you add offline mode later, you'll have a backup for travel.
 ```
@@ -673,8 +673,8 @@ Try these fixes:
 
 **Mac:**
 1. Open Applications folder
-2. Right-click Ollama → Open
-3. If blocked: System Preferences → Security → Allow Ollama
+2. Right-click Ollama -> Open
+3. If blocked: System Preferences -> Security -> Allow Ollama
 
 **If still stuck:**
 1. Open Terminal
@@ -691,8 +691,8 @@ Let me know if you see any error messages.
 
 Let's debug:
 
-1. **Check key format** — Should start with `sk-or-`
-2. **Check credits** — Go to openrouter.ai/credits, make sure you have balance
+1. **Check key format** - Should start with `sk-or-`
+2. **Check credits** - Go to openrouter.ai/credits, make sure you have balance
 3. **Test the key:**
    ```
    curl https://openrouter.ai/api/v1/models \
@@ -701,7 +701,7 @@ Let's debug:
    
    You should see a list of models, not an error.
 
-4. **Regenerate key** — Go to openrouter.ai/keys, delete old key, make new one
+4. **Regenerate key** - Go to openrouter.ai/keys, delete old key, make new one
 
 What do you see when you try the test?
 ```
@@ -720,7 +720,7 @@ This usually means the model is too big for your RAM.
    ```
    (smaller = faster, but slightly less capable)
 
-2. **Close other apps** — Free up memory
+2. **Close other apps** - Free up memory
 
 3. **Check Activity Monitor** (Mac) or Task Manager (Windows)
    - If RAM is maxed out, you need a smaller model
@@ -739,13 +739,13 @@ Want me to help you switch to a smaller model?
 
 Some alternatives:
 
-1. **Gemini Flash Free Tier** — Google offers free usage (with limits)
+1. **Gemini Flash Free Tier** - Google offers free usage (with limits)
    I can set that up instead
 
-2. **Offline Only** — Skip budget cloud, just use local models
+2. **Offline Only** - Skip budget cloud, just use local models
    Free forever, works without internet
 
-3. **Anthropic Direct** — If you have Claude credits already, we can optimize usage
+3. **Anthropic Direct** - If you have Claude credits already, we can optimize usage
 
 Which works for you?
 ```
@@ -758,8 +758,8 @@ Which works for you?
 With {{RAM}} GB RAM, local AI will be very slow.
 
 **Better options for you:**
-1. **Budget cloud only** — Uses internet, but works on any computer
-2. **Stick with Claude** — Best quality, works everywhere
+1. **Budget cloud only** - Uses internet, but works on any computer
+2. **Stick with Claude** - Best quality, works everywhere
 
 Offline mode really needs 8GB+ RAM to be useful.
 
@@ -786,13 +786,13 @@ After any setup completes, show an adaptive summary and offer smart routing:
 ### If only offline was set up:
 
 ```
-**Setup Complete!** ✅
+**Setup Complete!** [x]
 
 | Mode | Status |
 |------|--------|
-| Premium (Claude) | ✅ Always available |
-| Budget Cloud | ❌ Not configured |
-| Offline Mode | ✅ Ready (Qwen 2.5) |
+| Premium (Claude) | [x] Always available |
+| Budget Cloud | [ ] Not configured |
+| Offline Mode | [x] Ready (Qwen 2.5) |
 
 **How to use offline mode:**
 - When you're online: Dex uses Claude (best quality)
@@ -800,8 +800,8 @@ After any setup completes, show an adaptive summary and offer smart routing:
 - Or I can switch automatically when I detect you're offline
 
 **Want to enable smart routing?** (I'll automatically use your local model when offline)
-- "Yes" — Enable automatic switching
-- "No" — I'll ask before switching
+- "Yes" - Enable automatic switching
+- "No" - I'll ask before switching
 
 You can add budget cloud later with `/ai-setup` if you want to save money.
 ```
@@ -809,13 +809,13 @@ You can add budget cloud later with `/ai-setup` if you want to save money.
 ### If only budget cloud was set up:
 
 ```
-**Setup Complete!** ✅
+**Setup Complete!** [x]
 
 | Mode | Status |
 |------|--------|
-| Premium (Claude) | ✅ Always available |
-| Budget Cloud | ✅ Ready (Kimi K2.5) |
-| Offline Mode | ❌ Not configured |
+| Premium (Claude) | [x] Always available |
+| Budget Cloud | [x] Ready (Kimi K2.5) |
+| Offline Mode | [ ] Not configured |
 
 **How to use budget models:**
 - Say "use budget model" or "use Kimi"
@@ -823,8 +823,8 @@ You can add budget cloud later with `/ai-setup` if you want to save money.
 - Or I can pick automatically based on task complexity
 
 **Want to enable smart routing?** (I'll use Kimi for simple tasks, Claude for complex ones)
-- "Yes" — Enable automatic switching
-- "No" — I'll ask before switching
+- "Yes" - Enable automatic switching
+- "No" - I'll ask before switching
 
 You can add offline mode later with `/ai-setup` for travel.
 ```
@@ -832,30 +832,30 @@ You can add offline mode later with `/ai-setup` for travel.
 ### If both were set up:
 
 ```
-**Setup Complete!** ✅
+**Setup Complete!** [x]
 
 | Mode | Status | Model |
 |------|--------|-------|
-| Premium | ✅ | Claude Sonnet |
-| Budget | ✅ | Kimi K2.5 |
-| Offline | ✅ | Qwen 2.5 |
+| Premium | [x] | Claude Sonnet |
+| Budget | [x] | Kimi K2.5 |
+| Offline | [x] | Qwen 2.5 |
 
 **You have maximum flexibility!**
 
 **Want to enable smart routing?** 
 I'll automatically:
 - Use Claude for complex tasks (planning, coaching)
-- Use Kimi for simple tasks (summaries, quick questions) — saves money
-- Use your local model when offline — automatic fallback
+- Use Kimi for simple tasks (summaries, quick questions) - saves money
+- Use your local model when offline - automatic fallback
 
-- "Yes" — Enable smart routing
-- "No" — I'll ask each time
+- "Yes" - Enable smart routing
+- "No" - I'll ask each time
 
 **Quick reference:**
-- "Use Kimi" → Switch to budget
-- "Use Claude" → Switch to premium
-- `/model` → Manual picker
-- `/ai-status` → Check configuration
+- "Use Kimi" -> Switch to budget
+- "Use Claude" -> Switch to premium
+- `/model` -> Manual picker
+- `/ai-status` -> Check configuration
 ```
 
 ---
@@ -871,17 +871,17 @@ Users can check their AI setup anytime:
 
 | Mode | Status | Model |
 |------|--------|-------|
-| Premium | ✅ | Claude Sonnet |
-| Budget | {{✅ / ❌}} | {{Kimi K2.5 / Not configured}} |
-| Offline | {{✅ / ❌}} | {{Qwen 2.5 / Not configured}} |
-| Smart Routing | {{✅ Enabled / ❌ Disabled}} | |
+| Premium | [x] | Claude Sonnet |
+| Budget | {{[x] / [ ]}} | {{Kimi K2.5 / Not configured}} |
+| Offline | {{[x] / [ ]}} | {{Qwen 2.5 / Not configured}} |
+| Smart Routing | {{[x] Enabled / [ ] Disabled}} | |
 
 **This session:** Using {{current_model}}
 {{If OpenRouter configured:}} **OpenRouter credits:** ${{balance}} remaining
-{{If Ollama configured:}} **Ollama status:** {{Running ✅ / Not running ⚠️}}
+{{If Ollama configured:}} **Ollama status:** {{Running [x] / Not running [!]}}
 
 **Quick actions:**
-- `/model` — Switch models
-- `/ai-setup` — Configure more options
-- "Use budget model" — Quick switch
+- `/model` - Switch models
+- `/ai-setup` - Configure more options
+- "Use budget model" - Quick switch
 ```

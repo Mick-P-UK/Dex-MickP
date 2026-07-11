@@ -1,12 +1,12 @@
 # Dex Distribution Checklist
 
-**Status:** ✅ Ready for GitHub Distribution
+**Status:** [x] Ready for GitHub Distribution
 
 This document verifies that Dex is properly configured for public distribution without exposing credentials or requiring manual path configuration.
 
 ---
 
-## ✅ 1. Dynamic Paths (SOLVED)
+## [x] 1. Dynamic Paths (SOLVED)
 
 **Problem:** Users will clone to different paths like `/Users/alice/Documents/dex`
 
@@ -25,14 +25,14 @@ This document verifies that Dex is properly configured for public distribution w
 ```bash
 cd ~/Documents/dex
 ./install.sh
-# ✅ Creates .mcp.json with /Users/alice/Documents/dex
+# [x] Creates .mcp.json with /Users/alice/Documents/dex
 ```
 
-**Status:** No action needed — industry-standard pattern.
+**Status:** No action needed - industry-standard pattern.
 
 ---
 
-## ✅ 2. MCP Server Architecture (CLARIFIED)
+## [x] 2. MCP Server Architecture (CLARIFIED)
 
 ### Dex Core MCP Servers (7 total)
 
@@ -52,30 +52,30 @@ All shipped with Dex in `core/mcp/`:
 
 These are user-installed separately via Claude Desktop/Cursor settings:
 
-- `cursor-ide-browser` — Browser automation
-- `user-granola` — Official Granola MCP (different from dex granola-mcp)
-- `pendo` — Pendo's hosted MCP server (OAuth, optional for Pendo customers)
-- `user-whatsapp`, `user-apify`, etc. — Other user-installed integrations
+- `cursor-ide-browser` - Browser automation
+- `user-granola` - Official Granola MCP (different from dex granola-mcp)
+- `pendo` - Pendo's hosted MCP server (OAuth, optional for Pendo customers)
+- `user-whatsapp`, `user-apify`, etc. - Other user-installed integrations
 
 ### Optional Dependencies
 
 **Granola (meeting transcription):**
 - Install script checks: `~/Library/Application Support/Granola/cache-v3.json`
-- If found: "✅ Granola detected - meeting intelligence available"
-- If not found: "ℹ️ Granola not detected - meeting intelligence won't work"
+- If found: "[x] Granola detected - meeting intelligence available"
+- If not found: "[i] Granola not detected - meeting intelligence won't work"
 - User can install from https://granola.ai
-- System works without it — users can paste meeting transcripts manually
+- System works without it - users can paste meeting transcripts manually
 
 **Apple Calendar:**
 - Uses macOS Calendar.app via AppleScript (no API keys needed)
 - Works with any calendar synced to Calendar.app (Google, Outlook, iCloud)
 - macOS only (calendar-mcp gracefully degrades on other platforms)
 
-**Status:** Documentation clear — no changes needed.
+**Status:** Documentation clear - no changes needed.
 
 ---
 
-## ✅ 3. Credentials & Security (VERIFIED)
+## [x] 3. Credentials & Security (VERIFIED)
 
 ### Gitignored Files
 
@@ -103,36 +103,36 @@ System/pillars.yaml
 
 **Python MCP servers:**
 ```bash
-✅ No API keys found in core/mcp/*.py
-✅ No hardcoded passwords/tokens
-✅ No personal data
+[x] No API keys found in core/mcp/*.py
+[x] No hardcoded passwords/tokens
+[x] No personal data
 ```
 
 **Environment variables:**
-- Template: `env.example` (safe — no real keys)
+- Template: `env.example` (safe - no real keys)
 - Actual `.env` is gitignored
 - Created during setup only if user enables optional features
 
 ### What Gets Committed to GitHub
 
 **Safe to commit:**
-- ✅ `System/.mcp.json.example` — Template with `{{VAULT_PATH}}`
-- ✅ `env.example` — Template showing structure
-- ✅ `core/mcp/*.py` — MCP server code (no credentials)
-- ✅ Documentation and [[README]]
-- ✅ Demo mode files (sanitized examples)
+- [x] `System/.mcp.json.example` - Template with `{{VAULT_PATH}}`
+- [x] `env.example` - Template showing structure
+- [x] `core/mcp/*.py` - MCP server code (no credentials)
+- [x] Documentation and [[README]]
+- [x] Demo mode files (sanitized examples)
 
 **Never committed:**
-- ❌ `.mcp.json` — Generated, contains user paths
-- ❌ `.env` — Contains API keys if configured
-- ❌ User data folders (00-07)
-- ❌ `System/user-profile.yaml` — Personal info
+- [ ] `.mcp.json` - Generated, contains user paths
+- [ ] `.env` - Contains API keys if configured
+- [ ] User data folders (00-07)
+- [ ] `System/user-profile.yaml` - Personal info
 
-**Status:** Security verified — ready for public release.
+**Status:** Security verified - ready for public release.
 
 ---
 
-## 📋 Pre-Release Checklist
+##  Pre-Release Checklist
 
 Before pushing to GitHub:
 
@@ -164,11 +164,11 @@ Before pushing to GitHub:
 
 ---
 
-## 🔐 Credential Management for Users
+##  Credential Management for Users
 
 ### What Users Need to Know
 
-**99% of features work immediately** — no API keys needed:
+**99% of features work immediately** - no API keys needed:
 - Task management
 - Person pages
 - Project tracking  
@@ -177,15 +177,15 @@ Before pushing to GitHub:
 - All `/commands`
 
 **Optional API keys** (only if enabling background automation):
-- Anthropic API key — For `/prompt-improver` and background meeting processing
-- OpenAI or Gemini — Alternative to Anthropic
+- Anthropic API key - For `/prompt-improver` and background meeting processing
+- OpenAI or Gemini - Alternative to Anthropic
 
 ### Setup Flow
 
-1. **First install:** No `.env` file — everything works through Cursor
-2. **Optional:** Run `/setup` → answers "Enable automatic meeting processing?"
+1. **First install:** No `.env` file - everything works through Cursor
+2. **Optional:** Run `/setup` -> answers "Enable automatic meeting processing?"
 3. **If yes:** System creates `.env` from template, prompts for API key
-4. **If no:** Skip entirely — manual meeting processing works fine
+4. **If no:** Skip entirely - manual meeting processing works fine
 
 ### Security Best Practices
 
@@ -201,7 +201,7 @@ Before pushing to GitHub:
 
 ---
 
-## 🚀 Distribution Recommendations
+##  Distribution Recommendations
 
 ### GitHub Release Strategy
 
@@ -214,7 +214,7 @@ Before pushing to GitHub:
    ```
 
 2. **Create GitHub Release:**
-   - Title: "Dex v1.0.0 — Your AI Chief of Staff"
+   - Title: "Dex v1.0.0 - Your AI Chief of Staff"
    - Description: Paste first 3 sections of [[README]]
    - Attach: Installation guide, demo video (if available)
 
@@ -226,7 +226,7 @@ Before pushing to GitHub:
 ### Alternative Distribution
 
 **For teams/organizations:**
-- Fork repo → customize roles/templates → distribute internal URL
+- Fork repo -> customize roles/templates -> distribute internal URL
 - Include company-specific integrations in `core/mcp-custom/`
 - Company pillars in `System/pillars-company.yaml` template
 
@@ -237,7 +237,7 @@ Before pushing to GitHub:
 
 ---
 
-## ✅ Final Verification
+## [x] Final Verification
 
 **Run this before pushing to GitHub:**
 
@@ -260,7 +260,7 @@ git status --ignored | grep -E '(\.env$|\.mcp\.json$|00-Inbox|04-Projects|System
 
 ---
 
-**Status:** ✅ **Ready for distribution**
+**Status:** [x] **Ready for distribution**
 
 - Paths dynamically configured via install script
 - MCP servers documented (7 core, others external)

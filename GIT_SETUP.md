@@ -22,16 +22,16 @@ git commit -m "Initial commit: Dex setup with custom file naming convention"
 ## What Gets Tracked
 
 **Tracked (in git):**
-- ✅ Dex system code (`core/`, `pi-extensions/`, `.claude/`)
-- ✅ Custom changes log (`CUSTOM_CHANGES.md`)
-- ✅ Configuration templates and documentation
-- ✅ System setup scripts
+- [x] Dex system code (`core/`, `pi-extensions/`, `.claude/`)
+- [x] Custom changes log (`CUSTOM_CHANGES.md`)
+- [x] Configuration templates and documentation
+- [x] System setup scripts
 
 **Not Tracked (excluded by .gitignore):**
-- ❌ User data folders (`00-Inbox/`, `03-Tasks/`, `04-Projects/`, etc.)
-- ❌ Personal configuration (`System/user-profile.yaml`, `System/pillars.yaml`)
-- ❌ Environment files (`.env`)
-- ❌ Node modules and build artifacts
+- [ ] User data folders (`00-Inbox/`, `03-Tasks/`, `04-Projects/`, etc.)
+- [ ] Personal configuration (`System/user-profile.yaml`, `System/pillars.yaml`)
+- [ ] Environment files (`.env`)
+- [ ] Node modules and build artifacts
 
 **Why:** Your personal data (tasks, projects, meeting notes) stays private. Only system code and customizations are tracked.
 

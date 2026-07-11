@@ -9,12 +9,12 @@ Ideas for improving the Dex personal knowledge system, ranked by AI based on imp
 
 ## High Priority (Score: 85+)
 
-### 1. Auto-link related tasks ⭐ 92/100
+### 1. Auto-link related tasks * 92/100
 **Status:** Not started  
 **Captured:** 2026-01-18
 
 **The idea:**
-When I create a task about a person or project, automatically suggest linking it to that person's page or project file. E.g., "Schedule interview with Sarah" → prompt to add to Sarah_Chen.md
+When I create a task about a person or project, automatically suggest linking it to that person's page or project file. E.g., "Schedule interview with Sarah" -> prompt to add to Sarah_Chen.md
 
 **Why now:**
 - **Impact (35%):** 32/35 - Reduces manual linking, surfaces tasks in context
@@ -33,7 +33,7 @@ When I create a task about a person or project, automatically suggest linking it
 
 ---
 
-### 2. Meeting-to-project linker ⭐ 88/100
+### 2. Meeting-to-project linker * 88/100
 **Status:** Not started  
 **Captured:** 2026-01-19
 
@@ -57,7 +57,7 @@ After capturing meeting notes, Dex scans content and suggests which projects thi
 
 ---
 
-### 3. Weekly pattern detection ⭐ 87/100
+### 3. Weekly pattern detection * 87/100
 **Status:** Not started  
 **Captured:** 2026-01-22
 
@@ -83,7 +83,7 @@ During weekly review, Dex analyzes the week's meetings, tasks, and journal entri
 
 ## Medium Priority (Score: 60-84)
 
-### 4. Task dependency suggestions 📊 78/100
+### 4. Task dependency suggestions  78/100
 **Status:** Not started  
 **Captured:** 2026-01-23
 
@@ -107,7 +107,7 @@ When creating tasks, Dex analyzes existing tasks and suggests dependencies. E.g.
 
 ---
 
-### 5. Quarterly goals dashboard 📊 75/100
+### 5. Quarterly goals dashboard  75/100
 **Status:** Not started  
 **Captured:** 2026-01-15
 
@@ -125,14 +125,14 @@ Create a `/quarter-dashboard` command that shows progress on quarterly goals: ta
 - Read Quarter_Goals.md for current goals
 - Count tasks tagged with quarter goals
 - Check Career evidence with goal tags
-- Generate dashboard: Goal → Progress → Status → Evidence count
+- Generate dashboard: Goal -> Progress -> Status -> Evidence count
 - Flag goals falling behind
 
 **Effort:** Medium - Aggregation across multiple sources
 
 ---
 
-### 6. Smart meeting prep template 📊 73/100
+### 6. Smart meeting prep template  73/100
 **Status:** Not started  
 **Captured:** 2026-01-20
 
@@ -156,12 +156,12 @@ Instead of generic meeting prep, Dex customizes the template based on meeting ty
 
 ---
 
-### 7. Email-to-task capture 📊 71/100
+### 7. Email-to-task capture  71/100
 **Status:** Not started  
 **Captured:** 2026-01-21
 
 **The idea:**
-Forward emails to a special address, Dex extracts action items and creates tasks automatically. E.g., forward customer request → Dex creates task with context.
+Forward emails to a special address, Dex extracts action items and creates tasks automatically. E.g., forward customer request -> Dex creates task with context.
 
 **Why now:**
 - **Impact (35%):** 25/35 - Faster capture from email (big time sink)
@@ -181,12 +181,12 @@ Forward emails to a special address, Dex extracts action items and creates tasks
 
 ---
 
-### 8. Career evidence auto-tagging 📊 69/100
+### 8. Career evidence auto-tagging  69/100
 **Status:** Not started  
 **Captured:** 2026-01-21
 
 **The idea:**
-When completing tasks or capturing achievements, Dex suggests career competency tags based on content. E.g., "Presented to exec team" → suggests "# Career: Executive Communication"
+When completing tasks or capturing achievements, Dex suggests career competency tags based on content. E.g., "Presented to exec team" -> suggests "# Career: Executive Communication"
 
 **Why now:**
 - **Impact (35%):** 24/35 - Easier evidence tracking for promotion
@@ -207,7 +207,7 @@ When completing tasks or capturing achievements, Dex suggests career competency 
 
 ## Low Priority (Score: <60)
 
-### 9. Voice note capture 🔵 58/100
+### 9. Voice note capture [blue] 58/100
 **Status:** Not started  
 **Captured:** 2026-01-16
 
@@ -225,7 +225,7 @@ Record quick voice memos that Dex transcribes and routes to appropriate location
 
 ---
 
-### 10. Browser extension for capture 🔵 55/100
+### 10. Browser extension for capture [blue] 55/100
 **Status:** Not started  
 **Captured:** 2026-01-17
 

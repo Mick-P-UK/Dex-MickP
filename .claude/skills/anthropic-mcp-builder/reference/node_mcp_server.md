@@ -80,17 +80,17 @@ Create the following structure for Node/TypeScript MCP servers:
 
 ```
 {service}-mcp-server/
-├── package.json
-├── tsconfig.json
-├── README.md
-├── src/
-│   ├── index.ts          # Main entry point with McpServer initialization
-│   ├── types.ts          # TypeScript type definitions and interfaces
-│   ├── tools/            # Tool implementations (one file per domain)
-│   ├── services/         # API clients and shared utilities
-│   ├── schemas/          # Zod validation schemas
-│   └── constants.ts      # Shared constants (API_URL, CHARACTER_LIMIT, etc.)
-└── dist/                 # Built JavaScript files (entry point: dist/index.js)
++-- package.json
++-- tsconfig.json
++-- README.md
++-- src/
+|   +-- index.ts          # Main entry point with McpServer initialization
+|   +-- types.ts          # TypeScript type definitions and interfaces
+|   +-- tools/            # Tool implementations (one file per domain)
+|   +-- services/         # API clients and shared utilities
+|   +-- schemas/          # Zod validation schemas
+|   +-- constants.ts      # Shared constants (API_URL, CHARACTER_LIMIT, etc.)
++-- dist/                 # Built JavaScript files (entry point: dist/index.js)
 ```
 
 ## Tool Implementation

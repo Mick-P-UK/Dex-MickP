@@ -85,17 +85,17 @@ Present findings as:
 ```
 ## Audit Report: {skill-name}
 
-### ✅ Passing
+### [x] Passing
 - [list passing items]
 
-### ⚠️ Issues Found
+### [!] Issues Found
 1. **[Issue name]**: [Description]
-   → Fix: [Specific action]
+   -> Fix: [Specific action]
 
 2. **[Issue name]**: [Description]
-   → Fix: [Specific action]
+   -> Fix: [Specific action]
 
-### 📊 Score: X/Y criteria passing
+###  Score: X/Y criteria passing
 ```
 
 ## Step 5: Offer Fixes

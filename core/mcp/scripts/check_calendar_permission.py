@@ -11,7 +11,7 @@ import time
 try:
     import EventKit
 except ImportError:
-    print("❌ EventKit not installed. Run: pip3 install pyobjc-framework-EventKit")
+    print("[ ] EventKit not installed. Run: pip3 install pyobjc-framework-EventKit")
     sys.exit(1)
 
 
@@ -29,13 +29,13 @@ def main():
     print(f"Current calendar access: {status_names.get(status, 'Unknown')}")
     
     if status == 3:  # Authorized
-        print("✅ Calendar access already granted!")
+        print("[x] Calendar access already granted!")
         print("   EventKit is ready for fast calendar queries (30x faster than AppleScript)")
         return 0
     
     elif status == 2:  # Denied
         print()
-        print("❌ Calendar access was previously denied.")
+        print("[ ] Calendar access was previously denied.")
         print()
         print("To enable fast calendar queries:")
         print("1. Open System Settings")
@@ -48,13 +48,13 @@ def main():
     
     elif status == 1:  # Restricted
         print()
-        print("❌ Calendar access is restricted by system policies.")
+        print("[ ] Calendar access is restricted by system policies.")
         print("   This may be due to parental controls or enterprise MDM.")
         return 1
     
     else:  # NotDetermined (0)
         print()
-        print("📋 Calendar access not yet requested.")
+        print(" Calendar access not yet requested.")
         print("   A permission dialog will appear...")
         print()
         
@@ -76,11 +76,11 @@ def main():
         print()
         
         if access_granted[0]:
-            print("✅ Calendar access granted!")
+            print("[x] Calendar access granted!")
             print("   EventKit is ready for fast calendar queries.")
             return 0
         else:
-            print("❌ Calendar access was not granted.")
+            print("[ ] Calendar access was not granted.")
             print("   Run this script again to retry, or grant access in System Settings.")
             return 1
 

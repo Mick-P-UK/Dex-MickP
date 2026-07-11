@@ -8,30 +8,30 @@
   "states": [
     {
       "state_key": "portfolio-switch-menu",
-      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[data-cmd=\"CurPort\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - Active 10 - UK</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[data-cmd=\"CurPort\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - Active 10 - UK</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
       "captured_at": "2026-07-04T11:15:49.861Z"
     },
     {
       "state_key": "portfolio-manage-dialog",
-      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[data-cmd=\"CurPort\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - Active 10 - UK</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[data-cmd=\"CurPort\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-cmd=\"CurPort\" title=\"Current portfolio\" class=\"btn ss-btn-toolbar ss-btn-list active\">Port: 0 - 0 - 2026 - Active 10 - UK</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 x waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
       "captured_at": "2026-07-04T11:16:21.125Z"
     },
     {
       "state_key": "news-design-dialog",
       "captured_at": "2026-07-04T11:16:33.001Z",
       "url": "https://engine-3.sharescope.co.uk/SSWeb/app.do;jsessionid=63C03A406AF4B502739BF557E6EA9C11",
-      "ax_snapshot": "- heading \"List design\" [level=4]\n- list:\n  - listitem:\n    - link \"General\":\n      - /url: \"#list-design-dlg-general-tab\"\n  - listitem:\n    - link \"Columns\":\n      - /url: \"#list-design-dlg-columns-tab\"\n- group \"Style\":\n  - text: Style Compact (single row) column headers\n  - checkbox \"Compact (single row) column headers\"\n  - text: Colour rows by change from previous close (i.e. a heatmap)\n  - checkbox \"Colour rows by change from previous close (i.e. a heatmap)\"\n  - text: Flash cells when value changes\n  - checkbox \"Flash cells when value changes\" [checked]\n  - text: Auto re-sort list when sorted by price change from close (every min)\n  - checkbox \"Auto re-sort list when sorted by price change from close (every min)\"\n  - text: Selected row(s)\n  - combobox:\n    - option \"Standard colouring\" [selected]\n    - option \"Yellow (classic theme only)\"\n  - text: Gridlines\n  - combobox:\n    - option \"Standard - subtle gridlines\" [selected]\n    - option \"Strong vertical and horizontal\"\n- group \"Scrolling mode\":\n  - text: Scrolling mode\n  - radio \"Vertical scrolling (normal)\" [checked]\n  - text: Vertical scrolling (normal)\n  - radio \"Horizontal scrolling\"\n  - text: Horizontal scrolling\n- group \"When in vertical scrolling (normal) mode\":\n  - text: When in vertical scrolling (normal) mode Fixed columns\n  - textbox \"Fixed columns\": \"3\"\n- group \"Zoom\": Zoom View zoom 100%\n- button \"?\"\n- button \"OK\"\n- img\n- button \"Maximise list view\":\n  - img\n- button \"Show both views\":\n  - img\n- button \"Maximise green view\":\n  - img\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"?\"\n- 'button \"Layout: Default layout\"'\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"FTSE 100\"\n- button \"FTSE All\"\n- button \"US 500\"\n- button \"0 - 0 - 2026 - PP1 (UK)\"\n- button \"0 - 0 - 2026 - PP2 (UK)\"\n- button \"Other lists\"\n- button \"Portfolios\"\n- button \"Search\"\n- button \"\"\n- button \"Chart\"\n- button \"Financials\"\n- button \"News\"\n- button \"DD\"\n- button \"Alarms\"\n- button \"More\"\n- button \"\" [disabled]\n- button \"\"\n- button \"Add col...\"\n- button \"Delete\"\n- button \"Add to port\"\n- button \"Filter\"\n- button \"Sector\"\n- button\n- button \"My Ports\"\n- button \"Sharing\"\n- text: \"Portfolio: 0 - 0 - 2026 - Active 10 - UK sorted by Price % from Close (12 items)  No. TIDM Name Price +/- % from Close▾ %chg 5td %chg 31/12/25 MCap. (current) Shares in issue (m) TTM Net debt to MCAP (inc. p.d.) fc Net debt to MCAP (inc. p.d.) %chg 31/12/24 to 31/12/25 PSR (TTM) PSR (fc) Operating cash flow (m) Latest Q Op. c/flow 1y %chg (ann) Latest Q Op. cash flow %chg TTM Free cash flow (m) Latest Q FCF ps %chg Price to FCF Op cash conversion 1y %chg (ann) PEG PE fc PE TTM PE ROCE CROCI Price to NTAV TTM price to NTAV 1 JMAT Johnson Matthey PLC 2 MTL Metals Exploration PLC 3 SRB Serabi Gold PLC 4 SNWS Smiths News PLC 5 ATM Andrada Mining Ltd 6 VALT Valterra Platinum Ltd 7 HDD Hardide PLC 8 GGP Greatland Resources Ltd 9 OMU Old Mutual Ltd 10 GDP Goldplat PLC 11 TRU TruFin PLC 12 FTC Filtronic PLC £20.14 ▲95p ▲4.95 ▲1.72 ▼-5.53 £3,381.2 167.885 25.7 29.5 ▲59.1 0.3 1.3 555.0 ▼-17.4 ▲17.8 133.0 ▲3370.8 25.6 ▲34.8 0.8 15.7 13.0 15.7 11.8 5.9 2.0 2.0 13.1p ▲0.6p ▲4.80 ▲6.07 ▼-13.8 £391.2 2,986.170 -7.4 2.0 ▲184 2.5 2.6 107.9 ▼-1.7 ▲26.2 29.2 ▼-74.1 17.8 ▲67.0 0.2 19.4 8.7 19.4 18.4 12.9 2.2 2.2 305p ▲13p ▲4.45 ▲3.39 ▼-2.4 £232.7 76.308 -19.9 -42.2 ▲189 1.7 1.2 69.3 ▲140.7 ▲140.7 41.8 ▲390.0 11.8 ▲3.6 0.06 5.7 2.8 4.7 46.5 17.3 1.8 1.6 72p ▲1.6p ▲2.27 ▲6.51 ▼-5.01 £174.3 242.035 11.0 -5.9 ▲12.1 0.2 0.2 56.7 ▲34.2 ▲34.2 43.3 ▲57.8 5.1 ▲83.5 6.7 6.8 6.8 81.8 80.3 24.9 49.8 3.7p ▲0.08p ▲2.21 ▼-1.33 ▲7.25 £81.4 2,198.915 24.0 11.7 ▲62.4 2.5 2.1 -4.0 -12.6 -3.0 ▲44.8 -14.0 -32.2 2.6 2.7 £54.65 ▲115p ▲2.15 ▲4 ▼-12.1 £14,288.0 263.964 -3.1 -3.8 2.7 2.1 32,142.0 ▲60.3 ▲5.5 11,536.0 ▲37.9 27.1 ▼-34.0 0.2 18.8 9.6 18.8 17.8 9.4 3.2 3.2 69p ▲1p ▲1.47 ▲5.34 ▲273 £54.4 78.813 1.3 -6.1 ▲229 7.4 4.3 0.7 ▲75.1 ▲75.1 0.7 ▲61.0 160.0 ▲746.0 0.2 345.0 17.3 38.3 4.1 7.7 14.0 10.5 606p ▲5.5p ▲0.92 ▼-5.9 ▲16.2 £3,874.9 672.906 ▲310 61.8p ▲0.2p ▲0.32 ▲1.64 ▼-8.31 £2,476.4 3,988.588 -24.5 19.5 ▲30.4 0.2 2.0 3,782.0 ▼-87.1 -6,572.0 -9.0 6.9 7.5 6.9 1.1 1.1 17p 0p 0.00 ▲8.8 ▲100 £29.0 170.783 -14.8 -25.1 ▲17.2 0.4 0.4 7.2 ▲27.2 ▲27.2 4.0 7.6 ▲240.8 0.08 18.9 5.9 8.5 12.5 16.7 1.6 1.3 134p ▼-0.5p ▼-0.37 ▼-0.372 ▲13.6 £126.2 94.200 -9.8 -13.1 ▲42.2 2.3 2.2 14.0 ▼-45.6 ▲3.4 9.4 ▲43.6 15.9 ▼-91.2 11.2 14.1 11.2 23.1 20.0 5.8 5.8 238p ▼-30p ▼-11.19 ▲3.48 ▲35.2 £523.5 219.943 -1.3 -1.6 ▲132 9.9 9.9 13.9 ▲60.3 ▲60.3 2.9 78.5 ▼-41.2 39.7 69.9 58.0 45.6 23.9 16.4 15.3\"\n- button \"Design...\"\n- 'button \"Setting: Equities - Start Layout\"'\n- button \"Equities - Main View\"\n- button \"Banking\"\n- button \"Equities - Start Layout\"\n- button \"Share\"\n- button \"List\"\n- button \"All\"\n- button \"Filter\"\n- button \"\"\n- button \"\" [disabled]\n- button \"Latest\" [disabled]\n- textbox: 2026-07-04\n- button \"Go to date\"\n- button \"Sharing\"\n- text: News for Greatland Resources Ltd - 13/09/24 to 02/07/26 Thu 2\n- superscript: nd\n- text: July 2026 07:25:01 RNS Greatland Resources - Holding(s) in Company Mon 29\n- superscript: th\n- text: June 2026 14:12:30 AN Greatland Resources reports 62% jump in ore reserves amid Telfer gains 07:22:06 RNS Greatland Resources - March 2026 Group Ore Reserve Statement Mon 1\n- superscript: st\n- text: \"June 2026 16:28:24 AN IN BRIEF: Greatland fully funded for Havieron as board approves FID 07:33:26 RNS Greatland Resources - Execution of Debt Facilities and Havieron Approval Fri 29\"\n- superscript: th\n- text: \"May 2026 10:14:44 AN IN BRIEF: Greatland Resources chair sells AUD13 million in shares 09:07:37 RNS Greatland Resources - Director/PDMR Shareholding Thu 28\"\n- superscript: th\n- text: May 2026 07:01:22 RNS Greatland Resources - Holding(s) in Company Tue 26\n- superscript: th\n- text: \"May 2026 09:16:08 AN IN BRIEF: Greatland Resources gets environmental okays for Havieron 08:27:53 RNS Greatland Resources - Havieron Environmental Approvals Received Tue 19\"\n- superscript: th\n- text: May 2026 07:23:11 RNS Greatland Resources - Issue of shares Mon 11\n- superscript: th\n- text: May 2026 13:29:09 AN Greatland optimistic on further drilling at West Dome Underground 07:41:48 RNS Greatland Resources - Exploration Update West Dome Underground 00:18:25 AN Greatland Resources hits high-grade gold at West Dome extension Fri 8\n- superscript: th\n- text: May 2026 07:23:08 RNS Greatland Resources - Holding(s) in Company Tue 5\n- superscript: th\n- text: May 2026 07:34:08 RNS Greatland Resources - Director/PDMR Shareholding Tue 28\n- superscript: th\n- text: April 2026 11:21:00 AN Greatland Resources quarterly revenue rises despite lower gold output 07:00:02 RNS Greatland Resources - March 2026 Quarterly Activities Report Thu 23\n- superscript: rd\n- text: April 2026 07:22:19 RNS Greatland Resources - March 2026 Quarter Results and Webcast Wed 15\n- superscript: th\n- text: April 2026 07:13:18 RNS Greatland Resources - Grant of Employee Share Rights 07:13:10 RNS Greatland Resources - Exercise and Lapse of Equity Incentive Securities Wed 8\n- superscript: th\n- text: \"April 2026 10:00:05 AN Greatland shares soar as company close to beating production guidance 09:42:43 AN WINNERS & LOSERS: Solid State beats view; ceasefire lifts Gulf Marine 08:32:49 AN LONDON MARKET OPEN: Europe rallies on Middle East ceasefire 07:50:42 AN LONDON BRIEFING: Shell trims output view but refining margins climb 07:23:57 RNS Greatland Resources - Holding(s) in Company 07:17:55 RNS Greatland Resources - March 2026 Quarter Production Update Thu 2\"\n- superscript: nd\n- text: \"April 2026 09:51:57 AN LONDON BROKER RATINGS: RBC raises Berkeley; Berenberg raises BHP 07:59:02 AN LONDON BRIEFING: Stocks called down; SSE narrows full-year guidance Wed 1\"\n- superscript: st\n- text: \"April 2026 10:47:42 AN WINNERS & LOSERS: Ferrexpo warns on cash; Deltic takeover is abandoned Tue 31\"\n- superscript: st\n- text: March 2026 07:12:53 RNS Greatland Resources - Holding(s) in Company Mon 30\n- superscript: th\n- text: \"March 2026 14:54:25 AN CORRECT: Greatland Resources's tungsten deposit \\\"globally significant\\\" 12:04:09 AN LONDON MARKET MIDDAY: Stocks mixed as war hits eurozone mood 10:57:55 AN Greatland Resources says tungsten deposit shown globally significant 07:00:52 RNS Greatland Resources - December 2025 Group Mineral Resource Stmt. 07:00:45 RNS Greatland Resources - December 2025 O'Callaghans Mineral Resource Stmt. Tue 24\"\n- superscript: th\n- text: March 2026 07:26:41 RNS Greatland Resources - Holding(s) in Company 07:24:32 RNS Greatland Resources - Holding(s) in Company Mon 16\n- superscript: th\n- text: March 2026 07:09:23 RNS Greatland Resources - Retirement of Non-Executive Director Clive Latcham Tue 3\n- superscript: rd\n- text: \"March 2026 09:52:53 AN LONDON BROKER RATINGS: Berenberg and RBC cut Beazley Fri 27\"\n- superscript: th\n- text: \"February 2026 10:34:21 AN AIM WINNERS & LOSERS: Hardide extends gains; Manx falls again Thu 26\"\n- superscript: th\n- text: February 2026 07:19:22 RNS Greatland Resources - Holding(s) in Company Mon 23\n- superscript: rd\n- text: February 2026 11:00:51 AN Greatland half-year profit surges as Telfer drilling delivers 10:04:40 RNS Greatland Resources - Half-Year Financial Results 07:04:59 RNS Greatland Resources - Holding(s) in Company Thu 19\n- superscript: th\n- text: February 2026 09:04:55 RNS Greatland Resources - Holding(s) in Company Wed 18\n- superscript: th\n- text: \"February 2026 10:05:25 AN IN BRIEF: Greatland Resources COO Simon Tyrrell resigns immediately 07:04:27 RNS Greatland Resources - Management Update Tue 17\"\n- superscript: th\n- text: February 2026 07:49:54 RNS Greatland Resources - Holding(s) in Company Wed 4\n- superscript: th\n- text: February 2026 07:54:02 RNS Greatland Resources - Holding(s) in Company Wed 28\n- superscript: th\n- text: \"January 2026 09:45:47 AN Greatland shares rise along with gold production and pricing 09:14:13 AN LONDON MARKET OPEN: FTSE 100 edges higher as gold hits fresh record 08:01:32 AN LONDON BRIEFING: British Land bids for Life Science REIT 07:18:30 RNS Greatland Resources - December Quarter 2025 Activities Report Thu 22\"\n- superscript: nd\n- text: \"January 2026 12:19:33 AN TRADING UPDATES: Young's reports strong Christmas, Boku tops forecasts 07:54:59 AN *Greatland Resources targets maiden MRE for West Dome Underground project in Q2 FY26 07:53:02 AN *Greatland Resources notes gold grade 7.4g per ton, 0.43% copper grade at 55.3m intercept 07:51:53 RNS Greatland Resources - Holding(s) in Company 07:51:42 AN *Greatland Resources notes \\\"promising\\\" Telfer results so far, sees acceleration in FY26 07:50:28 AN *Greatland Resources notes increased capacity of Telfer drill programme 07:41:00 RNS Greatland Resources - Exploration and Resource Development Update Wed 21\"\n- superscript: st\n- text: January 2026 08:39:19 RNS Greatland Resources - Holding(s) in Company Tue 20\n- superscript: th\n- text: January 2026 07:42:12 RNS Greatland Resources - Holding(s) in Company Thu 8\n- superscript: th\n- text: \"January 2026 09:30:35 AN LONDON BROKER RATINGS: Deutsche Bank Research says 'sell' Antofagasta Wed 7\"\n- superscript: th\n- text: \"January 2026 14:23:07 AN IN BRIEF: Greatland Resources reports quarterly production boost 07:41:39 RNS Greatland Resources - December 2025 Quarter Production Update Tue 6\"\n- superscript: th\n- text: January 2026 07:26:21 RNS Greatland Resources - Exercise of Performance Rights Tue 23\n- superscript: rd\n- text: December 2025 08:44:58 RNS Greatland Resources - Grant of FY26 Performance Rights 08:42:25 RNS Greatland Resources - Holding(s) in Company Tue 9\n- superscript: th\n- text: December 2025 14:31:33 RNS Greatland Resources - Holding(s) in Company Fri 5\n- superscript: th\n- text: December 2025 09:31:20 RNS Greatland Resources - Director/PDMR Shareholding Thu 4\n- superscript: th\n- text: December 2025 08:45:13 RNS Greatland Resources - 2025 Modern Slavery Statement Tue 2\n- superscript: nd\n- text: December 2025 08:32:06 RNS Greatland Resources - Issue of Shares Mon 1\n- superscript: st\n- text: \"December 2025 12:30:04 AN Greatland Resources hails \\\"robust\\\" Havieron feasibility study results 11:16:22 AN AIM WINNERS & LOSERS: Hardide and SpaceandPeople get contracts 07:18:41 RNS Greatland Resources - Havieron Project Feasibility Study 07:01:32 RNS Greatland Resources - Holding(s) in Company Thu 27\"\n- superscript: th\n- text: November 2025 11:08:29 AN Greatland Resources reports \"exceptional\" findings at WDU project 07:03:24 RNS Greatland Resources - West Dome Underground Project Update Tue 18\n- superscript: th\n- text: \"November 2025 09:29:54 AN AIM WINNERS & LOSERS: CelLBxHealth rises on Qiagen deal Thu 13\"\n- superscript: th\n- text: \"November 2025 09:15:46 RNS Greatland Resources - Results of 2025 Annual General Meeting 07:19:04 RNS Greatland Resources - Headline: 2025 AGM - Chairman's Address Mon 10\"\n- superscript: th\n- text: November 2025 07:47:24 RNS Greatland Resources - Holding(s) in Company Thu 6\n- superscript: th\n- text: November 2025 14:03:22 AN UK shareholder meetings calendar - next 7 days Mon 27\n- superscript: th\n- text: October 2025 12:51:29 AN Greatland reports \"strong start\" to year, holds production guidance 09:45:49 RNS Greatland Resources - Holding(s) in Company 08:05:56 RNS Greatland Resources - Quarterly Activities Report Thu 23\n- superscript: rd\n- text: October 2025 07:46:55 RNS Greatland Resources - September 2025 Quarter Results Wed 22\n- superscript: nd\n- text: October 2025 08:52:50 RNS Greatland Resources - September 2025 Quarter Drilling Update Mon 20\n- superscript: th\n- text: October 2025 11:39:51 AN UK earnings, trading statements calendar - next 7 days Fri 10\n- superscript: th\n- text: October 2025 08:42:26 RNS Greatland Resources - Corporate Presentation 07:55:48 RNS Greatland Resources - 2025 Notice of Annual General Meeting Thu 9\n- superscript: th\n- text: October 2025 07:00:00 RNS Greatland Resources - Appointment of Joint Corporate Broker Tue 7\n- superscript: th\n- text: \"October 2025 12:29:10 AN IN BRIEF: Greatland Resources gold production grows but copper falls 07:00:43 RNS Greatland Resources - September 2025 Quarter Production Update Fri 26\"\n- superscript: th\n- text: September 2025 07:44:06 RNS Greatland Resources - Director/PDMR Shareholding Thu 25\n- superscript: th\n- text: September 2025 07:24:36 RNS Greatland Resources - 2025 Annual Report Thu 18\n- superscript: th\n- text: September 2025 08:28:22 RNS Greatland Resources - Holding(s) in Company Mon 15\n- superscript: th\n- text: September 2025 07:44:28 RNS Greatland Resources - Holding(s) in Company 07:44:15 RNS Greatland Resources - Greatland presents at Mining Forum Americas 2025 Wed 10\n- superscript: th\n- text: September 2025 08:45:13 RNS Greatland Resources - Holding(s) in Company Wed 3\n- superscript: rd\n- text: \"September 2025 13:28:50 AN IN BRIEF: Cloudbreak acquires Paterson project in Western Australia Fri 29\"\n- superscript: th\n- text: August 2025 07:46:11 RNS Greatland Resources - 2025 Annual General Meeting Thu 28\n- superscript: th\n- text: August 2025 11:11:56 RNS Greatland Resources - Unaudited Prelim FY25 Final Report - Replacement 09:50:50 AN Greatland Resources swings to profit following Telfer acquisition 08:05:04 RNS Greatland Resources - Unaudited Preliminary FY25 Final Report Tue 5\n- superscript: th\n- text: August 2025 07:49:15 RNS Greatland Resources - Diggers and Dealers 2025 Presentation Tue 29\n- superscript: th\n- text: \"July 2025 11:12:02 AN AIM WINNERS & LOSERS: Colefax gets profit boost; Versarien sale fails 07:00:58 RNS Greatland Resources - Quarterly Activities Report - June Quarter 2025 07:00:58 RNS Greatland Resources - June 2025 Quarter Presentation Thu 24\"\n- superscript: th\n- text: July 2025 07:07:32 RNS Greatland Resources - Issue of Shares Wed 23\n- superscript: rd\n- text: July 2025 07:00:39 RNS Greatland Resources - June Quarter 2025 Results and Webcast Tue 22\n- superscript: nd\n- text: July 2025 09:27:45 RNS Greatland Resources - Proposed Issue of Shares Fri 18\n- superscript: th\n- text: July 2025 08:51:37 RNS Greatland Resources - Director/PDMR Shareholding Tue 8\n- superscript: th\n- text: July 2025 07:35:14 RNS Greatland Resources - Holding(s) in Company Mon 30\n- superscript: th\n- text: June 2025 07:00:59 RNS Greatland Resources - Grant of Replacement Awards Thu 26\n- superscript: th\n- text: \"June 2025 08:36:26 RNS Greatland Resources - TR-1: Standard form notification of major holdings Wed 25\"\n- superscript: th\n- text: \"June 2025 09:50:50 RNS Greatland Resources - TR-1: Standard form notification of major holdings 07:00:44 RNS Greatland Resources - TR-1: Standard form notification of major holdings 07:00:44 RNS Greatland Resources - TR-1: Standard form notification of major holdings Tue 24\"\n- superscript: th\n- text: June 2025 07:00:42 RNS Greatland Resources - Resignation and Appointment of Auditor 07:00:41 RNS Greatland Resources - Commencement of trading on ASX, Issue of Warrants Mon 23\n- superscript: rd\n- text: June 2025 08:00:01 RNS AIM - Cancellation - Greatland Gold Plc 07:00:38 RNS Greatland Resources - UK Scheme of Arrangement Effective and Admission Fri 20\n- superscript: th\n- text: June 2025 12:50:00 RNS Greatland Gold PLC - Application for AIM Admission, TVR 12:45:00 RNS AIM - Sch 1 Update - Greatland Resources Limited 07:30:00 RNS AIM - Suspension - Greatland Gold plc Wed 18\n- superscript: th\n- text: June 2025 11:31:53 RNS Greatland Gold PLC - Court sanction of Scheme of Arrangement Tue 17\n- superscript: th\n- text: \"June 2025 12:00:18 AN UPDATE: Greatland Gold raises GBP7 million from retail share offer 07:00:35 RNS Greatland Gold PLC - Results of RetailBook Offer Mon 16\"\n- superscript: th\n- text: \"June 2025 12:52:06 AN IN BRIEF: Greatland Gold to become Greatland Resources after ASX raise 07:13:59 RNS Greatland Resources - Greatland Resources completes ASX bookbuild Fri 13\"\n- superscript: th\n- text: June 2025 16:31:19 RNS Greatland Gold PLC - Announcement of Launch of Bookbuild Tue 10\n- superscript: th\n- text: June 2025 07:06:53 RNS Greatland Gold PLC - Corporate Presentation Wed 4\n- superscript: th\n- text: June 2025 11:26:53 RNS Greatland Gold PLC - Site Visit Presentation Mon 2\n- superscript: nd\n- text: June 2025 07:00:45 RNS Greatland Gold PLC - RetailBook Offer Fri 30\n- superscript: th\n- text: May 2025 08:13:40 RNS Greatland Gold PLC - ASX listing update Fri 23\n- superscript: rd\n- text: May 2025 10:19:35 AN Greatland Gold plans additional listing in Australia via new holding 08:01:00 RNS Greatland Gold PLC - ASX listing update 08:00:01 RNS AIM - Schedule One - Greatland Resources Limited Mon 19\n- superscript: th\n- text: May 2025 07:00:36 RNS Greatland Gold PLC - Surrender of options, share issue, PDMR dealings Mon 12\n- superscript: th\n- text: May 2025 12:12:04 RNS Greatland Gold PLC - Results of Court Meeting and General Meeting Fri 25\n- superscript: th\n- text: \"April 2025 11:48:17 AN AIM WINNERS & LOSERS: Enteq sees no \\\"realistic prospect\\\" of offer 07:00:37 RNS Greatland Gold PLC - Finalisation and grant of performance rights Thu 24\"\n- superscript: th\n- text: April 2025 07:00:39 RNS Greatland Gold PLC - Posting of Scheme Document Tue 22\n- superscript: nd\n- text: April 2025 07:00:45 RNS Greatland Gold PLC - Surrender of Director and employee share options Tue 15\n- superscript: th\n- text: \"April 2025 09:50:34 AN LONDON BROKER RATINGS: Goldman raises Next, RBC raises Rotork 07:00:34 RNS Greatland Gold PLC - Telfer Ore Reserve, Outlook and Havieron expansion Mon 14\"\n- superscript: th\n- text: April 2025 10:46:28 AN Greatland Gold posts strong first quarter post-Telfer deal 07:00:39 RNS Greatland Gold PLC - March 2025 Quarterly Activities Report Fri 11\n- superscript: th\n- text: April 2025 07:15:12 RNS Greatland Gold PLC - ASX listing process update Thu 10\n- superscript: th\n- text: April 2025 09:20:05 RNS Greatland Gold PLC - March Quarterly Report release date, Investor Call Wed 9\n- superscript: th\n- text: \"April 2025 08:12:54 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Thu 3\"\n- superscript: rd\n- text: \"April 2025 09:38:31 AN LONDON BROKER RATINGS: Jefferies cuts SSE target, raises Alphawave IP Wed 19\"\n- superscript: th\n- text: March 2025 10:24:34 RNS Greatland Gold PLC - Corporate Presentation Tue 18\n- superscript: th\n- text: \"March 2025 16:55:53 AN LONDON MARKET CLOSE: Stocks up and DAX jumps on investment green light 12:30:28 AN Greatland Gold shares climb on \\\"outstanding\\\" mine resource estimate 07:00:50 RNS Greatland Gold PLC - 2024 Group Mineral Resource Statement Tue 4\"\n- superscript: th\n- text: March 2025 07:00:00 RNS Greatland Gold PLC - Half-Year Financial Report Thu 20\n- superscript: th\n- text: \"February 2025 15:44:04 AN Greatland Gold shares rise on high-grade drill results at West Dome 12:09:29 AN LONDON MARKET MIDDAY: Ex-dividend stocks stifle FTSE 100 11:00:04 AN AIM WINNERS & LOSERS: Greatland Gold shines; Zoo Digital warns 07:00:34 RNS Greatland Gold PLC - West Dome Underground Project Wed 22\"\n- superscript: nd\n- text: \"January 2025 15:04:40 AN EARNINGS: Savannah Energy confident despite 2024 revenue drop 07:00:23 RNS Greatland Gold PLC - December Month Update Mon 20\"\n- superscript: th\n- text: January 2025 11:49:59 RNS Greatland Gold PLC - December 2024 Update release date, Investor Call Wed 18\n- superscript: th\n- text: December 2024 14:41:55 RNS Greatland Gold PLC - Results of 2024 Annual General Meeting Wed 11\n- superscript: th\n- text: December 2024 11:51:39 AN UK shareholder meetings calendar - next 7 days Mon 9\n- superscript: th\n- text: December 2024 07:35:01 RNS Greatland Gold PLC - Corporate Presentation 07:27:46 RNS Greatland Gold PLC - First Telfer gold poured under Greatland ownership Fri 6\n- superscript: th\n- text: \"December 2024 13:06:16 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings 07:56:26 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings 07:42:20 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Wed 4\"\n- superscript: th\n- text: December 2024 08:00:00 RNS AIM - Readmission - Greatland Gold Plc 07:00:23 RNS Greatland Gold PLC - Completion of Acquisition of Havieron & Telfer Tue 3\n- superscript: rd\n- text: December 2024 08:24:15 RNS Greatland Gold PLC - Supplementary Admission Document publication 07:00:31 RNS Greatland Gold PLC - Debt facilities executed with banking syndicate Mon 2\n- superscript: nd\n- text: December 2024 12:00:02 RNS AIM - Schedule One Update - Greatland Gold PLC 08:33:25 RNS Greatland Gold PLC - Acquisition of Havieron & Telfer Completion date Fri 29\n- superscript: th\n- text: \"November 2024 15:43:42 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Mon 18\"\n- superscript: th\n- text: November 2024 14:59:16 AN Greatland Gold annual loss narrows due to reduced share-based payments 11:38:52 RNS Greatland Gold PLC - Notice of Annual General Meeting and Annual Report 11:38:03 RNS Greatland Gold PLC - Final Results and Publication of Annual Report Fri 15\n- superscript: th\n- text: November 2024 08:00:01 RNS AIM - Schedule One - Greatland Gold PLC 07:05:28 RNS Greatland Gold PLC - Acquisition of Havieron & Telfer - Update Tue 12\n- superscript: th\n- text: \"November 2024 09:35:10 AN LONDON BROKER RATINGS: Jefferies cuts Big Yellow, Shore cuts ITV Thu 7\"\n- superscript: th\n- text: November 2024 07:00:56 RNS Greatland Gold PLC - Paterson Exploration Update Wed 6\n- superscript: th\n- text: November 2024 07:01:17 RNS Greatland Gold PLC - Corporate Presentation Wed 16\n- superscript: th\n- text: October 2024 07:00:32 RNS Greatland Gold PLC - Grant of Employee Incentive Options Mon 14\n- superscript: th\n- text: October 2024 10:14:34 RNS Greatland Gold PLC - Acquisition of Havieron & Telfer - Update Thu 10\n- superscript: th\n- text: \"October 2024 09:12:33 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Mon 7\"\n- superscript: th\n- text: \"October 2024 08:39:20 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Fri 4\"\n- superscript: th\n- text: \"October 2024 09:44:18 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Thu 3\"\n- superscript: rd\n- text: \"October 2024 08:07:36 RNS Greatland Gold PLC - TR-1: Notification of major holdings Wed 2\"\n- superscript: nd\n- text: \"October 2024 10:46:35 RNS Greatland Gold PLC - TR-1: Standard for Notification of Major Holdings Mon 30\"\n- superscript: th\n- text: September 2024 12:02:56 RNS Greatland Gold PLC - Result of GM Admission and Total Voting Rights Thu 26\n- superscript: th\n- text: September 2024 09:53:03 RNS Greatland Gold PLC - Telfer Restarts Processing Operations Fri 13\n- superscript: th\n- text: \"September 2024 12:59:16 AN IN BRIEF: Greatland Gold raises GBP6.7 million from retail offer 07:02:00 RNS Greatland Gold PLC - Investor Presentation 07:00:25 RNS Greatland Gold PLC - Result of Retail Offer\"\n- button \" Older\"\n- button \"Newer \"\n- button \"Back to top \"\n- button \"Design...\"\n- button \"AN\"\n- button \"MTN\"\n- button \"RNS\"\n- button \"Mentions\"\n- button \"Hot\"\n- button \"Corporate actions\"\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button \"?\"",
+      "ax_snapshot": "- heading \"List design\" [level=4]\n- list:\n  - listitem:\n    - link \"General\":\n      - /url: \"#list-design-dlg-general-tab\"\n  - listitem:\n    - link \"Columns\":\n      - /url: \"#list-design-dlg-columns-tab\"\n- group \"Style\":\n  - text: Style Compact (single row) column headers\n  - checkbox \"Compact (single row) column headers\"\n  - text: Colour rows by change from previous close (i.e. a heatmap)\n  - checkbox \"Colour rows by change from previous close (i.e. a heatmap)\"\n  - text: Flash cells when value changes\n  - checkbox \"Flash cells when value changes\" [checked]\n  - text: Auto re-sort list when sorted by price change from close (every min)\n  - checkbox \"Auto re-sort list when sorted by price change from close (every min)\"\n  - text: Selected row(s)\n  - combobox:\n    - option \"Standard colouring\" [selected]\n    - option \"Yellow (classic theme only)\"\n  - text: Gridlines\n  - combobox:\n    - option \"Standard - subtle gridlines\" [selected]\n    - option \"Strong vertical and horizontal\"\n- group \"Scrolling mode\":\n  - text: Scrolling mode\n  - radio \"Vertical scrolling (normal)\" [checked]\n  - text: Vertical scrolling (normal)\n  - radio \"Horizontal scrolling\"\n  - text: Horizontal scrolling\n- group \"When in vertical scrolling (normal) mode\":\n  - text: When in vertical scrolling (normal) mode Fixed columns\n  - textbox \"Fixed columns\": \"3\"\n- group \"Zoom\": Zoom View zoom 100%\n- button \"?\"\n- button \"OK\"\n- img\n- button \"Maximise list view\":\n  - img\n- button \"Show both views\":\n  - img\n- button \"Maximise green view\":\n  - img\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"?\"\n- 'button \"Layout: Default layout\"'\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"FTSE 100\"\n- button \"FTSE All\"\n- button \"US 500\"\n- button \"0 - 0 - 2026 - PP1 (UK)\"\n- button \"0 - 0 - 2026 - PP2 (UK)\"\n- button \"Other lists\"\n- button \"Portfolios\"\n- button \"Search\"\n- button \"\"\n- button \"Chart\"\n- button \"Financials\"\n- button \"News\"\n- button \"DD\"\n- button \"Alarms\"\n- button \"More\"\n- button \"\" [disabled]\n- button \"\"\n- button \"Add col...\"\n- button \"Delete\"\n- button \"Add to port\"\n- button \"Filter\"\n- button \"Sector\"\n- button\n- button \"My Ports\"\n- button \"Sharing\"\n- text: \"Portfolio: 0 - 0 - 2026 - Active 10 - UK sorted by Price % from Close (12 items)  No. TIDM Name Price +/- % from Closev %chg 5td %chg 31/12/25 MCap. (current) Shares in issue (m) TTM Net debt to MCAP (inc. p.d.) fc Net debt to MCAP (inc. p.d.) %chg 31/12/24 to 31/12/25 PSR (TTM) PSR (fc) Operating cash flow (m) Latest Q Op. c/flow 1y %chg (ann) Latest Q Op. cash flow %chg TTM Free cash flow (m) Latest Q FCF ps %chg Price to FCF Op cash conversion 1y %chg (ann) PEG PE fc PE TTM PE ROCE CROCI Price to NTAV TTM price to NTAV 1 JMAT Johnson Matthey PLC 2 MTL Metals Exploration PLC 3 SRB Serabi Gold PLC 4 SNWS Smiths News PLC 5 ATM Andrada Mining Ltd 6 VALT Valterra Platinum Ltd 7 HDD Hardide PLC 8 GGP Greatland Resources Ltd 9 OMU Old Mutual Ltd 10 GDP Goldplat PLC 11 TRU TruFin PLC 12 FTC Filtronic PLC GBP20.14 ^95p ^4.95 ^1.72 v-5.53 GBP3,381.2 167.885 25.7 29.5 ^59.1 0.3 1.3 555.0 v-17.4 ^17.8 133.0 ^3370.8 25.6 ^34.8 0.8 15.7 13.0 15.7 11.8 5.9 2.0 2.0 13.1p ^0.6p ^4.80 ^6.07 v-13.8 GBP391.2 2,986.170 -7.4 2.0 ^184 2.5 2.6 107.9 v-1.7 ^26.2 29.2 v-74.1 17.8 ^67.0 0.2 19.4 8.7 19.4 18.4 12.9 2.2 2.2 305p ^13p ^4.45 ^3.39 v-2.4 GBP232.7 76.308 -19.9 -42.2 ^189 1.7 1.2 69.3 ^140.7 ^140.7 41.8 ^390.0 11.8 ^3.6 0.06 5.7 2.8 4.7 46.5 17.3 1.8 1.6 72p ^1.6p ^2.27 ^6.51 v-5.01 GBP174.3 242.035 11.0 -5.9 ^12.1 0.2 0.2 56.7 ^34.2 ^34.2 43.3 ^57.8 5.1 ^83.5 6.7 6.8 6.8 81.8 80.3 24.9 49.8 3.7p ^0.08p ^2.21 v-1.33 ^7.25 GBP81.4 2,198.915 24.0 11.7 ^62.4 2.5 2.1 -4.0 -12.6 -3.0 ^44.8 -14.0 -32.2 2.6 2.7 GBP54.65 ^115p ^2.15 ^4 v-12.1 GBP14,288.0 263.964 -3.1 -3.8 2.7 2.1 32,142.0 ^60.3 ^5.5 11,536.0 ^37.9 27.1 v-34.0 0.2 18.8 9.6 18.8 17.8 9.4 3.2 3.2 69p ^1p ^1.47 ^5.34 ^273 GBP54.4 78.813 1.3 -6.1 ^229 7.4 4.3 0.7 ^75.1 ^75.1 0.7 ^61.0 160.0 ^746.0 0.2 345.0 17.3 38.3 4.1 7.7 14.0 10.5 606p ^5.5p ^0.92 v-5.9 ^16.2 GBP3,874.9 672.906 ^310 61.8p ^0.2p ^0.32 ^1.64 v-8.31 GBP2,476.4 3,988.588 -24.5 19.5 ^30.4 0.2 2.0 3,782.0 v-87.1 -6,572.0 -9.0 6.9 7.5 6.9 1.1 1.1 17p 0p 0.00 ^8.8 ^100 GBP29.0 170.783 -14.8 -25.1 ^17.2 0.4 0.4 7.2 ^27.2 ^27.2 4.0 7.6 ^240.8 0.08 18.9 5.9 8.5 12.5 16.7 1.6 1.3 134p v-0.5p v-0.37 v-0.372 ^13.6 GBP126.2 94.200 -9.8 -13.1 ^42.2 2.3 2.2 14.0 v-45.6 ^3.4 9.4 ^43.6 15.9 v-91.2 11.2 14.1 11.2 23.1 20.0 5.8 5.8 238p v-30p v-11.19 ^3.48 ^35.2 GBP523.5 219.943 -1.3 -1.6 ^132 9.9 9.9 13.9 ^60.3 ^60.3 2.9 78.5 v-41.2 39.7 69.9 58.0 45.6 23.9 16.4 15.3\"\n- button \"Design...\"\n- 'button \"Setting: Equities - Start Layout\"'\n- button \"Equities - Main View\"\n- button \"Banking\"\n- button \"Equities - Start Layout\"\n- button \"Share\"\n- button \"List\"\n- button \"All\"\n- button \"Filter\"\n- button \"\"\n- button \"\" [disabled]\n- button \"Latest\" [disabled]\n- textbox: 2026-07-04\n- button \"Go to date\"\n- button \"Sharing\"\n- text: News for Greatland Resources Ltd - 13/09/24 to 02/07/26 Thu 2\n- superscript: nd\n- text: July 2026 07:25:01 RNS Greatland Resources - Holding(s) in Company Mon 29\n- superscript: th\n- text: June 2026 14:12:30 AN Greatland Resources reports 62% jump in ore reserves amid Telfer gains 07:22:06 RNS Greatland Resources - March 2026 Group Ore Reserve Statement Mon 1\n- superscript: st\n- text: \"June 2026 16:28:24 AN IN BRIEF: Greatland fully funded for Havieron as board approves FID 07:33:26 RNS Greatland Resources - Execution of Debt Facilities and Havieron Approval Fri 29\"\n- superscript: th\n- text: \"May 2026 10:14:44 AN IN BRIEF: Greatland Resources chair sells AUD13 million in shares 09:07:37 RNS Greatland Resources - Director/PDMR Shareholding Thu 28\"\n- superscript: th\n- text: May 2026 07:01:22 RNS Greatland Resources - Holding(s) in Company Tue 26\n- superscript: th\n- text: \"May 2026 09:16:08 AN IN BRIEF: Greatland Resources gets environmental okays for Havieron 08:27:53 RNS Greatland Resources - Havieron Environmental Approvals Received Tue 19\"\n- superscript: th\n- text: May 2026 07:23:11 RNS Greatland Resources - Issue of shares Mon 11\n- superscript: th\n- text: May 2026 13:29:09 AN Greatland optimistic on further drilling at West Dome Underground 07:41:48 RNS Greatland Resources - Exploration Update West Dome Underground 00:18:25 AN Greatland Resources hits high-grade gold at West Dome extension Fri 8\n- superscript: th\n- text: May 2026 07:23:08 RNS Greatland Resources - Holding(s) in Company Tue 5\n- superscript: th\n- text: May 2026 07:34:08 RNS Greatland Resources - Director/PDMR Shareholding Tue 28\n- superscript: th\n- text: April 2026 11:21:00 AN Greatland Resources quarterly revenue rises despite lower gold output 07:00:02 RNS Greatland Resources - March 2026 Quarterly Activities Report Thu 23\n- superscript: rd\n- text: April 2026 07:22:19 RNS Greatland Resources - March 2026 Quarter Results and Webcast Wed 15\n- superscript: th\n- text: April 2026 07:13:18 RNS Greatland Resources - Grant of Employee Share Rights 07:13:10 RNS Greatland Resources - Exercise and Lapse of Equity Incentive Securities Wed 8\n- superscript: th\n- text: \"April 2026 10:00:05 AN Greatland shares soar as company close to beating production guidance 09:42:43 AN WINNERS & LOSERS: Solid State beats view; ceasefire lifts Gulf Marine 08:32:49 AN LONDON MARKET OPEN: Europe rallies on Middle East ceasefire 07:50:42 AN LONDON BRIEFING: Shell trims output view but refining margins climb 07:23:57 RNS Greatland Resources - Holding(s) in Company 07:17:55 RNS Greatland Resources - March 2026 Quarter Production Update Thu 2\"\n- superscript: nd\n- text: \"April 2026 09:51:57 AN LONDON BROKER RATINGS: RBC raises Berkeley; Berenberg raises BHP 07:59:02 AN LONDON BRIEFING: Stocks called down; SSE narrows full-year guidance Wed 1\"\n- superscript: st\n- text: \"April 2026 10:47:42 AN WINNERS & LOSERS: Ferrexpo warns on cash; Deltic takeover is abandoned Tue 31\"\n- superscript: st\n- text: March 2026 07:12:53 RNS Greatland Resources - Holding(s) in Company Mon 30\n- superscript: th\n- text: \"March 2026 14:54:25 AN CORRECT: Greatland Resources's tungsten deposit \\\"globally significant\\\" 12:04:09 AN LONDON MARKET MIDDAY: Stocks mixed as war hits eurozone mood 10:57:55 AN Greatland Resources says tungsten deposit shown globally significant 07:00:52 RNS Greatland Resources - December 2025 Group Mineral Resource Stmt. 07:00:45 RNS Greatland Resources - December 2025 O'Callaghans Mineral Resource Stmt. Tue 24\"\n- superscript: th\n- text: March 2026 07:26:41 RNS Greatland Resources - Holding(s) in Company 07:24:32 RNS Greatland Resources - Holding(s) in Company Mon 16\n- superscript: th\n- text: March 2026 07:09:23 RNS Greatland Resources - Retirement of Non-Executive Director Clive Latcham Tue 3\n- superscript: rd\n- text: \"March 2026 09:52:53 AN LONDON BROKER RATINGS: Berenberg and RBC cut Beazley Fri 27\"\n- superscript: th\n- text: \"February 2026 10:34:21 AN AIM WINNERS & LOSERS: Hardide extends gains; Manx falls again Thu 26\"\n- superscript: th\n- text: February 2026 07:19:22 RNS Greatland Resources - Holding(s) in Company Mon 23\n- superscript: rd\n- text: February 2026 11:00:51 AN Greatland half-year profit surges as Telfer drilling delivers 10:04:40 RNS Greatland Resources - Half-Year Financial Results 07:04:59 RNS Greatland Resources - Holding(s) in Company Thu 19\n- superscript: th\n- text: February 2026 09:04:55 RNS Greatland Resources - Holding(s) in Company Wed 18\n- superscript: th\n- text: \"February 2026 10:05:25 AN IN BRIEF: Greatland Resources COO Simon Tyrrell resigns immediately 07:04:27 RNS Greatland Resources - Management Update Tue 17\"\n- superscript: th\n- text: February 2026 07:49:54 RNS Greatland Resources - Holding(s) in Company Wed 4\n- superscript: th\n- text: February 2026 07:54:02 RNS Greatland Resources - Holding(s) in Company Wed 28\n- superscript: th\n- text: \"January 2026 09:45:47 AN Greatland shares rise along with gold production and pricing 09:14:13 AN LONDON MARKET OPEN: FTSE 100 edges higher as gold hits fresh record 08:01:32 AN LONDON BRIEFING: British Land bids for Life Science REIT 07:18:30 RNS Greatland Resources - December Quarter 2025 Activities Report Thu 22\"\n- superscript: nd\n- text: \"January 2026 12:19:33 AN TRADING UPDATES: Young's reports strong Christmas, Boku tops forecasts 07:54:59 AN *Greatland Resources targets maiden MRE for West Dome Underground project in Q2 FY26 07:53:02 AN *Greatland Resources notes gold grade 7.4g per ton, 0.43% copper grade at 55.3m intercept 07:51:53 RNS Greatland Resources - Holding(s) in Company 07:51:42 AN *Greatland Resources notes \\\"promising\\\" Telfer results so far, sees acceleration in FY26 07:50:28 AN *Greatland Resources notes increased capacity of Telfer drill programme 07:41:00 RNS Greatland Resources - Exploration and Resource Development Update Wed 21\"\n- superscript: st\n- text: January 2026 08:39:19 RNS Greatland Resources - Holding(s) in Company Tue 20\n- superscript: th\n- text: January 2026 07:42:12 RNS Greatland Resources - Holding(s) in Company Thu 8\n- superscript: th\n- text: \"January 2026 09:30:35 AN LONDON BROKER RATINGS: Deutsche Bank Research says 'sell' Antofagasta Wed 7\"\n- superscript: th\n- text: \"January 2026 14:23:07 AN IN BRIEF: Greatland Resources reports quarterly production boost 07:41:39 RNS Greatland Resources - December 2025 Quarter Production Update Tue 6\"\n- superscript: th\n- text: January 2026 07:26:21 RNS Greatland Resources - Exercise of Performance Rights Tue 23\n- superscript: rd\n- text: December 2025 08:44:58 RNS Greatland Resources - Grant of FY26 Performance Rights 08:42:25 RNS Greatland Resources - Holding(s) in Company Tue 9\n- superscript: th\n- text: December 2025 14:31:33 RNS Greatland Resources - Holding(s) in Company Fri 5\n- superscript: th\n- text: December 2025 09:31:20 RNS Greatland Resources - Director/PDMR Shareholding Thu 4\n- superscript: th\n- text: December 2025 08:45:13 RNS Greatland Resources - 2025 Modern Slavery Statement Tue 2\n- superscript: nd\n- text: December 2025 08:32:06 RNS Greatland Resources - Issue of Shares Mon 1\n- superscript: st\n- text: \"December 2025 12:30:04 AN Greatland Resources hails \\\"robust\\\" Havieron feasibility study results 11:16:22 AN AIM WINNERS & LOSERS: Hardide and SpaceandPeople get contracts 07:18:41 RNS Greatland Resources - Havieron Project Feasibility Study 07:01:32 RNS Greatland Resources - Holding(s) in Company Thu 27\"\n- superscript: th\n- text: November 2025 11:08:29 AN Greatland Resources reports \"exceptional\" findings at WDU project 07:03:24 RNS Greatland Resources - West Dome Underground Project Update Tue 18\n- superscript: th\n- text: \"November 2025 09:29:54 AN AIM WINNERS & LOSERS: CelLBxHealth rises on Qiagen deal Thu 13\"\n- superscript: th\n- text: \"November 2025 09:15:46 RNS Greatland Resources - Results of 2025 Annual General Meeting 07:19:04 RNS Greatland Resources - Headline: 2025 AGM - Chairman's Address Mon 10\"\n- superscript: th\n- text: November 2025 07:47:24 RNS Greatland Resources - Holding(s) in Company Thu 6\n- superscript: th\n- text: November 2025 14:03:22 AN UK shareholder meetings calendar - next 7 days Mon 27\n- superscript: th\n- text: October 2025 12:51:29 AN Greatland reports \"strong start\" to year, holds production guidance 09:45:49 RNS Greatland Resources - Holding(s) in Company 08:05:56 RNS Greatland Resources - Quarterly Activities Report Thu 23\n- superscript: rd\n- text: October 2025 07:46:55 RNS Greatland Resources - September 2025 Quarter Results Wed 22\n- superscript: nd\n- text: October 2025 08:52:50 RNS Greatland Resources - September 2025 Quarter Drilling Update Mon 20\n- superscript: th\n- text: October 2025 11:39:51 AN UK earnings, trading statements calendar - next 7 days Fri 10\n- superscript: th\n- text: October 2025 08:42:26 RNS Greatland Resources - Corporate Presentation 07:55:48 RNS Greatland Resources - 2025 Notice of Annual General Meeting Thu 9\n- superscript: th\n- text: October 2025 07:00:00 RNS Greatland Resources - Appointment of Joint Corporate Broker Tue 7\n- superscript: th\n- text: \"October 2025 12:29:10 AN IN BRIEF: Greatland Resources gold production grows but copper falls 07:00:43 RNS Greatland Resources - September 2025 Quarter Production Update Fri 26\"\n- superscript: th\n- text: September 2025 07:44:06 RNS Greatland Resources - Director/PDMR Shareholding Thu 25\n- superscript: th\n- text: September 2025 07:24:36 RNS Greatland Resources - 2025 Annual Report Thu 18\n- superscript: th\n- text: September 2025 08:28:22 RNS Greatland Resources - Holding(s) in Company Mon 15\n- superscript: th\n- text: September 2025 07:44:28 RNS Greatland Resources - Holding(s) in Company 07:44:15 RNS Greatland Resources - Greatland presents at Mining Forum Americas 2025 Wed 10\n- superscript: th\n- text: September 2025 08:45:13 RNS Greatland Resources - Holding(s) in Company Wed 3\n- superscript: rd\n- text: \"September 2025 13:28:50 AN IN BRIEF: Cloudbreak acquires Paterson project in Western Australia Fri 29\"\n- superscript: th\n- text: August 2025 07:46:11 RNS Greatland Resources - 2025 Annual General Meeting Thu 28\n- superscript: th\n- text: August 2025 11:11:56 RNS Greatland Resources - Unaudited Prelim FY25 Final Report - Replacement 09:50:50 AN Greatland Resources swings to profit following Telfer acquisition 08:05:04 RNS Greatland Resources - Unaudited Preliminary FY25 Final Report Tue 5\n- superscript: th\n- text: August 2025 07:49:15 RNS Greatland Resources - Diggers and Dealers 2025 Presentation Tue 29\n- superscript: th\n- text: \"July 2025 11:12:02 AN AIM WINNERS & LOSERS: Colefax gets profit boost; Versarien sale fails 07:00:58 RNS Greatland Resources - Quarterly Activities Report - June Quarter 2025 07:00:58 RNS Greatland Resources - June 2025 Quarter Presentation Thu 24\"\n- superscript: th\n- text: July 2025 07:07:32 RNS Greatland Resources - Issue of Shares Wed 23\n- superscript: rd\n- text: July 2025 07:00:39 RNS Greatland Resources - June Quarter 2025 Results and Webcast Tue 22\n- superscript: nd\n- text: July 2025 09:27:45 RNS Greatland Resources - Proposed Issue of Shares Fri 18\n- superscript: th\n- text: July 2025 08:51:37 RNS Greatland Resources - Director/PDMR Shareholding Tue 8\n- superscript: th\n- text: July 2025 07:35:14 RNS Greatland Resources - Holding(s) in Company Mon 30\n- superscript: th\n- text: June 2025 07:00:59 RNS Greatland Resources - Grant of Replacement Awards Thu 26\n- superscript: th\n- text: \"June 2025 08:36:26 RNS Greatland Resources - TR-1: Standard form notification of major holdings Wed 25\"\n- superscript: th\n- text: \"June 2025 09:50:50 RNS Greatland Resources - TR-1: Standard form notification of major holdings 07:00:44 RNS Greatland Resources - TR-1: Standard form notification of major holdings 07:00:44 RNS Greatland Resources - TR-1: Standard form notification of major holdings Tue 24\"\n- superscript: th\n- text: June 2025 07:00:42 RNS Greatland Resources - Resignation and Appointment of Auditor 07:00:41 RNS Greatland Resources - Commencement of trading on ASX, Issue of Warrants Mon 23\n- superscript: rd\n- text: June 2025 08:00:01 RNS AIM - Cancellation - Greatland Gold Plc 07:00:38 RNS Greatland Resources - UK Scheme of Arrangement Effective and Admission Fri 20\n- superscript: th\n- text: June 2025 12:50:00 RNS Greatland Gold PLC - Application for AIM Admission, TVR 12:45:00 RNS AIM - Sch 1 Update - Greatland Resources Limited 07:30:00 RNS AIM - Suspension - Greatland Gold plc Wed 18\n- superscript: th\n- text: June 2025 11:31:53 RNS Greatland Gold PLC - Court sanction of Scheme of Arrangement Tue 17\n- superscript: th\n- text: \"June 2025 12:00:18 AN UPDATE: Greatland Gold raises GBP7 million from retail share offer 07:00:35 RNS Greatland Gold PLC - Results of RetailBook Offer Mon 16\"\n- superscript: th\n- text: \"June 2025 12:52:06 AN IN BRIEF: Greatland Gold to become Greatland Resources after ASX raise 07:13:59 RNS Greatland Resources - Greatland Resources completes ASX bookbuild Fri 13\"\n- superscript: th\n- text: June 2025 16:31:19 RNS Greatland Gold PLC - Announcement of Launch of Bookbuild Tue 10\n- superscript: th\n- text: June 2025 07:06:53 RNS Greatland Gold PLC - Corporate Presentation Wed 4\n- superscript: th\n- text: June 2025 11:26:53 RNS Greatland Gold PLC - Site Visit Presentation Mon 2\n- superscript: nd\n- text: June 2025 07:00:45 RNS Greatland Gold PLC - RetailBook Offer Fri 30\n- superscript: th\n- text: May 2025 08:13:40 RNS Greatland Gold PLC - ASX listing update Fri 23\n- superscript: rd\n- text: May 2025 10:19:35 AN Greatland Gold plans additional listing in Australia via new holding 08:01:00 RNS Greatland Gold PLC - ASX listing update 08:00:01 RNS AIM - Schedule One - Greatland Resources Limited Mon 19\n- superscript: th\n- text: May 2025 07:00:36 RNS Greatland Gold PLC - Surrender of options, share issue, PDMR dealings Mon 12\n- superscript: th\n- text: May 2025 12:12:04 RNS Greatland Gold PLC - Results of Court Meeting and General Meeting Fri 25\n- superscript: th\n- text: \"April 2025 11:48:17 AN AIM WINNERS & LOSERS: Enteq sees no \\\"realistic prospect\\\" of offer 07:00:37 RNS Greatland Gold PLC - Finalisation and grant of performance rights Thu 24\"\n- superscript: th\n- text: April 2025 07:00:39 RNS Greatland Gold PLC - Posting of Scheme Document Tue 22\n- superscript: nd\n- text: April 2025 07:00:45 RNS Greatland Gold PLC - Surrender of Director and employee share options Tue 15\n- superscript: th\n- text: \"April 2025 09:50:34 AN LONDON BROKER RATINGS: Goldman raises Next, RBC raises Rotork 07:00:34 RNS Greatland Gold PLC - Telfer Ore Reserve, Outlook and Havieron expansion Mon 14\"\n- superscript: th\n- text: April 2025 10:46:28 AN Greatland Gold posts strong first quarter post-Telfer deal 07:00:39 RNS Greatland Gold PLC - March 2025 Quarterly Activities Report Fri 11\n- superscript: th\n- text: April 2025 07:15:12 RNS Greatland Gold PLC - ASX listing process update Thu 10\n- superscript: th\n- text: April 2025 09:20:05 RNS Greatland Gold PLC - March Quarterly Report release date, Investor Call Wed 9\n- superscript: th\n- text: \"April 2025 08:12:54 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Thu 3\"\n- superscript: rd\n- text: \"April 2025 09:38:31 AN LONDON BROKER RATINGS: Jefferies cuts SSE target, raises Alphawave IP Wed 19\"\n- superscript: th\n- text: March 2025 10:24:34 RNS Greatland Gold PLC - Corporate Presentation Tue 18\n- superscript: th\n- text: \"March 2025 16:55:53 AN LONDON MARKET CLOSE: Stocks up and DAX jumps on investment green light 12:30:28 AN Greatland Gold shares climb on \\\"outstanding\\\" mine resource estimate 07:00:50 RNS Greatland Gold PLC - 2024 Group Mineral Resource Statement Tue 4\"\n- superscript: th\n- text: March 2025 07:00:00 RNS Greatland Gold PLC - Half-Year Financial Report Thu 20\n- superscript: th\n- text: \"February 2025 15:44:04 AN Greatland Gold shares rise on high-grade drill results at West Dome 12:09:29 AN LONDON MARKET MIDDAY: Ex-dividend stocks stifle FTSE 100 11:00:04 AN AIM WINNERS & LOSERS: Greatland Gold shines; Zoo Digital warns 07:00:34 RNS Greatland Gold PLC - West Dome Underground Project Wed 22\"\n- superscript: nd\n- text: \"January 2025 15:04:40 AN EARNINGS: Savannah Energy confident despite 2024 revenue drop 07:00:23 RNS Greatland Gold PLC - December Month Update Mon 20\"\n- superscript: th\n- text: January 2025 11:49:59 RNS Greatland Gold PLC - December 2024 Update release date, Investor Call Wed 18\n- superscript: th\n- text: December 2024 14:41:55 RNS Greatland Gold PLC - Results of 2024 Annual General Meeting Wed 11\n- superscript: th\n- text: December 2024 11:51:39 AN UK shareholder meetings calendar - next 7 days Mon 9\n- superscript: th\n- text: December 2024 07:35:01 RNS Greatland Gold PLC - Corporate Presentation 07:27:46 RNS Greatland Gold PLC - First Telfer gold poured under Greatland ownership Fri 6\n- superscript: th\n- text: \"December 2024 13:06:16 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings 07:56:26 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings 07:42:20 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Wed 4\"\n- superscript: th\n- text: December 2024 08:00:00 RNS AIM - Readmission - Greatland Gold Plc 07:00:23 RNS Greatland Gold PLC - Completion of Acquisition of Havieron & Telfer Tue 3\n- superscript: rd\n- text: December 2024 08:24:15 RNS Greatland Gold PLC - Supplementary Admission Document publication 07:00:31 RNS Greatland Gold PLC - Debt facilities executed with banking syndicate Mon 2\n- superscript: nd\n- text: December 2024 12:00:02 RNS AIM - Schedule One Update - Greatland Gold PLC 08:33:25 RNS Greatland Gold PLC - Acquisition of Havieron & Telfer Completion date Fri 29\n- superscript: th\n- text: \"November 2024 15:43:42 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Mon 18\"\n- superscript: th\n- text: November 2024 14:59:16 AN Greatland Gold annual loss narrows due to reduced share-based payments 11:38:52 RNS Greatland Gold PLC - Notice of Annual General Meeting and Annual Report 11:38:03 RNS Greatland Gold PLC - Final Results and Publication of Annual Report Fri 15\n- superscript: th\n- text: November 2024 08:00:01 RNS AIM - Schedule One - Greatland Gold PLC 07:05:28 RNS Greatland Gold PLC - Acquisition of Havieron & Telfer - Update Tue 12\n- superscript: th\n- text: \"November 2024 09:35:10 AN LONDON BROKER RATINGS: Jefferies cuts Big Yellow, Shore cuts ITV Thu 7\"\n- superscript: th\n- text: November 2024 07:00:56 RNS Greatland Gold PLC - Paterson Exploration Update Wed 6\n- superscript: th\n- text: November 2024 07:01:17 RNS Greatland Gold PLC - Corporate Presentation Wed 16\n- superscript: th\n- text: October 2024 07:00:32 RNS Greatland Gold PLC - Grant of Employee Incentive Options Mon 14\n- superscript: th\n- text: October 2024 10:14:34 RNS Greatland Gold PLC - Acquisition of Havieron & Telfer - Update Thu 10\n- superscript: th\n- text: \"October 2024 09:12:33 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Mon 7\"\n- superscript: th\n- text: \"October 2024 08:39:20 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Fri 4\"\n- superscript: th\n- text: \"October 2024 09:44:18 RNS Greatland Gold PLC - TR-1: Standard form notification of major holdings Thu 3\"\n- superscript: rd\n- text: \"October 2024 08:07:36 RNS Greatland Gold PLC - TR-1: Notification of major holdings Wed 2\"\n- superscript: nd\n- text: \"October 2024 10:46:35 RNS Greatland Gold PLC - TR-1: Standard for Notification of Major Holdings Mon 30\"\n- superscript: th\n- text: September 2024 12:02:56 RNS Greatland Gold PLC - Result of GM Admission and Total Voting Rights Thu 26\n- superscript: th\n- text: September 2024 09:53:03 RNS Greatland Gold PLC - Telfer Restarts Processing Operations Fri 13\n- superscript: th\n- text: \"September 2024 12:59:16 AN IN BRIEF: Greatland Gold raises GBP6.7 million from retail offer 07:02:00 RNS Greatland Gold PLC - Investor Presentation 07:00:25 RNS Greatland Gold PLC - Result of Retail Offer\"\n- button \" Older\"\n- button \"Newer \"\n- button \"Back to top \"\n- button \"Design...\"\n- button \"AN\"\n- button \"MTN\"\n- button \"RNS\"\n- button \"Mentions\"\n- button \"Hot\"\n- button \"Corporate actions\"\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button:\n  - img\n- button \"?\"",
       "controls": [
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": true
         },
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -1123,7 +1123,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jul 1",
+          "name": "@ShareScope - Jul 1",
           "visible": false
         },
         {
@@ -1141,7 +1141,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jul 1",
+          "name": "@ShareScope - Jul 1",
           "visible": false
         },
         {
@@ -1153,7 +1153,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 24/06/2026 | OPT, OMG, SAAS | Surely we can …",
+          "name": "Bi-Weekly Market Commentary | 24/06/2026 | OPT, OMG, SAAS | Surely we can ...",
           "visible": false
         },
         {
@@ -1165,7 +1165,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@RebelHQ · Jun 30",
+          "name": "@RebelHQ - Jun 30",
           "visible": false
         },
         {
@@ -1183,7 +1183,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 30",
+          "name": "@ShareScope - Jun 30",
           "visible": false
         },
         {
@@ -1261,7 +1261,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 29",
+          "name": "@ShareScope - Jun 29",
           "visible": false
         },
         {
@@ -1285,7 +1285,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 29",
+          "name": "@ShareScope - Jun 29",
           "visible": false
         },
         {
@@ -1309,7 +1309,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 26",
+          "name": "@ShareScope - Jun 26",
           "visible": false
         },
         {
@@ -1327,7 +1327,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 25",
+          "name": "@ShareScope - Jun 25",
           "visible": false
         },
         {
@@ -1363,7 +1363,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 24",
+          "name": "@ShareScope - Jun 24",
           "visible": false
         },
         {
@@ -1387,7 +1387,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 23",
+          "name": "@ShareScope - Jun 23",
           "visible": false
         },
         {
@@ -1405,7 +1405,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 22",
+          "name": "@ShareScope - Jun 22",
           "visible": false
         },
         {
@@ -1429,7 +1429,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 22",
+          "name": "@ShareScope - Jun 22",
           "visible": false
         },
         {
@@ -1507,7 +1507,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 19",
+          "name": "@ShareScope - Jun 19",
           "visible": false
         },
         {
@@ -1543,7 +1543,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 17",
+          "name": "@ShareScope - Jun 17",
           "visible": false
         },
         {
@@ -1567,7 +1567,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 10/06/2026 | ACSO, GTLY, MEGP | Cash versus …",
+          "name": "Bi-Weekly Market Commentary | 10/06/2026 | ACSO, GTLY, MEGP | Cash versus ...",
           "visible": false
         },
         {
@@ -1579,7 +1579,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 15",
+          "name": "@ShareScope - Jun 15",
           "visible": false
         },
         {
@@ -1657,7 +1657,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@RebelHQ · Jun 15",
+          "name": "@RebelHQ - Jun 15",
           "visible": false
         },
         {
@@ -1765,7 +1765,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@JamieCDubya · Jun 12",
+          "name": "@JamieCDubya - Jun 12",
           "visible": false
         },
         {
@@ -1783,7 +1783,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 12",
+          "name": "@ShareScope - Jun 12",
           "visible": false
         },
         {
@@ -1807,7 +1807,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Monthly Fund Focus: A defensive income and growth fund, Agentic AI and a F…",
+          "name": "Monthly Fund Focus: A defensive income and growth fund, Agentic AI and a F...",
           "visible": false
         },
         {
@@ -1819,7 +1819,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 10",
+          "name": "@ShareScope - Jun 10",
           "visible": false
         },
         {
@@ -1831,7 +1831,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "5 Strikes: Resellers join the IT component gold rush | CCC, KEYS, QTX - Sh…",
+          "name": "5 Strikes: Resellers join the IT component gold rush | CCC, KEYS, QTX - Sh...",
           "visible": false
         },
         {
@@ -1843,7 +1843,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@annabelbrodies · Jun 5",
+          "name": "@annabelbrodies - Jun 5",
           "visible": false
         },
         {
@@ -1879,7 +1879,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 3",
+          "name": "@ShareScope - Jun 3",
           "visible": false
         },
         {
@@ -1903,7 +1903,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 27/05/2026 |KNOS, KLR, DXRX | Energy costs a…",
+          "name": "Bi-Weekly Market Commentary | 27/05/2026 |KNOS, KLR, DXRX | Energy costs a...",
           "visible": false
         },
         {
@@ -1915,7 +1915,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@HTVIOLA · Jun 2",
+          "name": "@HTVIOLA - Jun 2",
           "visible": false
         },
         {
@@ -1933,7 +1933,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 2",
+          "name": "@ShareScope - Jun 2",
           "visible": false
         },
         {
@@ -2011,7 +2011,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@JamieCDubya · Jun 1",
+          "name": "@JamieCDubya - Jun 1",
           "visible": false
         },
         {
@@ -2047,7 +2047,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 1",
+          "name": "@ShareScope - Jun 1",
           "visible": false
         },
         {
@@ -2071,7 +2071,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 1",
+          "name": "@ShareScope - Jun 1",
           "visible": false
         },
         {
@@ -2095,7 +2095,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 29",
+          "name": "@ShareScope - May 29",
           "visible": false
         },
         {
@@ -2113,7 +2113,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@annabelbrodies · May 28",
+          "name": "@annabelbrodies - May 28",
           "visible": false
         },
         {
@@ -2137,7 +2137,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 28",
+          "name": "@ShareScope - May 28",
           "visible": false
         },
         {
@@ -2155,7 +2155,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 27",
+          "name": "@ShareScope - May 27",
           "visible": false
         },
         {
@@ -2179,7 +2179,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "5 Strikes: 2026 the journey so far & how big is significant? - ShareScope …",
+          "name": "5 Strikes: 2026 the journey so far & how big is significant? - ShareScope ...",
           "visible": false
         },
         {
@@ -2239,7 +2239,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2269,7 +2269,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2305,7 +2305,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {

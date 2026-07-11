@@ -62,5 +62,5 @@ Identify delegation opportunities to focus on high-leverage leadership work.
 - [Activity] - Why only you: [Reason]
 
 ## Delegation Plan
-1. [Task] → [Person] - Transition: [Approach]
+1. [Task] -> [Person] - Transition: [Approach]
 ```

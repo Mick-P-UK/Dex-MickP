@@ -6,7 +6,7 @@ The Career MCP Server provides deterministic data aggregation for career develop
 
 ## What It Does
 
-**Core Philosophy:** MCP handles data aggregation → LLM interprets and coaches
+**Core Philosophy:** MCP handles data aggregation -> LLM interprets and coaches
 
 Instead of having the LLM read and parse 20+ evidence files every assessment, the MCP server:
 - Scans and structures evidence files systematically
@@ -18,9 +18,9 @@ Instead of having the LLM read and parse 20+ evidence files every assessment, th
 
 ```
 core/mcp/
-├── career_server.py          # Main MCP server with 4 tools
-├── career_parser.py           # Parsing utilities (dates, markdown, matching)
-└── test_career_parser.py      # Test suite
++-- career_server.py          # Main MCP server with 4 tools
++-- career_parser.py           # Parsing utilities (dates, markdown, matching)
++-- test_career_parser.py      # Test suite
 ```
 
 ## The 4 Tools
@@ -91,18 +91,18 @@ core/mcp/
 3. Generate assessment (varies each run)
 
 ### After (with MCP):
-1. Call `scan_evidence()` → aggregated data in milliseconds
-2. Call `parse_ladder()` → structured competency tree
-3. Call `analyze_coverage()` → evidence-to-competency mapping
-4. LLM interprets structured data → coaching insights (fast, consistent)
+1. Call `scan_evidence()` -> aggregated data in milliseconds
+2. Call `parse_ladder()` -> structured competency tree
+3. Call `analyze_coverage()` -> evidence-to-competency mapping
+4. LLM interprets structured data -> coaching insights (fast, consistent)
 
 ## Benefits
 
-✅ **10x faster** - Evidence scanning without reading every file  
-✅ **Consistent** - Same data → same baseline every time  
-✅ **Trackable** - Compare coverage "June vs December"  
-✅ **Complete** - Systematic discovery, nothing missed  
-✅ **Flexible** - Handles template variations gracefully
+[x] **10x faster** - Evidence scanning without reading every file  
+[x] **Consistent** - Same data -> same baseline every time  
+[x] **Trackable** - Compare coverage "June vs December"  
+[x] **Complete** - Systematic discovery, nothing missed  
+[x] **Flexible** - Handles template variations gracefully
 
 ## Configuration
 
@@ -127,21 +127,21 @@ cd core/mcp
 python test_career_parser.py
 ```
 
-All tests should pass with ✓ markers.
+All tests should pass with [x] markers.
 
 ## Data Flow Example
 
-**User runs `/career-coach` → Promotion Assessment mode:**
+**User runs `/career-coach` -> Promotion Assessment mode:**
 
 ```
 1. MCP: scan_evidence()
-   → Returns: "42 files, 8 in Q4, 15 in Q3..."
+   -> Returns: "42 files, 8 in Q4, 15 in Q3..."
 
 2. MCP: parse_ladder()
-   → Returns: "8 competencies: Technical Depth, Product Strategy..."
+   -> Returns: "8 competencies: Technical Depth, Product Strategy..."
 
 3. MCP: analyze_coverage()
-   → Returns: "Technical Depth: 2 examples (weak), Product Strategy: 8 examples (strong)..."
+   -> Returns: "Technical Depth: 2 examples (weak), Product Strategy: 8 examples (strong)..."
 
 4. LLM receives structured data:
    "Based on your evidence:
@@ -153,10 +153,10 @@ All tests should pass with ✓ markers.
 
 ## What It Doesn't Do
 
-❌ Score promotion readiness (LLM interprets)  
-❌ Judge evidence quality (LLM coaches)  
-❌ Make recommendations (LLM advises)  
-❌ Predict timeline (too context-dependent)
+[ ] Score promotion readiness (LLM interprets)  
+[ ] Judge evidence quality (LLM coaches)  
+[ ] Make recommendations (LLM advises)  
+[ ] Predict timeline (too context-dependent)
 
 The MCP provides **data**, the LLM provides **wisdom**.
 
@@ -183,7 +183,7 @@ Potential additions (not yet implemented):
 
 Track these to validate value:
 - Speed: Evidence scanning <1 second vs previous 10+ seconds
-- Consistency: Same data → identical coverage analysis
+- Consistency: Same data -> identical coverage analysis
 - Completeness: 100% evidence discovery vs potential misses
 - Utility: User prefers MCP-powered assessments
 

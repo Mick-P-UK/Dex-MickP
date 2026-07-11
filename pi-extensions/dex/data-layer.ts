@@ -144,7 +144,7 @@ function getDayOfWeek(date: Date = new Date()): number {
  * Parse a task line from Tasks.md
  */
 function parseTaskLine(line: string): Task | null {
-  // Task format: "- [ ] **Task title** — Context ^task-YYYYMMDD-XXX #P0 #pillar/value"
+  // Task format: "- [ ] **Task title** - Context ^task-YYYYMMDD-XXX #P0 #pillar/value"
   const taskMatch = line.match(/^- \[([ xsb])\] (.+)$/);
   if (!taskMatch) return null;
 
@@ -155,11 +155,11 @@ function parseTaskLine(line: string): Task | null {
   const taskIdMatch = fullText.match(/\^(task-\d{8}-\d{3})/);
   const taskId = taskIdMatch?.[1] || "";
 
-  // Extract title - stop at first — or task ID
+  // Extract title - stop at first - or task ID
   let title = fullText;
   
-  // First, extract up to task ID or —
-  const titleMatch = fullText.match(/^(.+?)(?:\s+—|\s+\^task-)/);
+  // First, extract up to task ID or -
+  const titleMatch = fullText.match(/^(.+?)(?:\s+-|\s+\^task-)/);
   if (titleMatch) {
     title = titleMatch[1]!.trim();
   } else {
@@ -182,7 +182,7 @@ function parseTaskLine(line: string): Task | null {
   const pillar = pillarMatch?.[1];
 
   // Extract due date
-  const dueDateMatch = fullText.match(/📅 (\d{4}-\d{2}-\d{2})/);
+  const dueDateMatch = fullText.match(/ (\d{4}-\d{2}-\d{2})/);
   const dueDate = dueDateMatch?.[1];
 
   return {
@@ -203,7 +203,7 @@ export function loadTasks(): Task[] {
   console.log("[Dex Data Layer] Loading tasks from:", TASKS_PATH);
   const content = readFileSync(TASKS_PATH);
   if (!content) {
-    console.log("[Dex Data Layer] ❌ Tasks file not found or empty");
+    console.log("[Dex Data Layer] [ ] Tasks file not found or empty");
     return [];
   }
 
@@ -236,7 +236,7 @@ export function loadTasks(): Task[] {
     }
   }
 
-  console.log(`[Dex Data Layer] ✅ Loaded ${tasks.length} total tasks`);
+  console.log(`[Dex Data Layer] [x] Loaded ${tasks.length} total tasks`);
   return tasks;
 }
 
@@ -315,16 +315,16 @@ export function loadWeekPriorities(): WeekPriority[] {
   
   const content = readFileSync(weekFilePath);
   if (!content) {
-    console.log("[Dex Data Layer] ❌ Week priorities file not found or empty");
+    console.log("[Dex Data Layer] [ ] Week priorities file not found or empty");
     return [];
   }
 
   console.log("[Dex Data Layer] Week priorities file read, length:", content.length);
 
-  // Look for "## 🎯 Top 3 This Week" section
-  const topThreeMatch = content.match(/## 🎯 Top 3 This Week[\s\S]*?\n([\s\S]*?)(?=\n---|\n##|$)/);
+  // Look for "##  Top 3 This Week" section
+  const topThreeMatch = content.match(/##  Top 3 This Week[\s\S]*?\n([\s\S]*?)(?=\n---|\n##|$)/);
   if (!topThreeMatch) {
-    console.log("[Dex Data Layer] ❌ Could not find '## 🎯 Top 3 This Week' section");
+    console.log("[Dex Data Layer] [ ] Could not find '##  Top 3 This Week' section");
     return [];
   }
 
@@ -340,12 +340,12 @@ export function loadWeekPriorities(): WeekPriority[] {
     const goalText = match[1]!.trim();
     console.log(`[Dex Data Layer] Goal found: ${goalText.substring(0, 50)}`);
     
-    // Determine if goal is completed (contains ✅ or starts with [x])
-    const completed = goalText.includes("✅") || goalText.startsWith("[x]");
+    // Determine if goal is completed (contains [x] or starts with [x])
+    const completed = goalText.includes("[x]") || goalText.startsWith("[x]");
     
     priorities.push({
       name: `Goal ${priorities.length + 1}`,
-      goal: goalText.replace(/✅|^\[x\]\s*/g, "").trim(),
+      goal: goalText.replace(/[x]|^\[x\]\s*/g, "").trim(),
       tasks: [], // Not tracking sub-tasks for now
       completedTasks: completed ? [goalText] : [],
       progress: completed ? 100 : 0,
@@ -353,7 +353,7 @@ export function loadWeekPriorities(): WeekPriority[] {
     });
   }
 
-  console.log(`[Dex Data Layer] ✅ Loaded ${priorities.length} priorities`);
+  console.log(`[Dex Data Layer] [x] Loaded ${priorities.length} priorities`);
   return priorities;
 }
 

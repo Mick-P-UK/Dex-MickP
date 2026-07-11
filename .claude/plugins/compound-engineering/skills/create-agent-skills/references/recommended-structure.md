@@ -5,15 +5,15 @@ The optimal structure for complex skills separates routing, workflows, and knowl
 <structure>
 ```
 skill-name/
-├── SKILL.md              # Router + essential principles (unavoidable)
-├── workflows/            # Step-by-step procedures (how)
-│   ├── workflow-a.md
-│   ├── workflow-b.md
-│   └── ...
-└── references/           # Domain knowledge (what)
-    ├── reference-a.md
-    ├── reference-b.md
-    └── ...
++-- SKILL.md              # Router + essential principles (unavoidable)
++-- workflows/            # Step-by-step procedures (how)
+|   +-- workflow-a.md
+|   +-- workflow-b.md
+|   +-- ...
++-- references/           # Domain knowledge (what)
+    +-- reference-a.md
+    +-- reference-b.md
+    +-- ...
 ```
 </structure>
 
@@ -26,7 +26,7 @@ When important principles are in a separate file, Claude may not read them.
 
 **Problem 2: Wrong context loaded**
 A "build" task loads debugging references. A "debug" task loads build references.
-**Solution:** Intake question determines intent → routes to specific workflow → workflow specifies which references to read.
+**Solution:** Intake question determines intent -> routes to specific workflow -> workflow specifies which references to read.
 
 **Problem 3: Monolithic skills are overwhelming**
 500+ lines of mixed content makes it hard to find relevant parts.

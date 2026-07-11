@@ -13,13 +13,13 @@ try:
     print(f"Credentials file: System/.credentials/google_calendar_credentials.json")
     
     service = get_google_calendar_service()
-    print("✓ Successfully authenticated!")
+    print("[x] Successfully authenticated!")
     
     # List calendars
     calendar_list = service.calendarList().list().execute()
     calendars = calendar_list.get('items', [])
     
-    print(f"\n✓ Found {len(calendars)} calendar(s):")
+    print(f"\n[x] Found {len(calendars)} calendar(s):")
     for cal in calendars[:5]:
         name = cal.get('summary', 'Unknown')
         primary = " (PRIMARY)" if cal.get('primary') else ""
@@ -43,7 +43,7 @@ try:
     ).execute()
     
     events = events_result.get('items', [])
-    print(f"✓ Found {len(events)} event(s) this week")
+    print(f"[x] Found {len(events)} event(s) this week")
     
     if events:
         print("\nUpcoming events:")
@@ -52,12 +52,12 @@ try:
             title = event.get('summary', '(No title)')
             print(f"  - {start[:10]} {start[11:16] if 'T' in start else ''} {title}")
     
-    print("\n✅ Calendar connection is working!")
+    print("\n[x] Calendar connection is working!")
     
 except FileNotFoundError as e:
-    print(f"❌ Error: {e}")
+    print(f"[ ] Error: {e}")
     print("\nThe credentials file might be missing or in the wrong location.")
 except Exception as e:
-    print(f"❌ Error connecting to calendar: {e}")
+    print(f"[ ] Error connecting to calendar: {e}")
     import traceback
     traceback.print_exc()

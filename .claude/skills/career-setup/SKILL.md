@@ -27,7 +27,7 @@ Start with a warm introduction and explain what we're setting up:
 ```markdown
 ## Career Development Setup
 
-I'm going to help you set up a Career Development system in Dex. This will become your personal career coach — tracking your growth, capturing evidence of your work, and helping you prepare for reviews and promotions.
+I'm going to help you set up a Career Development system in Dex. This will become your personal career coach - tracking your growth, capturing evidence of your work, and helping you prepare for reviews and promotions.
 
 **What we'll capture:**
 - Your current role & responsibilities  
@@ -42,7 +42,7 @@ Since you're in Cursor with Markdown files, here are the easiest ways to get PDF
    - Open your PDF or Word doc
    - Select all text (Cmd+A) and copy
    - Paste it here when I ask for it
-   - Don't worry about formatting — I'll clean it up
+   - Don't worry about formatting - I'll clean it up
 
 2. **Screenshot approach**:
    - Take screenshots of key sections
@@ -77,7 +77,7 @@ Please share:
 3. Your team/department
 4. Key responsibilities
 
-You can be as detailed or brief as you like — whatever helps paint the picture.
+You can be as detailed or brief as you like - whatever helps paint the picture.
 ```
 
 After they respond, **acknowledge and summarize**:
@@ -85,7 +85,7 @@ After they respond, **acknowledge and summarize**:
 ```markdown
 Got it. So you're a [ROLE] on the [TEAM], focused on [SUMMARY OF RESPONSIBILITIES].
 
-✓ Role captured.
+[x] Role captured.
 
 Next up: your career ladder.
 ```
@@ -102,7 +102,7 @@ Ask for career framework:
 **Now let's get your company's career framework.**
 
 Please share your career ladder or competency framework. This is usually:
-- A document showing levels (e.g., "Associate PM → PM → Senior PM → Staff PM")
+- A document showing levels (e.g., "Associate PM -> PM -> Senior PM -> Staff PM")
 - Descriptions of what's expected at each level
 - Skills, behaviors, or outcomes for progression
 
@@ -124,7 +124,7 @@ Perfect. So you're currently at [CURRENT LEVEL], working toward [NEXT LEVEL].
 - [Requirement 2]
 - [Requirement 3]
 
-✓ Career ladder captured.
+[x] Career ladder captured.
 
 Next: your latest review.
 ```
@@ -152,7 +152,7 @@ This could be:
 - Any ratings or scores?
 - Any specific goals or action items from that review?
 
-Share as much or as little as you're comfortable with. This is just for you — it helps me understand your current trajectory.
+Share as much or as little as you're comfortable with. This is just for you - it helps me understand your current trajectory.
 ```
 
 After they respond, **acknowledge and summarize**:
@@ -172,7 +172,7 @@ Thanks for sharing that. From your [DATE] review:
 - [Action 1]
 - [Action 2]
 
-✓ Latest review captured.
+[x] Latest review captured.
 
 Last step: your long-term goals.
 ```
@@ -195,7 +195,7 @@ Think 1-3 years out:
 3. What kind of impact do you want to have?
 4. Any specific career milestones? (e.g., lead a team, ship a major product, become a subject matter expert)
 
-Don't overthink it — just share what you're aiming for, even if it's still fuzzy.
+Don't overthink it - just share what you're aiming for, even if it's still fuzzy.
 ```
 
 After they respond, **acknowledge and confirm**:
@@ -214,7 +214,7 @@ Great. So your growth direction:
 - [Impact goal 1]
 - [Impact goal 2]
 
-✓ Growth goals captured.
+[x] Growth goals captured.
 
 ---
 
@@ -452,11 +452,11 @@ Specific achievements I'm working toward:
 
 ```
 06-Resources/
-└── Career_Evidence/
-    ├── README.md
-    ├── Achievements/
-    ├── Feedback_Received/
-    └── Skills_Development/
++-- Career_Evidence/
+    +-- README.md
+    +-- Achievements/
+    +-- Feedback_Received/
+    +-- Skills_Development/
 ```
 
 **7. Create `05-Areas/Career/Evidence/README.md`:**
@@ -464,7 +464,7 @@ Specific achievements I'm working toward:
 ```markdown
 # Career Evidence
 
-This folder captures evidence of your professional growth — achievements, feedback, and skill development over time.
+This folder captures evidence of your professional growth - achievements, feedback, and skill development over time.
 
 ---
 
@@ -489,7 +489,7 @@ As you work, Dex automatically captures evidence that supports your career progr
 
 ## How to Use This Evidence
 
-- **Preparing for reviews**: Run `/career-coach` → "prepare best self-review"
+- **Preparing for reviews**: Run `/career-coach` -> "prepare best self-review"
 - **Promotion discussions**: Reference specific files when building your case
 - **Goal tracking**: See tangible progress on skills you're developing
 - **Reflection**: Look back at growth over time
@@ -503,7 +503,7 @@ As you work, Dex automatically captures evidence that supports your career progr
 
 ---
 
-**This system is most powerful when it captures evidence passively as you work. Don't worry about manual updates — Dex handles it.**
+**This system is most powerful when it captures evidence passively as you work. Don't worry about manual updates - Dex handles it.**
 ```
 
 ---
@@ -513,17 +513,17 @@ As you work, Dex automatically captures evidence that supports your career progr
 After creating all files:
 
 ```markdown
-## ✅ Career Development Setup Complete
+## [x] Career Development Setup Complete
 
 Your Career system is now live. Here's what I created:
 
 ### Files Created
 
 **`05-Areas/Career/`**
-- `Current_Role.md` — Your job description and responsibilities
-- `Career_Ladder.md` — Progression framework and promotion requirements
-- `Review_History.md` — Performance review tracking
-- `Growth_Goals.md` — Long-term development objectives
+- `Current_Role.md` - Your job description and responsibilities
+- `Career_Ladder.md` - Progression framework and promotion requirements
+- `Review_History.md` - Performance review tracking
+- `Growth_Goals.md` - Long-term development objectives
 
 **`05-Areas/Career/Evidence/`**
 - Evidence capture system for achievements, feedback, and skill development
@@ -535,17 +535,17 @@ Your Career system is now live. Here's what I created:
 ### Regular Check-ins
 
 Run `/career-coach` anytime you want to:
-1. **Reflect on a challenge** — Brain dump about work struggles, get coaching
-2. **Generate a report** — Create a weekly update for your manager
-3. **Prepare for reviews** — Build self-assessment from accumulated evidence
-4. **Assess promotion readiness** — Gap analysis against career ladder
+1. **Reflect on a challenge** - Brain dump about work struggles, get coaching
+2. **Generate a report** - Create a weekly update for your manager
+3. **Prepare for reviews** - Build self-assessment from accumulated evidence
+4. **Assess promotion readiness** - Gap analysis against career ladder
 
 ### Automatic Capture
 
 As you use Dex:
-- **Meetings with your manager** (via Granola) → Feedback automatically extracted
-- **Daily reviews** (`/review`) → Achievements captured as career evidence
-- **Project completions** → Impact and skills demonstrated are saved
+- **Meetings with your manager** (via Granola) -> Feedback automatically extracted
+- **Daily reviews** (`/review`) -> Achievements captured as career evidence
+- **Project completions** -> Impact and skills demonstrated are saved
 
 ### Quarterly Career Check-ins
 
@@ -561,7 +561,7 @@ Every quarter, run `/career-coach` to:
 
 Want to test it out? Try:
 
-`/career-coach` → then brain dump about a current work challenge
+`/career-coach` -> then brain dump about a current work challenge
 
 I'll ask clarifying questions and help you work through it, then capture learnings for your career evidence.
 
@@ -601,7 +601,7 @@ That's enough to make the system useful.
 ### If They Want to Skip Sections
 
 ```markdown
-No problem — we can fill that in later.
+No problem - we can fill that in later.
 
 For now, I'll create the folder structure and you can update files when you're ready. The system still works without everything filled in.
 ```
@@ -612,10 +612,10 @@ For now, I'll create the folder structure and you can update files when you're r
 
 After running `/career-setup` once:
 
-1. **Career folder exists** → Dex knows to capture career evidence during daily work
-2. **Granola integration** → Manager 1:1s are flagged for feedback extraction
-3. **Review prompts** → End-of-day reviews ask about achievements worth capturing
-4. **Project completions** → Prompt to add impact to career evidence
+1. **Career folder exists** -> Dex knows to capture career evidence during daily work
+2. **Granola integration** -> Manager 1:1s are flagged for feedback extraction
+3. **Review prompts** -> End-of-day reviews ask about achievements worth capturing
+4. **Project completions** -> Prompt to add impact to career evidence
 
 ---
 
@@ -623,11 +623,11 @@ After running `/career-setup` once:
 
 To update any career file later, just say:
 
-- "Update my career ladder" → Re-run ladder capture
-- "Add my latest review" → Append to Review_History.md
-- "Revise my growth goals" → Edit Growth_Goals.md
+- "Update my career ladder" -> Re-run ladder capture
+- "Add my latest review" -> Append to Review_History.md
+- "Revise my growth goals" -> Edit Growth_Goals.md
 
-Or manually edit the files — they're just Markdown.
+Or manually edit the files - they're just Markdown.
 
 ---
 
@@ -642,10 +642,10 @@ Or manually edit the files — they're just Markdown.
 
 ## When to Run This
 
-- **First time using Dex** → Part of onboarding
-- **Starting a new role** → Reset and recapture
-- **Promotion cycle** → Refresh and update
-- **Annual planning** → Review and revise goals
+- **First time using Dex** -> Part of onboarding
+- **Starting a new role** -> Reset and recapture
+- **Promotion cycle** -> Refresh and update
+- **Annual planning** -> Review and revise goals
 
 ---
 

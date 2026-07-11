@@ -25,9 +25,9 @@ Weekly executive update on mobile app launch progress.
 
 ## Questions from Leadership
 
-- VP Product: Any risk to the date? → Minor risk on push notifications, mitigated
-- VP Eng: Engineering capacity after launch? → Will need to balance portal project
-- Marketing: Case study ready? → Working on Acme, pending their approval
+- VP Product: Any risk to the date? -> Minor risk on push notifications, mitigated
+- VP Eng: Engineering capacity after launch? -> Will need to balance portal project
+- Marketing: Case study ready? -> Working on Acme, pending their approval
 
 ---
 
@@ -40,9 +40,9 @@ Weekly executive update on mobile app launch progress.
 
 ## Action Items
 
-- [ ] Weekly status email to leadership → Alex
-- [ ] Finalize press release by Feb 1 → Marketing
-- [ ] Secure Acme case study approval → Alex
+- [ ] Weekly status email to leadership -> Alex
+- [ ] Finalize press release by Feb 1 -> Marketing
+- [ ] Secure Acme case study approval -> Alex
 
 ---
 

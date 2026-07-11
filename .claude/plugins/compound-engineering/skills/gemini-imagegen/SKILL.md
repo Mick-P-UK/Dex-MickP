@@ -233,5 +233,5 @@ file image.png
 - All generated images include SynthID watermarks
 - Gemini returns **JPEG format by default** - always use `.jpg` extension
 - Image-only mode (`responseModalities: ["IMAGE"]`) won't work with Google Search grounding
-- For editing, describe changes conversationally—the model understands semantic masking
+- For editing, describe changes conversationally-the model understands semantic masking
 - Default to 1K resolution for speed; use 2K/4K when quality is critical

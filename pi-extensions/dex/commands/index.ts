@@ -26,16 +26,16 @@ export function registerCommands(pi: ExtensionAPI, vaultRoot: string): void {
         const inboxCount = await countInbox(vaultRoot);
 
         const parts: string[] = [];
-        parts.push(`📋 ${summary.open}/${summary.total} tasks`);
+        parts.push(` ${summary.open}/${summary.total} tasks`);
         
         if (summary.overdue > 0) {
-          parts.push(`⚠️ ${summary.overdue} overdue`);
+          parts.push(`[!] ${summary.overdue} overdue`);
         }
         if (summary.p0Count > 0) {
-          parts.push(`🔴 ${summary.p0Count} P0`);
+          parts.push(`[red] ${summary.p0Count} P0`);
         }
         
-        parts.push(`📥 ${inboxCount} inbox`);
+        parts.push(` ${inboxCount} inbox`);
 
         ctx.ui.notify(parts.join(" | "), "info");
       } catch (e) {
@@ -57,7 +57,7 @@ export function registerCommands(pi: ExtensionAPI, vaultRoot: string): void {
 
       try {
         const result = await quickCapture(vaultRoot, args.trim());
-        ctx.ui.notify(`📝 Captured to ${result.relativePath}`, "success");
+        ctx.ui.notify(` Captured to ${result.relativePath}`, "success");
       } catch (e) {
         ctx.ui.notify(`Capture failed: ${e}`, "error");
       }
@@ -77,21 +77,21 @@ export function registerCommands(pi: ExtensionAPI, vaultRoot: string): void {
         const items: string[] = [];
 
         if (overdue.length > 0) {
-          items.push(`⚠️ **${overdue.length} overdue:**`);
+          items.push(`[!] **${overdue.length} overdue:**`);
           overdue.slice(0, 3).forEach((t) => {
-            items.push(`  • ${t.title} (due: ${t.dueDate})`);
+            items.push(`  - ${t.title} (due: ${t.dueDate})`);
           });
         }
 
         if (p0Tasks.length > 0) {
-          items.push(`🔴 **${p0Tasks.length} P0:**`);
+          items.push(`[red] **${p0Tasks.length} P0:**`);
           p0Tasks.slice(0, 3).forEach((t) => {
-            items.push(`  • ${t.title}`);
+            items.push(`  - ${t.title}`);
           });
         }
 
         if (items.length === 0) {
-          ctx.ui.notify("✅ All clear! No urgent tasks.", "success");
+          ctx.ui.notify("[x] All clear! No urgent tasks.", "success");
         } else {
           // For longer output, set it as editor text so user can see full list
           ctx.ui.setEditorText(
@@ -154,7 +154,7 @@ export function registerCommands(pi: ExtensionAPI, vaultRoot: string): void {
 
         // Format task list
         const lines = tasks.slice(0, 10).map((t) => {
-          const emoji = { P0: "🔴", P1: "🟠", P2: "🟡", P3: "🟢" }[t.priority] || "⬜";
+          const emoji = { P0: "[red]", P1: "[orange]", P2: "[amber]", P3: "[green]" }[t.priority] || "";
           const due = t.dueDate ? ` (${t.dueDate})` : "";
           return `${emoji} ${t.title}${due}`;
         });
@@ -232,10 +232,10 @@ export function registerCommands(pi: ExtensionAPI, vaultRoot: string): void {
 - \`dex_status\` - Detailed status overview
 
 ## Features
-- ✅ Proactive context injection (people, companies, tasks)
-- ✅ Notification sounds on completion
-- ✅ Auto git sync on session start/end
-- ✅ Status indicator in footer
+- [x] Proactive context injection (people, companies, tasks)
+- [x] Notification sounds on completion
+- [x] Auto git sync on session start/end
+- [x] Status indicator in footer
 
 Run any command or ask me about Dex features!
 `.trim();

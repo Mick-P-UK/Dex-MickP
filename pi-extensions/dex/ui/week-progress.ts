@@ -46,7 +46,7 @@ export class WeekProgressBar {
   /**
    * Render compact mode for footer
    * 
-   * Format: "Day 3/5 [▓▓▓░░] ⚠️ P2,P3"
+   * Format: "Day 3/5 [-----] [!] P2,P3"
    */
   renderCompact(): string {
     if (this.cachedCompact) {
@@ -75,7 +75,7 @@ export class WeekProgressBar {
       .map((p) => p.name.replace("Priority ", "P"));
 
     if (warnings.length > 0) {
-      parts.push(this.theme.fg("warning", `⚠️ ${warnings.join(",")}`));
+      parts.push(this.theme.fg("warning", `[!] ${warnings.join(",")}`));
     }
 
     this.cachedCompact = parts.join(" ");
@@ -97,23 +97,23 @@ export class WeekProgressBar {
 
     // Header
     const header = this.theme.fg("accent", this.theme.bold("Week Progress"));
-    lines.push("┌─ " + header + " " + "─".repeat(Math.max(0, width - 16)) + "┐");
+    lines.push("+- " + header + " " + "-".repeat(Math.max(0, width - 16)) + "+");
 
     // Day indicator
     const dayText = `Day ${dayOfWeek}/5`;
-    lines.push("│ " + truncateToWidth(dayText, width - 4) + " ".repeat(Math.max(0, width - 4 - dayText.length)) + " │");
+    lines.push("| " + truncateToWidth(dayText, width - 4) + " ".repeat(Math.max(0, width - 4 - dayText.length)) + " |");
 
     // Empty line
-    lines.push("│" + " ".repeat(width - 2) + "│");
+    lines.push("|" + " ".repeat(width - 2) + "|");
 
     // Priority progress bars
     for (const priority of priorities) {
       const line = this.renderPriorityLine(priority, width - 4);
-      lines.push("│ " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " │");
+      lines.push("| " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " |");
     }
 
     // Bottom border
-    lines.push("└" + "─".repeat(width - 2) + "┘");
+    lines.push("+" + "-".repeat(width - 2) + "+");
 
     this.cachedFull = { width, lines };
     return lines;
@@ -139,11 +139,11 @@ export class WeekProgressBar {
   private getStatusIcon(status: PriorityProgress["status"]): string {
     switch (status) {
       case "on-track":
-        return this.theme.fg("success", "✅");
+        return this.theme.fg("success", "[x]");
       case "behind":
-        return this.theme.fg("warning", "⚠️");
+        return this.theme.fg("warning", "[!]");
       case "not-started":
-        return this.theme.fg("error", "❗");
+        return this.theme.fg("error", "[!]");
     }
   }
 

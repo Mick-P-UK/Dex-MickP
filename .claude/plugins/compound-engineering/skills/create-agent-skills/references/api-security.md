@@ -6,7 +6,7 @@ When building skills that make API calls requiring credentials (API keys, tokens
 Raw curl commands with environment variables expose credentials:
 
 ```bash
-# ❌ BAD - API key visible in chat
+# [ ] BAD - API key visible in chat
 curl -H "Authorization: Bearer $API_KEY" https://api.example.com/data
 ```
 
@@ -18,7 +18,7 @@ Use `~/.claude/scripts/secure-api.sh` - a wrapper that loads credentials interna
 
 <for_supported_services>
 ```bash
-# ✅ GOOD - No credentials visible
+# [x] GOOD - No credentials visible
 ~/.claude/scripts/secure-api.sh <service> <operation> [args]
 
 # Examples:

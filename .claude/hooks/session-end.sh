@@ -3,7 +3,7 @@
 # Logs session end timestamp for tracking
 # For Dex personal knowledge system
 #
-# ⚠️ IMPORTANT: This only works in Claude Code desktop/CLI
+# [!] IMPORTANT: This only works in Claude Code desktop/CLI
 # - Requires graceful shutdown (via `exit` command or proper quit)
 # - Does NOT work in Cursor (closing window terminates process immediately)
 # - For Cursor: Use /daily-review command manually before closing

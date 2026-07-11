@@ -19,10 +19,10 @@ Use this skill when:
 
 This is NOT generic content. This is NOT AI slop. This is:
 
-- **Authority-building** — You're not just sharing information, you're establishing expertise through original insight and battle-tested experience
-- **Value-dense** — Every paragraph earns its place. No throat-clearing, no filler, no "in today's fast-paced world" nonsense
-- **Skim-optimized** — A reader scanning just the headers should walk away with 80% of the value
-- **Audience-obsessed** — Written for a specific person with specific problems, not "everyone interested in X"
+- **Authority-building** - You're not just sharing information, you're establishing expertise through original insight and battle-tested experience
+- **Value-dense** - Every paragraph earns its place. No throat-clearing, no filler, no "in today's fast-paced world" nonsense
+- **Skim-optimized** - A reader scanning just the headers should walk away with 80% of the value
+- **Audience-obsessed** - Written for a specific person with specific problems, not "everyone interested in X"
 
 **Target Length**: 800-1,500 words (enough to go deep, short enough to respect attention)
 
@@ -36,7 +36,7 @@ Every newsletter that converts has four components working together:
 |--------|-----|
 | **Subject Line** | Get the open. Everything else is worthless if they don't click. |
 | **Introduction** | Hook them in 3 seconds, make a promise they can't ignore |
-| **Headers** | Deliver standalone value—readers should learn just by scrolling |
+| **Headers** | Deliver standalone value-readers should learn just by scrolling |
 | **Section Content** | Tactical, specific, "I can use this today" insights |
 
 ---
@@ -47,9 +47,9 @@ Every newsletter that converts has four components working together:
 
 Before writing a single word, load all context profiles from `/context/core/`:
 
-- `voice-dna-mick.json` — How the user actually sounds (not how AI thinks they should sound)
-- `icp.json` — The specific human they're writing for
-- `business-profile.json` — What they offer and why it matters
+- `voice-dna-mick.json` - How the user actually sounds (not how AI thinks they should sound)
+- `icp.json` - The specific human they're writing for
+- `business-profile.json` - What they offer and why it matters
 
 These aren't optional. Skip them and you're writing for nobody.
 
@@ -95,14 +95,14 @@ The anatomy of a subject line that gets clicked:
 
 **The Outcome Test:**
 
-Every subject line must pass this test—is the outcome tangible?
+Every subject line must pass this test-is the outcome tangible?
 
 | Type | Example | Verdict |
 |------|---------|---------|
-| ❌ Vague | "So you can be more productive" | Means nothing |
-| ❌ Generic | "To improve your writing" | Says nothing specific |
-| ✅ Tangible | "So you can publish daily without burning out" | Clear, measurable, desirable |
-| ✅ Specific | "To cut your writing time from 4 hours to 45 minutes" | Exact numbers, real result |
+| [ ] Vague | "So you can be more productive" | Means nothing |
+| [ ] Generic | "To improve your writing" | Says nothing specific |
+| [x] Tangible | "So you can publish daily without burning out" | Clear, measurable, desirable |
+| [x] Specific | "To cut your writing time from 4 hours to 45 minutes" | Exact numbers, real result |
 
 ---
 
@@ -134,7 +134,7 @@ You have 3 seconds. Choose your weapon:
 | **Contrarian take** | "Prompt engineering is dead. Context engineering is the future." | When going against conventional wisdom |
 | **Surprising stat/insight** | "I spent 4 hours on every newsletter. Now it takes 35 minutes." | When you have compelling numbers |
 
-**The hook should create an open loop**—a question in the reader's mind that demands an answer.
+**The hook should create an open loop**-a question in the reader's mind that demands an answer.
 
 #### Part 3: The Promise (3-7 sentences)
 
@@ -172,7 +172,7 @@ Now expand. You have two angles:
 
 State exactly what you're giving them. Be specific.
 
-| ❌ Vague | ✅ Specific |
+| [ ] Vague | [x] Specific |
 |----------|-------------|
 | "I'll show you how to improve" | "Today I'm breaking down the 3 context files that make AI write like you" |
 | "Here's what I've learned" | "Here are the 5 prompts I use every single day" |
@@ -211,14 +211,14 @@ Headers aren't labels. They're mini-insights.
 
 **Header Format Rules:**
 
-- **Full sentences** — The header should make sense on its own
-- **Delivers value** — Reader learns something just from reading the header
-- **Bold, H3 format** — Use ### in markdown
-- **Consistent structure** — If you start with "Mistake 1:", keep the pattern
+- **Full sentences** - The header should make sense on its own
+- **Delivers value** - Reader learns something just from reading the header
+- **Bold, H3 format** - Use ### in markdown
+- **Consistent structure** - If you start with "Mistake 1:", keep the pattern
 
 **Header Examples:**
 
-| ❌ Weak (Label) | ✅ Strong (Insight) |
+| [ ] Weak (Label) | [x] Strong (Insight) |
 |-----------------|---------------------|
 | "Why context matters" | "Context turns generic AI into your voice." |
 | "The importance of structure" | "Structure lets you write once and use forever." |
@@ -244,7 +244,7 @@ Each section follows a rhythm:
 
 [2-4 sentences of explanation, context, or story]
 
-[Optional: bullets for examples, options, or lists — max ONE bullet section per header]
+[Optional: bullets for examples, options, or lists - max ONE bullet section per header]
 
 [Single-sentence closer that lands the point or transitions]
 ```
@@ -325,7 +325,7 @@ When delivering a newsletter, use this structure:
 4. [Option 4 - sentence-case]
 5. [Option 5 - sentence-case]
 
-**Recommended**: Option [X] — [Why this one works best]
+**Recommended**: Option [X] - [Why this one works best]
 
 ---
 
@@ -337,13 +337,13 @@ When delivering a newsletter, use this structure:
 
 Hey there!
 
-[Opening hook — 1 sentence that stops the scroll]
+[Opening hook - 1 sentence that stops the scroll]
 
-[Promise — 3-7 sentences on the problem or outcome]
+[Promise - 3-7 sentences on the problem or outcome]
 
-[Solution — 1-2 sentences on what you're delivering today]
+[Solution - 1-2 sentences on what you're delivering today]
 
-[Transition — 1 sentence]
+[Transition - 1 sentence]
 
 ### [Header 1: Full sentence that delivers value.]
 
@@ -363,7 +363,7 @@ Hey there!
 
 [Continue...]
 
-[Closing line — optional CTA or sign-off]
+[Closing line - optional CTA or sign-off]
 
 ---
 
@@ -381,7 +381,7 @@ Before delivering, verify:
 - [ ] Introduction has all 5 parts (greeting, hook, promise, solution, transition)
 - [ ] 3-10 headers that deliver standalone value
 - [ ] Headers follow consistent structure (all tips, all mistakes, etc.)
-- [ ] Each section follows: opener → middle → closer rhythm
+- [ ] Each section follows: opener -> middle -> closer rhythm
 - [ ] Content is specific (real numbers, real examples, real details)
 - [ ] Content is actionable (reader knows what to DO)
 - [ ] No fluff, no filler, no throat-clearing
@@ -395,7 +395,7 @@ Before delivering, verify:
 
 ### Mistake 1: Vague Headers
 
-| ❌ Don't | ✅ Do |
+| [ ] Don't | [x] Do |
 |----------|-------|
 | "Why context matters" | "Context turns generic AI into your voice." |
 | "The importance of skills" | "Skills let you write instructions once and use them forever." |
@@ -405,7 +405,7 @@ Before delivering, verify:
 
 ### Mistake 2: Generic Advice
 
-| ❌ Don't | ✅ Do |
+| [ ] Don't | [x] Do |
 |----------|-------|
 | "Be consistent with your content" | "Publish every Tuesday at 9am. Your audience will expect it." |
 | "Build a system" | "Create three JSON files: voice-dna, icp, business-profile." |
@@ -415,7 +415,7 @@ Before delivering, verify:
 
 ### Mistake 3: No Specifics
 
-| ❌ Don't | ✅ Do |
+| [ ] Don't | [x] Do |
 |----------|-------|
 | "This saved me a lot of time" | "This cut my newsletter writing from 4 hours to 35 minutes." |
 | "My audience grew" | "I went from 500 to 3,400 subscribers in 6 months." |
@@ -468,6 +468,6 @@ When someone finishes your newsletter, they should think:
 - "This person actually knows their stuff."
 - "I need to share this."
 
-If they think "that was fine" — you've failed. Fine doesn't get forwarded. Fine doesn't build authority.
+If they think "that was fine" - you've failed. Fine doesn't get forwarded. Fine doesn't build authority.
 
 **Write newsletters that are impossible to ignore.**

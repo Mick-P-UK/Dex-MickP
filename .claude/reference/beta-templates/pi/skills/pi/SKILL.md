@@ -54,7 +54,7 @@ tmux split-window -h "cd \"$VAULT_PATH\" && pi"
 
 **Output to user:**
 ```
-✓ Pi opened in new Terminal window
+[x] Pi opened in new Terminal window
 
   You can now interact with Pi directly.
   When done, Cmd+Tab back here.
@@ -76,7 +76,7 @@ Enable Pi mode for the session.
    ```
 3. Confirm to user:
    ```
-   ✓ Pi mode enabled
+   [x] Pi mode enabled
 
    Tasks will prefer Pi. To run something in Claude Code instead,
    just say "use Claude Code for this" or run `/pi off`.
@@ -100,7 +100,7 @@ Disable Pi mode.
 2. Set `pi_mode: false` under `beta` section
 3. Confirm:
    ```
-   ✓ Pi mode disabled
+   [x] Pi mode disabled
 
    Back to Claude Code for all tasks.
    ```
@@ -181,7 +181,7 @@ Run a Dex skill through Pi with full context.
 
 7. **Confirm to user:**
    ```
-   ✓ Pi launched with /daily-plan
+   [x] Pi launched with /daily-plan
 
    Pi has received the full skill instructions and context.
    A new Terminal window should now be active.
@@ -226,7 +226,7 @@ Run a custom task (not a skill) through Pi.
 If `pi` command not found:
 
 ```
-❌ Pi is not installed
+[ ] Pi is not installed
 
 Install it with:
   npm install -g @mariozechner/pi-coding-agent
@@ -239,7 +239,7 @@ Then try again.
 If skill doesn't exist:
 
 ```
-❌ Skill not found: /unknown-skill
+[ ] Skill not found: /unknown-skill
 
 Available skills:
   /daily-plan, /daily-review, /week-plan, ...
@@ -253,7 +253,7 @@ Or run a custom task:
 If Pi beta not activated:
 
 ```
-❌ Pi integration requires beta activation
+[ ] Pi integration requires beta activation
 
 Run: /beta-activate PILAUNCH2026
 ```

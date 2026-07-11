@@ -174,7 +174,7 @@ async def check_for_updates(force: bool = False) -> dict:
     comparison = compare_versions(current_version, latest_version)
     
     # Check for breaking changes
-    breaking_changes = "BREAKING" in release_notes.upper() or "⚠️" in release_notes
+    breaking_changes = "BREAKING" in release_notes.upper() or "[!]" in release_notes
     
     # Determine update type
     current_tuple = parse_version(current_version)

@@ -124,7 +124,7 @@ After the issue is created:
 ## Output Format
 
 ```
-✅ Bug report submitted successfully!
+[x] Bug report submitted successfully!
 
 Issue: https://github.com/EveryInc/compound-engineering-plugin/issues/[NUMBER]
 Title: [compound-engineering] Bug: [description]

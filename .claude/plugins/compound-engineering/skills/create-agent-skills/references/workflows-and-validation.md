@@ -76,7 +76,7 @@ Use checklist pattern when:
 <feedback_loops>
 <validate_fix_repeat_pattern>
 <principle>
-Run validator → fix errors → repeat. This pattern greatly improves output quality.
+Run validator -> fix errors -> repeat. This pattern greatly improves output quality.
 </principle>
 
 <document_editing_example>
@@ -132,7 +132,7 @@ Never skip validation. Catching errors early prevents corrupted output files.
 <principle>
 When Claude performs complex, open-ended tasks, create a plan in a structured format, validate it, then execute.
 
-Workflow: analyze → **create plan file** → **validate plan** → execute → verify
+Workflow: analyze -> **create plan file** -> **validate plan** -> execute -> verify
 </principle>
 
 <batch_update_example>
@@ -225,8 +225,8 @@ Modify DOCX files using appropriate method based on task type.
 <decision_point_1>
 Determine the modification type:
 
-**Creating new content?** → Follow "Creation workflow"
-**Editing existing content?** → Follow "Editing workflow"
+**Creating new content?** -> Follow "Creation workflow"
+**Editing existing content?** -> Follow "Editing workflow"
 </decision_point_1>
 
 <creation_workflow>
@@ -341,7 +341,7 @@ Only proceed when validation passes with zero errors.
 
 <iterative_refinement>
 <principle>
-Many workflows benefit from iteration: generate → validate → refine → validate → finalize.
+Many workflows benefit from iteration: generate -> validate -> refine -> validate -> finalize.
 </principle>
 
 <implementation_example>
@@ -478,9 +478,9 @@ Design workflows with clear error recovery paths. Claude should know what to do 
 <error_recovery>
 **If validation fails in step 2:**
 - Review validation errors
-- Check if input file is corrupted → Return to step 1 with different input
-- Check if processing logic failed → Fix logic, return to step 1
-- Check if output format wrong → Fix format, return to step 2
+- Check if input file is corrupted -> Return to step 1 with different input
+- Check if processing logic failed -> Fix logic, return to step 1
+- Check if output format wrong -> Fix format, return to step 2
 
 **If save fails in step 3:**
 - Check disk space

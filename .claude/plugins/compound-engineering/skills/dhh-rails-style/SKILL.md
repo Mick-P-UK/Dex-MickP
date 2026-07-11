@@ -91,9 +91,9 @@ What are you working on?
 Instead of custom actions, create new resources:
 
 ```
-POST /cards/:id/close    → POST /cards/:id/closure
-DELETE /cards/:id/close  → DELETE /cards/:id/closure
-POST /cards/:id/archive  → POST /cards/:id/archival
+POST /cards/:id/close    -> POST /cards/:id/closure
+DELETE /cards/:id/close  -> DELETE /cards/:id/closure
+POST /cards/:id/archive  -> POST /cards/:id/archival
 ```
 
 ## Ruby Syntax Preferences
@@ -176,7 +176,7 @@ Code follows DHH style when:
 </success_criteria>
 
 <credits>
-Based on [The Unofficial 37signals/DHH Rails Style Guide](https://github.com/marckohlbrugge/unofficial-37signals-coding-style-guide) by [Marc Köhlbrugge](https://x.com/marckohlbrugge), generated through deep analysis of 265 pull requests from the Fizzy codebase.
+Based on [The Unofficial 37signals/DHH Rails Style Guide](https://github.com/marckohlbrugge/unofficial-37signals-coding-style-guide) by [Marc Kohlbrugge](https://x.com/marckohlbrugge), generated through deep analysis of 265 pull requests from the Fizzy codebase.
 
 **Important Disclaimers:**
 - LLM-generated guide - may contain inaccuracies

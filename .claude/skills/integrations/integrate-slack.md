@@ -23,9 +23,9 @@ status = detect_integration("slack", load_claude_config() or {})
 
 if status["installed"]:
     if status["is_dex_recommended"]:
-        print("✅ Slack is already set up with the recommended package!")
+        print("[x] Slack is already set up with the recommended package!")
     else:
-        print(f"⚠️ You have Slack configured using: {status['package']}")
+        print(f"[!] You have Slack configured using: {status['package']}")
         print(f"Recommendation: {status['recommendation']}")
 ```
 
@@ -58,7 +58,7 @@ print(message)
 ## Key Messages
 
 **Success (Cookie Auth):**
-> ✅ Slack connected using your browser session!
+> [x] Slack connected using your browser session!
 > 
 > You can now:
 > - Search Slack: "What did Sarah say about the Q1 budget?"
@@ -70,7 +70,7 @@ print(message)
 > **Note:** You may need to refresh the cookie when you re-login to Slack in your browser.
 
 **Success (Bot Token):**
-> ✅ Slack connected using bot token!
+> [x] Slack connected using bot token!
 > 
 > Your Slack app has been configured. You can now search messages and get meeting context.
 >
@@ -80,7 +80,7 @@ print(message)
 > Slack is already connected. Want me to:
 > 1. **Test the connection**
 > 2. **Reconfigure with new credentials**
-> 3. **Switch auth method** (cookie ↔ bot)
+> 3. **Switch auth method** (cookie <-> bot)
 
 ## Error Handling
 
@@ -98,7 +98,7 @@ For users who need help finding their cookie:
 1. Open slack.com in Chrome/Firefox/Safari
 2. Log into your workspace
 3. Open Developer Tools (F12 or Cmd+Option+I)
-4. Go to Application → Cookies → https://app.slack.com
+4. Go to Application -> Cookies -> https://app.slack.com
 5. Find the cookie named "d"
 6. Copy the entire value (starts with xoxd-)
 ```

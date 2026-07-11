@@ -29,4 +29,4 @@
 
 ## Reflections
 
-[My thoughts on this feedback — what resonates, what I want to work on]
+[My thoughts on this feedback - what resonates, what I want to work on]

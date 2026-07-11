@@ -166,14 +166,14 @@ Configure these field types in Bases for optimal filtering and sorting:
 - `reviewer_notes`
 
 ### Select Fields (Single Choice)
-- `status` → Options: draft, ready, published, archived
-- `destination` → Options: diy-investors.com, diy-investors.ai, both, external
-- `division` → Options: core, ai, personal
-- `target_audience` → Options: inner_circle, plaza_group, ai_members, public, all
-- `content_type` → Options: newsletter, article, social_post, email, video_script
-- `category` → Options: education, market_commentary, strategy, ai_tools, portfolio_update
-- `priority` → Options: high, normal, low
-- `platform` → Options: linkedin, twitter, facebook, instagram, email
+- `status` -> Options: draft, ready, published, archived
+- `destination` -> Options: diy-investors.com, diy-investors.ai, both, external
+- `division` -> Options: core, ai, personal
+- `target_audience` -> Options: inner_circle, plaza_group, ai_members, public, all
+- `content_type` -> Options: newsletter, article, social_post, email, video_script
+- `category` -> Options: education, market_commentary, strategy, ai_tools, portfolio_update
+- `priority` -> Options: high, normal, low
+- `platform` -> Options: linkedin, twitter, facebook, instagram, email
 
 ### Multi-Select Fields
 - `topics`
@@ -297,7 +297,7 @@ Same Base, different saved views:
 ### Tip 4: Update Metadata Directly in Bases
 
 You can edit YAML fields directly in the Bases table view:
-- Change status from draft → ready
+- Change status from draft -> ready
 - Add publication dates
 - Update engagement numbers
 - Mark for review

@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Contributors
 
-Huge thanks to the community contributors who made this release possible! 🙌
+Huge thanks to the community contributors who made this release possible! 
 
 - **[@tmchow](https://github.com/tmchow)** - Brainstorm workflow, research decision logic (2 PRs)
 - **[@jaredmorgenstern](https://github.com/jaredmorgenstern)** - API deprecation validation
@@ -56,7 +56,7 @@ Huge thanks to the community contributors who made this release possible! 🙌
 
 ### Contributors
 
-Huge thanks to the community contributors who made this release possible! 🙌
+Huge thanks to the community contributors who made this release possible! 
 
 - **[@tmchow](https://github.com/tmchow)** - Interactive Q&A for plans, incremental commits, year updates (3 PRs!)
 - **[@ashwin47](https://github.com/ashwin47)** - Markdown table fix
@@ -73,7 +73,7 @@ Huge thanks to the community contributors who made this release possible! 🙌
 ### Changed
 
 - **`/workflows:work` command** - Now marks off checkboxes in plan document as tasks complete
-  - Added step to update original plan file (`[ ]` → `[x]`) after each task
+  - Added step to update original plan file (`[ ]` -> `[x]`) after each task
   - Ensures no checkboxes are left unchecked when work is done
   - Keeps plan as living document showing progress
 
@@ -97,7 +97,7 @@ Huge thanks to the community contributors who made this release possible! 🙌
 - **`design-iterator` agent** - Now auto-loads design skills at start of iterations
   - Added "Step 0: Discover and Load Design Skills (MANDATORY)" section
   - Discovers skills from ~/.claude/skills/, .claude/skills/, and plugin cache
-  - Maps user context to relevant skills (Swiss design → swiss-design skill, etc.)
+  - Maps user context to relevant skills (Swiss design -> swiss-design skill, etc.)
   - Reads SKILL.md files to load principles into context before iterating
   - Extracts key principles: grid specs, typography rules, color philosophy, layout principles
   - Skills are applied throughout ALL iterations for consistent design language
@@ -125,7 +125,7 @@ Huge thanks to the community contributors who made this release possible! 🙌
   - Phase 1: Discovers and reads relevant SKILL.md files from plugin, global, and project directories
   - Phase 2: Only goes online for additional best practices if skills don't provide enough coverage
   - Phase 3: Synthesizes all findings with clear source attribution (skill-based > official docs > community)
-  - Skill mappings: Rails → dhh-rails-style, Frontend → frontend-design, AI → agent-native-architecture, etc.
+  - Skill mappings: Rails -> dhh-rails-style, Frontend -> frontend-design, AI -> agent-native-architecture, etc.
   - Prioritizes curated skill knowledge over external sources for trivial/common patterns
 
 ---
@@ -136,7 +136,7 @@ Huge thanks to the community contributors who made this release possible! 🙌
 
 - **`/lfg` command** - Full autonomous engineering workflow
   - Orchestrates complete feature development from plan to PR
-  - Runs: plan → deepen-plan → work → review → resolve todos → test-browser → feature-video
+  - Runs: plan -> deepen-plan -> work -> review -> resolve todos -> test-browser -> feature-video
   - Uses ralph-loop for autonomous completion
   - Migrated from local command, updated to use `/test-browser` instead of `/playwright-test`
 
@@ -309,7 +309,7 @@ This release consolidates all recent work:
   - **CRUD Completeness** - Every entity the agent can create must also be readable, updatable, and deletable. Incomplete CRUD = broken action parity.
 
   **New in SKILL.md:**
-  - **Architecture Review Checklist** - Pushes reviewer findings earlier into the design phase. Covers tool design (dynamic vs static, CRUD completeness), action parity (capability map, edit/delete), UI integration (agent → UI communication), and context injection.
+  - **Architecture Review Checklist** - Pushes reviewer findings earlier into the design phase. Covers tool design (dynamic vs static, CRUD completeness), action parity (capability map, edit/delete), UI integration (agent -> UI communication), and context injection.
   - **Option 11: API Integration** - New intake option for connecting to external APIs like HealthKit, HomeKit, GraphQL
   - **New anti-patterns:** Static Tool Mapping (building individual tools for each API endpoint), Incomplete CRUD (create-only tools)
   - **Tool Design Criteria** section added to success criteria checklist
@@ -348,13 +348,13 @@ Note: This pattern is specifically for agent-native apps following the "whatever
 
 ### Philosophy
 
-These updates operationalize a key insight from building agent-native mobile apps: **"The agent should be able to do anything the user can do, through tools that mirror UI capabilities, with full context about the app state."** The failure case that prompted these changes: an agent asked "what reading feed?" when a user said "write something in my reading feed"—because it had no `publish_to_feed` tool and no context about what "feed" meant.
+These updates operationalize a key insight from building agent-native mobile apps: **"The agent should be able to do anything the user can do, through tools that mirror UI capabilities, with full context about the app state."** The failure case that prompted these changes: an agent asked "what reading feed?" when a user said "write something in my reading feed"-because it had no `publish_to_feed` tool and no context about what "feed" meant.
 
 ## [2.16.0] - 2025-12-21
 
 ### Enhanced
 
-- **`dhh-rails-style` skill** - Massively expanded reference documentation incorporating patterns from Marc Köhlbrugge's Unofficial 37signals Coding Style Guide:
+- **`dhh-rails-style` skill** - Massively expanded reference documentation incorporating patterns from Marc Kohlbrugge's Unofficial 37signals Coding Style Guide:
   - **controllers.md** - Added authorization patterns, rate limiting, Sec-Fetch-Site CSRF protection, request context concerns
   - **models.md** - Added validation philosophy, let it crash philosophy (bang methods), default values with lambdas, Rails 7.1+ patterns (normalizes, delegated types, store accessor), concern guidelines with touch chains
   - **frontend.md** - Added Turbo morphing best practices, Turbo frames patterns, 6 new Stimulus controllers (auto-submit, dialog, local-time, etc.), Stimulus best practices, view helpers, caching with personalization, broadcasting patterns
@@ -363,7 +363,7 @@ These updates operationalize a key insight from building agent-native mobile app
 
 ### Credits
 
-- Reference patterns derived from [Marc Köhlbrugge's Unofficial 37signals Coding Style Guide](https://github.com/marckohlbrugge/unofficial-37signals-coding-style-guide)
+- Reference patterns derived from [Marc Kohlbrugge's Unofficial 37signals Coding Style Guide](https://github.com/marckohlbrugge/unofficial-37signals-coding-style-guide)
 
 ## [2.15.2] - 2025-12-21
 

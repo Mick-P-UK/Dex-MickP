@@ -42,7 +42,7 @@ The ideas below demonstrate the level of detail you'll see when you capture your
 
 <!-- Auto-ranked by /dex-backlog command -->
 
-### ⚡ Medium Priority (Score: 60-84)
+###  Medium Priority (Score: 60-84)
 
 - **[idea-001]** Save meeting summaries so I don't re-read entire notes every time
 
@@ -57,7 +57,7 @@ The ideas below demonstrate the level of detail you'll see when you capture your
   - Important topics discussed
 
   **How It Works in Cursor:**
-  ✅ Totally doable! When you run `/process-meetings` or create a meeting note, Cursor:
+  [x] Totally doable! When you run `/process-meetings` or create a meeting note, Cursor:
   1. Reads the new meeting note (one file)
   2. Extracts the key information above
   3. Saves a short summary file in the cache folder
@@ -67,8 +67,8 @@ The ideas below demonstrate the level of detail you'll see when you capture your
   Instead of reading 2,000 words of meeting notes, Cursor reads 200 words of summaries. That's 90% less to process, which means faster responses and you stay under usage limits.
 
   **Real Example:**
-  - Before: "Prepare for my 1:1 with Sarah" → Reads 3 full meeting notes (3,000 words)
-  - After: "Prepare for my 1:1 with Sarah" → Reads cached summaries (300 words), only reads full notes if you ask for specific details
+  - Before: "Prepare for my 1:1 with Sarah" -> Reads 3 full meeting notes (3,000 words)
+  - After: "Prepare for my 1:1 with Sarah" -> Reads cached summaries (300 words), only reads full notes if you ask for specific details
 
   - **Score:** 72 (Impact: 65, Alignment: 50, Token: 100, Memory: 80, Proactive: 70)
   - **Category:** knowledge
@@ -83,12 +83,12 @@ The ideas below demonstrate the level of detail you'll see when you capture your
   **The Solution:**
   Create one lightweight "directory" file (`System/People_Index.json`) that lists basic info about everyone:
   ```
-  Sarah Johnson → Internal, Engineering Manager, last met 2026-01-25
-  Mike Chen → External, Acme Corp, Product Lead, last met 2026-01-20
+  Sarah Johnson -> Internal, Engineering Manager, last met 2026-01-25
+  Mike Chen -> External, Acme Corp, Product Lead, last met 2026-01-20
   ```
 
   **How It Works in Cursor:**
-  ✅ Totally doable! Here's how:
+  [x] Totally doable! Here's how:
   1. When you create or update a person page, Cursor quickly scans it
   2. Extracts just the basics: name, company, role, last interaction
   3. Adds or updates that one entry in the directory file
@@ -99,15 +99,15 @@ The ideas below demonstrate the level of detail you'll see when you capture your
   Simple lookups become instant. Instead of reading 30 full person pages (15,000 words), Cursor reads one directory file (500 words). That's 97% less to process for common questions.
 
   **Real Example:**
-  - Before: "Who did I meet with last week?" → Opens and reads all 30 person pages
-  - After: "Who did I meet with last week?" → Reads directory, finds 3 names, only opens those 3 person pages if you need details
+  - Before: "Who did I meet with last week?" -> Opens and reads all 30 person pages
+  - After: "Who did I meet with last week?" -> Reads directory, finds 3 names, only opens those 3 person pages if you need details
 
   - **Score:** 62 (Impact: 50, Alignment: 50, Token: 100, Memory: 60, Proactive: 50)
   - **Category:** system
   - **Captured:** 2026-01-28
   - **Why ranked here:** Excellent token efficiency design, but person pages aren't actively used yet. Will become more valuable as you build out your relationship network. Consider when you start tracking contacts.
 
-### 💡 Low Priority (Score: <60)
+###  Low Priority (Score: <60)
 
 *No ideas in this category yet.*
 

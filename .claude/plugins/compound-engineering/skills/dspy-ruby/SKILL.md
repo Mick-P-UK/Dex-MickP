@@ -189,10 +189,10 @@ end
 
 | Feature | OpenAI | Anthropic | Gemini | Ollama |
 |---------|--------|-----------|--------|--------|
-| Structured Output | ✅ | ✅ | ✅ | ✅ |
-| Vision (Images) | ✅ | ✅ | ✅ | ⚠️ Limited |
-| Image URLs | ✅ | ❌ | ❌ | ❌ |
-| Tool Calling | ✅ | ✅ | ✅ | Varies |
+| Structured Output | [x] | [x] | [x] | [x] |
+| Vision (Images) | [x] | [x] | [x] | [!] Limited |
+| Image URLs | [x] | [ ] | [ ] | [ ] |
+| Tool Calling | [x] | [x] | [x] | Varies |
 
 **Cost optimization strategy**:
 - Development: Ollama (free) or gpt-4o-mini (cheap)

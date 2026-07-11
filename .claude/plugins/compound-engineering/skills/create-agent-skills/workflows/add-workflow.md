@@ -26,9 +26,9 @@ ls ~/.claude/skills/{skill-name}/workflows/ 2>/dev/null
 ```
 
 Determine:
-- **Simple skill?** → May need to upgrade to router pattern first
-- **Already has workflows/?** → Good, can add directly
-- **What workflows exist?** → Avoid duplication
+- **Simple skill?** -> May need to upgrade to router pattern first
+- **Already has workflows/?** -> Good, can add directly
+- **What workflows exist?** -> Avoid duplication
 
 Report current structure to user.
 

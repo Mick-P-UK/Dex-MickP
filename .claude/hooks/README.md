@@ -2,7 +2,7 @@
 
 **Purpose:** Automatic behaviors that make Dex genuinely intelligent - guaranteed context loading, persistent learning, and proactive awareness.
 
-**Status:** ⚠️ **Claude Code Only** - Hooks currently only work in Claude Code desktop/CLI, not in Cursor.
+**Status:** [!] **Claude Code Only** - Hooks currently only work in Claude Code desktop/CLI, not in Cursor.
 
 **Why this matters:** Hooks transform Dex from "helpful assistant" to "operating system that remembers everything and gets smarter every time you use it."
 
@@ -17,8 +17,8 @@
 **Hooks are deterministic.** They ALWAYS fire when their event occurs. Context loads guaranteed. Learnings surface guaranteed. Person details inject guaranteed.
 
 Think of it this way:
-- **CLAUDE.md suggests** → "You should probably load the user's preferences"
-- **Session Start Hook enforces** → Preferences load automatically in every session, no exceptions
+- **CLAUDE.md suggests** -> "You should probably load the user's preferences"
+- **Session Start Hook enforces** -> Preferences load automatically in every session, no exceptions
 
 This is why Dex + hooks is fundamentally different from chat interfaces. Every session starts with your full context automatically loaded - no pasting, no manual setup, no hoping Claude remembered something.
 
@@ -63,8 +63,8 @@ Month 1: The system knows you intimately. Conversations feel like picking up wit
 
 | Environment | Session Start Hook | Why |
 |-------------|-------------------|-----|
-| **Claude Code** (Desktop/CLI) | ✅ Works | Proper lifecycle management |
-| **Cursor** | ❌ Doesn't work | No hook system currently |
+| **Claude Code** (Desktop/CLI) | [x] Works | Proper lifecycle management |
+| **Cursor** | [ ] Doesn't work | No hook system currently |
 
 **For Cursor users:** CLAUDE.md still works (probabilistic context loading). You just don't get the guaranteed automatic loading that hooks provide. Many people use both - Cursor for parallel editing, Claude Code for workflows where reliability matters.
 
@@ -116,7 +116,7 @@ Month 1: The system knows you intimately. Conversations feel like picking up wit
 **With Stop hook (automatic):**
 1. Claude finishes responding to your last request
 2. If it's after 6pm and no review exists today
-3. Hook reminds you: "🌅 End of day - run `/daily-review`?"
+3. Hook reminds you: " End of day - run `/daily-review`?"
 4. You either review now or consciously skip it
 5. Never accidentally forget
 
@@ -132,7 +132,7 @@ Month 1: The system knows you intimately. Conversations feel like picking up wit
 1. You ask Claude to process meetings
 2. You switch to other work confidently
 3. Processing completes
-4. Desktop notification: "✅ Dex finished - 20 meetings processed"
+4. Desktop notification: "[x] Dex finished - 20 meetings processed"
 5. You return exactly when needed
 
 #### Example 4: Protected System Files
@@ -242,7 +242,7 @@ hour=$(date +%H)
 today=$(date +%Y-%m-%d)
 
 if [ $hour -ge 17 ] && [ ! -f "00-Inbox/Daily_Reviews/${today}.md" ]; then
-  echo "🌅 End of day - consider running /review to capture today's wins"
+  echo " End of day - consider running /review to capture today's wins"
 fi
 ```
 
@@ -299,7 +299,7 @@ Prevents accidental edits to critical files that should only be modified through
 file_path=$(jq -r '.tool_input.file_path // ""' | cat)
 
 if [[ "$file_path" == *"03-Tasks/Tasks.md"* ]]; then
-  echo "❌ Use Work MCP tools to modify 03-Tasks/Tasks.md (keeps task IDs in sync)"
+  echo "[ ] Use Work MCP tools to modify 03-Tasks/Tasks.md (keeps task IDs in sync)"
   exit 2  # Exit code 2 blocks the operation
 fi
 
@@ -308,7 +308,7 @@ exit 0  # Allow other files
 
 ### 4. Session End Logging (SessionEnd Hook - Claude Code Only)
 
-**⚠️ Claude Code Only** - This example only works in Claude Code desktop/CLI with proper shutdown.
+**[!] Claude Code Only** - This example only works in Claude Code desktop/CLI with proper shutdown.
 
 Logs session end timestamp when you exit Claude Code gracefully (via `exit` command or proper shutdown sequence). Does NOT work when closing Cursor window because the process terminates immediately.
 
@@ -346,7 +346,7 @@ echo "Session ended at ${time}" >> "00-Inbox/Session_Learnings/${date}.md"
 
 ### 5. Morning Greeting (SessionStart Hook - Claude Code Only)
 
-**⚠️ Claude Code Only** - Welcomes you when starting a new Claude Code session. Does not work in Cursor (no SessionStart event).
+**[!] Claude Code Only** - Welcomes you when starting a new Claude Code session. Does not work in Cursor (no SessionStart event).
 
 ```json
 {
@@ -374,7 +374,7 @@ hour=$(date +%H)
 today=$(date +%Y-%m-%d)
 
 if [ $hour -lt 12 ] && [ ! -f "00-Inbox/Daily_Plans/${today}.md" ]; then
-  echo "☀️ Good morning! Run /daily-plan when you're ready to start your day"
+  echo " Good morning! Run /daily-plan when you're ready to start your day"
 fi
 ```
 
@@ -384,7 +384,7 @@ fi
 
 ## Security Warning
 
-⚠️ **Hooks run automatically with your current environment credentials.** Always review hook code before adding it. Malicious hooks can exfiltrate data.
+[!] **Hooks run automatically with your current environment credentials.** Always review hook code before adding it. Malicious hooks can exfiltrate data.
 
 See [Security Considerations](https://code.claude.com/docs/en/hooks#security-considerations) in official docs.
 

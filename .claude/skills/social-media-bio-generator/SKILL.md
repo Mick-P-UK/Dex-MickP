@@ -156,7 +156,7 @@ I help [audience] achieve [outcome] | [Credential/Role] | Topics: [keyword1], [k
 - Strategic emoji usage (1-3 max)
 
 **Format Options:**
-- Single line with | or • separators
+- Single line with | or - separators
 - Multi-line with line breaks
 - Emoji-structured bullets
 
@@ -173,10 +173,10 @@ I help [audience] achieve [outcome] | [Credential/Role] | Topics: [keyword1], [k
 ```
 [Moniker] | [What I do] | [Topics] | [Proof point]
 
-[Role] • [Mission]
-[Topics] • [Value delivered]
+[Role] - [Mission]
+[Topics] - [Value delivered]
 
-🚀 [Achievement]
+ [Achievement]
 Sharing [topics] for [audience]
 ```
 
@@ -189,7 +189,7 @@ Sharing [topics] for [audience]
 **Essential Components:**
 - Clear identity/title with USP
 - Benefit or transformation offered
-- Call-to-action with directional emoji (👇)
+- Call-to-action with directional emoji ()
 - Strategic line breaks for scannability
 - 3-5 emojis maximum for visual hierarchy
 
@@ -213,7 +213,7 @@ Sharing [topics] for [audience]
 [Emoji] [Identity/Title]
 [Emoji] [Benefit/Transformation]
 [Emoji] [Credibility marker]
-👇 [CTA text]
+ [CTA text]
 ```
 
 **Critical**: Count characters carefully. 150 is the hard limit.
@@ -285,7 +285,7 @@ Character count: XX/160
 [Bio with line breaks as they would appear]
 [Second line]
 [Third line]
-👇 [CTA]
+ [CTA]
 
 Character count: XX/150
 

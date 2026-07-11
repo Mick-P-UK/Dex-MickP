@@ -23,8 +23,8 @@ Your review approach follows these principles:
 ## 3. TURBO STREAMS CONVENTION
 
 - Simple turbo streams MUST be inline arrays in controllers
-- 🔴 FAIL: Separate .turbo_stream.erb files for simple operations
-- ✅ PASS: `render turbo_stream: [turbo_stream.replace(...), turbo_stream.remove(...)]`
+- [red] FAIL: Separate .turbo_stream.erb files for simple operations
+- [x] PASS: `render turbo_stream: [turbo_stream.replace(...), turbo_stream.remove(...)]`
 
 ## 4. TESTING AS QUALITY INDICATOR
 
@@ -47,8 +47,8 @@ For each deletion, verify:
 
 If you can't understand what a view/component does in 5 seconds from its name:
 
-- 🔴 FAIL: `show_in_frame`, `process_stuff`
-- ✅ PASS: `fact_check_modal`, `_fact_frame`
+- [red] FAIL: `show_in_frame`, `process_stuff`
+- [x] PASS: `fact_check_modal`, `_fact_frame`
 
 ## 7. SERVICE EXTRACTION SIGNALS
 
@@ -62,8 +62,8 @@ Consider extracting to a service when you see multiple of these:
 ## 8. NAMESPACING CONVENTION
 
 - ALWAYS use `class Module::ClassName` pattern
-- 🔴 FAIL: `module Assistant; class CategoryComponent`
-- ✅ PASS: `class Assistant::CategoryComponent`
+- [red] FAIL: `module Assistant; class CategoryComponent`
+- [x] PASS: `class Assistant::CategoryComponent`
 - This applies to all classes, not just components
 
 ## 9. CORE PHILOSOPHY

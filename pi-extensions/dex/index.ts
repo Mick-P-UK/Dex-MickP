@@ -372,7 +372,7 @@ function getTaskSummary(): TaskSummary {
     }
     
     // Check for started tasks
-    if (line.includes("🔄") || line.includes("[started]")) {
+    if (line.includes("") || line.includes("[started]")) {
       summary.startedTasks.push(taskText);
     }
     
@@ -403,7 +403,7 @@ function formatTaskContext(): string {
   }
   
   if (summary.overdueTasks.length > 0) {
-    output += "**⚠️ Overdue:**\n";
+    output += "**[!] Overdue:**\n";
     for (const task of summary.overdueTasks.slice(0, 3)) {
       output += `- ${task}\n`;
     }
@@ -626,7 +626,7 @@ function completeTask(taskId: string): { success: boolean; message: string } {
   
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes(taskId) && lines[i].includes("- [ ]")) {
-      lines[i] = lines[i].replace("- [ ]", "- [x]") + ` ✅ ${formatTimestamp()}`;
+      lines[i] = lines[i].replace("- [ ]", "- [x]") + ` [x] ${formatTimestamp()}`;
       found = true;
       break;
     }
@@ -658,13 +658,13 @@ function listTasks(priority?: string): string {
   }
   
   if (summary.overdueTasks.length > 0) {
-    output += "### ⚠️ Overdue\n";
+    output += "### [!] Overdue\n";
     summary.overdueTasks.forEach(t => output += `- [ ] ${t}\n`);
     output += "\n";
   }
   
   if (summary.startedTasks.length > 0) {
-    output += "### 🔄 In Progress\n";
+    output += "###  In Progress\n";
     summary.startedTasks.forEach(t => output += `- [ ] ${t}\n`);
   }
   
@@ -731,7 +731,7 @@ async function getCalendarEvents(action: string, calendar?: string, days: number
           set eventList to {}
           repeat with cal in calendars
             ${calendar ? `if name of cal is "${calendar}" then` : ""}
-            set calEvents to (every event of cal whose start date ≥ today and start date < tomorrow)
+            set calEvents to (every event of cal whose start date >= today and start date < tomorrow)
             repeat with evt in calEvents
               set eventInfo to (start date of evt as string) & " | " & (summary of evt) & " | " & (location of evt)
               set end of eventList to eventInfo
@@ -834,11 +834,11 @@ function formatStatusLine(status: DexStatus): string {
   const parts: string[] = [];
   
   if (status.tasksP0 > 0) {
-    parts.push(`🔴 ${status.tasksP0} P0`);
+    parts.push(`[red] ${status.tasksP0} P0`);
   }
   
   if (status.tasksOverdue > 0) {
-    parts.push(`⚠️ ${status.tasksOverdue} overdue`);
+    parts.push(`[!] ${status.tasksOverdue} overdue`);
   }
   
   parts.push(`${status.tasksOpen} tasks`);
@@ -1000,7 +1000,7 @@ export default function (pi: ExtensionAPI) {
         
         // Simple footer status
         const taskSummary = dataLayer.getTaskSummary();
-        const footerParts = ["● Dex"];
+        const footerParts = ["- Dex"];
         if (taskSummary.p0Count > 0) {
           footerParts.push(`${taskSummary.p0Count} P0`);
         }
@@ -1010,7 +1010,7 @@ export default function (pi: ExtensionAPI) {
         console.error("[Dex] Dashboard error:", error);
         // Fallback to simple status
         const taskSummary = getTaskSummary();
-        ctx.ui.setStatus("dex", `● Dex | ${taskSummary.totalOpen} tasks`);
+        ctx.ui.setStatus("dex", `- Dex | ${taskSummary.totalOpen} tasks`);
       }
     }
     
@@ -1028,7 +1028,7 @@ export default function (pi: ExtensionAPI) {
     
     // Update status with task count (no calendar - it's slow!)
     const taskSummary = getTaskSummary();
-    ctx.ui.setStatus("dex", `● Dex | ${taskSummary.totalOpen} tasks`);
+    ctx.ui.setStatus("dex", `- Dex | ${taskSummary.totalOpen} tasks`);
   });
   
   pi.on("session_shutdown", async (_event, ctx) => {
@@ -1093,7 +1093,7 @@ export default function (pi: ExtensionAPI) {
         return new Text(theme.fg("warning", "No results found"), 0, 0);
       }
       
-      let text = theme.fg("success", `✓ Found ${count} results`);
+      let text = theme.fg("success", `[x] Found ${count} results`);
       
       if (expanded && details.results) {
         for (const r of details.results.slice(0, 5)) {
@@ -1191,7 +1191,7 @@ export default function (pi: ExtensionAPI) {
       if (details?.success === false) {
         return new Text(theme.fg("warning", result.content[0]?.text || "Failed"), 0, 0);
       }
-      return new Text(theme.fg("success", "✓ ") + (result.content[0]?.text || "Done"), 0, 0);
+      return new Text(theme.fg("success", "[x] ") + (result.content[0]?.text || "Done"), 0, 0);
     }
   });
   
@@ -1477,7 +1477,7 @@ export default function (pi: ExtensionAPI) {
         
         // Update footer
         const taskSummary = dataLayer.getTaskSummary();
-        const footerParts = ["● Dex"];
+        const footerParts = ["- Dex"];
         if (taskSummary.p0Count > 0) {
           footerParts.push(`${taskSummary.p0Count} P0`);
         }

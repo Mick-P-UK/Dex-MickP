@@ -7,7 +7,7 @@ Prepare for an upcoming meeting by gathering context on attendees and related to
 
 ## Tone Calibration
 
-Before executing this command, read `System/user-profile.yaml` → `communication` section and adapt:
+Before executing this command, read `System/user-profile.yaml` -> `communication` section and adapt:
 
 **Career Level Adaptations:**
 - **Junior:** Provide more context about attendees, suggest preparation tips
@@ -25,7 +25,7 @@ Before executing this command, read `System/user-profile.yaml` → `communicatio
 - **Balanced:** Standard prep format
 - **Comprehensive:** Full context, relationship dynamics, strategic considerations
 
-See CLAUDE.md → "Communication Adaptation" for full guidelines.
+See CLAUDE.md -> "Communication Adaptation" for full guidelines.
 
 ---
 
@@ -160,7 +160,7 @@ Before executing, check if demo mode is active:
 
 1. Read `System/user-profile.yaml` and check `demo_mode`
 2. **If `demo_mode: true`:**
-   - Display: "Demo Mode Active — Using sample data"
+   - Display: "Demo Mode Active - Using sample data"
    - Use `System/Demo/` paths instead of root paths
    - Write any output to `System/Demo/` subdirectories
 3. **If `demo_mode: false`:** Use normal vault paths

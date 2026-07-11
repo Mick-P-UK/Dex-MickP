@@ -46,9 +46,9 @@ This loads your NotebookLM credentials for API access.
 ## Configuration Options
 
 **Server Flags**:
-- `--transport` (stdio, http, sse) — default: stdio
-- `--port` — HTTP/SSE listening port — default: 8000
-- `--debug` — Enable verbose logging — default: false
+- `--transport` (stdio, http, sse) - default: stdio
+- `--port` - HTTP/SSE listening port - default: 8000
+- `--debug` - Enable verbose logging - default: false
 
 **Environment Variables**:
 - `NOTEBOOKLM_MCP_TRANSPORT`
@@ -58,7 +58,7 @@ This loads your NotebookLM credentials for API access.
 
 ## Key Workflows
 
-**Research to Podcast**: Start research → poll status → import sources → create audio artifact → download MP3
+**Research to Podcast**: Start research -> poll status -> import sources -> create audio artifact -> download MP3
 
 **Source Management**: Use unified `source_add()` with `wait=True` to ensure "source is fully processed and ready for queries"
 
@@ -69,7 +69,7 @@ This loads your NotebookLM credentials for API access.
 With 29 tools consuming context tokens, consider:
 - Disabling MCP when not needed (use `@notebooklm-mcp` in Claude Code)
 - Leveraging unified tools (`source_add`, `studio_create`, `download_artifact`)
-- Polling status endpoints sparingly — artifacts require 1-5 minutes to generate
+- Polling status endpoints sparingly - artifacts require 1-5 minutes to generate
 
 ## IDE-Specific Setup
 

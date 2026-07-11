@@ -183,7 +183,7 @@ def format_detection_report(result: DetectionResult) -> str:
                             ("Slack", result["slack"]), 
                             ("Google", result["google"])]:
         if status["installed"]:
-            emoji = "✅" if status["is_dex_recommended"] else "⚠️"
+            emoji = "[x]" if status["is_dex_recommended"] else "[!]"
             lines.append(f"### {emoji} {service}")
             lines.append(f"- **Installed:** {status['package']}")
             if status["is_dex_recommended"]:
@@ -191,7 +191,7 @@ def format_detection_report(result: DetectionResult) -> str:
             else:
                 lines.append(f"- **Recommendation:** {status['recommendation']}")
         else:
-            lines.append(f"### ❌ {service}")
+            lines.append(f"### [ ] {service}")
             rec = RECOMMENDED.get(service.lower(), {})
             lines.append(f"- **Not installed**")
             lines.append(f"- **Recommended:** {rec.get('package', 'N/A')}")

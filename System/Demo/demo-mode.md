@@ -49,7 +49,7 @@ Demo mode uses content from `System/Demo/` which includes:
 
 ### Career Development (Job 7)
 - Current_Role.md (L4 Senior PM)
-- Career_Ladder.md (L4 → L5 progression framework)
+- Career_Ladder.md (L4 -> L5 progression framework)
 - Review_History.md (2025 annual review)
 - Growth_Goals.md (3 priority development areas)
 - Evidence folder with achievements, feedback, and skill tracking

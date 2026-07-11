@@ -52,8 +52,8 @@ Leading TechCorp's first mobile app launch - a strategic initiative with executi
 - Zero critical bugs in beta phase
 
 **Launch Readiness:**
-- Feature freeze: ✅ Completed Jan 20
-- Beta release: ✅ Completed Jan 27
+- Feature freeze: [x] Completed Jan 20
+- Beta release: [x] Completed Jan 27
 - Final QA: In progress (Feb 10 target)
 - App store submission: Feb 12 (on track)
 - Public launch: Feb 15 (on track)
@@ -129,13 +129,13 @@ Leading TechCorp's first mobile app launch - a strategic initiative with executi
 
 ## Promotion Relevance
 
-**L4 → L5 Evidence:**
-- ✅ Multi-team coordination (6+ teams)
-- ✅ Executive presence and influence
-- ✅ Strategic, high-stakes initiative
-- ✅ Platform-level thinking
-- ✅ Contributing to company strategy (Series D)
-- ✅ Strong feedback from leadership
+**L4 -> L5 Evidence:**
+- [x] Multi-team coordination (6+ teams)
+- [x] Executive presence and influence
+- [x] Strategic, high-stakes initiative
+- [x] Platform-level thinking
+- [x] Contributing to company strategy (Series D)
+- [x] Strong feedback from leadership
 
 **This is the signature project for L5 promotion case.**
 

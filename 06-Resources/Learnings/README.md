@@ -4,15 +4,15 @@ Compound knowledge organized by topic.
 
 ## What Goes Here
 
-- **Frameworks** — Mental models and thinking tools you've developed
-- **Best practices** — Lessons learned from projects and experiences
-- **Technical learnings** — Deep dives into tools, technologies, or techniques
-- **People insights** — Patterns in working with teams or stakeholders
-- **Process improvements** — What works and doesn't work in your workflow
+- **Frameworks** - Mental models and thinking tools you've developed
+- **Best practices** - Lessons learned from projects and experiences
+- **Technical learnings** - Deep dives into tools, technologies, or techniques
+- **People insights** - Patterns in working with teams or stakeholders
+- **Process improvements** - What works and doesn't work in your workflow
 
 ## Philosophy
 
-This folder is for knowledge that **compounds** — insights that become more valuable over time and serve as reference points for future decisions.
+This folder is for knowledge that **compounds** - insights that become more valuable over time and serve as reference points for future decisions.
 
 ## Sources
 

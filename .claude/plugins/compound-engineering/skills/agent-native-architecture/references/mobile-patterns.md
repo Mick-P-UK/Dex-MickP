@@ -11,13 +11,13 @@ Mobile devices offer unique advantages for agent-native apps:
 Agents can work with files naturally, using the same primitives that work everywhere else. The filesystem is the universal interface.
 
 ### Rich Context
-A walled garden you get access to. Health data, location, photos, calendars—context that doesn't exist on desktop or web. This enables deeply personalized agent experiences.
+A walled garden you get access to. Health data, location, photos, calendars-context that doesn't exist on desktop or web. This enables deeply personalized agent experiences.
 
 ### Local Apps
 Everyone has their own copy of the app. This opens opportunities that aren't fully realized yet: apps that modify themselves, fork themselves, evolve per-user. App Store policies constrain some of this today, but the foundation is there.
 
 ### Cross-Device Sync
-If you use the file system with iCloud, all devices share the same file system. The agent's work on one device appears on all devices—without you having to build a server.
+If you use the file system with iCloud, all devices share the same file system. The agent's work on one device appears on all devices-without you having to build a server.
 
 ### The Challenge
 
@@ -26,10 +26,10 @@ If you use the file system with iCloud, all devices share the same file system. 
 An agent might need 30 seconds, 5 minutes, or an hour to complete a task. But iOS will background your app after seconds of inactivity, and may kill it entirely to reclaim memory. The user might switch apps, take a call, or lock their phone mid-task.
 
 This means mobile agent apps need:
-- **Checkpointing** — Saving state so work isn't lost
-- **Resuming** — Picking up where you left off after interruption
-- **Background execution** — Using the limited time iOS gives you wisely
-- **On-device vs. cloud decisions** — What runs locally vs. what needs a server
+- **Checkpointing** - Saving state so work isn't lost
+- **Resuming** - Picking up where you left off after interruption
+- **Background execution** - Using the limited time iOS gives you wisely
+- **On-device vs. cloud decisions** - What runs locally vs. what needs a server
 </why_mobile>
 
 <ios_storage>
@@ -95,20 +95,20 @@ class SharedWorkspace {
 
 ```
 iCloud Drive/
-└── YourApp/                          # Your app's container
-    └── Documents/                    # Visible in Files.app
-        ├── Journal/
-        │   ├── user/
-        │   │   └── 2025-01-15.md     # Syncs across devices
-        │   └── agent/
-        │       └── 2025-01-15.md     # Agent observations sync too
-        ├── Research/
-        │   └── {bookId}/
-        │       ├── full_text.txt
-        │       └── sources/
-        ├── Chats/
-        │   └── {conversationId}.json
-        └── context.md                # Agent's accumulated knowledge
++-- YourApp/                          # Your app's container
+    +-- Documents/                    # Visible in Files.app
+        +-- Journal/
+        |   +-- user/
+        |   |   +-- 2025-01-15.md     # Syncs across devices
+        |   +-- agent/
+        |       +-- 2025-01-15.md     # Agent observations sync too
+        +-- Research/
+        |   +-- {bookId}/
+        |       +-- full_text.txt
+        |       +-- sources/
+        +-- Chats/
+        |   +-- {conversationId}.json
+        +-- context.md                # Agent's accumulated knowledge
 ```
 
 ### Handling iCloud File States
@@ -146,10 +146,10 @@ func writeFile(_ content: String, to url: URL) throws {
 
 ### What iCloud Enables
 
-1. **User starts experiment on iPhone** → Agent creates config file
-2. **User opens app on iPad** → Same experiment visible, no sync code needed
-3. **Agent logs observation on iPhone** → Syncs to iPad automatically
-4. **User edits journal on iPad** → iPhone sees the edit
+1. **User starts experiment on iPhone** -> Agent creates config file
+2. **User opens app on iPad** -> Same experiment visible, no sync code needed
+3. **Agent logs observation on iPhone** -> Syncs to iPad automatically
+4. **User edits journal on iPad** -> iPhone sees the edit
 
 ### Entitlements Required
 
@@ -189,13 +189,13 @@ Mobile apps can be suspended or terminated at any time. Agents must handle this 
 
 ```
 User starts research agent
-     ↓
+     v
 Agent begins web search
-     ↓
+     v
 User switches to another app
-     ↓
+     v
 iOS suspends your app
-     ↓
+     v
 Agent is mid-execution... what happens?
 ```
 
@@ -272,7 +272,7 @@ class AgentSession: ObservableObject {
         ]
 
         guard validTransitions[state]?.contains(newState) == true else {
-            logger.warning("Invalid transition: \(state) → \(newState)")
+            logger.warning("Invalid transition: \(state) -> \(newState)")
             return
         }
 
@@ -380,7 +380,7 @@ struct PhotoTools {
 
                 case .denied, .restricted:
                     return ToolResult(
-                        text: "Photo access needed. Please grant permission in Settings → Privacy → Photos.",
+                        text: "Photo access needed. Please grant permission in Settings -> Privacy -> Photos.",
                         isError: true
                     )
 
@@ -413,7 +413,7 @@ func readPhotos() async -> ToolResult {
         return ToolResult(
             text: """
             I don't have access to your photos. You can either:
-            1. Grant access in Settings → Privacy → Photos
+            1. Grant access in Settings -> Privacy -> Photos
             2. Share specific photos directly in our chat
 
             Would you like me to help with something else instead?
@@ -808,10 +808,10 @@ Understanding what runs where in a mobile agent-native app:
 
 | Component | On-Device | Cloud |
 |-----------|-----------|-------|
-| Orchestration | ✅ | |
-| Tool execution | ✅ (file ops, photo access, HealthKit) | |
-| LLM calls | | ✅ (Anthropic API) |
-| Checkpoints | ✅ (local files) | Optional via iCloud |
+| Orchestration | [x] | |
+| Tool execution | [x] (file ops, photo access, HealthKit) | |
+| LLM calls | | [x] (Anthropic API) |
+| Checkpoints | [x] (local files) | Optional via iCloud |
 | Long-running agents | Limited by iOS | Possible with server |
 
 ### Implications

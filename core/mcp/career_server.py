@@ -675,8 +675,8 @@ async def handle_scan_work_for_evidence(arguments: dict) -> list[types.TextConte
             current_goal = None
             
             for i, line in enumerate(lines):
-                # Match goal headers like ### 1. Launch Product v2.0 — **Growth** ^Q1-2026-goal-1
-                goal_match = re.match(r'###\s+(\d+)\.\s+(.+?)\s+—\s+\*\*(.+?)\*\*(?:\s+\^(Q\d+-\d{4}-goal-\d+))?', line)
+                # Match goal headers like ### 1. Launch Product v2.0 - **Growth** ^Q1-2026-goal-1
+                goal_match = re.match(r'###\s+(\d+)\.\s+(.+?)\s+-\s+\*\*(.+?)\*\*(?:\s+\^(Q\d+-\d{4}-goal-\d+))?', line)
                 if goal_match:
                     if current_goal:
                         evidence_candidates.append(current_goal)
@@ -880,7 +880,7 @@ async def handle_generate_evidence_from_work(arguments: dict) -> list[types.Text
             for i, line in enumerate(lines):
                 if f'^{work_id}' in line:
                     # Extract goal details
-                    goal_match = re.match(r'###\s+(\d+)\.\s+(.+?)\s+—\s+\*\*(.+?)\*\*', line)
+                    goal_match = re.match(r'###\s+(\d+)\.\s+(.+?)\s+-\s+\*\*(.+?)\*\*', line)
                     if goal_match:
                         work_data['title'] = goal_match.group(2).strip()
                         work_data['pillar'] = goal_match.group(3).strip()
@@ -928,7 +928,7 @@ async def handle_generate_evidence_from_work(arguments: dict) -> list[types.Text
 
 ## What I Did
 
-{work_data.get('success_criteria', '[Description of the work and approach — tell the story of what you accomplished]')}
+{work_data.get('success_criteria', '[Description of the work and approach - tell the story of what you accomplished]')}
 
 ---
 
@@ -946,8 +946,8 @@ async def handle_generate_evidence_from_work(arguments: dict) -> list[types.Text
 
 ## Stakeholders
 
-- [Person 1] — [Their role/involvement]
-- [Person 2] — [Their role/involvement]
+- [Person 1] - [Their role/involvement]
+- [Person 2] - [Their role/involvement]
 
 ---
 

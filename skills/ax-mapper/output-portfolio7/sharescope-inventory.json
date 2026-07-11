@@ -10,12 +10,12 @@
       "state_key": "portfolio-export-options",
       "captured_at": "2026-07-04T12:11:46.574Z",
       "url": "https://engine-5.sharescope.co.uk/SSWeb/app.do;jsessionid=1887661BADD610EB1B0E4480C5369FC8",
-      "ax_snapshot": "- heading \"Export options\" [level=4]\n- text: Data to export\n- combobox:\n  - option \"Holdings\" [selected]\n  - option \"Holdings (Latest only)\"\n  - option \"Transactions\"\n- button \"Export\"\n- img\n- button \"Maximise list view\":\n  - img\n- button \"Show both views\":\n  - img\n- button \"Maximise green view\":\n  - img\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"?\"\n- 'button \"Layout: Default layout\"'\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"FTSE 100\"\n- button \"FTSE All\"\n- button \"US 500\"\n- button \"0 - 0 - 2026 - PP1 (UK)\"\n- button \"0 - 0 - 2026 - PP2 (UK)\"\n- button \"Other lists\"\n- 'button \"Port: 0 - 0 - 2026 - PP1 (UK)\"'\n- button \"Portfolios\"\n- button \"Search\"\n- button \"\"\n- button \"Chart\"\n- button \"Financials\"\n- button \"News\"\n- button \"DD\"\n- button \"Alarms\"\n- button \"Level 2\" [disabled]\n- button \"Transactions\"\n- button \"Prices\"\n- button \"Calendar\"\n- button \"Financial charts\"\n- button \"Investor tools\"\n- button \"More\"\n- button \"Holdings\"\n- button \"Cash\"\n- button \"Value on date\"\n- button \"Tax\"\n- button \"Analysis\"\n- button \"Current holdings\"\n- button \"Chart\"\n- button \"Sharing\"\n- text: \"Transactions for Portfolio: 0 - 0 - 2026 - PP1 (UK)\"\n- table:\n  - rowgroup:\n    - row \"Portfolio current value Performance (investment return)\":\n      - columnheader \"Portfolio current value\"\n      - columnheader \"Performance (investment return)\"\n      - columnheader\n    - row \"Holdings £54,083.04 Today no change YTD ▲£5,436.09 8.08%\":\n      - cell \"Holdings\"\n      - cell \"£54,083.04\"\n      - cell \"Today\"\n      - cell \"no change\"\n      - cell\n      - cell \"YTD\"\n      - cell \"▲£5,436.09\"\n      - cell \"8.08%\"\n    - row \"Cash £18,616.44 1 month ▼£5,038.83 -6.48% 12 months ▲£15,745.00 27.6%\":\n      - cell \"Cash\"\n      - cell \"£18,616.44\"\n      - cell \"1 month\"\n      - cell \"▼£5,038.83\"\n      - cell \"-6.48%\"\n      - cell \"12 months\"\n      - cell \"▲£15,745.00\"\n      - cell \"27.6%\"\n    - row \"Total £72,699.48 12m yield 2.42%\":\n      - cell \"Total\"\n      - cell \"£72,699.48\"\n      - cell \"12m yield\"\n      - cell\n      - cell \"2.42%\"\n      - cell\n- table:\n  - rowgroup:\n    - 'row \"List of current holdings: valued at (Bid/Close)\"':\n      - 'columnheader \"List of current holdings: valued at (Bid/Close)\"'\n    - row \"Date Name TIDM Shares Price Avg price Cost Value Unrealised Profit % Return▾\":\n      - columnheader\n      - columnheader \"Date\"\n      - columnheader \"Name\"\n      - columnheader \"TIDM\"\n      - columnheader \"Shares\"\n      - columnheader \"Price\"\n      - columnheader \"Avg price\"\n      - columnheader \"Cost\"\n      - columnheader \"Value\"\n      - columnheader \"Unrealised\"\n      - columnheader \"Profit\"\n      - columnheader \"% Return▾\"\n    - row \" 4/7/26 Endeavour Mining PLC EDV 193 £40.42 £19.0733 £3,681.15 £7,801.06 £4,119.91 £6,416.25 135.7\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Endeavour Mining PLC\"\n      - cell \"EDV\"\n      - cell \"193\"\n      - cell \"£40.42\"\n      - cell \"£19.0733\"\n      - cell \"£3,681.15\"\n      - cell \"£7,801.06\"\n      - cell \"£4,119.91\"\n      - cell \"£6,416.25\"\n      - cell \"135.7\"\n    - row \" 4/7/26 Greatland Resources Ltd GGP 1,556 606p 323.764p £5,037.77 £9,429.36 £4,391.59 £4,391.59 87.2\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Greatland Resources Ltd\"\n      - cell \"GGP\"\n      - cell \"1,556\"\n      - cell \"606p\"\n      - cell \"323.764p\"\n      - cell \"£5,037.77\"\n      - cell \"£9,429.36\"\n      - cell \"£4,391.59\"\n      - cell \"£4,391.59\"\n      - cell \"87.2\"\n    - row \" 4/7/26 Thor Explorations Ltd THX 8,438 58.5p 35.6211p £3,005.71 £4,936.23 £1,930.52 £2,283.46 76.0\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Thor Explorations Ltd\"\n      - cell \"THX\"\n      - cell \"8,438\"\n      - cell \"58.5p\"\n      - cell \"35.6211p\"\n      - cell \"£3,005.71\"\n      - cell \"£4,936.23\"\n      - cell \"£1,930.52\"\n      - cell \"£2,283.46\"\n      - cell \"76.0\"\n    - row \" 4/7/26 Rainbow Rare Earths Ltd RBW 24,046 21.5p 12.559p £3,019.93 £5,169.89 £2,149.96 £2,149.96 71.2\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Rainbow Rare Earths Ltd\"\n      - cell \"RBW\"\n      - cell \"24,046\"\n      - cell \"21.5p\"\n      - cell \"12.559p\"\n      - cell \"£3,019.93\"\n      - cell \"£5,169.89\"\n      - cell \"£2,149.96\"\n      - cell \"£2,149.96\"\n      - cell \"71.2\"\n    - row \" 4/7/26 Capricorn Energy PLC CNE 453 346p 666.379p £3,018.70 £1,567.38 -£1,451.32 £1,858.51 61.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Capricorn Energy PLC\"\n      - cell \"CNE\"\n      - cell \"453\"\n      - cell \"346p\"\n      - cell \"666.379p\"\n      - cell \"£3,018.70\"\n      - cell \"£1,567.38\"\n      - cell \"-£1,451.32\"\n      - cell \"£1,858.51\"\n      - cell \"61.6\"\n    - row \" 4/7/26 Serica Energy PLC SQZ 1,904 216.4p 263.04p £5,008.29 £4,120.26 -£888.03 £616.13 12.3\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Serica Energy PLC\"\n      - cell \"SQZ\"\n      - cell \"1,904\"\n      - cell \"216.4p\"\n      - cell \"263.04p\"\n      - cell \"£5,008.29\"\n      - cell \"£4,120.26\"\n      - cell \"-£888.03\"\n      - cell \"£616.13\"\n      - cell \"12.3\"\n    - row \" 4/7/26 Andrada Mining Ltd ATM 89,436 3.7p 3.37671p £3,019.99 £3,309.13 £289.14 £289.14 9.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Andrada Mining Ltd\"\n      - cell \"ATM\"\n      - cell \"89,436\"\n      - cell \"3.7p\"\n      - cell \"3.37671p\"\n      - cell \"£3,019.99\"\n      - cell \"£3,309.13\"\n      - cell \"£289.14\"\n      - cell \"£289.14\"\n      - cell \"9.6\"\n    - row \" 4/7/26 IQE PLC IQE 6,748 44.85p 44.7537p £3,019.98 £3,026.48 £6.50 £6.50 0.2\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"IQE PLC\"\n      - cell \"IQE\"\n      - cell \"6,748\"\n      - cell \"44.85p\"\n      - cell \"44.7537p\"\n      - cell \"£3,019.98\"\n      - cell \"£3,026.48\"\n      - cell \"£6.50\"\n      - cell \"£6.50\"\n      - cell \"0.2\"\n    - row \" 4/7/26 Harbour Energy PLC HBR 212 214.2p 266.773p £565.56 £454.10 -£111.46 -£318.30 -5.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Harbour Energy PLC\"\n      - cell \"HBR\"\n      - cell \"212\"\n      - cell \"214.2p\"\n      - cell \"266.773p\"\n      - cell \"£565.56\"\n      - cell \"£454.10\"\n      - cell \"-£111.46\"\n      - cell \"-£318.30\"\n      - cell \"-5.6\"\n    - row \" 4/7/26 Capita PLC CPI 915 311.5p 329.919p £3,018.76 £2,850.23 -£168.53 -£168.53 -5.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Capita PLC\"\n      - cell \"CPI\"\n      - cell \"915\"\n      - cell \"311.5p\"\n      - cell \"329.919p\"\n      - cell \"£3,018.76\"\n      - cell \"£2,850.23\"\n      - cell \"-£168.53\"\n      - cell \"-£168.53\"\n      - cell \"-5.6\"\n    - row \" 4/7/26 EnQuest PLC ENQ 18,881 23.25p 26.5429p £5,011.57 £4,389.83 -£621.74 -£354.20 -7.1\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"EnQuest PLC\"\n      - cell \"ENQ\"\n      - cell \"18,881\"\n      - cell \"23.25p\"\n      - cell \"26.5429p\"\n      - cell \"£5,011.57\"\n      - cell \"£4,389.83\"\n      - cell \"-£621.74\"\n      - cell \"-£354.20\"\n      - cell \"-7.1\"\n    - row \" 4/7/26 Valterra Platinum Ltd VALT 72 £54.65 £69.4072 £4,997.32 £3,934.80 -£1,062.52 -£919.10 -18.4\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Valterra Platinum Ltd\"\n      - cell \"VALT\"\n      - cell \"72\"\n      - cell \"£54.65\"\n      - cell \"£69.4072\"\n      - cell \"£4,997.32\"\n      - cell \"£3,934.80\"\n      - cell \"-£1,062.52\"\n      - cell \"-£919.10\"\n      - cell \"-18.4\"\n    - row \" 4/7/26 Eco Animal Health Group PLC EAH 1,263 95.5p 120.275p £1,519.07 £1,206.17 -£312.91 -£312.91 -20.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Eco Animal Health Group PLC\"\n      - cell \"EAH\"\n      - cell \"1,263\"\n      - cell \"95.5p\"\n      - cell \"120.275p\"\n      - cell \"£1,519.07\"\n      - cell \"£1,206.17\"\n      - cell \"-£312.91\"\n      - cell \"-£312.91\"\n      - cell \"-20.6\"\n    - row \" 4/7/26 Touchstone Exploration Inc TXP 8,995 7.25p 33.4167p £3,005.83 £652.14 -£2,353.70 -£2,353.70 -78.3\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Touchstone Exploration Inc\"\n      - cell \"TXP\"\n      - cell \"8,995\"\n      - cell \"7.25p\"\n      - cell \"33.4167p\"\n      - cell \"£3,005.83\"\n      - cell \"£652.14\"\n      - cell \"-£2,353.70\"\n      - cell \"-£2,353.70\"\n      - cell \"-78.3\"\n    - row \" 4/7/26 Rambler Metals and Mining PLC RMM#1 18,273 5.375p 52.0549p £9,511.99 £982.17 -£8,529.81 -£8,529.81 -89.7\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Rambler Metals and Mining PLC\"\n      - cell \"RMM#1\"\n      - cell \"18,273\"\n      - cell \"5.375p\"\n      - cell \"52.0549p\"\n      - cell \"£9,511.99\"\n      - cell \"£982.17\"\n      - cell \"-£8,529.81\"\n      - cell \"-£8,529.81\"\n      - cell \"-89.7\"\n    - row \" 4/7/26 Ironveld PLC IRON 1,124,970 0.021p 0.498857p £5,611.99 £236.24 -£5,375.75 -£5,375.75 -95.8\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Ironveld PLC\"\n      - cell \"IRON\"\n      - cell \"1,124,970\"\n      - cell \"0.021p\"\n      - cell \"0.498857p\"\n      - cell \"£5,611.99\"\n      - cell \"£236.24\"\n      - cell \"-£5,375.75\"\n      - cell \"-£5,375.75\"\n      - cell \"-95.8\"\n    - row \" 4/7/26 Challenger Energy Group PLC CEG#2 174 10.1p £17.2757 £3,005.98 £17.57 -£2,988.40 -£2,988.40 -99.4\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Challenger Energy Group PLC\"\n      - cell \"CEG#2\"\n      - cell \"174\"\n      - cell \"10.1p\"\n      - cell \"£17.2757\"\n      - cell \"£3,005.98\"\n      - cell \"£17.57\"\n      - cell \"-£2,988.40\"\n      - cell \"-£2,988.40\"\n      - cell \"-99.4\"\n    - row \"Total £65,059.59 £54,083.04 -£10,976.55 -£3,309.16\":\n      - cell\n      - cell \"Total\"\n      - cell\n      - cell\n      - cell\n      - cell\n      - cell\n      - cell \"£65,059.59\"\n      - cell \"£54,083.04\"\n      - cell \"-£10,976.55\"\n      - cell \"-£3,309.16\"\n      - cell\n- button \"Design...\"\n- button \"Add transaction\"\n- button \"Add cash transaction\"\n- button \"Edit\"\n- button \"Delete\"\n- button \"Move/Copy\"\n- button \"Advanced\"\n- button \"?\"",
+      "ax_snapshot": "- heading \"Export options\" [level=4]\n- text: Data to export\n- combobox:\n  - option \"Holdings\" [selected]\n  - option \"Holdings (Latest only)\"\n  - option \"Transactions\"\n- button \"Export\"\n- img\n- button \"Maximise list view\":\n  - img\n- button \"Show both views\":\n  - img\n- button \"Maximise green view\":\n  - img\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"?\"\n- 'button \"Layout: Default layout\"'\n- button \"\"\n- button \"\"\n- button \"\"\n- button \"FTSE 100\"\n- button \"FTSE All\"\n- button \"US 500\"\n- button \"0 - 0 - 2026 - PP1 (UK)\"\n- button \"0 - 0 - 2026 - PP2 (UK)\"\n- button \"Other lists\"\n- 'button \"Port: 0 - 0 - 2026 - PP1 (UK)\"'\n- button \"Portfolios\"\n- button \"Search\"\n- button \"\"\n- button \"Chart\"\n- button \"Financials\"\n- button \"News\"\n- button \"DD\"\n- button \"Alarms\"\n- button \"Level 2\" [disabled]\n- button \"Transactions\"\n- button \"Prices\"\n- button \"Calendar\"\n- button \"Financial charts\"\n- button \"Investor tools\"\n- button \"More\"\n- button \"Holdings\"\n- button \"Cash\"\n- button \"Value on date\"\n- button \"Tax\"\n- button \"Analysis\"\n- button \"Current holdings\"\n- button \"Chart\"\n- button \"Sharing\"\n- text: \"Transactions for Portfolio: 0 - 0 - 2026 - PP1 (UK)\"\n- table:\n  - rowgroup:\n    - row \"Portfolio current value Performance (investment return)\":\n      - columnheader \"Portfolio current value\"\n      - columnheader \"Performance (investment return)\"\n      - columnheader\n    - row \"Holdings GBP54,083.04 Today no change YTD ^GBP5,436.09 8.08%\":\n      - cell \"Holdings\"\n      - cell \"GBP54,083.04\"\n      - cell \"Today\"\n      - cell \"no change\"\n      - cell\n      - cell \"YTD\"\n      - cell \"^GBP5,436.09\"\n      - cell \"8.08%\"\n    - row \"Cash GBP18,616.44 1 month vGBP5,038.83 -6.48% 12 months ^GBP15,745.00 27.6%\":\n      - cell \"Cash\"\n      - cell \"GBP18,616.44\"\n      - cell \"1 month\"\n      - cell \"vGBP5,038.83\"\n      - cell \"-6.48%\"\n      - cell \"12 months\"\n      - cell \"^GBP15,745.00\"\n      - cell \"27.6%\"\n    - row \"Total GBP72,699.48 12m yield 2.42%\":\n      - cell \"Total\"\n      - cell \"GBP72,699.48\"\n      - cell \"12m yield\"\n      - cell\n      - cell \"2.42%\"\n      - cell\n- table:\n  - rowgroup:\n    - 'row \"List of current holdings: valued at (Bid/Close)\"':\n      - 'columnheader \"List of current holdings: valued at (Bid/Close)\"'\n    - row \"Date Name TIDM Shares Price Avg price Cost Value Unrealised Profit % Returnv\":\n      - columnheader\n      - columnheader \"Date\"\n      - columnheader \"Name\"\n      - columnheader \"TIDM\"\n      - columnheader \"Shares\"\n      - columnheader \"Price\"\n      - columnheader \"Avg price\"\n      - columnheader \"Cost\"\n      - columnheader \"Value\"\n      - columnheader \"Unrealised\"\n      - columnheader \"Profit\"\n      - columnheader \"% Returnv\"\n    - row \" 4/7/26 Endeavour Mining PLC EDV 193 GBP40.42 GBP19.0733 GBP3,681.15 GBP7,801.06 GBP4,119.91 GBP6,416.25 135.7\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Endeavour Mining PLC\"\n      - cell \"EDV\"\n      - cell \"193\"\n      - cell \"GBP40.42\"\n      - cell \"GBP19.0733\"\n      - cell \"GBP3,681.15\"\n      - cell \"GBP7,801.06\"\n      - cell \"GBP4,119.91\"\n      - cell \"GBP6,416.25\"\n      - cell \"135.7\"\n    - row \" 4/7/26 Greatland Resources Ltd GGP 1,556 606p 323.764p GBP5,037.77 GBP9,429.36 GBP4,391.59 GBP4,391.59 87.2\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Greatland Resources Ltd\"\n      - cell \"GGP\"\n      - cell \"1,556\"\n      - cell \"606p\"\n      - cell \"323.764p\"\n      - cell \"GBP5,037.77\"\n      - cell \"GBP9,429.36\"\n      - cell \"GBP4,391.59\"\n      - cell \"GBP4,391.59\"\n      - cell \"87.2\"\n    - row \" 4/7/26 Thor Explorations Ltd THX 8,438 58.5p 35.6211p GBP3,005.71 GBP4,936.23 GBP1,930.52 GBP2,283.46 76.0\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Thor Explorations Ltd\"\n      - cell \"THX\"\n      - cell \"8,438\"\n      - cell \"58.5p\"\n      - cell \"35.6211p\"\n      - cell \"GBP3,005.71\"\n      - cell \"GBP4,936.23\"\n      - cell \"GBP1,930.52\"\n      - cell \"GBP2,283.46\"\n      - cell \"76.0\"\n    - row \" 4/7/26 Rainbow Rare Earths Ltd RBW 24,046 21.5p 12.559p GBP3,019.93 GBP5,169.89 GBP2,149.96 GBP2,149.96 71.2\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Rainbow Rare Earths Ltd\"\n      - cell \"RBW\"\n      - cell \"24,046\"\n      - cell \"21.5p\"\n      - cell \"12.559p\"\n      - cell \"GBP3,019.93\"\n      - cell \"GBP5,169.89\"\n      - cell \"GBP2,149.96\"\n      - cell \"GBP2,149.96\"\n      - cell \"71.2\"\n    - row \" 4/7/26 Capricorn Energy PLC CNE 453 346p 666.379p GBP3,018.70 GBP1,567.38 -GBP1,451.32 GBP1,858.51 61.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Capricorn Energy PLC\"\n      - cell \"CNE\"\n      - cell \"453\"\n      - cell \"346p\"\n      - cell \"666.379p\"\n      - cell \"GBP3,018.70\"\n      - cell \"GBP1,567.38\"\n      - cell \"-GBP1,451.32\"\n      - cell \"GBP1,858.51\"\n      - cell \"61.6\"\n    - row \" 4/7/26 Serica Energy PLC SQZ 1,904 216.4p 263.04p GBP5,008.29 GBP4,120.26 -GBP888.03 GBP616.13 12.3\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Serica Energy PLC\"\n      - cell \"SQZ\"\n      - cell \"1,904\"\n      - cell \"216.4p\"\n      - cell \"263.04p\"\n      - cell \"GBP5,008.29\"\n      - cell \"GBP4,120.26\"\n      - cell \"-GBP888.03\"\n      - cell \"GBP616.13\"\n      - cell \"12.3\"\n    - row \" 4/7/26 Andrada Mining Ltd ATM 89,436 3.7p 3.37671p GBP3,019.99 GBP3,309.13 GBP289.14 GBP289.14 9.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Andrada Mining Ltd\"\n      - cell \"ATM\"\n      - cell \"89,436\"\n      - cell \"3.7p\"\n      - cell \"3.37671p\"\n      - cell \"GBP3,019.99\"\n      - cell \"GBP3,309.13\"\n      - cell \"GBP289.14\"\n      - cell \"GBP289.14\"\n      - cell \"9.6\"\n    - row \" 4/7/26 IQE PLC IQE 6,748 44.85p 44.7537p GBP3,019.98 GBP3,026.48 GBP6.50 GBP6.50 0.2\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"IQE PLC\"\n      - cell \"IQE\"\n      - cell \"6,748\"\n      - cell \"44.85p\"\n      - cell \"44.7537p\"\n      - cell \"GBP3,019.98\"\n      - cell \"GBP3,026.48\"\n      - cell \"GBP6.50\"\n      - cell \"GBP6.50\"\n      - cell \"0.2\"\n    - row \" 4/7/26 Harbour Energy PLC HBR 212 214.2p 266.773p GBP565.56 GBP454.10 -GBP111.46 -GBP318.30 -5.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Harbour Energy PLC\"\n      - cell \"HBR\"\n      - cell \"212\"\n      - cell \"214.2p\"\n      - cell \"266.773p\"\n      - cell \"GBP565.56\"\n      - cell \"GBP454.10\"\n      - cell \"-GBP111.46\"\n      - cell \"-GBP318.30\"\n      - cell \"-5.6\"\n    - row \" 4/7/26 Capita PLC CPI 915 311.5p 329.919p GBP3,018.76 GBP2,850.23 -GBP168.53 -GBP168.53 -5.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Capita PLC\"\n      - cell \"CPI\"\n      - cell \"915\"\n      - cell \"311.5p\"\n      - cell \"329.919p\"\n      - cell \"GBP3,018.76\"\n      - cell \"GBP2,850.23\"\n      - cell \"-GBP168.53\"\n      - cell \"-GBP168.53\"\n      - cell \"-5.6\"\n    - row \" 4/7/26 EnQuest PLC ENQ 18,881 23.25p 26.5429p GBP5,011.57 GBP4,389.83 -GBP621.74 -GBP354.20 -7.1\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"EnQuest PLC\"\n      - cell \"ENQ\"\n      - cell \"18,881\"\n      - cell \"23.25p\"\n      - cell \"26.5429p\"\n      - cell \"GBP5,011.57\"\n      - cell \"GBP4,389.83\"\n      - cell \"-GBP621.74\"\n      - cell \"-GBP354.20\"\n      - cell \"-7.1\"\n    - row \" 4/7/26 Valterra Platinum Ltd VALT 72 GBP54.65 GBP69.4072 GBP4,997.32 GBP3,934.80 -GBP1,062.52 -GBP919.10 -18.4\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Valterra Platinum Ltd\"\n      - cell \"VALT\"\n      - cell \"72\"\n      - cell \"GBP54.65\"\n      - cell \"GBP69.4072\"\n      - cell \"GBP4,997.32\"\n      - cell \"GBP3,934.80\"\n      - cell \"-GBP1,062.52\"\n      - cell \"-GBP919.10\"\n      - cell \"-18.4\"\n    - row \" 4/7/26 Eco Animal Health Group PLC EAH 1,263 95.5p 120.275p GBP1,519.07 GBP1,206.17 -GBP312.91 -GBP312.91 -20.6\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Eco Animal Health Group PLC\"\n      - cell \"EAH\"\n      - cell \"1,263\"\n      - cell \"95.5p\"\n      - cell \"120.275p\"\n      - cell \"GBP1,519.07\"\n      - cell \"GBP1,206.17\"\n      - cell \"-GBP312.91\"\n      - cell \"-GBP312.91\"\n      - cell \"-20.6\"\n    - row \" 4/7/26 Touchstone Exploration Inc TXP 8,995 7.25p 33.4167p GBP3,005.83 GBP652.14 -GBP2,353.70 -GBP2,353.70 -78.3\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Touchstone Exploration Inc\"\n      - cell \"TXP\"\n      - cell \"8,995\"\n      - cell \"7.25p\"\n      - cell \"33.4167p\"\n      - cell \"GBP3,005.83\"\n      - cell \"GBP652.14\"\n      - cell \"-GBP2,353.70\"\n      - cell \"-GBP2,353.70\"\n      - cell \"-78.3\"\n    - row \" 4/7/26 Rambler Metals and Mining PLC RMM#1 18,273 5.375p 52.0549p GBP9,511.99 GBP982.17 -GBP8,529.81 -GBP8,529.81 -89.7\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Rambler Metals and Mining PLC\"\n      - cell \"RMM#1\"\n      - cell \"18,273\"\n      - cell \"5.375p\"\n      - cell \"52.0549p\"\n      - cell \"GBP9,511.99\"\n      - cell \"GBP982.17\"\n      - cell \"-GBP8,529.81\"\n      - cell \"-GBP8,529.81\"\n      - cell \"-89.7\"\n    - row \" 4/7/26 Ironveld PLC IRON 1,124,970 0.021p 0.498857p GBP5,611.99 GBP236.24 -GBP5,375.75 -GBP5,375.75 -95.8\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Ironveld PLC\"\n      - cell \"IRON\"\n      - cell \"1,124,970\"\n      - cell \"0.021p\"\n      - cell \"0.498857p\"\n      - cell \"GBP5,611.99\"\n      - cell \"GBP236.24\"\n      - cell \"-GBP5,375.75\"\n      - cell \"-GBP5,375.75\"\n      - cell \"-95.8\"\n    - row \" 4/7/26 Challenger Energy Group PLC CEG#2 174 10.1p GBP17.2757 GBP3,005.98 GBP17.57 -GBP2,988.40 -GBP2,988.40 -99.4\":\n      - cell \"\":\n        - button \"\"\n      - cell \"4/7/26\"\n      - cell \"Challenger Energy Group PLC\"\n      - cell \"CEG#2\"\n      - cell \"174\"\n      - cell \"10.1p\"\n      - cell \"GBP17.2757\"\n      - cell \"GBP3,005.98\"\n      - cell \"GBP17.57\"\n      - cell \"-GBP2,988.40\"\n      - cell \"-GBP2,988.40\"\n      - cell \"-99.4\"\n    - row \"Total GBP65,059.59 GBP54,083.04 -GBP10,976.55 -GBP3,309.16\":\n      - cell\n      - cell \"Total\"\n      - cell\n      - cell\n      - cell\n      - cell\n      - cell\n      - cell \"GBP65,059.59\"\n      - cell \"GBP54,083.04\"\n      - cell \"-GBP10,976.55\"\n      - cell \"-GBP3,309.16\"\n      - cell\n- button \"Design...\"\n- button \"Add transaction\"\n- button \"Add cash transaction\"\n- button \"Edit\"\n- button \"Delete\"\n- button \"Move/Copy\"\n- button \"Advanced\"\n- button \"?\"",
       "controls": [
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": true
         },
         {
@@ -957,7 +957,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jul 1",
+          "name": "@ShareScope - Jul 1",
           "visible": false
         },
         {
@@ -975,7 +975,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jul 1",
+          "name": "@ShareScope - Jul 1",
           "visible": false
         },
         {
@@ -987,7 +987,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 24/06/2026 | OPT, OMG, SAAS | Surely we can …",
+          "name": "Bi-Weekly Market Commentary | 24/06/2026 | OPT, OMG, SAAS | Surely we can ...",
           "visible": false
         },
         {
@@ -999,7 +999,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@RebelHQ · Jun 30",
+          "name": "@RebelHQ - Jun 30",
           "visible": false
         },
         {
@@ -1017,7 +1017,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 30",
+          "name": "@ShareScope - Jun 30",
           "visible": false
         },
         {
@@ -1095,7 +1095,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 29",
+          "name": "@ShareScope - Jun 29",
           "visible": false
         },
         {
@@ -1119,7 +1119,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 29",
+          "name": "@ShareScope - Jun 29",
           "visible": false
         },
         {
@@ -1143,7 +1143,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 26",
+          "name": "@ShareScope - Jun 26",
           "visible": false
         },
         {
@@ -1161,7 +1161,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 25",
+          "name": "@ShareScope - Jun 25",
           "visible": false
         },
         {
@@ -1197,7 +1197,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 24",
+          "name": "@ShareScope - Jun 24",
           "visible": false
         },
         {
@@ -1221,7 +1221,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 23",
+          "name": "@ShareScope - Jun 23",
           "visible": false
         },
         {
@@ -1239,7 +1239,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 22",
+          "name": "@ShareScope - Jun 22",
           "visible": false
         },
         {
@@ -1263,7 +1263,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 22",
+          "name": "@ShareScope - Jun 22",
           "visible": false
         },
         {
@@ -1341,7 +1341,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 19",
+          "name": "@ShareScope - Jun 19",
           "visible": false
         },
         {
@@ -1377,7 +1377,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 17",
+          "name": "@ShareScope - Jun 17",
           "visible": false
         },
         {
@@ -1401,7 +1401,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 10/06/2026 | ACSO, GTLY, MEGP | Cash versus …",
+          "name": "Bi-Weekly Market Commentary | 10/06/2026 | ACSO, GTLY, MEGP | Cash versus ...",
           "visible": false
         },
         {
@@ -1413,7 +1413,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 15",
+          "name": "@ShareScope - Jun 15",
           "visible": false
         },
         {
@@ -1491,7 +1491,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@RebelHQ · Jun 15",
+          "name": "@RebelHQ - Jun 15",
           "visible": false
         },
         {
@@ -1599,7 +1599,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@JamieCDubya · Jun 12",
+          "name": "@JamieCDubya - Jun 12",
           "visible": false
         },
         {
@@ -1617,7 +1617,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 12",
+          "name": "@ShareScope - Jun 12",
           "visible": false
         },
         {
@@ -1641,7 +1641,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Monthly Fund Focus: A defensive income and growth fund, Agentic AI and a F…",
+          "name": "Monthly Fund Focus: A defensive income and growth fund, Agentic AI and a F...",
           "visible": false
         },
         {
@@ -1653,7 +1653,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 10",
+          "name": "@ShareScope - Jun 10",
           "visible": false
         },
         {
@@ -1665,7 +1665,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "5 Strikes: Resellers join the IT component gold rush | CCC, KEYS, QTX - Sh…",
+          "name": "5 Strikes: Resellers join the IT component gold rush | CCC, KEYS, QTX - Sh...",
           "visible": false
         },
         {
@@ -1677,7 +1677,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@annabelbrodies · Jun 5",
+          "name": "@annabelbrodies - Jun 5",
           "visible": false
         },
         {
@@ -1713,7 +1713,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 3",
+          "name": "@ShareScope - Jun 3",
           "visible": false
         },
         {
@@ -1737,7 +1737,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "Bi-Weekly Market Commentary | 27/05/2026 |KNOS, KLR, DXRX | Energy costs a…",
+          "name": "Bi-Weekly Market Commentary | 27/05/2026 |KNOS, KLR, DXRX | Energy costs a...",
           "visible": false
         },
         {
@@ -1749,7 +1749,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@HTVIOLA · Jun 2",
+          "name": "@HTVIOLA - Jun 2",
           "visible": false
         },
         {
@@ -1767,7 +1767,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 2",
+          "name": "@ShareScope - Jun 2",
           "visible": false
         },
         {
@@ -1845,7 +1845,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@JamieCDubya · Jun 1",
+          "name": "@JamieCDubya - Jun 1",
           "visible": false
         },
         {
@@ -1881,7 +1881,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 1",
+          "name": "@ShareScope - Jun 1",
           "visible": false
         },
         {
@@ -1905,7 +1905,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · Jun 1",
+          "name": "@ShareScope - Jun 1",
           "visible": false
         },
         {
@@ -1929,7 +1929,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 29",
+          "name": "@ShareScope - May 29",
           "visible": false
         },
         {
@@ -1947,7 +1947,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@annabelbrodies · May 28",
+          "name": "@annabelbrodies - May 28",
           "visible": false
         },
         {
@@ -1971,7 +1971,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 28",
+          "name": "@ShareScope - May 28",
           "visible": false
         },
         {
@@ -1989,7 +1989,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "@ShareScope · May 27",
+          "name": "@ShareScope - May 27",
           "visible": false
         },
         {
@@ -2013,7 +2013,7 @@
         {
           "tag": "a",
           "role": "a",
-          "name": "5 Strikes: 2026 the journey so far & how big is significant? - ShareScope …",
+          "name": "5 Strikes: 2026 the journey so far & how big is significant? - ShareScope ...",
           "visible": false
         },
         {
@@ -2073,7 +2073,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2103,7 +2103,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2139,7 +2139,7 @@
         {
           "tag": "button",
           "role": "button",
-          "name": "×",
+          "name": "x",
           "visible": false
         },
         {
@@ -2577,7 +2577,7 @@
         "li[data-cmd=\"BuildModel\"]",
         "button[data-cmd=\"Help\"]"
       ],
-      "main_dom_html": "<div class=\"window secondary focus\" style=\"left: 10px; top: 0px; width: 1910px; height: 994px; display: block;\"><div class=\"window-top-controls\"><div class=\"controlbar\">\n\t<div class=\"btn-group\">   \n\t\t<button class=\"btn ss-btn-ctrlbar active\" data-cmd=\"ShowTransactions\">Holdings</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowCash\">Cash</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowValueOnDate\">Value on date</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowTax\">Tax</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowAnalysis\">Analysis</button>\n\t</div>\n\t\n\t<button class=\"btn ss-btn-ctrlbar active\" type=\"button\" data-cmd=\"ViewCurrentOnly\">Current holdings</button>\n\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"Graph\">Chart</button>\n\t<div class=\"btn-group\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Sharing<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n<!--\t\t\t<li data-cmd=\"ExportTrans\"><a tabindex=\"0\">Export transactions to file...</a></li>-->\n\t\t\t<li data-cmd=\"ExportPerformance\" class=\"\"><a tabindex=\"0\">Export performance data...</a></li>\n<!--\t\t\t<li data-cmd=\"ExportHoldings\"><a tabindex=\"0\">Export holdings to file...</a></li>-->\n\t\t\t<li data-cmd=\"TransExportDataOption\"><a tabindex=\"0\">Export holdings/transactions...</a></li>\n\t\t\t<li data-cmd=\"Print\"><a tabindex=\"0\">Print...</a></li>\n\t\t</ul>\n\t</div>\n</div></div><div class=\"window-titlebar\">Transactions for Portfolio: 0 - 0 - 2026 - PP1 (UK)</div><div class=\"window-view\"><div class=\"trans-view-scroll-div\"><div class=\"trans-view-body-div\" style=\"max-width: 910px;\"><div class=\"trans-view-value-div\"><table class=\"transactions-value-table\"><tbody><tr><th colspan=\"2\">Portfolio current value</th><th colspan=\"7\">Performance (investment return)</th><th></th></tr><tr><td>Holdings</td><td>£54,083.04</td><td>Today</td><td>no&nbsp;change</td><td></td><td>YTD</td><td><span class=\"positive\">▲£5,436.09</span></td><td><span class=\"positive\">8.08%</span></td></tr><tr><td>Cash</td><td>£18,616.44</td><td>1&nbsp;month</td><td><span class=\"negative\">▼£5,038.83</span></td><td><span class=\"negative\">-6.48%</span></td><td>12&nbsp;months</td><td><span class=\"positive\">▲£15,745.00</span></td><td><span class=\"positive\">27.6%</span></td></tr><tr class=\"last\"><td class=\"total\">Total</td><td class=\"total\">£72,699.48</td><td>12m yield</td><td></td><td>2.42%</td><td colspan=\"6\"></td></tr></tbody></table></div><div class=\"trans-view-graph-div\" style=\"display: none;\"></div><div class=\"trans-view-graph-controls-div\" \"=\"\" style=\"display: none;\"></div><div class=\"trans-view-trans-div\"><table class=\"transactions-table transactions\"><tbody><tr class=\"heading\"><th colspan=\"12\">List of current holdings: valued at  (Bid/Close)</th></tr><tr class=\"subhead\"><th class=\"\"></th><th class=\"sortable\">Date</th><th class=\"sortable\">Name</th><th class=\"sortable\">TIDM</th><th class=\"sortable\">Shares</th><th class=\"sortable\">Price</th><th class=\"sortable\">Avg&nbsp;price</th><th class=\"sortable\">Cost</th><th class=\"sortable\">Value</th><th class=\"sortable\">Unrealised</th><th class=\"sortable\">&nbsp;Profit</th><th class=\"sortable sorted\">%&nbsp;Return▾</th></tr><tr class=\"\" id=\"V4-tran0\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Endeavour Mining PLC</td><td>EDV</td><td>193</td><td>£40.42</td><td>£19.0733</td><td>£3,681.15</td><td>£7,801.06</td><td>£4,119.91</td><td>£6,416.25</td><td class=\"positive\">135.7</td></tr><tr class=\"selected\" id=\"V4-tran1\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Greatland Resources Ltd</td><td>GGP</td><td>1,556</td><td>606p</td><td>323.764p</td><td>£5,037.77</td><td>£9,429.36</td><td>£4,391.59</td><td>£4,391.59</td><td class=\"positive\">87.2</td></tr><tr class=\"\" id=\"V4-tran2\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Thor Explorations Ltd</td><td>THX</td><td>8,438</td><td>58.5p</td><td>35.6211p</td><td>£3,005.71</td><td>£4,936.23</td><td>£1,930.52</td><td>£2,283.46</td><td class=\"positive\">76.0</td></tr><tr class=\"\" id=\"V4-tran3\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Rainbow Rare Earths Ltd</td><td>RBW</td><td>24,046</td><td>21.5p</td><td>12.559p</td><td>£3,019.93</td><td>£5,169.89</td><td>£2,149.96</td><td>£2,149.96</td><td class=\"positive\">71.2</td></tr><tr class=\"\" id=\"V4-tran4\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Capricorn Energy PLC</td><td>CNE</td><td>453</td><td>346p</td><td>666.379p</td><td>£3,018.70</td><td>£1,567.38</td><td>-£1,451.32</td><td>£1,858.51</td><td class=\"positive\">61.6</td></tr><tr class=\"\" id=\"V4-tran5\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Serica Energy PLC</td><td>SQZ</td><td>1,904</td><td>216.4p</td><td>263.04p</td><td>£5,008.29</td><td>£4,120.26</td><td>-£888.03</td><td>£616.13</td><td class=\"positive\">12.3</td></tr><tr class=\"\" id=\"V4-tran6\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Andrada Mining Ltd</td><td>ATM</td><td>89,436</td><td>3.7p</td><td>3.37671p</td><td>£3,019.99</td><td>£3,309.13</td><td>£289.14</td><td>£289.14</td><td class=\"positive\">9.6</td></tr><tr class=\"\" id=\"V4-tran7\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>IQE PLC</td><td>IQE</td><td>6,748</td><td>44.85p</td><td>44.7537p</td><td>£3,019.98</td><td>£3,026.48</td><td>£6.50</td><td>£6.50</td><td class=\"positive\">0.2</td></tr><tr class=\"\" id=\"V4-tran8\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Harbour Energy PLC</td><td>HBR</td><td>212</td><td>214.2p</td><td>266.773p</td><td>£565.56</td><td>£454.10</td><td>-£111.46</td><td>-£318.30</td><td class=\"negative\">-5.6</td></tr><tr class=\"\" id=\"V4-tran9\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Capita PLC</td><td>CPI</td><td>915</td><td>311.5p</td><td>329.919p</td><td>£3,018.76</td><td>£2,850.23</td><td>-£168.53</td><td>-£168.53</td><td class=\"negative\">-5.6</td></tr><tr class=\"\" id=\"V4-tran10\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>EnQuest PLC</td><td>ENQ</td><td>18,881</td><td>23.25p</td><td>26.5429p</td><td>£5,011.57</td><td>£4,389.83</td><td>-£621.74</td><td>-£354.20</td><td class=\"negative\">-7.1</td></tr><tr class=\"\" id=\"V4-tran11\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Valterra Platinum Ltd</td><td>VALT</td><td>72</td><td>£54.65</td><td>£69.4072</td><td>£4,997.32</td><td>£3,934.80</td><td>-£1,062.52</td><td>-£919.10</td><td class=\"negative\">-18.4</td></tr><tr class=\"\" id=\"V4-tran12\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Eco Animal Health Group PLC</td><td>EAH</td><td>1,263</td><td>95.5p</td><td>120.275p</td><td>£1,519.07</td><td>£1,206.17</td><td>-£312.91</td><td>-£312.91</td><td class=\"negative\">-20.6</td></tr><tr class=\"\" id=\"V4-tran13\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Touchstone Exploration Inc</td><td>TXP</td><td>8,995</td><td>7.25p</td><td>33.4167p</td><td>£3,005.83</td><td>£652.14</td><td>-£2,353.70</td><td>-£2,353.70</td><td class=\"negative\">-78.3</td></tr><tr class=\"\" id=\"V4-tran14\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Rambler Metals and Mining PLC</td><td>RMM#1</td><td>18,273</td><td>5.375p</td><td>52.0549p</td><td>£9,511.99</td><td>£982.17</td><td>-£8,529.81</td><td>-£8,529.81</td><td class=\"negative\">-89.7</td></tr><tr class=\"\" id=\"V4-tran15\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Ironveld PLC</td><td>IRON</td><td>1,124,970</td><td>0.021p</td><td>0.498857p</td><td>£5,611.99</td><td>£236.24</td><td>-£5,375.75</td><td>-£5,375.75</td><td class=\"negative\">-95.8</td></tr><tr class=\"\" id=\"V4-tran16\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Challenger Energy Group PLC</td><td>CEG#2</td><td>174</td><td>10.1p</td><td>£17.2757</td><td>£3,005.98</td><td>£17.57</td><td>-£2,988.40</td><td>-£2,988.40</td><td class=\"negative\">-99.4</td></tr><tr class=\"total\"><td></td><td>Total</td><td></td><td></td><td></td><td></td><td></td><td>£65,059.59</td><td>£54,083.04</td><td>-£10,976.55</td><td>-£3,309.16</td><td></td></tr></tbody></table></div></div></div><table class=\"transactions-table transactions fixed-heading\" style=\"\"><tbody><tr class=\"subhead\"><th class=\"\"></th><th class=\"sortable\">Date</th><th class=\"sortable\">Name</th><th class=\"sortable\">TIDM</th><th class=\"sortable\">Shares</th><th class=\"sortable\">Price</th><th class=\"sortable\">Avg&nbsp;price</th><th class=\"sortable\">Cost</th><th class=\"sortable\">Value</th><th class=\"sortable\">Unrealised</th><th class=\"sortable\">&nbsp;Profit</th><th class=\"sortable sorted\">%&nbsp;Return▾</th></tr></tbody></table></div><div class=\"window-bottom-controls\"><div class=\"controlbar\">\n\t<button class=\"btn ss-btn-ctrlbar\" type=\"button\" data-cmd=\"Design\">Design...</button>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Add transaction<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"AddTranBuy\"><a tabindex=\"0\">Buy</a></li>\n\t\t\t<li data-cmd=\"AddTranSell\"><a tabindex=\"0\">Sell</a></li>\n\t\t\t<li data-cmd=\"AddTranDiv\"><a tabindex=\"0\">Dividend</a></li>\n\t\t\t<li data-cmd=\"AddTranScripDiv\"><a tabindex=\"0\">Scrip dividend</a></li>\n\t\t\t<li data-cmd=\"AddTranPID\"><a tabindex=\"0\">Property Income Distribution (PID)</a></li>\n\t\t\t<li data-cmd=\"AddTranROC\"><a tabindex=\"0\">Return of capital</a></li>\n\t\t\t<li data-cmd=\"AddTranNotional\"><a tabindex=\"0\">Notional distribution</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"AddTranSplit\"><a tabindex=\"0\">Share split</a></li>\n\t\t\t<li data-cmd=\"AddTranConsol\"><a tabindex=\"0\">Share consolidation</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"AddDividendsAuto\"><a tabindex=\"0\">Check for dividends</a></li>\n\t\t</ul>\n\t</div>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Add cash transaction<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"AddTranCashCredit\"><a tabindex=\"0\">Credit</a></li>\n\t\t\t<li data-cmd=\"AddTranCashDebit\"><a tabindex=\"0\">Debit</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"AddTranCashInterest\"><a tabindex=\"0\">Interest</a></li>\n\t\t\t<li data-cmd=\"AddTranCashCharges\"><a tabindex=\"0\">Charges</a></li>\n\t\t</ul>\n\t</div>\n\t<button class=\"btn ss-btn-ctrlbar\" type=\"button\" data-cmd=\"EditTran\">Edit</button>\n\t<button class=\"btn ss-btn-ctrlbar\" type=\"button\" data-cmd=\"DeleteTran\">Delete</button>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Move/Copy<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"MoveTranPort\" class=\"\"><a tabindex=\"0\">Move set of transactions to another portfolio...</a></li>\n\t\t\t<li data-cmd=\"CopyTranPort\" class=\"\"><a tabindex=\"0\">Copy set of transactions to another portfolio...</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"MoveTranInstr\" class=\"\"><a tabindex=\"0\">Move set of transactions to another instrument...</a></li>\n\t\t</ul>\n\t</div>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Advanced<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"BuildModel\"><a tabindex=\"0\">Model portfolio...</a></li>\n\t\t</ul>\n\t</div>\n\t<button class=\"btn ss-btn-ctrlbar ss-btn-help\" data-cmd=\"Help\"><b>?</b></button>\n</div></div></div>",
+      "main_dom_html": "<div class=\"window secondary focus\" style=\"left: 10px; top: 0px; width: 1910px; height: 994px; display: block;\"><div class=\"window-top-controls\"><div class=\"controlbar\">\n\t<div class=\"btn-group\">   \n\t\t<button class=\"btn ss-btn-ctrlbar active\" data-cmd=\"ShowTransactions\">Holdings</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowCash\">Cash</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowValueOnDate\">Value on date</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowTax\">Tax</button>\n\t\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"ShowAnalysis\">Analysis</button>\n\t</div>\n\t\n\t<button class=\"btn ss-btn-ctrlbar active\" type=\"button\" data-cmd=\"ViewCurrentOnly\">Current holdings</button>\n\t<button class=\"btn ss-btn-ctrlbar\" data-cmd=\"Graph\">Chart</button>\n\t<div class=\"btn-group\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Sharing<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n<!--\t\t\t<li data-cmd=\"ExportTrans\"><a tabindex=\"0\">Export transactions to file...</a></li>-->\n\t\t\t<li data-cmd=\"ExportPerformance\" class=\"\"><a tabindex=\"0\">Export performance data...</a></li>\n<!--\t\t\t<li data-cmd=\"ExportHoldings\"><a tabindex=\"0\">Export holdings to file...</a></li>-->\n\t\t\t<li data-cmd=\"TransExportDataOption\"><a tabindex=\"0\">Export holdings/transactions...</a></li>\n\t\t\t<li data-cmd=\"Print\"><a tabindex=\"0\">Print...</a></li>\n\t\t</ul>\n\t</div>\n</div></div><div class=\"window-titlebar\">Transactions for Portfolio: 0 - 0 - 2026 - PP1 (UK)</div><div class=\"window-view\"><div class=\"trans-view-scroll-div\"><div class=\"trans-view-body-div\" style=\"max-width: 910px;\"><div class=\"trans-view-value-div\"><table class=\"transactions-value-table\"><tbody><tr><th colspan=\"2\">Portfolio current value</th><th colspan=\"7\">Performance (investment return)</th><th></th></tr><tr><td>Holdings</td><td>GBP54,083.04</td><td>Today</td><td>no&nbsp;change</td><td></td><td>YTD</td><td><span class=\"positive\">^GBP5,436.09</span></td><td><span class=\"positive\">8.08%</span></td></tr><tr><td>Cash</td><td>GBP18,616.44</td><td>1&nbsp;month</td><td><span class=\"negative\">vGBP5,038.83</span></td><td><span class=\"negative\">-6.48%</span></td><td>12&nbsp;months</td><td><span class=\"positive\">^GBP15,745.00</span></td><td><span class=\"positive\">27.6%</span></td></tr><tr class=\"last\"><td class=\"total\">Total</td><td class=\"total\">GBP72,699.48</td><td>12m yield</td><td></td><td>2.42%</td><td colspan=\"6\"></td></tr></tbody></table></div><div class=\"trans-view-graph-div\" style=\"display: none;\"></div><div class=\"trans-view-graph-controls-div\" \"=\"\" style=\"display: none;\"></div><div class=\"trans-view-trans-div\"><table class=\"transactions-table transactions\"><tbody><tr class=\"heading\"><th colspan=\"12\">List of current holdings: valued at  (Bid/Close)</th></tr><tr class=\"subhead\"><th class=\"\"></th><th class=\"sortable\">Date</th><th class=\"sortable\">Name</th><th class=\"sortable\">TIDM</th><th class=\"sortable\">Shares</th><th class=\"sortable\">Price</th><th class=\"sortable\">Avg&nbsp;price</th><th class=\"sortable\">Cost</th><th class=\"sortable\">Value</th><th class=\"sortable\">Unrealised</th><th class=\"sortable\">&nbsp;Profit</th><th class=\"sortable sorted\">%&nbsp;Returnv</th></tr><tr class=\"\" id=\"V4-tran0\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Endeavour Mining PLC</td><td>EDV</td><td>193</td><td>GBP40.42</td><td>GBP19.0733</td><td>GBP3,681.15</td><td>GBP7,801.06</td><td>GBP4,119.91</td><td>GBP6,416.25</td><td class=\"positive\">135.7</td></tr><tr class=\"selected\" id=\"V4-tran1\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Greatland Resources Ltd</td><td>GGP</td><td>1,556</td><td>606p</td><td>323.764p</td><td>GBP5,037.77</td><td>GBP9,429.36</td><td>GBP4,391.59</td><td>GBP4,391.59</td><td class=\"positive\">87.2</td></tr><tr class=\"\" id=\"V4-tran2\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Thor Explorations Ltd</td><td>THX</td><td>8,438</td><td>58.5p</td><td>35.6211p</td><td>GBP3,005.71</td><td>GBP4,936.23</td><td>GBP1,930.52</td><td>GBP2,283.46</td><td class=\"positive\">76.0</td></tr><tr class=\"\" id=\"V4-tran3\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Rainbow Rare Earths Ltd</td><td>RBW</td><td>24,046</td><td>21.5p</td><td>12.559p</td><td>GBP3,019.93</td><td>GBP5,169.89</td><td>GBP2,149.96</td><td>GBP2,149.96</td><td class=\"positive\">71.2</td></tr><tr class=\"\" id=\"V4-tran4\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Capricorn Energy PLC</td><td>CNE</td><td>453</td><td>346p</td><td>666.379p</td><td>GBP3,018.70</td><td>GBP1,567.38</td><td>-GBP1,451.32</td><td>GBP1,858.51</td><td class=\"positive\">61.6</td></tr><tr class=\"\" id=\"V4-tran5\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Serica Energy PLC</td><td>SQZ</td><td>1,904</td><td>216.4p</td><td>263.04p</td><td>GBP5,008.29</td><td>GBP4,120.26</td><td>-GBP888.03</td><td>GBP616.13</td><td class=\"positive\">12.3</td></tr><tr class=\"\" id=\"V4-tran6\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Andrada Mining Ltd</td><td>ATM</td><td>89,436</td><td>3.7p</td><td>3.37671p</td><td>GBP3,019.99</td><td>GBP3,309.13</td><td>GBP289.14</td><td>GBP289.14</td><td class=\"positive\">9.6</td></tr><tr class=\"\" id=\"V4-tran7\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>IQE PLC</td><td>IQE</td><td>6,748</td><td>44.85p</td><td>44.7537p</td><td>GBP3,019.98</td><td>GBP3,026.48</td><td>GBP6.50</td><td>GBP6.50</td><td class=\"positive\">0.2</td></tr><tr class=\"\" id=\"V4-tran8\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Harbour Energy PLC</td><td>HBR</td><td>212</td><td>214.2p</td><td>266.773p</td><td>GBP565.56</td><td>GBP454.10</td><td>-GBP111.46</td><td>-GBP318.30</td><td class=\"negative\">-5.6</td></tr><tr class=\"\" id=\"V4-tran9\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Capita PLC</td><td>CPI</td><td>915</td><td>311.5p</td><td>329.919p</td><td>GBP3,018.76</td><td>GBP2,850.23</td><td>-GBP168.53</td><td>-GBP168.53</td><td class=\"negative\">-5.6</td></tr><tr class=\"\" id=\"V4-tran10\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>EnQuest PLC</td><td>ENQ</td><td>18,881</td><td>23.25p</td><td>26.5429p</td><td>GBP5,011.57</td><td>GBP4,389.83</td><td>-GBP621.74</td><td>-GBP354.20</td><td class=\"negative\">-7.1</td></tr><tr class=\"\" id=\"V4-tran11\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Valterra Platinum Ltd</td><td>VALT</td><td>72</td><td>GBP54.65</td><td>GBP69.4072</td><td>GBP4,997.32</td><td>GBP3,934.80</td><td>-GBP1,062.52</td><td>-GBP919.10</td><td class=\"negative\">-18.4</td></tr><tr class=\"\" id=\"V4-tran12\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Eco Animal Health Group PLC</td><td>EAH</td><td>1,263</td><td>95.5p</td><td>120.275p</td><td>GBP1,519.07</td><td>GBP1,206.17</td><td>-GBP312.91</td><td>-GBP312.91</td><td class=\"negative\">-20.6</td></tr><tr class=\"\" id=\"V4-tran13\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Touchstone Exploration Inc</td><td>TXP</td><td>8,995</td><td>7.25p</td><td>33.4167p</td><td>GBP3,005.83</td><td>GBP652.14</td><td>-GBP2,353.70</td><td>-GBP2,353.70</td><td class=\"negative\">-78.3</td></tr><tr class=\"\" id=\"V4-tran14\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Rambler Metals and Mining PLC</td><td>RMM#1</td><td>18,273</td><td>5.375p</td><td>52.0549p</td><td>GBP9,511.99</td><td>GBP982.17</td><td>-GBP8,529.81</td><td>-GBP8,529.81</td><td class=\"negative\">-89.7</td></tr><tr class=\"\" id=\"V4-tran15\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Ironveld PLC</td><td>IRON</td><td>1,124,970</td><td>0.021p</td><td>0.498857p</td><td>GBP5,611.99</td><td>GBP236.24</td><td>-GBP5,375.75</td><td>-GBP5,375.75</td><td class=\"negative\">-95.8</td></tr><tr class=\"\" id=\"V4-tran16\"><td><button class=\"btn btn-default btn-xs btn-xxs\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></td><td>4/7/26</td><td>Challenger Energy Group PLC</td><td>CEG#2</td><td>174</td><td>10.1p</td><td>GBP17.2757</td><td>GBP3,005.98</td><td>GBP17.57</td><td>-GBP2,988.40</td><td>-GBP2,988.40</td><td class=\"negative\">-99.4</td></tr><tr class=\"total\"><td></td><td>Total</td><td></td><td></td><td></td><td></td><td></td><td>GBP65,059.59</td><td>GBP54,083.04</td><td>-GBP10,976.55</td><td>-GBP3,309.16</td><td></td></tr></tbody></table></div></div></div><table class=\"transactions-table transactions fixed-heading\" style=\"\"><tbody><tr class=\"subhead\"><th class=\"\"></th><th class=\"sortable\">Date</th><th class=\"sortable\">Name</th><th class=\"sortable\">TIDM</th><th class=\"sortable\">Shares</th><th class=\"sortable\">Price</th><th class=\"sortable\">Avg&nbsp;price</th><th class=\"sortable\">Cost</th><th class=\"sortable\">Value</th><th class=\"sortable\">Unrealised</th><th class=\"sortable\">&nbsp;Profit</th><th class=\"sortable sorted\">%&nbsp;Returnv</th></tr></tbody></table></div><div class=\"window-bottom-controls\"><div class=\"controlbar\">\n\t<button class=\"btn ss-btn-ctrlbar\" type=\"button\" data-cmd=\"Design\">Design...</button>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Add transaction<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"AddTranBuy\"><a tabindex=\"0\">Buy</a></li>\n\t\t\t<li data-cmd=\"AddTranSell\"><a tabindex=\"0\">Sell</a></li>\n\t\t\t<li data-cmd=\"AddTranDiv\"><a tabindex=\"0\">Dividend</a></li>\n\t\t\t<li data-cmd=\"AddTranScripDiv\"><a tabindex=\"0\">Scrip dividend</a></li>\n\t\t\t<li data-cmd=\"AddTranPID\"><a tabindex=\"0\">Property Income Distribution (PID)</a></li>\n\t\t\t<li data-cmd=\"AddTranROC\"><a tabindex=\"0\">Return of capital</a></li>\n\t\t\t<li data-cmd=\"AddTranNotional\"><a tabindex=\"0\">Notional distribution</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"AddTranSplit\"><a tabindex=\"0\">Share split</a></li>\n\t\t\t<li data-cmd=\"AddTranConsol\"><a tabindex=\"0\">Share consolidation</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"AddDividendsAuto\"><a tabindex=\"0\">Check for dividends</a></li>\n\t\t</ul>\n\t</div>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Add cash transaction<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"AddTranCashCredit\"><a tabindex=\"0\">Credit</a></li>\n\t\t\t<li data-cmd=\"AddTranCashDebit\"><a tabindex=\"0\">Debit</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"AddTranCashInterest\"><a tabindex=\"0\">Interest</a></li>\n\t\t\t<li data-cmd=\"AddTranCashCharges\"><a tabindex=\"0\">Charges</a></li>\n\t\t</ul>\n\t</div>\n\t<button class=\"btn ss-btn-ctrlbar\" type=\"button\" data-cmd=\"EditTran\">Edit</button>\n\t<button class=\"btn ss-btn-ctrlbar\" type=\"button\" data-cmd=\"DeleteTran\">Delete</button>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Move/Copy<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"MoveTranPort\" class=\"\"><a tabindex=\"0\">Move set of transactions to another portfolio...</a></li>\n\t\t\t<li data-cmd=\"CopyTranPort\" class=\"\"><a tabindex=\"0\">Copy set of transactions to another portfolio...</a></li>\n\t\t\t<li class=\"divider\"></li>\n\t\t\t<li data-cmd=\"MoveTranInstr\" class=\"\"><a tabindex=\"0\">Move set of transactions to another instrument...</a></li>\n\t\t</ul>\n\t</div>\n\t<div class=\"btn-group dropup prefer-dropup\">\n\t\t<button type=\"button\" class=\"btn ss-btn-ctrlbar dropdown-toggle\" data-toggle=\"dropdown\">Advanced<span class=\"caret\"></span></button>\n\t\t<ul class=\"dropdown-menu\">\n\t\t\t<li data-cmd=\"BuildModel\"><a tabindex=\"0\">Model portfolio...</a></li>\n\t\t</ul>\n\t</div>\n\t<button class=\"btn ss-btn-ctrlbar ss-btn-help\" data-cmd=\"Help\"><b>?</b></button>\n</div></div></div>",
       "screenshot_path": "screenshots\\portfolio-export-options.png"
     }
   ]

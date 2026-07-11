@@ -35,7 +35,7 @@ Show concrete examples of using this Skill.
 ## Skill Locations & Priority
 
 ```
-Enterprise (highest priority) → Personal → Project → Plugin (lowest priority)
+Enterprise (highest priority) -> Personal -> Project -> Plugin (lowest priority)
 ```
 
 | Type | Path | Applies to |
@@ -51,7 +51,7 @@ Enterprise (highest priority) → Personal → Project → Plugin (lowest priori
 2. **Activation**: When your request matches a Skill's description, Claude asks for confirmation
 3. **Execution**: Claude follows the Skill's instructions and loads referenced files
 
-**Key Principle**: Skills are **model-invoked** — Claude automatically decides which Skills to use based on your request.
+**Key Principle**: Skills are **model-invoked** - Claude automatically decides which Skills to use based on your request.
 
 ## Progressive Disclosure Pattern
 
@@ -59,11 +59,11 @@ Keep `SKILL.md` under 500 lines by linking to supporting files:
 
 ```
 my-skill/
-├── SKILL.md (required - overview and navigation)
-├── reference.md (detailed API docs - loaded when needed)
-├── examples.md (usage examples - loaded when needed)
-└── scripts/
-    └── helper.py (utility script - executed, not loaded)
++-- SKILL.md (required - overview and navigation)
++-- reference.md (detailed API docs - loaded when needed)
++-- examples.md (usage examples - loaded when needed)
++-- scripts/
+    +-- helper.py (utility script - executed, not loaded)
 ```
 
 ### Example SKILL.md with References

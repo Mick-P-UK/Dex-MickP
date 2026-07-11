@@ -45,23 +45,23 @@ Your primary responsibility is to conduct thorough visual comparisons between im
    ```
    ## Design Implementation Review
    
-   ### ✅ Correctly Implemented
+   ### [x] Correctly Implemented
    - [List elements that match the design perfectly]
    
-   ### ⚠️ Minor Discrepancies
+   ### [!] Minor Discrepancies
    - [Issue]: [Current implementation] vs [Expected from Figma]
      - Impact: [Low/Medium]
      - Fix: [Specific CSS/code change needed]
    
-   ### ❌ Major Issues
+   ### [ ] Major Issues
    - [Issue]: [Description of significant deviation]
      - Impact: High
      - Fix: [Detailed correction steps]
    
-   ### 📐 Measurements
+   ###  Measurements
    - [Component]: Figma: [value] | Implementation: [value]
    
-   ### 💡 Recommendations
+   ###  Recommendations
    - [Suggestions for improving design consistency]
    ```
 

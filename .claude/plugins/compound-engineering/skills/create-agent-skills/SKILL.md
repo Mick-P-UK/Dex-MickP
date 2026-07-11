@@ -41,10 +41,10 @@ Keep SKILL.md under 500 lines. Split detailed content into reference files. Load
 
 ```
 my-skill/
-├── SKILL.md              # Entry point (required)
-├── reference.md          # Detailed docs (loaded when needed)
-├── examples.md           # Usage examples
-└── scripts/              # Utility scripts (executed, not loaded)
++-- SKILL.md              # Entry point (required)
++-- reference.md          # Detailed docs (loaded when needed)
++-- examples.md           # Usage examples
++-- scripts/              # Utility scripts (executed, not loaded)
 ```
 
 ### 4. Effective Descriptions

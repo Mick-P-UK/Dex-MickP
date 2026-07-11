@@ -12,11 +12,11 @@
 ## Step 1: Adaptive Requirements Gathering
 
 **If user provided context** (e.g., "build a skill for X"):
-→ Analyze what's stated, what can be inferred, what's unclear
-→ Skip to asking about genuine gaps only
+-> Analyze what's stated, what can be inferred, what's unclear
+-> Skip to asking about genuine gaps only
 
 **If user just invoked skill without context:**
-→ Ask what they want to build
+-> Ask what they want to build
 
 ### Using AskUserQuestion
 
@@ -58,17 +58,17 @@ If research requested:
 ## Step 3: Decide Structure
 
 **Simple skill (single workflow, <200 lines):**
-→ Single SKILL.md file with all content
+-> Single SKILL.md file with all content
 
 **Complex skill (multiple workflows OR domain knowledge):**
-→ Router pattern:
+-> Router pattern:
 ```
 skill-name/
-├── SKILL.md (router + principles)
-├── workflows/ (procedures - FOLLOW)
-├── references/ (knowledge - READ)
-├── templates/ (output structures - COPY + FILL)
-└── scripts/ (reusable code - EXECUTE)
++-- SKILL.md (router + principles)
++-- workflows/ (procedures - FOLLOW)
++-- references/ (knowledge - READ)
++-- templates/ (output structures - COPY + FILL)
++-- scripts/ (reusable code - EXECUTE)
 ```
 
 Factors favoring router pattern:

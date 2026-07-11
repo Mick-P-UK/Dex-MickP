@@ -16,10 +16,10 @@ ScreenPipe captures OCR text from your screen so you can ask things like:
 ## Privacy Defaults (Explain to User)
 
 **Work apps only.** Everything personal is blocked:
-- ❌ All web browsers (Chrome, Safari, Firefox, Arc, Edge)
-- ❌ Password managers, messaging apps, social media
-- ❌ Banking, healthcare, email, entertainment, shopping
-- ✅ IDEs, terminals, Slack, Notion, Figma, Calendar
+- [ ] All web browsers (Chrome, Safari, Firefox, Arc, Edge)
+- [ ] Password managers, messaging apps, social media
+- [ ] Banking, healthcare, email, entertainment, shopping
+- [x] IDEs, terminals, Slack, Notion, Figma, Calendar
 
 **Auto-delete:** Data older than 30 days is automatically purged (configurable).
 
@@ -72,7 +72,7 @@ curl http://localhost:3030/health
 
 ### Done Message
 
-"✅ ScreenPipe is running!
+"[x] ScreenPipe is running!
 
 **What's captured:** Work apps (VS Code, Terminal, Slack, Notion, etc.)
 **What's blocked:** All browsers, personal apps, banking, social media

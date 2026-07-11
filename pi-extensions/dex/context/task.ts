@@ -182,10 +182,10 @@ export function formatTaskContext(tasks: TaskContext[]): string {
 
   for (const task of tasks) {
     const statusEmoji = {
-      n: "⬜",
-      s: "🔄",
-      b: "🚫",
-      d: "✅",
+      n: "",
+      s: "",
+      b: "",
+      d: "[x]",
     }[task.status];
 
     lines.push(

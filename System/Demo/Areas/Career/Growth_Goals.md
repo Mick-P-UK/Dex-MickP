@@ -20,7 +20,7 @@
 - Get positive feedback from cross-functional partners
 
 **Key Actions:**
-- ✅ Mobile launch: Use this as exec visibility opportunity
+- [x] Mobile launch: Use this as exec visibility opportunity
 - [ ] Series D: Participate in product section of investor deck
 - [ ] Schedule monthly syncs with Sales leadership
 - [ ] Partner with Marketing on mobile launch campaign
@@ -163,13 +163,13 @@ Tag work with career skills to track progress:
 
 By October 2026, demonstrate:
 
-✅ **Execution:** Mobile launch success + 1-2 other major initiatives
-⏳ **Strategic Thinking:** Platform strategy doc + cross-product initiatives
-⏳ **Organizational Influence:** Regular exec engagement + cross-functional partnerships
-⏳ **Executive Communication:** Strong presentations + written narratives
-⏳ **Multi-Team Leadership:** Led 1+ initiative spanning multiple teams
-⏳ **Technical Depth:** Architectural influence examples
-⏳ **Team Impact:** PM practices/playbooks built
+[x] **Execution:** Mobile launch success + 1-2 other major initiatives
+[~] **Strategic Thinking:** Platform strategy doc + cross-product initiatives
+[~] **Organizational Influence:** Regular exec engagement + cross-functional partnerships
+[~] **Executive Communication:** Strong presentations + written narratives
+[~] **Multi-Team Leadership:** Led 1+ initiative spanning multiple teams
+[~] **Technical Depth:** Architectural influence examples
+[~] **Team Impact:** PM practices/playbooks built
 
 **Target:** 85+ readiness score by October 2026
 

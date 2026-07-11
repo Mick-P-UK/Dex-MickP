@@ -53,14 +53,14 @@ This connects Gmail, Calendar, and Contacts to Dex. Setup takes ~5 minutes.
 ### Step 1: Create a Google Cloud Project
 
 1. Go to [console.cloud.google.com](https://console.cloud.google.com)
-2. Click the project dropdown (top left) → **"New Project"**
-3. Name it "Dex" → Click **Create**
+2. Click the project dropdown (top left) -> **"New Project"**
+3. Name it "Dex" -> Click **Create**
 4. Wait for project creation, then select it
 
 ### Step 2: Enable APIs
 
 In your new project:
-1. Go to **"APIs & Services"** → **"Library"**
+1. Go to **"APIs & Services"** -> **"Library"**
 2. Search and enable each of these:
    - **Gmail API**
    - **Google Calendar API**
@@ -68,8 +68,8 @@ In your new project:
 
 ### Step 3: Configure OAuth Consent Screen
 
-1. Go to **"APIs & Services"** → **"OAuth consent screen"**
-2. Choose **"External"** → Click **Create**
+1. Go to **"APIs & Services"** -> **"OAuth consent screen"**
+2. Choose **"External"** -> Click **Create**
 3. Fill in:
    - App name: "Dex"
    - User support email: (your email)
@@ -84,8 +84,8 @@ In your new project:
 
 ### Step 4: Create OAuth Credentials
 
-1. Go to **"APIs & Services"** → **"Credentials"**
-2. Click **"+ Create Credentials"** → **"OAuth client ID"**
+1. Go to **"APIs & Services"** -> **"Credentials"**
+2. Click **"+ Create Credentials"** -> **"OAuth client ID"**
 3. Application type: **"Desktop app"**
 4. Name: "Dex Desktop"
 5. Click **Create**
@@ -183,7 +183,7 @@ gmail:
 """)
     
     return True, f"""
-✅ **Google Workspace Integration Configured!**
+[x] **Google Workspace Integration Configured!**
 
 **What's set up:**
 - MCP Server: `{PACKAGE}`
@@ -196,7 +196,7 @@ When you first use a Google feature, you'll see an OAuth prompt in your browser.
 Click "Allow" to grant Dex read-only access to your Google data.
 
 **What you can do after authorization:**
-- "What emails am I behind on with [person]?" → Searches Gmail
+- "What emails am I behind on with [person]?" -> Searches Gmail
 - Meeting prep includes email thread context
 - Person pages show email communication history
 - Calendar events are enriched with attendee context

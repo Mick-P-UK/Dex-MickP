@@ -6,18 +6,18 @@ System improvements discovered during work sessions.
 
 Meta-feedback about Dex itself, captured during `/review`:
 
-- **Mistakes or corrections** — Things that went wrong and how to fix them
-- **Preferences mentioned** — Workflow preferences you shared
-- **Documentation gaps** — Places where docs were unclear or missing
-- **Workflow inefficiencies** — Friction points discovered
+- **Mistakes or corrections** - Things that went wrong and how to fix them
+- **Preferences mentioned** - Workflow preferences you shared
+- **Documentation gaps** - Places where docs were unclear or missing
+- **Workflow inefficiencies** - Friction points discovered
 
 ## Format
 
 Each learning includes:
-- **What happened** — Specific situation
-- **Why it matters** — Impact on system/workflow
-- **Suggested fix** — Specific action with file paths
-- **Status** — pending, implemented, or won't-fix
+- **What happened** - Specific situation
+- **Why it matters** - Impact on system/workflow
+- **Suggested fix** - Specific action with file paths
+- **Status** - pending, implemented, or won't-fix
 
 ## Naming Convention
 
@@ -25,10 +25,10 @@ Each learning includes:
 
 ## Workflow
 
-1. **Capture** — Happens automatically during `/review` (daily review)
-2. **Review** — Periodically check pending learnings via `/dex-whats-new`
-3. **Implement** — Fix documentation gaps or system issues
-4. **Update status** — Mark as implemented when done
+1. **Capture** - Happens automatically during `/review` (daily review)
+2. **Review** - Periodically check pending learnings via `/dex-whats-new`
+3. **Implement** - Fix documentation gaps or system issues
+4. **Update status** - Mark as implemented when done
 
 ## vs. Dex Backlog
 

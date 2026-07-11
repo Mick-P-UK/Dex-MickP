@@ -28,7 +28,7 @@ For each finding, present in this format:
 ---
 Issue #X: [Brief Title]
 
-Severity: 🔴 P1 (CRITICAL) / 🟡 P2 (IMPORTANT) / 🔵 P3 (NICE-TO-HAVE)
+Severity: [red] P1 (CRITICAL) / [amber] P2 (IMPORTANT) / [blue] P3 (NICE-TO-HAVE)
 
 Category: [Security/Performance/Architecture/Bug/Feature/etc.]
 
@@ -60,8 +60,8 @@ Do you want to add this to the todo list?
 
    If todo already exists (from code review):
 
-   - Rename file from `{id}-pending-{priority}-{desc}.md` → `{id}-ready-{priority}-{desc}.md`
-   - Update YAML frontmatter: `status: pending` → `status: ready`
+   - Rename file from `{id}-pending-{priority}-{desc}.md` -> `{id}-ready-{priority}-{desc}.md`
+   - Update YAML frontmatter: `status: pending` -> `status: ready`
    - Keep issue_id, priority, and description unchanged
 
    If creating new todo:
@@ -72,9 +72,9 @@ Do you want to add this to the todo list?
 
    Priority mapping:
 
-   - 🔴 P1 (CRITICAL) → `p1`
-   - 🟡 P2 (IMPORTANT) → `p2`
-   - 🔵 P3 (NICE-TO-HAVE) → `p3`
+   - [red] P1 (CRITICAL) -> `p1`
+   - [amber] P2 (IMPORTANT) -> `p2`
+   - [blue] P3 (NICE-TO-HAVE) -> `p3`
 
    Example: `042-ready-p1-transaction-boundaries.md`
 
@@ -134,7 +134,7 @@ Do you want to add this to the todo list?
    **By:** Claude Triage System
    **Actions:**
    - Issue approved during triage session
-   - Status changed from pending → ready
+   - Status changed from pending -> ready
    - Ready to be picked up and worked on
 
    **Learnings:**
@@ -144,7 +144,7 @@ Do you want to add this to the todo list?
    Source: Triage session on {date}
    ```
 
-4. **Confirm approval:** "✅ Approved: `{new_filename}` (Issue #{issue_id}) - Status: **ready** → Ready to work on"
+4. **Confirm approval:** "[x] Approved: `{new_filename}` (Issue #{issue_id}) - Status: **ready** -> Ready to work on"
 
 **When user says "next":**
 
@@ -188,7 +188,7 @@ After all items processed:
 
 During triage, the following status updates occurred:
 
-- **Pending → Ready:** Filenames and frontmatter updated to reflect approved status
+- **Pending -> Ready:** Filenames and frontmatter updated to reflect approved status
 - **Deleted:** Todo files for skipped findings removed from todos/ directory
 - Each approved file now has `status: ready` in YAML frontmatter
 
@@ -209,8 +209,8 @@ During triage, the following status updates occurred:
 3. Or pick individual items to work on
 
 4. As you work, update todo status:
-   - Ready → In Progress (in your local context as you work)
-   - In Progress → Complete (rename file: ready → complete, update frontmatter)
+   - Ready -> In Progress (in your local context as you work)
+   - In Progress -> Complete (rename file: ready -> complete, update frontmatter)
 
 ```
 
@@ -222,7 +222,7 @@ During triage, the following status updates occurred:
 
 Issue #5: Missing Transaction Boundaries for Multi-Step Operations
 
-Severity: 🔴 P1 (CRITICAL)
+Severity: [red] P1 (CRITICAL)
 
 Category: Data Integrity / Security
 
@@ -265,10 +265,10 @@ Do you want to add this to the todo list?
 ### Status Transitions During Triage
 
 **When "yes" is selected:**
-1. Rename file: `{id}-pending-{priority}-{desc}.md` → `{id}-ready-{priority}-{desc}.md`
-2. Update YAML frontmatter: `status: pending` → `status: ready`
+1. Rename file: `{id}-pending-{priority}-{desc}.md` -> `{id}-ready-{priority}-{desc}.md`
+2. Update YAML frontmatter: `status: pending` -> `status: ready`
 3. Update Work Log with triage approval entry
-4. Confirm: "✅ Approved: `{filename}` (Issue #{issue_id}) - Status: **ready**"
+4. Confirm: "[x] Approved: `{filename}` (Issue #{issue_id}) - Status: **ready**"
 
 **When "next" is selected:**
 1. Delete the todo file from todos/ directory
@@ -291,12 +291,12 @@ Progress: 3/10 completed | Estimated time: ~2 minutes remaining
 
 ### Do Not Code During Triage
 
-- ✅ Present findings
-- ✅ Make yes/next/custom decisions
-- ✅ Update todo files (rename, frontmatter, work log)
-- ❌ Do NOT implement fixes or write code
-- ❌ Do NOT add detailed implementation details
-- ❌ That's for /resolve_todo_parallel phase
+- [x] Present findings
+- [x] Make yes/next/custom decisions
+- [x] Update todo files (rename, frontmatter, work log)
+- [ ] Do NOT implement fixes or write code
+- [ ] Do NOT add detailed implementation details
+- [ ] That's for /resolve_todo_parallel phase
 ```
 
 When done give these options

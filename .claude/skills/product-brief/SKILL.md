@@ -9,7 +9,7 @@ Extract product ideas from your head through guided questioning, then generate a
 
 ## The Problem This Solves
 
-You have an idea for a product or feature in your mind, but struggle to explain it comprehensively. This command acts as your product thought partner — asking the right questions to extract what you're envisioning, then structuring it into a PRD ready for a team to execute.
+You have an idea for a product or feature in your mind, but struggle to explain it comprehensively. This command acts as your product thought partner - asking the right questions to extract what you're envisioning, then structuring it into a PRD ready for a team to execute.
 
 ## Usage
 
@@ -224,8 +224,8 @@ Generate structured product spec:
    - How to validate: [Test method]
 
 ### Risks
-1. **[Risk 1]** — [Mitigation strategy]
-2. **[Risk 2]** — [Mitigation strategy]
+1. **[Risk 1]** - [Mitigation strategy]
+2. **[Risk 2]** - [Mitigation strategy]
 
 ---
 
@@ -327,14 +327,14 @@ Create detailed user flows and screen specs:
 - [Actions/buttons]
 
 **User Actions:**
-- Click [X] → [Outcome]
-- Enter [Y] → [Validation rules]
-- Cancel → [State change]
+- Click [X] -> [Outcome]
+- Enter [Y] -> [Validation rules]
+- Cancel -> [State change]
 
 **Navigation:**
-- Success → [Next screen]
-- Error → [Error state]
-- Back → [Previous screen]
+- Success -> [Next screen]
+- Error -> [Error state]
+- Back -> [Previous screen]
 
 **Validation Rules:**
 - [Field 1]: [Rules]
@@ -565,17 +565,17 @@ Generate comprehensive PRD combining all previous phases:
 ## Out of Scope
 
 Explicitly not included in this version:
-- [Item 1] — [Why/when it might be included]
-- [Item 2] — [Why/when it might be included]
-- [Item 3] — [Why/when it might be included]
+- [Item 1] - [Why/when it might be included]
+- [Item 2] - [Why/when it might be included]
+- [Item 3] - [Why/when it might be included]
 
 ---
 
 ## Open Questions
 
-- [ ] [Question 1] — Owner: [Name], Due: [Date]
-- [ ] [Question 2] — Owner: [Name], Due: [Date]
-- [ ] [Question 3] — Owner: [Name], Due: [Date]
+- [ ] [Question 1] - Owner: [Name], Due: [Date]
+- [ ] [Question 2] - Owner: [Name], Due: [Date]
+- [ ] [Question 3] - Owner: [Name], Due: [Date]
 
 ---
 
@@ -648,7 +648,7 @@ After generating the PRD:
 4. **Confirm completion:**
 
 ```markdown
-## ✅ PRD Created
+## [x] PRD Created
 
 **Saved to:** `04-Projects/[Product Name]/PRD.md`
 
@@ -659,9 +659,9 @@ After generating the PRD:
 4. Create tasks in 03-Tasks/Tasks.md when ready to execute
 
 **Want to:**
-- Revise any section → Just tell me what to change
-- Create tasks from this PRD → Say "create tasks"
-- Share with stakeholders → I can draft an email
+- Revise any section -> Just tell me what to change
+- Create tasks from this PRD -> Say "create tasks"
+- Share with stakeholders -> I can draft an email
 ```
 
 ---
@@ -670,11 +670,11 @@ After generating the PRD:
 
 At any phase, users can:
 
-- `back` or `previous` — Return to previous phase
-- `skip to prd` — Jump directly to final PRD
-- `revise [section]` — Edit specific section
-- `start over` — Begin from scratch
-- `save` — Save current progress
+- `back` or `previous` - Return to previous phase
+- `skip to prd` - Jump directly to final PRD
+- `revise [section]` - Edit specific section
+- `start over` - Begin from scratch
+- `save` - Save current progress
 
 ---
 
@@ -684,7 +684,7 @@ At any phase, users can:
 - Ask follow-up questions when answers reveal gaps
 - Challenge assumptions constructively
 - Suggest alternatives when you spot potential issues
-- Keep momentum — don't let the process feel like homework
+- Keep momentum - don't let the process feel like homework
 
 **Good:**
 > "Interesting. If this is for enterprise customers, how do we handle single sign-on? Or is that something we're punting to Phase 2?"
@@ -697,7 +697,7 @@ At any phase, users can:
 ## Tips for Effectiveness
 
 ### For the User
-- Start with whatever you have — even 1 sentence is enough
+- Start with whatever you have - even 1 sentence is enough
 - Don't worry about being comprehensive upfront
 - The questions will extract what's in your head
 - You can always revise and refine
@@ -726,9 +726,9 @@ Add notifications to our app
 
 Great, let's flesh this out. A few questions to start:
 
-1. What type of notifications are we talking about — push notifications, in-app alerts, email, or all three?
+1. What type of notifications are we talking about - push notifications, in-app alerts, email, or all three?
 2. What specific events should trigger notifications?
-3. Who are these notifications for — all users, or specific roles?
+3. Who are these notifications for - all users, or specific roles?
 ```
 
 **User:** "Push notifications for now. We want to notify sales reps when a lead takes an action in the product."
@@ -736,13 +736,13 @@ Great, let's flesh this out. A few questions to start:
 **Dex:**
 
 ```markdown
-Got it — push notifications for sales reps when leads are active. That helps narrow it.
+Got it - push notifications for sales reps when leads are active. That helps narrow it.
 
 A few more questions:
 
 1. What actions count as notification-worthy? (e.g., login, feature usage, upgrade intent)
 2. Should there be any filtering or preferences? Like "only notify me about my accounts"?
-3. What's the business outcome we're driving here — faster response time, more engagement, closing deals faster?
+3. What's the business outcome we're driving here - faster response time, more engagement, closing deals faster?
 ```
 
 [Conversation continues through phases until PRD is complete]

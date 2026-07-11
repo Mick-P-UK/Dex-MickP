@@ -195,10 +195,10 @@ derivatives: []
 Physical silver is getting harder to find, but COMEX paper prices don't reflect the shortage. In this video, I break down the disconnect between paper silver trading and real metal availability - and what it means for DIY investors.
 
 In this video, you'll learn:
-✓ Why physical silver has delivery delays and high premiums
-✓ How COMEX paper silver markets work (and their leverage)
-✓ The historical precedents for commodity market disconnects
-✓ Investment implications and what to watch for
+[x] Why physical silver has delivery delays and high premiums
+[x] How COMEX paper silver markets work (and their leverage)
+[x] The historical precedents for commodity market disconnects
+[x] Investment implications and what to watch for
 
 Timestamps:
 0:00 - Intro: The Price That Doesn't Exist
@@ -214,9 +214,9 @@ Resources mentioned:
 - Physical dealer premiums tracker: [Link]
 
 Join the community:
-- Inner Circle (£380/yr): Deep-dive precious metals analysis
-- Plaza Group (£720/yr): Live Q&A sessions on market positioning
-- AI for Investing (£300/yr): AI tools for tracking commodity markets
+- Inner Circle (GBP380/yr): Deep-dive precious metals analysis
+- Plaza Group (GBP720/yr): Live Q&A sessions on market positioning
+- AI for Investing (GBP300/yr): AI tools for tracking commodity markets
 
 Follow DIY-Investors:
 - Website: diy-investors.com
@@ -323,7 +323,7 @@ Follow DIY-Investors:
 
 **Timeline:**
 - Research: 2026-02-09 (agent-driven)
-- Script: v1.0 → v1.3 (2026-02-09 to 2026-02-10)
+- Script: v1.0 -> v1.3 (2026-02-09 to 2026-02-10)
 - Filming: 2026-02-10 (Tuesday)
 - Editing: 2026-02-12 (Thursday - full day session)
 - Upload & Publish: 2026-02-12 (same day)

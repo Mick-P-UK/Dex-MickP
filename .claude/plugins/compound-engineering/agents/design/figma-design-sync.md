@@ -113,7 +113,7 @@ Common Tailwind values to prefer:
 ```
 
 ### Common Anti-Patterns to Avoid
-**❌ DON'T do this in components:**
+**[ ] DON'T do this in components:**
 ```erb
 <!-- BAD: Component has its own max-width and padding -->
 <section class="max-w-screen-xl mx-auto px-5 md:px-8">
@@ -121,7 +121,7 @@ Common Tailwind values to prefer:
 </section>
 ```
 
-**✅ DO this instead:**
+**[x] DO this instead:**
 ```erb
 <!-- GOOD: Component is full width, wrapper handles constraints -->
 <section class="w-full">
@@ -129,13 +129,13 @@ Common Tailwind values to prefer:
 </section>
 ```
 
-**❌ DON'T use arbitrary values when Tailwind defaults are close:**
+**[ ] DON'T use arbitrary values when Tailwind defaults are close:**
 ```erb
 <!-- BAD: Using arbitrary values unnecessarily -->
 <div class="gap-[40px] text-[20px] w-[56px] h-[56px]">
 ```
 
-**✅ DO prefer Tailwind defaults:**
+**[x] DO prefer Tailwind defaults:**
 ```erb
 <!-- GOOD: Using Tailwind defaults -->
 <div class="gap-10 text-lg md:text-[20px] w-14 h-14">

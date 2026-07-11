@@ -63,7 +63,7 @@ export class CollapsibleSection {
     const lines: string[] = [];
 
     // Header line with expand/collapse indicator
-    const indicator = this.collapsed ? "▶" : "▼";
+    const indicator = this.collapsed ? ">" : "v";
     const header = `${indicator} ${this.title}`;
     const headerStyled = this.theme.fg("accent", this.theme.bold(header));
     lines.push(truncateToWidth(headerStyled, width));

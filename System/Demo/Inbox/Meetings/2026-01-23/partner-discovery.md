@@ -32,9 +32,9 @@ Discovery call with Lisa to explore API partnership opportunities. Beta Solution
 
 ## Action Items
 
-- [ ] Send API roadmap overview → Alex
-- [ ] Internal check on API readiness with Jordan → Alex
-- [ ] Follow up in 2 weeks → Alex
+- [ ] Send API roadmap overview -> Alex
+- [ ] Internal check on API readiness with Jordan -> Alex
+- [ ] Follow up in 2 weeks -> Alex
 
 ---
 

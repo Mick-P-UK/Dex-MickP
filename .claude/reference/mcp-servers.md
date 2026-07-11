@@ -2,19 +2,19 @@
 
 ## What is MCP?
 
-**Model Context Protocol (MCP)** is an open standard for connecting AI assistants to external data sources and tools. Think of it as a universal adapter that lets AI read from and write to your systems—calendars, databases, APIs, local files—without custom integration for each LLM.
+**Model Context Protocol (MCP)** is an open standard for connecting AI assistants to external data sources and tools. Think of it as a universal adapter that lets AI read from and write to your systems-calendars, databases, APIs, local files-without custom integration for each LLM.
 
 ### Why MCP Servers?
 
 Traditional approach: AI directly parses raw files/APIs every time (slow, inconsistent, expensive tokens).
 
-**MCP approach:** Specialized servers handle data aggregation and formatting → AI receives clean, structured data → faster, more consistent, cheaper.
+**MCP approach:** Specialized servers handle data aggregation and formatting -> AI receives clean, structured data -> faster, more consistent, cheaper.
 
 **Example:** Instead of Claude reading 50 career evidence files individually (expensive, slow), the Career MCP scans them all in milliseconds and returns structured stats: "8 competencies, 42 evidence files, Technical Depth: 2 examples (weak), Product Strategy: 8 examples (strong)." Claude then coaches based on structured insights.
 
 **Key benefits:**
 - **Speed** - Pre-processed data vs raw file reads
-- **Consistency** - Same input → same output (deterministic)
+- **Consistency** - Same input -> same output (deterministic)
 - **Token efficiency** - Structured summaries vs full documents
 - **Reusability** - One server, many AI agents can use it
 - **Separation of concerns** - Data layer vs reasoning layer
@@ -88,7 +88,7 @@ Dex automatically:
 ### Granola MCP (`granola_server.py`)
 
 **What it does:**  
-Reads meeting transcripts from Granola's local cache. No API, no cloud—just direct file access to your local meeting notes.
+Reads meeting transcripts from Granola's local cache. No API, no cloud-just direct file access to your local meeting notes.
 
 **Why it's an MCP:**  
 Granola stores meetings in a SQLite database with proprietary schema. The MCP abstracts that complexity, providing simple queries like "get last 5 meetings" or "search meetings mentioning 'roadmap'".
@@ -130,17 +130,17 @@ Career assessments require reading 20-50 evidence files, parsing a career ladder
 - **Promotion readiness scoring** - Calculates 0-100 score based on evidence coverage, work delivery, skills, and time in role
 
 **Real-world example:**  
-You run `/career-coach` → Promotion Assessment.
+You run `/career-coach` -> Promotion Assessment.
 
 Career MCP:
-1. Calls `scan_evidence()` → "42 files, 15 in last quarter"
-2. Calls `parse_ladder()` → "8 competencies for Senior → Staff transition"
-3. Calls `analyze_coverage()` → Generates coverage map:
+1. Calls `scan_evidence()` -> "42 files, 15 in last quarter"
+2. Calls `parse_ladder()` -> "8 competencies for Senior -> Staff transition"
+3. Calls `analyze_coverage()` -> Generates coverage map:
    - Product Strategy: 8 examples (strong)
    - Technical Depth: 2 examples (weak)
    - Team Leadership: 5 examples (moderate)
-4. Calls `timeline_analysis()` → "Evidence velocity increasing, competency trends stable"
-5. Calls `promotion_readiness_score()` → "67/100 - Nearly Ready"
+4. Calls `timeline_analysis()` -> "Evidence velocity increasing, competency trends stable"
+5. Calls `promotion_readiness_score()` -> "67/100 - Nearly Ready"
 
 Claude receives structured data and coaches: "You're close to promotion readiness (67/100). Your Product Strategy evidence is strong, but Technical Depth needs more documentation. Let's capture 2-3 examples from your recent system design work..."
 
@@ -156,7 +156,7 @@ Claude receives structured data and coaches: "You're close to promotion readines
 Stateful resume building engine with validation, formatting, and career evidence integration. Manages resume sessions, enforces 2-page limit, validates achievement metrics, generates LinkedIn profiles.
 
 **Why it's an MCP:**  
-Resume building requires multi-step state (add roles → add achievements → generate bullets → compile resume). Without MCP, the LLM would lose context between steps. The Resume MCP maintains session state and enforces constraints automatically.
+Resume building requires multi-step state (add roles -> add achievements -> generate bullets -> compile resume). Without MCP, the LLM would lose context between steps. The Resume MCP maintains session state and enforces constraints automatically.
 
 **Power:**
 - **Session management** - Pause and resume resume building across multiple conversations
@@ -171,15 +171,15 @@ Resume building requires multi-step state (add roles → add achievements → ge
 You run `/resume-builder`.
 
 Resume MCP workflow:
-1. `start_session()` → Creates session `resume_20260128_143022`
+1. `start_session()` -> Creates session `resume_20260128_143022`
 2. You add role: "Senior PM at Acme Corp, 2023-01 to present"
-3. `add_role()` → Validates dates, assigns `role_001`
-4. `pull_career_evidence()` → Finds 12 achievements from Career Evidence matching this timeframe
-5. You select 5 achievements → `extract_achievements()` validates metrics (must have numbers!)
-6. `generate_role_writeup()` → Formats bullets, scores each (avg quality: 87/100)
-7. `compile_resume()` → Generates full resume, estimates 1.8 pages, calculates ATS score: 92/100
-8. `generate_linkedin()` → Creates LinkedIn content with enforced character limits
-9. `export_resume()` → Saves to `05-Areas/Career/Resume/2026-01-28 - Resume.md`
+3. `add_role()` -> Validates dates, assigns `role_001`
+4. `pull_career_evidence()` -> Finds 12 achievements from Career Evidence matching this timeframe
+5. You select 5 achievements -> `extract_achievements()` validates metrics (must have numbers!)
+6. `generate_role_writeup()` -> Formats bullets, scores each (avg quality: 87/100)
+7. `compile_resume()` -> Generates full resume, estimates 1.8 pages, calculates ATS score: 92/100
+8. `generate_linkedin()` -> Creates LinkedIn content with enforced character limits
+9. `export_resume()` -> Saves to `05-Areas/Career/Resume/2026-01-28 - Resume.md`
 
 Sessions auto-save after each step. You can resume later with `load_session()`.
 
@@ -205,9 +205,9 @@ You want to capture improvement ideas from any context (during reviews, while pl
 **Real-world example:**  
 During `/review`, you realize: "I keep forgetting to check task dependencies. We should auto-suggest blocked-by relationships."
 
-You mention this → Dex Improvements MCP:
+You mention this -> Dex Improvements MCP:
 1. Generates ID `idea-042`
-2. Checks for similar ideas → finds `idea-019: "Link related tasks together"` (65% similarity)
+2. Checks for similar ideas -> finds `idea-019: "Link related tasks together"` (65% similarity)
 3. Asks: "Similar to idea-019. Is this different or an extension?"
 4. You confirm it's different
 5. Saves to `System/Dex_Backlog.md` with category: `tasks`
@@ -235,7 +235,7 @@ Onboarding requires bulletproof validation (email domain is mandatory), session 
 - **Pre-analysis** - Analyzes calendar and Granola data during setup for dramatic reveal
 
 **Real-world example:**  
-New user runs onboarding → provides name, role, company size → **tries to skip email domain** → Onboarding MCP blocks progression: "Email domain is required for Internal/External person routing." → User provides domain → continues → finalization creates vault structure, configures MCPs, analyzes existing calendar/Granola data → reveals insights: "Found 47 meetings, 12 unique people, 3 external companies. Already created person pages for your top 3 contacts."
+New user runs onboarding -> provides name, role, company size -> **tries to skip email domain** -> Onboarding MCP blocks progression: "Email domain is required for Internal/External person routing." -> User provides domain -> continues -> finalization creates vault structure, configures MCPs, analyzes existing calendar/Granola data -> reveals insights: "Found 47 meetings, 12 unique people, 3 external companies. Already created person pages for your top 3 contacts."
 
 **Tools:** `start_onboarding_session`, `validate_and_save_step`, `get_onboarding_status`, `verify_dependencies`, `finalize_onboarding`, `check_onboarding_complete`
 
@@ -257,7 +257,7 @@ Update checking requires structured version tracking, git operations, changelog 
 - **Breaking change detection** - Flags releases requiring user action
 
 **Real-world example:**  
-User runs `/dex-update` → Update Checker MCP checks GitHub → finds v2.1.0 with new features → shows changelog with "Added Obsidian integration, improved onboarding" → user confirms → creates backup → pulls updates → installs dependencies → success message with "Run `/getting-started` to explore new features."
+User runs `/dex-update` -> Update Checker MCP checks GitHub -> finds v2.1.0 with new features -> shows changelog with "Added Obsidian integration, improved onboarding" -> user confirms -> creates backup -> pulls updates -> installs dependencies -> success message with "Run `/getting-started` to explore new features."
 
 **Tools:** `check_for_updates`, `get_changelog`, `perform_update`, `create_backup`, `rollback_update`
 
@@ -316,7 +316,7 @@ Example config:
 
 ### Creating Custom Integrations
 
-Run `/create-mcp` to create a new MCP server integration through a guided wizard. No coding required — describe what you want to connect, and the wizard will:
+Run `/create-mcp` to create a new MCP server integration through a guided wizard. No coding required - describe what you want to connect, and the wizard will:
 1. Design the integration with you
 2. Generate the MCP server code
 3. Update CLAUDE.md and System Guide

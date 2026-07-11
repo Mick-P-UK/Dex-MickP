@@ -9,7 +9,7 @@ Always use the following style guide, go though the items one by one and suggest
 - Don't overuse "**actually**," "**very**," or "**just**" (they can almost always be deleted).
 - When linking to another source, **hyperlink** between 2-4 words.
 - You can generally **cut adverbs**.
-- Watch out for **passive voice**—use active whenever possible.
+- Watch out for **passive voice**-use active whenever possible.
 - Spell out **numbers** one through nine. Spell out a number if it is the first word of a sentence, unless it's a year. Use numerals for numbers 10 and greater.
 - You may use _italics_ for emphasis, but never **bold** or underline.
 - **Image credits** in captions are italicized, like this: _Source: X/Name_ (if Twitter), _Source: Website name._
@@ -18,7 +18,7 @@ Always use the following style guide, go though the items one by one and suggest
 - Use an **Oxford comma** for serialization (x, y, and z).
 - Use a comma to separate **independent clauses** but not dependent clauses.
 - Do not use a space after an **ellipsis**.
-- Use an **em dash** (—) to set off a parenthetical statement. Do not put spaces around an em dash. Generally, don't use em dashes more than twice in a paragraph.
+- Use an **em dash** (-) to set off a parenthetical statement. Do not put spaces around an em dash. Generally, don't use em dashes more than twice in a paragraph.
 - Use **hyphens** in compound adjectives, with the exception of adverbs (i.e., words ending in "ly"). Example: fine-tuned vs. finely tuned.
 - **Italicize titles** of books, newspapers, periodicals, movies, TV shows, and video games. Do not italicize "the" before _New York Times_ or "magazine" after _New York_.
 - Identify people by their full names on first mention, last name thereafter. In newsletter and social media communications, use first names rather than last names.
@@ -102,7 +102,7 @@ Pieces written by guest authors include a biography for the author at the bottom
 
 #### Guest Author Introduction
 
-Pieces written by guest authors also include an introduction from an Every staff member that identifies the author, their background, the subject of the piece, and why we recommend it. The introduction is signed by the staff member who wrote it. Use italics: *When I was coming up in tech, the conventional wisdom was that working at or investing in software companies was a great way to make money, while doing so with companies that took on scientific risk or produced hardware components were a wonderful way to lose every cent to your name. This has always struck me as, you know, wrong, which is why this piece by venture capitalist Leo Polovets resonated with me. He takes a data-driven approach to understanding how deep tech companies can produce superior financial returns. If you're on the fence with your career—perhaps facing temptation to do something relatively safe in B2B SaaS—take this piece as a rational encouragement to dream bigger. —[Evan](https://twitter.com/itsurboyevan)*
+Pieces written by guest authors also include an introduction from an Every staff member that identifies the author, their background, the subject of the piece, and why we recommend it. The introduction is signed by the staff member who wrote it. Use italics: *When I was coming up in tech, the conventional wisdom was that working at or investing in software companies was a great way to make money, while doing so with companies that took on scientific risk or produced hardware components were a wonderful way to lose every cent to your name. This has always struck me as, you know, wrong, which is why this piece by venture capitalist Leo Polovets resonated with me. He takes a data-driven approach to understanding how deep tech companies can produce superior financial returns. If you're on the fence with your career-perhaps facing temptation to do something relatively safe in B2B SaaS-take this piece as a rational encouragement to dream bigger. -[Evan](https://twitter.com/itsurboyevan)*
 
 ### Capitalization
 
@@ -178,7 +178,7 @@ Otherwise, follow common sense with commas. Read the sentence out loud. If you n
 
 #### Date Formats
 
-Write dates as follows: April 13, 2018, The 19th of April was a nice day, March 2020, Thanksgiving 2023, summer 1999, the years 1980–85
+Write dates as follows: April 13, 2018, The 19th of April was a nice day, March 2020, Thanksgiving 2023, summer 1999, the years 1980-85
 
 #### Decades
 
@@ -188,19 +188,19 @@ When referring to a decade, write out the full year numerically at first mention
 
 #### Usage
 
-Use ellipses (…) to show that you're omitting words or trailing off before the end of a thought. Don't use an ellipsis for emphasis or drama. Don't use ellipses in titles or headers, nor when you should be using a colon (a list is to follow). There is no space before an ellipsis, and one space after… like this.
+Use ellipses (...) to show that you're omitting words or trailing off before the end of a thought. Don't use an ellipsis for emphasis or drama. Don't use ellipses in titles or headers, nor when you should be using a colon (a list is to follow). There is no space before an ellipsis, and one space after... like this.
 
 ### Em dashes
 
 #### Usage and Spacing
 
-Use an em dash ( — ) for a true break or to set off a parenthetical statement. Do not put spaces around them. Try not to use em dashes more than twice in a paragraph. Don't use hyphens in place of an em dash: It's an anxious time to be an independent bookseller—but a recent upswing in sales is cause for optimism.
+Use an em dash ( - ) for a true break or to set off a parenthetical statement. Do not put spaces around them. Try not to use em dashes more than twice in a paragraph. Don't use hyphens in place of an em dash: It's an anxious time to be an independent bookseller-but a recent upswing in sales is cause for optimism.
 
 ### En dash
 
 #### Usage
 
-Use them in compound adjectives, compound noun constructions, or when indicating spans or ranges: 5°C–10°C, from 10 a.m.–2 p.m., January 2019–November 2020, Texas–Mexico border, then–VP of engineering
+Use them in compound adjectives, compound noun constructions, or when indicating spans or ranges: 5 degC-10 degC, from 10 a.m.-2 p.m., January 2019-November 2020, Texas-Mexico border, then-VP of engineering
 
 ### Filenames
 
@@ -216,7 +216,7 @@ When referring to a specific file, specify the filename followed by a period and
 
 #### Title Case
 
-Use title case for headlines. Use sentence case for subtitles and subheadings. Capitalize important words — everything but articles, conjunctions (for, and, nor, but, or, yet, so), and prepositions under four letters — in headings. Capitalize the first word only in subtitles and subheadings.
+Use title case for headlines. Use sentence case for subtitles and subheadings. Capitalize important words - everything but articles, conjunctions (for, and, nor, but, or, yet, so), and prepositions under four letters - in headings. Capitalize the first word only in subtitles and subheadings.
 
 #### Prepositions
 
@@ -224,7 +224,7 @@ Capitalize short prepositions that form an integral part of a verb: Growing Up i
 
 #### Internal Punctuation
 
-Capitalize all words following an internal punctuation mark: My Company Died — Learn From My Mistakes
+Capitalize all words following an internal punctuation mark: My Company Died - Learn From My Mistakes
 
 #### First and Last Words
 
@@ -242,7 +242,7 @@ In general, start with h2 heading size and go smaller as needed for subheads. So
 
 #### Compound Adjectives
 
-Use hyphens in compound adjectives, with the exception of adverbs (words ending in "-ly" or modifying a verb). A compound adjective that contains another compound adjective calls for an en dash: first-time founder, state-of-the-art design, open-source project, Pulitzer Prize–winning novelist, newly released program
+Use hyphens in compound adjectives, with the exception of adverbs (words ending in "-ly" or modifying a verb). A compound adjective that contains another compound adjective calls for an en dash: first-time founder, state-of-the-art design, open-source project, Pulitzer Prize-winning novelist, newly released program
 
 #### Post-Noun Usage
 
@@ -328,7 +328,7 @@ By convention, the sitting U.S. president, active senior religious leaders, and 
 
 #### Spelling Out Numbers
 
-Spell out one through nine and first through ninth, and spell out a number if it's the first word of a sentence. Use numerals below 10 only if decimal accuracy is required (5.6 miles) or for currency ($8), or when writing whole numbers greater than a million (4 million). Figures are also used when an abbreviation or symbol is used as the unit of measure: 75 mph, 15 km, 6'3", -40º Celsius
+Spell out one through nine and first through ninth, and spell out a number if it's the first word of a sentence. Use numerals below 10 only if decimal accuracy is required (5.6 miles) or for currency ($8), or when writing whole numbers greater than a million (4 million). Figures are also used when an abbreviation or symbol is used as the unit of measure: 75 mph, 15 km, 6'3", -40o Celsius
 
 #### Percentages
 
@@ -348,7 +348,7 @@ There are a few more exceptions. Use figures for the following: the 1990s or the
 
 #### Time of Day
 
-Expressions of the time of day — even, half, and quarter hours, for example — may be spelled out. If you want to indicate the hour more specifically or to emphasize exactness, figures are used: ten o'clock, Eight-thirty, quarter past nine, 11:37 p.m., the 10:15 standup, Dan scheduled the meeting for 9:00 a.m. sharp.
+Expressions of the time of day - even, half, and quarter hours, for example - may be spelled out. If you want to indicate the hour more specifically or to emphasize exactness, figures are used: ten o'clock, Eight-thirty, quarter past nine, 11:37 p.m., the 10:15 standup, Dan scheduled the meeting for 9:00 a.m. sharp.
 
 #### Starting Sentences
 
@@ -464,7 +464,7 @@ When a quote continues across multiple paragraphs, the quote is left open at the
 
 #### Edited Text
 
-Use square brackets to indicate edited text in a quote. Keep text in square brackets to a minimum—use only when the edit would increase clarity and comprehension or add necessary context. If you need to place an entire sentence in square brackets, it's probably better to paraphrase: "It was difficult [to prioritize addressing tech debt] because we had so many features to work on."
+Use square brackets to indicate edited text in a quote. Keep text in square brackets to a minimum-use only when the edit would increase clarity and comprehension or add necessary context. If you need to place an entire sentence in square brackets, it's probably better to paraphrase: "It was difficult [to prioritize addressing tech debt] because we had so many features to work on."
 
 #### Block Quotes
 
@@ -480,7 +480,7 @@ Rather than "above" or "below," use terms like "earlier," "later," "previously,"
 
 #### Usage Guidelines
 
-Go easy on semicolons. When appropriate, use an em dash ( — ) instead, or simply start a new sentence. Never use a semicolon in site or email copy.
+Go easy on semicolons. When appropriate, use an em dash ( - ) instead, or simply start a new sentence. Never use a semicolon in site or email copy.
 
 ### Slashes
 

@@ -20,7 +20,7 @@ cache_wrapper = json.loads(raw_data)
 cache_data = json.loads(cache_wrapper.get('cache', '{}'))
 cache_documents = cache_data.get('state', {}).get('documents', {})
 
-print(f"→ Cache has {len(cache_documents)} documents")
+print(f"-> Cache has {len(cache_documents)} documents")
 
 # Get API data
 url = "https://api.granola.ai/v2/get-documents"
@@ -34,7 +34,7 @@ headers = {
 response = requests.post(url, headers=headers, json={"limit": 100, "offset": 0, "include_last_viewed_panel": True})
 api_docs = response.json().get("docs", [])
 
-print(f"→ API returned {len(api_docs)} documents\n")
+print(f"-> API returned {len(api_docs)} documents\n")
 
 # Compare the same meetings
 api_docs_by_id = {doc['id']: doc for doc in api_docs}
@@ -80,15 +80,15 @@ for meeting_id in list(api_docs_by_id.keys())[:20]:  # Check first 20
     else:
         neither_has += 1
 
-print(f"\n→ COMPARISON (first {count} meetings):")
+print(f"\n-> COMPARISON (first {count} meetings):")
 print(f"  - Both have content: {both_have}")
 print(f"  - Only API has content: {api_only}")
 print(f"  - Only Cache has content: {cache_only}")
 print(f"  - Neither has content: {neither_has}")
 
 if api_only > 0:
-    print(f"\n✓ API provides {api_only} more meetings with content than cache")
+    print(f"\n[x] API provides {api_only} more meetings with content than cache")
 elif cache_only > 0:
-    print(f"\n✓ Cache provides {cache_only} more meetings with content than API")
+    print(f"\n[x] Cache provides {cache_only} more meetings with content than API")
 else:
-    print(f"\n→ API and Cache have equivalent content availability")
+    print(f"\n-> API and Cache have equivalent content availability")

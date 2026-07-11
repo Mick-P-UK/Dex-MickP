@@ -154,7 +154,7 @@ priority_users: []
     }[auth_type]
     
     return True, f"""
-✅ **Slack Integration Configured!**
+[x] **Slack Integration Configured!**
 
 **What's set up:**
 - MCP Server: `{PACKAGE}`
@@ -162,7 +162,7 @@ priority_users: []
 - Credential: Securely stored in Claude Desktop config
 
 **What you can do now:**
-- "What did Sarah say about the Q1 budget?" → Searches Slack
+- "What did Sarah say about the Q1 budget?" -> Searches Slack
 - Meeting prep will include recent Slack context with attendees
 - Person pages will show Slack interaction history
 

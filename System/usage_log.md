@@ -113,9 +113,9 @@ Tracks whether user has been asked about anonymous feature usage tracking.
 - **Consent date:** (not yet decided)
 
 **Values:**
-- `Consent decision: pending` → Not yet asked
-- `Consent decision: opted-in` → User agreed to help improve Dex
-- `Consent decision: opted-out` → User declined
+- `Consent decision: pending` -> Not yet asked
+- `Consent decision: opted-in` -> User agreed to help improve Dex
+- `Consent decision: opted-out` -> User declined
 
 ---
 
@@ -128,9 +128,9 @@ Tracks whether user has been asked about ScreenPipe ambient intelligence.
 - **Consent date:** (not yet decided)
 
 **Values:**
-- `Consent decision: pending` → Not yet asked
-- `Consent decision: opted-in` → User wants ScreenPipe features
-- `Consent decision: opted-out` → User declined ScreenPipe
+- `Consent decision: pending` -> Not yet asked
+- `Consent decision: opted-in` -> User wants ScreenPipe features
+- `Consent decision: opted-out` -> User declined ScreenPipe
 
 **What ScreenPipe enables (when opted in):**
 - `/commitment-scan` - Detect uncommitted asks/promises from Slack, Email, etc.

@@ -155,7 +155,7 @@ Load `schema.yaml` and classify the problem against the enum values defined in [
 **BLOCK if validation fails:**
 
 ```
-❌ YAML validation failed
+[ ] YAML validation failed
 
 Errors:
 - problem_type: must be one of schema enums, got "compilation_error"
@@ -242,7 +242,7 @@ If this issue has automatic indicators suggesting it might be critical:
 
 Then in the decision menu (Step 8), add a note:
 ```
-💡 This might be worth adding to Required Reading (Option 2)
+ This might be worth adding to Required Reading (Option 2)
 ```
 
 But **NEVER auto-promote**. User decides via decision menu (Option 2).
@@ -263,7 +263,7 @@ When user selects Option 2 (Add to Required Reading), use the template from `ass
 After successful documentation, present options and WAIT for user response:
 
 ```
-✓ Solution documented
+[x] Solution documented
 
 File created:
 - docs/solutions/[category]/[filename].md
@@ -285,7 +285,7 @@ What's next?
 - Return to calling skill/workflow
 - Documentation is complete
 
-**Option 2: Add to Required Reading** ⭐ PRIMARY PATH FOR CRITICAL PATTERNS
+**Option 2: Add to Required Reading** * PRIMARY PATH FOR CRITICAL PATTERNS
 
 User selects this when:
 - System made this mistake multiple times across different modules
@@ -294,17 +294,17 @@ User selects this when:
 
 Action:
 1. Extract pattern from the documentation
-2. Format as ❌ WRONG vs ✅ CORRECT with code examples
+2. Format as [ ] WRONG vs [x] CORRECT with code examples
 3. Add to `docs/solutions/patterns/critical-patterns.md`
 4. Add cross-reference back to this doc
-5. Confirm: "✓ Added to Required Reading. All subagents will see this pattern before code generation."
+5. Confirm: "[x] Added to Required Reading. All subagents will see this pattern before code generation."
 
 **Option 3: Link related issues**
 
 - Prompt: "Which doc to link? (provide filename or describe)"
 - Search docs/solutions/ for the doc
 - Add cross-reference to both docs
-- Confirm: "✓ Cross-reference added"
+- Confirm: "[x] Cross-reference added"
 
 **Option 4: Add to existing skill**
 
@@ -314,7 +314,7 @@ Action:
 1. Prompt: "Which skill? (hotwire-native, etc.)"
 2. Determine which reference file to update (resources.md, patterns.md, or examples.md)
 3. Add link and brief description to appropriate section
-4. Confirm: "✓ Added to [skill-name] skill in [file]"
+4. Confirm: "[x] Added to [skill-name] skill in [file]"
 
 Example: For Hotwire Native Tailwind variants solution:
 - Add to `hotwire-native/references/resources.md` under "Project-Specific Resources"
@@ -328,7 +328,7 @@ Action:
 1. Prompt: "What should the new skill be called? (e.g., stripe-billing, email-processing)"
 2. Run `python3 .claude/skills/skill-creator/scripts/init_skill.py [skill-name]`
 3. Create initial reference files with this solution as first example
-4. Confirm: "✓ Created new [skill-name] skill with this solution as first example"
+4. Confirm: "[x] Created new [skill-name] skill with this solution as first example"
 
 **Option 6: View documentation**
 
@@ -368,12 +368,12 @@ All context needed for documentation should be present in conversation history b
 
 Documentation is successful when ALL of the following are true:
 
-- ✅ YAML frontmatter validated (all required fields, correct formats)
-- ✅ File created in docs/solutions/[category]/[filename].md
-- ✅ Enum values match schema.yaml exactly
-- ✅ Code examples included in solution section
-- ✅ Cross-references added if related issues found
-- ✅ User presented with decision menu and action confirmed
+- [x] YAML frontmatter validated (all required fields, correct formats)
+- [x] File created in docs/solutions/[category]/[filename].md
+- [x] Enum values match schema.yaml exactly
+- [x] Code examples included in solution section
+- [x] Cross-references added if related issues found
+- [x] User presented with decision menu and action confirmed
 
 </success_criteria>
 
@@ -425,23 +425,23 @@ Documentation is successful when ALL of the following are true:
 
 **Good documentation has:**
 
-- ✅ Exact error messages (copy-paste from output)
-- ✅ Specific file:line references
-- ✅ Observable symptoms (what you saw, not interpretations)
-- ✅ Failed attempts documented (helps avoid wrong paths)
-- ✅ Technical explanation (not just "what" but "why")
-- ✅ Code examples (before/after if applicable)
-- ✅ Prevention guidance (how to catch early)
-- ✅ Cross-references (related issues)
+- [x] Exact error messages (copy-paste from output)
+- [x] Specific file:line references
+- [x] Observable symptoms (what you saw, not interpretations)
+- [x] Failed attempts documented (helps avoid wrong paths)
+- [x] Technical explanation (not just "what" but "why")
+- [x] Code examples (before/after if applicable)
+- [x] Prevention guidance (how to catch early)
+- [x] Cross-references (related issues)
 
 **Avoid:**
 
-- ❌ Vague descriptions ("something was wrong")
-- ❌ Missing technical details ("fixed the code")
-- ❌ No context (which version? which file?)
-- ❌ Just code dumps (explain why it works)
-- ❌ No prevention guidance
-- ❌ No cross-references
+- [ ] Vague descriptions ("something was wrong")
+- [ ] Missing technical details ("fixed the code")
+- [ ] No context (which version? which file?)
+- [ ] Just code dumps (explain why it works)
+- [ ] No prevention guidance
+- [ ] No cross-references
 
 ---
 
@@ -473,7 +473,7 @@ Documentation is successful when ALL of the following are true:
    severity: high
    tags: [n-plus-one, eager-loading, performance]
    ```
-   ✅ Valid
+   [x] Valid
 6. **Create documentation:**
    - `docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md`
 7. **Cross-reference:** None needed (no similar issues)
@@ -481,7 +481,7 @@ Documentation is successful when ALL of the following are true:
 **Output:**
 
 ```
-✓ Solution documented
+[x] Solution documented
 
 File created:
 - docs/solutions/performance-issues/n-plus-one-brief-generation-BriefSystem-20251110.md

@@ -1,5 +1,5 @@
 <overview>
-Files are the universal interface for agent-native applications. Agents are naturally fluent with file operations—they already know how to read, write, and organize files. This document covers why files work so well, how to organize them, and the context.md pattern for accumulated knowledge.
+Files are the universal interface for agent-native applications. Agents are naturally fluent with file operations-they already know how to read, write, and organize files. This document covers why files work so well, how to organize them, and the context.md pattern for accumulated knowledge.
 </overview>
 
 <why_files>
@@ -9,7 +9,7 @@ Agents are naturally good at files. Claude Code works because bash + filesystem 
 
 ### Agents Already Know How
 
-You don't need to teach the agent your API—it already knows `cat`, `grep`, `mv`, `mkdir`. File operations are the primitives it's most fluent with.
+You don't need to teach the agent your API-it already knows `cat`, `grep`, `mv`, `mkdir`. File operations are the primitives it's most fluent with.
 
 ### Files Are Inspectable
 
@@ -21,7 +21,7 @@ Export is trivial. Backup is trivial. Users own their data. No vendor lock-in, n
 
 ### App State Stays in Sync
 
-On mobile, if you use the file system with iCloud, all devices share the same file system. The agent's work on one device appears on all devices—without you having to build a server.
+On mobile, if you use the file system with iCloud, all devices share the same file system. The agent's work on one device appears on all devices-without you having to build a server.
 
 ### Directory Structure Is Information Architecture
 
@@ -41,12 +41,12 @@ Organize files around entities, not actors or file types:
 
 ```
 {entity_type}/{entity_id}/
-├── primary content
-├── metadata
-└── related materials
++-- primary content
++-- metadata
++-- related materials
 ```
 
-**Example:** `Research/books/{bookId}/` contains everything about one book—full text, notes, sources, agent logs.
+**Example:** `Research/books/{bookId}/` contains everything about one book-full text, notes, sources, agent logs.
 
 ### Naming Conventions
 
@@ -73,12 +73,12 @@ Separate agent working files from user's permanent data:
 
 ```
 Documents/
-├── AgentCheckpoints/     # Ephemeral (can delete)
-│   └── {sessionId}.checkpoint
-├── AgentLogs/            # Ephemeral (debugging)
-│   └── {type}/{sessionId}.md
-└── Research/             # Durable (user's work)
-    └── books/{bookId}/
++-- AgentCheckpoints/     # Ephemeral (can delete)
+|   +-- {sessionId}.checkpoint
++-- AgentLogs/            # Ephemeral (debugging)
+|   +-- {type}/{sessionId}.md
++-- Research/             # Durable (user's work)
+    +-- books/{bookId}/
 ```
 
 ### The Split: Markdown vs JSON
@@ -160,7 +160,7 @@ Reading assistant for the Every app.
 | Anything that benefits from transparency | Data with relationships |
 | Large text content | Data that needs indexing |
 
-**The principle:** Files for legibility, databases for structure. When in doubt, files—they're more transparent and users can always inspect them.
+**The principle:** Files for legibility, databases for structure. When in doubt, files-they're more transparent and users can always inspect them.
 
 ### When Files Work Best
 
@@ -234,7 +234,7 @@ Tell the agent about the conflict model:
 ## Working with User Content
 
 When you create content, the user may edit it afterward. Always read
-existing files before modifying them—the user may have made improvements
+existing files before modifying them-the user may have made improvements
 you should preserve.
 
 If a file has been modified since you last wrote it, ask before overwriting.
@@ -246,31 +246,31 @@ If a file has been modified since you last wrote it, ask before overwriting.
 
 ```
 Documents/
-├── Library/
-│   └── library.json              # Book metadata
-├── Research/
-│   └── books/
-│       └── {bookId}/
-│           ├── full_text.txt     # Downloaded content
-│           ├── introduction.md   # Agent-generated, user-editable
-│           ├── notes.md          # User notes
-│           └── sources/
-│               ├── wikipedia.md  # Research gathered by agent
-│               └── reviews.md
-├── Chats/
-│   └── {conversationId}.json     # Chat history
-├── Profile/
-│   └── profile.md                # User reading profile
-└── context.md                    # Agent's accumulated knowledge
++-- Library/
+|   +-- library.json              # Book metadata
++-- Research/
+|   +-- books/
+|       +-- {bookId}/
+|           +-- full_text.txt     # Downloaded content
+|           +-- introduction.md   # Agent-generated, user-editable
+|           +-- notes.md          # User notes
+|           +-- sources/
+|               +-- wikipedia.md  # Research gathered by agent
+|               +-- reviews.md
++-- Chats/
+|   +-- {conversationId}.json     # Chat history
++-- Profile/
+|   +-- profile.md                # User reading profile
++-- context.md                    # Agent's accumulated knowledge
 ```
 
 **How it works:**
 
-1. User adds book → creates entry in `library.json`
-2. Agent downloads text → saves to `Research/books/{id}/full_text.txt`
-3. Agent researches → saves to `sources/`
-4. Agent generates intro → saves to `introduction.md`
-5. User edits intro → agent sees changes on next read
+1. User adds book -> creates entry in `library.json`
+2. Agent downloads text -> saves to `Research/books/{id}/full_text.txt`
+3. Agent researches -> saves to `sources/`
+4. Agent generates intro -> saves to `introduction.md`
+5. User edits intro -> agent sees changes on next read
 6. Agent updates `context.md` with learnings
 </examples>
 

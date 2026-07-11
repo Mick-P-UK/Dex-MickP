@@ -4,13 +4,13 @@
 
 set -e
 
-echo "🚀 Setting up Dex..."
+echo " Setting up Dex..."
 echo ""
 
 # Check for Command Line Tools on macOS (required for git)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     if ! xcode-select -p &> /dev/null; then
-        echo "⚠️  Command Line Developer Tools not found"
+        echo "[!]  Command Line Developer Tools not found"
         echo ""
         echo "macOS will now prompt you to install them - this is required for git."
         echo "Click 'Install' when the dialog appears (takes 2-3 minutes)."
@@ -22,7 +22,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         xcode-select --install 2>/dev/null || true
         
         echo ""
-        echo "⏳ Waiting for Command Line Tools installation..."
+        echo "[~] Waiting for Command Line Tools installation..."
         echo "   (This window will continue once installation completes)"
         echo ""
         
@@ -31,7 +31,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
             sleep 5
         done
         
-        echo "✅ Command Line Tools installed!"
+        echo "[x] Command Line Tools installed!"
         echo ""
     fi
 fi
@@ -43,7 +43,7 @@ fi
 
 # Check Git first (required for repo operations)
 if ! command -v git &> /dev/null; then
-    echo "❌ Git is not installed"
+    echo "[ ] Git is not installed"
     echo ""
     echo "Git is required to clone the repository and manage updates."
     echo ""
@@ -56,22 +56,22 @@ if ! command -v git &> /dev/null; then
     fi
     exit 1
 fi
-echo "✅ Git $(git --version | cut -d' ' -f3)"
+echo "[x] Git $(git --version | cut -d' ' -f3)"
 
 # Check Node.js
 if ! command -v node &> /dev/null; then
-    echo "❌ Node.js is not installed"
+    echo "[ ] Node.js is not installed"
     echo "   Please install Node.js 18+ from https://nodejs.org/"
     exit 1
 fi
 
 NODE_VERSION=$(node -v | cut -d'v' -f2 | cut -d'.' -f1)
 if [ "$NODE_VERSION" -lt 18 ]; then
-    echo "❌ Node.js version must be 18 or higher (found v$NODE_VERSION)"
+    echo "[ ] Node.js version must be 18 or higher (found v$NODE_VERSION)"
     echo "   Please upgrade from https://nodejs.org/"
     exit 1
 fi
-echo "✅ Node.js $(node -v)"
+echo "[x] Node.js $(node -v)"
 
 # Check Python (required for Work MCP - task sync)
 # Windows often uses 'python' instead of 'python3'
@@ -93,7 +93,7 @@ if [ -n "$PYTHON_CMD" ]; then
     
     # Check if Python 3.10+
     if [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -lt 10 ]; then
-        echo "❌ Python $PYTHON_VERSION found (too old)"
+        echo "[ ] Python $PYTHON_VERSION found (too old)"
         echo ""
         echo "MCP SDK requires Python 3.10 or newer."
         echo "You have Python $PYTHON_VERSION which is too old."
@@ -104,9 +104,9 @@ if [ -n "$PYTHON_CMD" ]; then
         exit 1
     fi
     
-    echo "✅ Python $PYTHON_VERSION"
+    echo "[x] Python $PYTHON_VERSION"
 else
-    echo "❌ Python 3 not found"
+    echo "[ ] Python 3 not found"
     echo ""
     echo "Python 3.10+ is required for MCP servers (task sync across all files)."
     echo "Without it, tasks won't sync between meeting notes, person pages, and Tasks.md."
@@ -115,7 +115,7 @@ else
         echo "Install Python 3.10+:"
         echo "  1. Download from https://www.python.org/downloads/"
         echo "  2. Run the installer"
-        echo "  3. ⚠️  IMPORTANT: Check 'Add Python to PATH' during installation"
+        echo "  3. [!]  IMPORTANT: Check 'Add Python to PATH' during installation"
         echo "  4. Restart your terminal"
         echo "  5. Run ./install.sh again"
     else
@@ -130,13 +130,13 @@ fi
 
 # Install Node dependencies
 echo ""
-echo "📦 Installing dependencies..."
+echo " Installing dependencies..."
 if command -v pnpm &> /dev/null; then
     pnpm install
 elif command -v npm &> /dev/null; then
     npm install
 else
-    echo "❌ Neither npm nor pnpm found"
+    echo "[ ] Neither npm nor pnpm found"
     exit 1
 fi
 
@@ -146,7 +146,7 @@ fi
 # Create .mcp.json with current path and correct Python command
 if [ ! -f .mcp.json ]; then
     echo ""
-    echo "📝 Creating .mcp.json with workspace path..."
+    echo " Creating .mcp.json with workspace path..."
     CURRENT_PATH="$(pwd)"
     
     # Use the Python command we detected earlier (python3 or python)
@@ -165,15 +165,15 @@ elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
 fi
 
 if [ -f "$GRANOLA_CACHE" ]; then
-    echo "✅ Granola detected - meeting intelligence available"
+    echo "[x] Granola detected - meeting intelligence available"
 else
-    echo "ℹ️  Granola not detected - meeting intelligence won't work"
+    echo "[i]  Granola not detected - meeting intelligence won't work"
     echo "   Install Granola from https://granola.ai for meeting transcription"
 fi
 
 # Install Python dependencies for Work MCP (CRITICAL for task sync)
 echo ""
-echo "📦 Installing Python dependencies for Work MCP..."
+echo " Installing Python dependencies for Work MCP..."
 
 # Determine pip command (pip3 or pip)
 PIP_CMD=""
@@ -201,14 +201,14 @@ if [ -n "$PIP_CMD" ]; then
 
     # Try standard install first
     if $PIP_CMD install mcp pyyaml $CALENDAR_PACKAGE --quiet 2>/dev/null; then
-        echo "✅ MCP dependencies installed (including calendar access)"
+        echo "[x] MCP dependencies installed (including calendar access)"
     else
         # Try with --user flag (works around permission issues)
         echo "   Trying with --user flag..."
         if $PIP_CMD install --user mcp pyyaml $CALENDAR_PACKAGE --quiet 2>/dev/null; then
-            echo "✅ MCP dependencies installed (user mode)"
+            echo "[x] MCP dependencies installed (user mode)"
         else
-            echo "❌ Could not install Python dependencies"
+            echo "[ ] Could not install Python dependencies"
             echo ""
             echo "Work MCP is critical - it syncs tasks across all your files."
             echo "Without it, checking off a task in one place won't update others."
@@ -221,7 +221,7 @@ if [ -n "$PIP_CMD" ]; then
         fi
     fi
 else
-    echo "❌ pip not found (usually comes with Python)"
+    echo "[ ] pip not found (usually comes with Python)"
     echo ""
     if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
         echo "This usually means Python wasn't added to PATH during installation."
@@ -240,22 +240,22 @@ fi
 
 # Verify Work MCP setup
 echo ""
-echo "🔍 Verifying Work MCP setup..."
+echo " Verifying Work MCP setup..."
 if [ -n "$PYTHON_CMD" ]; then
     if $PYTHON_CMD -c "import mcp, yaml" 2>/dev/null; then
-        echo "✅ Work MCP verified - task sync will work"
-        WORK_MCP_STATUS="✅ Working"
+        echo "[x] Work MCP verified - task sync will work"
+        WORK_MCP_STATUS="[x] Working"
     else
-        echo "⚠️  Work MCP not working - task sync won't function"
-        WORK_MCP_STATUS="⚠️  Needs attention"
+        echo "[!]  Work MCP not working - task sync won't function"
+        WORK_MCP_STATUS="[!]  Needs attention"
     fi
 else
-    WORK_MCP_STATUS="⚠️  Needs attention"
+    WORK_MCP_STATUS="[!]  Needs attention"
 fi
 
 # Cursor/Claude Code compatibility
 echo ""
-echo "🔄 Checking AI editor compatibility..."
+echo " Checking AI editor compatibility..."
 
 # Detect which editor is likely being used
 EDITOR_DETECTED=""
@@ -272,7 +272,7 @@ if [ -d "$HOME/.cursor" ]; then
         fi
     fi
     # Note: Windows Cursor version detection not implemented
-    # Users can check manually: Help → About Cursor
+    # Users can check manually: Help -> About Cursor
 fi
 
 # Skills in .claude/skills/ work natively in BOTH editors:
@@ -294,12 +294,12 @@ if [ "$EDITOR_DETECTED" == "Cursor" ]; then
         # Check if version is 2.4 or higher
         if [ "$CURSOR_MAJOR" -lt 2 ] || ([ "$CURSOR_MAJOR" -eq 2 ] && [ "$CURSOR_MINOR" -lt 4 ]); then
             echo ""
-            echo "   ⚠️  WARNING: Cursor $CURSOR_VERSION detected (skills require 2.4+)"
+            echo "   [!]  WARNING: Cursor $CURSOR_VERSION detected (skills require 2.4+)"
             echo ""
             echo "   Dex skills won't work until you upgrade Cursor!"
             echo "   Skills like /setup, /daily-plan, etc. require Cursor 2.4 or later."
             echo ""
-            echo "   To upgrade: Cursor menu → Check for Updates"
+            echo "   To upgrade: Cursor menu -> Check for Updates"
             echo "   Or download latest from: https://cursor.com"
             echo ""
             echo "   After upgrading, skills in .claude/skills/ will work automatically."
@@ -307,36 +307,36 @@ if [ "$EDITOR_DETECTED" == "Cursor" ]; then
             read -p "Press Enter to continue (upgrade Cursor later)..."
         else
             echo ""
-            echo "   ✅ Cursor $CURSOR_VERSION supports skills natively"
+            echo "   [x] Cursor $CURSOR_VERSION supports skills natively"
             echo "   Skills work in both Cursor AND Claude Code from .claude/skills/"
         fi
     else
         echo ""
-        echo "   ℹ️  Could not detect Cursor version automatically."
+        echo "   [i]  Could not detect Cursor version automatically."
         echo "   Skills require Cursor 2.4+ to work."
         echo ""
-        echo "   Check your version: Cursor menu → About Cursor"
-        echo "   If < 2.4, upgrade via: Cursor menu → Check for Updates"
+        echo "   Check your version: Cursor menu -> About Cursor"
+        echo "   If < 2.4, upgrade via: Cursor menu -> Check for Updates"
     fi
     echo ""
-    echo "✅ Cursor compatibility check complete"
+    echo "[x] Cursor compatibility check complete"
 else
-    echo "✅ Claude Code / Claude Desktop detected (or no editor found)"
+    echo "[x] Claude Code / Claude Desktop detected (or no editor found)"
     echo "   Skills in .claude/skills/ will work natively"
 fi
 
 # Success
 echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "✅ Dex installation complete!"
+echo "-------------------------------------------------"
+echo "[x] Dex installation complete!"
 echo ""
 echo "Status:"
-echo "  • Node.js: ✅ Working"
-echo "  • Work MCP: $WORK_MCP_STATUS"
-echo "  • Editor: ${EDITOR_DETECTED:-Claude Code}"
+echo "  - Node.js: [x] Working"
+echo "  - Work MCP: $WORK_MCP_STATUS"
+echo "  - Editor: ${EDITOR_DETECTED:-Claude Code}"
 if [[ "$WORK_MCP_STATUS" == *"Needs"* ]]; then
     echo ""
-    echo "⚠️  IMPORTANT: Work MCP enables task sync across all files."
+    echo "[!]  IMPORTANT: Work MCP enables task sync across all files."
     echo "   Without it, Dex works but tasks won't sync automatically."
     echo "   See troubleshooting above to fix."
 fi
@@ -352,4 +352,4 @@ else
     echo "  2. Answer the setup questions (~5 minutes)"
     echo "  3. Start using Dex!"
 fi
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "-------------------------------------------------"

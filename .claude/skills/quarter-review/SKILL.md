@@ -9,8 +9,8 @@ Review and synthesize the quarter that just ended. Evaluates goal completion, ca
 
 ## Usage
 
-- `/quarter-review` — Review current/recently ended quarter
-- `/quarter-review Q4 2025` — Review specific past quarter
+- `/quarter-review` - Review current/recently ended quarter
+- `/quarter-review Q4 2025` - Review specific past quarter
 
 ---
 
@@ -50,7 +50,7 @@ Review and synthesize the quarter that just ended. Evaluates goal completion, ca
 
 **Use `date_str`, `current_quarter`, and calculated quarter dates throughout the rest of the skill** - never hardcode quarters or assume.
 
-**Why:** Quarter calculations must be accurate. Wrong quarters cause reviews to be filed incorrectly and break quarterly workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Quarter calculations must be accurate. Wrong quarters cause reviews to be filed incorrectly and break quarterly workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
@@ -134,10 +134,10 @@ Look for `00-Inbox/Weekly_Synthesis_*.md` files in quarter:
 For each goal from `01-Quarter_Goals/Quarter_Goals.md`:
 
 **Evaluate:**
-- ✅ **Completed:** Fully achieved
-- 🔄 **Partial:** Made significant progress but not done
-- ❌ **Not Started:** Didn't get to it
-- 🚫 **Deprioritized:** Intentionally stopped
+- [x] **Completed:** Fully achieved
+-  **Partial:** Made significant progress but not done
+- [ ] **Not Started:** Didn't get to it
+-  **Deprioritized:** Intentionally stopped
 
 For each, capture:
 - What was accomplished
@@ -156,10 +156,10 @@ For each, capture:
 > Milestones: [Y of Z completed]
 > 
 > How would you assess this goal?
-> - ✅ Completed
-> - 🔄 Partial (what % done?)
-> - ❌ Didn't get to it
-> - 🚫 Deprioritized"
+> - [x] Completed
+> -  Partial (what % done?)
+> - [ ] Didn't get to it
+> -  Deprioritized"
 
 Wait for user response, then:
 
@@ -225,7 +225,7 @@ Wait for user input on:
 
 **If 3+ high-priority ideas exist:**
 
-> "💡 Consider running `/dex-backlog` soon to re-rank ideas based on updated system state."
+> " Consider running `/dex-backlog` soon to re-rank ideas based on updated system state."
 
 **If no Dex_Backlog.md exists:**
 - Skip this section silently
@@ -262,9 +262,9 @@ reviewed_on: [date]
 
 ## Goal Completion
 
-### Goal 1: [Goal Title] — **[Pillar]**
+### Goal 1: [Goal Title] - **[Pillar]**
 
-**Status:** ✅ Completed / 🔄 Partial (X%) / ❌ Not Started / 🚫 Deprioritized
+**Status:** [x] Completed /  Partial (X%) / [ ] Not Started /  Deprioritized
 
 **Original success criteria:**
 [What was defined in 01-Quarter_Goals/Quarter_Goals.md]
@@ -283,13 +283,13 @@ reviewed_on: [date]
 
 ---
 
-### Goal 2: [Goal Title] — **[Pillar]**
+### Goal 2: [Goal Title] - **[Pillar]**
 
 [Same structure]
 
 ---
 
-### Goal 3: [Goal Title] — **[Pillar]**
+### Goal 3: [Goal Title] - **[Pillar]**
 
 [Same structure]
 
@@ -303,24 +303,24 @@ reviewed_on: [date]
 - [Key decision made]
 
 ### Projects Shipped
-- [Project 1] — [Brief description]
-- [Project 2] — [Brief description]
+- [Project 1] - [Brief description]
+- [Project 2] - [Brief description]
 
 ### New Relationships
-- [Person] at [Company] — [Context]
+- [Person] at [Company] - [Context]
 
 ### Key Meetings/Decisions
-- [Date]: [Meeting/decision] — [Impact]
+- [Date]: [Meeting/decision] - [Impact]
 
 ---
 
 ## What Didn't Work
 
 ### Incomplete Goals
-- [Goal] — [Why it didn't happen]
+- [Goal] - [Why it didn't happen]
 
 ### Stalled Projects
-- [Project] — [What blocked it]
+- [Project] - [What blocked it]
 
 ### Time Drains
 - [Activity that consumed time without value]
@@ -349,13 +349,13 @@ reviewed_on: [date]
 - **Current high-priority ideas:** [Count with score >= 85]
 
 ### Improvements Implemented This Quarter
-- **[idea-XXX]** [Title] — [Brief description of what was built]
-- **[idea-YYY]** [Title] — [Impact it had]
+- **[idea-XXX]** [Title] - [Brief description of what was built]
+- **[idea-YYY]** [Title] - [Impact it had]
 
 ### Next Quarter Priorities
 Based on backlog review, prioritize these improvements:
-1. [Idea to tackle] — [Why now]
-2. [Idea to tackle] — [Why now]
+1. [Idea to tackle] - [Why now]
+2. [Idea to tackle] - [Why now]
 
 *Run `/dex-backlog` for full ranked list*
 
@@ -467,10 +467,10 @@ After review:
 - Suggestions inform new goals
 
 **References:**
-- `01-Quarter_Goals/Quarter_Goals.md` — Original plan
-- Weekly syntheses — Week-by-week activity
-- Task completions — Actual work done
-- Meeting notes — Context gathered
+- `01-Quarter_Goals/Quarter_Goals.md` - Original plan
+- Weekly syntheses - Week-by-week activity
+- Task completions - Actual work done
+- Meeting notes - Context gathered
 
 ---
 

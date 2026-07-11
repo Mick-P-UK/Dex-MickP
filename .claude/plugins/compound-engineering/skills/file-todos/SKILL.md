@@ -11,7 +11,7 @@ The `todos/` directory contains a file-based tracking system for managing code r
 
 This skill should be used when:
 - Creating new todos from findings or feedback
-- Managing todo lifecycle (pending → ready → complete)
+- Managing todo lifecycle (pending -> ready -> complete)
 - Triaging pending items for approval
 - Checking or managing dependencies
 - Converting PR comments or code findings into tracked work
@@ -109,7 +109,7 @@ dependencies: ["001"]     # Issue IDs this is blocked by
    - Make decision: approve, defer, or modify priority
 3. Update approved todos:
    - Rename file: `mv {file}-pending-{pri}-{desc}.md {file}-ready-{pri}-{desc}.md`
-   - Update frontmatter: `status: pending` → `status: ready`
+   - Update frontmatter: `status: pending` -> `status: ready`
    - Fill "Recommended Action" section with clear plan
    - Adjust priority if different from initial assessment
 4. Deferred todos stay in `pending` status
@@ -176,7 +176,7 @@ Work logs serve as:
 1. Verify all acceptance criteria checked off
 2. Update Work Log with final session and results
 3. Rename file: `mv {file}-ready-{pri}-{desc}.md {file}-complete-{pri}-{desc}.md`
-4. Update frontmatter: `status: ready` → `status: complete`
+4. Update frontmatter: `status: ready` -> `status: complete`
 5. Check for unblocked work: `grep -l 'dependencies:.*"002"' todos/*-ready-*.md`
 6. Commit with issue reference: `feat: resolve issue 002`
 
@@ -184,11 +184,11 @@ Work logs serve as:
 
 | Trigger | Flow | Tool |
 |---------|------|------|
-| Code review | `/workflows:review` → Findings → `/triage` → Todos | Review agent + skill |
-| PR comments | `/resolve_pr_parallel` → Individual fixes → Todos | gh CLI + skill |
-| Code TODOs | `/resolve_todo_parallel` → Fixes + Complex todos | Agent + skill |
-| Planning | Brainstorm → Create todo → Work → Complete | Skill |
-| Feedback | Discussion → Create todo → Triage → Work | Skill + slash |
+| Code review | `/workflows:review` -> Findings -> `/triage` -> Todos | Review agent + skill |
+| PR comments | `/resolve_pr_parallel` -> Individual fixes -> Todos | gh CLI + skill |
+| Code TODOs | `/resolve_todo_parallel` -> Fixes + Complex todos | Agent + skill |
+| Planning | Brainstorm -> Create todo -> Work -> Complete | Skill |
+| Feedback | Discussion -> Create todo -> Triage -> Work | Skill + slash |
 
 ## Quick Reference Commands
 

@@ -1,8 +1,8 @@
-# Dex — Your AI Chief of Staff
+# Dex - Your AI Chief of Staff
 
 **A personal operating system powered by Claude.**
 
-Clone this repo, run the setup wizard, tell it your role — and in 10 minutes you have a working system tailored to how you work. Strategic work management, meeting intelligence, relationship tracking, daily planning. All configured for whether you're a CMO, a sales leader, a PM, or any of 31 roles.
+Clone this repo, run the setup wizard, tell it your role - and in 10 minutes you have a working system tailored to how you work. Strategic work management, meeting intelligence, relationship tracking, daily planning. All configured for whether you're a CMO, a sales leader, a PM, or any of 31 roles.
 
 No coding required. Just [Cursor](https://cursor.com) and conversation.
 
@@ -14,7 +14,7 @@ Companion to [Episode 8 of The Vibe PM Podcast](https://link-tbd) and the [full 
 
 Non-engineers.
 
-Product managers, marketers, sales leaders, designers, executives, HR leaders, consultants, coaches, analysts — anyone who wants the same leverage from AI that technical people have had access to.
+Product managers, marketers, sales leaders, designers, executives, HR leaders, consultants, coaches, analysts - anyone who wants the same leverage from AI that technical people have had access to.
 
 **You don't need to know how to code.** Just follow the setup and talk to your AI assistant.
 
@@ -102,13 +102,13 @@ node --version
 
 **Can't get this working?** No problem:
 1. Go to [github.com/davekilleen/dex](https://github.com/davekilleen/dex)
-2. Click the green **Code** button → **Download ZIP**
+2. Click the green **Code** button -> **Download ZIP**
 3. Unzip to your Documents folder (the folder will be named `dex-main`)
-4. In Cursor: **File → Open Folder** → select that `dex-main` folder
+4. In Cursor: **File -> Open Folder** -> select that `dex-main` folder
 
 ### Step 2: Run the Installer
 
-Inside Cursor, you'll see a panel at the bottom (or go to **View → Terminal**). This is where you'll type commands.
+Inside Cursor, you'll see a panel at the bottom (or go to **View -> Terminal**). This is where you'll type commands.
 
 Copy and paste this command and press Enter:
 
@@ -162,14 +162,14 @@ There's also **Claude Code** - a more powerful option available via command line
 ### What You Get With Each
 
 **Cursor:**
-- ✓ Full vault access
-- ✓ Multiple terminal windows for parallel work
-- ✓ Works immediately
-- ✗ No guaranteed hooks (context loading is probabilistic)
+- [x] Full vault access
+- [x] Multiple terminal windows for parallel work
+- [x] Works immediately
+- [ ] No guaranteed hooks (context loading is probabilistic)
 
 **Claude Code (command line or Desktop):**
-- ✓ Everything Cursor does
-- ✓ PLUS guaranteed hooks for persistent learning and automatic context
+- [x] Everything Cursor does
+- [x] PLUS guaranteed hooks for persistent learning and automatic context
 
 | Hook Example | What It Does |
 |--------------|--------------|
@@ -182,7 +182,7 @@ There's also **Claude Code** - a more powerful option available via command line
 
 **Bottom line:** Cursor works great and is what most people use. Claude Code guarantees hooks run every time, making the system more intelligent and persistent. Many people use both - Cursor for heavy editing, Claude Code for workflows where reliability matters.
 
-[Full hooks documentation →](https://code.claude.com/docs/en/hooks)
+[Full hooks documentation ->](https://code.claude.com/docs/en/hooks)
 
 ---
 
@@ -240,7 +240,7 @@ irm https://claude.ai/install.ps1 | iex
 
 **Option B: From Inside Cursor (Easiest)**
 
-1. In Cursor, go to **View → Terminal** (opens a panel at the bottom)
+1. In Cursor, go to **View -> Terminal** (opens a panel at the bottom)
 2. Copy and paste the command for your system:
 
 **Mac:**
@@ -306,7 +306,7 @@ Eight jobs that happen reliably every day:
 | **Track Relationships** | Before any call: what you discussed last time, open items, what they care about. Never walk in cold. |
 | **Accelerate Career Growth** | Captures evidence automatically. Feedback from 1:1s, achievements, skills growth. Review-ready when you need it. |
 | **Manage Tasks Reliably** | Unique IDs sync everywhere. Deduplication prevents doubles. Priority limits stop overcommit. Strategic alignment required. |
-| **Reflect & Improve** | Captures mistakes → rules. Learns preferences. Each session makes the next better. |
+| **Reflect & Improve** | Captures mistakes -> rules. Learns preferences. Each session makes the next better. |
 | **Keep Projects Moving** | Auto-detects stalls (12+ days no update). Surfaces blockers. You know what needs attention. |
 | **Evolve Itself** | System suggests improvements based on usage patterns. Monitors Claude Code releases daily - when new capabilities drop, explains what they mean for YOUR system and suggests implementations. Captures your improvement ideas too. AI ranks all by impact. `/dex-improve` plans implementation. System adapts to you. |
 
@@ -319,7 +319,7 @@ Eight jobs that happen reliably every day:
 Out of the box, working immediately:
 
 - **8 core capabilities** - Daily focus, relationship tracking, commitment management, career evidence, task sync that actually works, learning system, project health monitoring, system evolution (see jobs table above)
-- **Complete planning system** - Quarterly goals → weekly priorities → daily plans, all connected with rollup tracking
+- **Complete planning system** - Quarterly goals -> weekly priorities -> daily plans, all connected with rollup tracking
 - **25+ ready-to-use skills** - `/daily-plan`, `/meeting-prep`, `/career-coach`, `/week-review` and more - invoke with `/skill-name`
 - **Role-based setup** - 31 roles from CEO to IC, scaffolds appropriate folder structure and workflows
 - **Meeting intelligence** - Process transcripts into structured notes with action items auto-synced. Works with Granola MCP (included), or paste transcripts from any source - system recognizes and processes them
@@ -338,7 +338,7 @@ Out of the box, working immediately:
 
 **Month 1:** You're thinking like a builder. Understanding capabilities, spotting opportunities to automate, designing systems. AI fluency - the kind that compounds.
 
-**Why this matters:** Time saved → invested in learning → deeper fluency → more sophisticated builds → greater impact → career advantage. The gap is widening now. People building these systems in Q1 2026 will have a year's advantage by summer.
+**Why this matters:** Time saved -> invested in learning -> deeper fluency -> more sophisticated builds -> greater impact -> career advantage. The gap is widening now. People building these systems in Q1 2026 will have a year's advantage by summer.
 
 **Total investment:** 30 minutes to set up. Two weeks to competence. The fluency compounds weekly.
 
@@ -365,8 +365,8 @@ That's it. No special commands. No files to organize.
 **Strategic intelligence:**
 - Loads your Week Priorities and Quarterly Goals
 - Suggests routing based on what you're actually focused on
-- "Mobile app pricing" → sees "Mobile App Launch" in priorities → HIGH confidence
-- Person mentioned in priorities → routing gets confidence boost
+- "Mobile app pricing" -> sees "Mobile App Launch" in priorities -> HIGH confidence
+- Person mentioned in priorities -> routing gets confidence boost
 
 One decision instead of many. Immediate filing.
 
@@ -392,7 +392,7 @@ Run `/career-coach` anytime for:
 | Mode | What It Does |
 |------|--------------|
 | **Weekly Report** | Generate professional update for your manager in 30 seconds |
-| **Monthly Reflection** | Spot patterns — what's working, where to focus |
+| **Monthly Reflection** | Spot patterns - what's working, where to focus |
 | **Self-Review** | Build annual review from accumulated evidence |
 | **Promotion Assessment** | Gap analysis with specific development plan |
 
@@ -413,7 +413,7 @@ Just tell Dex what you finished in natural language:
 - "Mark the proposal done"  
 - "Completed the API docs"
 
-Dex finds the ID, updates everywhere automatically (Tasks.md, meeting notes, person pages, project pages), adds timestamp: `✅ 2026-01-28 14:35`.
+Dex finds the ID, updates everywhere automatically (Tasks.md, meeting notes, person pages, project pages), adds timestamp: `[x] 2026-01-28 14:35`.
 
 No manual syncing. No duplicates getting out of sync.
 
@@ -421,7 +421,7 @@ No manual syncing. No duplicates getting out of sync.
 
 ## How the Planning System Works
 
-Everything connects — from strategic pillars down to today's work:
+Everything connects - from strategic pillars down to today's work:
 
 ```mermaid
 %%{init: {'theme': 'neutral'}}%%
@@ -442,7 +442,7 @@ flowchart TD
     style D fill:#fff5e1
 ```
 
-**Strategic Pillars** (your focus areas) → **Quarter Goals** (3-5 outcomes over 3 months) → **Week Priorities** (Top 3 this week) → **Daily Plan** (today's work) → **Tasks.md** (backlog tagged to goals).
+**Strategic Pillars** (your focus areas) -> **Quarter Goals** (3-5 outcomes over 3 months) -> **Week Priorities** (Top 3 this week) -> **Daily Plan** (today's work) -> **Tasks.md** (backlog tagged to goals).
 
 Work backwards from career impact: *What would make you incredibly happy you accomplished three months from now?* Quarterly goals become the north star connecting daily work to career-defining outcomes.
 
@@ -474,7 +474,7 @@ Want to explore without adding your data? Want to show colleagues what's possibl
 Run `/dex-demo on` for pre-populated sample content that demonstrates **all 8 Jobs to Be Done**:
 
 **What's included:**
-- **Career Development System** - Role definition, career ladder (L4→L5), performance reviews, growth goals, evidence library
+- **Career Development System** - Role definition, career ladder (L4->L5), performance reviews, growth goals, evidence library
 - **Full Week of Planning** - Daily plans (Mon-Fri), weekly plan, morning/evening journals, weekly reflection  
 - **Learning & Reflection** - Working preferences, mistake patterns, session learnings, pattern recognition
 - **Company Intelligence** - Acme Corp page aggregating contacts, meetings, and tasks across the organization
@@ -568,10 +568,10 @@ These guides live in your vault after setup.
 
 ## Resources
 
-- [Vibe PM Episode 8](https://link-tbd) — Video walkthrough
-- [Companion Blog Post](https://link-tbd) — Deep dive on all the concepts
-- [Cursor](https://cursor.com) — The AI-powered editor
-- [Granola](https://granola.ai) — Meeting transcription (optional)
+- [Vibe PM Episode 8](https://link-tbd) - Video walkthrough
+- [Companion Blog Post](https://link-tbd) - Deep dive on all the concepts
+- [Cursor](https://cursor.com) - The AI-powered editor
+- [Granola](https://granola.ai) - Meeting transcription (optional)
 
 ---
 
@@ -579,7 +579,7 @@ These guides live in your vault after setup.
 
 Found this useful? Share with colleagues:
 
-> I've been using an AI personal operating system for my work — handles task management, meeting prep, relationship tracking, and daily planning. Non-engineers can set it up in 10 minutes. Check out the Vibe PM Podcast Episode 8 and the GitHub repo: [link-tbd]
+> I've been using an AI personal operating system for my work - handles task management, meeting prep, relationship tracking, and daily planning. Non-engineers can set it up in 10 minutes. Check out the Vibe PM Podcast Episode 8 and the GitHub repo: [link-tbd]
 
 ---
 

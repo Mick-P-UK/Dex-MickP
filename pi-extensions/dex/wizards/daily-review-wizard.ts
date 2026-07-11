@@ -107,34 +107,34 @@ export class DailyReviewWizard {
 
     // Title
     const title = this.theme.fg("accent", this.theme.bold("Daily Review"));
-    container.addChild(new Text("┌─ " + title + " " + "─".repeat(Math.max(0, width - 18)) + "┐", 0, 0));
-    container.addChild(new Text("│" + " ".repeat(width - 2) + "│", 0, 0));
+    container.addChild(new Text("+- " + title + " " + "-".repeat(Math.max(0, width - 18)) + "+", 0, 0));
+    container.addChild(new Text("|" + " ".repeat(width - 2) + "|", 0, 0));
 
     // Completed tasks section
     this.renderCompletedSection(container, width);
-    container.addChild(new Text("│" + " ".repeat(width - 2) + "│", 0, 0));
+    container.addChild(new Text("|" + " ".repeat(width - 2) + "|", 0, 0));
 
     // Open tasks section
     this.renderOpenSection(container, width);
-    container.addChild(new Text("│" + " ".repeat(width - 2) + "│", 0, 0));
+    container.addChild(new Text("|" + " ".repeat(width - 2) + "|", 0, 0));
 
     // Commitments section
     this.renderCommitmentsSection(container, width);
-    container.addChild(new Text("│" + " ".repeat(width - 2) + "│", 0, 0));
+    container.addChild(new Text("|" + " ".repeat(width - 2) + "|", 0, 0));
 
     // Career evidence section
     if (this.props.careerEvidenceSuggestions.length > 0) {
       this.renderEvidenceSection(container, width);
-      container.addChild(new Text("│" + " ".repeat(width - 2) + "│", 0, 0));
+      container.addChild(new Text("|" + " ".repeat(width - 2) + "|", 0, 0));
     }
 
     // Actions
     const actions = "[Save Review (s)] [Add Notes] [Cancel (esc)]";
-    container.addChild(new Text("│ " + this.theme.fg("dim", truncateToWidth(actions, width - 4)) + " ".repeat(Math.max(0, width - 4 - actions.length)) + " │", 0, 0));
-    container.addChild(new Text("│" + " ".repeat(width - 2) + "│", 0, 0));
+    container.addChild(new Text("| " + this.theme.fg("dim", truncateToWidth(actions, width - 4)) + " ".repeat(Math.max(0, width - 4 - actions.length)) + " |", 0, 0));
+    container.addChild(new Text("|" + " ".repeat(width - 2) + "|", 0, 0));
 
     // Bottom border
-    container.addChild(new Text("└" + "─".repeat(width - 2) + "┘", 0, 0));
+    container.addChild(new Text("+" + "-".repeat(width - 2) + "+", 0, 0));
 
     this.cachedWidth = width;
     this.cachedLines = container.render(width);
@@ -144,25 +144,25 @@ export class DailyReviewWizard {
   private renderCompletedSection(container: Container, width: number): void {
     const isActive = this.currentSection === "completed";
     const collapsed = this.sections.get("completed") ?? false;
-    const indicator = collapsed ? "▶" : "▼";
+    const indicator = collapsed ? ">" : "v";
 
-    const headerText = `${indicator} ✅ Tasks Completed Today (${this.props.completedTasks.length})`;
+    const headerText = `${indicator} [x] Tasks Completed Today (${this.props.completedTasks.length})`;
     const headerStyled = isActive
       ? this.theme.fg("accent", this.theme.bold(headerText))
       : this.theme.fg("text", headerText);
 
-    container.addChild(new Text("│ " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " │", 0, 0));
+    container.addChild(new Text("| " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " |", 0, 0));
 
     if (!collapsed) {
-      container.addChild(new Text("│ " + this.theme.fg("dim", "─".repeat(width - 4)) + " │", 0, 0));
+      container.addChild(new Text("| " + this.theme.fg("dim", "-".repeat(width - 4)) + " |", 0, 0));
 
       if (this.props.completedTasks.length === 0) {
         const emptyText = this.theme.fg("dim", "No tasks completed today");
-        container.addChild(new Text("│   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " │", 0, 0));
+        container.addChild(new Text("|   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " |", 0, 0));
       } else {
         for (const task of this.props.completedTasks) {
-          const taskText = `✓ ${truncateToWidth(task.title, width - 8)}`;
-          container.addChild(new Text("│   " + this.theme.fg("success", taskText) + " ".repeat(Math.max(0, width - 6 - taskText.length)) + " │", 0, 0));
+          const taskText = `[x] ${truncateToWidth(task.title, width - 8)}`;
+          container.addChild(new Text("|   " + this.theme.fg("success", taskText) + " ".repeat(Math.max(0, width - 6 - taskText.length)) + " |", 0, 0));
         }
       }
     }
@@ -171,21 +171,21 @@ export class DailyReviewWizard {
   private renderOpenSection(container: Container, width: number): void {
     const isActive = this.currentSection === "open";
     const collapsed = this.sections.get("open") ?? false;
-    const indicator = collapsed ? "▶" : "▼";
+    const indicator = collapsed ? ">" : "v";
 
-    const headerText = `${indicator} 📋 Still Open (${this.props.openTasks.length})`;
+    const headerText = `${indicator}  Still Open (${this.props.openTasks.length})`;
     const headerStyled = isActive
       ? this.theme.fg("accent", this.theme.bold(headerText))
       : this.theme.fg("text", headerText);
 
-    container.addChild(new Text("│ " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " │", 0, 0));
+    container.addChild(new Text("| " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " |", 0, 0));
 
     if (!collapsed) {
-      container.addChild(new Text("│ " + this.theme.fg("dim", "─".repeat(width - 4)) + " │", 0, 0));
+      container.addChild(new Text("| " + this.theme.fg("dim", "-".repeat(width - 4)) + " |", 0, 0));
 
       if (this.props.openTasks.length === 0) {
         const emptyText = this.theme.fg("dim", "All caught up!");
-        container.addChild(new Text("│   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " │", 0, 0));
+        container.addChild(new Text("|   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " |", 0, 0));
       } else {
         for (let i = 0; i < this.props.openTasks.length; i++) {
           const task = this.props.openTasks[i]!;
@@ -198,35 +198,35 @@ export class DailyReviewWizard {
 
   private renderOpenTaskLine(container: Container, task: Task, isSelected: boolean, width: number): void {
     const prefix = isSelected ? ">" : " ";
-    const taskText = `${prefix} [ ] → ${truncateToWidth(task.title, width - 30)}`;
+    const taskText = `${prefix} [ ] -> ${truncateToWidth(task.title, width - 30)}`;
     const actions = "[Done] [Reschedule]";
 
     const line = isSelected
       ? this.theme.fg("accent", this.theme.bold(taskText)) + " " + this.theme.fg("dim", actions)
       : this.theme.fg("text", taskText);
 
-    container.addChild(new Text("│  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " │", 0, 0));
+    container.addChild(new Text("|  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " |", 0, 0));
   }
 
   private renderCommitmentsSection(container: Container, width: number): void {
     const isActive = this.currentSection === "commitments";
     const collapsed = this.sections.get("commitments") ?? false;
-    const indicator = collapsed ? "▶" : "▼";
+    const indicator = collapsed ? ">" : "v";
     const activeCommitments = this.props.commitments.filter((c) => !c.dismissed);
 
-    const headerText = `${indicator} ⚡ Commitments Detected (${activeCommitments.length})`;
+    const headerText = `${indicator}  Commitments Detected (${activeCommitments.length})`;
     const headerStyled = isActive
       ? this.theme.fg("accent", this.theme.bold(headerText))
       : this.theme.fg("text", headerText);
 
-    container.addChild(new Text("│ " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " │", 0, 0));
+    container.addChild(new Text("| " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " |", 0, 0));
 
     if (!collapsed) {
-      container.addChild(new Text("│ " + this.theme.fg("dim", "─".repeat(width - 4)) + " │", 0, 0));
+      container.addChild(new Text("| " + this.theme.fg("dim", "-".repeat(width - 4)) + " |", 0, 0));
 
       if (activeCommitments.length === 0) {
         const emptyText = this.theme.fg("dim", "No commitments detected");
-        container.addChild(new Text("│   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " │", 0, 0));
+        container.addChild(new Text("|   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " |", 0, 0));
       } else {
         for (let i = 0; i < activeCommitments.length; i++) {
           const commitment = activeCommitments[i]!;
@@ -239,7 +239,7 @@ export class DailyReviewWizard {
 
   private renderCommitmentLine(container: Container, commitment: Commitment, isSelected: boolean, width: number): void {
     const prefix = isSelected ? ">" : " ";
-    const icon = commitment.type === "promise" ? "💬" : "📩";
+    const icon = commitment.type === "promise" ? "" : "";
     const commitText = `${prefix} ${icon} "${truncateToWidth(commitment.text, width - 36)}"`;
     const actions = "[Create Task] [Dismiss]";
 
@@ -247,28 +247,28 @@ export class DailyReviewWizard {
       ? this.theme.fg("accent", this.theme.bold(commitText)) + " " + this.theme.fg("dim", actions)
       : this.theme.fg("text", commitText);
 
-    container.addChild(new Text("│  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " │", 0, 0));
+    container.addChild(new Text("|  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " |", 0, 0));
   }
 
   private renderEvidenceSection(container: Container, width: number): void {
     const isActive = this.currentSection === "evidence";
     const collapsed = this.sections.get("evidence") ?? false;
-    const indicator = collapsed ? "▶" : "▼";
+    const indicator = collapsed ? ">" : "v";
     const activeSuggestions = this.props.careerEvidenceSuggestions.filter((s) => !s.dismissed);
 
-    const headerText = `${indicator} 🏆 Career Evidence`;
+    const headerText = `${indicator}  Career Evidence`;
     const headerStyled = isActive
       ? this.theme.fg("accent", this.theme.bold(headerText))
       : this.theme.fg("text", headerText);
 
-    container.addChild(new Text("│ " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " │", 0, 0));
+    container.addChild(new Text("| " + truncateToWidth(headerStyled, width - 4) + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerStyled))) + " |", 0, 0));
 
     if (!collapsed) {
-      container.addChild(new Text("│ " + this.theme.fg("dim", "─".repeat(width - 4)) + " │", 0, 0));
+      container.addChild(new Text("| " + this.theme.fg("dim", "-".repeat(width - 4)) + " |", 0, 0));
 
       if (activeSuggestions.length === 0) {
         const emptyText = this.theme.fg("dim", "No evidence suggestions");
-        container.addChild(new Text("│   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " │", 0, 0));
+        container.addChild(new Text("|   " + emptyText + " ".repeat(Math.max(0, width - 6 - emptyText.length)) + " |", 0, 0));
       } else {
         for (let i = 0; i < activeSuggestions.length; i++) {
           const suggestion = activeSuggestions[i]!;
@@ -288,7 +288,7 @@ export class DailyReviewWizard {
       ? this.theme.fg("accent", this.theme.bold(evidenceText)) + " " + this.theme.fg("dim", actions)
       : this.theme.fg("text", evidenceText);
 
-    container.addChild(new Text("│  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " │", 0, 0));
+    container.addChild(new Text("|  " + line + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(line))) + " |", 0, 0));
   }
 
   private moveSelection(delta: number): void {

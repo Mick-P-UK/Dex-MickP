@@ -24,14 +24,14 @@ Scripts live in `scripts/` within the skill directory:
 
 ```
 skill-name/
-├── SKILL.md
-├── workflows/
-├── references/
-├── templates/
-└── scripts/
-    ├── deploy.sh
-    ├── setup.py
-    └── fetch-data.ts
++-- SKILL.md
++-- workflows/
++-- references/
++-- templates/
++-- scripts/
+    +-- deploy.sh
+    +-- setup.py
+    +-- fetch-data.ts
 ```
 
 A well-structured script includes:

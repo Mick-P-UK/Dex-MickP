@@ -66,26 +66,26 @@ Build a context dictionary with:
 
 For every active idea in the backlog, calculate 5 dimension scores.
 
-### ⚠️ CURSOR FEASIBILITY CHECK (Do This First!)
+### [!] CURSOR FEASIBILITY CHECK (Do This First!)
 
 Before scoring ANY idea, validate it's actually implementable in Cursor:
 
 **What Cursor/Terminal CAN do:**
-- ✅ Read and write files
-- ✅ Execute shell commands
-- ✅ Build MCP tools for structured operations
-- ✅ Parse and transform file contents
-- ✅ Create caches and indexes (file-based)
-- ✅ Run commands on schedules or triggers
+- [x] Read and write files
+- [x] Execute shell commands
+- [x] Build MCP tools for structured operations
+- [x] Parse and transform file contents
+- [x] Create caches and indexes (file-based)
+- [x] Run commands on schedules or triggers
 
 **What Cursor/Terminal CANNOT do:**
-- ❌ Track user edits in real-time
-- ❌ Hook into Cursor internals
-- ❌ Monitor user actions passively
-- ❌ Access edit history without explicit file reads
-- ❌ Real-time background processes watching for changes
+- [ ] Track user edits in real-time
+- [ ] Hook into Cursor internals
+- [ ] Monitor user actions passively
+- [ ] Access edit history without explicit file reads
+- [ ] Real-time background processes watching for changes
 
-**If idea requires something from the CANNOT list → Set all scores to 0 and flag as "Not feasible in Cursor"**
+**If idea requires something from the CANNOT list -> Set all scores to 0 and flag as "Not feasible in Cursor"**
 
 ---
 
@@ -147,9 +147,9 @@ Max: 100
 ```
 
 **Examples:**
-- Idea needs "person pages" → Check if user has created person pages
-- If usage_log shows person pages = used → Higher alignment
-- If role = PM and idea = product features → +20 role fit
+- Idea needs "person pages" -> Check if user has created person pages
+- If usage_log shows person pages = used -> Higher alignment
+- If role = PM and idea = product features -> +20 role fit
 
 ---
 
@@ -159,9 +159,9 @@ Max: 100
 
 **CRITICAL - Cursor Feasibility Check:**
 Before scoring, verify the idea is implementable in Cursor/Terminal:
-- ✅ Can use: File read/write, MCP tools, command execution, file-based caching
-- ❌ Cannot use: Real-time edit tracking, Cursor internal hooks, monitoring user actions
-- If not feasible in Cursor → Score = 0 on all dimensions
+- [x] Can use: File read/write, MCP tools, command execution, file-based caching
+- [ ] Cannot use: Real-time edit tracking, Cursor internal hooks, monitoring user actions
+- If not feasible in Cursor -> Score = 0 on all dimensions
 
 **Scoring logic:**
 ```
@@ -315,11 +315,11 @@ Rewrite `System/Dex_Backlog.md` with:
 Show the user the top 5 ideas with context:
 
 ```markdown
-# 📊 Backlog Review Complete
+#  Backlog Review Complete
 
 *Analyzed {{total_ideas}} ideas against current system state*
 
-## 🔥 Top 5 Recommendations
+##  Top 5 Recommendations
 
 ### 1. [idea-XXX] {{title}} (Score: {{score}})
 
@@ -344,7 +344,7 @@ Show the user the top 5 ideas with context:
 
 ---
 
-## 📈 Backlog Health
+##  Backlog Health
 
 - **Total ideas:** {{total}}
 - **High priority (85+):** {{high_count}}
@@ -352,21 +352,21 @@ Show the user the top 5 ideas with context:
 - **Low priority (<60):** {{low_count}}
 
 {{#if high_count > 5}}
-⚠️ **Note:** You have {{high_count}} high-priority ideas. Consider tackling 1-2 this week to reduce backlog.
+[!] **Note:** You have {{high_count}} high-priority ideas. Consider tackling 1-2 this week to reduce backlog.
 {{/if}}
 
 {{#if low_count > 10}}
-💡 **Tip:** {{low_count}} low-priority ideas might be worth archiving or refining.
+ **Tip:** {{low_count}} low-priority ideas might be worth archiving or refining.
 {{/if}}
 
 ---
 
 ## What would you like to do?
 
-1. **Workshop an idea** → `/dex-improve "[title]"`
-2. **Capture a new idea** → Use `capture_idea` MCP tool
-3. **Mark one implemented** → Use `mark_implemented` MCP tool
-4. **View full backlog** → Check `System/Dex_Backlog.md`
+1. **Workshop an idea** -> `/dex-improve "[title]"`
+2. **Capture a new idea** -> Use `capture_idea` MCP tool
+3. **Mark one implemented** -> Use `mark_implemented` MCP tool
+4. **View full backlog** -> Check `System/Dex_Backlog.md`
 ```
 
 ---
@@ -375,7 +375,7 @@ Show the user the top 5 ideas with context:
 
 ### If Backlog is Empty
 ```markdown
-# 📊 Backlog Review
+#  Backlog Review
 
 Your backlog is empty! 
 
@@ -389,7 +389,7 @@ The backlog system will help you track and prioritize ideas systematically.
 
 ### If No High Priority Ideas
 ```markdown
-🎉 **Good news:** No urgent improvements needed!
+ **Good news:** No urgent improvements needed!
 
 Your system is working well. The backlog has ideas for later, but nothing critical right now.
 
@@ -401,12 +401,12 @@ Consider:
 
 ### If Many Stale Ideas (>6 months old)
 ```markdown
-⚠️ **Backlog maintenance needed**
+[!] **Backlog maintenance needed**
 
 You have {{stale_count}} ideas older than 6 months. These might be:
-- No longer relevant → Archive them
-- Still valuable but not urgent → Keep them
-- Worth revisiting with new context → Re-evaluate descriptions
+- No longer relevant -> Archive them
+- Still valuable but not urgent -> Keep them
+- Worth revisiting with new context -> Re-evaluate descriptions
 
 Review stale ideas:
 {{list stale ideas}}

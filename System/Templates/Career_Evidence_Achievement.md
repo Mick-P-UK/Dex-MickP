@@ -8,13 +8,13 @@
 
 ## What I Did
 
-[Description of the work and approach — tell the story of what you accomplished]
+[Description of the work and approach - tell the story of what you accomplished]
 
 ---
 
 ## Impact
 
-- [Measurable outcome 1 — be specific with numbers/metrics where possible]
+- [Measurable outcome 1 - be specific with numbers/metrics where possible]
 - [Measurable outcome 2]
 - [Measurable outcome 3]
 
@@ -30,14 +30,14 @@
 
 ## Stakeholders
 
-- [Person 1] — [Their role/involvement]
-- [Person 2] — [Their role/involvement]
+- [Person 1] - [Their role/involvement]
+- [Person 2] - [Their role/involvement]
 
 ---
 
 ## Challenges Overcome
 
-[What was difficult and how I handled it — this shows growth and problem-solving]
+[What was difficult and how I handled it - this shows growth and problem-solving]
 
 ---
 

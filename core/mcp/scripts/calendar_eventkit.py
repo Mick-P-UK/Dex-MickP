@@ -3,7 +3,7 @@
 Fast calendar queries using native EventKit framework.
 Replaces slow AppleScript queries with proper database access.
 
-Performance: 30s → <1s for typical queries
+Performance: 30s -> <1s for typical queries
 
 Usage:
     calendar_eventkit.py list

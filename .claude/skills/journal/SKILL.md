@@ -52,18 +52,18 @@ Toggle journaling on/off, or start a journal entry.
 
 **Use `date_str`, `day_name`, `year`, `month`, `month_name`, and `monday_str` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
 ## Usage
 
-- `/journal on` — Enable daily journaling prompts
-- `/journal off` — Disable journaling (daily planning works without it)
-- `/journal` — Start today's journal (morning or evening based on time)
-- `/journal morning` — Start morning journal
-- `/journal evening` — Start evening journal
-- `/journal week` — Start weekly journal
+- `/journal on` - Enable daily journaling prompts
+- `/journal off` - Disable journaling (daily planning works without it)
+- `/journal` - Start today's journal (morning or evening based on time)
+- `/journal morning` - Start morning journal
+- `/journal evening` - Start evening journal
+- `/journal week` - Start weekly journal
 
 ---
 
@@ -84,8 +84,8 @@ Toggle journaling on/off, or start a journal entry.
 ### `/journal` (no argument)
 
 Check current time:
-- Before 12pm → Start morning journal
-- After 12pm → Start evening journal
+- Before 12pm -> Start morning journal
+- After 12pm -> Start evening journal
 
 ### `/journal morning`
 
@@ -125,9 +125,9 @@ When journaling is enabled and user asks to plan their day:
    - Then generate daily plan
 
 2. **Morning journal informs daily plan**
-   - "ONE thing that matters most" from journal → First priority in daily plan
-   - "What might derail me" → Blocked time or warnings in plan
-   - Energy/mood → Adjust intensity of planned tasks
+   - "ONE thing that matters most" from journal -> First priority in daily plan
+   - "What might derail me" -> Blocked time or warnings in plan
+   - Energy/mood -> Adjust intensity of planned tasks
 
 ---
 
@@ -137,17 +137,17 @@ When journaling is enabled:
 
 ```
 00-Inbox/
-└── Journals/
-    ├── 2024/
-    │   ├── 01-January/
-    │   │   ├── Morning/
-    │   │   │   ├── 2024-01-15-morning.md
-    │   │   │   └── 2024-01-16-morning.md
-    │   │   ├── Evening/
-    │   │   │   ├── 2024-01-15-evening.md
-    │   │   │   └── 2024-01-16-evening.md
-    │   │   └── Weekly/
-    │   │       └── 2024-W03.md
++-- Journals/
+    +-- 2024/
+    |   +-- 01-January/
+    |   |   +-- Morning/
+    |   |   |   +-- 2024-01-15-morning.md
+    |   |   |   +-- 2024-01-16-morning.md
+    |   |   +-- Evening/
+    |   |   |   +-- 2024-01-15-evening.md
+    |   |   |   +-- 2024-01-16-evening.md
+    |   |   +-- Weekly/
+    |   |       +-- 2024-W03.md
 ```
 
 ---
@@ -162,7 +162,7 @@ When explaining to users during onboarding or `/journal on`:
 >
 > **Weekly journaling** (15 min) reveals patterns you can't see day-to-day. Energy cycles, recurring frustrations, what's actually getting your time vs. what matters.
 >
-> Research shows: Regular reflection improves decision-making, reduces stress, and increases goal achievement. It's not about writing perfectly — it's about paying attention to your own experience.
+> Research shows: Regular reflection improves decision-making, reduces stress, and increases goal achievement. It's not about writing perfectly - it's about paying attention to your own experience.
 
 ---
 
@@ -185,7 +185,7 @@ Check this file to determine which journal types are enabled for the user.
 
 When guiding journal entries:
 - Ask one question at a time
-- Don't overwhelm — templates are comprehensive, but conversation can be lighter
+- Don't overwhelm - templates are comprehensive, but conversation can be lighter
 - Accept short answers
 - Reflect back patterns when you notice them
 - Be warm but not saccharine

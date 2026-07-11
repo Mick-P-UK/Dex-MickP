@@ -37,8 +37,8 @@ First, I need to determine the review target type and set up the code for analys
 
 - [ ] Determine review type: PR number (numeric), GitHub URL, file path (.md), or empty (current branch)
 - [ ] Check current git branch
-- [ ] If ALREADY on the target branch (PR branch, requested branch name, or the branch already checked out for review) → proceed with analysis on current branch
-- [ ] If DIFFERENT branch than the review target → offer to use worktree: "Use git-worktree skill for isolated Call `skill: git-worktree` with branch name
+- [ ] If ALREADY on the target branch (PR branch, requested branch name, or the branch already checked out for review) -> proceed with analysis on current branch
+- [ ] If DIFFERENT branch than the review target -> offer to use worktree: "Use git-worktree skill for isolated Call `skill: git-worktree` with branch name
 - [ ] Fetch PR metadata using `gh pr view --json` for title, body, files, linked issues
 - [ ] Set up language-specific analysis tools
 - [ ] Prepare security scanning environment
@@ -208,7 +208,7 @@ Remove duplicates, prioritize by severity and impact.
 
 - [ ] Collect findings from all parallel agents
 - [ ] Categorize by type: security, performance, architecture, quality, etc.
-- [ ] Assign severity levels: 🔴 CRITICAL (P1), 🟡 IMPORTANT (P2), 🔵 NICE-TO-HAVE (P3)
+- [ ] Assign severity levels: [red] CRITICAL (P1), [amber] IMPORTANT (P2), [blue] NICE-TO-HAVE (P3)
 - [ ] Remove duplicate or overlapping findings
 - [ ] Estimate effort for each finding (Small/Medium/Large)
 
@@ -338,16 +338,16 @@ Examples:
 After creating all todo files, present comprehensive summary:
 
 ````markdown
-## ✅ Code Review Complete
+## [x] Code Review Complete
 
 **Review Target:** PR #XXXX - [PR Title] **Branch:** [branch-name]
 
 ### Findings Summary:
 
 - **Total Findings:** [X]
-- **🔴 CRITICAL (P1):** [count] - BLOCKS MERGE
-- **🟡 IMPORTANT (P2):** [count] - Should Fix
-- **🔵 NICE-TO-HAVE (P3):** [count] - Enhancements
+- **[red] CRITICAL (P1):** [count] - BLOCKS MERGE
+- **[amber] IMPORTANT (P2):** [count] - Should Fix
+- **[blue] NICE-TO-HAVE (P3):** [count] - Enhancements
 
 ### Created Todo Files:
 
@@ -396,27 +396,27 @@ After creating all todo files, present comprehensive summary:
    ```
 
 4. **Track Progress**:
-   - Rename file when status changes: pending → ready → complete
+   - Rename file when status changes: pending -> ready -> complete
    - Update Work Log as you work
    - Commit todos: `git add todos/ && git commit -m "refactor: add code review findings"`
 
 ### Severity Breakdown:
 
-**🔴 P1 (Critical - Blocks Merge):**
+**[red] P1 (Critical - Blocks Merge):**
 
 - Security vulnerabilities
 - Data corruption risks
 - Breaking changes
 - Critical architectural issues
 
-**🟡 P2 (Important - Should Fix):**
+**[amber] P2 (Important - Should Fix):**
 
 - Performance issues
 - Significant architectural concerns
 - Major code quality problems
 - Reliability issues
 
-**🔵 P3 (Nice-to-Have):**
+**[blue] P3 (Nice-to-Have):**
 
 - Minor improvements
 - Code cleanup
@@ -510,5 +510,5 @@ The subagent will:
 
 ### Important: P1 Findings Block Merge
 
-Any **🔴 P1 (CRITICAL)** findings must be addressed before merging the PR. Present these prominently and ensure they're resolved before accepting the PR.
+Any **[red] P1 (CRITICAL)** findings must be addressed before merging the PR. Present these prominently and ensure they're resolved before accepting the PR.
 ```

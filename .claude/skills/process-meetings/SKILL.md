@@ -83,12 +83,12 @@ For each participant in synced meetings:
 
 1. **Load user profile** for email domain:
    ```
-   Read System/user-profile.yaml → get email_domain
+   Read System/user-profile.yaml -> get email_domain
    ```
 
 2. **Classify as Internal/External:**
-   - If participant email domain matches user's domain → Internal
-   - Otherwise → External
+   - If participant email domain matches user's domain -> Internal
+   - Otherwise -> External
 
 3. **Check if person page exists:**
    - Internal: `05-Areas/People/Internal/{Name}.md`
@@ -108,7 +108,7 @@ For each participant in synced meetings:
 
    ## Recent Interactions
 
-   - [{Meeting Title}](00-Inbox/Meetings/{date}/{slug}.md) — {date}
+   - [{Meeting Title}](00-Inbox/Meetings/{date}/{slug}.md) - {date}
 
    ## Notes
 
@@ -145,7 +145,7 @@ For each unique external company domain:
 
    ## Meeting History
 
-   - [{Meeting Title}](00-Inbox/Meetings/{date}/{slug}.md) — {date}
+   - [{Meeting Title}](00-Inbox/Meetings/{date}/{slug}.md) - {date}
 
    ## Notes
 
@@ -185,7 +185,7 @@ For each meeting with unextracted tasks:
 ### Step 6: Summary Report
 
 ```
-## Meeting Processing Complete ✅
+## Meeting Processing Complete [x]
 
 **Synced meetings found:** X (last 7 days)
 **Background sync status:** Running (last sync: 10 min ago)

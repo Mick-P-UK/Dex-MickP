@@ -33,20 +33,20 @@ Your task backlog organized by priority.
 ## P2 - Normal (max 10)
 
 <!-- Standard priority items -->
-- [ ] **Complete setup of weekly priorities** — Set up the weekly priorities workflow using `/week-plan` #writing
-- [ ] **Capture an idea** — Use the idea capture system to save a thought or concept to `00-Inbox/Ideas/` #writing
+- [ ] **Complete setup of weekly priorities** - Set up the weekly priorities workflow using `/week-plan` #writing
+- [ ] **Capture an idea** - Use the idea capture system to save a thought or concept to `00-Inbox/Ideas/` #writing
 
 ## P3 - Backlog
 
 <!-- Lower priority items, someday/maybe -->
-- [ ] **Research public profile for Dex context** — Gather information about Mick's public work (DIY-Investors.com, DIY-Investors.ai, Ditty Box Ltd) to better understand context and provide more relevant suggestions #writing
+- [ ] **Research public profile for Dex context** - Gather information about Mick's public work (DIY-Investors.com, DIY-Investors.ai, Ditty Box Ltd) to better understand context and provide more relevant suggestions #writing
 
 ---
 
 ## Task Format
 
 ```
-- [ ] **Task title** — Context or notes #pillar
+- [ ] **Task title** - Context or notes #pillar
 - [s] Started task
 - [b] Blocked task (note blocker)
 - [x] Completed task

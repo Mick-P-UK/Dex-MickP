@@ -80,9 +80,9 @@ $startupPrincipal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -LogonType 
 
 try {
     Register-ScheduledTask -TaskName $startupTaskName -Action $startupAction -Trigger $startupTrigger -Settings $startupSettings -Principal $startupPrincipal -Description "Dex: Git commit at system startup (catches up on missed commits)" | Out-Null
-    Write-Host "  ✓ Startup task created successfully" -ForegroundColor Green
+    Write-Host "  [x] Startup task created successfully" -ForegroundColor Green
 } catch {
-    Write-Host "  ✗ Failed to create startup task: $_" -ForegroundColor Red
+    Write-Host "  [ ] Failed to create startup task: $_" -ForegroundColor Red
     exit 1
 }
 
@@ -97,9 +97,9 @@ $dailyPrincipal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -LogonType In
 
 try {
     Register-ScheduledTask -TaskName $dailyTaskName -Action $dailyAction -Trigger $dailyTrigger -Settings $dailySettings -Principal $dailyPrincipal -Description "Dex: Git commit daily at 9:00 PM" | Out-Null
-    Write-Host "  ✓ Daily 9PM task created successfully" -ForegroundColor Green
+    Write-Host "  [x] Daily 9PM task created successfully" -ForegroundColor Green
 } catch {
-    Write-Host "  ✗ Failed to create daily task: $_" -ForegroundColor Red
+    Write-Host "  [ ] Failed to create daily task: $_" -ForegroundColor Red
     exit 1
 }
 

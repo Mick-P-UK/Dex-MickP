@@ -37,13 +37,13 @@
 
 **Authentication:**
 ```
-devise → Custom ~150-line auth
+devise -> Custom ~150-line auth
 ```
 Why: Full control, no password liability with magic links, simpler.
 
 **Authorization:**
 ```
-pundit/cancancan → Simple role checks in models
+pundit/cancancan -> Simple role checks in models
 ```
 Why: Most apps don't need policy objects. A method on the model suffices:
 ```ruby
@@ -56,73 +56,73 @@ end
 
 **Background Jobs:**
 ```
-sidekiq → Solid Queue
+sidekiq -> Solid Queue
 ```
 Why: Database-backed means no Redis, same transactional guarantees.
 
 **Caching:**
 ```
-redis → Solid Cache
+redis -> Solid Cache
 ```
 Why: Database is already there, simpler infrastructure.
 
 **Search:**
 ```
-elasticsearch → Custom sharded search
+elasticsearch -> Custom sharded search
 ```
 Why: Built exactly what they need, no external service dependency.
 
 **View Layer:**
 ```
-view_component → Standard partials
+view_component -> Standard partials
 ```
 Why: Partials work fine. ViewComponents add complexity without clear benefit for their use case.
 
 **API:**
 ```
-GraphQL → REST with Turbo
+GraphQL -> REST with Turbo
 ```
 Why: REST is sufficient when you control both ends. GraphQL complexity not justified.
 
 **Factories:**
 ```
-factory_bot → Fixtures
+factory_bot -> Fixtures
 ```
 Why: Fixtures are simpler, faster, and encourage thinking about data relationships upfront.
 
 **Service Objects:**
 ```
-Interactor, Trailblazer → Fat models
+Interactor, Trailblazer -> Fat models
 ```
 Why: Business logic stays in models. Methods like `card.close` instead of `CardCloser.call(card)`.
 
 **Form Objects:**
 ```
-Reform, dry-validation → params.expect + model validations
+Reform, dry-validation -> params.expect + model validations
 ```
 Why: Rails 7.1's `params.expect` is clean enough. Contextual validations on model.
 
 **Decorators:**
 ```
-Draper → View helpers + partials
+Draper -> View helpers + partials
 ```
 Why: Helpers and partials are simpler. No decorator indirection.
 
 **CSS:**
 ```
-Tailwind, Sass → Native CSS
+Tailwind, Sass -> Native CSS
 ```
 Why: Modern CSS has nesting, variables, layers. No build step needed.
 
 **Frontend:**
 ```
-React, Vue, SPAs → Turbo + Stimulus
+React, Vue, SPAs -> Turbo + Stimulus
 ```
 Why: Server-rendered HTML with sprinkles of JS. SPA complexity not justified.
 
 **Testing:**
 ```
-RSpec → Minitest
+RSpec -> Minitest
 ```
 Why: Simpler, faster boot, less DSL magic, ships with Rails.
 </what_they_avoid>

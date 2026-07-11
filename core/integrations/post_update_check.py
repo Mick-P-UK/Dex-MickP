@@ -42,17 +42,17 @@ def check_new_integrations_available() -> Tuple[bool, str]:
     if not new_features:
         return False, ""
     
-    lines.append("## 🔌 New: Productivity Integrations")
+    lines.append("##  New: Productivity Integrations")
     lines.append("")
     lines.append("This update includes integrations for your favorite tools:")
     lines.append("")
     
     for name, desc in new_features:
-        lines.append(f"- **{name}** — {desc}")
+        lines.append(f"- **{name}** - {desc}")
     
     lines.append("")
     lines.append("**Set up now?** These are optional but unlock powerful features like:")
-    lines.append("- \"What did Sarah say about the Q1 budget?\" → Searches Slack")
+    lines.append("- \"What did Sarah say about the Q1 budget?\" -> Searches Slack")
     lines.append("- Meeting prep pulls relevant docs from Notion")
     lines.append("- Person pages show email/Slack history")
     lines.append("")
@@ -71,7 +71,7 @@ def check_upgradeable_integrations() -> Tuple[bool, str]:
     if not result["any_upgradeable"]:
         return False, ""
     
-    lines = ["## 🔄 Integration Upgrade Available"]
+    lines = ["##  Integration Upgrade Available"]
     lines.append("")
     lines.append("You have some integrations that could be upgraded to Dex recommended packages:")
     lines.append("")
@@ -88,8 +88,8 @@ def check_upgradeable_integrations() -> Tuple[bool, str]:
             lines.append("")
     
     lines.append("**Options:**")
-    lines.append("1. **Keep existing** — Your current setup works fine")
-    lines.append("2. **Upgrade** — Run `/integrate-{service}` to switch to recommended")
+    lines.append("1. **Keep existing** - Your current setup works fine")
+    lines.append("2. **Upgrade** - Run `/integrate-{service}` to switch to recommended")
     lines.append("")
     
     return True, "\n".join(lines)

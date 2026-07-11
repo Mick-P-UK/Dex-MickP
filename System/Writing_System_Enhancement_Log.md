@@ -25,7 +25,7 @@ Enhanced Writing System with:
   - `3-Published/` - Published parent content
   - `4-Derivatives/` - Repurposed content (social posts, snippets)
   - `Archive/` - Retired content
-- **Status:** ✅ Complete
+- **Status:** [x] Complete
 - **Rollback:** `rm -rf knowledge/{0-Ideas,1-Drafts,2-Ready,3-Published,4-Derivatives,Archive}`
 
 ---
@@ -38,7 +38,7 @@ Enhanced Writing System with:
   - `_templates/Content - Idea Template.md` - For brainstorming/outlines
   - `_templates/Content - Derivative Template.md` - For repurposed content
 - **Metadata fields:** destination, division, target_audience, engagement tracking
-- **Status:** ✅ Complete
+- **Status:** [x] Complete
 
 ---
 
@@ -47,7 +47,7 @@ Enhanced Writing System with:
 - **Action:** Saved newsletter to `1-Drafts/` with full metadata
 - **File:** `knowledge/1-Drafts/2026-02-07 - Three Pillars Newsletter.md`
 - **Metadata:** destination=diy-investors.com, division=core, target_audience=inner_circle
-- **Status:** ✅ Complete
+- **Status:** [x] Complete
 
 ---
 
@@ -60,7 +60,7 @@ Enhanced Writing System with:
   - Field type reference
   - Common workflows
   - Example views and filters
-- **Status:** ✅ Complete
+- **Status:** [x] Complete
 
 ---
 
@@ -72,19 +72,19 @@ Enhanced Writing System with:
   - Complete workflow overview (Stage 0-4)
   - Folder structure diagram
   - Link to Bases Configuration Guide
-- **Status:** ✅ Complete
+- **Status:** [x] Complete
 
 ---
 
-## Enhancement Complete! ✅
+## Enhancement Complete! [x]
 
 **Summary:**
 
-✅ **Folder Structure** - 6 workflow folders (0-Ideas → Archive)
-✅ **Templates** - 3 content templates with Bases-optimized YAML
-✅ **Example Content** - Three Pillars newsletter in 1-Drafts with metadata
-✅ **Bases Guide** - Complete setup guide with 5 recommended views
-✅ **Documentation** - Updated [[README]] with full workflow
+[x] **Folder Structure** - 6 workflow folders (0-Ideas -> Archive)
+[x] **Templates** - 3 content templates with Bases-optimized YAML
+[x] **Example Content** - Three Pillars newsletter in 1-Drafts with metadata
+[x] **Bases Guide** - Complete setup guide with 5 recommended views
+[x] **Documentation** - Updated [[README]] with full workflow
 
 **Key Features:**
 
@@ -99,7 +99,7 @@ Enhanced Writing System with:
 1. Install Obsidian Bases plugin
 2. Set up Base #1 (Content Pipeline) using guide
 3. Review Three Pillars newsletter in 1-Drafts
-4. Test workflow: create idea → draft → ready → publish
+4. Test workflow: create idea -> draft -> ready -> publish
 5. Try repurposing: extract social posts from newsletter
 
 **Rollback Instructions:**

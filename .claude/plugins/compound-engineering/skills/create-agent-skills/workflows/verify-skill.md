@@ -125,18 +125,18 @@ Present findings:
 ```
 ## Verification Report: {skill-name}
 
-### ✅ Verified Current
+### [x] Verified Current
 - [Claim]: [Evidence it's still accurate]
 
-### ⚠️ May Be Outdated
+### [!] May Be Outdated
 - [Claim]: [What changed / newer info found]
-  → Current: [what docs now say]
+  -> Current: [what docs now say]
 
-### ❌ Broken / Invalid
+### [ ] Broken / Invalid
 - [Claim]: [Why it's wrong]
-  → Fix: [What it should be]
+  -> Fix: [What it should be]
 
-### ℹ️ Could Not Verify
+### [i] Could Not Verify
 - [Claim]: [Why verification wasn't possible]
 
 ---

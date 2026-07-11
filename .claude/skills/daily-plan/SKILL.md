@@ -9,15 +9,15 @@ Generate your daily plan with full context awareness. Automatically gathers info
 
 ## Usage
 
-- `/daily-plan` — Create today's daily plan
-- `/daily-plan tomorrow` — Plan for tomorrow (evening planning)
-- `/daily-plan --setup` — Re-run integration setup
+- `/daily-plan` - Create today's daily plan
+- `/daily-plan tomorrow` - Plan for tomorrow (evening planning)
+- `/daily-plan --setup` - Re-run integration setup
 
 ---
 
 ## Tone Calibration
 
-Before executing this command, read `System/user-profile.yaml` → `communication` section and adapt tone accordingly (see CLAUDE.md → "Communication Adaptation").
+Before executing this command, read `System/user-profile.yaml` -> `communication` section and adapt tone accordingly (see CLAUDE.md -> "Communication Adaptation").
 
 ---
 
@@ -62,7 +62,7 @@ day_name = tomorrow.strftime('%A')
 
 **Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
@@ -73,7 +73,7 @@ Before anything else, check if demo mode is active:
 1. Read `System/user-profile.yaml`
 2. Check `demo_mode` value
 3. **If `demo_mode: true`:**
-   - Display banner: "Demo Mode Active — Using sample data from System/Demo/"
+   - Display banner: "Demo Mode Active - Using sample data from System/Demo/"
    - Use demo paths and skip live integrations
 4. **If `demo_mode: false`:** Proceed normally
 
@@ -125,9 +125,9 @@ This is critical for genuine situational awareness. Extract:
 
 > "It's **Wednesday**. Here's where you are on this week's priorities:
 > 
-> 1. ✅ **Ship pricing page** — Complete (finished Monday)
-> 2. 🔄 **Review proposal** — In progress (2 of 5 tasks done)
-> 3. ⚠️ **Customer interviews** — Not started (no activity yet)
+> 1. [x] **Ship pricing page** - Complete (finished Monday)
+> 2.  **Review proposal** - In progress (2 of 5 tasks done)
+> 3. [!] **Customer interviews** - Not started (no activity yet)
 > 
 > You have 2 days left this week. Priority 3 needs attention."
 
@@ -146,11 +146,11 @@ Understand the *shape* of today:
 
 **Surface this:**
 
-> "📅 **Today's shape:** Moderate (4 meetings, 3 hours total)
+> " **Today's shape:** Moderate (4 meetings, 3 hours total)
 > 
 > **Free blocks:**
-> - 8:00-9:30 AM (90 min) — Morning focus time
-> - 2:00-4:00 PM (120 min) — Afternoon block
+> - 8:00-9:30 AM (90 min) - Morning focus time
+> - 2:00-4:00 PM (120 min) - Afternoon block
 > 
 > **Recommendation:** Good for medium tasks and meeting prep. Deep work fits the 2-4pm block."
 
@@ -170,7 +170,7 @@ Get genuine context, not just attendee names:
 
 **Surface this with surprise and delight:**
 
-> "📍 **Meeting: Acme Quarterly Review** (2pm with Sarah Chen, Mike Ross)
+> " **Meeting: Acme Quarterly Review** (2pm with Sarah Chen, Mike Ross)
 > 
 > **Related project:** Acme Implementation (Phase 2)
 > - Status: On track, but pricing section still in draft
@@ -186,7 +186,7 @@ Use: get_commitments_due(date_range="today")
 
 Surface things you said you'd do:
 
-> "⚡ **Commitments due today:**
+> " **Commitments due today:**
 > 
 > - You told Mike you'd get back to him by Wednesday (from Monday 1:1)
 > - Follow up on competitive analysis (from Acme meeting)"
@@ -199,7 +199,7 @@ Use: suggest_task_scheduling(include_all_tasks=False, calendar_events=[...])
 
 Match tasks to available time based on effort classification:
 
-> "📋 **Scheduling suggestions:**
+> " **Scheduling suggestions:**
 > 
 > | Task | Effort | Suggested Time |
 > |------|--------|----------------|
@@ -207,7 +207,7 @@ Match tasks to available time based on effort classification:
 > | Review Sarah's proposal | Medium (1h) | Today 2-3pm (before Acme meeting) |
 > | Reply to Mike | Quick (15min) | Between meetings |
 > 
-> ⚠️ **Heads up:** You have 2 deep work tasks but today's too fragmented. Consider protecting tomorrow morning."
+> [!] **Heads up:** You have 2 deep work tasks but today's too fragmented. Consider protecting tomorrow morning."
 
 ### 5.6 Standard Context Gathering
 
@@ -237,9 +237,9 @@ Generate 3 recommended focus items based on:
 
 > "Based on your week progress and today's shape, I recommend focusing on:
 > 
-> 1. **Prep for Acme meeting** — Priority 2 is lagging and this meeting is critical
-> 2. **Reply to Mike** — Commitment due today
-> 3. **Task X from Priority 1** — Keeps momentum on your shipped priority"
+> 1. **Prep for Acme meeting** - Priority 2 is lagging and this meeting is critical
+> 2. **Reply to Mike** - Commitment due today
+> 3. **Task X from Priority 1** - Keeps momentum on your shipped priority"
 
 ### Meeting Prep (Enhanced)
 
@@ -271,7 +271,7 @@ type: daily-plan
 integrations_used: [calendar, tasks, people, work-intelligence]
 ---
 
-# Daily Plan — {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
+# Daily Plan - {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
 
 ## TL;DR
 - {{1-2 sentence summary including week progress}}
@@ -280,51 +280,51 @@ integrations_used: [calendar, tasks, people, work-intelligence]
 
 ---
 
-## 📊 Week Progress (Midweek Check)
+##  Week Progress (Midweek Check)
 
-**Day {{X}} of 5** — {{days_remaining}} days left this week
+**Day {{X}} of 5** - {{days_remaining}} days left this week
 
 | Priority | Status | Notes |
 |----------|--------|-------|
-| {{Priority 1}} | ✅ Complete | Finished {{day}} |
-| {{Priority 2}} | 🔄 In progress | {{X}} of {{Y}} tasks done |
-| {{Priority 3}} | ⚠️ Not started | Needs attention |
+| {{Priority 1}} | [x] Complete | Finished {{day}} |
+| {{Priority 2}} |  In progress | {{X}} of {{Y}} tasks done |
+| {{Priority 3}} | [!] Not started | Needs attention |
 
 **This week's focus:** {{Recommendation based on lagging priorities}}
 
 ---
 
-## 📅 Today's Shape
+##  Today's Shape
 
 **Day type:** {{stacked/moderate/open}} ({{X}} meetings, {{Y}} hours)
 
 **Free blocks:**
-- {{Time range}}: {{Size}} — {{Recommended use}}
+- {{Time range}}: {{Size}} - {{Recommended use}}
 
 **Best for:** {{Quick tasks only / Medium tasks / Deep work opportunity}}
 
 ---
 
-## ⚡ Commitments Due Today
+##  Commitments Due Today
 
-- [ ] {{Commitment}} — from {{source}}
-- [ ] {{Commitment}} — from {{source}}
+- [ ] {{Commitment}} - from {{source}}
+- [ ] {{Commitment}} - from {{source}}
 
 ---
 
-## 🎯 Today's Focus
+##  Today's Focus
 
 **If I only do three things today:**
 
-1. [ ] {{Focus item 1}} — {{Pillar}} *(supports Week Priority #X)*
-2. [ ] {{Focus item 2}} — {{Pillar}} *(supports Week Priority #Y)*
-3. [ ] {{Focus item 3}} — {{Pillar}}
+1. [ ] {{Focus item 1}} - {{Pillar}} *(supports Week Priority #X)*
+2. [ ] {{Focus item 2}} - {{Pillar}} *(supports Week Priority #Y)*
+3. [ ] {{Focus item 3}} - {{Pillar}}
 
 ---
 
-## 📍 Meetings (with Context)
+##  Meetings (with Context)
 
-### {{Time}} — {{Meeting Title}}
+### {{Time}} - {{Meeting Title}}
 
 **Attendees:** {{Names}}
 **Related project:** {{Project name}} ({{status}})
@@ -336,13 +336,13 @@ integrations_used: [calendar, tasks, people, work-intelligence]
 
 ---
 
-### {{Time}} — {{Meeting Title}}
+### {{Time}} - {{Meeting Title}}
 
 [Repeat for each meeting]
 
 ---
 
-## 📋 Task Scheduling
+##  Task Scheduling
 
 | Task | Effort | Suggested Slot | Reason |
 |------|--------|----------------|--------|
@@ -351,11 +351,11 @@ integrations_used: [calendar, tasks, people, work-intelligence]
 | {{Task}} | Quick | Between meetings | Batch these |
 
 {{If deep work capacity warning}}
-> ⚠️ You have {{X}} deep work tasks but only {{Y}} suitable slots this week. Consider protecting time or deferring.
+> [!] You have {{X}} deep work tasks but only {{Y}} suitable slots this week. Consider protecting time or deferring.
 
 ---
 
-## ⚠️ Heads Up
+## [!] Heads Up
 
 - {{Warning about lagging weekly priority}}
 - {{Commitment due today}}

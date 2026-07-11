@@ -5,7 +5,7 @@ description: Discover unused Dex features based on your usage patterns
 
 ## Purpose
 
-Discover Dex capabilities you haven't used yet. No FOMO — this is your concierge showing you what's available so you can get full value from the system without missing features.
+Discover Dex capabilities you haven't used yet. No FOMO - this is your concierge showing you what's available so you can get full value from the system without missing features.
 
 ---
 
@@ -21,21 +21,21 @@ Look for natural progressions and gaps:
 
 ### Progression Patterns
 
-**Daily → Weekly → Quarterly:**
-- Using `/daily-plan` but not `/week-plan`? → Suggest weekly planning
-- Using `/week-plan` but not `/quarter-plan`? → Suggest quarterly goals
+**Daily -> Weekly -> Quarterly:**
+- Using `/daily-plan` but not `/week-plan`? -> Suggest weekly planning
+- Using `/week-plan` but not `/quarter-plan`? -> Suggest quarterly goals
 
-**Meeting Capture → Relationship Tracking:**
-- Processing meetings but no person pages? → Suggest person pages
-- Have person pages but not company pages? → Suggest processing meetings to auto-create company pages in 05-Areas/Companies/
+**Meeting Capture -> Relationship Tracking:**
+- Processing meetings but no person pages? -> Suggest person pages
+- Have person pages but not company pages? -> Suggest processing meetings to auto-create company pages in 05-Areas/Companies/
 
-**Tasks → Projects:**
-- Managing tasks but no project pages? → Suggest project tracking
-- Have projects but not using `/project-health`? → Suggest health checks
+**Tasks -> Projects:**
+- Managing tasks but no project pages? -> Suggest project tracking
+- Have projects but not using `/project-health`? -> Suggest health checks
 
-**Basic → Advanced:**
-- Comfortable with core workflows? → Suggest journaling, learning capture
-- Using all features consistently? → Suggest custom MCPs, system improvements
+**Basic -> Advanced:**
+- Comfortable with core workflows? -> Suggest journaling, learning capture
+- Using all features consistently? -> Suggest custom MCPs, system improvements
 
 ### Role-Based Relevance
 
@@ -67,7 +67,7 @@ After analyzing universal feature usage, check for role-specific skills:
 
 ### Identify User's Role Group
 
-1. Read `System/user-profile.yaml` → `role` field
+1. Read `System/user-profile.yaml` -> `role` field
 2. Map role to role_group using this mapping:
    - **product:** Product Manager, CPO, Product Ops, Fractional CPO
    - **sales:** Sales, Account Executive, CRO, RevOps
@@ -102,7 +102,7 @@ If there are uninstalled role-specific skills, include this section in the outpu
 ```markdown
 ---
 
-## 💼 Role-Specific Skills for [Role Name]
+##  Role-Specific Skills for [Role Name]
 
 You haven't installed role-specific skills yet. Here's what's available for [role_group] roles:
 
@@ -131,7 +131,7 @@ When user says "install [skill]" or "install all":
    ```bash
    cp -r .claude/skills/_available/[role_group]/[skill-name]/ .claude/skills/[skill-name]/
    ```
-3. **Confirm to user:** "✓ Installed `/[skill-name]` - try it now!"
+3. **Confirm to user:** "[x] Installed `/[skill-name]` - try it now!"
 4. **Update usage log:** Add the skill to the "Role-Specific Skills" section in `System/usage_log.md` (see Step 5 for format)
 5. **If installing multiple:** Show progress for each skill
 
@@ -170,7 +170,7 @@ For each suggestion:
 Display in this format:
 
 ```markdown
-# 🚀 Level Up Your Dex System
+#  Level Up Your Dex System
 
 Based on your usage, here are **{{X}} ways to get more value** from Dex:
 
@@ -216,15 +216,15 @@ Just say the number or feature name, and I'll guide you through it.
 When user tries a recommended feature, silently update `System/usage_log.md` by checking the box for that feature.
 
 **Update triggers:**
-- User runs a command → Check command box
-- User creates person page → Check person page box
-- User creates project → Check project tracking box
-- Work MCP tools used → Check task boxes
-- **User installs role-specific skill** → Check "Installed" box in Role-Specific Skills section
-- **User runs role-specific skill** → Check "Used" box in Role-Specific Skills section
+- User runs a command -> Check command box
+- User creates person page -> Check person page box
+- User creates project -> Check project tracking box
+- Work MCP tools used -> Check task boxes
+- **User installs role-specific skill** -> Check "Installed" box in Role-Specific Skills section
+- **User runs role-specific skill** -> Check "Used" box in Role-Specific Skills section
 
 **Update method:**
-- Simple find/replace: `- [ ] Feature` → `- [x] Feature`
+- Simple find/replace: `- [ ] Feature` -> `- [x] Feature`
 - No announcement needed
 
 **Role-Specific Skills Tracking:**
@@ -250,7 +250,7 @@ If section exists, just check the appropriate boxes for the skill.
 ### Example 1: Daily User, No Weekly Planning
 
 ```markdown
-# 🚀 Level Up Your Dex System
+#  Level Up Your Dex System
 
 Based on your usage, here are **3 ways to get more value** from Dex:
 
@@ -258,9 +258,9 @@ Based on your usage, here are **3 ways to get more value** from Dex:
 
 ## 1. Weekly Planning - Think Bigger Picture
 
-**What you're missing:** You've been crushing daily plans (42 days straight! 🔥), but you're planning day-to-day without a weekly view. Weekly planning helps you think bigger than today's tasks.
+**What you're missing:** You've been crushing daily plans (42 days straight! ), but you're planning day-to-day without a weekly view. Weekly planning helps you think bigger than today's tasks.
 
-**Why it's relevant:** Consistent daily planning shows you value structure. Weekly planning is the natural next step — it makes your daily plans even better because you're working toward clear weekly outcomes.
+**Why it's relevant:** Consistent daily planning shows you value structure. Weekly planning is the natural next step - it makes your daily plans even better because you're working toward clear weekly outcomes.
 
 **How to start:** Run `/week-plan` on Monday morning (or Friday evening). Set your Top 3 priorities for the week. Then when you run `/daily-plan`, I'll show how today's work connects to those weekly goals.
 
@@ -270,7 +270,7 @@ Based on your usage, here are **3 ways to get more value** from Dex:
 
 ## 2. Person Pages - Never Walk Into Meetings Cold
 
-**What you're missing:** You mention people in your notes, but you don't have person pages yet. Person pages aggregate everything about someone — meeting history, open items, context — so you're never scrambling before calls.
+**What you're missing:** You mention people in your notes, but you don't have person pages yet. Person pages aggregate everything about someone - meeting history, open items, context - so you're never scrambling before calls.
 
 **Why it's relevant:** You have 12 meetings this week. Right now, you're probably trying to remember what you discussed last time. With person pages, I can show you that context automatically in `/daily-plan` and `/meeting-prep`.
 
@@ -300,7 +300,7 @@ Just say the number or feature name, and I'll guide you through it.
 ### Example 2: Power User, Advanced Features
 
 ```markdown
-# 🚀 Level Up Your Dex System
+#  Level Up Your Dex System
 
 You're using Dex like a pro. Here are **2 advanced features** that could push your system even further:
 
@@ -350,12 +350,12 @@ Then show the essentials:
 
 ### If Everything is Checked
 
-> "You're using every feature in Dex! 🎉
+> "You're using every feature in Dex! 
 > 
 > At this point, consider:
 > - Building custom MCPs for your specific workflow
 > - Running `/dex-improve` to suggest system enhancements
-> - Sharing what you've learned — your setup could help others"
+> - Sharing what you've learned - your setup could help others"
 
 ### If User Says "Show Me Everything"
 
@@ -374,7 +374,7 @@ After showing recommendations, also mention:
 
 > ---
 > 
-> **💡 Have your own ideas for improving Dex?**
+> ** Have your own ideas for improving Dex?**
 > 
 > Use the `capture_idea` MCP tool anytime you think "I wish Dex did X".
 > 
@@ -399,14 +399,14 @@ If user hasn't run `/dex-level-up` in 7+ days and has unused features, add a gen
 ```markdown
 ---
 
-💡 **Tip:** You're using {{X}} of {{Y}} Dex features. Run `/dex-level-up` to see what you might be missing.
+ **Tip:** You're using {{X}} of {{Y}} Dex features. Run `/dex-level-up` to see what you might be missing.
 ```
 
 ### After Onboarding:
 
 At the end of `/setup`, mention:
 
-> "One more thing: run `/dex-level-up` anytime to discover features you haven't tried yet. No FOMO — just helpful guidance on what's available."
+> "One more thing: run `/dex-level-up` anytime to discover features you haven't tried yet. No FOMO - just helpful guidance on what's available."
 
 ---
 
@@ -423,7 +423,7 @@ At the end of `/setup`, mention:
 
 ## Philosophy
 
-This command exists to reduce **feature blindness** — when users don't know what they don't know.
+This command exists to reduce **feature blindness** - when users don't know what they don't know.
 
 **Not pushy:** Only suggest 2-3 things at a time
 **Contextual:** Based on their actual usage patterns

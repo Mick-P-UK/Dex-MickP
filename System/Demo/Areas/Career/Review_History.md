@@ -146,17 +146,17 @@ Alex had a strong year, delivering several high-impact projects while growing as
 
 ### Promotion Discussion
 
-**L4 → L5 (Staff PM) Readiness: In Progress**
+**L4 -> L5 (Staff PM) Readiness: In Progress**
 
 Alex is performing strongly at L4 and showing some L5 behaviors. With focused development in organizational influence and strategic thinking, Alex could be ready for L5 consideration in 6-9 months.
 
 **What's needed for L5:**
-- ✅ Execution track record (has this)
-- ✅ Cross-functional partnerships (strong with eng/design)
-- ⏳ Broader organizational influence (developing)
-- ⏳ Platform/strategic thinking (needs more evidence)
-- ⏳ Executive presence (needs development)
-- ⏳ Multi-team leadership (needs examples)
+- [x] Execution track record (has this)
+- [x] Cross-functional partnerships (strong with eng/design)
+- [~] Broader organizational influence (developing)
+- [~] Platform/strategic thinking (needs more evidence)
+- [~] Executive presence (needs development)
+- [~] Multi-team leadership (needs examples)
 
 **Development Plan:**
 - Mobile launch provides opportunity for exec visibility
@@ -170,7 +170,7 @@ Alex is performing strongly at L4 and showing some L5 behaviors. With focused de
 
 "Alex consistently delivers high-quality work and has become a trusted partner to Engineering and Design. I'd like to see Alex broaden influence beyond the immediate team and develop more platform-level thinking. The mobile launch is a great opportunity to demonstrate both. Alex is on track for L5 consideration in 6-9 months with continued growth."
 
-— Sarah Johnson, Director of Product
+- Sarah Johnson, Director of Product
 
 ---
 

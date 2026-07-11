@@ -43,7 +43,7 @@ copy_env_files() {
   done
 
   if [[ ${#env_files[@]} -eq 0 ]]; then
-    echo -e "  ${YELLOW}ℹ️  No .env files found in main repository${NC}"
+    echo -e "  ${YELLOW}[i]  No .env files found in main repository${NC}"
     return
   fi
 
@@ -53,16 +53,16 @@ copy_env_files() {
     local dest="$worktree_path/$env_file"
 
     if [[ -f "$dest" ]]; then
-      echo -e "  ${YELLOW}⚠️  $env_file already exists, backing up to ${env_file}.backup${NC}"
+      echo -e "  ${YELLOW}[!]  $env_file already exists, backing up to ${env_file}.backup${NC}"
       cp "$dest" "${dest}.backup"
     fi
 
     cp "$source" "$dest"
-    echo -e "  ${GREEN}✓ Copied $env_file${NC}"
+    echo -e "  ${GREEN}[x] Copied $env_file${NC}"
     copied=$((copied + 1))
   done
 
-  echo -e "  ${GREEN}✓ Copied $copied environment file(s)${NC}"
+  echo -e "  ${GREEN}[x] Copied $copied environment file(s)${NC}"
 }
 
 # Create a new worktree
@@ -115,7 +115,7 @@ create_worktree() {
   # Copy environment files
   copy_env_files "$worktree_path"
 
-  echo -e "${GREEN}✓ Worktree created successfully!${NC}"
+  echo -e "${GREEN}[x] Worktree created successfully!${NC}"
   echo ""
   echo "To switch to this worktree:"
   echo -e "${BLUE}cd $worktree_path${NC}"
@@ -140,9 +140,9 @@ list_worktrees() {
       local branch=$(git -C "$worktree_path" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "unknown")
 
       if [[ "$PWD" == "$worktree_path" ]]; then
-        echo -e "${GREEN}✓ $worktree_name${NC} (current) → branch: $branch"
+        echo -e "${GREEN}[x] $worktree_name${NC} (current) -> branch: $branch"
       else
-        echo -e "  $worktree_name → branch: $branch"
+        echo -e "  $worktree_name -> branch: $branch"
       fi
     fi
   done
@@ -242,7 +242,7 @@ cleanup_worktrees() {
 
       found=$((found + 1))
       to_remove+=("$worktree_path")
-      echo -e "${YELLOW}• $worktree_name${NC}"
+      echo -e "${YELLOW}- $worktree_name${NC}"
     fi
   done
 
@@ -264,7 +264,7 @@ cleanup_worktrees() {
   for worktree_path in "${to_remove[@]}"; do
     local worktree_name=$(basename "$worktree_path")
     git worktree remove "$worktree_path" --force 2>/dev/null || true
-    echo -e "${GREEN}✓ Removed: $worktree_name${NC}"
+    echo -e "${GREEN}[x] Removed: $worktree_name${NC}"
   done
 
   # Clean up empty directory if nothing left

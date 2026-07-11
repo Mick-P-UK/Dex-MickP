@@ -1,18 +1,18 @@
 # Dex System Guide
 
-**Personal Reference** — Full documentation for your Dex knowledge system.
+**Personal Reference** - Full documentation for your Dex knowledge system.
 
 ---
 
 ## Quick Start (30 Seconds to Value)
 
 ```
-Morning    → Run /daily-plan for context-aware daily planning
-During day → Just tell Claude things - it routes them intelligently
-After mtgs → Dex extracts action items and updates person pages
-As needed  → /triage finds orphaned files and scattered tasks
-End of day → Run /daily-review
-End of week → Run /week-review
+Morning    -> Run /daily-plan for context-aware daily planning
+During day -> Just tell Claude things - it routes them intelligently
+After mtgs -> Dex extracts action items and updates person pages
+As needed  -> /triage finds orphaned files and scattered tasks
+End of day -> Run /daily-review
+End of week -> Run /week-review
 ```
 
 ---
@@ -78,28 +78,28 @@ All skills are documented in detail in the **Skills System** section below. Here
 ### Common Workflows
 
 **Morning:**
-1. `/daily-plan` — Get today's focus with calendar, tasks, priorities
-2. Optional: `/meeting-prep` — Prepare for first meeting
+1. `/daily-plan` - Get today's focus with calendar, tasks, priorities
+2. Optional: `/meeting-prep` - Prepare for first meeting
 
 **During Day:**
-- Tell Claude things naturally → it routes intelligently based on your priorities
-- "Sarah worried about timeline" → Claude suggests person page + project routing
-- "Create task to finalize pricing" → Work MCP validates and adds to Tasks.md
+- Tell Claude things naturally -> it routes intelligently based on your priorities
+- "Sarah worried about timeline" -> Claude suggests person page + project routing
+- "Create task to finalize pricing" -> Work MCP validates and adds to Tasks.md
 
 **End of Day:**
-1. `/daily-review` — Reflect on what happened, capture learnings
-2. Optional: `/journal` — Evening reflection prompts (if enabled)
+1. `/daily-review` - Reflect on what happened, capture learnings
+2. Optional: `/journal` - Evening reflection prompts (if enabled)
 
 **Weekly:**
-1. `/week-plan` (Monday) — Set Top 3 priorities for the week
-2. `/week-review` (Friday) — Synthesize patterns and progress
-3. `/triage` (as needed) — Find orphaned files and scattered tasks
+1. `/week-plan` (Monday) - Set Top 3 priorities for the week
+2. `/week-review` (Friday) - Synthesize patterns and progress
+3. `/triage` (as needed) - Find orphaned files and scattered tasks
 
 **As Needed:**
-- `/project-health` — Check project status and blockers
-- `/process-meetings` — Process Granola meetings for insights
-- `/career-coach` — Career reflections and assessments
-- `/dex-level-up` — Discover unused features
+- `/project-health` - Check project status and blockers
+- `/process-meetings` - Process Granola meetings for insights
+- `/career-coach` - Career reflections and assessments
+- `/dex-level-up` - Discover unused features
 
 See the **Skills System** section below for complete documentation of all 42 core skills + 27 role-specific skills.
 
@@ -288,30 +288,30 @@ For each inbox entry, triage checks in priority order:
 | 2. **Quarterly Goal match** | Connects to Q goal | +20 points | HIGH confidence |
 | 3. **Project match** | Mentions existing project | +10 if also matches priority | Base confidence |
 | 4. **Person match** | About known person | +10 if person in priorities | Base confidence |
-| 5. **Company match** | Mentions known company/domain | — | Base confidence |
-| 6. **Pillar match** | Content matches pillar keywords | — | Base confidence |
-| 7. **Category fallback** | No specific matches | — | Low confidence |
+| 5. **Company match** | Mentions known company/domain | - | Base confidence |
+| 6. **Pillar match** | Content matches pillar keywords | - | Base confidence |
+| 7. **Category fallback** | No specific matches | - | Low confidence |
 
 ### Example Routing with Strategic Context
 
 ```
 File: "Q1_Planning_Notes.md" (in 00-Inbox/)
-Strategic Context: ✓ Week Priority "Q2 Planning" (related)
-Match: PROJECT → "Q2 Planning"
+Strategic Context: [x] Week Priority "Q2 Planning" (related)
+Match: PROJECT -> "Q2 Planning"
 Confidence: MEDIUM (70/100)
-→ Merge into 04-Projects/Q2_Planning.md?
+-> Merge into 04-Projects/Q2_Planning.md?
 
 Task: "- [ ] Finalize mobile app pricing" (found in random note)
-Strategic Context: ✓ Week Priority "Mobile App Launch" + Q1 Goal
-Match: PROJECT → "Mobile App Launch"
+Strategic Context: [x] Week Priority "Mobile App Launch" + Q1 Goal
+Match: PROJECT -> "Mobile App Launch"
 Confidence: HIGH (92/100)
-→ Extract to Week Priorities for visibility?
+-> Extract to Week Priorities for visibility?
 
 Task: "- [ ] Follow up with Sarah about timeline" (scattered)
-Strategic Context: ✓ Week Priority "Sarah's team onboarding"
-Match: PERSON → "Sarah Chen"
+Strategic Context: [x] Week Priority "Sarah's team onboarding"
+Match: PERSON -> "Sarah Chen"
 Confidence: HIGH (85/100)
-→ Add to Sarah's person page action items?
+-> Add to Sarah's person page action items?
 ```
 
 ### Misalignment Detection
@@ -319,19 +319,19 @@ Confidence: HIGH (85/100)
 If multiple entries relate to something **NOT** in your priorities or goals:
 
 ```
-⚠️ INSIGHTS:
-• 5 entries about "CRM evaluation" but not in priorities
-• Consider adding "CRM Evaluation" to Week Priorities?
+[!] INSIGHTS:
+- 5 entries about "CRM evaluation" but not in priorities
+- Consider adding "CRM Evaluation" to Week Priorities?
 ```
 
 ### Evolves With Your Work
 
-**Priorities change → routing adapts:**
-- Update Week Priorities → triage immediately recognizes new focus areas
-- Quarterly goals shift → routing confidence adjusts
-- Add projects/people → structure discovery includes them
+**Priorities change -> routing adapts:**
+- Update Week Priorities -> triage immediately recognizes new focus areas
+- Quarterly goals shift -> routing confidence adjusts
+- Add projects/people -> structure discovery includes them
 
-No configuration needed—triage adapts to both your strategic context and system structure in real-time.
+No configuration needed-triage adapts to both your strategic context and system structure in real-time.
 
 ---
 
@@ -339,38 +339,38 @@ No configuration needed—triage adapts to both your strategic context and syste
 
 ```
 Dex/
-├── 04-Projects/                 # Time-bound initiatives
-│
-├── 05-Areas/                    # Ongoing responsibilities
-│   ├── People/               # Person pages
-│   │   ├── Internal/         # Colleagues
-│   │   └── External/         # Customers, partners, contacts
-│   ├── Accounts/             # Key accounts (Sales/CS roles only)
-│   ├── Team/                 # Team management (Leadership roles only)
-│   ├── Content/              # Content strategy (Marketing roles only)
-│   └── Career/               # Career development (optional, via /career-setup)
-│
-├── 06-Resources/                # Reference material
-│   ├── Dex_System/           # This documentation
-│   ├── Learnings/            # Compound knowledge
-│   └── Quarterly_Reviews/    # Quarterly reflection and strategic reviews
-│
-├── 07-Archives/                 # Historical records
-│   ├── 04-Projects/             # Completed projects
-│   ├── Plans/                # Daily and weekly plans
-│   └── Reviews/              # Daily, weekly, and quarterly reviews
-│
-├── 00-Inbox/                    # Capture zone (process regularly)
-│   ├── Meetings/             # Meeting notes
-│   └── Ideas/                # Quick captures and fleeting thoughts
-│
-├── System/                   # Configuration
-│   ├── Templates/            # Note templates
-│   ├── Skills/               # Reusable AI behaviors
-│   └── pillars.yaml          # Your strategic pillars
-│
-├── Tasks.md                  # Main task list
-└── CLAUDE.md                 # System configuration
++-- 04-Projects/                 # Time-bound initiatives
+|
++-- 05-Areas/                    # Ongoing responsibilities
+|   +-- People/               # Person pages
+|   |   +-- Internal/         # Colleagues
+|   |   +-- External/         # Customers, partners, contacts
+|   +-- Accounts/             # Key accounts (Sales/CS roles only)
+|   +-- Team/                 # Team management (Leadership roles only)
+|   +-- Content/              # Content strategy (Marketing roles only)
+|   +-- Career/               # Career development (optional, via /career-setup)
+|
++-- 06-Resources/                # Reference material
+|   +-- Dex_System/           # This documentation
+|   +-- Learnings/            # Compound knowledge
+|   +-- Quarterly_Reviews/    # Quarterly reflection and strategic reviews
+|
++-- 07-Archives/                 # Historical records
+|   +-- 04-Projects/             # Completed projects
+|   +-- Plans/                # Daily and weekly plans
+|   +-- Reviews/              # Daily, weekly, and quarterly reviews
+|
++-- 00-Inbox/                    # Capture zone (process regularly)
+|   +-- Meetings/             # Meeting notes
+|   +-- Ideas/                # Quick captures and fleeting thoughts
+|
++-- System/                   # Configuration
+|   +-- Templates/            # Note templates
+|   +-- Skills/               # Reusable AI behaviors
+|   +-- pillars.yaml          # Your strategic pillars
+|
++-- Tasks.md                  # Main task list
++-- CLAUDE.md                 # System configuration
 ```
 
 ---
@@ -410,13 +410,13 @@ This creates a `Career/` folder where Dex will track your growth over time.
 
 Think of this as having a career coach on call. Four ways to use it:
 
-**Weekly Check-in** — Every Friday, reflect on the week. What went well? What was hard? What did you learn? Dex helps you spot patterns over time.
+**Weekly Check-in** - Every Friday, reflect on the week. What went well? What was hard? What did you learn? Dex helps you spot patterns over time.
 
-**Monthly Deep Dive** — Once a month, step back. Are you developing the skills you need? Making progress toward your goals? Dex compares your recent work against your career ladder to show where you're strong and where you need more evidence.
+**Monthly Deep Dive** - Once a month, step back. Are you developing the skills you need? Making progress toward your goals? Dex compares your recent work against your career ladder to show where you're strong and where you need more evidence.
 
-**Before Your Review** — Run this 1-2 weeks before your performance review. Dex compiles everything you've accomplished and maps it to what your company values. You walk into the review with concrete examples ready.
+**Before Your Review** - Run this 1-2 weeks before your performance review. Dex compiles everything you've accomplished and maps it to what your company values. You walk into the review with concrete examples ready.
 
-**Promotion Assessment** — Thinking about the next level? Dex analyzes your evidence and tells you honestly: "You're ready" or "Here's what you need to demonstrate first." It looks at four things:
+**Promotion Assessment** - Thinking about the next level? Dex analyzes your evidence and tells you honestly: "You're ready" or "Here's what you need to demonstrate first." It looks at four things:
 - Do you have examples for most competencies at the next level?
 - Have you consistently delivered on your goals?
 - Have you demonstrated breadth across different skills?
@@ -513,10 +513,10 @@ Dex treats itself as a product you're continuously improving. Ideas compound, th
 Behind the scenes, Dex runs two quiet background checks:
 
 **Checking for Claude Updates (every 6 hours)**  
-Dex checks if Anthropic has released new Claude Code features. When it finds something new, you'll see a heads-up next time you start working: "🆕 New Claude Code features detected! Run `/dex-whats-new` to review."
+Dex checks if Anthropic has released new Claude Code features. When it finds something new, you'll see a heads-up next time you start working: " New Claude Code features detected! Run `/dex-whats-new` to review."
 
 **Learning Review Prompts (daily at 5pm)**  
-As you work, Dex captures learnings in `System/Session_Learnings/`. When you accumulate 5+ learnings that haven't been reviewed yet, Dex reminds you: "📚 You have 7 pending learnings from this week. Worth reviewing?"
+As you work, Dex captures learnings in `System/Session_Learnings/`. When you accumulate 5+ learnings that haven't been reviewed yet, Dex reminds you: " You have 7 pending learnings from this week. Worth reviewing?"
 
 Both happen automatically with no action from you. The system stays current on its own.
 
@@ -604,49 +604,49 @@ These aren't installed by default because not everyone needs them. When you're r
 ### Available by Role
 
 **Product (3 skills):**
-- `/roadmap` — Review roadmap, surface blockers, check alignment
-- `/customer-intel` — Synthesize recent customer feedback and pain points
-- `/feature-decision` — Framework for feature prioritization decisions
+- `/roadmap` - Review roadmap, surface blockers, check alignment
+- `/customer-intel` - Synthesize recent customer feedback and pain points
+- `/feature-decision` - Framework for feature prioritization decisions
 
 **Sales (4 skills):**
-- `/deal-review` — Review active deals and surface risks
-- `/pipeline-health` — Analyze pipeline coverage and forecast accuracy
-- `/account-plan` — Create or update strategic account plan
-- `/call-prep` — Prepare for upcoming call with full context
+- `/deal-review` - Review active deals and surface risks
+- `/pipeline-health` - Analyze pipeline coverage and forecast accuracy
+- `/account-plan` - Create or update strategic account plan
+- `/call-prep` - Prepare for upcoming call with full context
 
 **Customer Success (3 skills):**
-- `/health-score` — Review account health across portfolio
-- `/renewal-prep` — Prepare for upcoming renewal
-- `/expansion-opportunities` — Identify upsell/cross-sell opportunities
+- `/health-score` - Review account health across portfolio
+- `/renewal-prep` - Prepare for upcoming renewal
+- `/expansion-opportunities` - Identify upsell/cross-sell opportunities
 
 **Marketing (4 skills):**
-- `/campaign-review` — Post-mortem on recent campaign
-- `/content-calendar` — Review upcoming content and identify gaps
-- `/audience-intel` — Synthesize what we're learning about our audience
-- `/messaging-audit` — Review positioning and messaging across content
+- `/campaign-review` - Post-mortem on recent campaign
+- `/content-calendar` - Review upcoming content and identify gaps
+- `/audience-intel` - Synthesize what we're learning about our audience
+- `/messaging-audit` - Review positioning and messaging across content
 
 **Engineering (3 skills):**
-- `/architecture-decision` — Document architectural choices
-- `/tech-debt` — Review and prioritize technical debt
-- `/incident-review` — Post-mortem on incidents
+- `/architecture-decision` - Document architectural choices
+- `/tech-debt` - Review and prioritize technical debt
+- `/incident-review` - Post-mortem on incidents
 
 **Finance (3 skills):**
-- `/variance-analysis` — Compare actuals vs budget with narrative
-- `/close-status` — Month-end close checklist and blockers
-- `/board-prep` — Compile financial narrative for board meeting
+- `/variance-analysis` - Compare actuals vs budget with narrative
+- `/close-status` - Month-end close checklist and blockers
+- `/board-prep` - Compile financial narrative for board meeting
 
 **Leadership (3 skills):**
-- `/weekly-reflection` — Weekly synthesis of progress and priorities
-- `/delegate-check` — Review what should be delegated
-- `/decision-log` — Document major decisions made
+- `/weekly-reflection` - Weekly synthesis of progress and priorities
+- `/delegate-check` - Review what should be delegated
+- `/decision-log` - Document major decisions made
 
 **Design (2 skills):**
-- `/design-review` — Prepare for or document design review
-- `/design-system-audit` — Review design system usage and gaps
+- `/design-review` - Prepare for or document design review
+- `/design-system-audit` - Review design system usage and gaps
 
 **Operations (2 skills):**
-- `/metrics-review` — Review key metrics and anomalies
-- `/process-audit` — Review process health and bottlenecks
+- `/metrics-review` - Review key metrics and anomalies
+- `/process-audit` - Review process health and bottlenecks
 
 ### Installation
 
@@ -665,71 +665,71 @@ Skills are reusable AI workflows invoked with `/skill-name`. All skills follow t
 ### Core Dex Skills (25)
 
 **Daily Workflow:**
-- `/daily-plan` — Context-aware daily planning (integrates calendar, tasks, meetings)
-- `/daily-review` — End of day review with learning capture
-- `/journal` — Morning, evening, or weekly reflection prompts
+- `/daily-plan` - Context-aware daily planning (integrates calendar, tasks, meetings)
+- `/daily-review` - End of day review with learning capture
+- `/journal` - Morning, evening, or weekly reflection prompts
 
 **Weekly Workflow:**
-- `/week-plan` — Set weekly priorities
-- `/week-review` — Weekly synthesis and review
+- `/week-plan` - Set weekly priorities
+- `/week-review` - Weekly synthesis and review
 
 **Quarterly Workflow:**
-- `/quarter-plan` — Set 3-5 strategic goals for the quarter
-- `/quarter-review` — Review quarter and capture learnings
+- `/quarter-plan` - Set 3-5 strategic goals for the quarter
+- `/quarter-review` - Review quarter and capture learnings
 
 **Meetings:**
-- `/meeting-prep` — Prepare for upcoming meetings with attendee context
-- `/process-meetings` — Process Granola meetings to extract insights
+- `/meeting-prep` - Prepare for upcoming meetings with attendee context
+- `/process-meetings` - Process Granola meetings to extract insights
 
 **Projects:**
-- `/project-health` — Review project status, blockers, and next steps
-- `/product-brief` — Extract product ideas through guided questions and generate PRD
-- `/triage` — Process inbox intelligently with entity matching
+- `/project-health` - Review project status, blockers, and next steps
+- `/product-brief` - Extract product ideas through guided questions and generate PRD
+- `/triage` - Process inbox intelligently with entity matching
 
 **Career Development:**
-- `/career-setup` — Initialize career development system
-- `/career-coach` — Career reflections and assessments (4 modes)
-- `/resume-builder` — Build resume and LinkedIn through guided interview
+- `/career-setup` - Initialize career development system
+- `/career-coach` - Career reflections and assessments (4 modes)
+- `/resume-builder` - Build resume and LinkedIn through guided interview
 
 **System Management:**
-- `/prompt-improver` — Transform vague prompts into expert-level prompts via Anthropic Messages API
-- `/dex-level-up` — Discover unused features based on usage patterns
-- `/dex-backlog` — AI-powered ranking of improvement ideas
-- `/dex-improve` — Workshop an idea into implementation plan
-- `/dex-whats-new` — Check for system improvements (learnings + Claude updates)
-- `/create-mcp` — Create new MCP integration with guided wizard
-- `/dex-demo` — Toggle demo mode on/off/reset
-- `/setup` — Initial onboarding (one-time)
-- `/reset` — Restructure Dex based on role change
-- `/save-insight` — Capture learnings from completed work
+- `/prompt-improver` - Transform vague prompts into expert-level prompts via Anthropic Messages API
+- `/dex-level-up` - Discover unused features based on usage patterns
+- `/dex-backlog` - AI-powered ranking of improvement ideas
+- `/dex-improve` - Workshop an idea into implementation plan
+- `/dex-whats-new` - Check for system improvements (learnings + Claude updates)
+- `/create-mcp` - Create new MCP integration with guided wizard
+- `/dex-demo` - Toggle demo mode on/off/reset
+- `/setup` - Initial onboarding (one-time)
+- `/reset` - Restructure Dex based on role change
+- `/save-insight` - Capture learnings from completed work
 
 ### Anthropic Skills (17)
 
 **Document Creation & Editing:**
-- `/anthropic-docx` — Word documents with tracked changes and comments
-- `/anthropic-pptx` — Presentations with layouts and speaker notes
-- `/anthropic-xlsx` — Spreadsheets with formulas and data analysis
-- `/anthropic-pdf` — PDF manipulation, text extraction, form filling
+- `/anthropic-docx` - Word documents with tracked changes and comments
+- `/anthropic-pptx` - Presentations with layouts and speaker notes
+- `/anthropic-xlsx` - Spreadsheets with formulas and data analysis
+- `/anthropic-pdf` - PDF manipulation, text extraction, form filling
 
 **Writing & Communication:**
-- `/anthropic-doc-coauthoring` — Structured workflow for co-authoring docs
-- `/anthropic-internal-comms` — Internal communications (status reports, updates)
+- `/anthropic-doc-coauthoring` - Structured workflow for co-authoring docs
+- `/anthropic-internal-comms` - Internal communications (status reports, updates)
 
 **Design & Visual:**
-- `/anthropic-algorithmic-art` — Create algorithmic art using p5.js
-- `/anthropic-canvas-design` — Visual design and posters
-- `/anthropic-frontend-design` — Production-grade frontend interfaces
-- `/anthropic-theme-factory` — Style artifacts with pre-set themes
-- `/anthropic-slack-gif-creator` — Animated GIFs optimized for Slack
-- `/anthropic-brand-guidelines` — Apply Anthropic brand colors/typography
+- `/anthropic-algorithmic-art` - Create algorithmic art using p5.js
+- `/anthropic-canvas-design` - Visual design and posters
+- `/anthropic-frontend-design` - Production-grade frontend interfaces
+- `/anthropic-theme-factory` - Style artifacts with pre-set themes
+- `/anthropic-slack-gif-creator` - Animated GIFs optimized for Slack
+- `/anthropic-brand-guidelines` - Apply Anthropic brand colors/typography
 
 **Development:**
-- `/anthropic-mcp-builder` — Create MCP servers for external service integration
-- `/anthropic-web-artifacts-builder` — Multi-component HTML artifacts with React
-- `/anthropic-webapp-testing` — Test local web applications with Playwright
+- `/anthropic-mcp-builder` - Create MCP servers for external service integration
+- `/anthropic-web-artifacts-builder` - Multi-component HTML artifacts with React
+- `/anthropic-webapp-testing` - Test local web applications with Playwright
 
 **Meta:**
-- `/anthropic-skill-creator` — Guide for creating new skills
+- `/anthropic-skill-creator` - Guide for creating new skills
 
 ### How Skills Work
 
@@ -745,9 +745,9 @@ Company pages aggregate context about organizations you interact with.
 
 ```
 05-Areas/Companies/
-├── Acme_Corp.md
-├── BigTech_Inc.md
-└── ...
++-- Acme_Corp.md
++-- BigTech_Inc.md
++-- ...
 ```
 
 ### What Gets Aggregated
@@ -827,7 +827,7 @@ Located in `06-Resources/Learnings/` and `System/Session_Learnings/`:
 
 **Automatic Prompts:**
 - Daily at 5pm, Dex checks if you have 5+ pending learnings
-- Next session start: "📚 You have 7 pending learnings from this week. Worth reviewing?"
+- Next session start: " You have 7 pending learnings from this week. Worth reviewing?"
 
 ### Why This Matters
 
@@ -909,7 +909,7 @@ Dex processes meetings from Granola to extract structured insights, action items
 
 #### Manual Processing (Recommended to Start)
 
-Run `/process-meetings` whenever you want to pull in new meetings. Uses Claude directly — no API key required.
+Run `/process-meetings` whenever you want to pull in new meetings. Uses Claude directly - no API key required.
 
 **Basic commands:**
 
@@ -996,16 +996,16 @@ Then you get independent control over:
 
 **Why different time ranges?**
 
-People and company pages are lightweight context that's always useful. Meeting notes help you recall past discussions. But todos from old meetings are often already done or outdated — keeping just the recent ones prevents overwhelm while giving you actionable work.
+People and company pages are lightweight context that's always useful. Meeting notes help you recall past discussions. But todos from old meetings are often already done or outdated - keeping just the recent ones prevents overwhelm while giving you actionable work.
 
 #### Automatic Processing (Background Sync)
 
 For hands-off processing, enable automatic mode during onboarding or configure manually:
 
 1. **Choose API provider:**
-   - **Gemini** — Free tier (1500 req/day), best for most users
-   - **Anthropic** — Highest quality (~$0.01/meeting)
-   - **OpenAI** — Fast and reliable (~$0.01/meeting)
+   - **Gemini** - Free tier (1500 req/day), best for most users
+   - **Anthropic** - Highest quality (~$0.01/meeting)
+   - **OpenAI** - Fast and reliable (~$0.01/meeting)
 
 2. **Add API key to `.env`:**
    ```bash
@@ -1053,14 +1053,14 @@ Meetings are automatically classified into your pillars from `System/pillars.yam
 
 Run `/create-mcp` to create a new MCP server integration. The wizard will:
 
-1. **Educate** — Explain what MCP servers do and their benefits
-2. **Gather requirements** — Understand what service you want to connect and how
-3. **Design tools** — Define the specific capabilities iteratively with you
-4. **Generate code** — Create a working MCP server in `core/mcp/`
-5. **Integrate** — Update CLAUDE.md and this guide so Dex knows how to use it
-6. **Verify** — Provide setup instructions and help you test
+1. **Educate** - Explain what MCP servers do and their benefits
+2. **Gather requirements** - Understand what service you want to connect and how
+3. **Design tools** - Define the specific capabilities iteratively with you
+4. **Generate code** - Create a working MCP server in `core/mcp/`
+5. **Integrate** - Update CLAUDE.md and this guide so Dex knows how to use it
+6. **Verify** - Provide setup instructions and help you test
 
-**No coding required** — just describe what you want in plain English.
+**No coding required** - just describe what you want in plain English.
 
 ---
 
@@ -1123,10 +1123,10 @@ This guide stays current through the Documentation Sync behavior in CLAUDE.md. W
 
 ## Related Documentation
 
-- `CLAUDE.md` — Core system configuration and behaviors
-- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` — Why the system exists (conceptual)
-- `System/pillars.yaml` — Your strategic pillars configuration
-- `.claude/skills/` — Skill definitions following [Agent Skills standard](https://agentskills.io)
+- `CLAUDE.md` - Core system configuration and behaviors
+- `06-Resources/Dex_System/Dex_Jobs_to_Be_Done.md` - Why the system exists (conceptual)
+- `System/pillars.yaml` - Your strategic pillars configuration
+- `.claude/skills/` - Skill definitions following [Agent Skills standard](https://agentskills.io)
 
 ---
 

@@ -7,7 +7,7 @@ This is the logical extension of "whatever the developer can do, the agent can d
 <why_self_modification>
 ## Why Self-Modification?
 
-Traditional software is static—it does what you wrote, nothing more. Self-modifying agents can:
+Traditional software is static-it does what you wrote, nothing more. Self-modifying agents can:
 
 - **Fix their own bugs** - See an error, patch the code, restart
 - **Add new capabilities** - User asks for something new, agent implements it
@@ -135,9 +135,9 @@ tool("rollback", "Revert recent commits", { commits: z.number() }, ...);
 **Multi-instance architecture:**
 ```
 main                      # Shared code
-├── instance/bot-a       # Instance A's branch
-├── instance/bot-b       # Instance B's branch
-└── instance/bot-c       # Instance C's branch
++-- instance/bot-a       # Instance A's branch
++-- instance/bot-b       # Instance B's branch
++-- instance/bot-c       # Instance C's branch
 ```
 
 Each instance can:

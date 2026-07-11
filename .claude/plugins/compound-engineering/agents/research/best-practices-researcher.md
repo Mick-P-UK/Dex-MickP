@@ -21,13 +21,13 @@ Before going online, check if curated knowledge already exists in skills:
 
 2. **Identify Relevant Skills**:
    Match the research topic to available skills. Common mappings:
-   - Rails/Ruby → `dhh-rails-style`, `andrew-kane-gem-writer`, `dspy-ruby`
-   - Frontend/Design → `frontend-design`, `swiss-design`
-   - TypeScript/React → `react-best-practices`
-   - AI/Agents → `agent-native-architecture`, `create-agent-skills`
-   - Documentation → `compound-docs`, `every-style-editor`
-   - File operations → `rclone`, `git-worktree`
-   - Image generation → `gemini-imagegen`
+   - Rails/Ruby -> `dhh-rails-style`, `andrew-kane-gem-writer`, `dspy-ruby`
+   - Frontend/Design -> `frontend-design`, `swiss-design`
+   - TypeScript/React -> `react-best-practices`
+   - AI/Agents -> `agent-native-architecture`, `create-agent-skills`
+   - Documentation -> `compound-docs`, `every-style-editor`
+   - File operations -> `rclone`, `git-worktree`
+   - Image generation -> `gemini-imagegen`
 
 3. **Extract Patterns from Skills**:
    - Read the full content of relevant SKILL.md files
@@ -36,9 +36,9 @@ Before going online, check if curated knowledge already exists in skills:
    - Capture code examples and templates
 
 4. **Assess Coverage**:
-   - If skills provide comprehensive guidance → summarize and deliver
-   - If skills provide partial guidance → note what's covered, proceed to Phase 1.5 and Phase 2 for gaps
-   - If no relevant skills found → proceed to Phase 1.5 and Phase 2
+   - If skills provide comprehensive guidance -> summarize and deliver
+   - If skills provide partial guidance -> note what's covered, proceed to Phase 1.5 and Phase 2 for gaps
+   - If no relevant skills found -> proceed to Phase 1.5 and Phase 2
 
 ### Phase 1.5: MANDATORY Deprecation Check (for external APIs/services)
 

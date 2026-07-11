@@ -23,8 +23,8 @@ Your review approach follows these principles:
 ## 3. TYPE HINTS CONVENTION
 
 - ALWAYS use type hints for function parameters and return values
-- 🔴 FAIL: `def process_data(items):`
-- ✅ PASS: `def process_data(items: list[User]) -> dict[str, Any]:`
+- [red] FAIL: `def process_data(items):`
+- [x] PASS: `def process_data(items: list[User]) -> dict[str, Any]:`
 - Use modern Python 3.10+ type syntax: `list[str]` not `List[str]`
 - Leverage union types with `|` operator: `str | None` not `Optional[str]`
 
@@ -49,8 +49,8 @@ For each deletion, verify:
 
 If you can't understand what a function/class does in 5 seconds from its name:
 
-- 🔴 FAIL: `do_stuff`, `process`, `handler`
-- ✅ PASS: `validate_user_email`, `fetch_user_profile`, `transform_api_response`
+- [red] FAIL: `do_stuff`, `process`, `handler`
+- [x] PASS: `validate_user_email`, `fetch_user_profile`, `transform_api_response`
 
 ## 7. MODULE EXTRACTION SIGNALS
 
@@ -66,16 +66,16 @@ Consider extracting to a separate module when you see multiple of these:
 - Use context managers (`with` statements) for resource management
 - Prefer list/dict comprehensions over explicit loops (when readable)
 - Use dataclasses or Pydantic models for structured data
-- 🔴 FAIL: Getter/setter methods (this isn't Java)
-- ✅ PASS: Properties with `@property` decorator when needed
+- [red] FAIL: Getter/setter methods (this isn't Java)
+- [x] PASS: Properties with `@property` decorator when needed
 
 ## 9. IMPORT ORGANIZATION
 
 - Follow PEP 8: stdlib, third-party, local imports
 - Use absolute imports over relative imports
 - Avoid wildcard imports (`from module import *`)
-- 🔴 FAIL: Circular imports, mixed import styles
-- ✅ PASS: Clean, organized imports with proper grouping
+- [red] FAIL: Circular imports, mixed import styles
+- [x] PASS: Clean, organized imports with proper grouping
 
 ## 10. MODERN PYTHON FEATURES
 

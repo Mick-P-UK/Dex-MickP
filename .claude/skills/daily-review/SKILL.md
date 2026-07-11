@@ -9,7 +9,7 @@ Conduct an end-of-day review to capture progress, track what you actually accomp
 
 ## Tone Calibration
 
-Read `System/user-profile.yaml` → `communication` section and adapt accordingly.
+Read `System/user-profile.yaml` -> `communication` section and adapt accordingly.
 
 ---
 
@@ -46,7 +46,7 @@ Read `System/user-profile.yaml` → `communication` section and adapt accordingl
 
 **Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
@@ -66,16 +66,16 @@ find . -type f -name "*.md" -newermt "$TODAY 00:00:00" ! -newermt "$TODAY 23:59:
 ```
 
 **Critical rules:**
-1. No truncation — list all modified files
-2. Today only — use date-based filtering
-3. Verify with user — "These are the files I found. What did you actually work on?"
+1. No truncation - list all modified files
+2. Today only - use date-based filtering
+3. Verify with user - "These are the files I found. What did you actually work on?"
 
 ---
 
 ## Step 3: Gather Context
 
 ### From 03-Tasks/Tasks.md
-- Tasks completed today (look for `✅ YYYY-MM-DD` matching today)
+- Tasks completed today (look for `[x] YYYY-MM-DD` matching today)
 - Tasks started but not finished
 
 ### From Weekly Priorities
@@ -95,18 +95,18 @@ curl -s http://localhost:3030/health | jq -r '.status' 2>/dev/null
 
 If ScreenPipe is running, gather automatic activity context:
 
-1. **Time Audit** — Query app usage for today:
+1. **Time Audit** - Query app usage for today:
    ```
    Use: screenpipe_time_audit(start_time="YYYY-MM-DDT09:00:00", end_time="YYYY-MM-DDT18:00:00")
    ```
 
-2. **Activity Summary** — Get narrative of what happened:
+2. **Activity Summary** - Get narrative of what happened:
    ```
    Use: screenpipe_summarize(start_time="YYYY-MM-DDT09:00:00", end_time="YYYY-MM-DDT18:00:00")
    ```
 
 3. **Surface to User:**
-   > "📺 **Screen Activity Summary** (auto-captured):
+   > " **Screen Activity Summary** (auto-captured):
    > 
    > **Time breakdown:**
    > - VS Code: 3.2 hours (41%)
@@ -135,7 +135,7 @@ If beta NOT activated, skip this section entirely.
 
 **Then check if user has opted in:**
 
-Read `System/user-profile.yaml` → `screenpipe.enabled`. If false, skip this section entirely.
+Read `System/user-profile.yaml` -> `screenpipe.enabled`. If false, skip this section entirely.
 
 **If beta activated AND enabled**, scan for uncommitted asks and promises:
 
@@ -154,7 +154,7 @@ Use: get_uncommitted_items(include_dismissed=false)
 
 **Surface to user if items found:**
 
-> "🔔 **Uncommitted Items Detected**
+> " **Uncommitted Items Detected**
 >
 > ScreenPipe noticed these potential commitments today that don't have matching tasks:
 >
@@ -163,20 +163,20 @@ Use: get_uncommitted_items(include_dismissed=false)
 > **1. Sarah Chen** (Slack, 2:34 PM)
 > > "Can you review the pricing proposal by Friday?"
 >
-> 📎 Matches: **Q1 Pricing Project**
-> ⏰ Deadline: Friday
+>  Matches: **Q1 Pricing Project**
+>  Deadline: Friday
 >
-> → [Create task] [Already handled] [Ignore]
+> -> [Create task] [Already handled] [Ignore]
 >
 > ### Outbound Promises
 >
-> **2. You → Tom Baker** (Slack, 4:20 PM)
+> **2. You -> Tom Baker** (Slack, 4:20 PM)
 > > "I'll send over the competitive analysis tomorrow"
 >
-> 📎 Matches: **Acme Deal**
-> ⏰ Deadline: Tomorrow
+>  Matches: **Acme Deal**
+>  Deadline: Tomorrow
 >
-> → [Create task] [Already handled] [Ignore]
+> -> [Create task] [Already handled] [Ignore]
 >
 > *2 potential commitments detected. 0 have matching tasks.*"
 
@@ -214,13 +214,13 @@ For each planned focus item:
 
 **Surface this:**
 
-> "📊 **Daily Plan Completion:**
+> " **Daily Plan Completion:**
 > 
 > You planned 3 focus items this morning:
 > 
-> 1. ✅ **Prep for Acme meeting** — Complete
-> 2. 🔄 **Write pricing proposal** — In progress (about 60% done)
-> 3. ❌ **Reply to Mike** — Didn't get to it
+> 1. [x] **Prep for Acme meeting** - Complete
+> 2.  **Write pricing proposal** - In progress (about 60% done)
+> 3. [ ] **Reply to Mike** - Didn't get to it
 > 
 > **Completion rate today:** 1 of 3 (33%)
 > 
@@ -250,7 +250,7 @@ Use: get_meeting_context(meeting_title="...", attendees=[...])
 
 Then prompt:
 
-> "📍 **You met with Sarah Chen today** (Acme Quarterly Review)
+> " **You met with Sarah Chen today** (Acme Quarterly Review)
 > 
 > **Any follow-ups to capture?**
 > - Action items you committed to?
@@ -289,9 +289,9 @@ Show how today's work moved weekly priorities:
 > "**Week Progress Update:**
 > 
 > After today, you're at:
-> - Priority 1: ✅ Complete (finished today!)
-> - Priority 2: 🔄 60% (moved from 40%)
-> - Priority 3: ⚠️ Still not started
+> - Priority 1: [x] Complete (finished today!)
+> - Priority 2:  60% (moved from 40%)
+> - Priority 3: [!] Still not started
 > 
 > You have 2 days left. Tomorrow should focus on Priority 3."
 
@@ -301,10 +301,10 @@ Show how today's work moved weekly priorities:
 
 Scan today's conversation for learnings:
 
-1. **Mistakes or corrections** — Did something not work as expected?
-2. **Preferences mentioned** — Did you express how you like to work?
-3. **Documentation gaps** — Were there questions about how the system works?
-4. **Workflow inefficiencies** — Did any task take longer than it should?
+1. **Mistakes or corrections** - Did something not work as expected?
+2. **Preferences mentioned** - Did you express how you like to work?
+3. **Documentation gaps** - Were there questions about how the system works?
+4. **Workflow inefficiencies** - Did any task take longer than it should?
 
 Write to `System/Session_Learnings/{date_str}.md` (using `date_str` from Step 0).
 
@@ -315,8 +315,8 @@ Then ask: "I captured [N] learnings from today's session. Anything else you'd li
 ## Step 8: Categorize Learnings (If Applicable)
 
 Check if any learnings should be elevated to pattern files:
-- **Recurring mistakes** → `06-Resources/Learnings/Mistake_Patterns.md`
-- **Workflow preferences** → `06-Resources/Learnings/Working_Preferences.md`
+- **Recurring mistakes** -> `06-Resources/Learnings/Mistake_Patterns.md`
+- **Workflow preferences** -> `06-Resources/Learnings/Working_Preferences.md`
 
 Get user confirmation before adding.
 
@@ -334,9 +334,9 @@ Suggest 3 focus items for tomorrow:
 
 > "**Suggested focus for tomorrow (Thursday):**
 > 
-> 1. **Priority 3** — It's been untouched all week and you have 2 days left
-> 2. **Finish pricing proposal** — 40% left, should be quick to complete
-> 3. **Reply to Mike** — Carried from today
+> 1. **Priority 3** - It's been untouched all week and you have 2 days left
+> 2. **Finish pricing proposal** - 40% left, should be quick to complete
+> 3. **Reply to Mike** - Carried from today
 > 
 > Tomorrow's shape: Moderate (4 meetings). You have a 2-hour block in the afternoon.
 > 
@@ -367,14 +367,14 @@ type: daily-review
 plan_completion_rate: X%
 ---
 
-# Daily Review — {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
+# Daily Review - {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
 
-## 📊 Plan vs. Reality
+##  Plan vs. Reality
 
 **Planned focus:**
-1. [x] [Planned item 1] — ✅ Complete
-2. [ ] [Planned item 2] — 🔄 In progress (X%)
-3. [ ] [Planned item 3] — ❌ Didn't start
+1. [x] [Planned item 1] - [x] Complete
+2. [ ] [Planned item 2] -  In progress (X%)
+3. [ ] [Planned item 3] - [ ] Didn't start
 
 **Completion rate:** X of 3 (X%)
 
@@ -382,14 +382,14 @@ plan_completion_rate: X%
 
 ---
 
-## ✅ Accomplished
+## [x] Accomplished
 
-- ✓ [Completed item 1]
-- ✓ [Completed item 2]
+- [x] [Completed item 1]
+- [x] [Completed item 2]
 
 ---
 
-## 🔄 Progress Made
+##  Progress Made
 
 | Area | Movement |
 |------|----------|
@@ -398,26 +398,26 @@ plan_completion_rate: X%
 
 ---
 
-## 📊 Weekly Priorities Progress
+##  Weekly Priorities Progress
 
 After today:
-- **Priority 1:** [Status/progress] — [emoji]
-- **Priority 2:** [Status/progress] — [emoji]
-- **Priority 3:** [Status/progress] — [emoji]
+- **Priority 1:** [Status/progress] - [emoji]
+- **Priority 2:** [Status/progress] - [emoji]
+- **Priority 3:** [Status/progress] - [emoji]
 
 **Days remaining this week:** [X]
 
 ---
 
-## 📍 Meeting Follow-Ups
+##  Meeting Follow-Ups
 
 ### From [Meeting Name]
-- [ ] [Follow-up action] — due [date]
+- [ ] [Follow-up action] - due [date]
 - [ ] [Follow-up action]
 
 ---
 
-## 📺 Screen Activity (Auto-Captured)
+##  Screen Activity (Auto-Captured)
 
 **Time by App:**
 | App | Time | % |
@@ -435,14 +435,14 @@ After today:
 
 ---
 
-## 💡 Insights
+##  Insights
 
 - [Key realization or connection]
 - [Important learning]
 
 ---
 
-## 🚫 Blocked/Stuck
+##  Blocked/Stuck
 
 | Item | Blocker | Status |
 |------|---------|--------|
@@ -450,18 +450,18 @@ After today:
 
 ---
 
-## ❓ Discovered Questions
+## [?] Discovered Questions
 
 1. [New question that emerged]
 2. [Thing to research]
 
 ---
 
-## 📅 Tomorrow's Focus
+##  Tomorrow's Focus
 
 Based on weekly priorities and today's carryover:
 
-1. [Priority 1 — tied to weekly focus]
+1. [Priority 1 - tied to weekly focus]
 2. [Priority 2]
 3. [Priority 3]
 
@@ -469,7 +469,7 @@ Based on weekly priorities and today's carryover:
 
 ---
 
-## 🔄 Open Loops
+##  Open Loops
 
 - [ ] [Thing to remember]
 - [ ] [Person to follow up with]

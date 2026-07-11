@@ -91,33 +91,33 @@ export class TaskBoard {
 
     // Title
     const title = this.theme.fg("accent", this.theme.bold("Task Board"));
-    lines.push("┌─ " + title + " " + "─".repeat(Math.max(0, width - 15)) + "┐");
+    lines.push("+- " + title + " " + "-".repeat(Math.max(0, width - 15)) + "+");
 
     // Column headers
     const columnWidth = Math.floor((width - 2 - this.columns.length - 1) / this.columns.length);
     const headerLine = this.renderColumnHeaders(columnWidth);
-    lines.push("│ " + headerLine + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerLine))) + " │");
+    lines.push("| " + headerLine + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(headerLine))) + " |");
 
     // Separator
     const separatorLine = this.columns
-      .map(() => "─".repeat(columnWidth))
-      .join("┼");
-    lines.push("│ " + separatorLine + " ".repeat(Math.max(0, width - 4 - separatorLine.length)) + " │");
+      .map(() => "-".repeat(columnWidth))
+      .join("+");
+    lines.push("| " + separatorLine + " ".repeat(Math.max(0, width - 4 - separatorLine.length)) + " |");
 
     // Cards (get max height needed)
     const maxHeight = this.getMaxColumnHeight();
     for (let row = 0; row < maxHeight; row++) {
       const cardLine = this.renderCardRow(row, columnWidth);
-      lines.push("│ " + cardLine + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(cardLine))) + " │");
+      lines.push("| " + cardLine + " ".repeat(Math.max(0, width - 4 - this.getVisibleWidth(cardLine))) + " |");
     }
 
     // Actions
-    lines.push("│" + " ".repeat(width - 2) + "│");
+    lines.push("|" + " ".repeat(width - 2) + "|");
     const actions = "[Add Task (a)] [Move (m)] [Done (d)] [Filter] [Sort]";
-    lines.push("│ " + this.theme.fg("dim", truncateToWidth(actions, width - 4)) + " ".repeat(Math.max(0, width - 4 - actions.length)) + " │");
+    lines.push("| " + this.theme.fg("dim", truncateToWidth(actions, width - 4)) + " ".repeat(Math.max(0, width - 4 - actions.length)) + " |");
 
     // Bottom border
-    lines.push("└" + "─".repeat(width - 2) + "┘");
+    lines.push("+" + "-".repeat(width - 2) + "+");
 
     this.cachedWidth = width;
     this.cachedLines = lines;
@@ -135,7 +135,7 @@ export class TaskBoard {
           : this.theme.fg("text", header);
         return truncateToWidth(styled, columnWidth).padEnd(columnWidth + (styled.length - this.getVisibleWidth(styled)));
       })
-      .join("│");
+      .join("|");
   }
 
   private renderCardRow(row: number, columnWidth: number): string {
@@ -151,7 +151,7 @@ export class TaskBoard {
         const isSelected = colIndex === this.selectedColumn && row === this.selectedCard;
         return this.renderCard(task, columnWidth, isSelected);
       })
-      .join("│");
+      .join("|");
   }
 
   private renderCard(task: Task, width: number, isSelected: boolean): string {

@@ -39,7 +39,7 @@ Your task backlog organized by priority and pillar.
   - **Source:** Content research discussion
   - **Reference:** https://github.com/kirbah/mcp-youtube
 
-- [x] Enable SessionStart hook for automatic session context ^task-20260211-001 ✅ 2026-02-13 18:43
+- [x] Enable SessionStart hook for automatic session context ^task-20260211-001 [x] 2026-02-13 18:43
   - **What:** Auto-display session log at every session start
   - **Why:** Never start a session cold - instant context on "where we left off"
   - **How:** Add SessionStart hook to `.claude/settings.json`
@@ -49,7 +49,7 @@ Your task backlog organized by priority and pillar.
   - **Created:** 2026-02-11
   - **Source:** /dex-improve capability audit
 
-- [x] Add daily review to end-of-day routine ^task-20260211-002 ✅ 2026-02-13 19:15
+- [x] Add daily review to end-of-day routine ^task-20260211-002 [x] 2026-02-13 19:15
   - **What:** Run `/review` at end of work day
   - **Why:** Systematic learning capture + surfaces open loops for tomorrow
   - **How:** Run `/review` at end of Wednesday after video work
@@ -64,7 +64,7 @@ Your task backlog organized by priority and pillar.
     - Set up next week priorities (Plaza webinar prep)
     - Routine established - takes ~10 minutes
 
-- [x] Connect calendar integration for meeting intelligence ^task-20260211-003 ✅ 2026-02-13 18:50
+- [x] Connect calendar integration for meeting intelligence ^task-20260211-003 [x] 2026-02-13 18:50
   - **What:** Enable calendar MCP to auto-load meeting context
   - **Why:** Stop manual diary checking, get automatic meeting prep
   - **How:** Run `/getting-started` or manually connect Google Calendar
@@ -80,7 +80,7 @@ Your task backlog organized by priority and pillar.
     - Tested successfully - found 2 events for today
     - Granola integration parked (not currently used)
 
-- [x] Review Writing System directory structure - duplicate drafts folders ^task-20260209-001 ✅ 2026-02-09 12:57
+- [x] Review Writing System directory structure - duplicate drafts folders ^task-20260209-001 [x] 2026-02-09 12:57
   - **Context:** Writing_System/knowledge has both "drafts" (lowercase) and "1-Drafts" (numbered) folders
   - **Issue:** Causes confusion when saving files - unclear which to use
   - **Action:** Review purpose of each, consolidate to single location, update docs

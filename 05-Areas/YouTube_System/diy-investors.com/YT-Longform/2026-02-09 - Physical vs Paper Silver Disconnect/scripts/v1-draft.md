@@ -147,7 +147,7 @@ As of February 3rd, 2026, total open interest on COMEX silver - that's the numbe
 
 Multiply that by 5,000 ounces per contract, and you get 715.9 million ounces of paper claims on silver.
 
-**[VISUAL: Calculation shown on screen: 143,180 × 5,000 = 715.9M oz]**
+**[VISUAL: Calculation shown on screen: 143,180 x 5,000 = 715.9M oz]**
 
 Meanwhile, registered inventory - the physical silver actually available for delivery - stands at approximately 82 million ounces.
 
@@ -347,7 +347,7 @@ Until next time, best regards, and happy investing.
 7. **[3:40] Demand breakdown pie chart** - Industrial vs investment demand
 8. **[5:20] Futures contract diagram** - Animated explanation of 5,000 oz contracts, delivery months
 9. **[5:50] Four participant icons** - Hedgers, speculators, market makers, arbitrageurs
-10. **[6:10] Leverage ratio calculation** - 143,180 contracts × 5,000 oz = 715.9M oz paper claims
+10. **[6:10] Leverage ratio calculation** - 143,180 contracts x 5,000 oz = 715.9M oz paper claims
 11. **[6:30] Leverage visualization** - 8.7:1 ratio graphic (8.7 paper claims per 1 oz physical)
 12. **[6:50] March contracts calculation** - 425-455M oz demand vs 82M oz registered inventory
 13. **[7:45] January 2026 timeline** - Key events: 33M oz withdrawal, margin hikes, price crash

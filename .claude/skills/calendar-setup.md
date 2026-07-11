@@ -1,6 +1,6 @@
 # Calendar Setup - Enable Fast Queries
 
-**Purpose:** Grant Python calendar access for 30x faster calendar queries (30s → <1s)
+**Purpose:** Grant Python calendar access for 30x faster calendar queries (30s -> <1s)
 
 **When to run:** 
 - After initial Dex installation
@@ -43,7 +43,7 @@
    - No user action possible
 
 6. **After Success:**
-   - Confirm: "✅ Calendar access granted! Queries are now 30x faster."
+   - Confirm: "[x] Calendar access granted! Queries are now 30x faster."
    - Explain: "Calendar queries now use native EventKit instead of AppleScript"
    - No need to run this again - permission is persistent
 

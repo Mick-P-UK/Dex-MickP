@@ -5,9 +5,9 @@ Historical daily, weekly, and quarterly reviews.
 ## What Goes Here
 
 Reviews automatically archive here:
-- **Daily reviews** — Created by `/daily-review`
-- **Weekly reviews** — Created by `/week-review`
-- **Quarterly reviews** — Created by `/quarter-review`
+- **Daily reviews** - Created by `/daily-review`
+- **Weekly reviews** - Created by `/week-review`
+- **Quarterly reviews** - Created by `/quarter-review`
 
 ## Naming Convention
 
@@ -26,7 +26,7 @@ Archived reviews are your learning record:
 
 ## Retention
 
-Keep indefinitely. Reviews are your historical record of progress and learning—critical for career development and quarterly planning.
+Keep indefinitely. Reviews are your historical record of progress and learning-critical for career development and quarterly planning.
 
 ## Integration
 

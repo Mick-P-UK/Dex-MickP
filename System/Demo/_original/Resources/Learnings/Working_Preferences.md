@@ -106,7 +106,7 @@ Personal collaboration and communication preferences captured over time.
 ---
 
 ### Executive Communication
-- **Formula:** Clear status → Key decisions → What I need from you
+- **Formula:** Clear status -> Key decisions -> What I need from you
 - **No fluff:** Skip the preamble, get to the point
 - **Strategic, not tactical:** Focus on outcomes and implications, not implementation details
 - **Confidence:** Declare position clearly, don't hedge unnecessarily

@@ -196,34 +196,34 @@ During testing, validate that your skill's XML structure is correct and complete
 After updating a skill, verify:
 
 <required_tags_present>
-- ✅ `<objective>` tag exists and defines what skill does
-- ✅ `<quick_start>` tag exists with immediate guidance
-- ✅ `<success_criteria>` or `<when_successful>` tag exists
+- [x] `<objective>` tag exists and defines what skill does
+- [x] `<quick_start>` tag exists with immediate guidance
+- [x] `<success_criteria>` or `<when_successful>` tag exists
 </required_tags_present>
 
 <no_markdown_headings>
-- ✅ No `#`, `##`, or `###` headings in skill body
-- ✅ All sections use XML tags instead
-- ✅ Markdown formatting within tags is preserved (bold, italic, lists, code blocks)
+- [x] No `#`, `##`, or `###` headings in skill body
+- [x] All sections use XML tags instead
+- [x] Markdown formatting within tags is preserved (bold, italic, lists, code blocks)
 </no_markdown_headings>
 
 <proper_xml_nesting>
-- ✅ All XML tags properly closed
-- ✅ Nested tags have correct hierarchy
-- ✅ No unclosed tags
+- [x] All XML tags properly closed
+- [x] Nested tags have correct hierarchy
+- [x] No unclosed tags
 </proper_xml_nesting>
 
 <conditional_tags_appropriate>
-- ✅ Conditional tags match skill complexity
-- ✅ Simple skills use required tags only
-- ✅ Complex skills add appropriate conditional tags
-- ✅ No over-engineering or under-specifying
+- [x] Conditional tags match skill complexity
+- [x] Simple skills use required tags only
+- [x] Complex skills add appropriate conditional tags
+- [x] No over-engineering or under-specifying
 </conditional_tags_appropriate>
 
 <reference_files_check>
-- ✅ Reference files also use pure XML structure
-- ✅ Links to reference files are correct
-- ✅ References are one level deep from SKILL.md
+- [x] Reference files also use pure XML structure
+- [x] Links to reference files are correct
+- [x] References are one level deep from SKILL.md
 </reference_files_check>
 </validation_checklist>
 

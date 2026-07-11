@@ -8,11 +8,11 @@ echo
 
 # Check if rclone is installed
 if command -v rclone >/dev/null 2>&1; then
-    echo "✓ rclone installed"
+    echo "[x] rclone installed"
     rclone version | head -1
     echo
 else
-    echo "✗ rclone NOT INSTALLED"
+    echo "[ ] rclone NOT INSTALLED"
     echo
     echo "Install with:"
     echo "  macOS:  brew install rclone"
@@ -25,7 +25,7 @@ fi
 REMOTES=$(rclone listremotes 2>/dev/null || true)
 
 if [ -z "$REMOTES" ]; then
-    echo "✗ No remotes configured"
+    echo "[ ] No remotes configured"
     echo
     echo "Run 'rclone config' to set up a remote, or use:"
     echo
@@ -40,7 +40,7 @@ if [ -z "$REMOTES" ]; then
     echo
     exit 1
 else
-    echo "✓ Configured remotes:"
+    echo "[x] Configured remotes:"
     echo "$REMOTES" | sed 's/^/  /'
     echo
 fi
@@ -50,9 +50,9 @@ echo "Testing remote connectivity..."
 for remote in $REMOTES; do
     remote_name="${remote%:}"
     if rclone lsd "$remote" >/dev/null 2>&1; then
-        echo "  ✓ $remote_name - connected"
+        echo "  [x] $remote_name - connected"
     else
-        echo "  ✗ $remote_name - connection failed (check credentials)"
+        echo "  [ ] $remote_name - connection failed (check credentials)"
     fi
 done
 

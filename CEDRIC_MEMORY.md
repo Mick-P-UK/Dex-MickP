@@ -1,4 +1,7 @@
 # CEDRIC MEMORY
+**Last Updated:** 2026.07.11 (Sat, Cowork, evening 3) - Vault ASCII cleanup DONE + built the non-ascii-sweep skill. (1) Full non-ASCII sweep of the whole vault: typography corruption (smart quotes, em/en dashes, ellipsis, nbsp, bullets, arrows, box-drawing) fixed everywhere; then per Mick's choices currency->ASCII (GBP/EUR/c), status glyphs->tags ([x]/[ ]/[!]/^/v), decorative emoji + ShareScope private-use glyphs + broken U+FFFD dropped, accents transliterated to base, and 9 wrong-encoding cp1252 files (incl 4 Writing System letters/newsletters) re-saved as UTF-8. 413 files changed; verification = ZERO non-ASCII in any decodable text file. Root cause was the Mac-seeded DEX templates (now cleaned, so new notes start clean). Report: System/Debug_Logs/2026.07.11 - Vault ASCII Cleanup Report.md. Left alone: 6 undecodable junk/binary files (Word/ShareScope temp, 2 corrupt .md.v3-backup, a log), the credential pickle, and .obsidian config. (2) Built skills/non-ascii-sweep (modes scan/safe/full). Its script ascii_sweep.py is PURE ASCII by design - all special chars via chr() code points - so the sweep can never corrupt its own mapping tables; auto-detects the vault root; writes dated reports to System/Debug_Logs. (3) Scheduled task non-ascii-sweep-weekly: Saturday ~10am London, SAFE mode only (typography auto-fix + report meaningful for review; never full unattended). GOTCHA: the Write/Edit tools truncated the large .py at ~285 lines AND did not sync to the bash mount - wrote the final script via bash heredoc; PREFER heredoc for large script files in this vault. Caveat to flag: accents were transliterated vault-wide (e.g. any names in 08-People) - can restore specific names from git if wanted. Git: all of today rides the 9pm sweep unless Mick asks to commit now.
+**Last Updated:** 2026.07.11 (Sat, Cowork, evening 2) - New project set up: 04-Projects/2026.07.11 - Hermes-Claude-Obsidian, paired with a NotebookLM notebook (id fa003870-78c0-45f4-9df1-c815958f88f7, title "Hermes + Claude + Obsidian_Updated:2026.07.11", created by Mick via the notebooklm CLI). Purpose: investigate the Hermes Agent (Nous Research open-source personal AI assistant framework - persistent memory, self-written skills, scheduler, multi-channel gateway) as a possible route to assist the MCSB build. Registered in the project index (04-Projects/README.md, new Active Projects section) and cross-linked from the in-vault MCSB project note (2026.05.11-MCSB-Webinar-Voice, new Section 10). Drafted a Meet Cedric episode in the project folder (even-handed investigate-not-convert angle). Grounding source is the 00-Inbox Hermes guide note ("Hermes - A Guide for DIY Investors", from a claude.ai web session, tied to the 29 Jul 2026 AI-4-Investing webinar). Mick then asked to add that guide as a source into the notebook via notebooklm.google.com. Project name uses hyphens (Hermes-Claude-Obsidian) to stay ASCII-clean. Vault edits ride the 9pm sweep.
+**Last Updated:** 2026.07.11 (Sat, Cowork, evening) - Session-start CONTINUITY FIX + MCSB reconciliation prep. Root problem: this morning's work was invisible at session start because the wrap flushed CEDRIC_MEMORY.md but APPENDED at the file bottom while the top Last Updated stack (what start reads) still showed 07.10. Fixed both ends: baton-wrap step 3 + sundown-wrap step 7 now PREPEND a Last Updated line + Recent session block at the top (never append); session-start now reads _handovers/LATEST.md FIRST then the memory top, trusting LATEST if it is newer (Dex CLAUDE.md edited; master C:\Users\pavey\.claude\CLAUDE.md appended via PowerShell, backup .bak-2026-07-11). Orphaned entry tidied to top. Committed 5e2f08f. Also: brain-dump note + two backlog tasks (^task-20260711-001 ShareScope private repo; ^task-20260711-002 MCSB PRD v0.3 reconciliation); found the canonical MCSB PRD v0.3 lives OUTSIDE the vaults in the PAIDA Master folder (Documents\0.0 - AI Projects\0 - PAIDA - Mick 2nd Brain\PAIDA Master - Second Brain\04-Projects\2026.05.09 - MCSB\), confirmed v0.3 is the latest, made a PDF; lifted the 13 May Phase 1 implementation pickup note into 00-Inbox. PROGRESS.md exists there (updated 07.07) + three 07.10 Cowork-cloud notes. OQ2 (fold PAIDA Master into Dex) now ripe. Vault edits ride the 9pm sweep.
 **Last Updated:** 2026.07.11 (Sat, Cowork, afternoon) - Personal Content Backup executed. Reversed the two-repo plan: Dex-MickP is now ONE PRIVATE everything-repo (never published; a scrubbed DEMO repo is derived only if a structure is shared). First full backup pushed to GitHub (7e02ee7, 291 files). Fixed the silently-failing nightly auto-push by switching origin to SSH (dedicated ed25519 key dex-mickp-autocommit on Mick-P-UK). .gitignore slimmed to secrets + machine junk; pre-commit ASCII hook rescoped to work-mcp inputs only so creative content keeps its typography. Still open: ShareScope-Automation needs its own private repo (backed up nowhere); point Cowork default folder at Dex-MickP. NOTE: this entry was originally appended at the FILE BOTTOM by the wrap and has been moved to the top; the two wrap skills are now fixed to prepend so it will not recur.
 **Last Updated:** 2026.07.10 (Fri, Claude Code CLI, evening) - ASCII cleanup closed out. Fixed the
 PATH UiPath analysis file that was held back from the 2026.07.10 GitHub commit by the pre-commit
@@ -20,6 +23,59 @@ carried in memory since 2026.07.09 is now CLOSED; drafts must have existed from 
 **Earlier update:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
 **Older update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
 **Environment:** Claude Code CLI (this session, on Mick's PC). (Prior sessions: Cowork, Claude Desktop.)
+
+---
+
+## Recent session: 2026.07.11 (Saturday, Cowork, evening 2) - Hermes-Claude-Obsidian project + NotebookLM
+
+- Mick created a NotebookLM notebook (via the notebooklm Windows CLI, which he runs
+  himself - I cannot type into a Windows terminal from Cowork). Title "Hermes + Claude +
+  Obsidian_Updated:2026.07.11"; id fa003870-78c0-45f4-9df1-c815958f88f7.
+- Set up the matching project in the vault: 04-Projects/2026.07.11 - Hermes-Claude-Obsidian/
+  with an index note carrying the notebook id/url/title in YAML frontmatter. Date-first per
+  our naming rule; name hyphenated (Hermes-Claude-Obsidian) to stay strictly ASCII.
+- Registered it in the PROJECT index (04-Projects/README.md - added an Active Projects
+  section) rather than a vault-level index, at Mick's steer.
+- Cross-linked it FROM the in-vault MCSB project note (2026.05.11 - Cedric Webinar Voice
+  Integration and MCSB Knowledge Bridge) via a new "Section 10 - Related Explorations", so
+  the MCSB thread does not lose sight of it. NOTE: the canonical MCSB PRD/PROGRESS still
+  live OUTSIDE the vaults in the PAIDA Master folder; the webinar-voice note is the closest
+  in-vault MCSB anchor.
+- Drafted a Meet Cedric episode in the project folder ("Could an Open-Source Assistant Help
+  Build Our Shared Brain?") - investigate-not-convert framing, weighs Hermes's memory/skills/
+  scheduler upside against skill-poisoning / infrastructure-not-app risk.
+- Purpose of the whole thread: assess whether Hermes Agent shortcuts or informs the MCSB
+  build. Grounding doc is the 00-Inbox Hermes guide (prepared for the 29 Jul 2026 webinar).
+- Mick then asked to add that Hermes guide as a source into the notebook via
+  notebooklm.google.com (browser route, not the CLI).
+
+---
+
+## Recent session: 2026.07.11 (Saturday, Cowork, evening) - Session-start continuity fix + MCSB prep
+
+- Mick asked "where were we"; the morning's Personal Content Backup work was missing from the
+  top of memory. Diagnosed: the 14:05 baton flushed CEDRIC_MEMORY.md but APPENDED the block at
+  the file bottom while the top Last Updated stack still read 07.10, so a top-down session-start
+  missed it. Not a "memory never written" bug - a "written in the wrong place" bug.
+- Fixed BOTH ends. Write side: baton-wrap step 3 + sundown-wrap step 7 now carry an explicit
+  PLACEMENT rule to PREPEND a new Last Updated line (under the heading) + a new Recent session
+  block (after the first ---), never append to the bottom. Read side: session-start now reads
+  _handovers/LATEST.md FIRST, then the memory top, and trusts LATEST if it is newer. Applied to
+  the Dex CLAUDE.md (edited here) and the master C:\Users\pavey\.claude\CLAUDE.md (appended by
+  Mick via PowerShell; backup CLAUDE.md.bak-2026-07-11).
+- Tidied the orphaned 07.11 entry to the top; committed the whole fix (5e2f08f) over SSH.
+- Brain dump captured to 00-Inbox; two tasks added to 03-Tasks/Tasks.md: ^task-20260711-001
+  (give ShareScope-Automation its own private repo - unbacked-up) and ^task-20260711-002
+  (reconcile MCSB PRD v0.3 with recent work + update PROGRESS.md and the Notion Build Tracker).
+- MCSB PRD located: it lives OUTSIDE the vaults, in the PAIDA Master folder at
+  C:\Users\pavey\Documents\0.0 - AI Projects\0 - PAIDA - Mick 2nd Brain\PAIDA Master - Second
+  Brain\04-Projects\2026.05.09 - MCSB\2026.05.13-MCSB-PRD_V0.3.docx. Confirmed v0.3 is latest
+  (v0.2.1 was an earlier draft). Converted it to PDF next to the docx. That folder also holds a
+  maintained PROGRESS.md (updated 07.07) and three 07.10 Cowork-cloud/GitHub impact notes.
+- Lifted the 13 May Phase 1 implementation pickup note into 00-Inbox (ASCII-normalised). It
+  flags OQ2 "fold PAIDA Master into Dex?" - deferred then, ripe now given the PRD sits outside.
+- Git: this afternoon/evening vault edits (brain dump, tasks, pickup note, this wrap) left for
+  the 9pm sweep at Mick's choice. PDF sits in the PAIDA Master folder (not a git repo).
 
 ---
 

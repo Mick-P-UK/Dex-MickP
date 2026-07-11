@@ -152,18 +152,18 @@ Check for documented learnings from /workflows:compound. These are solved proble
 
 ```
 docs/solutions/           <-- PRIMARY: Project-level learnings (created by /workflows:compound)
-├── performance-issues/
-│   └── *.md
-├── debugging-patterns/
-│   └── *.md
-├── configuration-fixes/
-│   └── *.md
-├── integration-issues/
-│   └── *.md
-├── deployment-issues/
-│   └── *.md
-└── [other-categories]/
-    └── *.md
++-- performance-issues/
+|   +-- *.md
++-- debugging-patterns/
+|   +-- *.md
++-- configuration-fixes/
+|   +-- *.md
++-- integration-issues/
+|   +-- *.md
++-- deployment-issues/
+|   +-- *.md
++-- [other-categories]/
+    +-- *.md
 ```
 
 **Step 1: Find ALL learning markdown files**
@@ -210,9 +210,9 @@ Compare each learning's frontmatter against the plan:
 - `symptom:` / `root_cause:` - Could this problem occur with the plan?
 
 **SKIP learnings that are clearly not applicable:**
-- Plan is frontend-only → skip `database-migrations/` learnings
-- Plan is Python → skip `rails-specific/` learnings
-- Plan has no auth → skip `authentication-issues/` learnings
+- Plan is frontend-only -> skip `database-migrations/` learnings
+- Plan is Python -> skip `rails-specific/` learnings
+- Plan has no auth -> skip `authentication-issues/` learnings
 
 **SPAWN sub-agents for learnings that MIGHT apply:**
 - Any tag overlap with plan technologies
@@ -251,9 +251,9 @@ If NOT relevant after deeper analysis:
 # Found 15 learning files, plan is about "Rails API caching"
 
 # SPAWN (likely relevant):
-docs/solutions/performance-issues/n-plus-one-queries.md      # tags: [activerecord] ✓
-docs/solutions/performance-issues/redis-cache-stampede.md    # tags: [caching, redis] ✓
-docs/solutions/configuration-fixes/redis-connection-pool.md  # tags: [redis] ✓
+docs/solutions/performance-issues/n-plus-one-queries.md      # tags: [activerecord] [x]
+docs/solutions/performance-issues/redis-cache-stampede.md    # tags: [caching, redis] [x]
+docs/solutions/configuration-fixes/redis-connection-pool.md  # tags: [redis] [x]
 
 # SKIP (clearly not applicable):
 docs/solutions/deployment-issues/heroku-memory-quota.md      # not about caching
@@ -486,11 +486,11 @@ After writing the enhanced plan, use the **AskUserQuestion tool** to present the
 5. **Revert** - Restore original plan (if backup exists)
 
 Based on selection:
-- **View diff** → Run `git diff [plan_path]` or show before/after
-- **`/plan_review`** → Call the /plan_review command with the plan file path
-- **`/workflows:work`** → Call the /workflows:work command with the plan file path
-- **Deepen further** → Ask which sections need more research, then re-run those agents
-- **Revert** → Restore from git or backup
+- **View diff** -> Run `git diff [plan_path]` or show before/after
+- **`/plan_review`** -> Call the /plan_review command with the plan file path
+- **`/workflows:work`** -> Call the /workflows:work command with the plan file path
+- **Deepen further** -> Ask which sections need more research, then re-run those agents
+- **Revert** -> Restore from git or backup
 
 ## Example Enhancement
 

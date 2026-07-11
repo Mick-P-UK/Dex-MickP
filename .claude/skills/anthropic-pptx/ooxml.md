@@ -114,7 +114,7 @@
 <!-- Bullet list -->
 <a:p>
   <a:pPr lvl="0">
-    <a:buChar char="•"/>
+    <a:buChar char="-"/>
   </a:pPr>
   <a:r>
     <a:t>First bullet point</a:t>
@@ -134,7 +134,7 @@
 <!-- Second level indent -->
 <a:p>
   <a:pPr lvl="1">
-    <a:buChar char="•"/>
+    <a:buChar char="-"/>
   </a:pPr>
   <a:r>
     <a:t>Indented bullet</a:t>

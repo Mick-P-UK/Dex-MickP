@@ -48,10 +48,10 @@ The mixed voice is characterized by **8 distinct patterns** that transform dry t
 > "The evidence from the UK PGM sector demonstrates that relying on P/E ratios alone is insufficient, as it fails **(IMHO)** to capture the 'purchasing power' of investment capital..."
 
 **Before (v1):**
-> "The 'Ounces per £1' metric reveals a simple truth..."
+> "The 'Ounces per GBP1' metric reveals a simple truth..."
 
 **After (v3):**
-> "**To me,** the 'Ounces per £1' metric reveals a simple truth..."
+> "**To me,** the 'Ounces per GBP1' metric reveals a simple truth..."
 
 **Before (v1):**
 > "The extrapolation approach must model the time-lag..."
@@ -81,9 +81,9 @@ The mixed voice is characterized by **8 distinct patterns** that transform dry t
 > "As the world shifts toward a hydrogen-based and carbon-conscious economy, those **diy-investors** who have secured the maximum physical leverage..."
 
 **Key Changes:**
-- "investors" → "diy-investors"
-- Generic "readers" → Direct community address
-- Implicit audience → Explicit community identity
+- "investors" -> "diy-investors"
+- Generic "readers" -> Direct community address
+- Implicit audience -> Explicit community identity
 
 **Purpose:** Creates in-group belonging and demonstrates content is tailored for specific audience with specific philosophy (DYOR, independent thinking).
 
@@ -106,10 +106,10 @@ The mixed voice is characterized by **8 distinct patterns** that transform dry t
 > "**This means that we need to** track quarterly progress against DFS targets..."
 
 **Key Changes:**
-- "Right" → "OK"
-- "let's" → "let me" (personal ownership)
-- Implicit connections → Explicit bridges ("This means that we need to")
-- "Now, I'll be honest" → "Now, to be honest with you"
+- "Right" -> "OK"
+- "let's" -> "let me" (personal ownership)
+- Implicit connections -> Explicit bridges ("This means that we need to")
+- "Now, I'll be honest" -> "Now, to be honest with you"
 
 **Purpose:** Prevents research papers from becoming dry or academic. Maintains conversational thread through dense technical material.
 
@@ -120,10 +120,10 @@ The mixed voice is characterized by **8 distinct patterns** that transform dry t
 **Pattern:** Adds explicit scope clarifiers and hedging qualifiers to technical statements.
 
 **Before (v1):**
-> "Using **UK-listed** PGM miners—Valterra Platinum (VALT)..."
+> "Using **UK-listed** PGM miners-Valterra Platinum (VALT)..."
 
 **After (v3):**
-> "Using **example (UK-listed)** PGM miners—Valterra Platinum (VALT)..."
+> "Using **example (UK-listed)** PGM miners-Valterra Platinum (VALT)..."
 
 **Before (v1):**
 > "Analysts apply a probability factor based on the stage of development..."
@@ -138,10 +138,10 @@ The mixed voice is characterized by **8 distinct patterns** that transform dry t
 > "**As an example,** Tharisa's Karo project moved into the high-probability category..."
 
 **Before (v1):**
-> "To calculate the 'Future Ounce per £1', compare..."
+> "To calculate the 'Future Ounce per GBP1', compare..."
 
 **After (v3):**
-> "To calculate the 'Future Ounce per £1 **(or $)**', compare..."
+> "To calculate the 'Future Ounce per GBP1 **(or $)**', compare..."
 
 **Key Additions:**
 - "example" to clarify illustrative nature
@@ -165,10 +165,10 @@ The mixed voice is characterized by **8 distinct patterns** that transform dry t
 > "...precisely what this framework is designed to **uncover**."
 
 **Other Examples:**
-- "demonstrates" → "suggests"
-- "proves" → "illustrates"
-- "exposes" → "reveals"
-- Aggressive certainty → Measured confidence
+- "demonstrates" -> "suggests"
+- "proves" -> "illustrates"
+- "exposes" -> "reveals"
+- Aggressive certainty -> Measured confidence
 
 **Purpose:** Maintains authority without sounding combative or arrogant. Creates collaborative tone even when presenting strong analysis.
 
@@ -282,18 +282,18 @@ When writing technical research in Mick's voice:
 ## Example Application: Transforming a Single Paragraph
 
 **Generic AI Version:**
-> "The analysis identifies Tharisa plc as the value leader in physical production leverage. For every £1 invested, shareholders acquire exposure to 0.000355 ounces of PGM production. This represents approximately 2.4 times more metal than Valterra Platinum. Investors should favor stocks with the highest physical production leverage during bull markets."
+> "The analysis identifies Tharisa plc as the value leader in physical production leverage. For every GBP1 invested, shareholders acquire exposure to 0.000355 ounces of PGM production. This represents approximately 2.4 times more metal than Valterra Platinum. Investors should favor stocks with the highest physical production leverage during bull markets."
 
 **Mick's Mixed Voice Version:**
-> "The analysis identifies Tharisa plc as the undisputed leader in physical production leverage. For every £1 invested in Tharisa, the shareholder acquires a claim to 0.000355 ounces of PGM production—approximately 2.4 times more metal than an investment in Valterra Platinum. During a sector-wide rally driven by structural deficits (such as the current 2026-2030 platinum outlook), the mathematically superior strategy **(IMHO)** is to favour stocks with the highest physical production leverage. Of the three stocks analysed, Tharisa plc offers the greatest 'multiplier effect' on profit margins as prices rise above its fixed cost base."
+> "The analysis identifies Tharisa plc as the undisputed leader in physical production leverage. For every GBP1 invested in Tharisa, the shareholder acquires a claim to 0.000355 ounces of PGM production-approximately 2.4 times more metal than an investment in Valterra Platinum. During a sector-wide rally driven by structural deficits (such as the current 2026-2030 platinum outlook), the mathematically superior strategy **(IMHO)** is to favour stocks with the highest physical production leverage. Of the three stocks analysed, Tharisa plc offers the greatest 'multiplier effect' on profit margins as prices rise above its fixed cost base."
 
 **Changes Applied:**
-- ✅ Audience specificity: "shareholders" → "the shareholder"
-- ✅ Humility marker: "(IMHO)" added to strategy assertion
-- ✅ Clarity: "Of the three stocks analysed" for explicit scope
-- ✅ Softer language: "favor" → "favour" (British), measured tone
-- ✅ Context: "current 2026-2030 platinum outlook" added
-- ✅ Precision: "investment in" added for grammatical clarity
+- [x] Audience specificity: "shareholders" -> "the shareholder"
+- [x] Humility marker: "(IMHO)" added to strategy assertion
+- [x] Clarity: "Of the three stocks analysed" for explicit scope
+- [x] Softer language: "favor" -> "favour" (British), measured tone
+- [x] Context: "current 2026-2030 platinum outlook" added
+- [x] Precision: "investment in" added for grammatical clarity
 
 ---
 
@@ -305,5 +305,5 @@ When writing technical research in Mick's voice:
 - New content types require different pattern balances
 
 **Last Updated:** 2026-02-16
-**Source Material:** Strategic Dual Valuation Methodology (PGM research paper v1 → v3)
+**Source Material:** Strategic Dual Valuation Methodology (PGM research paper v1 -> v3)
 **Pattern Count:** 8 distinct patterns identified

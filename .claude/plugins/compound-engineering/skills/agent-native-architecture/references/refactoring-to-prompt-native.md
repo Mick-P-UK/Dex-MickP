@@ -134,8 +134,8 @@ Instead of testing "does it call the right function?", test "does it achieve the
 expect(mockProcessFeedback).toHaveBeenCalledWith(...)
 
 // After: Testing outcome
-// Send feedback → Check it was stored with reasonable importance
-// Send high-priority feedback → Check notification was sent
+// Send feedback -> Check it was stored with reasonable importance
+// Send high-priority feedback -> Check notification was sent
 ```
 </refactoring_workflow>
 
@@ -256,7 +256,7 @@ Yes, and you can iterate. Change the prompt to add guidance:
 Rate importance 1-5.
 
 // After (if agent keeps rating too high)
-Rate importance 1-5. Be conservative—most feedback is 2-3.
+Rate importance 1-5. Be conservative-most feedback is 2-3.
 Only use 4-5 for truly blocking or critical issues.
 ```
 

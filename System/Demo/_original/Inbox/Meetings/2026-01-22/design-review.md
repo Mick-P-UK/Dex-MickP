@@ -37,10 +37,10 @@ Reviewed final mobile app design polish and kicked off portal redesign discovery
 
 ## Action Items
 
-- [ ] Update app store screenshots with new branding → Maya
-- [ ] Share user interview notes → Maya
-- [ ] Schedule 5 more customer interviews → Alex
-- [ ] Review wireframes when ready → Alex
+- [ ] Update app store screenshots with new branding -> Maya
+- [ ] Share user interview notes -> Maya
+- [ ] Schedule 5 more customer interviews -> Alex
+- [ ] Review wireframes when ready -> Alex
 
 ## Scattered Notes
 

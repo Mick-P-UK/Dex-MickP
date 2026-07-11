@@ -7,7 +7,7 @@ Conduct an end-of-day review to capture progress and set up tomorrow.
 
 ## Tone Calibration
 
-Before executing this command, read `System/user-profile.yaml` → `communication` section and adapt:
+Before executing this command, read `System/user-profile.yaml` -> `communication` section and adapt:
 
 **Career Level Adaptations:**
 - **Junior:** Encouraging reflection, celebrate learning moments, normalize struggles
@@ -25,7 +25,7 @@ Before executing this command, read `System/user-profile.yaml` → `communicatio
 - **Balanced:** Standard review format
 - **Comprehensive:** Deep reflection, patterns, insights
 
-See CLAUDE.md → "Communication Adaptation" for full guidelines.
+See CLAUDE.md -> "Communication Adaptation" for full guidelines.
 
 ---
 
@@ -62,7 +62,7 @@ See CLAUDE.md → "Communication Adaptation" for full guidelines.
 
 **Use `date_str` and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
@@ -77,18 +77,18 @@ find . -type f -name "*.md" -newermt "$TODAY 00:00:00" ! -newermt "$TODAY 23:59:
 ```
 
 **Critical rules:**
-1. **No truncation** — Do NOT use `head` limits on file discovery
-2. **Today only** — Use date-based filtering, NOT `-mtime 0` (which captures 24-hour rolling window)
-3. **Verify with user** — After listing files, ASK: "These are the files I found modified today. What did you actually work on?"
-4. **Don't infer** — File timestamps tell you what changed, not what matters. Wait for user confirmation.
+1. **No truncation** - Do NOT use `head` limits on file discovery
+2. **Today only** - Use date-based filtering, NOT `-mtime 0` (which captures 24-hour rolling window)
+3. **Verify with user** - After listing files, ASK: "These are the files I found modified today. What did you actually work on?"
+4. **Don't infer** - File timestamps tell you what changed, not what matters. Wait for user confirmation.
 
 ## Step 2: Gather Context
 
 ### Completed Tasks Today
 Check `03-Tasks/Tasks.md` for tasks completed today using completion timestamps:
-- Look for `✅ YYYY-MM-DD` matching today's date
+- Look for `[x] YYYY-MM-DD` matching today's date
 - These show what you actually finished (not just what you worked on)
-- Example: `- [x] **Review pricing proposal** ^task-20260127-003 ✅ 2026-01-28 09:15`
+- Example: `- [x] **Review pricing proposal** ^task-20260127-003 [x] 2026-01-28 09:15`
 
 ### Weekly Priorities
 Read `00-Inbox/Weekly_Plans.md` for:
@@ -178,7 +178,7 @@ Before asking the user anything, reflect on today's session and automatically ex
 After creating the daily review, silently update usage tracking:
 
 1. Read `System/usage_log.md`
-2. Update: `- [ ] Daily review (/review)` → `- [x] Daily review (/review)`
+2. Update: `- [ ] Daily review (/review)` -> `- [x] Daily review (/review)`
 3. No announcement to user
 
 **Analytics (Beta Feature):**
@@ -220,7 +220,7 @@ Before executing, check if demo mode is active:
 
 1. Read `System/user-profile.yaml` and check `demo_mode`
 2. **If `demo_mode: true`:**
-   - Display: "Demo Mode Active — Using sample data"
+   - Display: "Demo Mode Active - Using sample data"
    - Use `System/Demo/` paths instead of root paths
    - Write any output to `System/Demo/` subdirectories
 3. **If `demo_mode: false`:** Use normal vault paths
@@ -229,12 +229,12 @@ date: {{date_str}}  # Use date_str from Step 0
 type: daily-review
 ---
 
-# Daily Review — {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
+# Daily Review - {{day_name}}, {{month_name}} {{day}}  # Use day_name from Step 0
 
 ## Accomplished
 
-- ✓ [Completed item 1]
-- ✓ [Completed item 2]
+- [x] [Completed item 1]
+- [x] [Completed item 2]
 
 ## Progress Made
 
@@ -268,7 +268,7 @@ type: daily-review
 
 ## Tomorrow's Focus
 
-1. [Priority 1 — tied to weekly focus]
+1. [Priority 1 - tied to weekly focus]
 2. [Priority 2]
 3. [Priority 3]
 
@@ -281,6 +281,6 @@ type: daily-review
 
 ## Important Reminders
 
-- **Verify, don't infer** — Always confirm with user what they worked on
-- **Weekly alignment** — Connect daily progress to weekly priorities
-- **Day of week** — Use system date metadata, verify before writing
+- **Verify, don't infer** - Always confirm with user what they worked on
+- **Weekly alignment** - Connect daily progress to weekly priorities
+- **Day of week** - Use system date metadata, verify before writing

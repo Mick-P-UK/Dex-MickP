@@ -7,7 +7,7 @@
 if [[ -z "$CLAUDE_PROJECT_DIR" ]]; then
     echo "=== Dex Session Context ==="
     echo ""
-    echo "⚠️  ERROR: CLAUDE_PROJECT_DIR environment variable not set"
+    echo "[!]  ERROR: CLAUDE_PROJECT_DIR environment variable not set"
     echo "Session log cannot be loaded. Please check hook configuration."
     echo ""
     exit 1
@@ -29,20 +29,20 @@ echo ""
 
 # Session Log (Resume Context) - CRITICAL: Always output something
 if [[ -f "$SESSION_LOG" ]]; then
-    echo "--- 📍 Where We Left Off ---"
+    echo "---  Where We Left Off ---"
     if cat "$SESSION_LOG" 2>/dev/null; then
         echo "---"
         echo ""
     else
-        echo "⚠️  ERROR: Could not read session log file: $SESSION_LOG"
+        echo "[!]  ERROR: Could not read session log file: $SESSION_LOG"
         echo "File exists but cannot be read. Check permissions."
         echo "---"
         echo ""
     fi
 else
     # File doesn't exist - output diagnostic message
-    echo "--- 📍 Where We Left Off ---"
-    echo "ℹ️  Session log not found at: $SESSION_LOG"
+    echo "---  Where We Left Off ---"
+    echo "[i]  Session log not found at: $SESSION_LOG"
     echo "This is normal for first-time setup or if session log was cleared."
     echo "---"
     echo ""
@@ -50,7 +50,7 @@ fi
 
 # Skip background checks during onboarding - nothing to check yet!
 if [[ ! -f "$ONBOARDING_MARKER" ]]; then
-    echo "⏩ Onboarding in progress - background checks disabled"
+    echo " Onboarding in progress - background checks disabled"
     echo ""
 fi
 
@@ -86,7 +86,7 @@ if [[ -f "$USER_PROFILE" ]] && grep -q "^obsidian_mode: true" "$USER_PROFILE" 2>
     if [[ -z "$SYNC_DAEMON_PID" ]]; then
         # Start sync daemon in background
         nohup python "$CLAUDE_DIR/core/obsidian/sync_daemon.py" > /dev/null 2>&1 &
-        echo "✓ Obsidian sync daemon started"
+        echo "[x] Obsidian sync daemon started"
     fi
 fi
 
@@ -98,7 +98,7 @@ echo ""
 if [[ -f "$PILLARS_FILE" ]]; then
     echo "--- Strategic Pillars ---"
     # Extract pillar names and descriptions
-    awk '/^  - id:/{getline; name=$0; getline; desc=$0; gsub(/^[[:space:]]*name: "/, "", name); gsub(/"$/, "", name); gsub(/^[[:space:]]*description: "/, "", desc); gsub(/"$/, "", desc); print "• " name " — " desc}' "$PILLARS_FILE" 2>/dev/null | head -5
+    awk '/^  - id:/{getline; name=$0; getline; desc=$0; gsub(/^[[:space:]]*name: "/, "", name); gsub(/"$/, "", name); gsub(/^[[:space:]]*description: "/, "", desc); gsub(/"$/, "", desc); print "- " name " - " desc}' "$PILLARS_FILE" 2>/dev/null | head -5
     echo "---"
     echo ""
 fi
@@ -118,7 +118,7 @@ fi
 # 3. Weekly Priorities
 if [[ -f "$WEEK_PRIORITIES" ]]; then
     # Extract current week's priorities section
-    WEEK_PRIORITIES_CONTENT=$(awk '/^## 🎯 This Week|^## This Week/,/^---$/{if(!/^##/ && !/^---/ && NF) print}' "$WEEK_PRIORITIES" 2>/dev/null)
+    WEEK_PRIORITIES_CONTENT=$(awk '/^##  This Week|^## This Week/,/^---$/{if(!/^##/ && !/^---/ && NF) print}' "$WEEK_PRIORITIES" 2>/dev/null)
     if [[ -n "$WEEK_PRIORITIES_CONTENT" ]]; then
         echo "--- Weekly Priorities ---"
         echo "$WEEK_PRIORITIES_CONTENT"
@@ -168,7 +168,7 @@ if [[ -d "$LEARNINGS_DIR" ]]; then
     for file in "$LEARNINGS_DIR"/*.md; do
         if [[ -f "$file" ]]; then
             filename=$(basename "$file" .md)
-            recent=$(grep -E "## .* — 202[0-9]-[0-9]{2}-[0-9]{2}" "$file" 2>/dev/null | tail -2)
+            recent=$(grep -E "## .* - 202[0-9]-[0-9]{2}-[0-9]{2}" "$file" 2>/dev/null | tail -2)
             if [[ -n "$recent" ]]; then
                 if [[ $FOUND_LEARNINGS -eq 0 ]]; then
                     echo "--- Recent Learnings ---"
@@ -188,7 +188,7 @@ fi
 # 8. Pending Claude Code Updates
 CHANGELOG_PENDING="$CLAUDE_DIR/System/changelog-updates-pending.md"
 if [[ -f "$CHANGELOG_PENDING" ]]; then
-    echo "--- 🆕 Claude Code Updates Detected ---"
+    echo "---  Claude Code Updates Detected ---"
     echo "New features or capabilities available!"
     echo "Run: /dex-whats-new"
     echo "---"
@@ -201,7 +201,7 @@ if [[ -f "$LEARNING_PENDING" ]]; then
     # Extract count from the file
     LEARNING_COUNT=$(grep "^\*\*Count:\*\*" "$LEARNING_PENDING" 2>/dev/null | sed 's/.*Count:\*\* \([0-9]*\).*/\1/')
     if [[ -n "$LEARNING_COUNT" ]]; then
-        echo "--- 📚 Pending Learnings Review ($LEARNING_COUNT) ---"
+        echo "---  Pending Learnings Review ($LEARNING_COUNT) ---"
         echo "Session learnings ready for review"
         echo "Run: /dex-whats-new --learnings"
         echo "---"
@@ -218,7 +218,7 @@ if [[ -f "$ONBOARDING_MARKER" ]]; then
         # Check if phase2_completed is false
         PHASE2_DONE=$(grep '"phase2_completed": true' "$ONBOARDING_MARKER" 2>/dev/null)
         if [[ -z "$PHASE2_DONE" ]]; then
-            echo "--- 👋 Welcome! ---"
+            echo "---  Welcome! ---"
             echo "You're probably wondering what to do next..."
             echo "Try: /getting-started"
             echo "---"

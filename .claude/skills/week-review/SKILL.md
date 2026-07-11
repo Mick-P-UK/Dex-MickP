@@ -47,32 +47,32 @@ Create a synthesis of the week reviewing activity, progress, and what was accomp
 
 **Use `date_str`, `monday_str`, and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
 ## Data Sources
 
 ### 1. Task Progress
-- `03-Tasks/Tasks.md` — Task completion status
-- `02-Week_Priorities/Week_Priorities.md` — Weekly priorities
+- `03-Tasks/Tasks.md` - Task completion status
+- `02-Week_Priorities/Week_Priorities.md` - Weekly priorities
 
 ### 2. Project Activity
-- `04-Projects/**/*.md` — Modified this week
+- `04-Projects/**/*.md` - Modified this week
 
 ### 3. Meetings & People
-- `00-Inbox/Meetings/*.md` — Meeting notes from this week
-- `People/**/*.md` — Person pages updated
+- `00-Inbox/Meetings/*.md` - Meeting notes from this week
+- `People/**/*.md` - Person pages updated
 
 ### 4. Learnings
-- `06-Resources/Learnings/**/*.md` — Explicit learnings
-- `System/Session_Learnings/*.md` — Auto-captured session learnings
+- `06-Resources/Learnings/**/*.md` - Explicit learnings
+- `System/Session_Learnings/*.md` - Auto-captured session learnings
 
 ### 5. Daily Reviews
-- `07-Archives/Reviews/Daily_Review_YYYY-MM-DD.md` — This week's reviews
+- `07-Archives/Reviews/Daily_Review_YYYY-MM-DD.md` - This week's reviews
 
 ### 6. Journals (If Enabled)
-- `00-Inbox/Journals/YYYY/MM-Month/` — Morning/evening journals
+- `00-Inbox/Journals/YYYY/MM-Month/` - Morning/evening journals
 
 ---
 
@@ -88,31 +88,31 @@ Use: get_week_progress()
 ```
 
 For each weekly priority:
-- **Complete:** ✅ What was the deliverable? When did you finish?
-- **In Progress:** 🔄 What specifically got done? What's left?
-- **Not Started:** ❌ Why? Should it carry forward?
+- **Complete:** [x] What was the deliverable? When did you finish?
+- **In Progress:**  What specifically got done? What's left?
+- **Not Started:** [ ] Why? Should it carry forward?
 
 **Surface concrete accomplishments:**
 
 > "**This week's priorities:**
 > 
-> 1. ✅ **Ship pricing page** — Complete (pushed to prod Wednesday)
+> 1. [x] **Ship pricing page** - Complete (pushed to prod Wednesday)
 >    - Deliverable: New pricing page live at /pricing
 >    - Tasks completed: 5 of 5
 > 
-> 2. 🔄 **Write Q1 strategy doc** — 60% complete
+> 2.  **Write Q1 strategy doc** - 60% complete
 >    - Done: Outline, competitive analysis, recommendations
 >    - Remaining: Executive summary, financial projections
 >    - 2 tasks left
 > 
-> 3. ❌ **Customer interviews** — Not started
+> 3. [ ] **Customer interviews** - Not started
 >    - Reason: Calendar was too stacked
 >    - Recommendation: Carry to next week with protected time"
 
 ### 2. Task Completion Stats (Concrete Numbers)
 
 Scan `03-Tasks/Tasks.md` for completion timestamps from this week:
-- Count tasks completed (look for `✅ YYYY-MM-DD` in date range)
+- Count tasks completed (look for `[x] YYYY-MM-DD` in date range)
 - Count tasks added mid-week
 - Count tasks carried over
 
@@ -145,11 +145,11 @@ For each goal:
 > | Goal | Milestones | This Week | Status |
 > |------|------------|-----------|--------|
 > | Launch v2.0 | 3 of 5 | +1 (Pricing page shipped) | On track |
-> | Improve NPS | 1 of 4 | No change | ⚠️ Stalled (3 weeks) |
+> | Improve NPS | 1 of 4 | No change | [!] Stalled (3 weeks) |
 > | Team Capacity | 2 of 3 | No change | On track |
 > 
 > **Goal 1** advanced because you completed Priority 1.
-> **Goal 2** needs attention — no linked work completed this week."
+> **Goal 2** needs attention - no linked work completed this week."
 
 ### 4. Daily Completion Rate Trend (NEW)
 
@@ -189,7 +189,7 @@ Use: get_commitment_stats(
 
 **Surface to user:**
 
-> "📊 **Commitment Health This Week**
+> " **Commitment Health This Week**
 >
 > **Detected across apps:** 12 potential commitments
 > **Already had tasks:** 7 (58%)
@@ -205,7 +205,7 @@ Use: get_commitment_stats(
 > 1. Sarah Chen - 4 asks
 > 2. Product team - 3 asks
 >
-> 💡 *Consider: Check Slack more frequently for asks, or run `/commitment-scan` mid-week*"
+>  *Consider: Check Slack more frequently for asks, or run `/commitment-scan` mid-week*"
 
 **If no commitment data:**
 Skip this section silently (user may not have ScreenPipe or commitment detection enabled).
@@ -221,7 +221,7 @@ Review `System/Session_Learnings/` files from this week:
 > "This week's session learnings revealed:
 > 
 > **Recurring Issues:**
-> - Calendar overload (mentioned 3 times) — Consider blocking focus time
+> - Calendar overload (mentioned 3 times) - Consider blocking focus time
 > 
 > **Workflow Preferences:**
 > - Prefer morning for deep work (mentioned 2 times)
@@ -235,27 +235,27 @@ Review `System/Session_Learnings/` files from this week:
 Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step 0):
 
 ```markdown
-# Weekly Synthesis — Week of [Date]
+# Weekly Synthesis - Week of [Date]
 
 ## TL;DR
 
 - **Weekly priorities:** [X] of 3 complete
-- **Tasks:** [X] completed / [Y] planned — [Z]% completion
+- **Tasks:** [X] completed / [Y] planned - [Z]% completion
 - **Meetings:** [N] total
 - **Key wins:** [1-2 bullets]
 - **Carried over:** [1-2 items]
 
 ---
 
-## 🎯 Weekly Priorities
+##  Weekly Priorities
 
-### 1. [Priority 1] — ✅ Complete
+### 1. [Priority 1] - [x] Complete
 
 **Deliverable:** [What was shipped/finished]
 **Completed:** [Day]
 **Tasks:** 5 of 5
 
-### 2. [Priority 2] — 🔄 In Progress (60%)
+### 2. [Priority 2] -  In Progress (60%)
 
 **Done this week:**
 - [Specific accomplishment]
@@ -265,14 +265,14 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 - [Specific task]
 - [Specific task]
 
-### 3. [Priority 3] — ❌ Not Started
+### 3. [Priority 3] - [ ] Not Started
 
 **Why:** [Reason]
 **Recommendation:** [Carry forward / Deprioritize / Defer]
 
 ---
 
-## 📊 Task Completion
+##  Task Completion
 
 | Metric | Count |
 |--------|-------|
@@ -281,16 +281,16 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 | Tasks carried over | 3 |
 | **Completion rate** | **82%** |
 
-**Observation:** [Any patterns — e.g., lots of scope creep]
+**Observation:** [Any patterns - e.g., lots of scope creep]
 
 ---
 
-## 🎯 Quarterly Goals
+##  Quarterly Goals
 
 | Goal | Milestones | This Week | Status |
 |------|------------|-----------|--------|
 | [Goal 1] | X of Y | +Z | [Status] |
-| [Goal 2] | X of Y | — | [Status] |
+| [Goal 2] | X of Y | - | [Status] |
 | [Goal 3] | X of Y | +Z | [Status] |
 
 **Goals advancing:** [Which ones moved]
@@ -298,7 +298,7 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 
 ---
 
-## 📊 Daily Completion Trend
+##  Daily Completion Trend
 
 | Day | Planned | Done | Rate |
 |-----|---------|------|------|
@@ -313,7 +313,7 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 
 ---
 
-## 📅 Meetings & People
+##  Meetings & People
 
 ### Meetings Held
 
@@ -322,14 +322,14 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 | [Day] | [Topic] | [Decision/insight] |
 
 ### New Contacts
-- [Name] at [Company] — [context]
+- [Name] at [Company] - [context]
 
 ### Action Items from Meetings
-- [ ] [Action] — for [who] — due [when]
+- [ ] [Action] - for [who] - due [when]
 
 ---
 
-## 💡 Learnings
+##  Learnings
 
 ### Session Learnings (Auto-Captured)
 - [Learning 1]
@@ -344,7 +344,7 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 
 ---
 
-## 📊 Pillar Balance
+##  Pillar Balance
 
 | Pillar | Tasks Done | Focus |
 |--------|------------|-------|
@@ -356,15 +356,15 @@ Create `00-Inbox/Weekly_Synthesis_{monday_str}.md` (using `monday_str` from Step
 
 ---
 
-## ➡️ Next Week
+## -> Next Week
 
 ### Suggested Priorities
 
 Based on this week's progress:
 
-1. **[Priority]** — [Why: carries over / goal needs attention / commitment]
-2. **[Priority]** — [Why]
-3. **[Priority]** — [Why]
+1. **[Priority]** - [Why: carries over / goal needs attention / commitment]
+2. **[Priority]** - [Why]
+3. **[Priority]** - [Why]
 
 ### Blocked Items Needing Resolution
 
@@ -374,12 +374,12 @@ Based on this week's progress:
 
 ---
 
-## 🏆 Career Evidence (If Career System Enabled)
+##  Career Evidence (If Career System Enabled)
 
 **Significant accomplishments worth capturing:**
 
-- [Accomplishment] — demonstrates [skill]
-- [Accomplishment] — shows [impact]
+- [Accomplishment] - demonstrates [skill]
+- [Accomplishment] - shows [impact]
 
 > "Want to save any of these as career evidence?"
 

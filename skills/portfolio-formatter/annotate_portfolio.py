@@ -134,14 +134,14 @@ def detect_date(im):
 def read_values(im):
     words = ocr_all(im)
     txt = " ".join(w[0] for w in words)
-    currency = "USD" if ("$" in txt and "GBP" not in txt and "£" not in txt) else "GBP"
+    currency = "USD" if ("$" in txt and "GBP" not in txt and "GBP" not in txt) else "GBP"
     portfolio = detect_portfolio(im, currency)
     datestr = detect_date(im)
     block = im.crop((0, 80, int(im.width * 0.26), 145))
     bd = pytesseract.image_to_data(block, output_type=Output.DICT, config="--psm 6")
     cand = []
     for i in range(len(bd['text'])):
-        m = re.match(r"^[£$]?([\d,]+\.\d{2})$", bd['text'][i].strip())
+        m = re.match(r"^[GBP$]?([\d,]+\.\d{2})$", bd['text'][i].strip())
         if m:
             cand.append((float(m.group(1).replace(",", "")),
                          bd['left'][i], bd['top'][i] + 80, bd['width'][i], bd['height'][i]))
@@ -161,7 +161,7 @@ def build(args):
     v = read_values(im)
 
     currency = args.currency or v["currency"]
-    sym = "$" if currency == "USD" else "£"
+    sym = "$" if currency == "USD" else "GBP"
     total = args.total if args.total is not None else v["total"]
     if total is None:
         sys.exit("ERROR: could not read Total value - pass --total N")

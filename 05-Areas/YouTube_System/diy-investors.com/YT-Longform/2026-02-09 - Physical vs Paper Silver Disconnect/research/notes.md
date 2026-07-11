@@ -178,20 +178,20 @@ Key Drivers:
 
 ```
 Open Interest (total contracts outstanding): 143,180 contracts
-× 5,000 oz per contract = 715.9 million oz (total paper claims)
+x 5,000 oz per contract = 715.9 million oz (total paper claims)
 
 Open Interest March 2026 delivery month: 85,000-91,000 contracts
-× 5,000 oz per contract = 425-455 million oz (near-term delivery potential)
+x 5,000 oz per contract = 425-455 million oz (near-term delivery potential)
 
 COMEX Registered Inventory: ~82 million oz (available for delivery)
 COMEX Eligible Inventory: ~329 million oz (stored but not for delivery)
 COMEX Total Inventory: ~411 million oz
 
-Leverage Ratio = Total Paper Claims ÷ Registered Inventory
-Current Ratio: 715.9M ÷ 82M = 8.7 : 1
+Leverage Ratio = Total Paper Claims / Registered Inventory
+Current Ratio: 715.9M / 82M = 8.7 : 1
 
-March Contract Risk = March Open Interest ÷ Registered Inventory
-March Ratio: 425-455M ÷ 82M = 5.2-5.5 : 1
+March Contract Risk = March Open Interest / Registered Inventory
+March Ratio: 425-455M / 82M = 5.2-5.5 : 1
 
 Historical Context:
 - 2020: Registered ~250M oz (before the collapse)
@@ -400,7 +400,7 @@ Normal Market (2015-2019 average): 2-3% for generic, 5-6% for Eagles
 
 > "You just can't continually run in a deficit in the physical market and not have it show up in the paper market."
 
-> "The cracks in the paper silver system—COMEX and LBMA—are showing, with LBMA vault inventories having plunged 33% this year, and the COMEX losing 29 million ounces in a single month."
+> "The cracks in the paper silver system-COMEX and LBMA-are showing, with LBMA vault inventories having plunged 33% this year, and the COMEX losing 29 million ounces in a single month."
 
 **Neumeyer's Predictions:**
 - Silver could hit $100-130 per ounce
@@ -665,7 +665,7 @@ Leverage Ratio: 8.7:1 (total) / 5.2-5.5:1 (March contracts vs registered)
 ```
 
 **Critical Alert Level:**
-🔴 **RED** - Registered inventory at historic lows, leverage ratio extreme, recent delivery stress severe
+[red] **RED** - Registered inventory at historic lows, leverage ratio extreme, recent delivery stress severe
 
 ---
 

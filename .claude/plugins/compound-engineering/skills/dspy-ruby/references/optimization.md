@@ -114,7 +114,7 @@ RSpec.describe EmailClassifier do
     classifier = EmailClassifier.new
     result = classifier.forward(
       email_subject: 'Test <script>alert("xss")</script>',
-      email_body: 'Body with émojis 🎉 and spëcial çharacters'
+      email_body: 'Body with emojis  and special characters'
     )
 
     expect(result[:category]).to be_in(['Technical', 'Billing', 'General'])
@@ -531,7 +531,7 @@ class ErrorRateMonitor
 
   def alert_if_needed(error_rate)
     if error_rate > @alert_threshold
-      puts "⚠️  ALERT: Error rate #{(error_rate * 100).round(2)}% exceeds threshold!"
+      puts "[!]  ALERT: Error rate #{(error_rate * 100).round(2)}% exceeds threshold!"
       # Send notification, page oncall, etc.
     end
   end

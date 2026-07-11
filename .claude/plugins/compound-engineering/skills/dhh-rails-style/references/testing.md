@@ -238,13 +238,13 @@ end
 Focus on what the code does, not how it does it:
 
 ```ruby
-# ❌ Testing implementation
+# [ ] Testing implementation
 test "calls notify method on each watcher" do
   card.expects(:notify).times(3)
   card.close
 end
 
-# ✅ Testing behavior
+# [x] Testing behavior
 test "watchers receive notifications when card closes" do
   assert_difference -> { Notification.count }, 3 do
     card.close
@@ -255,7 +255,7 @@ end
 ### 2. Don't Mock Everything
 
 ```ruby
-# ❌ Over-mocked test
+# [ ] Over-mocked test
 test "sending message" do
   room = mock("room")
   user = mock("user")
@@ -267,7 +267,7 @@ test "sending message" do
   MessagesController.new.create
 end
 
-# ✅ Test the real thing
+# [x] Test the real thing
 test "sending message" do
   sign_in users(:david)
   post room_messages_url(rooms(:watercooler)),
@@ -291,15 +291,15 @@ Don't just test individual pieces - test that they work together.
 
 ```
 test/
-├── controllers/         # Integration tests for controllers
-├── fixtures/           # YAML fixtures for all models
-├── helpers/            # Helper method tests
-├── integration/        # API integration tests
-├── jobs/               # Background job tests
-├── mailers/            # Mailer tests
-├── models/             # Unit tests for models
-├── system/             # Browser-based system tests
-└── test_helper.rb      # Test configuration
++-- controllers/         # Integration tests for controllers
++-- fixtures/           # YAML fixtures for all models
++-- helpers/            # Helper method tests
++-- integration/        # API integration tests
++-- jobs/               # Background job tests
++-- mailers/            # Mailer tests
++-- models/             # Unit tests for models
++-- system/             # Browser-based system tests
++-- test_helper.rb      # Test configuration
 ```
 
 ## Test Helper Setup

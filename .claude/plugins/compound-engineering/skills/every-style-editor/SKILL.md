@@ -89,8 +89,8 @@ RECURRING ISSUES
 
 STYLE GUIDE COMPLIANCE CHECKLIST
 ==============================
-✓ [Rule followed correctly]
-✗ [Rule violated - with count of violations]
+[x] [Rule followed correctly]
+[ ] [Rule violated - with count of violations]
 
 FINAL RECOMMENDATIONS
 ===================

@@ -40,7 +40,7 @@ When demo mode is OFF:
 **Welcome message template:**
 
 ```
-Demo mode enabled! ✨
+Demo mode enabled! 
 
 You're now Alex Chen, Senior Product Manager (L4) at TechCorp.
 
@@ -55,7 +55,7 @@ You're now Alex Chen, Senior Product Manager (L4) at TechCorp.
 - 3 active projects with tasks
 - 6 people (colleagues and customers)
 - 1 company page (Acme Corp)
-- Career development system (L4→L5 path)
+- Career development system (L4->L5 path)
 - Learning and improvement backlog
 
 ---
@@ -145,6 +145,6 @@ The demo vault represents a week in the life of Alex Chen, PM at TechCorp:
 
 **Meetings:** A week of realistic meeting notes (Jan 20-24)
 
-**Career:** Complete L4→L5 promotion path with evidence system
+**Career:** Complete L4->L5 promotion path with evidence system
 
 **Learning:** Backlog with 10 AI-ranked ideas, mistake patterns, working preferences

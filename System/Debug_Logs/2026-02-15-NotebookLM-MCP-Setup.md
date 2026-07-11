@@ -56,7 +56,7 @@ C:\Users\pavey\.local\bin\notebooklm-mcp.exe --help
 C:\Users\pavey\.local\bin\notebooklm-mcp.exe server
 ```
 
-**Result:** ❌ MCP still not loading after restart
+**Result:** [ ] MCP still not loading after restart
 
 **What we learned:**
 - Direct executable path is correct approach
@@ -74,9 +74,9 @@ C:\Users\pavey\.local\bin\notebooklm-mcp.exe server
 **Diagnostic output:**
 ```bash
 $ nlm doctor
-✅ Installation: notebooklm-mcp-cli 0.3.2
-✅ Authentication: 51 cookies, CSRF token present
-✅ Account: mickp.dbox@gmail.com
+[x] Installation: notebooklm-mcp-cli 0.3.2
+[x] Authentication: 51 cookies, CSRF token present
+[x] Account: mickp.dbox@gmail.com
 
 $ timeout 5 "C:\Users\pavey\.local\bin\notebooklm-mcp.exe" server
 ERROR: unrecognized arguments: server
@@ -88,7 +88,7 @@ ERROR: unrecognized arguments: server
   "notebooklm-mcp": {
     "type": "stdio",
     "command": "C:\\Users\\pavey\\.local\\bin\\notebooklm-mcp.exe",
-    "args": [],  // ← Changed from ["server"]
+    "args": [],  // <- Changed from ["server"]
     "env": {
       "PYTHONIOENCODING": "utf-8",
       "PYTHONUTF8": "1"
@@ -101,10 +101,10 @@ ERROR: unrecognized arguments: server
 ```bash
 $ "C:\Users\pavey\.local\bin\notebooklm-mcp.exe"
 INFO Starting MCP server 'notebooklm' with transport 'stdio'
-✅ SUCCESS
+[x] SUCCESS
 ```
 
-**Result:** ✅ Manual test passed, config looks correct
+**Result:** [x] Manual test passed, config looks correct
 
 **What we learned:**
 - The executable takes NO positional arguments
@@ -134,13 +134,13 @@ $ ListMcpResourcesTool()
 Result: Only "claude.ai Notion" server present
 ```
 
-**Result:** ❌ MCP still not loading despite correct config
+**Result:** [ ] MCP still not loading despite correct config
 
 **What we learned:**
 - Project `.mcp.json` was correct
 - Executable worked manually
 - Auth was working
-- **BUT MCP still not appearing** → Problem is NOT the config itself
+- **BUT MCP still not appearing** -> Problem is NOT the config itself
 
 ---
 
@@ -159,7 +159,7 @@ $ cat $APPDATA/Cursor/User/mcp.json
 {
   "mcpServers": {
     "notebooklm-mcp": {
-      "command": "notebooklm-mcp",  // ← WRONG! No path!
+      "command": "notebooklm-mcp",  // <- WRONG! No path!
       "args": [],
       "env": {
         "PYTHONIOENCODING": "utf-8",
@@ -194,7 +194,7 @@ $ cat > "$APPDATA/Cursor/User/mcp.json" << 'EOF'
 EOF
 ```
 
-**Result:** ⏳ PENDING - Awaiting Cursor restart to verify
+**Result:** [~] PENDING - Awaiting Cursor restart to verify
 
 **What we learned:**
 - **CRITICAL:** There are TWO MCP config files:
@@ -285,12 +285,12 @@ For complex troubleshooting sessions:
 
 ## Next Steps
 
-1. ✅ Session log updated with Attempt 4
-2. ✅ MEMORY.md updated with complete timeline
-3. ✅ Debug log created (this file)
-4. ⏳ **PENDING:** Restart Cursor to verify fix works
-5. ⏳ **PENDING:** Test listing NotebookLM notebooks
-6. ⏳ **PENDING:** Update this log with final result
+1. [x] Session log updated with Attempt 4
+2. [x] MEMORY.md updated with complete timeline
+3. [x] Debug log created (this file)
+4. [~] **PENDING:** Restart Cursor to verify fix works
+5. [~] **PENDING:** Test listing NotebookLM notebooks
+6. [~] **PENDING:** Update this log with final result
 
 ---
 
@@ -305,7 +305,7 @@ For complex troubleshooting sessions:
 
 **Key clarification from user:**
 - Runs Claude Code CLI (`claude` command) inside Cursor IDE terminal
-- Full restart means: Close Cursor → Reopen Cursor → Open terminal → Run `claude`
+- Full restart means: Close Cursor -> Reopen Cursor -> Open terminal -> Run `claude`
 - Should read project `.mcp.json`, NOT Cursor's config (`%APPDATA%/Cursor/User/mcp.json`)
 
 **Debug log analysis:**
@@ -323,36 +323,36 @@ MCP server "ide": Starting connection...
 ```
 
 **MCPs actually loaded:**
-- ✅ `gdrive` (from `~/.claude/mcp-servers/`)
-- ✅ `ide` (built-in Cursor integration)
-- ✅ Cloud MCPs (Notion, Vercel, Sentry, Canva - all from claude.ai)
+- [x] `gdrive` (from `~/.claude/mcp-servers/`)
+- [x] `ide` (built-in Cursor integration)
+- [x] Cloud MCPs (Notion, Vercel, Sentry, Canva - all from claude.ai)
 
 **MCPs NOT loaded (from project `.mcp.json`):**
-- ❌ `work-mcp`
-- ❌ `calendar-mcp`
-- ❌ `granola-mcp`
-- ❌ `career-mcp`
-- ❌ `dex-improvements-mcp`
-- ❌ `resume-mcp`
-- ❌ `update-checker`
-- ❌ `onboarding-mcp`
-- ❌ `notebooklm-mcp`
+- [ ] `work-mcp`
+- [ ] `calendar-mcp`
+- [ ] `granola-mcp`
+- [ ] `career-mcp`
+- [ ] `dex-improvements-mcp`
+- [ ] `resume-mcp`
+- [ ] `update-checker`
+- [ ] `onboarding-mcp`
+- [ ] `notebooklm-mcp`
 
 **What we verified (all correct):**
-1. ✅ Project `.mcp.json` exists in correct directory
-2. ✅ JSON is valid (tested with Python parser)
-3. ✅ Working directory is project root
-4. ✅ `.claude/settings.local.json` has:
+1. [x] Project `.mcp.json` exists in correct directory
+2. [x] JSON is valid (tested with Python parser)
+3. [x] Working directory is project root
+4. [x] `.claude/settings.local.json` has:
    - `"enableAllProjectMcpServers": true`
    - All 9 MCPs listed in `"enabledMcpjsonServers"`
-5. ✅ Python 3.14.0 is available
-6. ✅ MCP servers run manually (tested work-mcp successfully)
-7. ✅ File permissions are correct (readable)
-8. ✅ Claude Code CLI version 2.1.42 (recent)
-9. ✅ No conflicting global configs
-10. ✅ Full restart completed (Cursor + Claude Code CLI)
+5. [x] Python 3.14.0 is available
+6. [x] MCP servers run manually (tested work-mcp successfully)
+7. [x] File permissions are correct (readable)
+8. [x] Claude Code CLI version 2.1.42 (recent)
+9. [x] No conflicting global configs
+10. [x] Full restart completed (Cursor + Claude Code CLI)
 
-**Result:** 🚨 **ACTUAL ROOT CAUSE IDENTIFIED**
+**Result:**  **ACTUAL ROOT CAUSE IDENTIFIED**
 
 Claude Code CLI is **NOT reading the project `.mcp.json` file** when launched from within Cursor's terminal, despite all configuration being correct.
 
@@ -368,7 +368,7 @@ Claude Code CLI is **NOT reading the project `.mcp.json` file** when launched fr
 
 ## Final Resolution
 
-**Status:** ✅ ROOT CAUSE IDENTIFIED (but no fix available)
+**Status:** [x] ROOT CAUSE IDENTIFIED (but no fix available)
 
 **Problem:** Claude Code CLI does not load project MCPs from `.mcp.json` when run inside Cursor IDE terminal.
 
@@ -390,17 +390,17 @@ Claude Code CLI is **NOT reading the project `.mcp.json` file** when launched fr
 4. Different MCP loading mechanism needed for this configuration
 
 **Next steps:**
-1. ✅ Document findings in session log and MEMORY.md
-2. ⏳ Investigate potential conflict between Dex system setup and external MCPs
-3. ⏳ Check if there's a different way to configure MCPs for this environment
-4. ⏳ Consider filing bug report with Claude Code team
-5. ⏳ Explore workarounds (user-level MCP config, alternative tools, etc.)
+1. [x] Document findings in session log and MEMORY.md
+2. [~] Investigate potential conflict between Dex system setup and external MCPs
+3. [~] Check if there's a different way to configure MCPs for this environment
+4. [~] Consider filing bug report with Claude Code team
+5. [~] Explore workarounds (user-level MCP config, alternative tools, etc.)
 
 **Questions for investigation:**
-- ✅ Does Dex system documentation mention running in Cursor IDE? → Uses project `.mcp.json`
-- ✅ Does notebooklm-mcp-cli documentation mention Claude Code CLI compatibility? → YES! Use `claude mcp add --scope user`
-- ✅ Is there a different config file location when running Claude Code CLI in Cursor? → YES! `~/.claude.json`
-- ✅ Are there known limitations with project MCPs in terminal-based environments? → Not limitations, just wrong config file
+- [x] Does Dex system documentation mention running in Cursor IDE? -> Uses project `.mcp.json`
+- [x] Does notebooklm-mcp-cli documentation mention Claude Code CLI compatibility? -> YES! Use `claude mcp add --scope user`
+- [x] Is there a different config file location when running Claude Code CLI in Cursor? -> YES! `~/.claude.json`
+- [x] Are there known limitations with project MCPs in terminal-based environments? -> Not limitations, just wrong config file
 
 ---
 
@@ -427,7 +427,7 @@ Claude Code: claude mcp add --scope user notebooklm-mcp notebooklm-mcp
 # Distribution Checklist
 - Template file: System/.mcp.json.example uses {{VAULT_PATH}} placeholder
 - Install script: install.sh generates .mcp.json (gitignored)
-- User Experience: cd ~/Documents/dex && ./install.sh → Creates .mcp.json
+- User Experience: cd ~/Documents/dex && ./install.sh -> Creates .mcp.json
 ```
 - **Assumes project-level `.mcp.json`** will be used by Claude Code CLI
 - All Dex MCPs configured in project `.mcp.json`
@@ -439,8 +439,8 @@ Claude Code: claude mcp add --scope user notebooklm-mcp notebooklm-mcp
 "C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP": {
   "allowedTools": [],
   "mcpContextUris": [],
-  "mcpServers": {},                    ← EMPTY - no project MCPs!
-  "enabledMcpjsonServers": [],         ← EMPTY - should have 9 MCPs!
+  "mcpServers": {},                    <- EMPTY - no project MCPs!
+  "enabledMcpjsonServers": [],         <- EMPTY - should have 9 MCPs!
   "disabledMcpjsonServers": [],
   "hasTrustDialogAccepted": true,
   ...
@@ -450,7 +450,7 @@ Claude Code: claude mcp add --scope user notebooklm-mcp notebooklm-mcp
 **User-level MCP config (lines 487-497):**
 ```json
 "mcpServers": {
-  "gdrive-sa": {                       ← This works!
+  "gdrive-sa": {                       <- This works!
     "type": "stdio",
     "command": "node",
     "args": ["C:/Users/pavey/.claude/mcp-servers/gdrive-service-account/index.js"],
@@ -479,7 +479,7 @@ Claude Code: claude mcp add --scope user notebooklm-mcp notebooklm-mcp
 }
 ```
 
-**Result:** 🚨 **FUNDAMENTAL ARCHITECTURE MISMATCH IDENTIFIED**
+**Result:**  **FUNDAMENTAL ARCHITECTURE MISMATCH IDENTIFIED**
 
 **The smoking gun:**
 - **User-level config** (`~/.claude.json`): Project has empty MCP arrays
@@ -520,11 +520,11 @@ Claude Code: claude mcp add --scope user notebooklm-mcp notebooklm-mcp
 - **Critical:** Affects ALL Dex users running Claude Code CLI (potentially hundreds of users)
 
 **Next steps:**
-1. ✅ Log findings comprehensively
-2. ⏳ Test if `claude mcp add --scope project` works to populate `~/.claude.json` project config
-3. ⏳ Investigate bulk migration of project `.mcp.json` to user-level config
-4. ⏳ Consider Dex architecture change to use user-level MCP config
-5. ⏳ Document proper MCP installation workflow for Dex users
+1. [x] Log findings comprehensively
+2. [~] Test if `claude mcp add --scope project` works to populate `~/.claude.json` project config
+3. [~] Investigate bulk migration of project `.mcp.json` to user-level config
+4. [~] Consider Dex architecture change to use user-level MCP config
+5. [~] Document proper MCP installation workflow for Dex users
 
 ---
 

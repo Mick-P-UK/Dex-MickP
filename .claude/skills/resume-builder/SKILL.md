@@ -14,9 +14,9 @@ Your personal resume coach and LinkedIn profile builder. Through guided intervie
 ```
 
 **Examples:**
-- `/resume-builder` — Start fresh session
-- `/resume-builder I need to update my resume for senior PM roles` — Start with context
-- `/resume-builder I'm applying for a VP Engineering role` — Start with target role
+- `/resume-builder` - Start fresh session
+- `/resume-builder I need to update my resume for senior PM roles` - Start with context
+- `/resume-builder I'm applying for a VP Engineering role` - Start with target role
 
 ---
 
@@ -55,7 +55,7 @@ Store the returned `session_id` in your conversation context and use it for ALL 
 At the start of the command, check if the user wants to continue a previous session:
 
 ```
-list_sessions() → returns available sessions with metadata
+list_sessions() -> returns available sessions with metadata
 ```
 
 If sessions exist, ask user:
@@ -163,9 +163,9 @@ When they provide a PDF:
 
 I found these positions:
 
-1. **[Job Title]** — [Company] — [Dates]
-2. **[Job Title]** — [Company] — [Dates]
-3. **[Job Title]** — [Company] — [Dates]
+1. **[Job Title]** - [Company] - [Dates]
+2. **[Job Title]** - [Company] - [Dates]
+3. **[Job Title]** - [Company] - [Dates]
 
 ---
 
@@ -199,7 +199,7 @@ Let's start by listing all the positions you want to include on your resume.
 - Employment dates (from/to)
 - Brief description of your responsibilities
 
-Just list them out — we'll dive deep into achievements next.
+Just list them out - we'll dive deep into achievements next.
 
 ---
 
@@ -221,13 +221,13 @@ After they say "DONE WITH ROLES", confirm the list:
 
 I've got these positions:
 
-1. **[Job Title]** — [Company] — [Dates]
+1. **[Job Title]** - [Company] - [Dates]
    Brief: [Responsibilities]
 
-2. **[Job Title]** — [Company] — [Dates]
+2. **[Job Title]** - [Company] - [Dates]
    Brief: [Responsibilities]
 
-3. **[Job Title]** — [Company] — [Dates]
+3. **[Job Title]** - [Company] - [Dates]
    Brief: [Responsibilities]
 
 ---
@@ -259,11 +259,11 @@ If no career system or no relevant evidence, proceed with fresh extraction.
 ```markdown
 ## Role: [Job Title] at [Company]
 
-**Dates:** [Start — End]
+**Dates:** [Start - End]
 
 Now let's extract your specific achievements and measurable impact for this role.
 
-I'll ask probing questions to get concrete details. Don't settle for vague — I want:
+I'll ask probing questions to get concrete details. Don't settle for vague - I want:
 - Specific numbers and percentages
 - Measurable outcomes
 - Business impact
@@ -364,8 +364,8 @@ After gathering achievement details for a role, write professional bullet points
 ### Format for Each Role
 
 ```markdown
-## [Job Title] — [Company]
-**[Start Date] — [End Date]**
+## [Job Title] - [Company]
+**[Start Date] - [End Date]**
 
 - [Achievement bullet 1: Action verb + specific accomplishment + quantified impact]
 - [Achievement bullet 2: Action verb + specific accomplishment + quantified impact]
@@ -393,12 +393,12 @@ After gathering achievement details for a role, write professional bullet points
 
 **Examples:**
 
-✅ **Good:**
+[x] **Good:**
 - "Launched new pricing model that increased MRR by 34% ($2.1M ARR) within 6 months through experimentation and customer research with 500+ users"
 - "Led cross-functional team of 12 (Eng, Design, Data) to ship ML recommendation engine, improving user engagement by 45% and reducing churn by 23%"
 - "Reduced cloud infrastructure costs by $180K annually (28% reduction) by optimizing database queries and implementing caching strategy"
 
-❌ **Bad (vague, no metrics):**
+[ ] **Bad (vague, no metrics):**
 - "Helped with pricing strategy"
 - "Worked on ML recommendation system"
 - "Improved infrastructure costs"
@@ -432,8 +432,8 @@ Generate the complete 2-page resume:
 
 ## Professional Experience
 
-### [Most Recent Job Title] — [Company]
-**[Start Date] — [End Date]**
+### [Most Recent Job Title] - [Company]
+**[Start Date] - [End Date]**
 
 - [Achievement bullet 1]
 - [Achievement bullet 2]
@@ -441,16 +441,16 @@ Generate the complete 2-page resume:
 - [Achievement bullet 4]
 - [Achievement bullet 5]
 
-### [Previous Job Title] — [Company]
-**[Start Date] — [End Date]**
+### [Previous Job Title] - [Company]
+**[Start Date] - [End Date]**
 
 - [Achievement bullet 1]
 - [Achievement bullet 2]
 - [Achievement bullet 3]
 - [Achievement bullet 4]
 
-### [Earlier Job Title] — [Company]
-**[Start Date] — [End Date]**
+### [Earlier Job Title] - [Company]
+**[Start Date] - [End Date]**
 
 - [Achievement bullet 1]
 - [Achievement bullet 2]
@@ -462,8 +462,8 @@ Generate the complete 2-page resume:
 
 ## Education
 
-**[Degree]** — [Major/Field]  
-[University Name] — [Graduation Year]
+**[Degree]** - [Major/Field]  
+[University Name] - [Graduation Year]
 
 [Include relevant coursework, honors, or certifications if space allows]
 
@@ -479,7 +479,7 @@ Generate the complete 2-page resume:
 
 ## [Optional: Additional Section]
 
-[Awards, Publications, Speaking, Volunteer Work — only if space allows and relevant]
+[Awards, Publications, Speaking, Volunteer Work - only if space allows and relevant]
 
 ---
 
@@ -504,7 +504,7 @@ Generate the complete 2-page resume:
 ### After Generation
 
 ```markdown
-## ✅ Resume Complete
+## [x] Resume Complete
 
 **Saved to:** `05-Areas/Career/Resume/YYYY-MM-DD - Resume.md`
 
@@ -512,10 +512,10 @@ Generate the complete 2-page resume:
 
 ### Next Steps
 
-1. **Review carefully** — Check dates, spelling, formatting
-2. **Tailor for target role** — Emphasize most relevant achievements
-3. **Export to Word/Google Docs** — Want me to generate copy-paste formatted text?
-4. **Create LinkedIn Profile** — Type "CREATE LINKEDIN PROFILE" when ready
+1. **Review carefully** - Check dates, spelling, formatting
+2. **Tailor for target role** - Emphasize most relevant achievements
+3. **Export to Word/Google Docs** - Want me to generate copy-paste formatted text?
+4. **Create LinkedIn Profile** - Type "CREATE LINKEDIN PROFILE" when ready
 
 ---
 
@@ -534,12 +534,12 @@ Just tell me what to change.
 
 User triggers by typing **"CREATE LINKEDIN PROFILE"**
 
-LinkedIn profiles differ from resumes — they're more conversational, searchable, and comprehensive.
+LinkedIn profiles differ from resumes - they're more conversational, searchable, and comprehensive.
 
 ### Generate LinkedIn Content
 
 ```markdown
-# LinkedIn Profile — [User's Name]
+# LinkedIn Profile - [User's Name]
 
 ---
 
@@ -586,13 +586,13 @@ LinkedIn profiles differ from resumes — they're more conversational, searchabl
 
 [For each role, write a LinkedIn-optimized description]
 
-### [Job Title] — [Company]
-**[Start Date] — [End Date]**
+### [Job Title] - [Company]
+**[Start Date] - [End Date]**
 
 [Opening sentence about the role and scope]
 
 **Key Achievements:**
-- [Achievement 1 with metrics — can be slightly more detailed than resume]
+- [Achievement 1 with metrics - can be slightly more detailed than resume]
 - [Achievement 2 with metrics]
 - [Achievement 3 with metrics]
 - [Achievement 4 with metrics]
@@ -665,7 +665,7 @@ LinkedIn profiles differ from resumes — they're more conversational, searchabl
 ### After Generation
 
 ```markdown
-## ✅ LinkedIn Profile Ready
+## [x] LinkedIn Profile Ready
 
 **Saved to:** `05-Areas/Career/Resume/YYYY-MM-DD - LinkedIn Profile.md`
 
@@ -673,12 +673,12 @@ LinkedIn profiles differ from resumes — they're more conversational, searchabl
 
 ### Implementation Guide
 
-1. **Copy the About section** → Paste directly into LinkedIn
-2. **Update your Headline** → Use the suggested format
-3. **Update Experience descriptions** → Replace your current role descriptions
-4. **Add/reorder Skills** → Focus on top 3 most important
-5. **Get a professional photo** → If you don't have one already
-6. **Ask for recommendations** → From 2-3 recent colleagues/managers
+1. **Copy the About section** -> Paste directly into LinkedIn
+2. **Update your Headline** -> Use the suggested format
+3. **Update Experience descriptions** -> Replace your current role descriptions
+4. **Add/reorder Skills** -> Focus on top 3 most important
+5. **Get a professional photo** -> If you don't have one already
+6. **Ask for recommendations** -> From 2-3 recent colleagues/managers
 
 ---
 
@@ -784,7 +784,7 @@ If user mentions projects that exist in `04-Projects/`:
 
 **Good coaching:**
 - "That's a start, but let's quantify it. How much did engagement increase? What was the metric?"
-- "You said you 'helped' — but what did you specifically own? What was your direct contribution?"
+- "You said you 'helped' - but what did you specifically own? What was your direct contribution?"
 - "These are good achievements, but which one had the biggest business impact? That should be first."
 
 **Not:**
@@ -795,13 +795,13 @@ If user mentions projects that exist in `04-Projects/`:
 ### Challenge Constructively
 
 **When user is vague:**
-> "I know it can be hard to remember exact numbers, but even estimates are valuable. Think back — was it thousands of users? Tens of thousands? And what metric improved — engagement, revenue, retention?"
+> "I know it can be hard to remember exact numbers, but even estimates are valuable. Think back - was it thousands of users? Tens of thousands? And what metric improved - engagement, revenue, retention?"
 
 **When user undersells:**
 > "Wait, you led a team of 15 people on a $5M project? That's significant! Let's make sure that scope comes through in the bullet point."
 
 **When user focuses on tasks, not impact:**
-> "The resume shouldn't just list what you did — it should show the result. You built the feature, yes, but what happened because of it? Did adoption go up? Did support tickets go down?"
+> "The resume shouldn't just list what you did - it should show the result. You built the feature, yes, but what happened because of it? Did adoption go up? Did support tickets go down?"
 
 ### Adapt to Career Level
 
@@ -881,7 +881,7 @@ Before finalizing resume and LinkedIn profile, verify:
 - [ ] No vague statements ("helped with", "assisted", "worked on", "responsible for")
 - [ ] Most recent roles have more detail than older roles
 - [ ] Format is ATS-friendly (standard headers, no graphics)
-- [ ] Fits 2 pages (not 1.5, not 2.5 — exactly 2)
+- [ ] Fits 2 pages (not 1.5, not 2.5 - exactly 2)
 - [ ] Dates are consistent format throughout
 - [ ] No typos or grammatical errors
 - [ ] Professional tone throughout
@@ -924,7 +924,7 @@ Before finalizing resume and LinkedIn profile, verify:
 - Have job descriptions handy if tailoring for specific opportunities
 
 **During the session:**
-- Don't rush — take time to remember specific metrics
+- Don't rush - take time to remember specific metrics
 - It's okay to estimate if you don't have exact numbers
 - Share the context, not just the achievement
 - Mention teammates, stakeholders, and collaborators
@@ -1016,7 +1016,7 @@ When you've listed all your roles, type "DONE WITH ROLES"
 ```markdown
 ## Role: Senior Product Manager at TechCo
 
-**Dates:** Jan 2020 — Present
+**Dates:** Jan 2020 - Present
 
 Now let's extract your specific achievements and measurable impact.
 

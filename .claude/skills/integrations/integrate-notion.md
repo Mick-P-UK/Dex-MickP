@@ -23,10 +23,10 @@ status = detect_integration("notion", load_claude_config() or {})
 
 if status["installed"]:
     if status["is_dex_recommended"]:
-        print("✅ Notion is already set up with the recommended package!")
+        print("[x] Notion is already set up with the recommended package!")
         # Offer to test or reconfigure
     else:
-        print(f"⚠️ You have Notion configured, but using: {status['package']}")
+        print(f"[!] You have Notion configured, but using: {status['package']}")
         print(f"Recommendation: {status['recommendation']}")
         # Offer to upgrade or keep existing
 ```
@@ -60,7 +60,7 @@ print(message)
 ## Key Messages
 
 **Success:**
-> ✅ Notion connected! You can now:
+> [x] Notion connected! You can now:
 > - Search your Notion workspace: "Find my Q1 planning doc"
 > - Get context during meetings: "What Notion pages does [person] have?"
 > - Link Notion docs to projects and people pages
@@ -68,7 +68,7 @@ print(message)
 > **Restart Claude Desktop** to activate.
 
 **Already Configured (Dex Package):**
-> ✅ Notion is already set up and using the recommended package.
+> [x] Notion is already set up and using the recommended package.
 > Want me to test the connection or reconfigure?
 
 **Already Configured (Other Package):**

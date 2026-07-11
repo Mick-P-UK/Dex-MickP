@@ -2,7 +2,7 @@
 
 **Purpose:** Technical deep dives for Claude when building features, developers extending Dex, and curious users who want to understand how it actually works.
 
-**⚠️ Skip this if you're just using Dex** - the system works perfectly without reading technical docs. This folder is for when you want to build or understand internals.
+**[!] Skip this if you're just using Dex** - the system works perfectly without reading technical docs. This folder is for when you want to build or understand internals.
 
 **When these docs matter:** You want to add a new MCP server, understand why something works the way it does, debug an integration, or contribute to Dex core. Reference docs are the "how it's built" layer.
 

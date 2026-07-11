@@ -96,7 +96,7 @@ if ($tasksFound -eq 2) {
     Write-Host "To verify tasks are working:" -ForegroundColor Cyan
     Write-Host "  1. Open Task Scheduler (taskschd.msc)" -ForegroundColor White
     Write-Host "  2. Find tasks starting with 'Dex Git Commit'" -ForegroundColor White
-    Write-Host "  3. Right-click a task → Run (to test manually)" -ForegroundColor White
+    Write-Host "  3. Right-click a task -> Run (to test manually)" -ForegroundColor White
     Write-Host "  4. Check 'Last Run Result' column (0x0 = success)" -ForegroundColor White
 } elseif ($tasksFound -eq 1) {
     Write-Host "[PARTIAL] One task is missing!" -ForegroundColor Yellow

@@ -53,7 +53,7 @@ else:
 
 **If `run_dramatic_reveal` is True:**
 
-Say: "Hold on... analyzing your calendar and meetings. 🔍"
+Say: "Hold on... analyzing your calendar and meetings. "
 
 **Execute analysis:**
 1. Call calendar MCP: `get_events_for_week()` 
@@ -65,22 +65,22 @@ Say: "Hold on... analyzing your calendar and meetings. 🔍"
 ```
 **Here's what I found:**
 
-📅 **Your calendar this week:**
-• [X] meetings scheduled
-• [Y] are 1:1s  
-• [Busiest day] is packed ([Z] meetings back-to-back)
-• You're meeting most with: [Person1], [Person2], [Person3]
+ **Your calendar this week:**
+- [X] meetings scheduled
+- [Y] are 1:1s  
+- [Busiest day] is packed ([Z] meetings back-to-back)
+- You're meeting most with: [Person1], [Person2], [Person3]
 
 [If Granola data:]
-📝 **Granola meetings (last 7 days):**
-• [N] meetings captured
-• [M] unique people
-• [K] external companies
+ **Granola meetings (last 7 days):**
+- [N] meetings captured
+- [M] unique people
+- [K] external companies
 
 **I went ahead and created:**
-✅ Your weekly plan with time blocks around these meetings
-✅ Person pages for [Person1], [Person2], [Person3]
-✅ Identified [K] external organizations to track
+[x] Your weekly plan with time blocks around these meetings
+[x] Person pages for [Person1], [Person2], [Person3]
+[x] Identified [K] external organizations to track
 
 Want to see? [Show excerpt from 02-Week_Priorities/Week_Priorities.md]
 
@@ -137,7 +137,7 @@ else:
 **Run the full analysis NOW and do the dramatic reveal:**
 
 ```
-👋 **Welcome, [Name]!**
+ **Welcome, [Name]!**
 
 Hold on - let me analyze what you have available...
 
@@ -155,24 +155,24 @@ Hold on - let me analyze what you have available...
 **Then present the dramatic reveal:**
 
 ```
-✓ **Analysis complete!**
+[x] **Analysis complete!**
 
 I just analyzed your data:
 
 **Calendar (this week):**
-• **[X] meetings total** [Add reaction: "that's a lot!" if >10, "good balance" if 5-10, "light week" if <5]
-• **[Y] are 1:1s** [Add reaction based on role]
-• **[busiest_day] is your busiest day** ([Z] meetings)
+- **[X] meetings total** [Add reaction: "that's a lot!" if >10, "good balance" if 5-10, "light week" if <5]
+- **[Y] are 1:1s** [Add reaction based on role]
+- **[busiest_day] is your busiest day** ([Z] meetings)
 
 **Granola (last 7 days):**
-• **[N] meetings** with transcripts
-• **[M] unique people** 
-• **[K] external companies**
+- **[N] meetings** with transcripts
+- **[M] unique people** 
+- **[K] external companies**
 
 **I went ahead and:**
-✅ Created your weekly plan with time blocks based on these meetings
-✅ Made person pages for [Person1], [Person2], [Person3]
-✅ Identified [K] external organizations
+[x] Created your weekly plan with time blocks based on these meetings
+[x] Made person pages for [Person1], [Person2], [Person3]
+[x] Identified [K] external organizations
 
 Want to see what I built? [Show excerpt from weekly plan]
 
@@ -188,7 +188,7 @@ Now, want me to process those [N] Granola meetings to extract action items and c
 ### If pre_analysis exists (already ran /getting-started before):
 
 ```
-👋 **Welcome back, [Name]!**
+ **Welcome back, [Name]!**
 
 I already analyzed your data during setup. Let me refresh and see what's changed...
 
@@ -197,15 +197,15 @@ I already analyzed your data during setup. Let me refresh and see what's changed
 [Fetch new Granola meetings since that time]
 
 Since we set up [X hours/days ago]:
-• [N] new calendar events
-• [M] new Granola meetings
-• [P] new people detected
+- [N] new calendar events
+- [M] new Granola meetings
+- [P] new people detected
 
 [If pre_analysis.created_weekly_plan:]
-✅ Your weekly plan is already created (based on [X] meetings)
+[x] Your weekly plan is already created (based on [X] meetings)
 
 [If pre_analysis.created_person_pages:]
-✅ Person pages already created for [list names]
+[x] Person pages already created for [list names]
 
 Want me to:
 1. Process the [M] new Granola meetings?
@@ -222,12 +222,12 @@ Or everything looks current and you're ready to go?
 ### Discovery Phase
 
 ```
-👋 **Welcome back, [Name]!**
+ **Welcome back, [Name]!**
 
 I just checked what you have available...
 
-**Calendar:** ✅ Connected
-**Granola:** ✅ Installed
+**Calendar:** [x] Connected
+**Granola:** [x] Installed
 
 Hold on - let me analyze what's there...
 ```
@@ -239,80 +239,80 @@ Then execute:
 4. Present comprehensive summary
 
 ```
-📊 **Here's what I found:**
+ **Here's what I found:**
 
 **Calendar (this week):**
-• [X] meetings scheduled
-• [Y] are 1:1s
-• [Busiest day] is your busiest day ([Z] meetings)
-• Top contacts: [Person1], [Person2], [Person3]
+- [X] meetings scheduled
+- [Y] are 1:1s
+- [Busiest day] is your busiest day ([Z] meetings)
+- Top contacts: [Person1], [Person2], [Person3]
 
 **Granola data (last 6 months):**
-• [N] meetings captured
-• Going back [days_back] days (to [oldest_date])
-• [M] unique people detected ([I] internal, [E] external)
-• [K] external companies identified
+- [N] meetings captured
+- Going back [days_back] days (to [oldest_date])
+- [M] unique people detected ([I] internal, [E] external)
+- [K] external companies identified
 ```
 
 **If `has_more_data` is True, ask:**
 
 ```
-💡 **I see there are meetings beyond 6 months.**
+ **I see there are meetings beyond 6 months.**
    Want me to check how much more history you have?
    This will take a few more seconds.
    
-   → Yes - show me the full extent
-   → No - 6 months is plenty
+   -> Yes - show me the full extent
+   -> No - 6 months is plenty
 ```
 
 **If user says "Yes", refetch with `extended=True` and update:**
 
 ```
-📊 **Updated - Full data extent:**
-• [N_total] meetings captured (found [N_new] older meetings)
-• Going back [total_days] days (to [oldest_date])
-• [M_total] unique people detected
-• [K_total] external companies identified
+ **Updated - Full data extent:**
+- [N_total] meetings captured (found [N_new] older meetings)
+- Going back [total_days] days (to [oldest_date])
+- [M_total] unique people detected
+- [K_total] external companies identified
 
 ---
 
 Here's what I can create from your Granola history:
 
-**📇 People & Company Pages** (Recommended: All history)
-   ✅ Builds context for relationships
-   ✅ Low overhead - just reference pages
-   ✅ Helps you see interaction history
+** People & Company Pages** (Recommended: All history)
+   [x] Builds context for relationships
+   [x] Low overhead - just reference pages
+   [x] Helps you see interaction history
 
-**📝 Meeting Notes** (Recommended: Last 30 days)
-   ✅ Searchable record of discussions
-   ⚠️  Medium overhead - lots of reading material
-   ✅ Good for finding past decisions
+** Meeting Notes** (Recommended: Last 30 days)
+   [x] Searchable record of discussions
+   [!]  Medium overhead - lots of reading material
+   [x] Good for finding past decisions
 
-**✅ Action Items / Todos** (Recommended: Last 7 days)
-   ✅ Actionable recent tasks
-   ⚠️  Can be overwhelming if too many
-   ⚠️  Old todos often outdated or already done
+**[x] Action Items / Todos** (Recommended: Last 7 days)
+   [x] Actionable recent tasks
+   [!]  Can be overwhelming if too many
+   [!]  Old todos often outdated or already done
 
 **What would you like me to do?**
 
-1️⃣ Smart default (Recommended)
-   • People/companies: All [days_back] days
-   • Meeting notes: Last 30 days (~[est_30d] meetings)
-   • Todos: Last 7 days (~[est_7d] meetings)
+1 Smart default (Recommended)
+   - People/companies: All [days_back] days
+   - Meeting notes: Last 30 days (~[est_30d] meetings)
+   - Todos: Last 7 days (~[est_7d] meetings)
 
-2️⃣ Recent only (Conservative)
-   • Everything: Last 7 days only
+2 Recent only (Conservative)
+   - Everything: Last 7 days only
 
-3️⃣ Full history (Comprehensive)
-   • Everything: All [days_back] days
+3 Full history (Comprehensive)
+   - Everything: All [days_back] days
 
-4️⃣ Custom (You choose)
-   • Pick different time ranges for each type
+4 Custom (You choose)
+   - Pick different time ranges for each type
 
-5️⃣ Just going forward
-   • Start fresh from today
+5 Just going forward
+   - Start fresh from today
 
-6️⃣ Skip for now
+6 Skip for now
 ```
 
 ### User Chooses Processing Strategy
@@ -325,12 +325,12 @@ Here's what I can create from your Granola history:
     "prompt": "How would you like to process your Granola data?",
     "allow_multiple": false,
     "options": [
-      {"id": "smart", "label": "1️⃣ Smart default - People/companies (all) + Notes (30d) + Todos (7d)"},
-      {"id": "recent", "label": "2️⃣ Recent only - Everything from last 7 days"},
-      {"id": "full", "label": "3️⃣ Full history - Everything from all available data"},
-      {"id": "custom", "label": "4️⃣ Custom - I'll choose time ranges for each type"},
-      {"id": "forward", "label": "5️⃣ Just going forward - Start fresh from today"},
-      {"id": "skip", "label": "6️⃣ Skip for now"}
+      {"id": "smart", "label": "1 Smart default - People/companies (all) + Notes (30d) + Todos (7d)"},
+      {"id": "recent", "label": "2 Recent only - Everything from last 7 days"},
+      {"id": "full", "label": "3 Full history - Everything from all available data"},
+      {"id": "custom", "label": "4 Custom - I'll choose time ranges for each type"},
+      {"id": "forward", "label": "5 Just going forward - Start fresh from today"},
+      {"id": "skip", "label": "6 Skip for now"}
     ]
   }]
 }
@@ -385,11 +385,11 @@ If user selects "custom", ask for granular preferences:
 ```
 
 Map responses to days:
-- "7d" → 7
-- "30d" → 30
-- "90d" → 90
-- "all" → [days_back from extent analysis]
-- "none" → 0 (skip)
+- "7d" -> 7
+- "30d" -> 30
+- "90d" -> 90
+- "all" -> [days_back from extent analysis]
+- "none" -> 0 (skip)
 
 ### Process Based on Selection
 
@@ -433,14 +433,14 @@ def map_strategy_to_ranges(strategy: str, extent: dict) -> dict:
 ```
 **Here's what I'll do:**
 
-📇 People/Company Pages: Last [people_days] days
-   → ~[est_people] people pages, ~[est_companies] company pages
+ People/Company Pages: Last [people_days] days
+   -> ~[est_people] people pages, ~[est_companies] company pages
 
-📝 Meeting Notes: Last [notes_days] days
-   → ~[est_notes] meeting notes
+ Meeting Notes: Last [notes_days] days
+   -> ~[est_notes] meeting notes
 
-✅ Todos: Last [todos_days] days
-   → Estimated [est_todos] action items
+[x] Todos: Last [todos_days] days
+   -> Estimated [est_todos] action items
 
 **This will take about 2-3 minutes. Ready?**
 ```
@@ -500,26 +500,26 @@ def map_strategy_to_ranges(strategy: str, extent: dict) -> dict:
 
 5. **Show completion summary:**
    ```
-   ## Processing Complete ✅
+   ## Processing Complete [x]
    
    **People & Companies:**
-   • Created [X] person pages ([I] internal, [E] external)
-   • Created [Y] company pages
-   • Processed [P] days of history
+   - Created [X] person pages ([I] internal, [E] external)
+   - Created [Y] company pages
+   - Processed [P] days of history
    
    **Meeting Notes:**
-   • Created [N] detailed meeting notes
-   • From last [notes_days] days
+   - Created [N] detailed meeting notes
+   - From last [notes_days] days
    
    **Action Items:**
-   • Extracted [T] todos
-   • From last [todos_days] days
-   • Added to 03-Tasks/Tasks.md
+   - Extracted [T] todos
+   - From last [todos_days] days
+   - Added to 03-Tasks/Tasks.md
    
    **Your vault now has:**
-   • Rich context from [people_days] days of meetings
-   • Searchable notes from [notes_days] days
-   • Actionable todos from [todos_days] days
+   - Rich context from [people_days] days of meetings
+   - Searchable notes from [notes_days] days
+   - Actionable todos from [todos_days] days
    
    Want to explore what was created?
    ```
@@ -542,12 +542,12 @@ def map_strategy_to_ranges(strategy: str, extent: dict) -> dict:
 ### If Only Calendar:
 
 ```
-👋 **Welcome back, [Name]!**
+ **Welcome back, [Name]!**
 
 I can see your calendar for this week:
-• [X] meetings scheduled
-• [Y] are 1:1s
-• [Busiest day] looks intense
+- [X] meetings scheduled
+- [Y] are 1:1s
+- [Busiest day] looks intense
 
 I can create person pages for your frequent contacts if you'd like.
 
@@ -566,27 +566,27 @@ What sounds useful?
 **Same discovery flow as Flow A, but calendar-less:**
 
 ```
-👋 **Welcome back, [Name]!**
+ **Welcome back, [Name]!**
 
 I can see you have Granola installed. Let me check what's available...
 
 [Analyze Granola data extent - 6 months by default]
 
-📊 **Granola data (last 6 months):**
-• [N] meetings captured
-• Going back [days_back] days (to [oldest_date])
-• [M] unique people detected ([I] internal, [E] external)
-• [K] external companies identified
+ **Granola data (last 6 months):**
+- [N] meetings captured
+- Going back [days_back] days (to [oldest_date])
+- [M] unique people detected ([I] internal, [E] external)
+- [K] external companies identified
 ```
 
 **If `has_more_data` is True:**
 
 ```
-💡 **I see there are meetings beyond 6 months.**
+ **I see there are meetings beyond 6 months.**
    Want me to check how much more history you have?
    
-   → Yes - show me the full extent
-   → No - 6 months is plenty
+   -> Yes - show me the full extent
+   -> No - 6 months is plenty
 ```
 
 **Then continue:**
@@ -596,31 +596,31 @@ I can see you have Granola installed. Let me check what's available...
 
 Here's what I can create from your Granola history:
 
-**📇 People & Company Pages** (Recommended: All history)
-   ✅ Builds context for relationships
-   ✅ Low overhead - just reference pages
+** People & Company Pages** (Recommended: All history)
+   [x] Builds context for relationships
+   [x] Low overhead - just reference pages
 
-**📝 Meeting Notes** (Recommended: Last 30 days)
-   ✅ Searchable record of discussions
-   ⚠️  Medium overhead
+** Meeting Notes** (Recommended: Last 30 days)
+   [x] Searchable record of discussions
+   [!]  Medium overhead
 
-**✅ Action Items / Todos** (Recommended: Last 7 days)
-   ✅ Actionable recent tasks
-   ⚠️  Can be overwhelming if too many
+**[x] Action Items / Todos** (Recommended: Last 7 days)
+   [x] Actionable recent tasks
+   [!]  Can be overwhelming if too many
 
 **What would you like me to do?**
 
-1️⃣ Smart default - People/companies (all) + Notes (30d) + Todos (7d)
-2️⃣ Recent only - Everything from last 7 days
-3️⃣ Full history - Everything from all available data
-4️⃣ Custom - I'll choose time ranges for each type
-5️⃣ Just going forward - Start fresh from today
-6️⃣ Skip for now
+1 Smart default - People/companies (all) + Notes (30d) + Todos (7d)
+2 Recent only - Everything from last 7 days
+3 Full history - Everything from all available data
+4 Custom - I'll choose time ranges for each type
+5 Just going forward - Start fresh from today
+6 Skip for now
 
 **I also notice your calendar isn't connected.** After processing, want to:
-• Connect Google Calendar (even if work is restricted)
-• Connect Apple Calendar
-• Or skip - I can work with just Granola
+- Connect Google Calendar (even if work is restricted)
+- Connect Apple Calendar
+- Or skip - I can work with just Granola
 ```
 
 Use the same interactive question tool and processing logic as Flow A (see "Interactive Questions" section).
@@ -632,18 +632,18 @@ Use the same interactive question tool and processing logic as Flow A (see "Inte
 **The "Let's Connect Your Tools" Flow**
 
 ```
-👋 **Welcome back, [Name]!**
+ **Welcome back, [Name]!**
 
 Your workspace is set up, but you don't have calendar or meeting tools connected yet.
 
 **Let's get you integrated with the tools you actually use.**
 
 What tools do you use most? Examples:
-• Notion, Linear, Jira
-• Slack, Discord
-• GitHub, GitLab
-• Your company's internal tools
-• Newsletters, RSS feeds
+- Notion, Linear, Jira
+- Slack, Discord
+- GitHub, GitLab
+- Your company's internal tools
+- Newsletters, RSS feeds
 
 **Give me names or URLs** (URLs are better - just the root domain like "notion.so" or "linear.app")
 
@@ -691,9 +691,9 @@ else:
 "Got it! I just read [Tool]'s API. Here's what we can build:
 
 **Possible integrations:**
-• [Capability 1] - [Dex use case]
-• [Capability 2] - [Dex use case]
-• [Capability 3] - [Dex use case]
+- [Capability 1] - [Dex use case]
+- [Capability 2] - [Dex use case]
+- [Capability 3] - [Dex use case]
 
 Based on your role ([role]), I'd focus on [specific capabilities].
 
@@ -711,7 +711,7 @@ Follow `/create-mcp` skill flow:
 
 **Step 4: The Magic Moment**
 ```
-"Your [Tool] integration is live! ✅
+"Your [Tool] integration is live! [x]
 
 Test it right now:
 '[Natural language query about that tool]'
@@ -741,9 +741,9 @@ If user wants to connect Gmail/Calendar:
 This works even if your work account has restrictions - we can use your personal Google if needed.
 
 **What we'll set up:**
-• Calendar sync (see meetings in Dex)
-• Gmail access (summarize newsletters, find emails)
-• Optional: Create daily digest
+- Calendar sync (see meetings in Dex)
+- Gmail access (summarize newsletters, find emails)
+- Optional: Create daily digest
 
 I'll guide you through OAuth step-by-step.
 
@@ -763,16 +763,16 @@ If user mentions newsletters, RSS, or content consumption:
 "Want me to create a daily digest for you?
 
 I can pull from:
-• Newsletters (via Gmail)
-• YouTube channels you follow
-• RSS feeds from blogs
-• Specific websites you check regularly
+- Newsletters (via Gmail)
+- YouTube channels you follow
+- RSS feeds from blogs
+- Specific websites you check regularly
 
 Each morning, you'd get:
-• Summaries of new content
-• Key points extracted
-• Novel insights highlighted
-• All in one place
+- Summaries of new content
+- Key points extracted
+- Novel insights highlighted
+- All in one place
 
 What sources matter most to you?"
 ```
@@ -787,11 +787,11 @@ Anytime during tool discussion:
 "By the way - there are 100+ pre-built MCP servers at **Smithery.ai**
 
 Browse there for:
-• GitHub, Linear, Jira
-• Notion, Airtable, Sheets
-• Slack, Discord, Email
-• Databases, monitoring tools
-• And way more...
+- GitHub, Linear, Jira
+- Notion, Airtable, Sheets
+- Slack, Discord, Email
+- Databases, monitoring tools
+- And way more...
 
 Find something interesting? Just paste the URL here and I'll integrate it.
 
@@ -811,10 +811,10 @@ Company restrictions, API limitations, weird auth flows -
 lots can go wrong in the real world.
 
 **But here's what's cool:** Even when it doesn't work, you learn:
-• How to use Claude to debug APIs
-• How to build integrations yourself
-• How MCP servers work
-• How to read API documentation
+- How to use Claude to debug APIs
+- How to build integrations yourself
+- How MCP servers work
+- How to read API documentation
 
 It's educational even when it fails.
 
@@ -857,18 +857,18 @@ After any pathway completes:
 "**You're set up!**
 
 **Daily workflow:**
-• Run `/daily-plan` each morning
-• Use `/meeting-prep [person]` before meetings
-• Tell me about meetings - I'll extract action items
+- Run `/daily-plan` each morning
+- Use `/meeting-prep [person]` before meetings
+- Tell me about meetings - I'll extract action items
 
 **Discovery:**
-• `/dex-level-up` - Find features you haven't tried
-• `/integrate-mcp` - Add more tools anytime
-• Smithery.ai - Browse MCP marketplace
+- `/dex-level-up` - Find features you haven't tried
+- `/integrate-mcp` - Add more tools anytime
+- Smithery.ai - Browse MCP marketplace
 
 **Come back anytime:**
-• `/getting-started` - Run this tour again
-• Just ask in natural language - I'll figure out what you need
+- `/getting-started` - Run this tour again
+- Just ask in natural language - I'll figure out what you need
 
 What would you like to work on first?"
 ```

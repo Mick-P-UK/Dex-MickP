@@ -46,7 +46,7 @@ Each job represents something that needs to happen reliably. The system exists t
 | Conversational capture | Just tell Claude things naturally - "Sarah worried about timeline but interested in Q2 pilot" |
 | Strategic routing | Uses your Week Priorities and Quarterly Goals to suggest routing in real-time |
 | Immediate suggestions | Claude: "Should I add this to Sarah's person page and Q2 Planning project?" |
-| Work MCP for tasks | "Create task to finalize pricing" → validates, checks duplicates, writes to Tasks.md |
+| Work MCP for tasks | "Create task to finalize pricing" -> validates, checks duplicates, writes to Tasks.md |
 | `/triage` for cleanup | Finds orphaned files and scattered tasks, routes strategically |
 
 **Example Flow**: You mention "Sarah seemed worried about timeline but interested in Q2 pilot". Claude immediately suggests: "I see you have 'Sarah's team onboarding' and 'Q2 Planning' in your Week Priorities. Should I add this to Sarah's person page and the Q2 Planning project?" You approve, it's filed. One decision, instant routing.
@@ -132,7 +132,7 @@ For organization-level context, check company pages in `05-Areas/Companies/`. Sh
 
 During the week, you mentioned "I prefer summaries in bullet points." Dex captured this in Session_Learnings and now asks: "You've mentioned this preference 3 times. Add to Working_Preferences.md so all future summaries use bullets?"
 
-**Why automation matters**: Next week, when you start a session at 5pm, Dex notices: "📚 You have 7 pending learnings from this week" and prompts a review. You also see: "🆕 New Claude Code features detected!" because background monitoring found updates. The system improves itself quietly.
+**Why automation matters**: Next week, when you start a session at 5pm, Dex notices: " You have 7 pending learnings from this week" and prompts a review. You also see: " New Claude Code features detected!" because background monitoring found updates. The system improves itself quietly.
 
 ---
 
@@ -170,7 +170,7 @@ During the week, you mentioned "I prefer summaries in bullet points." Dex captur
 
 **Example Flow**: During `/daily-review`, Dex notices you completed "Ship payments redesign." It asks: "This looks like career evidence. What competencies did this demonstrate?" You say: "System design and cross-functional leadership." Dex saves it to your Career folder with full context.
 
-Three months later, you run `/career-coach` → Promotion Assessment. Dex analyzes all your evidence against your career ladder and reports: "67/100 promotion readiness. Strong evidence for Product Strategy (8 examples), weak for Technical Depth (2 examples). Let's capture 2-3 examples from your recent system design work."
+Three months later, you run `/career-coach` -> Promotion Assessment. Dex analyzes all your evidence against your career ladder and reports: "67/100 promotion readiness. Strong evidence for Product Strategy (8 examples), weak for Technical Depth (2 examples). Let's capture 2-3 examples from your recent system design work."
 
 **Why it matters**: Career development requires compound evidence collection. One-off performance reviews don't capture the full story. Dex makes evidence capture a daily habit, so when opportunity comes, you're ready.
 
@@ -184,7 +184,7 @@ Three months later, you run `/career-coach` → Promotion Assessment. Dex analyz
 
 | Component | What It Does |
 |-----------|--------------|
-| Idea capture | Mention an improvement idea → Dex saves it to your backlog |
+| Idea capture | Mention an improvement idea -> Dex saves it to your backlog |
 | `/dex-backlog` command | Shows all ideas ranked by impact (which ones would help you most) |
 | `/dex-improve` command | Takes an idea and creates an implementation plan |
 | Duplicate detection | Checks if you've suggested something similar before |
@@ -194,7 +194,7 @@ Three months later, you run `/career-coach` → Promotion Assessment. Dex analyz
 
 **Example Flow**: During `/review`, you realize: "I keep forgetting to check task dependencies. We should auto-suggest blocked-by relationships."
 
-You mention this → Dex:
+You mention this -> Dex:
 1. Saves it to your improvement backlog
 2. Checks for similar ideas (finds "Link related tasks together" which is similar)
 3. Asks: "Similar to another idea. Is this different or an extension?"

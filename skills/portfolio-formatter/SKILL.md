@@ -27,7 +27,7 @@ From one screenshot (JPG or PNG, any size), a single PNG with:
   (the notional starting stake for an Active 10). Override with `--base` if a portfolio
   was topped up.
 - **Percentage is TRUNCATED to 2dp, never rounded** - matches Mick's examples exactly:
-  - UK Active 10: 12,367.62 - 10,000 = Up by £2,367.62 [+23.67%]  (not 23.68)
+  - UK Active 10: 12,367.62 - 10,000 = Up by GBP2,367.62 [+23.67%]  (not 23.68)
   - US Active 10: 9,827.18 - 10,000 = Down by $172.82 [-1.72%]    (not 1.73)
   - US Active 10 (Yr2): 18,541.80 - 10,000 = Up by $8,541.80 [+85.41%]
 
@@ -99,7 +99,7 @@ date with Mick if there is any doubt. Force the correct date with
 ## How the detection works (for maintenance)
 - **Table bottom**: first tall run (>=40 rows) of near-white full-width rows below 35%
   height - this is the empty area under the holdings Total bar.
-- **Currency**: `$` vs `£` in the OCR text.
+- **Currency**: `$` vs `GBP` in the OCR text.
 - **Portfolio name**: the `US`/`UK` + `(Yr?)` tokens in the green header row -> e.g.
   "US Active 10 (Yr2)".
 - **Date**: first `dd/m/yy` token (the holding row date) -> "6th July 2026".

@@ -97,23 +97,23 @@ Contains:
 
 ### Must Preserve Exactly:
 
-✅ **All numerical data:**
+[x] **All numerical data:**
 - Percentages to decimal points (70.30%, not "about 70%")
 - Specific dates (31st December 2025, not "end of year")
-- Financial figures (£10,867, not "around £11,000")
+- Financial figures (GBP10,867, not "around GBP11,000")
 - Production volumes (226,000 PGM ounces)
 
-✅ **All citations and references:**
+[x] **All citations and references:**
 - Keep numbered citations [1, 2, 3]
 - Preserve complete reference list at end
 - Maintain academic rigour through proper sourcing
 
-✅ **Technical terminology:**
+[x] **Technical terminology:**
 - Industry-specific terms (PGM, 4E vs 6E, UG2 reef, etc.)
 - Financial metrics (P/E ratios, AISC, market cap)
 - Explain when needed but don't avoid
 
-✅ **Structural framework:**
+[x] **Structural framework:**
 - Keep methodological frameworks intact
 - Preserve case study comparisons
 - Maintain logical argument flow
@@ -122,31 +122,31 @@ Contains:
 
 ## Transformation Examples
 
-### Example 1: Academic Opening → Mick's Voice
+### Example 1: Academic Opening -> Mick's Voice
 
 **Before:**
 > "The valuation of equity within the mining and extractive industries represents one of the most complex challenges in contemporary financial analysis."
 
 **After:**
-> "Right, let's talk about valuing mining companies. Specifically, those in the Platinum Group Metals (PGM) sector. Now, I'll be honest with you—this isn't straightforward stuff."
+> "Right, let's talk about valuing mining companies. Specifically, those in the Platinum Group Metals (PGM) sector. Now, I'll be honest with you-this isn't straightforward stuff."
 
 **Why:** Immediate engagement, conversational tone, acknowledges difficulty without academic distance.
 
 ---
 
-### Example 2: Technical Explanation → Accessible but Precise
+### Example 2: Technical Explanation -> Accessible but Precise
 
 **Before:**
 > "To overcome these analytical hurdles, a more robust and transparent approach for the sophisticated investor involves the calculation of best value per unit of currency through the lens of physical production leverage."
 
 **After:**
-> "So, how do we cut through all that? Well, I'm going to show you a dual-methodology approach that I reckon provides a far clearer picture: focusing on physical production leverage—essentially, how many ounces of metal your investment pound actually buys you at current valuations."
+> "So, how do we cut through all that? Well, I'm going to show you a dual-methodology approach that I reckon provides a far clearer picture: focusing on physical production leverage-essentially, how many ounces of metal your investment pound actually buys you at current valuations."
 
 **Why:** Maintains technical concept but explains it conversationally. Uses "I reckon", "essentially" for warmth. Keeps precision with "investment pound".
 
 ---
 
-### Example 3: Data Presentation → Data First, Warmth Second
+### Example 3: Data Presentation -> Data First, Warmth Second
 
 **Before:**
 > "For example, in the case of Tharisa plc, the utilization of a weighted average diluted share count of 304.8 million is recommended to ensure that valuation metrics reflect the true scope of the equity base."
@@ -158,7 +158,7 @@ Contains:
 
 ---
 
-### Example 4: Critical Point → British Understatement
+### Example 4: Critical Point -> British Understatement
 
 **Before:**
 > "Failing to normalize these figures would result in an artificial 25-30% undervaluation of 4E-reporting companies."
@@ -188,11 +188,11 @@ Read all three JSON files:
 
 ### Step 3: Apply Voice Transformation
 Rewrite following principles above, section by section:
-1. Title → conversational, clear
-2. Introduction → direct opening, engagement
-3. Each section → data first, warm explanations
-4. Conclusions → actionable takeaways + DYOR
-5. Sign-off → Mick's standard closing
+1. Title -> conversational, clear
+2. Introduction -> direct opening, engagement
+3. Each section -> data first, warm explanations
+4. Conclusions -> actionable takeaways + DYOR
+5. Sign-off -> Mick's standard closing
 
 ### Step 4: Generate .docx with docx-js
 ```javascript
@@ -230,19 +230,19 @@ Packer.toBuffer(doc).then(buffer => {
 **Content Type:** Highly academic analysis of PGM mining company valuation using dual-methodology framework
 
 **Transformation Applied:**
-- ✅ Converted opening from academic to conversational
-- ✅ Maintained all 190+ citations
-- ✅ Preserved all numerical data (percentages, dates, figures)
-- ✅ Kept technical terminology but explained in context
-- ✅ Applied British English throughout
-- ✅ Added Mick's signature transitions and phrases
-- ✅ Ended with DYOR philosophy and standard sign-off
+- [x] Converted opening from academic to conversational
+- [x] Maintained all 190+ citations
+- [x] Preserved all numerical data (percentages, dates, figures)
+- [x] Kept technical terminology but explained in context
+- [x] Applied British English throughout
+- [x] Added Mick's signature transitions and phrases
+- [x] Ended with DYOR philosophy and standard sign-off
 
 **Output Document:**
 `2026.02.16 - Strategic Dual Valuation Methodology_PGM's_Mick's_Voice_v1.docx` (17KB)
 
 **Result:**
-Transformed from academic paper to peer-guidance document. Sounds like Mick explaining methodology to Inner Circle members—technical and data-driven, but warm, accessible, and focused on practical implementation.
+Transformed from academic paper to peer-guidance document. Sounds like Mick explaining methodology to Inner Circle members-technical and data-driven, but warm, accessible, and focused on practical implementation.
 
 ---
 

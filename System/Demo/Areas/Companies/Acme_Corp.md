@@ -15,7 +15,7 @@
 
 ## Account Status
 
-**Health:** 🟢 Healthy  
+**Health:** [green] Healthy  
 **Last Interaction:** 2026-01-24  
 **Account Value:** Enterprise tier ($120K ARR)  
 **Renewal Date:** October 2026
@@ -70,14 +70,14 @@
 ## Related Tasks
 
 ### Active Tasks
-- [ ] **Prep for Sarah sync on Thursday** — Review Acme feedback #customer_research
-- [ ] **Address Tom's security concerns** — Mobile app admin controls
-- [ ] **Follow up on offline mode feedback** — Communicate v1.1 timeline
+- [ ] **Prep for Sarah sync on Thursday** - Review Acme feedback #customer_research
+- [ ] **Address Tom's security concerns** - Mobile app admin controls
+- [ ] **Follow up on offline mode feedback** - Communicate v1.1 timeline
 
 ### Completed Tasks
-- [x] **Recruit Acme for mobile beta** — Sarah agreed, onboarded Dec 15
-- [x] **Send beta access to Sarah** — Completed Jan 15
-- [x] **First beta feedback session** — Completed Jan 20
+- [x] **Recruit Acme for mobile beta** - Sarah agreed, onboarded Dec 15
+- [x] **Send beta access to Sarah** - Completed Jan 15
+- [x] **First beta feedback session** - Completed Jan 20
 
 ---
 
@@ -141,22 +141,22 @@
 
 | Metric | Status | Trend |
 |--------|--------|-------|
-| Product Adoption | High | ↗️ Increasing |
-| Engagement Level | Very High | → Stable |
-| Support Tickets | Low | ↘️ Decreasing |
-| NPS Score | 9/10 | → Stable |
-| Expansion Interest | High | ↗️ Growing |
-| Renewal Confidence | 85% | → Stable |
+| Product Adoption | High |  Increasing |
+| Engagement Level | Very High | -> Stable |
+| Support Tickets | Low |  Decreasing |
+| NPS Score | 9/10 | -> Stable |
+| Expansion Interest | High |  Growing |
+| Renewal Confidence | 85% | -> Stable |
 
 ---
 
 ## Next Actions
 
-1. **Mobile launch follow-up** — Share launch date (Feb 15) with Sarah and Tom
-2. **Address Tom's concerns** — Schedule technical deep-dive on security/admin controls
-3. **Expansion conversation** — Discuss API Partner Program with Sarah
-4. **Renewal prep** — Start renewal conversation (3-4 months before Oct)
-5. **Broaden relationships** — Meet other Acme stakeholders (CTO, VP Product)
+1. **Mobile launch follow-up** - Share launch date (Feb 15) with Sarah and Tom
+2. **Address Tom's concerns** - Schedule technical deep-dive on security/admin controls
+3. **Expansion conversation** - Discuss API Partner Program with Sarah
+4. **Renewal prep** - Start renewal conversation (3-4 months before Oct)
+5. **Broaden relationships** - Meet other Acme stakeholders (CTO, VP Product)
 
 ---
 

@@ -8,7 +8,7 @@
  * writes it to /tmp/build_webinar_guide.js, and runs it.
  */
 
-// ─── PARAMS (filled by skill at runtime) ────────────────────────────────────
+// --- PARAMS (filled by skill at runtime) ------------------------------------
 const MONTH_NAME    = "{{MONTH_NAME}}";       // e.g. "February 2026"
 const WEBINAR_DATE  = "{{WEBINAR_DATE}}";     // e.g. "25 February 2026"
 const OUTPUT_PATH   = "{{OUTPUT_PATH}}";      // full Windows path for the .docx
@@ -21,14 +21,14 @@ const SECTIONS = {{SECTIONS_JSON}};
 //   { heading: "2.  ...", body: [...], checkboxes: [...], bullets: [...] },
 //   ...
 // ]
-// ────────────────────────────────────────────────────────────────────────────
+// ----------------------------------------------------------------------------
 
 const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType,
         BorderStyle, LevelFormat, PageNumber, Header, Footer } =
   require('/tmp/docx_work/node_modules/docx');
 const fs = require('fs');
 
-// ── Helpers ──────────────────────────────────────────────────────────────────
+// -- Helpers ------------------------------------------------------------------
 function h1(text) {
   return new Paragraph({
     heading: HeadingLevel.HEADING_1,
@@ -51,7 +51,7 @@ function checkbox(text) {
   return new Paragraph({
     spacing: { after: 80 },
     indent: { left: 360 },
-    children: [new TextRun({ text: "□  " + text, font: "Arial", size: 24 })]
+    children: [new TextRun({ text: "[ ]  " + text, font: "Arial", size: 24 })]
   });
 }
 function bullet(text) {
@@ -72,7 +72,7 @@ function rule() {
   });
 }
 
-// ── Build section children from structured data ───────────────────────────────
+// -- Build section children from structured data -------------------------------
 function buildSection(section) {
   const children = [];
   children.push(h1(section.heading));
@@ -96,7 +96,7 @@ function buildSection(section) {
   return children;
 }
 
-// ── Document ─────────────────────────────────────────────────────────────────
+// -- Document -----------------------------------------------------------------
 const allChildren = [
   // Title block
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 }, children: [
@@ -130,7 +130,7 @@ const doc = new Document({
   numbering: {
     config: [{
       reference: "bullets",
-      levels: [{ level: 0, format: LevelFormat.BULLET, text: "•",
+      levels: [{ level: 0, format: LevelFormat.BULLET, text: "-",
         alignment: AlignmentType.LEFT,
         style: { paragraph: { indent: { left: 720, hanging: 360 } } } }]
     }]

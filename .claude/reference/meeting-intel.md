@@ -7,7 +7,7 @@ Process meetings from Granola to extract structured insights, action items, and 
 Meetings sync **automatically in the background** every 30 minutes. No terminal commands shown during `/process-meetings`.
 
 ```
-Granola App → Background Sync (every 30 min) → Synced Files → /process-meetings → Person Pages, Tasks
+Granola App -> Background Sync (every 30 min) -> Synced Files -> /process-meetings -> Person Pages, Tasks
 ```
 
 ## Setup (One-Time, 30 Seconds)
@@ -37,14 +37,14 @@ After setup, `/process-meetings` reads synced files and updates your vault:
 ```
 
 **Flags:**
-- `--people-only` — Only update person/company pages (skip tasks)
-- `--no-todos` — Create notes but don't extract tasks
-- `--days-back=N` — Override default 7-day lookback
+- `--people-only` - Only update person/company pages (skip tasks)
+- `--no-todos` - Create notes but don't extract tasks
+- `--days-back=N` - Override default 7-day lookback
 
 **What gets updated:**
-- Person pages (05-Areas/People/) — meeting references, last interaction dates
-- Company pages (05-Areas/Companies/) — key contacts, meeting history
-- Tasks (03-Tasks/Tasks.md) — action items extracted from meetings
+- Person pages (05-Areas/People/) - meeting references, last interaction dates
+- Company pages (05-Areas/Companies/) - key contacts, meeting history
+- Tasks (03-Tasks/Tasks.md) - action items extracted from meetings
 
 ## What Gets Extracted
 

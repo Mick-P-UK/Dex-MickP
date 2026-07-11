@@ -356,7 +356,7 @@ function formatOutput(result) {
     lines.push('Available Pi tools:');
     for (const ext of result.extensions) {
       for (const tool of ext.tools) {
-        lines.push(`  • ${tool.name} (${ext.id})`);
+        lines.push(`  - ${tool.name} (${ext.id})`);
       }
     }
   }

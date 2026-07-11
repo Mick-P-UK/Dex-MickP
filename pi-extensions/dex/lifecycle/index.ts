@@ -22,7 +22,7 @@ export function setupLifecycle(pi: ExtensionAPI, vaultRoot: string): void {
   pi.on("session_start", async (_event, ctx) => {
     // 1. Show Dex status indicator in footer
     if (ctx.hasUI) {
-      ctx.ui.setStatus("dex", ctx.ui.theme.fg("success", "● Dex"));
+      ctx.ui.setStatus("dex", ctx.ui.theme.fg("success", "- Dex"));
     }
 
     // 2. Git sync (optional, fail silently)
@@ -84,7 +84,7 @@ async function gitSync(
     if (result.code === 0 && ctx.hasUI) {
       // Only notify if there were actual changes
       if (result.stdout.includes("Updating") || result.stdout.includes("Fast-forward")) {
-        ctx.ui.notify("✅ Synced with GitHub", "info");
+        ctx.ui.notify("[x] Synced with GitHub", "info");
       }
     }
   } catch (e) {
@@ -143,11 +143,11 @@ async function checkTaskAlerts(
     const alerts: string[] = [];
 
     if (summary.overdue > 0) {
-      alerts.push(`⚠️ ${summary.overdue} overdue tasks`);
+      alerts.push(`[!] ${summary.overdue} overdue tasks`);
     }
 
     if (summary.p0Count > 0) {
-      alerts.push(`🔴 ${summary.p0Count} P0 tasks`);
+      alerts.push(`[red] ${summary.p0Count} P0 tasks`);
     }
 
     if (alerts.length > 0 && ctx.hasUI) {
@@ -167,7 +167,7 @@ async function checkDailyPlan(vaultRoot: string, ctx: any): Promise<void> {
     const dailyPath = path.join(vaultRoot, "00-Inbox", "Daily", `${today}.md`);
 
     if (!fs.existsSync(dailyPath) && ctx.hasUI) {
-      ctx.ui.notify("📝 No daily plan yet. Run /daily-plan to create one.", "info");
+      ctx.ui.notify(" No daily plan yet. Run /daily-plan to create one.", "info");
     }
   } catch (e) {
     // Check failed - skip silently

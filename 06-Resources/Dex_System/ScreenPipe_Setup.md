@@ -68,16 +68,16 @@ The ScreenPipe MCP provides similar functionality directly in Claude Desktop.
 
 ```
 "What was I doing at 2pm today?"
-→ screenpipe_query(query="*", start_time="2026-02-03T13:45:00", end_time="2026-02-03T14:15:00")
+-> screenpipe_query(query="*", start_time="2026-02-03T13:45:00", end_time="2026-02-03T14:15:00")
 
 "How much time did I spend in Slack?"
-→ screenpipe_time_audit(start_time="2026-02-03T09:00:00", end_time="2026-02-03T17:00:00")
+-> screenpipe_time_audit(start_time="2026-02-03T09:00:00", end_time="2026-02-03T17:00:00")
 
 "Summarize my morning"
-→ screenpipe_summarize(start_time="2026-02-03T09:00:00", end_time="2026-02-03T12:00:00")
+-> screenpipe_summarize(start_time="2026-02-03T09:00:00", end_time="2026-02-03T12:00:00")
 
 "Find when I saw that error message"
-→ screenpipe_query(query="error: connection refused")
+-> screenpipe_query(query="error: connection refused")
 ```
 
 ---
@@ -165,23 +165,23 @@ launchctl list | grep screenpipe
 ## Architecture
 
 ```
-┌─────────────────────────────────────────┐
-│         ScreenPipe (Rust binary)        │
-├─────────────────────────────────────────┤
-│  Screen Capture → OCR → SQLite          │
-│  Audio Capture → Whisper → SQLite       │
-├─────────────────────────────────────────┤
-│  REST API: localhost:3030               │
-│  MCP Server: screenpipe-mcp             │
-└─────────────────────────────────────────┘
-           ↓
-┌─────────────────────────────────────────┐
-│              Dex Integration            │
-├─────────────────────────────────────────┤
-│  screen-orchestrator.ts (Pi extension)  │
-│  Skills: screen-recall, time-audit      │
-│  Auto-enrichment of daily notes         │
-└─────────────────────────────────────────┘
++-----------------------------------------+
+|         ScreenPipe (Rust binary)        |
++-----------------------------------------+
+|  Screen Capture -> OCR -> SQLite          |
+|  Audio Capture -> Whisper -> SQLite       |
++-----------------------------------------+
+|  REST API: localhost:3030               |
+|  MCP Server: screenpipe-mcp             |
++-----------------------------------------+
+           v
++-----------------------------------------+
+|              Dex Integration            |
++-----------------------------------------+
+|  screen-orchestrator.ts (Pi extension)  |
+|  Skills: screen-recall, time-audit      |
+|  Auto-enrichment of daily notes         |
++-----------------------------------------+
 ```
 
 ---

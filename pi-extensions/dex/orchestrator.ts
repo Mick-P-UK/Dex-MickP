@@ -446,7 +446,7 @@ export function registerOrchestratorTools(pi: ExtensionAPI) {
         return new Text(theme.fg("dim", "Simple request - handled directly"), 0, 0);
       }
       
-      let text = theme.fg("success", "✓ ") +
+      let text = theme.fg("success", "[x] ") +
         theme.fg("toolTitle", details?.strategy || "orchestrated") +
         theme.fg("dim", ` (${details?.successCount}/${details?.totalAgents} agents, ${details?.totalDurationMs}ms)`);
       

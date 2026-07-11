@@ -19,11 +19,11 @@
 ```
 1. Welcome message
 2. Q: "What's your role?"
-   → User selects "Product Manager"
+   -> User selects "Product Manager"
 3. Q: "Company size?"
-   → User selects "50-200"
+   -> User selects "50-200"
 4. Q: "Enable quarterly planning?"
-   → User selects "Yes"
+   -> User selects "Yes"
 5. [Flow creates PM-specific folders]
 6. [Flow generates strategic pillars]
 7. [Flow sets up templates]
@@ -50,20 +50,20 @@
 ### When to Use Each
 
 **Use a Flow when:**
-- ✅ Setting up system for the first time
-- ✅ Configuring a complex feature with multiple options
-- ✅ Guiding unfamiliar users through a process
-- ✅ Decisions affect what happens next (branching)
+- [x] Setting up system for the first time
+- [x] Configuring a complex feature with multiple options
+- [x] Guiding unfamiliar users through a process
+- [x] Decisions affect what happens next (branching)
 
 **Use a Skill when:**
-- ✅ Repeatable daily/weekly command
-- ✅ Linear workflow without complex branching
-- ✅ User explicitly invokes with `/command`
+- [x] Repeatable daily/weekly command
+- [x] Linear workflow without complex branching
+- [x] User explicitly invokes with `/command`
 
 **Use an Agent when:**
-- ✅ Autonomous background work
-- ✅ No user interaction needed
-- ✅ Multi-step analysis returning a summary
+- [x] Autonomous background work
+- [x] No user interaction needed
+- [x] Multi-step analysis returning a summary
 
 ---
 

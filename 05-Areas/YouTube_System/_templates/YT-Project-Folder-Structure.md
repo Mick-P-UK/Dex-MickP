@@ -34,39 +34,39 @@ This guide explains how to set up a new YouTube video project.
 
 ```
 YYYY-MM-DD - Video Title/
-│
-├── PROJECT.md                    # Main project file (required)
-│   └── YAML frontmatter         # Metadata and status tracking
-│
-├── research/                     # Research phase
-│   ├── notes.md                 # Research notes and findings
-│   ├── sources.md               # Source links and references
-│   ├── data.md                  # Statistics, charts, examples
-│   └── competitor-analysis.md   # What others have done on this topic
-│
-├── scripts/                      # Scripting phase
-│   ├── outline.md               # Initial outline
-│   ├── v1-draft.md              # First full draft
-│   ├── v2-reviewed.md           # After review/edits
-│   ├── v3-final.md              # Final shooting script
-│   └── [Use script template]    # Copy from YT-Script-Template.md
-│
-├── assets/                       # Production assets
-│   ├── thumbnail-concepts.md    # Thumbnail ideas and variants
-│   ├── b-roll-needed.md         # B-roll shot list
-│   ├── graphics.md              # On-screen graphics needed
-│   ├── music-notes.md           # Music choices
-│   └── final-files/             # Finished thumbnail, graphics
-│       ├── thumbnail-v1.png
-│       ├── thumbnail-v2.png
-│       └── thumbnail-final.png
-│
-└── YT-Derivatives/               # Repurposed content
-    ├── Short-1-[Topic].md       # YouTube Shorts (under 60 sec)
-    ├── Short-2-[Topic].md
-    ├── X-Clip-[Topic].md        # Social media clips for X/Twitter
-    ├── LinkedIn-Clip-[Topic].md # LinkedIn clips
-    └── [Use derivative template] # Copy from YT-Derivative-Template.md
+|
++-- PROJECT.md                    # Main project file (required)
+|   +-- YAML frontmatter         # Metadata and status tracking
+|
++-- research/                     # Research phase
+|   +-- notes.md                 # Research notes and findings
+|   +-- sources.md               # Source links and references
+|   +-- data.md                  # Statistics, charts, examples
+|   +-- competitor-analysis.md   # What others have done on this topic
+|
++-- scripts/                      # Scripting phase
+|   +-- outline.md               # Initial outline
+|   +-- v1-draft.md              # First full draft
+|   +-- v2-reviewed.md           # After review/edits
+|   +-- v3-final.md              # Final shooting script
+|   +-- [Use script template]    # Copy from YT-Script-Template.md
+|
++-- assets/                       # Production assets
+|   +-- thumbnail-concepts.md    # Thumbnail ideas and variants
+|   +-- b-roll-needed.md         # B-roll shot list
+|   +-- graphics.md              # On-screen graphics needed
+|   +-- music-notes.md           # Music choices
+|   +-- final-files/             # Finished thumbnail, graphics
+|       +-- thumbnail-v1.png
+|       +-- thumbnail-v2.png
+|       +-- thumbnail-final.png
+|
++-- YT-Derivatives/               # Repurposed content
+    +-- Short-1-[Topic].md       # YouTube Shorts (under 60 sec)
+    +-- Short-2-[Topic].md
+    +-- X-Clip-[Topic].md        # Social media clips for X/Twitter
+    +-- LinkedIn-Clip-[Topic].md # LinkedIn clips
+    +-- [Use derivative template] # Copy from YT-Derivative-Template.md
 ```
 
 ---
@@ -146,31 +146,31 @@ As you work through the project, update `status:` in PROJECT.md:
 
 ```
 diy-investors.com/YT-Longform/2026-02-15 - Understanding P/E Ratios/
-│
-├── PROJECT.md
-│   status: published
-│   youtube_url: https://youtube.com/watch?v=ABC123
-│
-├── research/
-│   ├── notes.md (examples of P/E ratios from real stocks)
-│   └── sources.md (links to SEC filings, finance sites)
-│
-├── scripts/
-│   ├── outline.md (initial structure)
-│   ├── v1-draft.md (first draft)
-│   ├── v2-reviewed.md (after feedback)
-│   └── v3-final.md (shooting script with B-roll notes)
-│
-├── assets/
-│   ├── thumbnail-concepts.md (3 concepts tested)
-│   ├── b-roll-needed.md (stock charts, calculator shots)
-│   ├── graphics.md (P/E formula on-screen)
-│   └── final-files/
-│       └── thumbnail-final.png
-│
-└── YT-Derivatives/
-    ├── Short-1-PvsE-Formula.md (60-sec explainer)
-    └── Short-2-PvsE-Traps.md (common mistakes)
+|
++-- PROJECT.md
+|   status: published
+|   youtube_url: https://youtube.com/watch?v=ABC123
+|
++-- research/
+|   +-- notes.md (examples of P/E ratios from real stocks)
+|   +-- sources.md (links to SEC filings, finance sites)
+|
++-- scripts/
+|   +-- outline.md (initial structure)
+|   +-- v1-draft.md (first draft)
+|   +-- v2-reviewed.md (after feedback)
+|   +-- v3-final.md (shooting script with B-roll notes)
+|
++-- assets/
+|   +-- thumbnail-concepts.md (3 concepts tested)
+|   +-- b-roll-needed.md (stock charts, calculator shots)
+|   +-- graphics.md (P/E formula on-screen)
+|   +-- final-files/
+|       +-- thumbnail-final.png
+|
++-- YT-Derivatives/
+    +-- Short-1-PvsE-Formula.md (60-sec explainer)
+    +-- Short-2-PvsE-Traps.md (common mistakes)
 ```
 
 ---

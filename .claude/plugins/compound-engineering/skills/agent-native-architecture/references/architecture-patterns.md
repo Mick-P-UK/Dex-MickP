@@ -15,18 +15,18 @@ See also:
 The agent runs as a long-lived process that responds to events. Events become prompts.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    Agent Loop                                │
-├─────────────────────────────────────────────────────────────┤
-│  Event Source → Agent (Claude) → Tool Calls → Response      │
-└─────────────────────────────────────────────────────────────┘
-                          │
-          ┌───────────────┼───────────────┐
-          ▼               ▼               ▼
-    ┌─────────┐    ┌──────────┐    ┌───────────┐
-    │ Content │    │   Self   │    │   Data    │
-    │  Tools  │    │  Tools   │    │   Tools   │
-    └─────────┘    └──────────┘    └───────────┘
++-------------------------------------------------------------+
+|                    Agent Loop                                |
++-------------------------------------------------------------+
+|  Event Source -> Agent (Claude) -> Tool Calls -> Response      |
++-------------------------------------------------------------+
+                          |
+          +---------------+---------------+
+          v               v               v
+    +---------+    +----------+    +-----------+
+    | Content |    |   Self   |    |   Data    |
+    |  Tools  |    |  Tools   |    |   Tools   |
+    +---------+    +----------+    +-----------+
     (write_file)   (read_source)   (store_item)
                    (restart)       (list_items)
 ```
@@ -68,29 +68,29 @@ Use your judgment about importance and categorization.
 For self-modifying agents, separate code (shared) from data (instance-specific).
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     GitHub (shared repo)                     │
-│  - src/           (agent code)                              │
-│  - site/          (web interface)                           │
-│  - package.json   (dependencies)                            │
-│  - .gitignore     (excludes data/, logs/)                   │
-└─────────────────────────────────────────────────────────────┘
-                          │
++-------------------------------------------------------------+
+|                     GitHub (shared repo)                     |
+|  - src/           (agent code)                              |
+|  - site/          (web interface)                           |
+|  - package.json   (dependencies)                            |
+|  - .gitignore     (excludes data/, logs/)                   |
++-------------------------------------------------------------+
+                          |
                      git clone
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  Instance (Server)                           │
-│                                                              │
-│  FROM GITHUB (tracked):                                      │
-│  - src/           → pushed back on code changes             │
-│  - site/          → pushed, triggers deployment             │
-│                                                              │
-│  LOCAL ONLY (untracked):                                     │
-│  - data/          → instance-specific storage               │
-│  - logs/          → runtime logs                            │
-│  - .env           → secrets                                 │
-└─────────────────────────────────────────────────────────────┘
+                          |
+                          v
++-------------------------------------------------------------+
+|                  Instance (Server)                           |
+|                                                              |
+|  FROM GITHUB (tracked):                                      |
+|  - src/           -> pushed back on code changes             |
+|  - site/          -> pushed, triggers deployment             |
+|                                                              |
+|  LOCAL ONLY (untracked):                                     |
+|  - data/          -> instance-specific storage               |
+|  - logs/          -> runtime logs                            |
+|  - .env           -> secrets                                 |
++-------------------------------------------------------------+
 ```
 
 **Why this works:**
@@ -107,9 +107,9 @@ Each agent instance gets its own branch while sharing core code.
 
 ```
 main                        # Shared features, bug fixes
-├── instance/feedback-bot   # Every Reader feedback bot
-├── instance/support-bot    # Customer support bot
-└── instance/research-bot   # Research assistant
++-- instance/feedback-bot   # Every Reader feedback bot
++-- instance/support-bot    # Customer support bot
++-- instance/research-bot   # Research assistant
 ```
 
 **Change flow:**
@@ -135,15 +135,15 @@ The agent generates and maintains a website as a natural output, not through spe
 
 ```
 Discord Message
-      ↓
+      v
 Agent processes it, extracts insights
-      ↓
+      v
 Agent decides what site updates are needed
-      ↓
+      v
 Agent writes files using write_file primitive
-      ↓
+      v
 Git commit + push triggers deployment
-      ↓
+      v
 Site updates automatically
 ```
 
@@ -216,19 +216,19 @@ tool("apply_pending", async () => {
 One execution engine, many agent types. All agents use the same orchestrator but with different configurations.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    AgentOrchestrator                         │
-├─────────────────────────────────────────────────────────────┤
-│  - Lifecycle management (start, pause, resume, stop)        │
-│  - Checkpoint/restore (for background execution)            │
-│  - Tool execution                                            │
-│  - Chat integration                                          │
-└─────────────────────────────────────────────────────────────┘
-          │                    │                    │
-    ┌─────┴─────┐        ┌─────┴─────┐        ┌─────┴─────┐
-    │ Research  │        │   Chat    │        │  Profile  │
-    │   Agent   │        │   Agent   │        │   Agent   │
-    └───────────┘        └───────────┘        └───────────┘
++-------------------------------------------------------------+
+|                    AgentOrchestrator                         |
++-------------------------------------------------------------+
+|  - Lifecycle management (start, pause, resume, stop)        |
+|  - Checkpoint/restore (for background execution)            |
+|  - Tool execution                                            |
+|  - Chat integration                                          |
++-------------------------------------------------------------+
+          |                    |                    |
+    +-----+-----+        +-----+-----+        +-----+-----+
+    | Research  |        |   Chat    |        |  Profile  |
+    |   Agent   |        |   Agent   |        |   Agent   |
+    +-----------+        +-----------+        +-----------+
     - web_search         - read_library       - read_photos
     - write_file         - publish_to_feed    - write_file
     - read_file          - web_search         - analyze_image

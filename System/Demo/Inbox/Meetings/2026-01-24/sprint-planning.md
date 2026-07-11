@@ -42,10 +42,10 @@ Final sprint planning before mobile app launch. Focused on remaining items and l
 
 ## Action Items
 
-- [ ] Complete push notification fix by Mon → Jordan
-- [ ] Android perf testing complete by Wed → Dev team
-- [ ] App store submission prep → Maya
-- [ ] Launch communications draft → Alex
+- [ ] Complete push notification fix by Mon -> Jordan
+- [ ] Android perf testing complete by Wed -> Dev team
+- [ ] App store submission prep -> Maya
+- [ ] Launch communications draft -> Alex
 
 ---
 

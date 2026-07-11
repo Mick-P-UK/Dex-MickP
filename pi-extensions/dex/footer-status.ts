@@ -16,11 +16,11 @@ export interface FooterStatusData {
 /**
  * Generate smart footer status text
  * 
- * Format: ● Dex | [URGENT] | [CALENDAR SHAPE] | [FOCUS TIME]
- * Example: ● Dex | 2 P0 | Moderate (4 mtgs) | Focus: 2-4pm
+ * Format: - Dex | [URGENT] | [CALENDAR SHAPE] | [FOCUS TIME]
+ * Example: - Dex | 2 P0 | Moderate (4 mtgs) | Focus: 2-4pm
  */
 export function generateFooterStatus(data: FooterStatusData): string {
-  const parts: string[] = ["● Dex"];
+  const parts: string[] = ["- Dex"];
 
   // Part 1: Urgent items (most important)
   const urgentCount = data.p0Count + data.overdueCount;

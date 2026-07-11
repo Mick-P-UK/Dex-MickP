@@ -76,7 +76,7 @@ Search for:
 ## Step 4: Generate Call Prep Brief
 
 ```markdown
-# 📞 Call Prep: [Person Name] ([Company])
+#  Call Prep: [Person Name] ([Company])
 
 **Call date:** [Today or scheduled date]
 **Their role:** [Title]
@@ -85,7 +85,7 @@ Search for:
 
 ---
 
-## 🎯 Call Objective
+##  Call Objective
 
 **Primary goal:** [What you want to accomplish]
 **Secondary goals:**
@@ -94,7 +94,7 @@ Search for:
 
 ---
 
-## 👤 Person Profile
+##  Person Profile
 
 **[Name] - [Title]**
 
@@ -111,7 +111,7 @@ Search for:
 
 ---
 
-## 📝 Recent Interactions
+##  Recent Interactions
 
 ### Last Meeting: [Date]
 **Topic:** [What was discussed]
@@ -131,7 +131,7 @@ Search for:
 
 ---
 
-## ✅ Open Items
+## [x] Open Items
 
 **Our commitments to them:**
 - [ ] [Action item 1] - [Status: Done/In progress/Overdue]
@@ -140,11 +140,11 @@ Search for:
 **Their commitments to us:**
 - [ ] [Action item 1] - [Status]
 
-**⚠️ Overdue items:** [Flag any overdue commitments]
+**[!] Overdue items:** [Flag any overdue commitments]
 
 ---
 
-## 📊 Account Status
+##  Account Status
 
 **Current state:** [New prospect/Active deal/Existing customer]
 **Deal stage:** [If applicable]
@@ -156,7 +156,7 @@ Search for:
 
 ---
 
-## 💡 Key Discussion Points
+##  Key Discussion Points
 
 **Topics to cover:**
 1. [Topic 1] - [Why important]
@@ -175,7 +175,7 @@ Search for:
 
 ---
 
-## 🚨 Watch For
+##  Watch For
 
 **Signals to listen for:**
 - [Signal 1 - e.g., budget constraints]
@@ -188,7 +188,7 @@ Search for:
 
 ---
 
-## 🎯 Desired Outcome
+##  Desired Outcome
 
 **Best case:**
 - [Ideal outcome]
@@ -202,7 +202,7 @@ Search for:
 
 ---
 
-## 📎 Quick Links
+##  Quick Links
 
 **Relevant files:**
 - [Link to person page]
@@ -212,7 +212,7 @@ Search for:
 
 ---
 
-## ⏰ Post-Call Actions
+##  Post-Call Actions
 
 After the call, remember to:
 - [ ] Update person page with new context
@@ -258,7 +258,7 @@ When company name provided (not specific person):
 ## Example Output
 
 ```markdown
-# 📞 Call Prep: Sarah Chen (Acme Corp)
+#  Call Prep: Sarah Chen (Acme Corp)
 
 **Call date:** Tomorrow (Jan 29, 10am)
 **Their role:** VP Product
@@ -267,7 +267,7 @@ When company name provided (not specific person):
 
 ---
 
-## 🎯 Call Objective
+##  Call Objective
 
 **Primary goal:** Demo real-time dashboards to address reporting pain point, get buy-in for Analytics upgrade
 **Secondary goals:**
@@ -277,7 +277,7 @@ When company name provided (not specific person):
 
 ---
 
-## 👤 Person Profile
+##  Person Profile
 
 **Sarah Chen - VP Product**
 
@@ -297,7 +297,7 @@ When company name provided (not specific person):
 
 ---
 
-## 📝 Recent Interactions
+##  Recent Interactions
 
 ### Last Meeting: Yesterday (Jan 27)
 **Topic:** Contract review call for renewal prep
@@ -322,7 +322,7 @@ When company name provided (not specific person):
 
 ---
 
-## ✅ Open Items
+## [x] Open Items
 
 **Our commitments to them:**
 - [x] Schedule dashboard demo - DONE (this call)
@@ -333,11 +333,11 @@ When company name provided (not specific person):
 - [x] Intro to Jennifer - DONE
 - [ ] Internal champion for engineering expansion - In progress
 
-**⚠️ No overdue items**
+**[!] No overdue items**
 
 ---
 
-## 📊 Account Status
+##  Account Status
 
 **Current state:** Strategic customer (18-month relationship)
 **Deal stage:** Planning expansion (Engineering team)
@@ -350,7 +350,7 @@ When company name provided (not specific person):
 
 ---
 
-## 💡 Key Discussion Points
+##  Key Discussion Points
 
 **Topics to cover:**
 1. **Real-time dashboard demo** - Directly addresses "2 days/month" pain
@@ -370,7 +370,7 @@ When company name provided (not specific person):
 
 ---
 
-## 🚨 Watch For
+##  Watch For
 
 **Signals to listen for:**
 - Pricing concerns for Analytics upgrade
@@ -384,7 +384,7 @@ When company name provided (not specific person):
 
 ---
 
-## 🎯 Desired Outcome
+##  Desired Outcome
 
 **Best case:**
 - She loves the dashboard demo
@@ -403,7 +403,7 @@ When company name provided (not specific person):
 
 ---
 
-## 📎 Quick Links
+##  Quick Links
 
 **Relevant files:**
 - 05-Areas/People/External/Sarah_Chen_Acme.md
@@ -413,7 +413,7 @@ When company name provided (not specific person):
 
 ---
 
-## ⏰ Post-Call Actions
+##  Post-Call Actions
 
 After the call, remember to:
 - [ ] Update Sarah's person page with demo feedback

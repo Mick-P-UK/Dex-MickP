@@ -30,13 +30,13 @@ cd <project-name>
 ```
 
 This creates a fully configured project with:
-- ✅ React + TypeScript (via Vite)
-- ✅ Tailwind CSS 3.4.1 with shadcn/ui theming system
-- ✅ Path aliases (`@/`) configured
-- ✅ 40+ shadcn/ui components pre-installed
-- ✅ All Radix UI dependencies included
-- ✅ Parcel configured for bundling (via .parcelrc)
-- ✅ Node 18+ compatibility (auto-detects and pins Vite version)
+- [x] React + TypeScript (via Vite)
+- [x] Tailwind CSS 3.4.1 with shadcn/ui theming system
+- [x] Path aliases (`@/`) configured
+- [x] 40+ shadcn/ui components pre-installed
+- [x] All Radix UI dependencies included
+- [x] Parcel configured for bundling (via .parcelrc)
+- [x] Node 18+ compatibility (auto-detects and pins Vite version)
 
 ### Step 2: Develop Your Artifact
 

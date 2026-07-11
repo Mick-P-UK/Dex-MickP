@@ -26,7 +26,7 @@ Welcome to the Dex Analytics beta! By activating this feature, you're helping Da
 ## How It Works
 
 1. **Consent prompt:** During your next planning session (`/daily-plan`, `/review`, etc.), you'll be asked once if you want to help improve Dex
-2. **Your choice:** Say yes to help, or no thanks — Dex works exactly the same either way
+2. **Your choice:** Say yes to help, or no thanks - Dex works exactly the same either way
 3. **Event firing:** If you opt in, anonymous feature usage events are sent to Pendo
 
 ## Configuration
@@ -60,4 +60,4 @@ This is a beta feature. If you have questions or concerns, reach out to Dave dir
 
 ---
 
-*Beta version 0.1.0 • Last updated: 2026-02-04*
+*Beta version 0.1.0 - Last updated: 2026-02-04*

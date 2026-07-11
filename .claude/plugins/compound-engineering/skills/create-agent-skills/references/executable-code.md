@@ -27,13 +27,13 @@ When Claude executes a script via bash:
 
 ```
 skill-name/
-├── SKILL.md
-├── scripts/
-│   ├── main_utility.py
-│   ├── helper_script.py
-│   └── validator.py
-└── references/
-    └── api-docs.md
++-- SKILL.md
++-- scripts/
+|   +-- main_utility.py
+|   +-- helper_script.py
+|   +-- validator.py
++-- references/
+    +-- api-docs.md
 ```
 
 **Benefits**:

@@ -197,13 +197,13 @@ Resources mentioned:
 - Plaza Group: https://diy-investors.com/plaza-group
 
 Join the community:
-📊 Inner Circle: Weekly stock analysis using Three Pillars
-💎 Plaza Group: Live Q&A sessions and market updates
-🤖 AI for Investing: AI-powered research tools
+ Inner Circle: Weekly stock analysis using Three Pillars
+ Plaza Group: Live Q&A sessions and market updates
+ AI for Investing: AI-powered research tools
 
 Follow DIY-Investors:
-🌐 Website: https://diy-investors.com
-🤖 AI Tools: https://diy-investors.ai
+ Website: https://diy-investors.com
+ AI Tools: https://diy-investors.ai
 
 #DIYInvesting #StockMarket #InvestmentStrategy #FundamentalAnalysis #TechnicalAnalysis
 ```

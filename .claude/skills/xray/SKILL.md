@@ -5,7 +5,7 @@ description: Understand what just happened under the hood - learn AI by seeing i
 
 # /xray - The AI Education Experience
 
-**Default behavior:** Explain what just happened in THIS conversation — the specific tools, files, and context that were used, with educational explanations of WHY.
+**Default behavior:** Explain what just happened in THIS conversation - the specific tools, files, and context that were used, with educational explanations of WHY.
 
 **With qualifiers:** Deep dive into specific topics (AI fundamentals, Dex architecture, how to extend).
 
@@ -31,8 +31,8 @@ The best way to learn is by examining what just happened, not abstract concepts.
 ### Default (no arguments): "This Conversation"
 
 When user just says `/xray` with no qualifier:
-→ **Immediately explain what happened in this conversation**
-→ Don't show a menu, just show the work
+-> **Immediately explain what happened in this conversation**
+-> Don't show a menu, just show the work
 
 ### With qualifiers: Specific topics
 
@@ -65,20 +65,20 @@ Look at the current conversation and identify:
 Output format:
 
 ```markdown
-## 🔬 X-Ray: What Just Happened
+##  X-Ray: What Just Happened
 
 Let me explain what happened under the hood in our conversation.
 
 ---
 
-### 📖 The Story of This Chat
+###  The Story of This Chat
 
 Here's what I did, step by step:
 
 **1. Session Started**
 Before you typed anything, the system loaded:
-- `CLAUDE.md` (~X tokens) — My personality, your preferences, available tools
-- Session memories from earlier today — [list what was injected]
+- `CLAUDE.md` (~X tokens) - My personality, your preferences, available tools
+- Session memories from earlier today - [list what was injected]
 - [Any other context visible from hooks]
 
 **Why this matters:** Without those session memories, I'd have no idea about 
@@ -87,9 +87,9 @@ Before you typed anything, the system loaded:
 **2. You Asked: "[summarize their first message]"**
 
 To respond, I:
-- Read `[file 1]` — Because [reason]
-- Read `[file 2]` — To check [what]
-- Used [tool/MCP] — To [action]
+- Read `[file 1]` - Because [reason]
+- Read `[file 2]` - To check [what]
+- Used [tool/MCP] - To [action]
 
 **Why these files?** Your CLAUDE.md tells me where to look. It says [quote relevant 
 instruction]. Without those instructions, I wouldn't know your file structure.
@@ -98,7 +98,7 @@ instruction]. Without those instructions, I wouldn't know your file structure.
 
 ---
 
-### 🔧 Tools Used This Session
+###  Tools Used This Session
 
 | Tool | Times Used | What For |
 |------|------------|----------|
@@ -109,42 +109,42 @@ instruction]. Without those instructions, I wouldn't know your file structure.
 | [other tools] | X | [purpose] |
 
 **Why tools matter:** Without tools, I can only generate text. Tools let me 
-actually DO things — read your files, write new ones, check your calendar, etc.
+actually DO things - read your files, write new ones, check your calendar, etc.
 
 ---
 
-### 💡 Key Insight: The Context Window
+###  Key Insight: The Context Window
 
 Everything I "know" right now is what's in the **context window**:
 
 ```
-┌─────────────────────────────────────────────────┐
-│  What I can see (the context window)            │
-├─────────────────────────────────────────────────┤
-│ ✓ CLAUDE.md (loaded at start)                   │
-│ ✓ Session memories (injected by hooks)          │
-│ ✓ Our full conversation so far                  │
-│ ✓ Every file I've read this session             │
-│ ✓ Every tool result I've received               │
-├─────────────────────────────────────────────────┤
-│ ✗ Files I haven't read                          │
-│ ✗ Previous sessions (unless summarized)         │
-│ ✗ Anything not loaded into context              │
-└─────────────────────────────────────────────────┘
++-------------------------------------------------+
+|  What I can see (the context window)            |
++-------------------------------------------------+
+| [x] CLAUDE.md (loaded at start)                   |
+| [x] Session memories (injected by hooks)          |
+| [x] Our full conversation so far                  |
+| [x] Every file I've read this session             |
+| [x] Every tool result I've received               |
++-------------------------------------------------+
+| [ ] Files I haven't read                          |
+| [ ] Previous sessions (unless summarized)         |
+| [ ] Anything not loaded into context              |
++-------------------------------------------------+
 ```
 
 If something isn't in this window, I literally don't know it exists.
 
 ---
 
-### 📁 Files Touched This Session
+###  Files Touched This Session
 
 **Read (loaded into my context):**
-- `[file]` — [why it was needed]
+- `[file]` - [why it was needed]
 - [continue for each file]
 
 **Written/Modified:**
-- `[file]` — [what was created/changed]
+- `[file]` - [what was created/changed]
 - [continue for each file]
 
 **Why this matters:** Every file I read uses "tokens" (space in the context 
@@ -152,7 +152,7 @@ window). I try to read only what's relevant, not everything.
 
 ---
 
-### 🎓 Concepts You Just Saw in Action
+###  Concepts You Just Saw in Action
 
 | What Happened | The Underlying Concept |
 |---------------|------------------------|
@@ -160,11 +160,11 @@ window). I try to read only what's relevant, not everything.
 | I read CLAUDE.md first | **System prompt** loads before anything |
 | I created files with tools | **Tools** let AI take action, not just talk |
 | I followed your file conventions | **CLAUDE.md instructions** define your structure |
-| I didn't know about [X] | **Context limitation** — only know what's loaded |
+| I didn't know about [X] | **Context limitation** - only know what's loaded |
 
 ---
 
-### 🔮 What You Could Customize
+###  What You Could Customize
 
 Based on what just happened:
 
@@ -179,12 +179,12 @@ If you always want [context] loaded at start, write a hook that injects it.
 
 ---
 
-### 🎓 Want to Go Deeper?
+###  Want to Go Deeper?
 
-- `/xray ai` — First principles: context windows, tokens, statelessness
-- `/xray dex` — Full architecture: CLAUDE.md, hooks, MCPs, skills, vault
-- `/xray boot` — The session startup sequence in detail
-- `/xray extend` — Step-by-step guide to customizing
+- `/xray ai` - First principles: context windows, tokens, statelessness
+- `/xray dex` - Full architecture: CLAUDE.md, hooks, MCPs, skills, vault
+- `/xray boot` - The session startup sequence in detail
+- `/xray extend` - Step-by-step guide to customizing
 
 Or ask anything: "How do hooks work?", "What's an MCP?", "How can I add my own tools?"
 ```
@@ -198,7 +198,7 @@ Or ask anything: "How do hooks work?", "What's an MCP?", "How can I add my own t
 ### Output Format
 
 ```markdown
-## 🧠 How AI Actually Works
+##  How AI Actually Works
 
 Let me explain the core concepts that underpin everything Dex does.
 
@@ -210,13 +210,13 @@ Let me explain the core concepts that underpin everything Dex does.
 It doesn't remember yesterday's conversation. It doesn't know your name, your 
 projects, or what you discussed last week.
 
-This is true for ALL LLM-based AI — ChatGPT, Claude, Gemini, all of them.
+This is true for ALL LLM-based AI - ChatGPT, Claude, Gemini, all of them.
 
 **Why?** LLMs are "stateless." They process text in, text out, with no permanent 
 storage between sessions. Each conversation starts from zero.
 
 **So how does Dex remember things?** We engineer around the limitation. 
-That's what Dex is — clever engineering to give a forgetful AI the *appearance* 
+That's what Dex is - clever engineering to give a forgetful AI the *appearance* 
 of memory, context, and continuity.
 
 ---
@@ -226,17 +226,17 @@ of memory, context, and continuity.
 When you chat with an AI, there's an invisible "window" of text the AI can see:
 
 ```
-┌─────────────────────────────────────────────────┐
-│              THE CONTEXT WINDOW                 │
-│  (Everything the AI knows about THIS chat)      │
-├─────────────────────────────────────────────────┤
-│ • System prompt (CLAUDE.md)                     │
-│ • Injected context (session memories, etc.)     │
-│ • Our conversation so far                       │
-│ • Any files I've read                           │
-│ • Tool results (MCP responses)                  │
-└─────────────────────────────────────────────────┘
-          ↓
++-------------------------------------------------+
+|              THE CONTEXT WINDOW                 |
+|  (Everything the AI knows about THIS chat)      |
++-------------------------------------------------+
+| - System prompt (CLAUDE.md)                     |
+| - Injected context (session memories, etc.)     |
+| - Our conversation so far                       |
+| - Any files I've read                           |
+| - Tool results (MCP responses)                  |
++-------------------------------------------------+
+          v
      AI generates response based on ALL of this
 ```
 
@@ -258,7 +258,7 @@ Context windows are measured in "tokens" (roughly 4 characters = 1 token).
 **Why it matters:** There's a budget. Load too much context and you hit limits 
 or slow things down. Load too little and the AI lacks crucial information.
 
-**Dex's approach:** Selective loading. Don't dump everything — load what's 
+**Dex's approach:** Selective loading. Don't dump everything - load what's 
 *relevant* to what you're asking about.
 
 ---
@@ -269,15 +269,15 @@ Before your first message, there's already text in the context window:
 the **system prompt**. For Dex, that's `CLAUDE.md`.
 
 ```
-┌─────────────────────────────────────────────────┐
-│ CLAUDE.md (loaded before you type anything)     │
-├─────────────────────────────────────────────────┤
-│ "You are Dex, a personal knowledge assistant"   │
-│ "User's pillars: [your pillars]"                │
-│ "When tasks are mentioned, use Work MCP"        │
-│ "Person pages are in 05-Areas/People/"          │
-│ ... (hundreds more lines of context)            │
-└─────────────────────────────────────────────────┘
++-------------------------------------------------+
+| CLAUDE.md (loaded before you type anything)     |
++-------------------------------------------------+
+| "You are Dex, a personal knowledge assistant"   |
+| "User's pillars: [your pillars]"                |
+| "When tasks are mentioned, use Work MCP"        |
+| "Person pages are in 05-Areas/People/"          |
+| ... (hundreds more lines of context)            |
++-------------------------------------------------+
 ```
 
 **The power move:** Everything in CLAUDE.md influences EVERY response. 
@@ -287,7 +287,7 @@ It's like setting the AI's personality and knowledge before you say hello.
 
 ### Concept 4: Tools (How AI Does Things)
 
-Claude can't *do* things by default — it can only generate text. But with 
+Claude can't *do* things by default - it can only generate text. But with 
 **tools**, it can take actions:
 
 - Read files from your computer
@@ -310,16 +310,16 @@ Here's what happens every time you send a message:
 
 ```
 1. Your message gets added to context window
-                    ↓
+                    v
 2. Claude sees: system prompt + history + your message
-                    ↓
+                    v
 3. Claude decides: should I use a tool?
-   - If yes → Tool runs → Result added to context → Back to step 3
-   - If no → Generate response
-                    ↓
+   - If yes -> Tool runs -> Result added to context -> Back to step 3
+   - If no -> Generate response
+                    v
 4. Response appears (and gets added to context for next turn)
-                    ↓
-5. Wait for your next message → Repeat from step 1
+                    v
+5. Wait for your next message -> Repeat from step 1
 ```
 
 **Key insight:** Each turn, Claude sees MORE context (the history grows). 
@@ -331,9 +331,9 @@ Long conversations = more context = closer to limits.
 
 Understanding these fundamentals helps you:
 
-1. **Know why Dex loads things at session start** — to get context into the window
-2. **Understand why some info is "missing"** — it wasn't loaded into context
-3. **See opportunities to extend** — what else could be loaded? what tools could help?
+1. **Know why Dex loads things at session start** - to get context into the window
+2. **Understand why some info is "missing"** - it wasn't loaded into context
+3. **See opportunities to extend** - what else could be loaded? what tools could help?
 
 ---
 
@@ -349,7 +349,7 @@ Understanding these fundamentals helps you:
 ### Output Format
 
 ```markdown
-## 🏗️ How Dex Works: The Architecture
+##  How Dex Works: The Architecture
 
 Now that you understand AI fundamentals, here's how Dex engineers around 
 the limitations to create something useful.
@@ -362,20 +362,20 @@ the limitations to create something useful.
 **Solution:** Store everything in FILES and reload context intelligently.
 
 ```
-┌─────────────────────────────────────────────────┐
-│                YOUR VAULT                        │
-│  (Plain Markdown files YOU own)                 │
-├─────────────────────────────────────────────────┤
-│ • CLAUDE.md - Core context & personality        │
-│ • 05-Areas/People/ - Relationship memory        │
-│ • 03-Tasks/Tasks.md - Work in progress          │
-│ • System/Session_Memory/ - Past conversations   │
-│ • System/Work_In_Progress.md - Active projects  │
-└─────────────────────────────────────────────────┘
-            ↓ loaded at session start ↓
-         ┌─────────────────────────────┐
-         │      AI Context Window      │
-         └─────────────────────────────┘
++-------------------------------------------------+
+|                YOUR VAULT                        |
+|  (Plain Markdown files YOU own)                 |
++-------------------------------------------------+
+| - CLAUDE.md - Core context & personality        |
+| - 05-Areas/People/ - Relationship memory        |
+| - 03-Tasks/Tasks.md - Work in progress          |
+| - System/Session_Memory/ - Past conversations   |
+| - System/Work_In_Progress.md - Active projects  |
++-------------------------------------------------+
+            v loaded at session start v
+         +-----------------------------+
+         |      AI Context Window      |
+         +-----------------------------+
 ```
 
 **The magic:** Your knowledge lives in files. AI reads files. 
@@ -471,14 +471,14 @@ Everything persists to Markdown files:
 
 ```
 Your Vault/
-├── 00-Inbox/           ← Capture zone
-├── 03-Tasks/           ← Active tasks
-├── 04-Projects/        ← Time-bound work
-├── 05-Areas/           ← Ongoing responsibilities
-│   ├── People/         ← Person pages
-│   └── Companies/      ← Company profiles
-├── 06-Resources/       ← Reference material
-└── System/             ← Dex configuration
++-- 00-Inbox/           <- Capture zone
++-- 03-Tasks/           <- Active tasks
++-- 04-Projects/        <- Time-bound work
++-- 05-Areas/           <- Ongoing responsibilities
+|   +-- People/         <- Person pages
+|   +-- Companies/      <- Company profiles
++-- 06-Resources/       <- Reference material
++-- System/             <- Dex configuration
 ```
 
 **Why plain Markdown?**
@@ -493,19 +493,19 @@ Your Vault/
 
 ```
 Session starts
-     ↓
+     v
 Hooks fire (inject context)
-     ↓
+     v
 CLAUDE.md loads (personality + instructions)
-     ↓
+     v
 You type your message
-     ↓
+     v
 Claude reads relevant files (on-demand)
-     ↓
+     v
 Claude uses MCPs (if needed)
-     ↓
+     v
 Response generated + files updated
-     ↓
+     v
 Repeat for each message
 ```
 
@@ -524,7 +524,7 @@ Claude reads text, processes it, generates text, writes text.
 
 **Everything you're experiencing is text transformation.**
 
-Understanding this is liberating — you can read, edit, and extend anything.
+Understanding this is liberating - you can read, edit, and extend anything.
 
 ---
 
@@ -541,7 +541,7 @@ Understanding this is liberating — you can read, edit, and extend anything.
 ### Output Format
 
 ```markdown
-## 🚀 What Happens When You Start a Chat
+##  What Happens When You Start a Chat
 
 Let me walk you through exactly what happens from the moment you open 
 a new chat to when you type your first message.
@@ -553,39 +553,39 @@ a new chat to when you type your first message.
 #### Step 1: Environment Detection
 ```
 Is this Claude Desktop? Claude Code? Cursor? PI?
-     ↓
+     v
 Each environment has slightly different capabilities
 ```
 
 #### Step 2: Settings Load
 ```
 Read configuration files
-     ↓
+     v
 This defines which hooks to run and which MCPs are available
 ```
 
 #### Step 3: Hooks Fire (CRITICAL)
 ```
 Pre-session hooks run in order:
-     ↓
-┌─────────────────────────────────────────────┐
-│ Session memory injection                    │
-│ → Reads System/Session_Memory/[date].md     │
-│ → Injects summaries of recent conversations │
-│ → AI "remembers" what you discussed before  │
-└─────────────────────────────────────────────┘
-     ↓
-┌─────────────────────────────────────────────┐
-│ Context injectors                           │
-│ → Person context ready when you mention     │
-│   names                                     │
-│ → Company context ready when relevant       │
-└─────────────────────────────────────────────┘
-     ↓
-┌─────────────────────────────────────────────┐
-│ (Your custom hooks could go here)           │
-│ → Whatever YOU want loaded at start         │
-└─────────────────────────────────────────────┘
+     v
++---------------------------------------------+
+| Session memory injection                    |
+| -> Reads System/Session_Memory/[date].md     |
+| -> Injects summaries of recent conversations |
+| -> AI "remembers" what you discussed before  |
++---------------------------------------------+
+     v
++---------------------------------------------+
+| Context injectors                           |
+| -> Person context ready when you mention     |
+|   names                                     |
+| -> Company context ready when relevant       |
++---------------------------------------------+
+     v
++---------------------------------------------+
+| (Your custom hooks could go here)           |
+| -> Whatever YOU want loaded at start         |
++---------------------------------------------+
 ```
 
 **This is where the magic happens!** Hooks let you inject ANY context 
@@ -594,21 +594,21 @@ before the conversation starts.
 #### Step 4: CLAUDE.md Loads
 ```
 The entire CLAUDE.md file enters the context window:
-     ↓
-• Your profile (name, role, company)
-• Your strategic pillars  
-• Behavior guidelines
-• Reference to skills and tools
-• User extensions (YOUR customizations)
+     v
+- Your profile (name, role, company)
+- Your strategic pillars  
+- Behavior guidelines
+- Reference to skills and tools
+- User extensions (YOUR customizations)
 ```
 
 #### Step 5: MCPs Connect
 ```
 MCP servers become available:
-     ↓
-• Calendar MCP → Ready to check schedule
-• Work MCP → Ready to manage tasks
-• Granola MCP → Ready to search meetings
+     v
+- Calendar MCP -> Ready to check schedule
+- Work MCP -> Ready to manage tasks
+- Granola MCP -> Ready to search meetings
 ```
 
 #### Step 6: Ready for Input
@@ -616,10 +616,10 @@ MCP servers become available:
 NOW you can type your first message.
 
 The AI already has:
-• Your personality and preferences (CLAUDE.md)
-• Recent conversation summaries (from hooks)
-• Relevant context (from hooks)
-• Access to tools (MCPs)
+- Your personality and preferences (CLAUDE.md)
+- Recent conversation summaries (from hooks)
+- Relevant context (from hooks)
+- Access to tools (MCPs)
 ```
 
 ---
@@ -635,7 +635,7 @@ tools are available.
 
 ---
 
-### 💡 Customization Opportunity
+###  Customization Opportunity
 
 **What else could be loaded at session start?**
 
@@ -665,7 +665,7 @@ session can be injected via a hook.
 First check if ScreenPipe is running. If not:
 
 ```markdown
-## 🔬 X-Ray: Today
+##  X-Ray: Today
 
 ScreenPipe isn't running, so I can't analyze your full day.
 
@@ -685,13 +685,13 @@ ScreenPipe isn't running, so I can't analyze your full day.
 Query ScreenPipe for today's activity and present:
 
 ```markdown
-## 🔬 X-Ray: Today
+##  X-Ray: Today
 
 [Activity summary from ScreenPipe]
 
 ---
 
-### 🎓 How This Works
+###  How This Works
 
 **What you just saw was ScreenPipe integration.** Here's what's happening:
 
@@ -706,9 +706,9 @@ Query ScreenPipe for today's activity and present:
 - You control retention
 
 **What this enables:**
-- "What was I doing at 2pm?" → I can look it up
-- "How much time in Slack?" → I can calculate
-- "When did I see that error?" → I can search
+- "What was I doing at 2pm?" -> I can look it up
+- "How much time in Slack?" -> I can calculate
+- "When did I see that error?" -> I can search
 
 ---
 
@@ -724,7 +724,7 @@ Query ScreenPipe for today's activity and present:
 ### Output Format
 
 ```markdown
-## 🛠️ How to Extend Dex
+##  How to Extend Dex
 
 Now that you understand how it works, here's how to make it your own.
 
@@ -742,7 +742,7 @@ Now that you understand how it works, here's how to make it your own.
 ## USER_EXTENSIONS_START
 
 ### My Preferences
-- I'm a morning person — suggest important work before noon
+- I'm a morning person - suggest important work before noon
 - "The board" always means my company's board of directors
 - Never suggest scheduling meetings on Wednesdays (my focus day)
 
@@ -819,7 +819,7 @@ Run `/create-mcp` for guided setup.
 
 **Dex is scaffolding, not a finished product.** It's a starting point you customize.
 
-The goal isn't to use Dex "as is" forever — it's to understand it well 
+The goal isn't to use Dex "as is" forever - it's to understand it well 
 enough to make it truly yours.
 
 **Question for you:** What do you wish the AI knew at the start of 
@@ -834,16 +834,16 @@ After running `/xray`, silently update `System/usage_log.md`:
 - Check `X-ray transparency (/xray)` in the discovery section
 
 If user runs specific educational modes, update the AI Education Progress section:
-- `/xray ai` → Check "Understands context windows", "Understands tokens"
-- `/xray dex` → Check "Understands system prompts", "Understands tools/MCPs"
-- `/xray boot` → Check "Understands session hooks"
-- `/xray extend` → Check "Understands vault architecture"
+- `/xray ai` -> Check "Understands context windows", "Understands tokens"
+- `/xray dex` -> Check "Understands system prompts", "Understands tools/MCPs"
+- `/xray boot` -> Check "Understands session hooks"
+- `/xray extend` -> Check "Understands vault architecture"
 
 ---
 
 ## Tone Guidelines
 
-- **Concrete over abstract** — Use specific examples from their conversation
-- **Show don't tell** — Point to actual files, tools, actions
-- **Empowering not impressive** — Goal is their understanding, not your cleverness
-- **Inviting curiosity** — End with pathways to learn more
+- **Concrete over abstract** - Use specific examples from their conversation
+- **Show don't tell** - Point to actual files, tools, actions
+- **Empowering not impressive** - Goal is their understanding, not your cleverness
+- **Inviting curiosity** - End with pathways to learn more

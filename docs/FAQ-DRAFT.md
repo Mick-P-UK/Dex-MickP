@@ -23,18 +23,18 @@ The best option is **Obsidian Sync** ($8/month from Obsidian).
 
 | Option | Works? | Privacy Concern |
 |--------|--------|-----------------|
-| **Obsidian Sync** | ✅ | ✅ End-to-end encrypted + mobile |
-| **iCloud** | ✅ | ⚠️ Apple can access your files |
-| **Dropbox** | ✅ | ⚠️ Dropbox can access your files |
-| **Google Drive** | ✅ | ⚠️ Google can access your files |
-| **GitHub (private repo)** | ✅ | ⚠️ Microsoft/GitHub can access your files |
+| **Obsidian Sync** | [x] | [x] End-to-end encrypted + mobile |
+| **iCloud** | [x] | [!] Apple can access your files |
+| **Dropbox** | [x] | [!] Dropbox can access your files |
+| **Google Drive** | [x] | [!] Google can access your files |
+| **GitHub (private repo)** | [x] | [!] Microsoft/GitHub can access your files |
 
 These services encrypt your data "at rest" on their servers, but **they hold the encryption keys** - meaning they can technically read your files if required (by law enforcement, internal policies, or in the event of a breach).
 
 For a vault containing meeting notes, people context, career information, and business discussions, we recommend the peace of mind that comes with true end-to-end encryption.
 
 **To set up Obsidian Sync:**
-1. In Obsidian, go to Settings → Core plugins → Enable "Sync"
+1. In Obsidian, go to Settings -> Core plugins -> Enable "Sync"
 2. Click the Sync icon in the left sidebar
 3. Sign in or create an Obsidian account
 4. Follow the setup wizard

@@ -667,7 +667,7 @@ class ShapeData:
             return
 
         # Common bullet symbols that indicate manual bullets
-        bullet_symbols = ["•", "●", "○"]
+        bullet_symbols = ["-", "-", "o"]
 
         for paragraph in text_frame.paragraphs:
             text = paragraph.text.strip()

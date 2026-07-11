@@ -9,9 +9,9 @@ Set priorities and plan the week ahead. Now with **intelligent priority suggesti
 
 ## Usage
 
-- `/week-plan` — Plan current week (or next week if run on Friday/weekend)
-- `/week-plan next` — Explicitly plan next week
-- `/week-plan current` — Force planning current week
+- `/week-plan` - Plan current week (or next week if run on Friday/weekend)
+- `/week-plan next` - Explicitly plan next week
+- `/week-plan current` - Force planning current week
 
 ---
 
@@ -71,7 +71,7 @@ Set priorities and plan the week ahead. Now with **intelligent priority suggesti
 
 **Use `date_str`, `monday_str`, and `day_name` throughout the rest of the skill** - never hardcode dates or assume.
 
-**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Date-based files must use correct dates. Wrong dates cause confusion, duplicates, and break workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
@@ -94,10 +94,10 @@ Gather comprehensive context to inform **intelligent priority suggestions**.
 ### 2.1 Last Week's Review
 
 Check for `00-Inbox/Weekly_Synthesis_[last-monday].md`:
-- "Next Week" section → Suggested priorities
-- "Carried Over" section → Unfinished tasks
-- "Blocked Items" → Things that need resolution
-- "Learnings" → Insights to apply
+- "Next Week" section -> Suggested priorities
+- "Carried Over" section -> Unfinished tasks
+- "Blocked Items" -> Things that need resolution
+- "Learnings" -> Insights to apply
 
 ### 2.2 Quarterly Goals Status
 
@@ -141,7 +141,7 @@ Understand the **shape of the week**:
 |-----|------|---------------|----------|
 | Mon | Stacked (7 meetings) | 45 min | Quick tasks only |
 | Tue | Moderate (4 meetings) | 90 min | Medium tasks |
-| Wed | **Open** (2 meetings) | **3 hours** | **Deep work day** ✨ |
+| Wed | **Open** (2 meetings) | **3 hours** | **Deep work day**  |
 | Thu | Stacked (6 meetings) | 30 min | Quick tasks only |
 | Fri | Moderate (3 meetings) | 2 hours | Medium tasks, wrap-up |
 
@@ -167,7 +167,7 @@ Get intelligent matching:
 > "You have 5 deep work tasks totaling ~12 hours.
 > You have 2 open days with ~6 hours of deep work capacity.
 > 
-> ⚠️ **Capacity gap:** Consider deferring 2 deep work items or protecting more time."
+> [!] **Capacity gap:** Consider deferring 2 deep work items or protecting more time."
 
 ### 2.6 Commitments and Follow-ups
 
@@ -181,7 +181,7 @@ Surface things you've committed to that are due this week.
 
 ## Step 3: Intelligent Priority Suggestions (NEW)
 
-**Don't just ask "What are your Top 3?" — Suggest priorities based on analysis.**
+**Don't just ask "What are your Top 3?" - Suggest priorities based on analysis.**
 
 ### 3.1 Generate Suggestions
 
@@ -192,14 +192,14 @@ Based on the gathered context, generate 4-5 suggested priorities:
 - "Goal Y is at 2 of 5 milestones with 6 weeks left. Suggested priority: Complete milestone 3"
 
 **Commitment-driven suggestions:**
-- "You committed to {{X}} with {{person}} — due this week"
+- "You committed to {{X}} with {{person}} - due this week"
 
 **Carried-over suggestions:**
-- "{{Priority}} carried over from last week — still important?"
+- "{{Priority}} carried over from last week - still important?"
 
 **Calendar-aware suggestions:**
-- "You have a deep work day Wednesday — good time for {{specific deep work task}}"
-- "Friday is light — good for {{wrap-up task}}"
+- "You have a deep work day Wednesday - good time for {{specific deep work task}}"
+- "Friday is light - good for {{wrap-up task}}"
 
 ### 3.2 Present Suggestions
 
@@ -207,18 +207,18 @@ Based on the gathered context, generate 4-5 suggested priorities:
 > 
 > **Suggested priorities:**
 > 
-> 1. **Complete pricing proposal** — Goal 1 (Launch v2.0) needs this to hit milestone 3. You have deep work time Wednesday.
+> 1. **Complete pricing proposal** - Goal 1 (Launch v2.0) needs this to hit milestone 3. You have deep work time Wednesday.
 > 
-> 2. **Customer interview batch** — Goal 2 (Improve NPS) has no activity in 3 weeks. You could do 2-3 calls on Tue/Thu between meetings.
+> 2. **Customer interview batch** - Goal 2 (Improve NPS) has no activity in 3 weeks. You could do 2-3 calls on Tue/Thu between meetings.
 > 
-> 3. **Follow up on Acme contract** — Committed to Sarah by Friday. Meeting Thursday, prep needed.
+> 3. **Follow up on Acme contract** - Committed to Sarah by Friday. Meeting Thursday, prep needed.
 > 
-> 4. **Review team roadmap** — Carried over from last week. Still a priority?
+> 4. **Review team roadmap** - Carried over from last week. Still a priority?
 > 
 > **Calendar fit:**
-> - Priority 1 → Wednesday (3-hour block)
-> - Priority 2 → Tue/Thu (between meetings)
-> - Priority 3 → Friday (follow-up after Thursday meeting)
+> - Priority 1 -> Wednesday (3-hour block)
+> - Priority 2 -> Tue/Thu (between meetings)
+> - Priority 3 -> Friday (follow-up after Thursday meeting)
 > 
 > **Does this feel right?** Adjust as needed."
 
@@ -263,48 +263,48 @@ Create updated `02-Week_Priorities/Week_Priorities.md`:
 
 ---
 
-## 📊 Week Shape
+##  Week Shape
 
 | Day | Type | Deep Work? | Notes |
 |-----|------|------------|-------|
-| Mon | Stacked | ❌ | 7 meetings |
-| Tue | Moderate | ⚠️ | 90 min block PM |
-| Wed | **Open** | ✅ | **Deep work day** (3h morning) |
-| Thu | Stacked | ❌ | 6 meetings |
-| Fri | Moderate | ⚠️ | 2h block |
+| Mon | Stacked | [ ] | 7 meetings |
+| Tue | Moderate | [!] | 90 min block PM |
+| Wed | **Open** | [x] | **Deep work day** (3h morning) |
+| Thu | Stacked | [ ] | 6 meetings |
+| Fri | Moderate | [!] | 2h block |
 
 **Deep work capacity:** ~5 hours this week
 **Best day for focus:** Wednesday
 
 ---
 
-## 🎯 Quarterly Goals Context
+##  Quarterly Goals Context
 
 | Goal | Progress | Status |
 |------|----------|--------|
 | Launch Product v2.0 | 3 of 5 milestones | On track |
-| Improve Customer NPS | 1 of 4 milestones | ⚠️ Stalled (3 weeks) |
+| Improve Customer NPS | 1 of 4 milestones | [!] Stalled (3 weeks) |
 | Build Team Capacity | 2 of 3 milestones | On track |
 
 **This week advances:** Goals #1 and #2
 
 ---
 
-## 🎯 Top 3 This Week
+##  Top 3 This Week
 
-1. **[Priority 1]** — **[Pillar]** ^week-YYYY-WXX-p1
+1. **[Priority 1]** - **[Pillar]** ^week-YYYY-WXX-p1
    - Success criteria: [What done looks like]
    - Quarterly goal: [Q1 Goal #X]
    - **Scheduled:** [Day/time block]
    - Effort: [deep_work / medium / quick]
    
-2. **[Priority 2]** — **[Pillar]** ^week-YYYY-WXX-p2
+2. **[Priority 2]** - **[Pillar]** ^week-YYYY-WXX-p2
    - Success criteria: [What done looks like]
    - Quarterly goal: [Q1 Goal #X]
    - **Scheduled:** [Day/time block]
    - Effort: [deep_work / medium / quick]
    
-3. **[Priority 3]** — **[Pillar]** ^week-YYYY-WXX-p3
+3. **[Priority 3]** - **[Pillar]** ^week-YYYY-WXX-p3
    - Success criteria: [What done looks like]
    - Quarterly goal: [Q1 Goal #X] or Operational
    - **Scheduled:** [Day/time block]
@@ -312,52 +312,52 @@ Create updated `02-Week_Priorities/Week_Priorities.md`:
 
 ---
 
-## ⚡ Commitments Due This Week
+##  Commitments Due This Week
 
-- [ ] [Commitment] — to [person] — due [day]
-- [ ] [Commitment] — from [meeting] — due [day]
+- [ ] [Commitment] - to [person] - due [day]
+- [ ] [Commitment] - from [meeting] - due [day]
 
 ---
 
-## 📋 Tasks by Priority
+##  Tasks by Priority
 
 ### Must Complete (P0)
-- [ ] [Task] — Supports: Priority #X — **[Day]**
+- [ ] [Task] - Supports: Priority #X - **[Day]**
 
 ### Should Complete (P1)
-- [ ] [Task] — Supports: Priority #X — **[Day]**
+- [ ] [Task] - Supports: Priority #X - **[Day]**
 
 ### If Time Permits (P2)
 - [ ] [Task]
 
 ---
 
-## 📅 Key Meetings
+##  Key Meetings
 
 | Day | Time | Meeting | Prep Needed | Related Priority |
 |-----|------|---------|-------------|------------------|
 | Mon | [Time] | [Meeting] | [Prep] | Priority #X |
-| Tue | [Time] | [Meeting] | [Prep] | — |
+| Tue | [Time] | [Meeting] | [Prep] | - |
 
 ---
 
-## 📊 Pillar Balance
+##  Pillar Balance
 
 | Pillar | This Week | Balance |
 |--------|-----------|---------|
-| [Pillar 1] | [Brief description] | 🟩 Good |
-| [Pillar 2] | [Brief description] | 🟨 Light |
-| [Pillar 3] | [Brief description] | 🟥 Neglected |
+| [Pillar 1] | [Brief description] |  Good |
+| [Pillar 2] | [Brief description] |  Light |
+| [Pillar 3] | [Brief description] |  Neglected |
 
 ---
 
-## 🔄 Carried Over
+##  Carried Over
 
-- [ ] [Task from last week] — [Why it carried over]
+- [ ] [Task from last week] - [Why it carried over]
 
 ---
 
-## 🏁 End of Week Review
+##  End of Week Review
 
 *Fill in on Friday*
 
@@ -401,9 +401,9 @@ After generating the file, provide a summary:
 > "Week planned! Saved to `02-Week_Priorities/Week_Priorities.md`
 > 
 > **Your Top 3 this week:**
-> 1. [Priority 1] — Scheduled for [Day]
-> 2. [Priority 2] — Scheduled for [Day]
-> 3. [Priority 3] — Scheduled for [Day]
+> 1. [Priority 1] - Scheduled for [Day]
+> 2. [Priority 2] - Scheduled for [Day]
+> 3. [Priority 3] - Scheduled for [Day]
 > 
 > **Week shape:** 2 stacked days, 1 deep work day (Wednesday)
 > 

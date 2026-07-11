@@ -66,29 +66,29 @@ Your final output should be formatted as follows:
 
 <change_log>
 
-# 🚀 [Daily/Weekly] Change Log: [Current Date]
+#  [Daily/Weekly] Change Log: [Current Date]
 
-## 🚨 Breaking Changes (if any)
+##  Breaking Changes (if any)
 
 [List any breaking changes that require immediate attention]
 
-## 🌟 New Features
+##  New Features
 
 [List new features here with PR numbers]
 
-## 🐛 Bug Fixes
+##  Bug Fixes
 
 [List bug fixes here with PR numbers]
 
-## 🛠️ Other Improvements
+##  Other Improvements
 
 [List other significant changes or improvements]
 
-## 🙌 Shoutouts
+##  Shoutouts
 
 [Mention contributors and their contributions]
 
-## 🎉 Fun Fact of the Day
+##  Fun Fact of the Day
 
 [Include a brief, work-related fun fact or joke]
 
@@ -114,11 +114,11 @@ curl -H "Content-Type: application/json" \
   $DISCORD_WEBHOOK_URL
 ```
 
-To get a webhook URL, go to your Discord server → Server Settings → Integrations → Webhooks → New Webhook.
+To get a webhook URL, go to your Discord server -> Server Settings -> Integrations -> Webhooks -> New Webhook.
 
 ## Error Handling
 
-- If no changes in the time period, post a "quiet day" message: "🌤️ Quiet day! No new changes merged."
+- If no changes in the time period, post a "quiet day" message: " Quiet day! No new changes merged."
 - If unable to fetch PR details, list the PR numbers for manual review
 - Always validate message length before posting to Discord (max 2000 chars)
 

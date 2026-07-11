@@ -267,7 +267,7 @@ class DOCXSchemaValidator(BaseSchemaValidator):
 
         diff = new_count - original_count
         diff_str = f"+{diff}" if diff > 0 else str(diff)
-        print(f"\nParagraphs: {original_count} → {new_count} ({diff_str})")
+        print(f"\nParagraphs: {original_count} -> {new_count} ({diff_str})")
 
 
 if __name__ == "__main__":

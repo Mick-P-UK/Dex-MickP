@@ -21,31 +21,31 @@ A project-based YouTube content system that manages video creation, publishing, 
 
 ```
 YouTube_System/
-├── README.md                          # This file
-├── Content-Calendar.md                # Monthly planning across channels
-│
-├── context/
-│   ├── channel-configs/               # Channel-specific settings
-│   │   ├── diy-investors-com.yaml    # Main channel config
-│   │   └── diy-investors-ai.yaml     # AI channel config
-│   └── shared/                        # Symlink to Writing_System/context/core/
-│       ├── voice-dna-mick.json       # (reused from Writing System)
-│       ├── icp.json                  # (reused from Writing System)
-│       └── business-profile.json     # (reused from Writing System)
-│
-├── _templates/                        # Project creation templates
-│   ├── YT-Project-Folder-Structure.md
-│   ├── YT-Project-Main.md
-│   ├── YT-Script-Template.md
-│   └── YT-Derivative-Template.md
-│
-├── diy-investors.com/
-│   ├── YT-Longform/                  # Full-length videos (8-12 min)
-│   └── YT-Series/                    # Multi-part series
-│
-└── diy-investors.ai/
-    ├── YT-Longform/                  # Full-length videos (10-15 min)
-    └── YT-Series/                    # Multi-part series
++-- README.md                          # This file
++-- Content-Calendar.md                # Monthly planning across channels
+|
++-- context/
+|   +-- channel-configs/               # Channel-specific settings
+|   |   +-- diy-investors-com.yaml    # Main channel config
+|   |   +-- diy-investors-ai.yaml     # AI channel config
+|   +-- shared/                        # Symlink to Writing_System/context/core/
+|       +-- voice-dna-mick.json       # (reused from Writing System)
+|       +-- icp.json                  # (reused from Writing System)
+|       +-- business-profile.json     # (reused from Writing System)
+|
++-- _templates/                        # Project creation templates
+|   +-- YT-Project-Folder-Structure.md
+|   +-- YT-Project-Main.md
+|   +-- YT-Script-Template.md
+|   +-- YT-Derivative-Template.md
+|
++-- diy-investors.com/
+|   +-- YT-Longform/                  # Full-length videos (8-12 min)
+|   +-- YT-Series/                    # Multi-part series
+|
++-- diy-investors.ai/
+    +-- YT-Longform/                  # Full-length videos (10-15 min)
+    +-- YT-Series/                    # Multi-part series
 ```
 
 ---
@@ -71,21 +71,21 @@ Example: `2026-02-09 - Three Pillars of DIY Investing/`
 **Folder structure:**
 ```
 2026-02-09 - Three Pillars of DIY Investing/
-├── PROJECT.md                 # Main project file (see template)
-├── research/
-│   ├── notes.md              # Research notes
-│   └── sources.md            # Sources and references
-├── scripts/
-│   ├── v1-draft.md           # Initial script
-│   ├── v2-reviewed.md        # After review
-│   └── v3-final.md           # Final shooting script
-├── assets/
-│   ├── thumbnail-concepts.md # Thumbnail ideas
-│   ├── b-roll-needed.md      # B-roll shot list
-│   └── graphics.md           # On-screen graphics notes
-└── YT-Derivatives/
-    ├── Short-1-[Topic].md    # YouTube Shorts
-    └── X-Clip-[Topic].md     # Social media clips
++-- PROJECT.md                 # Main project file (see template)
++-- research/
+|   +-- notes.md              # Research notes
+|   +-- sources.md            # Sources and references
++-- scripts/
+|   +-- v1-draft.md           # Initial script
+|   +-- v2-reviewed.md        # After review
+|   +-- v3-final.md           # Final shooting script
++-- assets/
+|   +-- thumbnail-concepts.md # Thumbnail ideas
+|   +-- b-roll-needed.md      # B-roll shot list
+|   +-- graphics.md           # On-screen graphics notes
++-- YT-Derivatives/
+    +-- Short-1-[Topic].md    # YouTube Shorts
+    +-- X-Clip-[Topic].md     # Social media clips
 ```
 
 ### Step 3: Use PROJECT.md Template
@@ -201,11 +201,11 @@ When you change a video's status in PROJECT.md:
 ### Future (Automated) - Phase 5
 
 Status changes will automatically trigger task creation:
-- `research → scripting`: Create "Write script" task
-- `scripting → draft`: Create "Review script" task
-- `draft → edited`: Create "Film" and "Edit" tasks
-- `edited → final`: Create "Create thumbnail" task
-- `final → published`: Create "Upload and publish" task
+- `research -> scripting`: Create "Write script" task
+- `scripting -> draft`: Create "Review script" task
+- `draft -> edited`: Create "Film" and "Edit" tasks
+- `edited -> final`: Create "Create thumbnail" task
+- `final -> published`: Create "Upload and publish" task
 
 Tasks will be auto-assigned to the correct pillar based on channel.
 

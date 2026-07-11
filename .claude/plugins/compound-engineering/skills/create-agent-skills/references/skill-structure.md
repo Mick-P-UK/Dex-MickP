@@ -95,12 +95,12 @@ description: What it does and when to use it (third person, specific triggers)
 - Must match directory name exactly
 
 **Examples**:
-- ✅ `process-pdfs`
-- ✅ `manage-facebook-ads`
-- ✅ `setup-stripe-payments`
-- ❌ `PDF_Processor` (uppercase)
-- ❌ `helper` (vague)
-- ❌ `claude-helper` (reserved word)
+- [x] `process-pdfs`
+- [x] `manage-facebook-ads`
+- [x] `setup-stripe-payments`
+- [ ] `PDF_Processor` (uppercase)
+- [ ] `helper` (vague)
+- [ ] `claude-helper` (reserved word)
 </name_field>
 
 <description_field>
@@ -111,9 +111,9 @@ description: What it does and when to use it (third person, specific triggers)
 - Include what it does AND when to use it
 
 **Critical rule**: Always write in third person.
-- ✅ "Processes Excel files and generates reports"
-- ❌ "I can help you process Excel files"
-- ❌ "You can use this to process Excel files"
+- [x] "Processes Excel files and generates reports"
+- [ ] "I can help you process Excel files"
+- [ ] "You can use this to process Excel files"
 
 **Structure**: Include both capabilities and triggers.
 
@@ -225,12 +225,12 @@ For skills with multiple domains, organize by domain to avoid loading irrelevant
 
 ```
 bigquery-skill/
-├── SKILL.md (overview and navigation)
-└── reference/
-    ├── finance.md (revenue, billing metrics)
-    ├── sales.md (opportunities, pipeline)
-    ├── product.md (API usage, features)
-    └── marketing.md (campaigns, attribution)
++-- SKILL.md (overview and navigation)
++-- reference/
+    +-- finance.md (revenue, billing metrics)
+    +-- sales.md (opportunities, pipeline)
+    +-- product.md (API usage, features)
+    +-- marketing.md (campaigns, attribution)
 ```
 
 When user asks about revenue, Claude reads only finance.md. Other files stay on filesystem consuming zero tokens.
@@ -262,7 +262,7 @@ Claude reads redlining.md or ooxml.md only when the user needs those features.
 </pattern>
 
 <critical_rules>
-**Keep references one level deep**: All reference files should link directly from SKILL.md. Avoid nested references (SKILL.md → advanced.md → details.md) as Claude may only partially read deeply nested files.
+**Keep references one level deep**: All reference files should link directly from SKILL.md. Avoid nested references (SKILL.md -> advanced.md -> details.md) as Claude may only partially read deeply nested files.
 
 **Add table of contents to long files**: For reference files over 100 lines, include a table of contents at the top.
 
@@ -284,21 +284,21 @@ Typical skill structure:
 
 ```
 skill-name/
-├── SKILL.md (main entry point, pure XML structure)
-├── references/ (optional, for progressive disclosure)
-│   ├── guide-1.md (pure XML structure)
-│   ├── guide-2.md (pure XML structure)
-│   └── examples.md (pure XML structure)
-└── scripts/ (optional, for utility scripts)
-    ├── validate.py
-    └── process.py
++-- SKILL.md (main entry point, pure XML structure)
++-- references/ (optional, for progressive disclosure)
+|   +-- guide-1.md (pure XML structure)
+|   +-- guide-2.md (pure XML structure)
+|   +-- examples.md (pure XML structure)
++-- scripts/ (optional, for utility scripts)
+    +-- validate.py
+    +-- process.py
 ```
 </directory_structure>
 </file_organization>
 
 <anti_patterns>
 <pitfall name="markdown_headings_in_body">
-❌ Do NOT use markdown headings in skill body:
+[ ] Do NOT use markdown headings in skill body:
 
 ```markdown
 # PDF Processing
@@ -310,7 +310,7 @@ Extract text...
 Form filling...
 ```
 
-✅ Use pure XML structure:
+[x] Use pure XML structure:
 
 ```xml
 <objective>
@@ -328,24 +328,24 @@ Form filling...
 </pitfall>
 
 <pitfall name="vague_descriptions">
-- ❌ "Helps with documents"
-- ✅ "Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction."
+- [ ] "Helps with documents"
+- [x] "Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction."
 </pitfall>
 
 <pitfall name="inconsistent_pov">
-- ❌ "I can help you process Excel files"
-- ✅ "Processes Excel files and generates reports"
+- [ ] "I can help you process Excel files"
+- [x] "Processes Excel files and generates reports"
 </pitfall>
 
 <pitfall name="wrong_naming_convention">
-- ❌ Directory: `facebook-ads`, Name: `facebook-ads-manager`
-- ✅ Directory: `manage-facebook-ads`, Name: `manage-facebook-ads`
-- ❌ Directory: `stripe-integration`, Name: `stripe`
-- ✅ Directory: `setup-stripe-payments`, Name: `setup-stripe-payments`
+- [ ] Directory: `facebook-ads`, Name: `facebook-ads-manager`
+- [x] Directory: `manage-facebook-ads`, Name: `manage-facebook-ads`
+- [ ] Directory: `stripe-integration`, Name: `stripe`
+- [x] Directory: `setup-stripe-payments`, Name: `setup-stripe-payments`
 </pitfall>
 
 <pitfall name="deeply_nested_references">
-Keep references one level deep from SKILL.md. Claude may only partially read nested files (SKILL.md → advanced.md → details.md).
+Keep references one level deep from SKILL.md. Claude may only partially read nested files (SKILL.md -> advanced.md -> details.md).
 </pitfall>
 
 <pitfall name="windows_paths">
@@ -360,13 +360,13 @@ Every skill must have: `<objective>`, `<quick_start>`, and `<success_criteria>` 
 <validation_checklist>
 Before finalizing a skill, verify:
 
-- ✅ YAML frontmatter valid (name matches directory, description in third person)
-- ✅ No markdown headings in body (pure XML structure)
-- ✅ Required tags present: objective, quick_start, success_criteria
-- ✅ Conditional tags appropriate for complexity level
-- ✅ All XML tags properly closed
-- ✅ Progressive disclosure applied (SKILL.md < 500 lines)
-- ✅ Reference files use pure XML structure
-- ✅ File paths use forward slashes
-- ✅ Descriptive file names
+- [x] YAML frontmatter valid (name matches directory, description in third person)
+- [x] No markdown headings in body (pure XML structure)
+- [x] Required tags present: objective, quick_start, success_criteria
+- [x] Conditional tags appropriate for complexity level
+- [x] All XML tags properly closed
+- [x] Progressive disclosure applied (SKILL.md < 500 lines)
+- [x] Reference files use pure XML structure
+- [x] File paths use forward slashes
+- [x] Descriptive file names
 </validation_checklist>

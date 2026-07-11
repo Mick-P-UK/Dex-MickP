@@ -567,7 +567,7 @@ async def handle_call_tool(name: str, arguments: dict):
                 text=json.dumps({
                     "error": "not_enabled",
                     "message": "ScreenPipe commitment detection is not enabled. Run /screenpipe-setup to opt in.",
-                    "hint": "User must enable ScreenPipe in System/user-profile.yaml → screenpipe.enabled: true"
+                    "hint": "User must enable ScreenPipe in System/user-profile.yaml -> screenpipe.enabled: true"
                 })
             )]
         

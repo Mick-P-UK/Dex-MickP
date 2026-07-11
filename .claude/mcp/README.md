@@ -35,21 +35,21 @@ Ask it to create 100 tasks? All 100 work correctly. The system is reliable enoug
 **The problem MCP solves:** Traditional systems can't sync tasks across multiple files. Check off a task in your meeting note, but it stays open in Tasks.md and person pages. They get out of sync.
 
 **What Work MCP does:**
-- ✅ Assigns unique IDs to every task (`^task-20260128-001`)
-- ✅ Syncs status across ALL locations (meeting notes, Tasks.md, person pages, project files)
-- ✅ Detects duplicates before creating them
-- ✅ Enforces priority limits (won't let you overcommit)
-- ✅ Validates strategic alignment (every task tagged to a pillar)
+- [x] Assigns unique IDs to every task (`^task-20260128-001`)
+- [x] Syncs status across ALL locations (meeting notes, Tasks.md, person pages, project files)
+- [x] Detects duplicates before creating them
+- [x] Enforces priority limits (won't let you overcommit)
+- [x] Validates strategic alignment (every task tagged to a pillar)
 
 **In practice:**
 ```
 You: "Mark the proposal task done"
 Work MCP:
-  → Finds task ID via fuzzy match
-  → Updates Tasks.md
-  → Updates meeting note where it was created
-  → Updates Sarah's person page
-  → Timestamps: ✅2026-01-28 14:35
+  -> Finds task ID via fuzzy match
+  -> Updates Tasks.md
+  -> Updates meeting note where it was created
+  -> Updates Sarah's person page
+  -> Timestamps: [x]2026-01-28 14:35
 ```
 
 Check off once, updates everywhere. No manual syncing. No duplicates getting out of sync. One source of truth.
@@ -61,28 +61,28 @@ Check off once, updates everywhere. No manual syncing. No duplicates getting out
 **The problem MCP solves:** Career progression evidence disappears. Six months later you're reconstructing achievements from fragmented memory. Performance reviews become stressful scrambles.
 
 **What Career MCP does:**
-- ✅ Captures evidence automatically (achievements, feedback, skills demonstrated)
-- ✅ Maps work to career ladder requirements
-- ✅ Tracks promotion readiness with gap analysis
-- ✅ Generates reviews from accumulated evidence, not reconstructed memory
-- ✅ Links daily work to career goals bidirectionally
+- [x] Captures evidence automatically (achievements, feedback, skills demonstrated)
+- [x] Maps work to career ladder requirements
+- [x] Tracks promotion readiness with gap analysis
+- [x] Generates reviews from accumulated evidence, not reconstructed memory
+- [x] Links daily work to career goals bidirectionally
 
 **In practice:**
 ```
 You: Run /daily-review
 Career MCP:
-  → Detects: "Led migration to new payment system"
-  → Maps to career ladder: "System Design" + "Technical Leadership"
-  → Tags evidence with next-level requirements
-  → Files to career folder automatically
+  -> Detects: "Led migration to new payment system"
+  -> Maps to career ladder: "System Design" + "Technical Leadership"
+  -> Tags evidence with next-level requirements
+  -> Files to career folder automatically
 
 Later:
 You: "Generate my self-review"
 Career MCP:
-  → Pulls 6 months of accumulated evidence
-  → Organizes by competency
-  → Shows progression narrative
-  → Review ready in 30 seconds
+  -> Pulls 6 months of accumulated evidence
+  -> Organizes by competency
+  -> Shows progression narrative
+  -> Review ready in 30 seconds
 ```
 
 **The integration that matters:** Career MCP and Work MCP work bidirectionally. Daily work feeds up (evidence, skills, gaps). Career goals push down (tasks tagged to development areas, quarters aligned to promotion criteria).

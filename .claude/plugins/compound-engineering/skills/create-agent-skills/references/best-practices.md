@@ -160,12 +160,12 @@ with pdfplumber.open("file.pdf") as pdf:
 
 ```
 bigquery-skill/
-├── SKILL.md (overview and navigation)
-└── reference/
-    ├── finance.md (revenue, billing)
-    ├── sales.md (opportunities, pipeline)
-    ├── product.md (API usage, features)
-    └── marketing.md (campaigns, attribution)
++-- SKILL.md (overview and navigation)
++-- reference/
+    +-- finance.md (revenue, billing)
+    +-- sales.md (opportunities, pipeline)
+    +-- product.md (API usage, features)
+    +-- marketing.md (campaigns, attribution)
 ```
 
 ### Pattern 3: Conditional details
@@ -303,8 +303,8 @@ fix(reports): correct date formatting in timezone conversion
 
 1. Determine the modification type:
 
-   **Creating new content?** → Follow "Creation workflow"
-   **Editing existing?** → Follow "Editing workflow"
+   **Creating new content?** -> Follow "Creation workflow"
+   **Editing existing?** -> Follow "Editing workflow"
 
 2. Creation workflow:
    - Use docx-js library

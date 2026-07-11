@@ -2,7 +2,7 @@
 
 ## Minitest Setup
 
-Kane exclusively uses Minitest—never RSpec.
+Kane exclusively uses Minitest-never RSpec.
 
 ```ruby
 # test/test_helper.rb
@@ -64,11 +64,11 @@ Test against multiple Rails/Ruby versions using gemfiles:
 
 ```
 test/
-├── test_helper.rb
-└── gemfiles/
-    ├── activerecord70.gemfile
-    ├── activerecord71.gemfile
-    └── activerecord72.gemfile
++-- test_helper.rb
++-- gemfiles/
+    +-- activerecord70.gemfile
+    +-- activerecord71.gemfile
+    +-- activerecord72.gemfile
 ```
 
 ```ruby

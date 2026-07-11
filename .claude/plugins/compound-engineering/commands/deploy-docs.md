@@ -18,15 +18,15 @@ echo "Commands: $(ls plugins/compound-engineering/commands/*.md | wc -l)"
 echo "Skills: $(ls -d plugins/compound-engineering/skills/*/ 2>/dev/null | wc -l)"
 
 # Validate JSON
-cat .claude-plugin/marketplace.json | jq . > /dev/null && echo "✓ marketplace.json valid"
-cat plugins/compound-engineering/.claude-plugin/plugin.json | jq . > /dev/null && echo "✓ plugin.json valid"
+cat .claude-plugin/marketplace.json | jq . > /dev/null && echo "[x] marketplace.json valid"
+cat plugins/compound-engineering/.claude-plugin/plugin.json | jq . > /dev/null && echo "[x] plugin.json valid"
 
 # Check all HTML files exist
 for page in index agents commands skills mcp-servers changelog getting-started; do
   if [ -f "plugins/compound-engineering/docs/pages/${page}.html" ] || [ -f "plugins/compound-engineering/docs/${page}.html" ]; then
-    echo "✓ ${page}.html exists"
+    echo "[x] ${page}.html exists"
   else
-    echo "✗ ${page}.html MISSING"
+    echo "[ ] ${page}.html MISSING"
   fi
 done
 ```
@@ -100,9 +100,9 @@ Provide a summary:
 ```
 ## Deployment Readiness
 
-✓ All HTML pages present
-✓ JSON files valid
-✓ Component counts match
+[x] All HTML pages present
+[x] JSON files valid
+[x] Component counts match
 
 ### Next Steps
 - [ ] Commit any pending changes

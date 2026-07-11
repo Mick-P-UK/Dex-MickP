@@ -1,7 +1,7 @@
 # Skill Evidence: Cross-Functional Leadership
 
 **Competency:** Cross-Functional Leadership
-**Current Level:** L4 (Strong) → L5 (Developing)
+**Current Level:** L4 (Strong) -> L5 (Developing)
 **Priority for L5:** High
 
 ---
@@ -104,17 +104,17 @@
 
 ## Growth Areas for L5
 
-### Executive Influence ⏳
+### Executive Influence [~]
 - **Current:** Good at exec presentations
 - **L5 Need:** Regular voice in exec discussions, influence on company decisions
 - **Actions:** Series D presentation, quarterly exec presentations, strategy memos
 
-### Sales/Marketing Partnership ⏳
+### Sales/Marketing Partnership [~]
 - **Current:** Developing (mobile launch)
 - **L5 Need:** Trusted partner across all functions
 - **Actions:** Monthly Sales syncs, Marketing GTM collaboration, CS partnerships
 
-### Organizational Alignment 🟢
+### Organizational Alignment [green]
 - **Current:** Good at multi-team coordination
 - **L5 Need:** Drive alignment across org in ambiguous situations
 - **Actions:** Lead API Partner Program (multi-team initiative)

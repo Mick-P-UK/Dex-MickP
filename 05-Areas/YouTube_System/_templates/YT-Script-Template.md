@@ -201,16 +201,16 @@ Resources mentioned:
 ---
 
 Join the community:
-📊 Inner Circle: https://diy-investors.com/inner-circle
-💎 Plaza Group: https://diy-investors.com/plaza-group
-🤖 AI for Investing: https://diy-investors.ai/membership
+ Inner Circle: https://diy-investors.com/inner-circle
+ Plaza Group: https://diy-investors.com/plaza-group
+ AI for Investing: https://diy-investors.ai/membership
 
 ---
 
 Follow DIY-Investors:
-🌐 Website: https://diy-investors.com
-🤖 AI Tools: https://diy-investors.ai
-📧 Newsletter: [Link]
+ Website: https://diy-investors.com
+ AI Tools: https://diy-investors.ai
+ Newsletter: [Link]
 
 #DIYInvesting #StockMarket #InvestingTips
 ```

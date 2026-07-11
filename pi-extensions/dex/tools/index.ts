@@ -149,7 +149,7 @@ export function registerTools(pi: ExtensionAPI, vaultRoot: string): void {
               content: [
                 {
                   type: "text",
-                  text: `✅ Created task: ${newTask.id}\n\n**${params.title}** [${params.priority || "P2"}]`,
+                  text: `[x] Created task: ${newTask.id}\n\n**${params.title}** [${params.priority || "P2"}]`,
                 },
               ],
               details: newTask,
@@ -181,7 +181,7 @@ export function registerTools(pi: ExtensionAPI, vaultRoot: string): void {
               content: [
                 {
                   type: "text",
-                  text: `✅ Completed: ${params.task_id}\n\n~~${completed.title}~~`,
+                  text: `[x] Completed: ${params.task_id}\n\n~~${completed.title}~~`,
                 },
               ],
               details: completed,
@@ -223,21 +223,21 @@ export function registerTools(pi: ExtensionAPI, vaultRoot: string): void {
             let suggestions: string[] = [];
 
             if (overdue.length > 0) {
-              suggestions.push(`⚠️ **${overdue.length} overdue tasks** need attention`);
+              suggestions.push(`[!] **${overdue.length} overdue tasks** need attention`);
               overdue.slice(0, 3).forEach((t) => {
                 suggestions.push(`  - ${t.title} (due: ${t.dueDate})`);
               });
             }
 
             if (p0Tasks.length > 0) {
-              suggestions.push(`\n🔴 **${p0Tasks.length} P0 tasks** to focus on:`);
+              suggestions.push(`\n[red] **${p0Tasks.length} P0 tasks** to focus on:`);
               p0Tasks.slice(0, 3).forEach((t) => {
                 suggestions.push(`  - ${t.title}`);
               });
             }
 
             if (suggestions.length === 0) {
-              suggestions.push("✅ All clear! No urgent tasks.");
+              suggestions.push("[x] All clear! No urgent tasks.");
             }
 
             return {
@@ -294,7 +294,7 @@ export function registerTools(pi: ExtensionAPI, vaultRoot: string): void {
           content: [
             {
               type: "text",
-              text: `📝 Captured to: ${result.relativePath}\n\nTitle: ${result.title}`,
+              text: ` Captured to: ${result.relativePath}\n\nTitle: ${result.title}`,
             },
           ],
           details: result,
@@ -326,17 +326,17 @@ export function registerTools(pi: ExtensionAPI, vaultRoot: string): void {
 
         const status = [
           "# Dex Status\n",
-          `📋 **Tasks:** ${summary.open} open / ${summary.total} total`,
+          ` **Tasks:** ${summary.open} open / ${summary.total} total`,
           summary.overdue > 0
-            ? `  ⚠️ ${summary.overdue} overdue`
-            : "  ✅ None overdue",
+            ? `  [!] ${summary.overdue} overdue`
+            : "  [x] None overdue",
           summary.p0Count > 0
-            ? `  🔴 ${summary.p0Count} P0`
+            ? `  [red] ${summary.p0Count} P0`
             : "  No P0 tasks",
           "",
-          `📥 **Inbox:** ${inboxCount} items to triage`,
+          ` **Inbox:** ${inboxCount} items to triage`,
           "",
-          `🕐 **Now:** ${new Date().toLocaleString()}`,
+          ` **Now:** ${new Date().toLocaleString()}`,
         ].join("\n");
 
         return {
@@ -534,7 +534,7 @@ async function completeTask(
   const timestamp = new Date().toISOString().slice(0, 16).replace("T", " ");
   content = content.replace(
     taskPattern,
-    `$1x] $2 ^${taskId}$3 ✅ ${timestamp}`
+    `$1x] $2 ^${taskId}$3 [x] ${timestamp}`
   );
 
   fs.writeFileSync(tasksPath, content);
@@ -568,7 +568,7 @@ function formatTaskList(tasks: TaskContext[]): string {
   for (const priority of ["P0", "P1", "P2", "P3"]) {
     const priorityTasks = byPriority[priority];
     if (priorityTasks && priorityTasks.length > 0) {
-      const emoji = { P0: "🔴", P1: "🟠", P2: "🟡", P3: "🟢" }[priority];
+      const emoji = { P0: "[red]", P1: "[orange]", P2: "[amber]", P3: "[green]" }[priority];
       lines.push(`\n## ${emoji} ${priority} (${priorityTasks.length})\n`);
       for (const task of priorityTasks) {
         const dueStr = task.dueDate ? ` (due: ${task.dueDate})` : "";

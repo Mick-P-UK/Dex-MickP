@@ -68,14 +68,14 @@ Search recent meeting notes (00-Inbox/Meetings/ from last 30 days) for:
 Present findings in this format:
 
 ```markdown
-# 📋 Roadmap Review
+#  Roadmap Review
 
 **Date:** [Today's date]
 **Projects reviewed:** [Count]
 
 ---
 
-## 🎯 Active Initiatives
+##  Active Initiatives
 
 [For each in-progress project:]
 
@@ -89,7 +89,7 @@ Present findings in this format:
 
 ---
 
-## 🚨 Attention Needed
+##  Attention Needed
 
 [Projects that need attention - stale, blocked, or misaligned]
 
@@ -100,7 +100,7 @@ Present findings in this format:
 
 ---
 
-## 💡 Recent Stakeholder Feedback
+##  Recent Stakeholder Feedback
 
 [Key feedback from recent meetings that affects roadmap]
 
@@ -109,7 +109,7 @@ Present findings in this format:
 
 ---
 
-## ✅ Alignment Check
+## [x] Alignment Check
 
 **Pillars with active work:**
 - [Pillar 1]: [X projects]
@@ -120,7 +120,7 @@ Present findings in this format:
 
 ---
 
-## 📊 Summary
+##  Summary
 
 **Health score:** [Good / Needs Attention / Blocked]
 - [X] projects on track
@@ -167,14 +167,14 @@ When user specifies a pillar (e.g., `/roadmap customer-experience`):
 ## Example Output
 
 ```markdown
-# 📋 Roadmap Review
+#  Roadmap Review
 
 **Date:** 2026-01-28
 **Projects reviewed:** 8
 
 ---
 
-## 🎯 Active Initiatives
+##  Active Initiatives
 
 ### Payments Redesign
 **Pillar:** Revenue Growth
@@ -196,7 +196,7 @@ Engineering complete. QA testing in progress. Beta group identified
 
 ---
 
-## 🚨 Attention Needed
+##  Attention Needed
 
 ### Dashboard Analytics v2
 **Issue:** Stale (21 days since update)
@@ -215,7 +215,7 @@ Engineering complete. QA testing in progress. Beta group identified
 
 ---
 
-## 💡 Recent Stakeholder Feedback
+##  Recent Stakeholder Feedback
 
 - **Acme Corp (Sarah)** - Frustrated with reporting time, wants dashboards
 - **Engineering (Mike)** - API refactor taking longer than expected, may impact Q1
@@ -223,7 +223,7 @@ Engineering complete. QA testing in progress. Beta group identified
 
 ---
 
-## ✅ Alignment Check
+## [x] Alignment Check
 
 **Pillars with active work:**
 - Revenue Growth: 3 projects
@@ -235,7 +235,7 @@ Engineering complete. QA testing in progress. Beta group identified
 
 ---
 
-## 📊 Summary
+##  Summary
 
 **Health score:** Needs Attention
 - 5 projects on track

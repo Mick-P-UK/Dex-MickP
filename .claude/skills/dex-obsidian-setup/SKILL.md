@@ -25,7 +25,7 @@ Say: "This will enable **Obsidian mode** in your Dex vault:
 
 **What changes:**
 - All person/company/project references become clickable wiki links
-- Example: `John_Doe` → `[[John_Doe]]`
+- Example: `John_Doe` -> `[[John_Doe]]`
 - Your existing files will be converted automatically
 
 **What stays the same:**
@@ -85,7 +85,7 @@ Run the config generator (from vault root):
 python core/obsidian/generate_obsidian_config.py
 ```
 
-Say: "✅ Obsidian config generated! Open your vault in Obsidian to see the optimized setup."
+Say: "[x] Obsidian config generated! Open your vault in Obsidian to see the optimized setup."
 
 **If NO:**
 
@@ -94,8 +94,8 @@ Say: "No problem! You can always run this later with `python core/obsidian/gener
 ## Step 6: Optional - Start Sync Daemon
 
 Ask: "Want to enable bidirectional sync? This keeps task checkboxes synced between Obsidian and Dex:
-- Check a task in Obsidian → syncs to Tasks.md, person pages, meeting notes
-- Check a task in Cursor → syncs to Obsidian
+- Check a task in Obsidian -> syncs to Tasks.md, person pages, meeting notes
+- Check a task in Cursor -> syncs to Obsidian
 
 Runs in background, zero maintenance."
 
@@ -113,10 +113,10 @@ Say: "No problem! You can enable it later by running `bash core/obsidian/install
 
 ## Step 7: Completion
 
-Say: "✅ Obsidian mode enabled!
+Say: "[x] Obsidian mode enabled!
 
 **Next steps:**
-1. Open Obsidian: File → Open Folder → select your Dex vault folder
+1. Open Obsidian: File -> Open Folder -> select your Dex vault folder
 2. Check the graph view: Ctrl/Cmd + G
 3. Click any wiki link to navigate
 

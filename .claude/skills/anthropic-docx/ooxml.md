@@ -12,7 +12,7 @@
 - **Element ordering in `<w:pPr>`**: `<w:pStyle>`, `<w:numPr>`, `<w:spacing>`, `<w:ind>`, `<w:jc>`
 - **Whitespace**: Add `xml:space='preserve'` to `<w:t>` elements with leading/trailing spaces
 - **Unicode**: Escape characters in ASCII content: `"` becomes `&#8220;`
-  - **Character encoding reference**: Curly quotes `""` become `&#8220;&#8221;`, apostrophe `'` becomes `&#8217;`, em-dash `—` becomes `&#8212;`
+  - **Character encoding reference**: Curly quotes `""` become `&#8220;&#8221;`, apostrophe `'` becomes `&#8217;`, em-dash `-` becomes `&#8212;`
 - **Tracked changes**: Use `<w:del>` and `<w:ins>` tags with `w:author="Claude"` outside `<w:r>` elements
   - **Critical**: `<w:ins>` closes with `</w:ins>`, `<w:del>` closes with `</w:del>` - never mix
   - **RSIDs must be 8-digit hex**: Use values like `00AB1234` (only 0-9, A-F characters)
@@ -269,7 +269,7 @@ Use the Document class from `scripts/document.py` for all tracked changes and co
 
 **Working with Unicode and Entities:**
 - **Searching**: Both entity notation and Unicode characters work - `contains="&#8220;Company"` and `contains="\u201cCompany"` find the same text
-- **Replacing**: Use either entities (`&#8220;`) or Unicode (`\u201c`) - both work and will be converted appropriately based on the file's encoding (ascii → entities, utf-8 → Unicode)
+- **Replacing**: Use either entities (`&#8220;`) or Unicode (`\u201c`) - both work and will be converted appropriately based on the file's encoding (ascii -> entities, utf-8 -> Unicode)
 
 ### Initialization
 
@@ -317,14 +317,14 @@ doc = Document('unpacked', rsid="07DC5ECB")
 - **Completely rejecting another author's deletion**: Use `revert_deletion()` on the `<w:del>` element to restore deleted content using tracked changes
 
 ```python
-# Minimal edit - change one word: "The report is monthly" → "The report is quarterly"
+# Minimal edit - change one word: "The report is monthly" -> "The report is quarterly"
 # Original: <w:r w:rsidR="00AB12CD"><w:rPr><w:rFonts w:ascii="Calibri"/></w:rPr><w:t>The report is monthly</w:t></w:r>
 node = doc["word/document.xml"].get_node(tag="w:r", contains="The report is monthly")
 rpr = tags[0].toxml() if (tags := node.getElementsByTagName("w:rPr")) else ""
 replacement = f'<w:r w:rsidR="00AB12CD">{rpr}<w:t>The report is </w:t></w:r><w:del><w:r>{rpr}<w:delText>monthly</w:delText></w:r></w:del><w:ins><w:r>{rpr}<w:t>quarterly</w:t></w:r></w:ins>'
 doc["word/document.xml"].replace_node(node, replacement)
 
-# Minimal edit - change number: "within 30 days" → "within 45 days"
+# Minimal edit - change number: "within 30 days" -> "within 45 days"
 # Original: <w:r w:rsidR="00XYZ789"><w:rPr><w:rFonts w:ascii="Calibri"/></w:rPr><w:t>within 30 days</w:t></w:r>
 node = doc["word/document.xml"].get_node(tag="w:r", contains="within 30 days")
 rpr = tags[0].toxml() if (tags := node.getElementsByTagName("w:rPr")) else ""

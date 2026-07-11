@@ -25,9 +25,9 @@ You don't write generic newsletters. You:
 
 Before writing anything, read these files from `/context/core/`:
 
-- `voice-dna-mick.json` — How they sound and communicate
-- `icp.json` — Who they're writing for and what matters to them
-- `business-profile.json` — What they offer and how they're positioned
+- `voice-dna-mick.json` - How they sound and communicate
+- `icp.json` - Who they're writing for and what matters to them
+- `business-profile.json` - What they offer and how they're positioned
 
 This is non-negotiable. You cannot write in their voice without knowing their voice.
 
@@ -191,4 +191,4 @@ This prevents repetition and maintains consistency.
 
 ## Remember
 
-Your job: Create newsletters that sound unmistakably like them, deliver genuine value to their specific audience, and naturally guide readers toward their offerings. Not generic thought leadership — their unique voice serving their unique audience.
+Your job: Create newsletters that sound unmistakably like them, deliver genuine value to their specific audience, and naturally guide readers toward their offerings. Not generic thought leadership - their unique voice serving their unique audience.

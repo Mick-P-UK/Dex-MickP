@@ -50,7 +50,7 @@ Collect deal information from 04-Projects/:
 - 2-3x coverage = Adequate
 - <2x coverage = At Risk
 
-**Weighted pipeline** = Sum of (Deal value × Stage probability)
+**Weighted pipeline** = Sum of (Deal value x Stage probability)
 - Discovery: 10%
 - Demo: 25%
 - Proposal: 50%
@@ -70,11 +70,11 @@ Collect deal information from 04-Projects/:
 ### Conversion Metrics
 
 **Stage conversion rates:**
-- Discovery → Demo: X%
-- Demo → Proposal: X%
-- Proposal → Negotiation: X%
-- Negotiation → Contract: X%
-- Contract → Close: X%
+- Discovery -> Demo: X%
+- Demo -> Proposal: X%
+- Proposal -> Negotiation: X%
+- Negotiation -> Contract: X%
+- Contract -> Close: X%
 
 (Calculate from historical closed deals if data available)
 
@@ -128,7 +128,7 @@ Collect deal information from 04-Projects/:
 Present findings in this format:
 
 ```markdown
-# 📊 Pipeline Health Report
+#  Pipeline Health Report
 
 **Period:** [Timeframe]
 **Target:** $[Target amount]
@@ -136,7 +136,7 @@ Present findings in this format:
 
 ---
 
-## 🎯 Forecast Summary
+##  Forecast Summary
 
 ### Current Position
 
@@ -150,21 +150,21 @@ Present findings in this format:
 
 ---
 
-## 📈 Pipeline Coverage
+##  Pipeline Coverage
 
 **Total pipeline:** $XXX,XXX
 **Coverage ratio:** X.Xx (Total pipeline / Target)
 
 **Status:**
-- ✅ 3x+ coverage = Healthy
-- ⚠️ 2-3x coverage = Adequate (yours: X.Xx)
-- 🚨 <2x coverage = At Risk
+- [x] 3x+ coverage = Healthy
+- [!] 2-3x coverage = Adequate (yours: X.Xx)
+-  <2x coverage = At Risk
 
 **Action needed:** [Yes/No - if <3x, need more pipeline generation]
 
 ---
 
-## ⏱️ Velocity Analysis
+##  Velocity Analysis
 
 **Average sales cycle:** XX days
 **Deals exceeding cycle:** [X deals] - [List if important]
@@ -182,23 +182,23 @@ Present findings in this format:
 
 ---
 
-## 🔄 Conversion Health
+##  Conversion Health
 
 **Stage conversion rates:**
 
 | From Stage | To Stage | Rate | Benchmark | Status |
 |------------|----------|------|-----------|--------|
-| Discovery | Demo | XX% | ~50% | ✅/⚠️/🚨 |
-| Demo | Proposal | XX% | ~50% | ✅/⚠️/🚨 |
-| Proposal | Negotiation | XX% | ~60% | ✅/⚠️/🚨 |
-| Negotiation | Contract | XX% | ~75% | ✅/⚠️/🚨 |
-| Contract | Close | XX% | ~90% | ✅/⚠️/🚨 |
+| Discovery | Demo | XX% | ~50% | [x]/[!]/ |
+| Demo | Proposal | XX% | ~50% | [x]/[!]/ |
+| Proposal | Negotiation | XX% | ~60% | [x]/[!]/ |
+| Negotiation | Contract | XX% | ~75% | [x]/[!]/ |
+| Contract | Close | XX% | ~90% | [x]/[!]/ |
 
 **Bottleneck stages:** [Stages with low conversion]
 
 ---
 
-## 🚨 Risk Factors
+##  Risk Factors
 
 ### High-Risk Items
 
@@ -222,7 +222,7 @@ Present findings in this format:
 
 ---
 
-## 💡 Opportunities
+##  Opportunities
 
 ### Quick Wins (Focus Here)
 
@@ -247,7 +247,7 @@ Present findings in this format:
 
 ---
 
-## 📊 Pipeline Distribution
+##  Pipeline Distribution
 
 **By Stage:**
 - Discovery: [X deals] - $XXX,XXX
@@ -264,7 +264,7 @@ Present findings in this format:
 
 ---
 
-## 🎯 Recommended Actions
+##  Recommended Actions
 
 ### Immediate (This Week)
 
@@ -336,7 +336,7 @@ Focus exclusively on:
 ## Example Output
 
 ```markdown
-# 📊 Pipeline Health Report
+#  Pipeline Health Report
 
 **Period:** Q1 2026
 **Target:** $500,000
@@ -344,7 +344,7 @@ Focus exclusively on:
 
 ---
 
-## 🎯 Forecast Summary
+##  Forecast Summary
 
 ### Current Position
 
@@ -358,21 +358,21 @@ Focus exclusively on:
 
 ---
 
-## 📈 Pipeline Coverage
+##  Pipeline Coverage
 
 **Total pipeline:** $847,000
 **Coverage ratio:** 1.7x (Total pipeline / Target)
 
-**Status:** 🚨 At Risk
-- ✅ 3x+ coverage = Healthy
-- ⚠️ 2-3x coverage = Adequate  
-- 🚨 <2x coverage = At Risk **(You are here: 1.7x)**
+**Status:**  At Risk
+- [x] 3x+ coverage = Healthy
+- [!] 2-3x coverage = Adequate  
+-  <2x coverage = At Risk **(You are here: 1.7x)**
 
 **Action needed:** YES - Need $400K+ in new pipeline to reach 3x coverage
 
 ---
 
-## ⏱️ Velocity Analysis
+##  Velocity Analysis
 
 **Average sales cycle:** 45 days
 **Deals exceeding cycle:** 3 deals (TechStart - 62 days, GlobalCo - 58 days, OldCo - 71 days)
@@ -380,7 +380,7 @@ Focus exclusively on:
 **Time in stage (average):**
 - Discovery: 7 days
 - Demo: 10 days
-- Proposal: 12 days ⚠️ (2x typical)
+- Proposal: 12 days [!] (2x typical)
 - Negotiation: 10 days
 - Contract: 6 days
 
@@ -390,25 +390,25 @@ Focus exclusively on:
 
 ---
 
-## 🔄 Conversion Health
+##  Conversion Health
 
 **Stage conversion rates:**
 
 | From Stage | To Stage | Rate | Benchmark | Status |
 |------------|----------|------|-----------|--------|
-| Discovery | Demo | 67% | ~50% | ✅ Good |
-| Demo | Proposal | 75% | ~50% | ✅ Good |
-| Proposal | Negotiation | 40% | ~60% | 🚨 **Issue** |
-| Negotiation | Contract | 80% | ~75% | ✅ Good |
-| Contract | Close | 100% | ~90% | ✅ Good |
+| Discovery | Demo | 67% | ~50% | [x] Good |
+| Demo | Proposal | 75% | ~50% | [x] Good |
+| Proposal | Negotiation | 40% | ~60% |  **Issue** |
+| Negotiation | Contract | 80% | ~75% | [x] Good |
+| Contract | Close | 100% | ~90% | [x] Good |
 
-**Bottleneck stages:** Proposal → Negotiation (40% conversion, should be ~60%)
+**Bottleneck stages:** Proposal -> Negotiation (40% conversion, should be ~60%)
 - Issue: Deals getting stuck after proposal sent
 - Root cause: Pricing concerns OR lack of follow-up
 
 ---
 
-## 🚨 Risk Factors
+##  Risk Factors
 
 ### High-Risk Items
 
@@ -436,7 +436,7 @@ Focus exclusively on:
 
 ---
 
-## 💡 Opportunities
+##  Opportunities
 
 ### Quick Wins (Focus Here)
 
@@ -462,12 +462,12 @@ Focus exclusively on:
 
 ---
 
-## 📊 Pipeline Distribution
+##  Pipeline Distribution
 
 **By Stage:**
 - Discovery: 3 deals - $220,000 (26%)
 - Demo: 2 deals - $105,000 (12%)
-- Proposal: 4 deals - $295,000 (35%) ⚠️ **Bottleneck**
+- Proposal: 4 deals - $295,000 (35%) [!] **Bottleneck**
 - Negotiation: 2 deals - $175,000 (21%)
 - Contract: 1 deal - $52,000 (6%)
 
@@ -479,7 +479,7 @@ Focus exclusively on:
 
 ---
 
-## 🎯 Recommended Actions
+##  Recommended Actions
 
 ### Immediate (This Week)
 

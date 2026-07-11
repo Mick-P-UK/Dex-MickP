@@ -42,7 +42,7 @@ end
 
 ## Class Macro DSL Pattern
 
-The signature Kane pattern—single method call configures everything:
+The signature Kane pattern-single method call configures everything:
 
 ```ruby
 # Usage
@@ -76,7 +76,7 @@ end
 
 ## Rails Integration
 
-**Always use `ActiveSupport.on_load`—never require Rails gems directly:**
+**Always use `ActiveSupport.on_load`-never require Rails gems directly:**
 
 ```ruby
 # WRONG

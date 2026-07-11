@@ -64,7 +64,7 @@ def apply_paragraph_properties(paragraph, para_data: Dict[str, Any]):
 
         # Add bullet character
         buChar = OxmlElement("a:buChar")
-        buChar.set("char", "•")
+        buChar.set("char", "-")
         pPr.append(buChar)
 
         # Default to left alignment for bullets if not specified

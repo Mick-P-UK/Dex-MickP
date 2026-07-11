@@ -31,11 +31,11 @@ git commit -m "Initial commit: Dex setup with custom file naming convention"
 ## What Will Happen
 
 The script will:
-1. ✅ Check if Git is installed
-2. ✅ Initialize git repository (if needed)
-3. ✅ Stage all Dex system files
-4. ✅ Create initial commit with description
-5. ✅ Show you the results
+1. [x] Check if Git is installed
+2. [x] Initialize git repository (if needed)
+3. [x] Stage all Dex system files
+4. [x] Create initial commit with description
+5. [x] Show you the results
 
 **Time:** Takes about 10-30 seconds
 
@@ -51,19 +51,19 @@ Git Repository Setup for Dex Customizations
 
 Working directory: c:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP
 
-Checking git installation... ✓
+Checking git installation... [x]
   git version 2.43.0
 
-  Initializing git repository... ✓
+  Initializing git repository... [x]
     Initialized empty Git repository in ...
 
-  Staging files... ✓
+  Staging files... [x]
 
-  Creating initial commit... ✓
+  Creating initial commit... [x]
     [main (root-commit) abc1234] Initial commit: Dex setup...
 
 ============================================================
-✓ Git repository setup complete!
+[x] Git repository setup complete!
 ============================================================
 ```
 

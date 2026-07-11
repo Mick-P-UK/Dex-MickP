@@ -73,7 +73,7 @@ launchctl load "$PLIST_PATH"
 sleep 2
 if launchctl list | grep -q "com.dex.obsidian-sync"; then
     echo ""
-    echo "✅ Sync daemon installed and started successfully!"
+    echo "[x] Sync daemon installed and started successfully!"
     echo ""
     echo "Logs:"
     echo "  - Output: $VAULT_PATH/System/obsidian-sync.log"
@@ -87,7 +87,7 @@ if launchctl list | grep -q "com.dex.obsidian-sync"; then
     echo "The daemon will automatically start on login."
 else
     echo ""
-    echo "⚠️  Daemon may not have started successfully."
+    echo "[!]  Daemon may not have started successfully."
     echo "Check the error log: $VAULT_PATH/System/obsidian-sync-error.log"
     exit 1
 fi

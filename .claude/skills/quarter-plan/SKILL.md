@@ -9,8 +9,8 @@ Set 3-5 strategic goals for the quarter. Runs at the start of each quarter (or m
 
 ## Usage
 
-- `/quarter-plan` — Plan current or upcoming quarter
-- `/quarter-plan next` — Plan next quarter (run in last week of current quarter)
+- `/quarter-plan` - Plan current or upcoming quarter
+- `/quarter-plan next` - Plan next quarter (run in last week of current quarter)
 
 ---
 
@@ -49,7 +49,7 @@ Set 3-5 strategic goals for the quarter. Runs at the start of each quarter (or m
 
 **Use `date_str`, `current_quarter`, and calculated quarter dates throughout the rest of the skill** - never hardcode quarters or assume.
 
-**Why:** Quarter calculations must be accurate. Wrong quarters cause goals to be filed incorrectly and break quarterly workflows. See CLAUDE.md → File Conventions → Date Verification for details.
+**Why:** Quarter calculations must be accurate. Wrong quarters cause goals to be filed incorrectly and break quarterly workflows. See CLAUDE.md -> File Conventions -> Date Verification for details.
 
 ---
 
@@ -60,8 +60,8 @@ Read `System/user-profile.yaml`:
 1. Check `quarterly_planning.enabled` value
 2. **If `false` or missing:**
    - Display: "Quarterly planning is currently disabled. Would you like to enable it?"
-   - If yes → Run onboarding questions (Step 0.5), then continue
-   - If no → End command
+   - If yes -> Run onboarding questions (Step 0.5), then continue
+   - If no -> End command
 3. **If `true`:** Continue to Step 1
 
 ---
@@ -181,9 +181,9 @@ Look for `05-Areas/Career/Growth_Goals.md`:
 ### Review Last Quarter (if available)
 
 > "Last quarter (Q4 2025) goals were:
-> 1. [Goal 1] — ✅ Completed
-> 2. [Goal 2] — 🔄 In progress (80%)
-> 3. [Goal 3] — ❌ Didn't finish
+> 1. [Goal 1] - [x] Completed
+> 2. [Goal 2] -  In progress (80%)
+> 3. [Goal 3] - [ ] Didn't finish
 > 
 > Anything to carry forward into this quarter?"
 
@@ -209,7 +209,7 @@ Wait for user input.
 > - Skills to develop: [Key development areas]
 > - Impact you want: [Impact goals]
 > 
-> Keep these in mind as we plan this quarter — your quarterly goals should advance your career goals.
+> Keep these in mind as we plan this quarter - your quarterly goals should advance your career goals.
 
 **Then continue:**
 
@@ -297,22 +297,22 @@ created: [timestamp]
 
 ---
 
-## 🎯 Quarter Objectives
+##  Quarter Objectives
 
-### 1. [Goal 1 Title] — **[Pillar]**
+### 1. [Goal 1 Title] - **[Pillar]**
 
 **What success looks like:**
 [Specific, measurable outcome]
 
 **Key milestones:**
-- [ ] [Milestone 1] — By [rough timing]
-- [ ] [Milestone 2] — By [rough timing]
+- [ ] [Milestone 1] - By [rough timing]
+- [ ] [Milestone 2] - By [rough timing]
 
-**Progress:** 0% 🔴
+**Progress:** 0% [red]
 
 ---
 
-### 2. [Goal 2 Title] — **[Pillar]**
+### 2. [Goal 2 Title] - **[Pillar]**
 
 **What success looks like:**
 [Specific, measurable outcome]
@@ -321,11 +321,11 @@ created: [timestamp]
 - [ ] [Milestone 1]
 - [ ] [Milestone 2]
 
-**Progress:** 0% 🔴
+**Progress:** 0% [red]
 
 ---
 
-### 3. [Goal 3 Title] — **[Pillar]**
+### 3. [Goal 3 Title] - **[Pillar]**
 
 **What success looks like:**
 [Specific, measurable outcome]
@@ -334,7 +334,7 @@ created: [timestamp]
 - [ ] [Milestone 1]
 - [ ] [Milestone 2]
 
-**Progress:** 0% 🔴
+**Progress:** 0% [red]
 
 ---
 
@@ -342,7 +342,7 @@ created: [timestamp]
 
 ---
 
-## 📊 Pillar Alignment
+##  Pillar Alignment
 
 | Pillar | Goals | Balance |
 |--------|-------|---------|
@@ -352,21 +352,21 @@ created: [timestamp]
 
 ---
 
-## 🔄 Carried From Last Quarter
+##  Carried From Last Quarter
 
 [Items from Q4 2025 that are continuing]
 
-- [ ] [Item] — [Context]
+- [ ] [Item] - [Context]
 
 ---
 
-## 📝 Notes & Context
+##  Notes & Context
 
 [Any additional context about the quarter]
 
 ---
 
-## 🏁 End of Quarter
+##  End of Quarter
 
 *Fill this in when running `/quarter-review`*
 

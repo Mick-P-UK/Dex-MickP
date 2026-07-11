@@ -37,7 +37,7 @@ if (!fs.existsSync(scriptPath)) {
     // Fail gracefully - output minimal context and exit
     console.log('=== Dex Session Context ===');
     console.log('');
-    console.log('⚠️  Session start hook script not found');
+    console.log('[!]  Session start hook script not found');
     console.log('');
     process.exit(0); // Exit successfully so session can continue
 }
@@ -85,7 +85,7 @@ const timeout = setTimeout(() => {
     } catch (e) {
         // Ignore kill errors
     }
-    console.log('\n⚠️  Session hook timed out (continuing...)');
+    console.log('\n[!]  Session hook timed out (continuing...)');
     process.exit(0); // Exit successfully so session can continue
 }, 5000); // 5 second timeout
 
@@ -94,7 +94,7 @@ child.on('error', (error) => {
     // Fail gracefully - don't crash the session
     console.log('=== Dex Session Context ===');
     console.log('');
-    console.log('⚠️  Session hook error (session will continue)');
+    console.log('[!]  Session hook error (session will continue)');
     console.log('');
     process.exit(0); // Exit successfully so session can continue
 });

@@ -6,7 +6,7 @@
 if (-not $env:CLAUDE_PROJECT_DIR) {
     Write-Host "=== Dex Session Context ==="
     Write-Host ""
-    Write-Host "⚠️  ERROR: CLAUDE_PROJECT_DIR environment variable not set"
+    Write-Host "[!]  ERROR: CLAUDE_PROJECT_DIR environment variable not set"
     Write-Host "Session log cannot be loaded. Please check hook configuration."
     Write-Host ""
     exit 1
@@ -28,21 +28,21 @@ Write-Host ""
 
 # Session Log (Resume Context) - CRITICAL: Always output something
 if (Test-Path $SESSION_LOG) {
-    Write-Host "--- 📍 Where We Left Off ---"
+    Write-Host "---  Where We Left Off ---"
     try {
         Get-Content $SESSION_LOG -ErrorAction Stop | Write-Host
         Write-Host "---"
         Write-Host ""
     } catch {
-        Write-Host "⚠️  ERROR: Could not read session log file: $SESSION_LOG"
+        Write-Host "[!]  ERROR: Could not read session log file: $SESSION_LOG"
         Write-Host "File exists but cannot be read. Check permissions."
         Write-Host "---"
         Write-Host ""
     }
 } else {
     # File doesn't exist - output diagnostic message
-    Write-Host "--- 📍 Where We Left Off ---"
-    Write-Host "ℹ️  Session log not found at: $SESSION_LOG"
+    Write-Host "---  Where We Left Off ---"
+    Write-Host "[i]  Session log not found at: $SESSION_LOG"
     Write-Host "This is normal for first-time setup or if session log was cleared."
     Write-Host "---"
     Write-Host ""
@@ -50,7 +50,7 @@ if (Test-Path $SESSION_LOG) {
 
 # Skip background checks during onboarding - nothing to check yet!
 if (-not (Test-Path $ONBOARDING_MARKER)) {
-    Write-Host "⏩ Onboarding in progress - background checks disabled"
+    Write-Host " Onboarding in progress - background checks disabled"
     Write-Host ""
 }
 
@@ -124,7 +124,7 @@ if (Test-Path $PILLARS_FILE) {
                     $name = $matches[1]
                     if ($descLine -match '^\s+description:\s+"(.+)"') {
                         $desc = $matches[1]
-                        Write-Host "• $name — $desc"
+                        Write-Host "- $name - $desc"
                         $pillarCount++
                         if ($pillarCount -ge 5) { break }
                     }
@@ -170,7 +170,7 @@ if (Test-Path $WEEK_PRIORITIES) {
     $inWeekSection = $false
     $weekContent = @()
     foreach ($line in $lines) {
-        if ($line -match '^## (🎯 )?This Week') {
+        if ($line -match '^## ( )?This Week') {
             $inWeekSection = $true
         } elseif ($inWeekSection -and $line -match '^---$') {
             break
@@ -258,7 +258,7 @@ if (Test-Path $LEARNINGS_DIR -PathType Container) {
     $files = Get-ChildItem -Path $LEARNINGS_DIR -Filter "*.md" -ErrorAction SilentlyContinue
     foreach ($file in $files) {
         $lines = Get-Content $file.FullName -ErrorAction SilentlyContinue
-        $recent = $lines | Where-Object { $_ -match '## .+ — 202[0-9]-[0-9]{2}-[0-9]{2}' } | Select-Object -Last 2
+        $recent = $lines | Where-Object { $_ -match '## .+ - 202[0-9]-[0-9]{2}-[0-9]{2}' } | Select-Object -Last 2
         
         if ($recent) {
             if (-not $foundLearnings) {
@@ -278,7 +278,7 @@ if (Test-Path $LEARNINGS_DIR -PathType Container) {
 # 8. Pending Claude Code Updates
 $CHANGELOG_PENDING = Join-Path $CLAUDE_DIR "System\changelog-updates-pending.md"
 if (Test-Path $CHANGELOG_PENDING) {
-    Write-Host "--- 🆕 Claude Code Updates Detected ---"
+    Write-Host "---  Claude Code Updates Detected ---"
     Write-Host "New features or capabilities available!"
     Write-Host "Run: /dex-whats-new"
     Write-Host "---"
@@ -293,7 +293,7 @@ if (Test-Path $LEARNING_PENDING) {
     $countLine = $lines | Where-Object { $_ -match '^\*\*Count:\*\*' } | Select-Object -First 1
     if ($countLine -match '\*\*Count:\*\*\s*(\d+)') {
         $LEARNING_COUNT = $matches[1]
-        Write-Host "--- 📚 Pending Learnings Review ($LEARNING_COUNT) ---"
+        Write-Host "---  Pending Learnings Review ($LEARNING_COUNT) ---"
         Write-Host "Session learnings ready for review"
         Write-Host "Run: /dex-whats-new --learnings"
         Write-Host "---"
@@ -311,7 +311,7 @@ if (Test-Path $ONBOARDING_MARKER) {
             # Check if phase2_completed is false
             $content = Get-Content $ONBOARDING_MARKER -Raw -ErrorAction SilentlyContinue
             if ($content -and $content -notmatch '"phase2_completed":\s*true') {
-                Write-Host "--- 👋 Welcome! ---"
+                Write-Host "---  Welcome! ---"
                 Write-Host "You're probably wondering what to do next..."
                 Write-Host "Try: /getting-started"
                 Write-Host "---"

@@ -338,7 +338,7 @@ class TestEdgeCases:
     def test_special_characters(self):
         """Test handling of special characters."""
         # Should still detect patterns with punctuation
-        assert detect_commitment_type("Can you review this??? 🙏")[0] == "inbound"
+        assert detect_commitment_type("Can you review this??? ")[0] == "inbound"
         assert detect_commitment_type("I'll send it! Thanks!")[0] == "outbound"
     
     def test_multiline_text(self):

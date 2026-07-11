@@ -35,7 +35,7 @@ Analyze the input and select the best note type:
 **2. Income Proof Story** - Share results with vulnerable beginning (3-7 sentences)
 **3. Pattern Observation** - "I've noticed..." authority-building insight (3-8 sentences)
 **4. Contrarian Statement** - Challenge conventional wisdom (2-6 sentences)
-**5. Problem → Solution Insight** - Identify issue + root cause + fix (3-6 sentences)
+**5. Problem -> Solution Insight** - Identify issue + root cause + fix (3-6 sentences)
 **6. Build-in-Public Update** - Transparent progress sharing (3-8 sentences)
 **7. List-Based Tactical** - Actionable numbered/bulleted advice (4-12 sentences)
 **8. Vulnerable Personal Story** - Deep connection through story (4-10 sentences)
@@ -43,12 +43,12 @@ Analyze the input and select the best note type:
 **10. Direct Advice** - Clear instruction with reasoning (2-5 sentences)
 
 If user is unsure, recommend based on their goal:
-- **Teaching** → List-Based Tactical or Problem → Solution
-- **Building Authority** → Pattern Observation or Income Proof Story
-- **Connection** → Vulnerable Story or Philosophical Observation
-- **Quick Value** → Single-Punch Wisdom or Direct Advice
-- **Transparency** → Build-in-Public Update
-- **Positioning** → Contrarian Statement
+- **Teaching** -> List-Based Tactical or Problem -> Solution
+- **Building Authority** -> Pattern Observation or Income Proof Story
+- **Connection** -> Vulnerable Story or Philosophical Observation
+- **Quick Value** -> Single-Punch Wisdom or Direct Advice
+- **Transparency** -> Build-in-Public Update
+- **Positioning** -> Contrarian Statement
 
 ### Step 3: Apply Structural Formula
 
@@ -90,7 +90,7 @@ Each note type has a proven formula. Apply the structure while using the user's 
 **Psychology:** Creates cognitive dissonance, memorable
 **Length:** 2-6 sentences
 
-#### Formula 5: Problem → Solution Insight
+#### Formula 5: Problem -> Solution Insight
 ```
 ["You don't have X because..."]
 [Root cause explanation]
@@ -204,7 +204,7 @@ Each note type has a proven formula. Apply the structure while using the user's 
 2. **Timeline Progression** - Shows transformation
 3. **Contrast/Comparison** - Before/after, right/wrong
 4. **Evidence Stacking** - Multiple examples
-5. **Cause → Effect Logic** - Clear progression
+5. **Cause -> Effect Logic** - Clear progression
 
 ### Closing Techniques (Choose One)
 1. **Punchy Restatement** - Echo opening memorably
@@ -218,7 +218,7 @@ Each note type has a proven formula. Apply the structure while using the user's 
 **Authority Building:**
 - Pattern recognition ("I've noticed...")
 - Proof through results (specific numbers)
-- Transparent journey (struggle → success)
+- Transparent journey (struggle -> success)
 
 **Connection Building:**
 - Vulnerability (admit fears, failures)
@@ -274,7 +274,7 @@ Still refining the process, but already seeing how this scales.
 The system pays for itself in time savings.
 ```
 
-### Example 3: Problem → Solution Insight (Generic productivity)
+### Example 3: Problem -> Solution Insight (Generic productivity)
 **User Request:** "Explain why people can't focus"
 
 **Generated Note:**
@@ -323,24 +323,24 @@ Your energy determines your results more than your effort.
 ### Anti-Patterns (Never Do This)
 
 **1. Vague Generalities**
-❌ "Success takes time and hard work"
-✅ "My first 6 months: $0. Month 7: $10K. Nothing happens, then everything happens."
+[ ] "Success takes time and hard work"
+[x] "My first 6 months: $0. Month 7: $10K. Nothing happens, then everything happens."
 
 **2. Humble-Bragging**
-❌ "So grateful for this little win" [shows huge number]
-✅ "Made $50K this month. Here's the mistake that cost me $30K of it."
+[ ] "So grateful for this little win" [shows huge number]
+[x] "Made $50K this month. Here's the mistake that cost me $30K of it."
 
 **3. Clickbait Without Payoff**
-❌ "This one thing changed everything" [no specifics]
-✅ "Switched from hourly to value pricing. Doubled my income in 8 weeks."
+[ ] "This one thing changed everything" [no specifics]
+[x] "Switched from hourly to value pricing. Doubled my income in 8 weeks."
 
 **4. Generic Advice**
-❌ "Work hard and believe in yourself"
-✅ "Wake up at 5am. Complete your hardest task first. Ignore everything else until noon."
+[ ] "Work hard and believe in yourself"
+[x] "Wake up at 5am. Complete your hardest task first. Ignore everything else until noon."
 
 **5. Corporate Voice**
-❌ "We're excited to announce our new offering"
-✅ "Built something new. Tested it for 3 weeks. It works. Here's what it does."
+[ ] "We're excited to announce our new offering"
+[x] "Built something new. Tested it for 3 weeks. It works. Here's what it does."
 
 ## Quality Checklist
 

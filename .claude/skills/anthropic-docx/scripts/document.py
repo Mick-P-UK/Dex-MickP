@@ -310,7 +310,7 @@ class DocxXMLEditor(XMLEditor):
 
             # Process each run
             for run in runs:
-                # Convert w:t → w:delText and w:rsidR → w:rsidDel
+                # Convert w:t -> w:delText and w:rsidR -> w:rsidDel
                 if run.hasAttribute("w:rsidR"):
                     run.setAttribute("w:rsidDel", run.getAttribute("w:rsidR"))
                     run.removeAttribute("w:rsidR")
@@ -397,7 +397,7 @@ class DocxXMLEditor(XMLEditor):
                 # Clone the run
                 new_run = run.cloneNode(True)
 
-                # Convert w:delText → w:t
+                # Convert w:delText -> w:t
                 for del_text in list(new_run.getElementsByTagName("w:delText")):
                     t_elem = self.dom.createElement("w:t")
                     # Copy ALL child nodes (not just firstChild) to handle entities
@@ -408,7 +408,7 @@ class DocxXMLEditor(XMLEditor):
                         t_elem.setAttribute(attr.name, attr.value)
                     del_text.parentNode.replaceChild(t_elem, del_text)
 
-                # Update run attributes: w:rsidDel → w:rsidR
+                # Update run attributes: w:rsidDel -> w:rsidR
                 if new_run.hasAttribute("w:rsidDel"):
                     new_run.setAttribute("w:rsidR", new_run.getAttribute("w:rsidDel"))
                     new_run.removeAttribute("w:rsidDel")
@@ -500,7 +500,7 @@ class DocxXMLEditor(XMLEditor):
             if elem.getElementsByTagName("w:delText"):
                 raise ValueError("w:r element already contains w:delText")
 
-            # Convert w:t → w:delText
+            # Convert w:t -> w:delText
             for t_elem in list(elem.getElementsByTagName("w:t")):
                 del_text = self.dom.createElement("w:delText")
                 # Copy ALL child nodes (not just firstChild) to handle entities
@@ -512,7 +512,7 @@ class DocxXMLEditor(XMLEditor):
                     del_text.setAttribute(attr.name, attr.value)
                 t_elem.parentNode.replaceChild(del_text, t_elem)
 
-            # Update run attributes: w:rsidR → w:rsidDel
+            # Update run attributes: w:rsidR -> w:rsidDel
             if elem.hasAttribute("w:rsidR"):
                 elem.setAttribute("w:rsidDel", elem.getAttribute("w:rsidR"))
                 elem.removeAttribute("w:rsidR")
@@ -557,7 +557,7 @@ class DocxXMLEditor(XMLEditor):
                     del_marker, rPr.firstChild
                 ) if rPr.firstChild else rPr.appendChild(del_marker)
 
-            # Convert w:t → w:delText in all runs
+            # Convert w:t -> w:delText in all runs
             for t_elem in list(elem.getElementsByTagName("w:t")):
                 del_text = self.dom.createElement("w:delText")
                 # Copy ALL child nodes (not just firstChild) to handle entities
@@ -569,7 +569,7 @@ class DocxXMLEditor(XMLEditor):
                     del_text.setAttribute(attr.name, attr.value)
                 t_elem.parentNode.replaceChild(del_text, t_elem)
 
-            # Update run attributes: w:rsidR → w:rsidDel
+            # Update run attributes: w:rsidR -> w:rsidDel
             for run in elem.getElementsByTagName("w:r"):
                 if run.hasAttribute("w:rsidR"):
                     run.setAttribute("w:rsidDel", run.getAttribute("w:rsidR"))

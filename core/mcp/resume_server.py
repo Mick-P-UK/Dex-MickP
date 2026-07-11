@@ -1016,7 +1016,7 @@ async def handle_generate_linkedin(arguments: dict) -> list[types.TextContent]:
     for role in session.roles:
         exp = format_linkedin_experience(role)
         experience_sections.append({
-            "role": f"{role.title} — {role.company}",
+            "role": f"{role.title} - {role.company}",
             "content": exp
         })
     

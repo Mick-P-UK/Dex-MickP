@@ -67,7 +67,7 @@ if [[ $PENDING_COUNT -ge 5 ]]; then
   log "Creating learning review prompt (threshold met: $PENDING_COUNT >= 5)"
   
   cat > "$PROMPT_FILE" <<EOF
-# 📚 Pending Learnings Review
+#  Pending Learnings Review
 
 **Count:** $PENDING_COUNT pending learnings from the past week
 **Detected:** $(date -u +"%Y-%m-%d %H:%M UTC")

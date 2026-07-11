@@ -65,7 +65,7 @@ elements. -->
 			</xsd:sequence>
 			<!-- AlternateContent elements might include the attributes Ignorable,
 				MustUnderstand and ProcessContent described in this Part of ECMA-376. These
-				attributes’ qualified names shall be prefixed when associated with an AlternateContent
+				attributes' qualified names shall be prefixed when associated with an AlternateContent
 				element. -->
 			<xsd:attribute ref="mc:Ignorable" use="optional" />
 			<xsd:attribute ref="mc:MustUnderstand" use="optional" />

@@ -153,7 +153,7 @@ As of February 3rd, 2026, total open interest on COMEX silver - that's the numbe
 
 Multiply that by 5,000 ounces per contract, and you get 715.9 million ounces of paper claims on silver.
 
-**[VISUAL: Calculation shown on screen: 143,180 × 5,000 = 715.9M oz]**
+**[VISUAL: Calculation shown on screen: 143,180 x 5,000 = 715.9M oz]**
 
 Meanwhile, registered inventory - the physical silver actually available for delivery - stands at approximately 82 million ounces.
 
@@ -239,7 +239,7 @@ Here's why this matters: China doesn't mine the majority of global silver. They 
 
 China has reclassified silver as a "strategic material" - the same category as rare earths. And if you recall what happened with rare earths, this should concern you.
 
-**[VISUAL: Timeline - Rare earths 2010 licensing → 4,500% price spike]**
+**[VISUAL: Timeline - Rare earths 2010 licensing -> 4,500% price spike]**
 
 In 2010, China imposed similar licensing requirements on rare earth exports. Prices subsequently spiked 4,500%. The pattern is consistent: licence first, restrict gradually, then weaponize if geopolitically convenient.
 
@@ -394,14 +394,14 @@ Until next time, take care and happy diy-investing.
 8. **[3:40] Demand breakdown pie chart** - Industrial vs investment demand
 9. **[5:35] Futures contract diagram** - Animated explanation of 5,000 oz contracts, delivery months
 10. **[6:05] Four participant icons** - Hedgers, speculators, market makers, arbitrageurs
-11. **[6:25] Leverage ratio calculation** - 143,180 contracts × 5,000 oz = 715.9M oz paper claims
+11. **[6:25] Leverage ratio calculation** - 143,180 contracts x 5,000 oz = 715.9M oz paper claims
 12. **[6:45] Leverage visualization** - 8.7:1 ratio graphic (8.7 paper claims per 1 oz physical)
 13. **[7:05] March contracts calculation** - 425-455M oz demand vs 82M oz registered inventory
 14. **[8:00] January 2026 timeline** - Key events: 33M oz withdrawal, margin hikes, price crash
 15. **[8:50] Historical disconnects timeline** - 2008 crisis, 2020 COVID, 2022 nickel crisis
 16. **[9:35] Bulls vs Bears split screen** - Contrasting interpretations of disconnect
 17. **[10:40] China refining dominance map** - Visual showing China's 60-70% control of global silver refining, with export flow arrows
-18. **[11:10] Rare earths timeline** - 2010 licensing → 4,500% price spike comparison
+18. **[11:10] Rare earths timeline** - 2010 licensing -> 4,500% price spike comparison
 19. **[11:30] Regional market fragmentation map** - Three regional islands (Asia, North America, Europe) with price differentials highlighted
 20. **[12:00] Keith Neumeyer quote graphic** - "You just can't continually run in a deficit..."
 21. **[12:30] Physical silver pros/cons list**

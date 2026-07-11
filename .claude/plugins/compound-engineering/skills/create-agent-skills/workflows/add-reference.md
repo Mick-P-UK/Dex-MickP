@@ -23,9 +23,9 @@ ls ~/.claude/skills/{skill-name}/references/ 2>/dev/null
 ```
 
 Determine:
-- **Has references/ folder?** → Good, can add directly
-- **Simple skill?** → May need to create references/ first
-- **What references exist?** → Understand the knowledge landscape
+- **Has references/ folder?** -> Good, can add directly
+- **Simple skill?** -> May need to create references/ first
+- **What references exist?** -> Understand the knowledge landscape
 
 Report current references to user.
 
@@ -36,7 +36,7 @@ Ask:
 - Which workflows will use it?
 - Is this reusable across workflows or specific to one?
 
-**If specific to one workflow** → Consider putting it inline in that workflow instead.
+**If specific to one workflow** -> Consider putting it inline in that workflow instead.
 
 ## Step 4: Create the Reference File
 

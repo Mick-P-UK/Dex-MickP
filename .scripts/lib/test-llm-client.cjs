@@ -10,14 +10,14 @@
 const { getActiveProvider, isConfigured, generateContent } = require('./llm-client.cjs');
 
 async function test() {
-  console.log('🔍 Testing LLM client...\n');
+  console.log(' Testing LLM client...\n');
   
   console.log('Configuration status:');
   console.log(`  Configured: ${isConfigured()}`);
   console.log(`  Active provider: ${getActiveProvider() || 'none'}\n`);
   
   if (!isConfigured()) {
-    console.log('❌ No API key found in .env');
+    console.log('[ ] No API key found in .env');
     console.log('   Add ANTHROPIC_API_KEY, OPENAI_API_KEY, or GEMINI_API_KEY\n');
     process.exit(1);
   }
@@ -28,10 +28,10 @@ async function test() {
       maxOutputTokens: 100
     });
     
-    console.log('✅ Success!');
+    console.log('[x] Success!');
     console.log(`Response: ${result.trim()}\n`);
   } catch (error) {
-    console.log('❌ Error:', error.message);
+    console.log('[ ] Error:', error.message);
     process.exit(1);
   }
 }

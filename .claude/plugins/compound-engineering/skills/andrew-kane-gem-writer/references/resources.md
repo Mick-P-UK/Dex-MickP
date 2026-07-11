@@ -32,7 +32,7 @@
 |-----|-------|-------------|--------|
 | **Lockbox** | 1.5k+ | Application-level encryption | https://github.com/ankane/lockbox |
 | **Blind Index** | 1.0k+ | Encrypted search | https://github.com/ankane/blind_index |
-| **Secure Headers** | — | Contributed patterns | Referenced in gems |
+| **Secure Headers** | - | Contributed patterns | Referenced in gems |
 
 ### Analytics & ML
 

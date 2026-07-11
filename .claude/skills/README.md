@@ -178,7 +178,7 @@ Skills follow Agent Skills standard:
 
 ```
 skill-name/
-└── SKILL.md       # Full skill definition with metadata
++-- SKILL.md       # Full skill definition with metadata
 ```
 
 Invoked with `/skill-name` - automatically discovered by Claude.

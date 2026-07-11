@@ -92,9 +92,9 @@ These are some examples of form structures that you might see:
 
 *Label inside box*
 ```
-┌────────────────────────┐
-│ Name:                  │
-└────────────────────────┘
++------------------------+
+| Name:                  |
++------------------------+
 ```
 The input area should be to the right of the "Name" label and extend to the edge of the box.
 
@@ -120,10 +120,10 @@ The input area should extend from the bottom of the label to the line, and shoul
 
 *Checkboxes*
 ```
-Are you a US citizen? Yes □  No □
+Are you a US citizen? Yes [ ]  No [ ]
 ```
 For checkboxes:
-- Look for small square boxes (□) - these are the actual checkboxes to target. They may be to the left or right of their labels.
+- Look for small square boxes ([ ]) - these are the actual checkboxes to target. They may be to the left or right of their labels.
 - Distinguish between label text ("Yes", "No") and the clickable checkbox squares.
 - The entry bounding box should cover ONLY the small square, not the text label.
 

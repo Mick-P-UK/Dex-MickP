@@ -214,7 +214,7 @@
       "quirks_and_tells": [
         "Dates in detailed British format: '17th January 2026', 'Saturday 17th January 2026'",
         "Precise timestamps: '13:08 (3 minutes ago)', '7.30pm', '24th January 2026'",
-        "Financial data to multiple decimal points: '70.30%', '£10,867', '$4987.7/t.oz'",
+        "Financial data to multiple decimal points: '70.30%', 'GBP10,867', '$4987.7/t.oz'",
         "Self-deprecating tech humor: 'my PC totally died, so I lost two days faffing around'",
         "Names his AI assistants as collaborators: 'Cedric & Annie', 'Enter my AI research assistant Cedric'",
         "Self-aware about own concepts: 'my (famous?) Rubber Band'",
@@ -259,7 +259,7 @@
     },
     "illustrative_moments": [
       {
-        "excerpt": "Any concept that AI is capable of doing so is just plain 'daft' as far as I'm concerned… for the simple reason that we're all at different stages of life, with different objectives, circumstances and risk tolerance.",
+        "excerpt": "Any concept that AI is capable of doing so is just plain 'daft' as far as I'm concerned... for the simple reason that we're all at different stages of life, with different objectives, circumstances and risk tolerance.",
         "why_quintessential": "Perfect synthesis of his voice: direct conviction ('plain daft'), personal ownership ('as far as I'm concerned'), thoughtful reasoning ('for the simple reason that'), and human-centered philosophy. Shows he'll stake clear positions while grounding them in empathy for individual circumstances. The ellipsis adds conversational rhythm."
       },
       {
@@ -279,7 +279,7 @@
         "why_quintessential": "Empathetic analysis connecting data to human impact. Uses 'perhaps' to soften while still making clear point. Rhetorical question invites reader to reach own conclusion. Shows his awareness of social/political context beyond pure markets. 'Very real' emphasizes he sees beyond numbers to lived experience."
       },
       {
-        "excerpt": "At the time of writing, this portfolio is now up by 94.29% at £19,429.96, with Greatland Resources now having increased by 107.5% since it was purchased on 22nd September 2025.",
+        "excerpt": "At the time of writing, this portfolio is now up by 94.29% at GBP19,429.96, with Greatland Resources now having increased by 107.5% since it was purchased on 22nd September 2025.",
         "why_quintessential": "Signature temporal precision ('At the time of writing'). Exact figures to decimal points. Specific dates for complete transparency. This is his data-presentation style - precise, timestamped, verifiable. Avoids claiming results are permanent or guaranteed by anchoring to specific moment."
       }
     ]

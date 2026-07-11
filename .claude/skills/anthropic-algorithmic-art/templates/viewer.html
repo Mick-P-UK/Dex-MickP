@@ -2,15 +2,15 @@
 <!--
     THIS IS A TEMPLATE THAT SHOULD BE USED EVERY TIME AND MODIFIED.
     WHAT TO KEEP:
-    ✓ Overall structure (header, sidebar, main content)
-    ✓ Anthropic branding (colors, fonts, layout)
-    ✓ Seed navigation section (always include this)
-    ✓ Self-contained artifact (everything inline)
+    [x] Overall structure (header, sidebar, main content)
+    [x] Anthropic branding (colors, fonts, layout)
+    [x] Seed navigation section (always include this)
+    [x] Self-contained artifact (everything inline)
 
     WHAT TO CREATIVELY EDIT:
-    ✗ The p5.js algorithm (implement YOUR vision)
-    ✗ The parameters (define what YOUR art needs)
-    ✗ The UI controls (match YOUR parameters)
+    [ ] The p5.js algorithm (implement YOUR vision)
+    [ ] The parameters (define what YOUR art needs)
+    [ ] The UI controls (match YOUR parameters)
 
     Let your philosophy guide the implementation.
     The world is your oyster - be creative!
@@ -100,7 +100,7 @@
         }
 
         .control-section h3::before {
-            content: '•';
+            content: '-';
             color: var(--anthropic-orange);
             font-weight: bold;
         }
@@ -341,10 +341,10 @@
                 <h3>Seed</h3>
                 <input type="number" id="seed-input" class="seed-input" value="12345" onchange="updateSeed()">
                 <div class="seed-controls">
-                    <button class="button secondary" onclick="previousSeed()">← Prev</button>
-                    <button class="button secondary" onclick="nextSeed()">Next →</button>
+                    <button class="button secondary" onclick="previousSeed()"><- Prev</button>
+                    <button class="button secondary" onclick="nextSeed()">Next -></button>
                 </div>
-                <button class="button tertiary regen-button" onclick="randomSeedAndUpdate()">↻ Random</button>
+                <button class="button tertiary regen-button" onclick="randomSeedAndUpdate()"> Random</button>
             </div>
 
             <!-- Parameters Section (CUSTOMIZE THIS FOR YOUR ART) -->
@@ -438,9 +438,9 @@
     </div>
 
     <script>
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
         // GENERATIVE ART PARAMETERS - CUSTOMIZE FOR YOUR ALGORITHM
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
 
         let params = {
             seed: 12345,
@@ -453,9 +453,9 @@
 
         let defaultParams = {...params}; // Store defaults for reset
 
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
         // P5.JS GENERATIVE ART ALGORITHM - REPLACE WITH YOUR VISION
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
 
         let particles = [];
         let flowField = [];
@@ -504,9 +504,9 @@
             // fill this in
         }
 
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
         // PARTICLE SYSTEM - CUSTOMIZE FOR YOUR ALGORITHM
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
 
         class Particle {
             constructor() {
@@ -515,9 +515,9 @@
             // fill this in
         }
 
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
         // UI CONTROL HANDLERS - CUSTOMIZE FOR YOUR PARAMETERS
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
 
         function updateParam(paramName, value) {
             // fill this in
@@ -527,9 +527,9 @@
             // fill this in
         }
 
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
         // SEED CONTROL FUNCTIONS - ALWAYS KEEP THESE
-        // ═══════════════════════════════════════════════════════════════════════
+        // =======================================================================
 
         function updateSeedDisplay() {
             document.getElementById('seed-input').value = params.seed;

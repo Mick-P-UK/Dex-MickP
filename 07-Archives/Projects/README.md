@@ -5,9 +5,9 @@ Completed or cancelled projects for historical reference.
 ## What Goes Here
 
 Projects move here when they:
-- **Complete** — Goal achieved, deliverable shipped
-- **Cancel** — No longer pursuing
-- **Go dormant** — Paused indefinitely
+- **Complete** - Goal achieved, deliverable shipped
+- **Cancel** - No longer pursuing
+- **Go dormant** - Paused indefinitely
 
 ## When to Archive
 
@@ -16,15 +16,15 @@ Move projects here when:
 - All follow-ups are complete
 - It's been 30+ days since last update
 
-Don't archive too early—active follow-ups or maintenance means it should stay in `04-Projects/`.
+Don't archive too early-active follow-ups or maintenance means it should stay in `04-Projects/`.
 
 ## What to Include
 
 Before archiving, add:
-- **Completion date** — When it finished
-- **Outcome** — What shipped, what was achieved
-- **Key learnings** — What you'd do differently
-- **Impact** — Results, metrics, feedback
+- **Completion date** - When it finished
+- **Outcome** - What shipped, what was achieved
+- **Key learnings** - What you'd do differently
+- **Impact** - Results, metrics, feedback
 
 ## Format
 

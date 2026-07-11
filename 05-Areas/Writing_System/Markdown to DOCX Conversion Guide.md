@@ -36,15 +36,15 @@ Or invoke the skill:
 ```
 
 **Pros:**
-- ✅ No setup required
-- ✅ Works immediately
-- ✅ Natural language requests
-- ✅ Can apply styling and formatting
+- [x] No setup required
+- [x] Works immediately
+- [x] Natural language requests
+- [x] Can apply styling and formatting
 
 **Cons:**
-- ❌ Manual conversion each time
-- ❌ May need to specify styling preferences repeatedly
-- ❌ Not automated
+- [ ] Manual conversion each time
+- [ ] May need to specify styling preferences repeatedly
+- [ ] Not automated
 
 **Best for:** Quick one-off conversions, testing, or occasional use
 
@@ -83,15 +83,15 @@ pandoc "1-Drafts/2026-02-07 - Three Pillars Newsletter.md" \
 ```
 
 **Pros:**
-- ✅ Consistent styling every time
-- ✅ Uses YOUR exact newsletter template
-- ✅ One command converts with all formatting
-- ✅ Can be automated
+- [x] Consistent styling every time
+- [x] Uses YOUR exact newsletter template
+- [x] One command converts with all formatting
+- [x] Can be automated
 
 **Cons:**
-- ❌ Requires initial setup
-- ❌ Command-line interface
-- ❌ Need to maintain reference template
+- [ ] Requires initial setup
+- [ ] Command-line interface
+- [ ] Need to maintain reference template
 
 **Best for:** Regular newsletter production with consistent styling
 
@@ -116,15 +116,15 @@ A script that automatically converts markdown to .docx when you move files to `2
 - Manual command you run after moving to Ready
 
 **Pros:**
-- ✅ Fully automated
-- ✅ Consistent process
-- ✅ No manual conversion step
-- ✅ .docx preview always available
+- [x] Fully automated
+- [x] Consistent process
+- [x] No manual conversion step
+- [x] .docx preview always available
 
 **Cons:**
-- ❌ Requires scripting setup
-- ❌ More complex to maintain
-- ❌ Depends on Pandoc + template from Option 2
+- [ ] Requires scripting setup
+- [ ] More complex to maintain
+- [ ] Depends on Pandoc + template from Option 2
 
 **Best for:** High-volume content production, established workflow
 
@@ -176,24 +176,24 @@ layout_approved: true
 Before deciding on an approach, consider:
 
 1. **Frequency:** How often do you create newsletters?
-   - Weekly/monthly → Consider Pandoc setup
-   - Occasional → DOCX skill is fine
+   - Weekly/monthly -> Consider Pandoc setup
+   - Occasional -> DOCX skill is fine
 
 2. **Consistency:** Do you need identical styling every time?
-   - Yes → Pandoc with template
-   - No → DOCX skill
+   - Yes -> Pandoc with template
+   - No -> DOCX skill
 
 3. **Technical comfort:** Are you comfortable with command-line tools?
-   - Yes → Pandoc gives you control
-   - No → DOCX skill is easier
+   - Yes -> Pandoc gives you control
+   - No -> DOCX skill is easier
 
 4. **Automation desire:** Do you want this to happen automatically?
-   - Yes → Build automation (Option 3)
-   - No → Manual conversion is fine
+   - Yes -> Build automation (Option 3)
+   - No -> Manual conversion is fine
 
 5. **Template complexity:** How complex is your newsletter template?
-   - Simple → DOCX skill can handle it
-   - Complex (headers, footers, specific fonts) → Pandoc template
+   - Simple -> DOCX skill can handle it
+   - Complex (headers, footers, specific fonts) -> Pandoc template
 
 ---
 

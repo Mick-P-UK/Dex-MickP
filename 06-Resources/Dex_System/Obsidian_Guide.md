@@ -13,16 +13,16 @@ Obsidian is a free markdown editor with powerful graph visualization. It's compl
 - Meetings and their connections
 
 **Wiki Links:** Click any reference to jump instantly
-- `[[John_Doe]]` → Opens John's person page
-- `[[04-Projects/Mobile_App]]` → Opens project page
-- `[[2026-01-28 - API Review]]` → Opens meeting note
+- `[[John_Doe]]` -> Opens John's person page
+- `[[04-Projects/Mobile_App]]` -> Opens project page
+- `[[2026-01-28 - API Review]]` -> Opens meeting note
 
 **Search and Backlinks:** See everywhere a person/project is mentioned
 
 ## Installation
 
 1. Download Obsidian (free): https://obsidian.md
-2. Open your Dex vault: File → Open Folder → Select your Dex directory
+2. Open your Dex vault: File -> Open Folder -> Select your Dex directory
 3. Enable Obsidian mode: Run `/dex-obsidian-setup` in Cursor/Claude
 
 ## Obsidian vs Terminal/Cursor
@@ -31,11 +31,11 @@ Both are first-class experiences:
 
 | Feature | Obsidian | Terminal/Cursor |
 |---------|----------|----------------|
-| Graph visualization | ✅ Yes | ❌ No |
-| Clickable navigation | ✅ Wiki links | ⚡ File search |
-| File editing | ✅ WYSIWYG | ✅ Plain text |
-| AI integration | ❌ Limited | ✅ Native |
-| Speed | ⚡ Fast | ⚡⚡ Faster |
+| Graph visualization | [x] Yes | [ ] No |
+| Clickable navigation | [x] Wiki links |  File search |
+| File editing | [x] WYSIWYG | [x] Plain text |
+| AI integration | [ ] Limited | [x] Native |
+| Speed |  Fast |  Faster |
 
 **Recommendation:** Use both! Obsidian for visual navigation and reading, Cursor/Claude for AI-powered workflows.
 
@@ -77,8 +77,8 @@ Consider these community plugins for enhanced Dex experience:
 ## Task Syncing
 
 If you enable the sync daemon (via `/dex-obsidian-setup`):
-- Check a task box in Obsidian → syncs to Tasks.md, person pages, meeting notes
-- Check a task in Cursor → syncs to Obsidian
+- Check a task box in Obsidian -> syncs to Tasks.md, person pages, meeting notes
+- Check a task in Cursor -> syncs to Obsidian
 - Works bidirectionally, zero maintenance
 
 ## Troubleshooting

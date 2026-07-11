@@ -130,9 +130,9 @@ If cache found, ask:
 >
 > **How would you like to process meetings?**
 >
-> 1. **Manual** (recommended to start) — Run `/process-meetings` whenever you want. Uses Claude directly, no API key needed.
+> 1. **Manual** (recommended to start) - Run `/process-meetings` whenever you want. Uses Claude directly, no API key needed.
 >
-> 2. **Automatic** — Runs in the background every 30 minutes, even when Cursor is closed. Requires an API key.
+> 2. **Automatic** - Runs in the background every 30 minutes, even when Cursor is closed. Requires an API key.
 >
 > Which do you prefer?"
 

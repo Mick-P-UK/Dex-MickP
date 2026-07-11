@@ -1,7 +1,7 @@
-# Commands → Skills Migration Summary
+# Commands -> Skills Migration Summary
 
 **Date:** 2026-01-28  
-**Status:** ✅ Complete (Actually Done This Time!)
+**Status:** [x] Complete (Actually Done This Time!)
 
 ## What Changed
 
@@ -52,9 +52,9 @@
 - `dex-whats-new` - Check for updates
 
 ### Files Consolidated
-- `level-up.md` → Merged into `dex-level-up`
-- `review-ideas.md` → Merged into `dex-backlog`
-- `review-backlog.md` → Merged into `dex-backlog` (duplicate removed)
+- `level-up.md` -> Merged into `dex-level-up`
+- `review-ideas.md` -> Merged into `dex-backlog`
+- `review-backlog.md` -> Merged into `dex-backlog` (duplicate removed)
 
 ### Key Improvements
 
@@ -85,13 +85,13 @@
 ## Documentation Updates
 
 Updated these files to reference `.claude/skills/`:
-- ✅ `CLAUDE.md` - Main system docs
-- ✅ `CHANGELOG.md` - Migration entry
-- ✅ `06-Resources/Dex_System/Dex_System_Guide.md` - System guide
-- ✅ `.claude/skills/dex-improve/SKILL.md` - Self-reference
-- ✅ `.claude/skills/dex-backlog/SKILL.md` - Self-reference
-- ✅ `.claude/skills/dex-level-up/SKILL.md` - Self-reference
-- ✅ `.claude/skills/README.md` - Created overview
+- [x] `CLAUDE.md` - Main system docs
+- [x] `CHANGELOG.md` - Migration entry
+- [x] `06-Resources/Dex_System/Dex_System_Guide.md` - System guide
+- [x] `.claude/skills/dex-improve/SKILL.md` - Self-reference
+- [x] `.claude/skills/dex-backlog/SKILL.md` - Self-reference
+- [x] `.claude/skills/dex-level-up/SKILL.md` - Self-reference
+- [x] `.claude/skills/README.md` - Created overview
 
 ## Backward Compatibility
 

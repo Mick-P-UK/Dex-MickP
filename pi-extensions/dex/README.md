@@ -33,13 +33,13 @@ Complex operations spawn multiple lightweight agents that work simultaneously:
 
 ```
 Daily Planning:
-├── dex-calendar-scout (Haiku) → Calendar + free blocks
-├── dex-task-scout (Haiku) → Tasks + priorities
-├── dex-week-scout (Haiku) → Week progress
-└── [Merge results] → Sonnet synthesis
++-- dex-calendar-scout (Haiku) -> Calendar + free blocks
++-- dex-task-scout (Haiku) -> Tasks + priorities
++-- dex-week-scout (Haiku) -> Week progress
++-- [Merge results] -> Sonnet synthesis
 ```
 
-**Result:** 15 seconds → 3 seconds (5x faster)
+**Result:** 15 seconds -> 3 seconds (5x faster)
 
 ### 3. Native Tools (80% Token Savings)
 
@@ -58,10 +58,10 @@ Instead of MCP tool schemas going through context every call:
 
 Automatically selects the optimal model:
 
-- **Simple lookups** → Haiku (fast, cheap)
-- **Task operations** → Haiku
-- **Analysis & planning** → Sonnet
-- **Complex reasoning** → Sonnet
+- **Simple lookups** -> Haiku (fast, cheap)
+- **Task operations** -> Haiku
+- **Analysis & planning** -> Sonnet
+- **Complex reasoning** -> Sonnet
 
 **Result:** 50-70% cost savings on routine operations
 
@@ -115,76 +115,76 @@ Located in `~/.pi/agent/prompts/`:
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    USER INPUT                                │
-│              "Prep for my meeting with Sarah"                │
-└─────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│                PROACTIVE CONTEXT LAYER                       │
-│                                                              │
-│  Detect: "Sarah" → Load person context                       │
-│  Detect: "meeting" → Load calendar + task context            │
-│                                                              │
-│  Inject via before_agent_start (INVISIBLE TO USER)           │
-└─────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  SMART ORCHESTRATOR                          │
-│                                                              │
-│  Analyze complexity → Route to appropriate strategy          │
-│                                                              │
-│  Simple → Handle directly                                    │
-│  Complex → Spawn parallel sub-agents                         │
-└─────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│                 PARALLEL SUB-AGENTS                          │
-│                                                              │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐         │
-│  │Calendar │  │ Tasks   │  │ People  │  │ Week    │         │
-│  │ Scout   │  │ Scout   │  │ Scout   │  │ Scout   │         │
-│  │(Haiku)  │  │(Haiku)  │  │(Haiku)  │  │(Haiku)  │         │
-│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘         │
-│       └───────────────┼────────────┼────────────┘            │
-│                       ▼                                      │
-│              [Merge & Compose]                               │
-└─────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  AI RESPONSE                                 │
-│                                                              │
-│  Full context available (1.5k tokens vs 5k with MCP)         │
-│  Intelligent, contextual response                            │
-└─────────────────────────────────────────────────────────────┘
++-------------------------------------------------------------+
+|                    USER INPUT                                |
+|              "Prep for my meeting with Sarah"                |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                PROACTIVE CONTEXT LAYER                       |
+|                                                              |
+|  Detect: "Sarah" -> Load person context                       |
+|  Detect: "meeting" -> Load calendar + task context            |
+|                                                              |
+|  Inject via before_agent_start (INVISIBLE TO USER)           |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                  SMART ORCHESTRATOR                          |
+|                                                              |
+|  Analyze complexity -> Route to appropriate strategy          |
+|                                                              |
+|  Simple -> Handle directly                                    |
+|  Complex -> Spawn parallel sub-agents                         |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                 PARALLEL SUB-AGENTS                          |
+|                                                              |
+|  +---------+  +---------+  +---------+  +---------+         |
+|  |Calendar |  | Tasks   |  | People  |  | Week    |         |
+|  | Scout   |  | Scout   |  | Scout   |  | Scout   |         |
+|  |(Haiku)  |  |(Haiku)  |  |(Haiku)  |  |(Haiku)  |         |
+|  +----+----+  +----+----+  +----+----+  +----+----+         |
+|       +---------------+------------+------------+            |
+|                       v                                      |
+|              [Merge & Compose]                               |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                  AI RESPONSE                                 |
+|                                                              |
+|  Full context available (1.5k tokens vs 5k with MCP)         |
+|  Intelligent, contextual response                            |
++-------------------------------------------------------------+
 ```
 
 ## Files
 
 ```
 ~/.pi/agent/extensions/dex/
-├── index.ts              # Core extension: context injection, tools, commands
-├── orchestrator.ts       # Smart work delegation with sub-agents
-├── commitment-detector.ts # Ambient promise/ask detection
-├── model-router.ts       # Automatic model selection
-├── package.json          # PI package manifest
-└── README.md             # This file
++-- index.ts              # Core extension: context injection, tools, commands
++-- orchestrator.ts       # Smart work delegation with sub-agents
++-- commitment-detector.ts # Ambient promise/ask detection
++-- model-router.ts       # Automatic model selection
++-- package.json          # PI package manifest
++-- README.md             # This file
 
 ~/.pi/agent/agents/
-├── dex-scout.md          # General reconnaissance
-├── dex-calendar-scout.md # Calendar analysis
-├── dex-task-scout.md     # Task backlog analysis
-├── dex-people-scout.md   # Person context
-└── dex-week-scout.md     # Week progress
++-- dex-scout.md          # General reconnaissance
++-- dex-calendar-scout.md # Calendar analysis
++-- dex-task-scout.md     # Task backlog analysis
++-- dex-people-scout.md   # Person context
++-- dex-week-scout.md     # Week progress
 
 ~/.pi/agent/prompts/
-├── daily-plan.md         # Smart daily planning
-├── meeting-prep.md       # Meeting preparation
-└── week-review.md        # Week review
++-- daily-plan.md         # Smart daily planning
++-- meeting-prep.md       # Meeting preparation
++-- week-review.md        # Week review
 ```
 
 ## Usage
@@ -197,7 +197,7 @@ pi
 ```
 
 You'll see:
-- Footer status: `● Dex | 5 tasks | 3 meetings | Day 3/5`
+- Footer status: `- Dex | 5 tasks | 3 meetings | Day 3/5`
 - Proactive context injection when mentioning people/meetings
 - Quick commands available
 
@@ -207,20 +207,20 @@ You'll see:
 
 **Before (Claude Code):**
 1. User types `/daily-plan`
-2. Call calendar MCP → wait 2s
-3. Call task MCP → wait 2s
-4. Call week MCP → wait 2s
-5. Call people MCP → wait 2s
-6. Generate plan → wait 5s
+2. Call calendar MCP -> wait 2s
+3. Call task MCP -> wait 2s
+4. Call week MCP -> wait 2s
+5. Call people MCP -> wait 2s
+6. Generate plan -> wait 5s
 7. **Total: 15+ seconds, ~5k tokens**
 
 **After (PI + Dex):**
 1. User types `/daily-plan`
-2. Spawn 4 parallel scouts → 2s total
+2. Spawn 4 parallel scouts -> 2s total
 3. Merge results
-4. Generate plan → 3s
+4. Generate plan -> 3s
 5. **Total: 5 seconds, ~1.5k tokens**
 
 ---
 
-Built with ❤️ for people who want their AI to actually assist.
+Built with  for people who want their AI to actually assist.

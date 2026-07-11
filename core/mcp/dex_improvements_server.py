@@ -188,15 +188,15 @@ Ideas are automatically ranked on 5 dimensions:
 
 <!-- Auto-ranked by /dex-backlog command -->
 
-### 🔥 High Priority (Score: 85+)
+###  High Priority (Score: 85+)
 
 *No high priority ideas yet. Capture your first idea to get started!*
 
-### ⚡ Medium Priority (Score: 60-84)
+###  Medium Priority (Score: 60-84)
 
 *No medium priority ideas yet.*
 
-### 💡 Low Priority (Score: <60)
+###  Low Priority (Score: <60)
 
 *No low priority ideas yet.*
 
@@ -234,7 +234,7 @@ def add_idea_to_backlog(idea_id: str, title: str, description: str, category: st
     
     # Find the "Low Priority" section and add the idea there
     # Ideas start unranked and get scored during review
-    low_priority_pattern = r'(### 💡 Low Priority \(Score: <60\)\s*\n\s*(?:\*.*?\*\s*\n\s*)?)'
+    low_priority_pattern = r'(###  Low Priority \(Score: <60\)\s*\n\s*(?:\*.*?\*\s*\n\s*)?)'
     
     match = re.search(low_priority_pattern, content)
     if match:

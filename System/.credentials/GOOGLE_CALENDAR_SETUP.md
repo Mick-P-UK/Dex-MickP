@@ -13,20 +13,20 @@ This guide walks you through setting up Google Calendar API access for Dex.
 ## Step 1: Create Google Cloud Project
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Click "Select a project" → "New Project"
+2. Click "Select a project" -> "New Project"
 3. Enter project name (e.g., "Dex Calendar Integration")
 4. Click "Create"
 
 ## Step 2: Enable Google Calendar API
 
-1. In your new project, go to **APIs & Services** → **Library**
+1. In your new project, go to **APIs & Services** -> **Library**
 2. Search for "Google Calendar API"
 3. Click on it, then click "Enable"
 
 ## Step 3: Create OAuth 2.0 Credentials
 
-1. Go to **APIs & Services** → **Credentials**
-2. Click "Create Credentials" → "OAuth client ID"
+1. Go to **APIs & Services** -> **Credentials**
+2. Click "Create Credentials" -> "OAuth client ID"
 3. If prompted, configure the OAuth consent screen:
    - Choose "External" user type
    - Fill in app name (e.g., "Dex Calendar")
@@ -57,7 +57,7 @@ This guide walks you through setting up Google Calendar API access for Dex.
    - Open your web browser automatically
    - Ask you to sign in to Google
    - Request permission to access your calendar
-   - Display a warning "Google hasn't verified this app" (click "Advanced" → "Go to [app name]")
+   - Display a warning "Google hasn't verified this app" (click "Advanced" -> "Go to [app name]")
 2. Grant the permissions
 3. The authentication token will be saved to:
    ```

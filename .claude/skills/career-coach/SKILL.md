@@ -19,7 +19,7 @@ This command uses **Career MCP tools** for efficient data aggregation:
 - `analyze_coverage()` - Maps evidence to competencies with coverage statistics
 - `timeline_analysis()` - Tracks evidence trends and growth velocity
 
-**How it works:** MCP tools provide structured data → LLM interprets and coaches. This makes assessments faster, more consistent, and enables trend tracking over time.
+**How it works:** MCP tools provide structured data -> LLM interprets and coaches. This makes assessments faster, more consistent, and enables trend tracking over time.
 
 ## Usage
 
@@ -28,15 +28,15 @@ This command uses **Career MCP tools** for efficient data aggregation:
 ```
 
 **Examples:**
-- `/career-coach` — Start fresh session
-- `/career-coach Had a tough week leading the API migration project...` — Start with context
+- `/career-coach` - Start fresh session
+- `/career-coach Had a tough week leading the API migration project...` - Start with context
 
 ---
 
 ## Coach Personality & Adaptation
 
 The coach adapts based on:
-1. **Career level** from `System/user-profile.yaml` → `communication.career_level`
+1. **Career level** from `System/user-profile.yaml` -> `communication.career_level`
 2. **Current role** from career ladder in `05-Areas/Career/Career_Ladder.md`
 3. **Coaching style preference** from `communication.coaching_style`
 
@@ -109,7 +109,7 @@ The coach adapts based on:
 
 ### Phase 1: Initial Brain Dump
 
-Accept whatever the user shares — could be:
+Accept whatever the user shares - could be:
 - Stream of consciousness about their week
 - A specific challenge or frustration
 - A win they want to process
@@ -128,7 +128,7 @@ Tell me about your work lately:
 - Wins or breakthroughs?
 - Things you're proud of or struggling with?
 
-Just brain dump — I'll ask clarifying questions to pull out what matters.
+Just brain dump - I'll ask clarifying questions to pull out what matters.
 ```
 
 ---
@@ -138,11 +138,11 @@ Just brain dump — I'll ask clarifying questions to pull out what matters.
 After initial input, ask **3-5 targeted questions** to extract context. Adapt based on their career level and what they shared.
 
 **Focus Areas:**
-1. **Outcomes & Impact** — What actually happened? What changed?
-2. **Stakeholders & Collaboration** — Who was involved? How did you work together?
-3. **Challenges & Approach** — What was hard? How did you handle it?
-4. **Skills & Growth** — What did you learn? Where did you struggle?
-5. **Confidence & Emotion** — How did you feel? Where were you most/least confident?
+1. **Outcomes & Impact** - What actually happened? What changed?
+2. **Stakeholders & Collaboration** - Who was involved? How did you work together?
+3. **Challenges & Approach** - What was hard? How did you handle it?
+4. **Skills & Growth** - What did you learn? Where did you struggle?
+5. **Confidence & Emotion** - How did you feel? Where were you most/least confident?
 
 **Example Questions (adapt to level):**
 
@@ -174,10 +174,10 @@ After clarifying questions, present the four modes:
 
 I can help you with:
 
-1. **Weekly Report** — Generate a professional update for your manager
-2. **Monthly Reflection** — Spot patterns and trends across recent work
-3. **Self-Review** — Prepare a comprehensive yearly reflection for annual reviews
-4. **Promotion Assessment** — Evaluate readiness against your career ladder
+1. **Weekly Report** - Generate a professional update for your manager
+2. **Monthly Reflection** - Spot patterns and trends across recent work
+3. **Self-Review** - Prepare a comprehensive yearly reflection for annual reviews
+4. **Promotion Assessment** - Evaluate readiness against your career ladder
 
 Which would be most useful? (Or just say "keep talking" if you want to process more first.)
 ```
@@ -191,7 +191,7 @@ Wait for their choice, then proceed to the appropriate mode.
 Generate a manager-ready weekly report:
 
 ```markdown
-# Weekly Update — [Week of DATE]
+# Weekly Update - [Week of DATE]
 
 **Prepared by:** [User Name]
 **Date:** YYYY-MM-DD
@@ -236,9 +236,9 @@ Generate a manager-ready weekly report:
 
 ## Support Needed
 
-- [Area 1] — [Specific ask]
-- [Area 2] — [Specific ask]
-- [Area 3] — [Specific ask]
+- [Area 1] - [Specific ask]
+- [Area 2] - [Specific ask]
+- [Area 3] - [Specific ask]
 
 ---
 
@@ -256,7 +256,7 @@ Generate a manager-ready weekly report:
 **After generating:**
 
 ```markdown
-## ✅ Weekly Report Ready
+## [x] Weekly Report Ready
 
 **Want me to:**
 - Save this to `05-Areas/Career/Reports/YYYY-MM-DD - Weekly Report.md`?
@@ -282,7 +282,7 @@ Analyze patterns across recent check-ins and captured evidence.
 Then generate:
 
 ```markdown
-# Monthly Reflection — [MONTH YEAR]
+# Monthly Reflection - [MONTH YEAR]
 
 **Date:** YYYY-MM-DD
 
@@ -334,8 +334,8 @@ Then generate:
 - [Pattern 3]
 
 ### What Needs Adjustment
-- [Pattern 1] → [Suggested change]
-- [Pattern 2] → [Suggested change]
+- [Pattern 1] -> [Suggested change]
+- [Pattern 2] -> [Suggested change]
 
 ---
 
@@ -380,7 +380,7 @@ Specific steps for next month:
 **After generating:**
 
 ```markdown
-## ✅ Monthly Reflection Complete
+## [x] Monthly Reflection Complete
 
 **Saved to:** `05-Areas/Career/Reflections/YYYY-MM - Monthly Reflection.md`
 
@@ -417,7 +417,7 @@ Use this structured data to build evidence-backed self-review with clear outcome
 Then generate:
 
 ```markdown
-# Self-Review — [YEAR]
+# Self-Review - [YEAR]
 
 **Prepared by:** [User Name]
 **Date:** YYYY-MM-DD
@@ -522,15 +522,15 @@ Then generate:
 
 **Goal 1:** [What it was]
 - **Progress:** [What I achieved]
-- **Status:** ✅ Achieved / 🔄 In Progress / ⏸️ Deferred
+- **Status:** [x] Achieved /  In Progress / [||] Deferred
 
 **Goal 2:** [What it was]
 - **Progress:** [What I achieved]
-- **Status:** ✅ Achieved / 🔄 In Progress / ⏸️ Deferred
+- **Status:** [x] Achieved /  In Progress / [||] Deferred
 
 **Goal 3:** [What it was]
 - **Progress:** [What I achieved]
-- **Status:** ✅ Achieved / 🔄 In Progress / ⏸️ Deferred
+- **Status:** [x] Achieved /  In Progress / [||] Deferred
 
 ---
 
@@ -583,7 +583,7 @@ What I want to develop in the coming year:
 **After generating:**
 
 ```markdown
-## ✅ Self-Review Ready
+## [x] Self-Review Ready
 
 **Saved to:** `05-Areas/Career/Reviews/YYYY - Self-Review.md`
 
@@ -626,7 +626,7 @@ Before generating the assessment, use MCP tools to gather structured data:
 **Why this matters:**
 - Career evidence = What you captured (documented achievements, feedback)
 - Work MCP data = What you delivered (completed goals, shipped priorities)
-- Promotion readiness = Both combined → proof you operate at the next level
+- Promotion readiness = Both combined -> proof you operate at the next level
 
 These tools provide consistent, structured data that you then interpret for coaching.
 
@@ -643,7 +643,7 @@ These tools provide consistent, structured data that you then interpret for coac
 Then generate:
 
 ```markdown
-# Promotion Assessment — [TARGET ROLE]
+# Promotion Assessment - [TARGET ROLE]
 
 **Current Role:** [CURRENT LEVEL]
 **Target Role:** [TARGET LEVEL]
@@ -664,9 +664,9 @@ Then generate:
 #### Requirement: [What target role requires]
 
 **Current Demonstration:**
-- ✅ [Evidence of meeting this requirement]
-- ✅ [Evidence of meeting this requirement]
-- ⚠️ [Partial evidence / room for more]
+- [x] [Evidence of meeting this requirement]
+- [x] [Evidence of meeting this requirement]
+- [!] [Partial evidence / room for more]
 
 **Gap Assessment:** [None / Minor / Moderate / Significant]
 
@@ -679,9 +679,9 @@ Then generate:
 #### Requirement: [What target role requires]
 
 **Current Demonstration:**
-- ✅ [Evidence of meeting this requirement]
-- ⚠️ [Partial evidence / room for more]
-- ❌ [Not yet demonstrated]
+- [x] [Evidence of meeting this requirement]
+- [!] [Partial evidence / room for more]
+- [ ] [Not yet demonstrated]
 
 **Gap Assessment:** [None / Minor / Moderate / Significant]
 
@@ -744,9 +744,9 @@ These are areas where you need **additional evidence or growth:**
 
 To strengthen your promotion case, focus on capturing:
 
-1. **[Evidence Type 1]** — [Why this matters, how to capture it]
-2. **[Evidence Type 2]** — [Why this matters, how to capture it]
-3. **[Evidence Type 3]** — [Why this matters, how to capture it]
+1. **[Evidence Type 1]** - [Why this matters, how to capture it]
+2. **[Evidence Type 2]** - [Why this matters, how to capture it]
+3. **[Evidence Type 3]** - [Why this matters, how to capture it]
 
 ---
 
@@ -805,9 +805,9 @@ To strengthen your promotion case, focus on capturing:
 
 When discussing promotion with your manager, emphasize:
 
-1. **[Talking Point 1]** — [Your strongest evidence]
-2. **[Talking Point 2]** — [Growth you've demonstrated]
-3. **[Talking Point 3]** — [Commitment to closing gaps]
+1. **[Talking Point 1]** - [Your strongest evidence]
+2. **[Talking Point 2]** - [Growth you've demonstrated]
+3. **[Talking Point 3]** - [Commitment to closing gaps]
 
 **Questions to Ask Your Manager:**
 - [Question 1 about their assessment of your readiness]
@@ -828,7 +828,7 @@ When discussing promotion with your manager, emphasize:
 **After generating:**
 
 ```markdown
-## ✅ Promotion Assessment Complete
+## [x] Promotion Assessment Complete
 
 **Saved to:** `05-Areas/Career/Assessments/YYYY-MM-DD - Promotion Assessment.md`
 
@@ -836,10 +836,10 @@ When discussing promotion with your manager, emphasize:
 
 **Suggested Next Steps:**
 
-1. **Review with your manager** — Get their perspective on gaps and timeline
-2. **Focus on high-priority development areas** — Prioritize actions from the plan
-3. **Capture evidence proactively** — When you demonstrate target-level work, note it
-4. **Re-run this assessment quarterly** — Track progress toward readiness
+1. **Review with your manager** - Get their perspective on gaps and timeline
+2. **Focus on high-priority development areas** - Prioritize actions from the plan
+3. **Capture evidence proactively** - When you demonstrate target-level work, note it
+4. **Re-run this assessment quarterly** - Track progress toward readiness
 
 **Want to:**
 - Discuss any of the gaps in more detail?
@@ -909,10 +909,10 @@ This keeps a timeline of your feedback and progress.
 
 ### Be a Thought Partner
 
-- **Challenge constructively** — "Is that really the issue, or is it something else?"
-- **Reframe** — "What if you looked at this as an opportunity to..."
-- **Connect dots** — "You mentioned X last week and Y today — I'm seeing a pattern..."
-- **Encourage** — "That's growth. Six months ago, this would've been harder for you."
+- **Challenge constructively** - "Is that really the issue, or is it something else?"
+- **Reframe** - "What if you looked at this as an opportunity to..."
+- **Connect dots** - "You mentioned X last week and Y today - I'm seeing a pattern..."
+- **Encourage** - "That's growth. Six months ago, this would've been harder for you."
 
 ### Adapt to Career Level
 
@@ -1011,8 +1011,8 @@ When saving career evidence, use these formats:
 
 ## Stakeholders
 
-- [Person 1] — [Their role/involvement]
-- [Person 2] — [Their role/involvement]
+- [Person 1] - [Their role/involvement]
+- [Person 2] - [Their role/involvement]
 
 ---
 
@@ -1144,17 +1144,17 @@ When saving career evidence, use these formats:
 
 ### For the User
 
-- **Be honest** — This is for you, not performance theater
-- **Capture regularly** — Weekly check-ins build better evidence than annual scrambles
-- **Reference evidence** — When discussing accomplishments, point to specific work
-- **Update your ladder** — Career frameworks change; keep yours current
+- **Be honest** - This is for you, not performance theater
+- **Capture regularly** - Weekly check-ins build better evidence than annual scrambles
+- **Reference evidence** - When discussing accomplishments, point to specific work
+- **Update your ladder** - Career frameworks change; keep yours current
 
 ### For Dex
 
-- **Listen for patterns** — If they mention the same challenge 3 times, surface it
-- **Connect to pillars** — Career goals should align with strategic focus
-- **Reference past sessions** — "Last month you mentioned X — how's that going?"
-- **Be constructive** — Challenge without discouraging
+- **Listen for patterns** - If they mention the same challenge 3 times, surface it
+- **Connect to pillars** - Career goals should align with strategic focus
+- **Reference past sessions** - "Last month you mentioned X - how's that going?"
+- **Be constructive** - Challenge without discouraging
 
 ---
 

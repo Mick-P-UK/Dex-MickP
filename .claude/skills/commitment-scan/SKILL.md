@@ -18,7 +18,7 @@ Things fall through the cracks. You say "I'll send that over" in Slack. Someone 
 ## Prerequisites
 
 - **ScreenPipe beta activated** - Check with `check_beta_enabled(feature="screenpipe")`
-- **ScreenPipe opted-in** - Check `System/user-profile.yaml` → `screenpipe.enabled: true`
+- **ScreenPipe opted-in** - Check `System/user-profile.yaml` -> `screenpipe.enabled: true`
 - **ScreenPipe running** - Check with `screenpipe_status`
 - **Commitment Detection MCP** - `commitment-detection` server
 
@@ -34,7 +34,7 @@ Use: check_beta_enabled(feature="screenpipe")
 
 **If beta not activated:**
 ```markdown
-⚠️ **ScreenPipe is a beta feature**
+[!] **ScreenPipe is a beta feature**
 
 Commitment detection is currently in beta testing.
 
@@ -49,11 +49,11 @@ This will unlock:
 
 ### 0.2 Opt-In Check
 
-Read `System/user-profile.yaml` → `screenpipe.enabled`.
+Read `System/user-profile.yaml` -> `screenpipe.enabled`.
 
 **If not enabled:**
 ```markdown
-⚠️ **ScreenPipe not enabled**
+[!] **ScreenPipe not enabled**
 
 Commitment detection requires ScreenPipe to be enabled.
 
@@ -83,7 +83,7 @@ Use: screenpipe_status
 
 **If not running:**
 ```markdown
-⚠️ **ScreenPipe isn't running**
+[!] **ScreenPipe isn't running**
 
 Commitment detection requires ScreenPipe to scan your screen activity.
 
@@ -95,9 +95,9 @@ After starting, run `/commitment-scan` again.
 ### Step 2: Determine Scan Range
 
 **Options:**
-- `/commitment-scan` → Scan today
-- `/commitment-scan yesterday` → Scan yesterday
-- `/commitment-scan week` → Scan this week
+- `/commitment-scan` -> Scan today
+- `/commitment-scan yesterday` -> Scan yesterday
+- `/commitment-scan week` -> Scan this week
 
 Calculate time range:
 ```python
@@ -134,7 +134,7 @@ Use: get_uncommitted_items(include_dismissed=false)
 
 **If no commitments detected:**
 ```markdown
-✅ **No uncommitted items found**
+[x] **No uncommitted items found**
 
 Either you've been task-capturing well, or it was a quiet period!
 
@@ -144,7 +144,7 @@ Either you've been task-capturing well, or it was a quiet period!
 
 **If commitments detected:**
 ```markdown
-## 🔔 Uncommitted Items Detected
+##  Uncommitted Items Detected
 
 ScreenPipe noticed these potential commitments that don't have matching tasks:
 
@@ -153,28 +153,28 @@ ScreenPipe noticed these potential commitments that don't have matching tasks:
 **1. [Person Name]** ([App], [Time])
 > "[Raw text excerpt]"
 
-📎 **Matches:** [Project name] | [Person page]
-⏰ **Deadline detected:** [Date] ([type])
+ **Matches:** [Project name] | [Person page]
+ **Deadline detected:** [Date] ([type])
 
 **Actions:**
-- `create` → Create task from this
-- `handled` → Already done, dismiss
-- `ignore` → Not a real commitment
+- `create` -> Create task from this
+- `handled` -> Already done, dismiss
+- `ignore` -> Not a real commitment
 
 ---
 
 ### Outbound Promises (things you committed to)
 
-**2. You → [Person Name]** ([App], [Time])
+**2. You -> [Person Name]** ([App], [Time])
 > "[Raw text excerpt]"
 
-📎 **Matches:** [Project name]
-⏰ **Deadline detected:** [Date]
+ **Matches:** [Project name]
+ **Deadline detected:** [Date]
 
 **Actions:**
-- `create` → Create task for this
-- `handled` → Already done, dismiss  
-- `ignore` → Not a real commitment
+- `create` -> Create task for this
+- `handled` -> Already done, dismiss  
+- `ignore` -> Not a real commitment
 
 ---
 
@@ -229,13 +229,13 @@ Use: process_commitment(
 ### Step 7: Confirm
 
 ```markdown
-✅ **Processed [N] commitments:**
+[x] **Processed [N] commitments:**
 
 - Created [X] tasks
 - Marked [Y] as already handled
 - Dismissed [Z]
 
-Your commitment queue is clear! 🎯
+Your commitment queue is clear! 
 ```
 
 ---
@@ -251,7 +251,7 @@ During `/daily-review`, after gathering context:
 ```markdown
 ---
 
-## 🔔 Uncommitted Items Check
+##  Uncommitted Items Check
 
 [Run commitment scan for today]
 [Present any detected items]
@@ -267,7 +267,7 @@ During `/week-review`, show aggregate stats:
 ```markdown
 ---
 
-## 📊 Commitment Health This Week
+##  Commitment Health This Week
 
 [Show stats from get_commitment_stats()]
 
@@ -315,29 +315,29 @@ commitment_detection:
 
 **Response:**
 ```markdown
-## 🔔 Uncommitted Items Detected
+##  Uncommitted Items Detected
 
 ### Inbound Asks
 
 **1. Sarah Chen** (Slack, 2:34 PM)
 > "Hey, can you review the pricing page copy by tomorrow?"
 
-📎 **Matches:** Q1 Pricing Project
-⏰ **Deadline:** Tomorrow
+ **Matches:** Q1 Pricing Project
+ **Deadline:** Tomorrow
 
 **2. Mike Johnson** (Gmail, 11:15 AM)
 > "Need your sign-off on the vendor contract"
 
-📎 **Matches:** Mike Johnson (person page)
-⏰ **Deadline:** None detected
+ **Matches:** Mike Johnson (person page)
+ **Deadline:** None detected
 
 ### Outbound Promises
 
-**3. You → Product Team** (Slack, 4:20 PM)
+**3. You -> Product Team** (Slack, 4:20 PM)
 > "I'll write up the competitive analysis this week"
 
-📎 **Matches:** Market Research project
-⏰ **Deadline:** This week
+ **Matches:** Market Research project
+ **Deadline:** This week
 
 ---
 
@@ -350,7 +350,7 @@ commitment_detection:
 
 **Response:**
 ```markdown
-✅ **No uncommitted items found**
+[x] **No uncommitted items found**
 
 Either you've been capturing tasks well, or it was a quiet day!
 

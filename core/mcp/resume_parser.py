@@ -223,7 +223,7 @@ def extract_metrics_from_text(text: str) -> List[Metric]:
     
     Detects:
     - Percentages: "34%", "increased by 50%"
-    - Dollar amounts: "$2.1M", "$180K", "£50K"
+    - Dollar amounts: "$2.1M", "$180K", "GBP50K"
     - Counts: "500+ users", "team of 12", "1000 customers"
     - Time: "6 months", "3 weeks", "2 years"
     
@@ -247,8 +247,8 @@ def extract_metrics_from_text(text: str) -> List[Metric]:
             context=context
         ))
     
-    # Dollar amount pattern (handles $, £, €, K, M, B suffixes)
-    dollar_pattern = r'[\$£€]\s*\d+(?:\.\d+)?[KMB]?(?:\s*(?:thousand|million|billion))?'
+    # Dollar amount pattern (handles $, GBP, EUR, K, M, B suffixes)
+    dollar_pattern = r'[\$GBPEUR]\s*\d+(?:\.\d+)?[KMB]?(?:\s*(?:thousand|million|billion))?'
     for match in re.finditer(dollar_pattern, text, re.IGNORECASE):
         value = match.group(0)
         start = max(0, match.start() - 20)
@@ -600,7 +600,7 @@ def format_date_range(start_date: str, end_date: str) -> str:
         except ValueError:
             return date_str
     
-    return f"{format_date(start_date)} — {format_date(end_date)}"
+    return f"{format_date(start_date)} - {format_date(end_date)}"
 
 
 def calculate_estimated_pages(text: str) -> float:
@@ -704,7 +704,7 @@ def format_resume(session: ResumeSession, enforce_limit: bool = True) -> str:
     
     for role in session.roles:
         date_range = format_date_range(role.start_date, role.end_date)
-        lines.append(f"### {role.title} — {role.company}")
+        lines.append(f"### {role.title} - {role.company}")
         lines.append(f"**{date_range}**")
         lines.append("")
         
@@ -726,10 +726,10 @@ def format_resume(session: ResumeSession, enforce_limit: bool = True) -> str:
         for edu in session.education:
             degree_line = f"**{edu.degree}**"
             if edu.field:
-                degree_line += f" — {edu.field}"
+                degree_line += f" - {edu.field}"
             lines.append(degree_line)
             
-            school_line = f"{edu.school} — {edu.graduation_year}"
+            school_line = f"{edu.school} - {edu.graduation_year}"
             lines.append(school_line)
             
             if edu.honors:

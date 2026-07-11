@@ -19,10 +19,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         CHIP_TYPE="Apple Silicon"
         # Get specific chip (M1, M2, etc.)
         CHIP_MODEL=$(system_profiler SPHardwareDataType | grep "Chip" | awk -F': ' '{print $2}')
-        echo "Chip: $CHIP_MODEL (Apple Silicon) ✅ Great for local AI"
+        echo "Chip: $CHIP_MODEL (Apple Silicon) [x] Great for local AI"
     else
         CHIP_TYPE="Intel"
-        echo "Chip: Intel ⚠️ Local AI will be slower"
+        echo "Chip: Intel [!] Local AI will be slower"
     fi
     
     # Get RAM
@@ -65,24 +65,24 @@ echo "=== Ollama Status ==="
 
 # Check if Ollama is installed
 if command -v ollama &> /dev/null; then
-    echo "Ollama: ✅ Installed"
+    echo "Ollama: [x] Installed"
     OLLAMA_VERSION=$(ollama --version 2>/dev/null || echo "unknown")
     echo "Version: $OLLAMA_VERSION"
     
     # Check if Ollama is running
     if curl -s http://localhost:11434/api/tags > /dev/null 2>&1; then
-        echo "Status: ✅ Running"
+        echo "Status: [x] Running"
         
         # List installed models
         echo ""
         echo "Installed models:"
         ollama list 2>/dev/null || echo "  (none)"
     else
-        echo "Status: ⚠️ Not running"
+        echo "Status: [!] Not running"
         echo "  Start with: ollama serve"
     fi
 else
-    echo "Ollama: ❌ Not installed"
+    echo "Ollama: [ ] Not installed"
     echo "  Install from: https://ollama.ai/download"
 fi
 

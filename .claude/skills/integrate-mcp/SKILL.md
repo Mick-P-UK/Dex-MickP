@@ -25,12 +25,12 @@ There's a marketplace of 100+ pre-built MCP servers at:
 **[Smithery.ai](https://smithery.ai/servers)**
 
 These are production-ready integrations for:
-• **Dev tools:** GitHub, GitLab, Linear, Jira
-• **Productivity:** Notion, Airtable, Google Sheets
-• **Communication:** Slack, Discord, Email
-• **Databases:** Postgres, MySQL, SQLite
-• **Monitoring:** Sentry, Datadog
-• **And many more...**
+- **Dev tools:** GitHub, GitLab, Linear, Jira
+- **Productivity:** Notion, Airtable, Google Sheets
+- **Communication:** Slack, Discord, Email
+- **Databases:** Postgres, MySQL, SQLite
+- **Monitoring:** Sentry, Datadog
+- **And many more...**
 
 **How this works:**
 1. Browse Smithery.ai for MCPs that match your tools
@@ -91,13 +91,13 @@ Say:
 **Got it!** This is the **[Server Name]** MCP.
 
 **What it does:**
-• [Capability 1] - [Description]
-• [Capability 2] - [Description]
-• [Capability 3] - [Description]
+- [Capability 1] - [Description]
+- [Capability 2] - [Description]
+- [Capability 3] - [Description]
 
 **What you'll need to set up:**
-• [ENV_VAR_1]: [Explanation of what this is]
-• [ENV_VAR_2]: [Explanation]
+- [ENV_VAR_1]: [Explanation of what this is]
+- [ENV_VAR_2]: [Explanation]
 
 **Installation method:** [npm/pip/docker/manual]
 
@@ -222,17 +222,17 @@ Try calling a basic tool from the MCP:
 [Call a simple tool from the MCP, like list_resources or get_status]
 
 [If success:]
-"✅ Connection works! The [Server Name] MCP is live.
+"[x] Connection works! The [Server Name] MCP is live.
 
 Test it: '[Example natural language query]'
 
 See? Real data from [Tool]."
 
 [If failure:]
-"⚠️ Connection failed. Common issues:
-• Environment variables not set correctly
-• Authentication hasn't been completed
-• MCP server not installed properly
+"[!] Connection failed. Common issues:
+- Environment variables not set correctly
+- Authentication hasn't been completed
+- MCP server not installed properly
 
 Want help debugging this?"
 ```

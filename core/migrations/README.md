@@ -6,11 +6,11 @@ This folder contains migration scripts for major version updates that require st
 
 ## When Migrations Are Needed
 
-**Minor/Patch updates (v1.2.0 → v1.3.0):** No migration needed - just merge
-**Major updates (v1.x → v2.0.0):** Migration required for breaking changes
+**Minor/Patch updates (v1.2.0 -> v1.3.0):** No migration needed - just merge
+**Major updates (v1.x -> v2.0.0):** Migration required for breaking changes
 
 **Breaking changes include:**
-- Folder renames (e.g., `03-Tasks/` → `03-Backlog/`)
+- Folder renames (e.g., `03-Tasks/` -> `03-Backlog/`)
 - File format changes (e.g., YAML schema updates)
 - Configuration structure changes
 - Metadata format updates
@@ -26,7 +26,7 @@ This folder contains migration scripts for major version updates that require st
 /dex-whats-new
 ```
 
-If you see ⚠️ **BREAKING CHANGES**, read the release notes carefully.
+If you see [!] **BREAKING CHANGES**, read the release notes carefully.
 
 **Step 2: Back up your vault**
 ```bash
@@ -75,27 +75,27 @@ If anything breaks, restore from backup and report the issue.
 
 ```bash
 #!/bin/bash
-# Migration: v1.x → v2.0.0
+# Migration: v1.x -> v2.0.0
 # Description: [What this migration does]
 # Date: YYYY-MM-DD
 
 set -e  # Exit on error
 
 echo "================================================"
-echo "Dex Migration: v1.x → v2.0.0"
+echo "Dex Migration: v1.x -> v2.0.0"
 echo "Description: [Brief description]"
 echo "================================================"
 echo ""
 
 # Check if migration already ran
 if [ -f ".migration-v2-complete" ]; then
-    echo "✓ Migration already completed"
+    echo "[x] Migration already completed"
     echo "  Remove .migration-v2-complete to run again"
     exit 0
 fi
 
 # Dry run first
-echo "🔍 Checking what needs migration..."
+echo " Checking what needs migration..."
 echo ""
 
 # [Detection logic - what needs changing?]
@@ -110,7 +110,7 @@ fi
 
 # Actual migration
 echo ""
-echo "🔄 Migrating..."
+echo " Migrating..."
 
 # [Migration logic]
 
@@ -120,7 +120,7 @@ echo "2.0.0" > .migration-version
 
 echo ""
 echo "================================================"
-echo "✅ Migration complete!"
+echo "[x] Migration complete!"
 echo "================================================"
 echo ""
 echo "Next steps:"
@@ -164,7 +164,7 @@ Migrations are logged to `System/.migration-log`:
 
 ```
 2026-03-15 14:23:11 | v1-to-v2 | Started
-2026-03-15 14:23:15 | v1-to-v2 | Renamed 03-Tasks/ → 03-Backlog/
+2026-03-15 14:23:15 | v1-to-v2 | Renamed 03-Tasks/ -> 03-Backlog/
 2026-03-15 14:23:18 | v1-to-v2 | Updated 47 markdown file references
 2026-03-15 14:23:19 | v1-to-v2 | Complete
 ```

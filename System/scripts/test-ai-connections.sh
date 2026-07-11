@@ -6,7 +6,7 @@ echo "=== Testing AI Connections ==="
 echo ""
 
 # Test OpenRouter
-echo "☁️  OpenRouter (Budget Cloud):"
+echo "  OpenRouter (Budget Cloud):"
 MODELS_JSON="$HOME/.pi/agent/models.json"
 
 if [[ -f "$MODELS_JSON" ]] && grep -q "openrouter" "$MODELS_JSON"; then
@@ -23,17 +23,17 @@ if [[ -f "$MODELS_JSON" ]] && grep -q "openrouter" "$MODELS_JSON"; then
         BODY=$(echo "$RESPONSE" | head -n -1)
         
         if [[ "$HTTP_CODE" == "200" ]]; then
-            echo "   Status: ✅ Connected"
+            echo "   Status: [x] Connected"
             
             # Try to get credit balance
             CREDITS=$(echo "$BODY" | python3 -c "import sys,json; d=json.load(sys.stdin); print(f\"\${d.get('data',{}).get('limit_remaining', 'unknown')}\")" 2>/dev/null || echo "unknown")
             echo "   Credits: $CREDITS"
         else
-            echo "   Status: ❌ Connection failed (HTTP $HTTP_CODE)"
+            echo "   Status: [ ] Connection failed (HTTP $HTTP_CODE)"
             echo "   Check your API key at openrouter.ai/keys"
         fi
     else
-        echo "   Status: ⚠️ No API key configured"
+        echo "   Status: [!] No API key configured"
     fi
 else
     echo "   Status: Not configured"
@@ -43,14 +43,14 @@ fi
 echo ""
 
 # Test Ollama
-echo "💻 Ollama (Offline):"
+echo " Ollama (Offline):"
 
 if command -v ollama &> /dev/null; then
-    echo "   Installed: ✅ Yes"
+    echo "   Installed: [x] Yes"
     
     # Check if running
     if curl -s http://localhost:11434/api/tags > /dev/null 2>&1; then
-        echo "   Running: ✅ Yes"
+        echo "   Running: [x] Yes"
         
         # List models
         MODELS=$(ollama list 2>/dev/null | tail -n +2 | awk '{print "   - " $1}')
@@ -62,33 +62,33 @@ if command -v ollama &> /dev/null; then
             echo "   Install with: ollama pull qwen2.5:14b"
         fi
     else
-        echo "   Running: ❌ No"
+        echo "   Running: [ ] No"
         echo "   Start with: ollama serve"
     fi
 else
-    echo "   Installed: ❌ No"
+    echo "   Installed: [ ] No"
     echo "   Install from: https://ollama.ai/download"
 fi
 
 echo ""
 
 # Test Claude (default)
-echo "🌟 Claude (Premium):"
+echo " Claude (Premium):"
 
 # Check for Anthropic API key
 if [[ -n "$ANTHROPIC_API_KEY" ]]; then
-    echo "   API Key: ✅ Set (env var)"
+    echo "   API Key: [x] Set (env var)"
 elif [[ -f "$HOME/.pi/agent/auth.json" ]]; then
-    echo "   API Key: ✅ Set (auth file)"
+    echo "   API Key: [x] Set (auth file)"
 else
-    echo "   API Key: ⚠️ May be using Pi subscription"
+    echo "   API Key: [!] May be using Pi subscription"
 fi
 
 # Quick connectivity test
 if curl -s --max-time 5 https://api.anthropic.com > /dev/null 2>&1; then
-    echo "   Connection: ✅ Reachable"
+    echo "   Connection: [x] Reachable"
 else
-    echo "   Connection: ⚠️ Cannot reach API (offline?)"
+    echo "   Connection: [!] Cannot reach API (offline?)"
 fi
 
 echo ""
@@ -108,16 +108,16 @@ if command -v ollama &> /dev/null && curl -s http://localhost:11434/api/tags > /
     fi
 fi
 
-echo "Premium (Claude):  ✅ Available"
+echo "Premium (Claude):  [x] Available"
 if $BUDGET_OK; then
-    echo "Budget Cloud:      ✅ Configured"
+    echo "Budget Cloud:      [x] Configured"
 else
-    echo "Budget Cloud:      ❌ Not configured"
+    echo "Budget Cloud:      [ ] Not configured"
 fi
 if $OFFLINE_OK; then
-    echo "Offline Mode:      ✅ Ready"
+    echo "Offline Mode:      [x] Ready"
 else
-    echo "Offline Mode:      ❌ Not ready"
+    echo "Offline Mode:      [ ] Not ready"
 fi
 
 echo ""

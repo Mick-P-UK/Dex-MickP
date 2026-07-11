@@ -42,49 +42,49 @@ Without MCP, AI can only:
 MCP (Model Context Protocol) provides **guardrails and structure** for AI interactions with external systems:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    YOUR QUESTION                            │
-│         "What features are customers using most?"           │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    AI REASONING                             │
-│  "I need support ticket data. I have a Zendesk MCP tool    │
-│   called `get_ticket_stats`. Let me call it..."            │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    MCP TOOL CALL                            │
-│  Tool: get_feature_usage                                    │
-│  Input: { "days": 30, "limit": 10 }                        │
-│  ─────────────────────────────────────────────────────────  │
-│  │ GUARDRAILS:                                          │  │
-│  │ ✓ Defined input schema - can't send bad data         │  │
-│  │ ✓ Authenticated connection - uses real credentials   │  │
-│  │ ✓ Structured output - returns consistent format      │  │
-│  │ ✓ Deterministic - same query = same results          │  │
-│  └──────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    REAL DATA RESPONSE                       │
-│  { "features": [                                            │
-│    { "name": "Dashboard", "usage": 89% },                   │
-│    { "name": "Reports", "usage": 67% },                     │
-│    { "name": "Guides", "usage": 45% }                       │
-│  ]}                                                         │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    AI SYNTHESIS                             │
-│  "Your top 3 features by usage are Dashboard (89%),        │
-│   Reports (67%), and Guides (45%). Dashboard dominates -   │
-│   consider investing more there."                          │
-└─────────────────────────────────────────────────────────────┘
++-------------------------------------------------------------+
+|                    YOUR QUESTION                            |
+|         "What features are customers using most?"           |
++-------------------------------------------------------------+
+                              |
+                              v
++-------------------------------------------------------------+
+|                    AI REASONING                             |
+|  "I need support ticket data. I have a Zendesk MCP tool    |
+|   called `get_ticket_stats`. Let me call it..."            |
++-------------------------------------------------------------+
+                              |
+                              v
++-------------------------------------------------------------+
+|                    MCP TOOL CALL                            |
+|  Tool: get_feature_usage                                    |
+|  Input: { "days": 30, "limit": 10 }                        |
+|  ---------------------------------------------------------  |
+|  | GUARDRAILS:                                          |  |
+|  | [x] Defined input schema - can't send bad data         |  |
+|  | [x] Authenticated connection - uses real credentials   |  |
+|  | [x] Structured output - returns consistent format      |  |
+|  | [x] Deterministic - same query = same results          |  |
+|  +------------------------------------------------------+  |
++-------------------------------------------------------------+
+                              |
+                              v
++-------------------------------------------------------------+
+|                    REAL DATA RESPONSE                       |
+|  { "features": [                                            |
+|    { "name": "Dashboard", "usage": 89% },                   |
+|    { "name": "Reports", "usage": 67% },                     |
+|    { "name": "Guides", "usage": 45% }                       |
+|  ]}                                                         |
++-------------------------------------------------------------+
+                              |
+                              v
++-------------------------------------------------------------+
+|                    AI SYNTHESIS                             |
+|  "Your top 3 features by usage are Dashboard (89%),        |
+|   Reports (67%), and Guides (45%). Dashboard dominates -   |
+|   consider investing more there."                          |
++-------------------------------------------------------------+
 ```
 
 ### The Key Insight
@@ -106,20 +106,20 @@ MCP doesn't make AI smarter - it gives AI **reliable ways to get real data**. Th
 ### If no arguments provided:
 
 ```
-🔌 **MCP Server Creation Wizard**
+ **MCP Server Creation Wizard**
 
 MCP (Model Context Protocol) lets Dex connect to external tools and services. Instead of guessing or saying "I don't have access", AI can query real data and give you accurate answers.
 
 **The difference MCP makes:**
-- ❌ Without: "I'd estimate you have around 10-15 support tickets..."
-- ✅ With: "Zendesk shows 32 tickets, 12 high priority, avg response time 2.3hrs"
+- [ ] Without: "I'd estimate you have around 10-15 support tickets..."
+- [x] With: "Zendesk shows 32 tickets, 12 high priority, avg response time 2.3hrs"
 
 **Examples of what you can build:**
-- 📅 Calendar → "What meetings do I have tomorrow? Who's attending?"
-- 📧 Email → "Find emails from Sarah about the Q1 roadmap"
-- 💬 Slack → "What did #product-team discuss today?"
-- 📊 Analytics → "Show me feature adoption for our enterprise tier"
-- 🔗 Any API → If it has an API, we can probably connect it
+-  Calendar -> "What meetings do I have tomorrow? Who's attending?"
+-  Email -> "Find emails from Sarah about the Q1 roadmap"
+-  Slack -> "What did #product-team discuss today?"
+-  Analytics -> "Show me feature adoption for our enterprise tier"
+-  Any API -> If it has an API, we can probably connect it
 
 **Benefits:**
 - Real data, not AI guessing
@@ -136,7 +136,7 @@ MCP (Model Context Protocol) lets Dex connect to external tools and services. In
 
 Ready to get started? **What would you like to connect Dex to?**
 
-(Just describe it in plain English — e.g., "my Google Calendar", "Notion database", "company CRM")
+(Just describe it in plain English - e.g., "my Google Calendar", "Notion database", "company CRM")
 ```
 
 ### If service hint provided:
@@ -205,10 +205,10 @@ This shapes what tools we'll build.
 ```
 **Understood. Here's what we're building:**
 
-📦 **Service:** [service name]
-🔐 **Auth method:** [auth type]
-📊 **Data access:** [read/write + what data]
-🎯 **Primary use cases:**
+ **Service:** [service name]
+ **Auth method:** [auth type]
+ **Data access:** [read/write + what data]
+ **Primary use cases:**
 1. [use case 1]
 2. [use case 2]
 3. [use case 3]
@@ -414,11 +414,11 @@ Make executable: `chmod +x run_[service_name].sh`
 ### Tell user what was created:
 
 ```
-**Server Created!** ✅
+**Server Created!** [x]
 
 Files generated:
-- `core/mcp/[service_name]_server.py` — The MCP server
-- `core/mcp/requirements.txt` — Updated with dependencies
+- `core/mcp/[service_name]_server.py` - The MCP server
+- `core/mcp/requirements.txt` - Updated with dependencies
 
 **Before we integrate, you'll need to:**
 
@@ -458,8 +458,8 @@ Add to the Integration Options section or create new MCP section:
 - `[ENV_VAR]`: [description]
 
 **Usage examples:**
-- "[natural language request]" → uses `[tool]` tool
-- "[another request]" → uses `[another_tool]` tool
+- "[natural language request]" -> uses `[tool]` tool
+- "[another request]" -> uses `[another_tool]` tool
 ```
 
 **Step 4.2: Add MCP Instructions (if not present)**
@@ -519,14 +519,14 @@ Server: `core/mcp/[service_name]_server.py`
 **Run verification checklist:**
 
 ```
-**Integration Complete!** 🎉
+**Integration Complete!** 
 
 Let me verify everything is in place:
 
-✅ Server created: `core/mcp/[service_name]_server.py`
-✅ Dependencies updated: `core/mcp/requirements.txt`
-✅ CLAUDE.md updated with integration docs
-✅ System Guide updated
+[x] Server created: `core/mcp/[service_name]_server.py`
+[x] Dependencies updated: `core/mcp/requirements.txt`
+[x] CLAUDE.md updated with integration docs
+[x] System Guide updated
 
 **To start using it:**
 
@@ -583,10 +583,10 @@ User: I want to see my tasks, add new ones, and mark them complete.
 
 Claude: **Understood. Here's what we're building:**
 
-📦 **Service:** Todoist
-🔐 **Auth method:** API key (Todoist provides this)
-📊 **Data access:** Read tasks, create tasks, update task status
-🎯 **Primary use cases:**
+ **Service:** Todoist
+ **Auth method:** API key (Todoist provides this)
+ **Data access:** Read tasks, create tasks, update task status
+ **Primary use cases:**
 1. "What's on my Todoist today/this week?"
 2. "Add [task] to Todoist"
 3. "Mark [task] as done in Todoist"

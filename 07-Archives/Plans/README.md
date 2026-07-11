@@ -5,8 +5,8 @@ Historical daily and weekly plans.
 ## What Goes Here
 
 Plans automatically archive here:
-- **Daily plans** — Created by `/daily-plan`
-- **Weekly plans** — Created by `/week-plan`
+- **Daily plans** - Created by `/daily-plan`
+- **Weekly plans** - Created by `/week-plan`
 
 ## Naming Convention
 

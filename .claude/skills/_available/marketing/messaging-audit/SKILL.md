@@ -53,7 +53,7 @@ Ensure messaging consistency across all content and identify where positioning n
 ## Output Format
 
 ```markdown
-# 🎯 Messaging Audit
+#  Messaging Audit
 
 **Date:** [Today]
 **Content reviewed:** [Count]

@@ -6,10 +6,10 @@ Templates used by Dex automation for consistent structure.
 
 These templates are actively used by Dex skills:
 
-- **`Person_Page.md`** — Person page structure (used when creating person pages)
-- **`Company.md`** — Company page structure (used by `/process-meetings`)
-- **`Career_Evidence_Achievement.md`** — Achievement capture (used by `/week-review`, `/resume-builder`)
-- **`Career_Evidence_Feedback.md`** — Feedback tracking (used by career system)
+- **`Person_Page.md`** - Person page structure (used when creating person pages)
+- **`Company.md`** - Company page structure (used by `/process-meetings`)
+- **`Career_Evidence_Achievement.md`** - Achievement capture (used by `/week-review`, `/resume-builder`)
+- **`Career_Evidence_Feedback.md`** - Feedback tracking (used by career system)
 
 ## Usage
 

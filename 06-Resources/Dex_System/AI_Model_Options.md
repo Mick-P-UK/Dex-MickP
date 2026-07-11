@@ -1,6 +1,6 @@
 # AI Model Options for Dex
 
-**Quick setup:** Run `/ai-setup` in Dex — I'll guide you through everything.
+**Quick setup:** Run `/ai-setup` in Dex - I'll guide you through everything.
 
 ---
 
@@ -21,9 +21,9 @@ Dex can use different AI models depending on your needs:
 ### What Are They?
 
 Other companies make AI models that cost much less than Claude:
-- **Kimi K2.5** (Moonshot AI) — 80% cheaper, similar quality
-- **DeepSeek V3** — 95% cheaper, great for coding
-- **Gemini Flash** (Google) — 97% cheaper, handles long documents
+- **Kimi K2.5** (Moonshot AI) - 80% cheaper, similar quality
+- **DeepSeek V3** - 95% cheaper, great for coding
+- **Gemini Flash** (Google) - 97% cheaper, handles long documents
 
 ### Why Use Them?
 
@@ -35,11 +35,11 @@ Other companies make AI models that cost much less than Claude:
 
 | Task | Claude | Kimi | DeepSeek |
 |------|--------|------|----------|
-| Complex planning | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Meeting summaries | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Daily planning | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Code help | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Creative writing | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
+| Complex planning | ***** | **** | *** |
+| Meeting summaries | ***** | **** | **** |
+| Daily planning | ***** | **** | **** |
+| Code help | ***** | *** | ***** |
+| Creative writing | ***** | *** | *** |
 
 ### How to Set Up
 
@@ -67,10 +67,10 @@ Download an AI model directly to your computer. It runs without internet.
 
 ### Why Use It?
 
-- ✈️ Works on airplanes
-- 🚂 Works on trains with bad WiFi
-- 🔒 Your data never leaves your computer
-- 💰 Completely free forever
+-  Works on airplanes
+-  Works on trains with bad WiFi
+-  Your data never leaves your computer
+-  Completely free forever
 
 ### Requirements
 
@@ -81,8 +81,8 @@ Download an AI model directly to your computer. It runs without internet.
 | 32 GB+ | Qwen 2.5 32B | Great for everything |
 
 **Not sure about your RAM?**
-- Mac: Apple menu → About This Mac → look for "Memory"
-- Windows: Right-click Start → System → look for "Installed RAM"
+- Mac: Apple menu -> About This Mac -> look for "Memory"
+- Windows: Right-click Start -> System -> look for "Installed RAM"
 
 ### How to Set Up
 
@@ -115,9 +115,9 @@ Download an AI model directly to your computer. It runs without internet.
 ### What Is It?
 
 Let Dex automatically pick the best model for each task:
-- Complex stuff → Claude (best quality)
-- Simple stuff → Budget model (saves money)
-- No internet → Local model (offline backup)
+- Complex stuff -> Claude (best quality)
+- Simple stuff -> Budget model (saves money)
+- No internet -> Local model (offline backup)
 
 ### How It Works
 
@@ -193,8 +193,8 @@ Your model might be too big for your RAM:
 ### Ollama won't start?
 
 **Mac:** 
-- Open Applications, right-click Ollama → Open
-- If blocked: System Settings → Privacy & Security → Allow
+- Open Applications, right-click Ollama -> Open
+- If blocked: System Settings -> Privacy & Security -> Allow
 
 **Manual start:**
 - Open Terminal
@@ -212,7 +212,7 @@ A: For everyday tasks (planning, summaries, organization), most people don't not
 A: Depends on usage, but typically 50-80% if you use budget models for routine tasks and Claude for complex ones.
 
 **Q: Is my data safe with other models?**
-A: Budget cloud models (Kimi, DeepSeek) are hosted by other companies. If privacy is critical, use offline mode — data never leaves your computer.
+A: Budget cloud models (Kimi, DeepSeek) are hosted by other companies. If privacy is critical, use offline mode - data never leaves your computer.
 
 **Q: Can I go back to Claude-only?**
 A: Yes! Just don't use the other models, or disable them in settings.
@@ -224,5 +224,5 @@ A: Dex will let you know and offer to set it up when you're back online. You can
 
 ## Related
 
-- [Dex System Guide](Dex_System_Guide.md) — Full system documentation
-- [Dex Technical Guide](Dex_Technical_Guide.md) — Advanced configuration
+- [Dex System Guide](Dex_System_Guide.md) - Full system documentation
+- [Dex Technical Guide](Dex_Technical_Guide.md) - Advanced configuration

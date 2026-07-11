@@ -24,10 +24,10 @@ ls ~/.claude/skills/{skill-name}/
 ```
 
 **Already a router?** (has workflows/ and intake question)
-→ Tell user it's already using router pattern, offer to add workflows instead
+-> Tell user it's already using router pattern, offer to add workflows instead
 
 **Simple skill that should stay simple?** (under 200 lines, single workflow)
-→ Explain that router pattern may be overkill, ask if they want to proceed anyway
+-> Explain that router pattern may be overkill, ask if they want to proceed anyway
 
 **Good candidate for upgrade:**
 - Over 200 lines

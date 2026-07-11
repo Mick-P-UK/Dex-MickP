@@ -44,7 +44,7 @@ When processing feedback:
 <when_to_add_domain_tools>
 ## When to Add Domain Tools
 
-As patterns emerge, you'll want to add domain-specific tools. This is good—but do it deliberately.
+As patterns emerge, you'll want to add domain-specific tools. This is good-but do it deliberately.
 
 ### Vocabulary Anchoring
 
@@ -141,8 +141,8 @@ tool("publish", { content: z.string() }, ...);          // Publishes what agent 
 
 Ask: "Who is making the decision here?"
 
-- If the answer is "the tool code" → you've encoded judgment, refactor
-- If the answer is "the agent based on the prompt" → good
+- If the answer is "the tool code" -> you've encoded judgment, refactor
+- If the answer is "the agent based on the prompt" -> good
 </the_rule>
 
 <keep_primitives_available>
@@ -162,7 +162,7 @@ tool("write_file", { path, content }, ...);
 
 // Agent can use create_note normally, but for weird edge case:
 // "Create a note in a non-standard location with custom metadata"
-// → Agent uses write_file directly
+// -> Agent uses write_file directly
 ```
 
 ### When to Gate
@@ -185,16 +185,16 @@ Some operations will need to move from agent-orchestrated to optimized code for 
 
 ```
 Stage 1: Agent uses primitives in a loop
-         → Flexible, proves the concept
-         → Slow, potentially expensive
+         -> Flexible, proves the concept
+         -> Slow, potentially expensive
 
 Stage 2: Add domain tools for common operations
-         → Faster, still agent-orchestrated
-         → Agent still decides when/whether to use
+         -> Faster, still agent-orchestrated
+         -> Agent still decides when/whether to use
 
 Stage 3: For hot paths, implement in optimized code
-         → Fast, deterministic
-         → Agent can still trigger, but execution is code
+         -> Fast, deterministic
+         -> Agent can still trigger, but execution is code
 ```
 
 ### Example Progression

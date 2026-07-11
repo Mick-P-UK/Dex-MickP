@@ -108,10 +108,10 @@ if command -v ollama &> /dev/null; then
     }
 EOF
     else
-        echo "⚠️  Ollama model '$OLLAMA_MODEL' not found. Install with: ollama pull $OLLAMA_MODEL"
+        echo "[!]  Ollama model '$OLLAMA_MODEL' not found. Install with: ollama pull $OLLAMA_MODEL"
     fi
 else
-    echo "ℹ️  Ollama not installed. Skipping offline model config."
+    echo "[i]  Ollama not installed. Skipping offline model config."
 fi
 
 # Close JSON
@@ -121,20 +121,20 @@ cat >> "$MODELS_JSON" << 'FOOTER'
 FOOTER
 
 echo ""
-echo "✅ Configuration written to: $MODELS_JSON"
+echo "[x] Configuration written to: $MODELS_JSON"
 echo ""
 echo "=== Configured Models ==="
 
 # Parse and show what was configured
 if [[ -n "$OPENROUTER_KEY" ]]; then
-    echo "☁️  Budget Cloud (OpenRouter):"
+    echo "  Budget Cloud (OpenRouter):"
     echo "   - Kimi K2.5"
     echo "   - DeepSeek V3"
     echo "   - Gemini Flash (free tier)"
 fi
 
 if command -v ollama &> /dev/null && ollama list 2>/dev/null | grep -q "$OLLAMA_MODEL"; then
-    echo "💻 Offline (Ollama):"
+    echo " Offline (Ollama):"
     echo "   - $OLLAMA_MODEL"
 fi
 

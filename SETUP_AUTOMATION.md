@@ -1,10 +1,10 @@
 # Set Up Daily Git Commit Automation
 
-> **Status:** ✅ All components tested and working. See `SETUP_STATUS.md` for details.
+> **Status:** [x] All components tested and working. See `SETUP_STATUS.md` for details.
 
 ## Quick Setup (Recommended)
 
-### Option 1: Batch File (Easiest) ⭐ RECOMMENDED
+### Option 1: Batch File (Easiest) * RECOMMENDED
 
 1. **Double-click `setup-automation.bat`** in your Dex folder
 2. **Click "Yes"** when Windows asks for Administrator permission (UAC prompt)
@@ -102,14 +102,14 @@ python daily_git_commit.py
 ## What Gets Committed
 
 **Automatically committed:**
-- ✅ Changes to Dex system code (Python, TypeScript files)
-- ✅ Updates to `CUSTOM_CHANGES.md`
-- ✅ Changes to documentation files
-- ✅ Configuration changes (if not in .gitignore)
+- [x] Changes to Dex system code (Python, TypeScript files)
+- [x] Updates to `CUSTOM_CHANGES.md`
+- [x] Changes to documentation files
+- [x] Configuration changes (if not in .gitignore)
 
 **NOT committed (by design):**
-- ❌ Your personal data (tasks, projects, meeting notes)
-- ❌ Personal configuration files (`System/user-profile.yaml`, `System/pillars.yaml`)
+- [ ] Your personal data (tasks, projects, meeting notes)
+- [ ] Personal configuration files (`System/user-profile.yaml`, `System/pillars.yaml`)
 
 ---
 
@@ -131,7 +131,7 @@ python daily_git_commit.py
 
 ### Test Manually
 
-Right-click a task → **Run** to test it immediately.
+Right-click a task -> **Run** to test it immediately.
 
 ---
 
@@ -163,7 +163,7 @@ Right-click a task → **Run** to test it immediately.
 
 1. Open Task Scheduler
 2. Find "Dex Git Commit - Daily 9PM"
-3. Right-click → Properties
+3. Right-click -> Properties
 4. Go to Triggers tab
 5. Edit the trigger and change time
 6. Click OK
@@ -175,12 +175,12 @@ Right-click a task → **Run** to test it immediately.
 To temporarily disable:
 1. Open Task Scheduler
 2. Find the tasks
-3. Right-click → Disable
+3. Right-click -> Disable
 
 To permanently remove:
 1. Open Task Scheduler
 2. Find the tasks
-3. Right-click → Delete
+3. Right-click -> Delete
 
 ---
 
