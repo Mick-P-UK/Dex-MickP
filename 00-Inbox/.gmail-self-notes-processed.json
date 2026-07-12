@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-11T09:48:18+01:00",
-  "note": "2026-07-11 09:xx BST scheduled run: 20 notes filed from 20 self-sent emails since 2026-07-10 07:47 (window after:2026/07/10). 19 YouTube notes (YouTube-Queue, most flagged add-to-nblm re Hermes/MCSB/command-centre/Agentic-OS), 1 MCSB->Mick attachment note (Hermes - A Guide for DIY Investors, docx; content via Drive read_file_content after Add-to-Drive, original kept in Drive and linked via source_drive; local binary NOT stored - base64 transport unreliable). The Hermes Research email had a signature-only body so no covering text note was created. All 20 threads labelled MCSB-Filed (Label_534) and archived. Nothing skipped; no attachments left pending.",
+  "last_run": "2026-07-12T09:19:28+01:00",
+  "note": "2026-07-12 09:19 BST scheduled run: 1 note filed from 1 self-sent email since 2026-07-11 (window after:2026/07/11). 1 YouTube note (YouTube-Queue): 'Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners' (video mTYxpIRK7xA; same video previously seen in a different thread, filed with (2) suffix; no NBLM directive, pure-link email so no covering text note). Thread 19f5275b52af0f4a labelled MCSB-Filed (Label_534) and archived. Nothing skipped; no attachments pending.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -243,6 +243,9 @@
     ],
     "19f4fbf34c131121": [
       "2026.07.11 - Hermes - A Guide for DIY Investors.docx"
+    ],
+    "19f5275b52af0f4a": [
+      "mTYxpIRK7xA"
     ]
   }
 }

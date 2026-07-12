@@ -1,9 +1,9 @@
 ---
-date_created: "{{date:YYYY.MM.DD}}"
+"date_created:": "{{date:YYYY.MM.DD}}"
 Category:
 tags:
-url:
-author:
+Reference Link:
+By:
 status:
 ---
 ## Summary

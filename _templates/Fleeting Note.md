@@ -1,6 +1,6 @@
 ---
-author: Mick Pavey
-date_created: "{{date:YYYY.MM.DD}}"
+By: Mick Pavey
+"date_created:": "{{date:YYYY.MM.DD}}"
 status: inbox
 topics: Fleeting Note
 tags:

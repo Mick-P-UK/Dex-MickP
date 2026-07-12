@@ -9,5 +9,7 @@
   "spellcheck": true,
   "strictLineBreaks": false,
   "readableLineLength": true,
-  "defaultViewMode": "preview"
+  "defaultViewMode": "preview",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00-Inbox"
 }

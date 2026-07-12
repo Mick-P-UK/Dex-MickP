@@ -1,6 +1,6 @@
 ---
-date_created: "{{date:YYYY.MM.DD}}"
-author: Mick
+"date_created:": "{{date:YYYY.MM.DD}}"
+By: Mick
 aliases:
 Category:
 tags:

@@ -1,4 +1,4 @@
-# 00-Index - {{FOLDER_NAME}}
+# 00-Index — {{FOLDER_NAME}}
 
 ## Quick Links
 - [[Inbox-Routing-Plan|Inbox Routing Plan]]

@@ -41,6 +41,16 @@ Your task backlog organized by priority and pillar.
 
 > High-impact tasks aligned with your weekly priorities.
 
+- [ ] Migrate DIY Investors store from Stan.store to Fourthwall ^task-20260712-001
+  - **Due:** Target this week
+  - **Reminder:** Tomorrow (Mon 13 Jul) morning if not done today
+  - **What:** Move the store off Stan.store (29 USD/mo, no sales since ~Feb/Mar) to Fourthwall Free tier. Rebuild link-in-bio homepage, set up a members-only video tier, launch first one or two PDFs, update all links (YouTube descriptions, socials, newsletter, website), then cancel Stan. Full plan, checklist and PDF ideas in the decision note.
+  - **Owner note:** Payout/bank setup and cancelling Stan are Mick's to do directly.
+  - **Pillar:** DIY-Investors
+  - **Created:** 2026-07-12
+  - **Priority:** Medium - removes a fixed monthly drag; not blocking.
+  - **Ref:** 04-Projects/2026.07.12 - Decision - Migrate Stan.store to Fourthwall.md
+
 - [ ] Give ShareScope-Automation its own private GitHub repo ^task-20260711-001
   - **What:** ShareScope-Automation (04-Projects/2026.04.04-ShareScope-Automation) has no git remote and is backed up nowhere. Create its own PRIVATE GitHub repo, keep its history/branches (currently post-webinar-dev), add the remote, push.
   - **First check:** Confirm whether C:\Vaults\Cowork\ax-trees-automation and 04-Projects/2026.04.04-ShareScope-Automation are the same project before creating the repo.

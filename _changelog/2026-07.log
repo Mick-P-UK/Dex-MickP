@@ -32,3 +32,23 @@
 2026-07-11 19:47 [UPDATE] daily_git_commit.py - commit via -F tempfile (fixes Windows command-line-length failure); capped file lists; backup .bak-2026-07-11. Author: Cedric.
 2026-07-11 19:47 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated stack + Recent session block. Author: Cedric.
 2026-07-11 19:47 [BATON] Thread wrap - Vault ASCII Cleanup and Sweep Skill (+ Hermes project). Handover to LATEST.md + archive 2026.07.11 - 1947. Main body pushed (5e10b38); wrap edits ride 9pm sweep. Author: Cedric.
+2026-07-12 11:30 [CREATE] Notion Micks Content Studio - "2026.07.12 - Meet Cedric - When the Job Moves House (Why Cedric Sometimes Has to Work Inside Claude Code)" (Project: Meet Cedric, Format: Video, Status: Draft, Audience: YouTube/Public). Author: Cedric.
+2026-07-12 11:50 [CREATE] Dex-MickP/00-Inbox/2026.07.12 - Fourthwall - Do I Need to Replicate My Three Membership Tiers.md - Fourthwall NotebookLM tier-replication answer with Mick's addendum (annual-only base, Feb 2027 renewal window, no mid-cycle churn campaign needed). Author: Cedric. Status: WIP, tag Fourthwall.
+2026-07-12 12:00 [CREATE] C:/Users/pavey/.claude/skills/notebooklm-cli-custom/SKILL.md - New GLOBAL custom skill capturing NotebookLM CLI conventions + gotchas (9 sections). Author: Cedric.
+2026-07-12 12:30 [CREATE] project_fourthwall_migration.md (auto-memory) - annual-only base + Feb 2027 renewal window; migration is renewal-cycle-aligned. Author: Cedric.
+2026-07-12 12:30 [UPDATE] MEMORY.md (auto-memory index, Writing System project) - added Fourthwall migration entry. Author: Cedric.
+2026-07-12 13:00 [CREATE] C:/Users/pavey/.claude/_rules.md - New durable-rules file linked from CLAUDE.md via @_rules.md; seeded with NotebookLM/NBLM auto-lookup rule. Author: Cedric.
+2026-07-12 13:00 [UPDATE] C:/Users/pavey/.claude/CLAUDE.md - v1.3 -> v1.4; added @_rules.md import line under the header; new changelog row. Author: Cedric.
+2026-07-12 13:00 [CREATE] C:/Users/pavey/.claude/plans/warm-sparking-donut.md - Approved plan for the notebooklm-cli-custom skill. Author: Cedric.
+2026-07-12 13:15 [CREATE] Dex-MickP/00-Inbox/2026.07.12 - Fourthwall - How To Create and Sell PDFs (Store Plus YouTube).md - 8-section PDF sales playbook from the Fourthwall notebook. Author: Cedric. Status: WIP, tag Fourthwall.
+2026-07-12 13:30 [CREATE] Fourthwall NotebookLM studio note - "How To - Selling PDFs on Fourthwall (Store plus YouTube funnel)" via notebooklm note create + PowerShell escaping recipe. Author: Cedric.
+2026-07-12 14:00 [CREATE] Symlinks (Mick ran elevated PowerShell): C:/Users/pavey/.claude/skills/notebooklm-{notebook-setup, add-content, chat, studio-output} -> Dex-MickP/skills/notebooklm-{same}. Verified live in-session. Author: Mick (script by Cedric).
+2026-07-12 14:15 [CREATE] Notion Micks Content Studio - "2026.07.12 - Meet Cedric - Two Doors, Two Toolkits (Why Cowork and Claude Code Don't Share Every Skill)" (Project: Meet Cedric, Format: Video, Status: Draft, Audience: YouTube/Public). Author: Cedric.
+2026-07-12 15:00 [CREATE] project_notebooklm_cli_custom_skill.md (auto-memory) - history of the new global custom skill and its five gaps. Author: Cedric.
+2026-07-12 15:00 [UPDATE] MEMORY.md (auto-memory index, Writing System project) - added notebooklm-cli-custom skill entry. Author: Cedric.
+2026-07-12 15:00 [UPDATE] C:/Users/pavey/.claude/skills/notebooklm-cli-custom/SKILL.md - added auth-quirk gotcha (ask/status endpoint mismatch on 0.3.4). Author: Cedric.
+2026-07-12 16:00 [CREATE] Dex-MickP/NotebookLM-Queries/2026.07.12 - Fourthwall - Digital Product Transaction Fees.md - notebooklm-chat Level 2 end-to-end test artefact (5% flat / 0% Pro). Author: Cedric.
+2026-07-12 16:15 [UPGRADE] notebooklm-py 0.3.4 -> 0.7.3 via pip; notebooklm skill install refreshed C:/Users/pavey/.claude/skills/notebooklm/SKILL.md. Migration automatic; auth preserved. Author: Mick (script + release-notes audit by Cedric).
+2026-07-12 16:35 [UPDATE] C:/Users/pavey/.claude/skills/notebooklm-cli-custom/SKILL.md - added Windows doctor Profile-Dir false-positive gotcha. Author: Cedric.
+2026-07-12 16:43 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated stack line + Recent session block for today. Author: Cedric.
+2026-07-12 16:43 [BATON] Thread wrap - NotebookLM CLI in Claude Code. Handover to _handovers/LATEST.md + archive/2026.07.12 - 1643 - baton - NotebookLM CLI in Claude Code.md. Author: Cedric.
