@@ -1,61 +1,54 @@
 ---
-title: Baton Handover -- NotebookLM CLI in Claude Code
+title: Baton Handover -- Fourthwall PDF Lead Magnet Research + notebooklm-add-content 0.7.3 syntax fixes
 date: 2026-07-12
-time: 16:43 (London)
-topic: NotebookLM CLI in Claude Code
-thread: NotebookLM CLI reach + custom skill + symlinks + rules file + 0.3.4 to 0.7.3 upgrade + Fourthwall notebook research
+time: 17:40 (London)
+topic: Fourthwall PDF Lead Magnet Research
+thread: Cold-start continuity check + notebooklm-add-content 0.7.3 syntax fixes + Option C hybrid research for the Fourthwall Bronze tier PDF lead magnet + full recommendation delivered to vault and notebook
 status: handover
 author: Cedric (PAIDA)
 generated-by: AI
 ---
 
-# Baton Handover -- NotebookLM CLI in Claude Code (2026-07-12 1643)
+# Baton Handover -- Fourthwall PDF Lead Magnet Research (2026-07-12 1740)
 
-Topic: [[NotebookLM CLI in Claude Code]]
+Topic: [[Fourthwall PDF Lead Magnet Research]]
 
 ## Thread character
 
-Started with Mick asking whether Cedric (in Claude Code) could reach one of his NotebookLM notebooks via the locally installed CLI. Yes - the CLI lives on Mick's PC and Claude Code's shell is on the PC too. That opened the wider picture: post 7 July 2026 Cowork cloud move, the CLI is unreachable from Cowork, so any CLI-based work now belongs in Claude Code. The thread built out the infrastructure (a new global custom skill; four vault-library skills symlinked into the global root; a separate `_rules.md` linked from CLAUDE.md), used the CLI for real Fourthwall research, ran an upgrade path (0.3.4 to 0.7.3, which also fixed today's auth quirks), and drafted two Meet Cedric episodes.
+Fresh Claude Code session, opened with a baton pass from the previous thread confirming git commit 68271d0 was pushed. Verified two things at cold-start: (1) all five notebooklm-* skills carry into Claude Code via the symlinks Mick's elevated PowerShell script laid down yesterday; (2) the `@_rules.md` import from CLAUDE.md is loading (NotebookLM/NBLM auto-lookup rule visible in-context). Both worked - the cold-start proof deferred yesterday is now closed. Then worked the three open items from the prior LATEST: item 1 (paste the Windows-doctor issue) was already done by Mick manually before the session; item 2 (fix `--confirm` -> `-y` in notebooklm-add-content) turned out bigger than the pickup note flagged and ran into three separate 0.7.3 CLI breakages; item 3 (Fourthwall PDF lead magnet topic research) executed as Option C hybrid - broad NotebookLM Deep sweep, focused notebook ask for candidates, Cedric's own ICP + business-profile pressure-test, written recommendation to vault, dual-save studio note. Session closed with Mick reserving time to review the recommendation at his own pace.
 
 ## Decisions made
 
-- `notebooklm-cli-custom` lives GLOBALLY at `C:\Users\pavey\.claude\skills\`. Available in every Claude Code session on this PC.
-- Skill scope = MEDIUM (conventions playbook), not narrow (gaps only) or broad (superset of built-in). Covers the ask --save-as-note shortcut, PowerShell escaping recipe for note create with long content, dual-save pattern (vault + notebook), ASCII cleanup, tag capitalisation and gotchas.
-- Vault landing folder for NotebookLM output from THIS custom skill = `Dex-MickP\00-Inbox` (matches today's usage). The older `notebooklm-chat` vault-library convention (`NotebookLM-Queries` folder, short filename) stays untouched for its own domain.
-- Four vault-library `notebooklm-*` skills reach Claude Code via SYMLINKS not copies. Source of truth stays at `Dex-MickP\skills\` (registered in SKILLS_REGISTRY.md, mirrored to `/mnt/skills/user/` for Cowork); global root gets pointers via `mklink /D`. No duplication.
-- Durable behavioural rules live in a separate `C:\Users\pavey\.claude\_rules.md`, linked from the master CLAUDE.md via `@_rules.md`. Rules iterate here without touching CLAUDE.md.
-- First rule seeded: on any mention of NotebookLM / Notebook LM / notebooklm / NBLM, before any tool call, consult the notebooklm-* skills available.
-- Fourthwall: mirror the existing three tiers (Bronze free, Silver Inner Circle, Gold Plaza) into Fourthwall unchanged. Because all Mick's members are annual with a Feb 2027 renewal window, the migration IS the renewal - no separate mid-cycle churn campaign is needed.
-- Upgrade to CLI 0.7.3 approved after a release-notes audit: no breaking changes affecting Mick's usage; substantial auth-reliability + Windows-console fixes.
+- notebooklm-add-content vault-library SKILL.md: `--confirm` swept out (was 4 refs), `source remove` -> `source delete` (was 2 refs; `remove` doesn't exist in 0.7.3), `notebooklm notebook rename` -> `notebooklm rename` (was 2 refs; the `notebook` command group was flattened to top-level in 0.7.3). Six edits total. Grep of all four vault-library notebooklm-* skills now shows zero legacy syntax.
+- 0.7.3 CLI general command-group flattening confirmed: `notebook create` / `rename` / `delete` are now top-level (`notebooklm create` / `rename` / `delete`). Impacts any future CLI translation of the `notebooklm-notebook-setup` skill (currently uses MCP-tool syntax `notebooklm-mcp:notebook_create` etc which is valid Claude Desktop syntax, so no break in that context - just no CLI parity).
+- Fourthwall PDF Lead Magnet WINNING recommendation: "The DIY Investor's Stock Score Sheet - A Three Pillars Buy Test" - interactive scoring worksheet PDF using Mick's Three Pillars framework (Fundamental / Technical / News-Flow). Reader inputs a ticker, scores it against 4-5 questions per Pillar, gets a Go/Wait/Avoid signal. Includes one worked past-tense example. Back page carries the Silver Inner Circle invitation. Consideration-tier asset per research (higher lead quality than Awareness-tier quizzes/checklists/ebooks). Direct Silver channel: Inner Circle's "annual stock filtering" IS this exercise at scale.
+- RUNNERS-UP: (1) Portfolio Health Check - as a parallel asset for existing-portfolio audience segment or Day-14 nurture. (2) "Autopsy of a Trade" - 5 real losses with the rules that would have flagged each, as the Day-4 objection-handler EMAIL content in the primary asset's nurture sequence (does not need to be a separate PDF).
+- REJECTED as primary lead magnet: Portico Investing Playbook (wrong altitude for cold Bronze - Silver/Gold asset only, contrarian framing needs pre-existing vocabulary); Contrarian Hype Checklist (Awareness-tier attracts freebie seekers per research).
+- Research design principles applied in the recommendation: speed-to-value under 20 min, email-only opt-in (multi-field forms kill CVR - 1 field 13.4%, 8 fields 2.4%), interactive over static (endowment effect 2-3x uplift), mobile-first tagged PDF, back-page Silver invitation, compliance-clean UK framing (FCA Fair-Clear-Not-Misleading + Consumer Duty; avoid certainty/guaranteed), loss-aversion framing beats gain framing in this niche.
+- Nurture sequence Day 0/2/4/7/10 recommended: research shows this drives 20-30% download-to-call conversion vs 2% for send-and-hope. Runner-up 2 (Autopsy of a Trade) is the natural Day-4 objection-handler content.
 
 ## Files changed this thread
 
-- [CREATE] `C:\Users\pavey\.claude\skills\notebooklm-cli-custom\SKILL.md` - new global custom skill; nine sections; three later edits added the auth quirk + Windows doctor false-positive gotchas.
-- [CREATE] `C:\Users\pavey\.claude\_rules.md` - new durable rules file; NotebookLM/NBLM auto-lookup rule seeded.
-- [UPDATE] `C:\Users\pavey\.claude\CLAUDE.md` - v1.3 -> v1.4; `@_rules.md` import line added under the header; changelog row.
-- [CREATE] `C:\Users\pavey\.claude\plans\warm-sparking-donut.md` - approved plan for the custom skill.
-- [CREATE / UPDATE] Auto-memory (Writing System project): `project_notebooklm_cli_custom_skill.md` + `project_fourthwall_migration.md`; `MEMORY.md` index updated.
-- [CREATE] Symlinks (via Mick's elevated PowerShell): `C:\Users\pavey\.claude\skills\notebooklm-{notebook-setup, add-content, chat, studio-output}` -> `Dex-MickP\skills\notebooklm-{same}`. Verified live in-session.
-- [UPGRADE] `notebooklm-py` 0.3.4 -> 0.7.3 via pip; `notebooklm skill install` refreshed the auto-installed skill file. Migration automatic; auth preserved (29 cookies).
-- [CREATE] `Dex-MickP\00-Inbox\2026.07.12 - Fourthwall - Do I Need to Replicate My Three Membership Tiers.md` (+ Mick's addendum on annual-only base).
-- [CREATE] `Dex-MickP\00-Inbox\2026.07.12 - Fourthwall - How To Create and Sell PDFs (Store Plus YouTube).md` - 8-section PDF sales playbook.
-- [CREATE] `Dex-MickP\NotebookLM-Queries\2026.07.12 - Fourthwall - Digital Product Transaction Fees.md` - notebooklm-chat Level 2 end-to-end test artefact.
-- [CREATE] Notion Micks Content Studio: two Meet Cedric episodes drafted (When the Job Moves House; Two Doors, Two Toolkits).
-- [CREATE] Fourthwall NotebookLM studio: "How To - Selling PDFs on Fourthwall (Store plus YouTube funnel)" note.
+- [CREATE] `Dex-MickP\00-Inbox\2026.07.12 - Fourthwall - PDF Lead Magnet Topic Recommendation.md` - the full recommendation report, ~5 pages, sections: Summary / Key Takeaways / Winning Recommendation (with 12-row ICP pressure-test table) / Runners-Up (x2) / Rejected Candidates (x2 with rationale) / Format Design Principles / Nurture Sequence table / Next Steps / Provenance.
+- [CREATE] NotebookLM notebook "PDF Lead Magnet - DIY Investors_Updated:2026.07.12" (id a80a1222-0fba-423f-98f7-785c294d3372). 132 sources total: seed brief (id 9a4b1814-05c5-4b78-9daa-6dd84066292b) + auto-generated Deep research report + 130 URL sources + final index text source (id 46acf5c7-11f4-4f30-a2e0-7d6735e2b62e). 2 studio notes: Recommendation (id 8a719769-aa18-46f4-8f2f-1fbdd575f878) + Index_Updated:2026.07.12 - 17.32 (id a30ec070-ac47-432d-8db5-71bd1baf408b). Placeholder source (63815275-9ef3-462c-9c34-f5c5cbb0eb64) deleted after real index built.
+- [UPDATE] `Dex-MickP\skills\notebooklm-add-content\SKILL.md` - 6 edits: --confirm -> -y (x4), source remove -> source delete + comment fixes (x2), notebook rename -> rename in Phase 2 (line ~119) and CLI reference stub (line ~46). All applied; grep verified clean.
+- [CREATE] Auto-memory (Writing System project): `project_fourthwall_pdf_lead_magnet.md`; `MEMORY.md` index updated with one-line entry.
+- Scratchpad artefacts (not vault-tracked, session-local): seed-brief-pdf-lead-magnet.md, index-content.md, research-sweep-output.log, tasks\b7ned7o08.output.
 
 ## Open questions / unfinished
 
-- GitHub issue for the doctor Windows false positive is DRAFTED but not submitted (title: "doctor: 'Profile Dir' permission check reports false positive on Windows (POSIX bits vs ACLs)"). Browser tab opened at `github.com/teng-lin/notebooklm-py/issues/new`. Mick to paste + submit at his convenience.
-- Pre-existing bug in the vault-library `notebooklm-add-content` SKILL.md: references `--confirm` on `source remove` and `note delete`, but the CLI has always used `-y / --yes`. Small edit; safe to do next session.
-- Fourthwall PDF topic research (choosing a specific lead-magnet subject for DIY investors) is a separate planned task Mick flagged - not started.
-- The custom skill's trigger phrases have been validated INSIDE this session; a fresh Claude Code session cold-start is the proper end-to-end proof.
+- **Cowork mirror sync required:** `/mnt/skills/user/notebooklm-add-content/SKILL.md` still has legacy syntax. THREE fixes have accumulated on the vault-library version today (source remove -> delete, --confirm -> -y, notebook rename -> rename). Copy the vault version to the mirror next time in Cowork.
+- **Broader 0.7.3 CLI audit still deferred:** `notebooklm-notebook-setup` SKILL.md references `notebooklm-mcp:notebook_create` etc. These are MCP-tool syntax valid in Claude Desktop. If we want a Claude-Code-friendly CLI translation section in each skill, needs a proper pass across all four vault-library skills.
+- **Curly-quote filename** in `00-Inbox\2026.07.12 - Fourthwall - A Comprehensive Guide to Migrating and Promoting Your 'Inner Circle'.md` still needs an ASCII rename (carried from prior Cedric's flag; pre-commit hook scopes to content not filenames).
+- **Fourthwall PDF DESIGN work** (drafting the 4-5 questions per Pillar based on Mick's real analysis process, picking the specific worked-example past trade, approving Silver invitation copy on the back page) is a Content Studio task not a Cedric research task. Belongs in a Content Studio session with Mick.
+- **Notion connector authorized mid-session but not exercised** - reserved for the Fourthwall PDF design session (natural home for the worksheet-question drafting and Silver copy).
+- **NEW gotcha to document in `notebooklm-cli-custom` skill next session:** IMPORT_RESEARCH RPC 30s timeout during Deep sweeps on 0.7.3 emits a scary-looking WARNING + ERROR log, but the CLI detects sources already landed and treats as success (avoiding duplicate inflation). Benign; could confuse a future operator.
 
 ## Next-thread pickup
 
 - Opener phrase: "Cedric, resume from LATEST handover."
-- First action: on a fresh Claude Code session, verify the five notebooklm-* skills all appear in the skills list AND the `@_rules.md` import from CLAUDE.md is loading the NotebookLM/NBLM rule. If yes, work whichever open item Mick prefers: (a) paste the drafted GitHub issue into the open tab, (b) fix the `--confirm` -> `-y` bug in `notebooklm-add-content`, or (c) start the Fourthwall PDF topic research. If the skills or rule did not carry over, diagnose why.
+- First action: Mick will have reviewed the PDF Lead Magnet Recommendation Report and decided (a) build the winning candidate, (b) overrule to a runner-up, or (c) something else. If (a): move to Content Studio design work - the 4-5 questions per Pillar based on Mick's real analysis process, worked-example past-trade choice, Silver invitation copy. If (b) or (c): re-align on candidate. If Mick has not reviewed yet OR wants housekeeping first: cover the deferred items - Cowork mirror sync when next in Cowork, 0.7.3 CLI audit of notebooklm-notebook-setup, curly-quote filename rename, add the IMPORT_RESEARCH timeout gotcha to notebooklm-cli-custom.
 
 ## Content Studio logged
 
-- 2026.07.12 - Meet Cedric - When the Job Moves House (Why Cedric Sometimes Has to Work Inside Claude Code). Project: Meet Cedric. Format: Video. Audience: YouTube/Public. Status: Draft.
-- 2026.07.12 - Meet Cedric - Two Doors, Two Toolkits (Why Cowork and Claude Code Don't Share Every Skill). Project: Meet Cedric. Format: Video. Audience: YouTube/Public. Status: Draft.
+No Content Studio artefacts drafted this thread. Notion connector authorized mid-session but not used. Two Meet Cedric episodes from yesterday's thread (When the Job Moves House, Two Doors Two Toolkits) remain the current Draft backlog. The Fourthwall PDF design session is the natural next Content Studio use.

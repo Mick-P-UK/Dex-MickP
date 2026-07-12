@@ -39,11 +39,11 @@ notebooklm source add "./file.pdf" --wait             # wait for indexing
 # List sources in active notebook
 notebooklm source list
 
-# Remove a source
-notebooklm source remove <source_id> --confirm
+# Delete a source
+notebooklm source delete <source_id> -y
 
-# Rename notebook
-notebooklm notebook rename <notebook_id> "New Title"
+# Rename notebook (operates on current active context; use -n for a different notebook)
+notebooklm rename "New Title"
 
 # Research sweep (web)
 notebooklm source add-research "topic query"
@@ -51,7 +51,7 @@ notebooklm source add-research "topic query"
 # Notes (studio notes)
 notebooklm note list
 notebooklm note create --title "Title" --content "body text"
-notebooklm note delete <note_id> --confirm
+notebooklm note delete <note_id> -y
 ```
 
 ---
@@ -116,7 +116,7 @@ get today's date as date_added.
 
 After all new sources added, rename the notebook:
 ```bash
-notebooklm notebook rename <notebook_id> "[Title without existing _Updated suffix]_Updated:YYYY.MM.DD"
+notebooklm rename "[Title without existing _Updated suffix]_Updated:YYYY.MM.DD" -n <notebook_id>
 ```
 
 ---
@@ -163,7 +163,7 @@ Regenerate the full index from the internal source log (existing + new entries).
 notebooklm note list
 
 # Delete old index note
-notebooklm note delete <old_note_id> --confirm
+notebooklm note delete <old_note_id> -y
 
 # Create new note
 notebooklm note create \
@@ -173,8 +173,8 @@ notebooklm note create \
 
 ### Update Index Source Copy:
 ```bash
-# Remove old index source (identified by "Index_Updated" in title)
-notebooklm source remove <old_index_source_id> --confirm
+# Delete old index source (identified by "Index_Updated" in title)
+notebooklm source delete <old_index_source_id> -y
 
 # Add new index source
 notebooklm source add --text "<full index content>" --wait
