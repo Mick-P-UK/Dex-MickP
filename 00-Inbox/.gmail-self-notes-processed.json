@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-12T09:19:28+01:00",
-  "note": "2026-07-12 09:19 BST scheduled run: 1 note filed from 1 self-sent email since 2026-07-11 (window after:2026/07/11). 1 YouTube note (YouTube-Queue): 'Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners' (video mTYxpIRK7xA; same video previously seen in a different thread, filed with (2) suffix; no NBLM directive, pure-link email so no covering text note). Thread 19f5275b52af0f4a labelled MCSB-Filed (Label_534) and archived. Nothing skipped; no attachments pending.",
+  "last_run": "2026-07-13T06:52:04+01:00",
+  "note": "2026-07-13 06:52 BST scheduled run: 7 YouTube notes filed from 7 self-sent emails since 2026-07-12 09:19 (window after:2026/07/12). All pure-link emails, no attachments, no covering text notes. Videos: n32qq7Kwzh0 (Hermes Architecture, NBLM:Hermes), Xv36Z65VPv0 x3 (Hermes Session 2 - one no-directive, one NBLM:Remy, one NBLM:Hermes; filed with (2)/(3) suffixes), yzlvDnxvi1I (Hermes Briefing, NBLM:Hermes), yaMcm3sQswc (Ollama private OS, add-to-nblm), cQqOkx5qnWo (How To Make A Jarvis, add-to-nblm). All 7 threads labelled MCSB-Filed (Label_534) and archived. Nothing skipped or pending.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -246,6 +246,27 @@
     ],
     "19f5275b52af0f4a": [
       "mTYxpIRK7xA"
+    ],
+    "19f59f0341b559f1": [
+      "n32qq7Kwzh0"
+    ],
+    "19f584c56d8fd92a": [
+      "Xv36Z65VPv0"
+    ],
+    "19f577e09f1caaab": [
+      "Xv36Z65VPv0"
+    ],
+    "19f5775f1650b046": [
+      "yzlvDnxvi1I"
+    ],
+    "19f5773e66121db7": [
+      "Xv36Z65VPv0"
+    ],
+    "19f5770f500c88c2": [
+      "yaMcm3sQswc"
+    ],
+    "19f575f447a21585": [
+      "cQqOkx5qnWo"
     ]
   }
 }
