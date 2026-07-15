@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-13T06:52:04+01:00",
-  "note": "2026-07-13 06:52 BST scheduled run: 7 YouTube notes filed from 7 self-sent emails since 2026-07-12 09:19 (window after:2026/07/12). All pure-link emails, no attachments, no covering text notes. Videos: n32qq7Kwzh0 (Hermes Architecture, NBLM:Hermes), Xv36Z65VPv0 x3 (Hermes Session 2 - one no-directive, one NBLM:Remy, one NBLM:Hermes; filed with (2)/(3) suffixes), yzlvDnxvi1I (Hermes Briefing, NBLM:Hermes), yaMcm3sQswc (Ollama private OS, add-to-nblm), cQqOkx5qnWo (How To Make A Jarvis, add-to-nblm). All 7 threads labelled MCSB-Filed (Label_534) and archived. Nothing skipped or pending.",
+  "last_run": "2026-07-14T07:34:00+01:00",
+  "note": "2026-07-14 07:34 BST scheduled run: 17 YouTube notes filed to YouTube-Queue (window after:2026/07/13), 1 subject-only text note (Mini PC Options for Hermes), and 1 brainstorming email decomposed into a covering text note + an MCSB-authored attachment note (Hermes vs MCSB Brainstorm.md, fetched via Chrome Add-to-Drive + Drive download, cross-linked as siblings). 19 threads labelled MCSB-Filed (Label_534) and archived. Skipped and logged (no note, not labelled): 1 empty email (Addendum 21.55BST), 2 auto-generated portfolio digests (US Active 10, LSE RNS), 1 email addressed to a third party (Holiday Guide to Debs). NOTE: canonical build_vault_note.py in the skill scripts folder is corrupted (ASCII_MAP smart-quote keys mangled into invalid Python); used a patched local copy this run - the vault script needs fixing before next run.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -267,6 +267,76 @@
     ],
     "19f575f447a21585": [
       "cQqOkx5qnWo"
+    ],
+    "19f5d3872d4458c9": [
+      "9CiOwbmOKdU"
+    ],
+    "19f5d07f72c5d669": [
+      "k5NhsF7t68M"
+    ],
+    "19f5d064c9833972": [
+      "6MBq1paspVU"
+    ],
+    "19f5b68625bb7d88": [
+      "-h7ZAuuNDLE"
+    ],
+    "19f5b674b7705d1e": [
+      "n4EVksU_EOs"
+    ],
+    "19f5b51a633eb748": [
+      "iXd0t60YmMw"
+    ],
+    "19f5b10432a17602": [
+      "nN6DZi_fiSo"
+    ],
+    "19f5b0f67d13c198": [
+      "JZWJzSSHYqU"
+    ],
+    "19f5b0e53afdd5ee": [
+      "-h7ZAuuNDLE"
+    ],
+    "19f5b0d9a1f0d8b8": [
+      "1MaFErWfL24"
+    ],
+    "19f5b0cbb5f8dba5": [
+      "GCZseZzrrW0"
+    ],
+    "19f5b0bbd04cc44d": [
+      "I9W6NhFkGAI"
+    ],
+    "19f5b0b35db1863a": [
+      "OMQo6YMZYzo"
+    ],
+    "19f5b0a96b3c749e": [
+      "2ZacwCbiLjg"
+    ],
+    "19f5b09821ff0021": [
+      "EJm8Ka-gVOc"
+    ],
+    "19f5b052ed3047d1": [
+      "yzlvDnxvi1I"
+    ],
+    "19f5b0357cf2ffb7": [
+      "bpM9D1kQaAs"
+    ],
+    "19f5b203084c2c89": [
+      "body"
+    ],
+    "19f5d311c413df75": [
+      "body",
+      "2026.07.13 - Hermes vs MCSB Brainstorm.md"
+    ],
+    "19f5d43b4f410ab4": [
+      "skipped-empty"
+    ],
+    "19f4c24bdd03fb8b": [
+      "skipped-auto-digest"
+    ],
+    "19f5a34acc1d49f9": [
+      "skipped-auto-digest"
+    ],
+    "19f5adbf78ebd771": [
+      "skipped-not-self-note"
     ]
   }
 }
