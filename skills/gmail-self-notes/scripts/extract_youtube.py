@@ -38,8 +38,11 @@ SIG_MARKERS = [
 ]
 
 # "add to nblm re X", "nblm for X", "notebook lm: X", etc.
+# 2026-07-15 fix: the topic must stay on the SAME line as the directive. The old
+# pattern used "\s*", which matches newlines, so a bare "NBLM" on its own line
+# swallowed the following line (typically the signature) as the topic.
 NBLM_RE = re.compile(
-    r"\b(?:add\s+to\s+)?(?:nblm|notebook\s?lm)\b\s*(?:re|for|about|:|-)?\s*([^\n]*)",
+    r"\b(?:add\s+to\s+)?(?:nblm|notebook\s?lm)\b[ \t]*(?:re|for|about|:|-)?[ \t]*([^\n]*)",
     re.IGNORECASE,
 )
 
@@ -100,7 +103,9 @@ def main():
         print(json.dumps({"error": str(exc)}))
         return 3
     videos = find_videos(text)
-    nblm, topic = find_nblm(text)
+    # Strip the signature BEFORE hunting for the directive, so signature lines can
+    # never be mistaken for an NBLM topic.
+    nblm, topic = find_nblm(strip_signature(text))
     out = {
         "videos": videos,
         "nblm": nblm,

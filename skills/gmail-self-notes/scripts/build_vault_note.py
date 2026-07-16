@@ -42,13 +42,21 @@ SIG_MARKERS = [
     "www.diy-investors",
 ]
 
+# ASCII_MAP keys MUST be written as \u escapes, never as literal characters.
+# 2026-07-15: this map was previously written with literal smart quotes/dashes and a
+# maintenance pass ran the ASCII conversion over this source file, flattening every
+# key into its own replacement ("\u201c" -> '"') and producing an unterminated
+# triple-quoted string. Escapes keep the source pure ASCII and self-idempotent.
 ASCII_MAP = {
-    "'": "'", "'": "'", "'": "'", "'": "'",
-    """: '"', """: '"', """: '"',
-    "-": "-", "-": "-", "-": "-", "-": "-",
-    "...": "...", " ": " ", "-": "-", "-": "-",
-    "GBP": "GBP ", "EUR": "EUR ", "(TM)": "(TM)", "(R)": "(R)",
-    "->": "->", "<-": "<-",
+    "\u2018": "'", "\u2019": "'", "\u201a": "'", "\u201b": "'",
+    "\u201c": '"', "\u201d": '"', "\u201e": '"', "\u201f": '"',
+    "\u2013": "-", "\u2014": "-", "\u2012": "-", "\u2015": "-",
+    "\u2010": "-", "\u2011": "-",
+    "\u2026": "...", "\u00a0": " ", "\u2022": "-", "\u00b7": "-",
+    "\u00a3": "GBP ", "\u20ac": "EUR ", "\u2122": "(TM)", "\u00ae": "(R)",
+    "\u00a9": "(C)", "\u2192": "->", "\u2190": "<-",
+    "\u2032": "'", "\u2033": '"', "\u2039": "<", "\u203a": ">",
+    "\u00ab": "<<", "\u00bb": ">>", "\ufeff": "",
 }
 
 # Known frontmatter key order; unknown keys are appended alphabetically after these.
