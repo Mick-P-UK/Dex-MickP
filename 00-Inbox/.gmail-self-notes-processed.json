@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-15T07:31:37+01:00",
+  "last_run": "2026-07-16T07:41:07+01:00",
   "note": "2026-07-15 07:xx BST scheduled run (window after:2026/07/13): 6 YouTube notes filed to YouTube-Queue from 6 self-sent emails; no attachments and no body-only notes this run, so no sibling cross-linking was needed and Chrome/Drive were not required. 6 threads labelled MCSB-Filed (Label_534) and archived. Skipped and logged (no note, not labelled): 2 auto-generated US Active 10 news digests. 4 further threads matched the search but were already in the log as prior skips (1 empty email, 2 auto-digests, 1 addressed to a third party). FIXED THIS RUN: (1) canonical build_vault_note.py ASCII_MAP was corrupted - a prior maintenance pass had run the ASCII conversion over the script's own source, flattening every smart-quote key into its replacement and producing a SyntaxError; rewritten using \\u escapes so the source stays pure ASCII and self-idempotent (this also fixed a latent GBP->'GBP ' bug that appended a space on every pass). (2) extract_youtube.py NBLM_RE used '\\s*' which matches newlines, so a bare 'NBLM' on its own line captured the following signature line as the topic; tightened to '[ \\t]*' and find_nblm now runs on signature-stripped text. Both helpers syntax-checked and regression-tested. No patched local copies were used - the canonical scripts ran this sweep.",
   "threads": {
     "19f3421213ed0761": [
@@ -361,6 +361,18 @@
     ],
     "19f60c0d160495e4": [
       "skipped-auto-digest"
+    ],
+    "19f67123d8b15599": [
+      "XeTAlZiIWHE"
+    ],
+    "19f66740b556ecbf": [
+      "bj04doEDOY4"
+    ],
+    "19f655ae1dab0b82": [
+      "G0sUSkRcM3A"
+    ],
+    "19f6554f1484c1b3": [
+      "1RIXGL5Vgag"
     ]
   }
 }
