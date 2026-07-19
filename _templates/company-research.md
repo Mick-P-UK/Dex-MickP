@@ -19,19 +19,19 @@ created_time:
 
   
 
-**Company:** [Full Legal Name]  
+**Company:** [Full Legal Name]  
 
-**Ticker:** [TICKER]  
+**Ticker:** [TICKER]  
 
-**Exchange:** [LSE / AIM / Other]  
+**Exchange:** [LSE / AIM / Other]  
 
-**Sector:** [Sector]  
+**Sector:** [Sector]  
 
 **Industry:** [Specific Industry]
 
   
 
-**Research Date:** {{date:MMMM DD, YYYY}} (London time)  
+**Research Date:** {{date:MMMM DD, YYYY}} (London time)  
 
 **Last Updated:** [YYYY.MM.DD]
 
@@ -51,9 +51,9 @@ created_time:
 
   
 
-**Current Price:** £[X.XX] (as of [Date])  
+**Current Price:** £[X.XX] (as of [Date])  
 
-**Market Cap:** £[XXX]M  
+**Market Cap:** £[XXX]M  
 
 **Initial Rating:** [Strong Buy / Buy / Hold / Avoid / Further Research Needed]
 
@@ -165,19 +165,19 @@ created_time:
 
 |--------|-------|-------|---------|
 
-| Revenue | £[XXX]M | [↑/↓/→] | [Note] |
+| Revenue | £[XXX]M | [^/v/->] | [Note] |
 
-| Gross Profit | £[XXX]M | [↑/↓/→] | [Note] |
+| Gross Profit | £[XXX]M | [^/v/->] | [Note] |
 
-| Operating Profit | £[XXX]M | [↑/↓/→] | [Note] |
+| Operating Profit | £[XXX]M | [^/v/->] | [Note] |
 
-| Net Profit | £[XXX]M | [↑/↓/→] | [Note] |
+| Net Profit | £[XXX]M | [^/v/->] | [Note] |
 
-| EPS | [X.XX]p | [↑/↓/→] | [Note] |
+| EPS | [X.XX]p | [^/v/->] | [Note] |
 
-| Dividend | [X.XX]p | [↑/↓/→] | [Note] |
+| Dividend | [X.XX]p | [^/v/->] | [Note] |
 
-| Net Cash/(Debt) | £[XXX]M | [↑/↓/→] | [Note] |
+| Net Cash/(Debt) | £[XXX]M | [^/v/->] | [Note] |
 
   
 
@@ -343,21 +343,21 @@ created_time:
 
 1. **[Key Positive 1]**
 
-   - [Supporting detail]
+   - [Supporting detail]
 
-   - [Impact on value]
+   - [Impact on value]
 
   
 
 2. **[Key Positive 2]**
 
-   - [Supporting detail]
+   - [Supporting detail]
 
   
 
 3. **[Key Positive 3]**
 
-   - [Supporting detail]
+   - [Supporting detail]
 
   
 
@@ -365,21 +365,21 @@ created_time:
 
 1. **[Key Risk 1]**
 
-   - [Detail of concern]
+   - [Detail of concern]
 
-   - [Potential impact]
+   - [Potential impact]
 
   
 
 2. **[Key Risk 2]**
 
-   - [Detail]
+   - [Detail]
 
   
 
 3. **[Key Risk 3]**
 
-   - [Detail]
+   - [Detail]
 
   
 
@@ -619,7 +619,7 @@ created_time:
 
 ### Data Quality
 
-**Confidence Level:** [High / Medium / Low]  
+**Confidence Level:** [High / Medium / Low]  
 
 **Last Verified:** [YYYY.MM.DD]
 
@@ -807,49 +807,49 @@ created_time:
 
 1. **Create New Research Note:**
 
-   - Format: `YYYY.MM.DD - Company Research - [Company Name].md`
+   - Format: `YYYY.MM.DD - Company Research - [Company Name].md`
 
-   - Place in: `/Areas/Investment-Research/Companies/`
+   - Place in: `/Areas/Investment-Research/Companies/`
 
-   - Date variables automatically populate with London time
+   - Date variables automatically populate with London time
 
-   - **Category field:** Use `DIY.com` for DIYinvestors.com or `DIY.ai` for AI for Investing activities
+   - **Category field:** Use `DIY.com` for DIYinvestors.com or `DIY.ai` for AI for Investing activities
 
   
 
 2. **Research Process:**
 
-   - Start with Quick Summary
+   - Start with Quick Summary
 
-   - Fill in known information
+   - Fill in known information
 
-   - Mark uncertain items with [?]
+   - Mark uncertain items with [?]
 
-   - Link to data sources
+   - Link to data sources
 
   
 
 3. **Update Regularly:**
 
-   - After results announcements
+   - After results announcements
 
-   - When significant news breaks
+   - When significant news breaks
 
-   - Before webinar preparation
+   - Before webinar preparation
 
-   - When reviewing portfolio
+   - When reviewing portfolio
 
   
 
 4. **Connect to Workflow:**
 
-   - Link from webinar prep notes
+   - Link from webinar prep notes
 
-   - Reference in meeting notes
+   - Reference in meeting notes
 
-   - Tag for easy retrieval
+   - Tag for easy retrieval
 
-   - Add to sector MOC (Map of Content)
+   - Add to sector MOC (Map of Content)
 
   
 
@@ -893,10 +893,10 @@ created_time:
 
   
 
-**Template Version:** 1.0  
+**Template Version:** 1.0  
 
-**Created:** 2026-02-02  
+**Created:** 2026-02-02  
 
-**Part of:** PAIDA Second Brain System  
+**Part of:** PAIDA Second Brain System  
 
 **Business:** DIY Investors Investment Research
