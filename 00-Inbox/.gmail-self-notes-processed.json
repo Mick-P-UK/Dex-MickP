@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-18T09:58:56.424881+01:00",
-  "note": "2026-07-18 09:5x BST scheduled run (window after:2026/07/17). Filed 8 notes from 8 self-sent emails: 6 YouTube notes to YouTube-Queue, 1 text/body note (George Invoice (Intuit)) and 1 PDF attachment note (Payment Confirmation - Harry (Accountancy Fees)) to the inbox root. The Harry email body was signature-only so no body note; only the attachment note was created. The 'George invoice' email (subject was a .pdf filename) had NO real Gmail attachment - only a browser blob reference and an Intuit connect link - so it was filed as a text note capturing that link, no attachment fetch needed. No email produced 2+ notes, so no sibling cross-linking. Attachment used the Chrome 'Add to Drive' hop + Drive connector; download_file_content exceeded the token cap and auto-saved to a tool-result file, so decode_attachment.py --from-json decoded from that file (byte-exact 141,893 bytes, valid PDF v1.4, 1 page). pandoc cannot read PDF, so text was extracted with pdftotext -layout and hand-written into the note; the original PDF is kept in attachments/ and wikilinked. 8 threads labelled MCSB-Filed (Label_534) and archived. Skipped and logged (no note, not labelled, left in inbox): 7 auto-generated digests (4 US Active 10 news digests, 1 US correction email, 2 LSE RNS checks). NBLM directives applied by hand (extractor topic heuristic still weak, as flagged before): products=selling workshops, tldraw=tldraw, cowork=Cowork; the 'AI News' email was a false-positive NBLM (Mick describing the video, not a directive) so no action set.",
+  "last_run": "2026-07-19T09:58:33.351350+01:00",
+  "note": "2026-07-19 ~09:5x BST scheduled run (window after:2026/07/18). Filed 6 YouTube notes to YouTube-Queue from 6 self-sent emails, all pure YouTube-link emails (no attachments, no body notes, no sibling links). NBLM directive applied on '11 NotebookLM Tricks' (action=add-to-nblm, nblm_topic=NBLM). Annotations kept: 'Analyse for Plaza webinar' (Next Great Depression 2030) and 'Wat h n check' (July 24th China Gold). No attachments so no Chrome/Drive hop needed. All 6 threads labelled MCSB-Filed (Label_534) and archived (INBOX removed). Nothing skipped or pending.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -466,6 +466,24 @@
     ],
     "19f6ed8790029f1b": [
       "skipped-auto-digest"
+    ],
+    "19f7744266d7d4c3": [
+      "k74RUCqv0Jk"
+    ],
+    "19f774425d599c73": [
+      "5H-s-TIO0QE"
+    ],
+    "19f7700c7d87c2b4": [
+      "FovWUk7WbAQ"
+    ],
+    "19f76ffe8f9132f7": [
+      "hHNDgjan15c"
+    ],
+    "19f76d0cf974c994": [
+      "ShfBNXm9pe8"
+    ],
+    "19f7624e989ac62b": [
+      "0-QDPnEIkvw"
     ]
   }
 }
