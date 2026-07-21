@@ -10,8 +10,8 @@ previous_name: ''
 market_makers: []
 nomad: ''
 first_researched: 2026.04.29
-last_researched: 2026.07.20
-research_count: 3
+last_researched: 2026.07.21
+research_count: 4
 micks_view_count: 0
 ---
 ## Research History
@@ -21,6 +21,7 @@ micks_view_count: 0
 | 2026.04.29 | [[2026.04.29 - ENQ - Enquest - AI - Financial Analysis.md]] | AI | Financial Analysis |
 | 2026.04.29 | [[2026.04.29 - ENQ - Enquest - AI - Financial Analysis.md]] | AI | Financial Analysis |
 | 2026.07.20 | [[2026.07.20 - ENQ - Enquest - AI - Financial Analysis.md]] | AI | Financial Analysis |
+| 2026.07.21 | [[2026.07.21 - ENQ - Enquest - AI - Financial Analysis.md]] | AI | Financial Analysis |
 
 ## Mick's View History
 

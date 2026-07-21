@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-20T07:35:07.988473+01:00",
-  "note": "2026-07-20 ~07:3x BST scheduled run (window after:2026/07/18). Filed 11 YouTube notes to YouTube-Queue from 11 self-sent emails, all pure YouTube-link emails (no attachments, no body notes, no sibling links). NBLM directive applied on 'Claude, Gemini, and Codex share one brain' (thread 19f7e1ded0c62dd8; action=add-to-nblm, nblm_topic='DIY application fork' - corrected after the shared extractor regex over-captured the signature line). Video 4C2w8eIG48A sent twice today (threads 19f7e1ded0c62dd8 and 19f7e11cf01f61c1) so two notes, second got ' (2)' suffix. Some videos (5H-s-TIO0QE, 4C2w8eIG48A, 1RIXGL5Vgag, FovWUk7WbAQ) were captured in earlier emails but these are new unfiled threads (re-sends with new annotations), filed per thread-keyed idempotency. Annotations kept: 'Analyse+800 word summary email' (Build This ONCE), 'might work for Harry' (Study w/ NotebookLM), 'fork for DIY' (one brain), 'Watch while using VS code' (Obsidian wrong home), 'Fact check this' (Oil Reserve). No attachments so no Chrome/Drive hop. All 11 threads labelled MCSB-Filed (Label_534) and archived (INBOX removed). Nothing skipped or pending. The signetelstead group thread that matched the search was NOT a self-note (to: googlegroups) and was ignored.",
+  "last_run": "2026-07-21T07:45:00+01:00",
+  "note": "2026-07-21 ~07:4x BST scheduled run (window after:2026/07/20). Filed 9 YouTube notes to YouTube-Queue from 9 self-sent emails, all pure YouTube-link emails (no attachments, no body notes, no sibling links). Three carried an add-to-NBLM directive (topic Superwhisper): GtcqpLtb9TY (Create Custom Superwhisper Shortcuts), v79Pp8DF2Po (Use the Superwhisper CLI+MCP), LbWcBObvcnI (Superwhisper CLI+MCP is here) - action=add-to-nblm, nblm_topic=Superwhisper set. zXysLUTLjw4 (FDE) kept annotation 'Analyse this... FDE - Forward Deployment Engineer'. Video N9lHR0iDQUE (Google AutoSync) sent twice (threads 19f7fa6094d662ad and 19f7fa6058fbfb8d) so two notes, second got ' (2)' suffix. All 9 threads labelled MCSB-Filed (Label_534) and archived (INBOX removed). Thread 19f7e3d08abedab8 was the automated LSE RNS News Check digest (skill output, not a self-note) so skipped-auto-digest, left in inbox, not labelled. No attachments so no Chrome/Drive hop. Nothing pending.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -517,6 +517,36 @@
     ],
     "19f79d4590264347": [
       "BewIlG8wLAM"
+    ],
+    "19f834f83a14e8aa": [
+      "y-ixvCfMaEs"
+    ],
+    "19f81632f4287ed1": [
+      "zXysLUTLjw4"
+    ],
+    "19f812c7d8b3531c": [
+      "QFcOq_0YIwY"
+    ],
+    "19f8119d249fe0e0": [
+      "GtcqpLtb9TY"
+    ],
+    "19f8118141c277a0": [
+      "v79Pp8DF2Po"
+    ],
+    "19f81177dc0221a7": [
+      "LbWcBObvcnI"
+    ],
+    "19f7fa6094d662ad": [
+      "N9lHR0iDQUE"
+    ],
+    "19f7fa6058fbfb8d": [
+      "N9lHR0iDQUE"
+    ],
+    "19f7fa6074d7f6a7": [
+      "fmYn6ODiISA"
+    ],
+    "19f7e3d08abedab8": [
+      "skipped-auto-digest"
     ]
   }
 }
