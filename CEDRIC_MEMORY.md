@@ -1,4 +1,5 @@
 # CEDRIC MEMORY
+**Last Updated:** 2026.07.21 (Tue, Claude Code, day-close) - ShareScope Pipeline v2 SHIPPED. Two threads today. Morning/afternoon thread (baton 14:35) codified SOP v2.0 for the ShareScope + NBLM + Ron pipeline as the new source of truth at C:\Vaults\Cowork\ShareScope-Project-Setup\3-SKILL-sharescope-nlm-research.md (~330 lines, includes Appendix A mandatory report template and Appendix B changelog). Fixed `_make_obsidian_uri()` in sharescope_nlm_researcher.py to emit `vault=Dex-MickP&file=<url-encoded-relative-path>` (the working format on Windows) with a fallback to `path=` if the report sits outside the vault root. Investigated the yesterday-flagged "Ron sub-agent NBLM CLI auth quirk" and found it was a MISDIAGNOSIS - the real cause is genuine Google session invalidation which the notebooklm_auth_status.json cache CANNOT see (the cache measures cookie EXPIRY not VALIDITY, and the auth monitor's live check runs only every 6 hours, so the cache can lie for up to 6 hours after Google invalidates). Fix when it happens: `notebooklm login` in a browser (needs Mick). Defined Ron as a PERMANENT named agent: `.claude/agents/ron.md` written in BOTH vaults (Mick's-Dex-2nd-Brain\Dex-MickP\.claude\agents\ and Mick's-Writing-System\.claude\agents\) so Ron is available as `subagent_type: "ron"` from any Claude Code session started in either vault. Full identity, mandatory report template, UK/US market conventions, hard rules (UK English + ASCII only, sign off as Ron), auth fallback. Harness picked him up live without a restart. Ran a full ENQ end-to-end validation using every new fix in one go: Cedric-runs-both-scripts (orchestrator + chart), Nina prepped notebook, Ron spawned via subagent_type: "ron" with a MINIMAL 7-line prompt (vs the ~60-line inline prompt via general-purpose the previous day), Ron ran in 9 min using only 10 tool uses (vs 26 yesterday), returned comprehensive report with proper multi-indicator TA. Saved as ENQ v2 dated 2026.07.21 with proper frontmatter and working Obsidian link. Afternoon/evening thread (baton 18:39) - Mick asked to work through the entire five-item next-action list from the 14:35 baton in one pass, then commit immediately. Delivered all five: (1) preflight_auth_check() helper added to sharescope_nlm_researcher.py + wired before Step 0 (halts pipeline with clear "run `notebooklm login`" message if the canary fails - closes the up-to-6-hour cache-lie window), (2) module-level `SKIP_LEGACY_V1_REPORT = True` constant + refactored run_nlm_research() tail so Nina's ask + save block is conditional, with the notebook title-rename step moved outside so it always runs (Ron needs the fresh "_Updated_YYYY.MM.DD" title), (3) fixed page.press('Control+Shift+L') -> page.keyboard.press('Control+Shift+L') in sharescope_logout.py line 77 (silences the "Logout failed: Page.press() missing 1 required positional argument: 'key'" cosmetic warning), (4) added run_chart_orchestrator() helper to sharescope_watcher.py, wired chart step in as Step 2b, added result["next_action"] on run_complete payload with three explicit forks (documented that the watcher CANNOT invoke Ron - named sub-agents only exist inside a Claude Code session - so it stops at "notebook + chart ready" and hands off), (5) backfilled TWO Notion Research Database entries (title convention `YYYY.MM.DD - [Company Name] ([TICKER]): Ron's Analysis`, `Cedric's Report` Tag, EPIC + Company/Source Name relations, userDefined:URL as obsidian:// deep link back to vault): JSE Ron v2 https://app.notion.com/p/3a4db32a9b0a819ea59bcfe96b25d28a and ENQ Ron v2 https://app.notion.com/p/3a4db32a9b0a81afa78ece40d501d945. Data source id ac552ce5-2ceb-4ffb-a502-7d5da6c67cf8. IMMEDIATE COMMIT (Mick's request, not waiting for 9pm sweep): ShareScope repo `post-webinar-dev` 42f2fd5 (3 files, +916/-151, LOCAL ONLY - no remote, ShareScope-Automation still needs its own private repo per the July personal-backup open item) covering the three script edits only. Dex-MickP repo `main` 4ca4235 (19 files, +978/-62), pushed clean 9ade3da..4ca4235 origin/main, includes Ron's agent definition, both today's baton archives (14:35 + 18:39), ENQ v2 + v1 safety-net + JSE v2 docx, LATEST.md, Companies/ENQ profile bump, _index.md ENQ bump, plus ambient daily gmail-sweep intake. Working tree clean end-of-day. OPEN: RESTART the ShareScope watcher (pid 2328) so the SOP v2.0 code takes effect (running process still has old code loaded); the voice-triggered watcher path is now Ron-aware in code but end-to-end validation on a real voice trigger is still pending; the ShareScope repo private remote is still an open task. Full detail: _handovers/LATEST.md. Also 2026.07.20 work (Ron pattern restored + chart 12m fix + JSE report v2, baton 17:40 archived) is captured in yesterday's LATEST.md archive rather than a memory entry (yesterday's edits rode the 9pm sweep as normal).
 **Last Updated:** 2026.07.19 (Sun, Claude Code, late afternoon) - July newsletter PUBLISHED live end-to-end + newsletter-wp-publisher skill built + Newsletter SOP v2.0 rebuilt (md/txt/docx). Session ran in Mick's-Writing-System vault, continuing directly from the 2026.07.18 17:01 handover (v.01.07 FINAL, still carrying placeholder image/PDF/cross-link URLs). Mick asked whether the whole WordPress publish step could be automated via Poster Pete instead of him uploading images and swapping URLs by hand; confirmed the wordpress-image-uploader and wordpress-post-publisher skills (Dex vault) work identically from Claude Code (direct .env/disk access, no Filesystem MCP needed despite their "Claude Desktop only" note being stale). Located all 6 local images + the final PDF (one image, the Investor Psychology video thumbnail, had never been saved standalone - extracted from the FINAL docx via PowerShell ZipFile.ExtractToDirectory, identified visually, saved properly). Uploaded all 7 files to the diy-investors.com media library and pushed the resolved HTML onto Mick's existing draft (post 15514, content-only update, status left as draft) - Mick then previewed and published it himself, and sent the member email. Mick asked to turn this into a proper reusable skill, future-proofed for a possible second newsletter on diy-investors.ai: built newsletter-wp-publisher (Dex-MickP\skills\newsletter-wp-publisher, SKILL.md + scripts/publish_newsletter.py) - manifest-driven (not folder-scanned, unlike the portfolio skill, because newsletter filenames aren't convention-locked enough), multi-site aware via a SITE_KEYS table, supports both update-existing-draft and create-new-draft modes, always hardcodes status=draft, aborts before writing/pushing if any placeholder is left unresolved. Confirmed WP_DIY_AI_URL/USER/APP_PASSWORD already exist in .env from the portfolio-posting work, so diy-investors.ai is wired but explicitly flagged UNTESTED. Registered in SKILLS_REGISTRY.md; wired into diy-newsletter SKILL.md as new workflow step 10a plus two Cycle Learnings entries; resolved the previously-open "Cedric cannot verify live WordPress posts" issue note (partially - REST API read now works, visual browser rendering still doesn't). Finally, rebuilt the newsletter SOP from scratch as a checklist (Mick had started one in April 2026, v1.0 docx, fixed at 4 pages with publishing fully manual - found via a parked June pickup note asking for exactly this): new v2.0 at Mick's-Writing-System\0.0 - Inbox\, produced in three formats (.md source of truth, .txt for reading, .docx with mandatory provenance footer) covering all 8 phases including the new publishing automation. Writing System auto-memory updated: project_july_newsletter.md (PUBLISHED section added), new project_newsletter_wp_publisher_skill.md, new project_newsletter_sop.md, MEMORY.md index. Full detail: _handovers/LATEST.md.
 **Last Updated:** 2026.07.16 (Thu, Claude Code, late morning) - July Freedom Blueprint Newsletter v.01.03 diff applied + Investor Psychology article rewritten in Mick's voice. Session ran in Mick's-Writing-System vault, not Dex. Mick uploaded his edited v.01.03 .docx (worked directly in Word) including a brand new "Investor Psychology (can you handle a downturn)?" section he had drafted via Descript's AI tool - flagged upfront as not being in his voice. No docx-to-text skill exists yet (project_docx_to_html_skill still parked), so used python-docx directly (confirmed installed) to extract paragraph text from the .docx and diff it against the last working TXT (v.01.02). Applied every substantive change: signature date, feature headline tweak ("Burnham's In" -> "Burnham's (almost) In"), GBP/USD symbol-to-text swaps per the vault's ASCII rule, a purchase-date clarifier on the Goldplat gain, a new UK-vs-US portfolio comparison paragraph (cleaned a curly apostrophe that had crept in), the ACM Research exit's overall gain + resulting cash balance, and removed a resolved internal editorial note. Rewrote the Investor Psychology article from scratch using voice-dna-mick.json + the diy-newsletter skill: kept the same five subheadings (Illusion of Rationality, Loss Aversion and Panic Selling, Myth of Quick Recoveries, Building Resilience, Automation and Perspective Shift) but replaced the generic AI content with Mick's first-person register, British understatement, and concrete grounding (2008 crash, Great Depression, Buffett buy-the-dip framing) - now Page 4, wrap-up pushed to Page 5. Mid-session Mick flagged two new "Yr2" portfolio images added to Newsletter-Images the previous day; asked whether to add Year 2 portfolio sections to Page 3 - Mick said leave them out, Page 3 stays with just the two Year 1 portfolios. Verified the finished draft 100% ASCII-clean via a Python scan. Newsletter has grown from 4 to 5 pages this month (~1,450 words drafted so far vs the usual ~1,050 target) - same pattern as the content-heavy June edition. Session paused at Mick's request (baton-wrap) to resume this evening; Page 5 wrap-up (closing remarks, webinar date - the 8th July placeholder is stale, Boot Camp/events) is the only piece still outstanding. New draft: knowledge/drafts/2026.07.16 - Freedom Blueprint July_v.01.03_TXT.txt. Writing System auto-memory project_july_newsletter.md rewritten to match. Full detail: _handovers/LATEST.md.
 **Last Updated:** 2026.07.12 (Sun, Claude Code, evening) - Cold-start continuity verified (all five notebooklm-* skills carry via yesterday's symlinks; @_rules.md import loads the NotebookLM/NBLM auto-lookup rule in-context) + notebooklm-add-content SKILL.md 0.7.3 syntax fixed + Fourthwall PDF lead magnet recommendation delivered. Item 1 (Windows-doctor GitHub issue) already done by Mick manually before session. Item 2 ran deeper than pickup note flagged: three separate 0.7.3 breakages in notebooklm-add-content - `--confirm` wrong (should be `-y`), `source remove` doesn't exist in 0.7.3 (`source delete`), AND `notebook rename/create/delete` command group was FLATTENED to top-level (`notebooklm rename` etc). Six edits total to the vault-library SKILL.md; grep of all four notebooklm-* skills now shows zero legacy syntax. Item 3 executed as Option C hybrid: created notebook "PDF Lead Magnet - DIY Investors_Updated:2026.07.12" (id a80a1222-0fba-423f-98f7-785c294d3372), added seed brief anchoring the ICP + business profile + brand frameworks, kicked off NotebookLM Deep sweep (132 sources: seed brief + auto-generated Deep research report titled "The Strategic Architecture of High-Converting Financial Lead Magnets" + 130 URL sources + final index text source; IMPORT_RESEARCH RPC timed out at 30s but CLI detected sources landed and treated as success - benign, worth adding to notebooklm-cli-custom Gotchas next session). Queried notebook for 5 candidate topic+format combinations; pressure-tested against ICP verbatim language ("Got my fingers burnt", "I missed that one", "make money not lose money", "beat the market") + brand constraints (Portico Investing, Three Pillars, DYOR, no certainty/guaranteed, transparency about wins AND losses). WINNING recommendation: "The DIY Investor's Stock Score Sheet - A Three Pillars Buy Test" - interactive PDF scoring worksheet, reader inputs a ticker + scores against Fundamental/Technical/News-Flow, gets Go/Wait/Avoid, back page channels to Silver Inner Circle ("Inner Circle is where I run this filter systematically across the entire UK market every year for you"). RUNNERS-UP: Portfolio Health Check (existing-portfolio segment) + Autopsy of a Trade (as Day-4 nurture email content). REJECTED: Portico Playbook (wrong altitude for cold Bronze) + Contrarian Hype Checklist (Awareness-tier low quality). Vault report: Dex-MickP\00-Inbox\2026.07.12 - Fourthwall - PDF Lead Magnet Topic Recommendation.md. Dual-save studio note in notebook (id 8a719769); placeholder deleted; final dual index (studio note id a30ec070 + text source id 46acf5c7) both titled "Index_Updated:2026.07.12 - 17.32". Key research quantitative benchmarks retained in the report: CVR by format Interactive Quiz 40.1% low-quality > Calculators 25-32% HIGH-quality > Webinars 27.4% > Benchmark Reports 24.6% > Checklists 23.2% > Static Ebooks 19% > Newsletters 6.25%; email-only opt-in (1 field 13.4% vs 8+ fields 2.4%); Day 0/2/4/7/10 nurture drives 20-30% download-to-call vs 2% for send-and-hope; interactive/endowment assets 2-3x uplift over static. Auto-memory project_fourthwall_pdf_lead_magnet.md written + MEMORY.md index updated. Cowork mirror /mnt/skills/user/notebooklm-add-content/SKILL.md now three fixes behind - sync next Cowork session. Notion connector authorized mid-session but not exercised (no Content Studio artefact from this thread). Vault + skill edits ride tonight's 9pm daily_git_commit.py sweep.
@@ -28,6 +29,157 @@ carried in memory since 2026.07.09 is now CLOSED; drafts must have existed from 
 **Earlier update:** 2026.06.30 (Tue evening, Cowork) - Set up the PROMPT LIBRARY single-source-of-truth in Dex (new 06-Resources\Prompts\: README, _Prompt-Template schema, 00-Index, Prompts.base). Schema aligned 1:1 with PROMPT_LIBRARY.md via shared `code` key. Also FIXED Git: pushed a 7-commit backlog to GitHub and edited daily_git_commit.py so it self-heals (pushes whenever local is ahead, even on no-change days) and logs to _git-commit.log; enabled Task Scheduler history. STILL TO DO: migrate 141 prompt .md files from Mick's Vault (pilot batch agreed). Full detail: PICKUP_NOTE_2026.06.30-Prompt-Library-Migration.md (Dex root).
 **Older update:** 2026.06.03 (Wed late morning) - Skill dual-write AUDIT across all three locations (Mirror /mnt/skills/user, PRIMARY C:\Vaults\Mick's Vault\.claude\skills, DEX skills). Heavy drift found: of 12 skills in 2+ places only 2 byte-identical. Fixed 3 in the mirror (image-cta-overlay v2.2; annie - fixed DEAD tool names; pdf-to-pptx-converter v1.1). Rest PAUSED for after tonight's webinar. FULL DETAIL + remaining work in PICKUP_NOTE_2026.06.03-Skill-Audit.md (Dex root). Key realisation: canonical model is ALREADY documented (Dex + mirror) but migration onto it is only partial, AND the four 2026.05.30-migrated skills are now MISSING from this project's mirror (mirror may be project-scoped or resetting).
 **Environment:** Claude Code CLI (this session, on Mick's PC). (Prior sessions: Cowork, Claude Desktop.)
+
+---
+
+## Recent session: 2026.07.21 (Tuesday, Claude Code, day-close) - ShareScope Pipeline v2 SHIPPED (SOP codified, Ron permanent agent, ENQ end-to-end validated, five follow-up items done, immediate commit)
+
+Two threads today, both closed. Full day of ShareScope + NBLM + Ron pipeline work.
+
+**Thread 1 (baton 14:35) - SOP v2.0 codification + Ron permanent + ENQ end-to-end:**
+
+- SOP v2.0 IS THE NEW SOURCE OF TRUTH for the ShareScope + NBLM + Ron pipeline.
+  File: `C:\Vaults\Cowork\ShareScope-Project-Setup\3-SKILL-sharescope-nlm-research.md`.
+  Approximately 330 lines. Includes new three-actor architecture section
+  (Cedric orchestrates, Nina fetches, Ron analyses), Cedric-runs-both-scripts
+  directly (interactive), mandatory 12-month chart PNG as Step 2b, Ron sub-agent
+  spawn via `subagent_type: "ron"` as Step 4, tag format
+  `[TICKER, Financial-Analysis, ShareScope-Research, Ron]`, Obsidian URI format
+  `vault=Dex-MickP&file=<url-encoded-relative-path>` on Windows. Appendix A is
+  the mandatory report template Cedric passes Ron; Appendix B is the v1.0/v2.0
+  changelog. Nina's legacy v1-report path is documented as retained-but-ignored
+  (safety-net fallback).
+
+- `_make_obsidian_uri()` in sharescope_nlm_researcher.py FIXED to emit the
+  reliable Windows format. Falls back to `path=<absolute>` if the report sits
+  outside the vault root. Proven live end of the ENQ run.
+
+- The "Ron sub-agent NBLM CLI auth quirk" from the 20 July session was a
+  MISDIAGNOSIS. The real cause is genuine Google session invalidation which the
+  `notebooklm_auth_status.json` cache CANNOT see. The cache measures cookie
+  EXPIRY, not cookie VALIDITY; the auth monitor's live check runs only every
+  6 hours; so the cache can lie for up to 6 hours after Google invalidates a
+  session. Fix when it happens: `notebooklm login` in a browser (needs Mick).
+
+- Ron is a PERMANENT NAMED AGENT. Definition file:
+  `.claude/agents/ron.md` written in BOTH vaults (Dex-MickP + Mick's-Writing-
+  System). YAML frontmatter (name/description/model) + markdown body. Contains
+  Ron's full identity, notebook + chart access instructions, mandatory report
+  template, market conventions (UK vs US), hard rules (UK English, ASCII only,
+  sign off as Ron), auth fallback, output contract. Available as
+  `subagent_type: "ron"` from any Claude Code session in either vault. Harness
+  picked him up live in-session without a Claude Code restart. Cedric now
+  passes only 7 lines of per-run detail on each spawn (vs ~60-line inline
+  prompt via general-purpose the day before). Ron used 10 tool uses on ENQ
+  today vs 26 on JSE yesterday. That is the whole point of a named agent.
+
+- ENQ end-to-end validation ran clean. Fresh 6 CSVs, corrected 12-month chart
+  PNG, notebook prepped (6 CSVs uploaded + 10 news items + title auto-renamed
+  to "ENQ - Enquest_Updated_2026.07.21"), Ron spawned, Ron authored the v2
+  report with full multi-indicator TA (support 25/22/20/18p; resistance 27/28p;
+  MA stack; OBV/RSI/MACD/AccDist/ADX). BUY (special situation) driven by
+  Malaysia PSC transformation and Magnus balance-sheet fix. Cleaned Ron's
+  output (`&amp;` -> `&`, GBP substitution, no ASCII violations), added v2
+  frontmatter (analyst: Ron, chart_source recorded, tags including ENQ + Ron),
+  saved as
+  `06-Resources/Research-Log/Research/ENQ/2026.07.21 - ENQ - Enquest - AI - Financial Analysis_v2.md`.
+
+**Thread 2 (baton 18:39) - five follow-up items + immediate git commit:**
+
+Direct pickup from Thread 1's next-action list. Mick greenlit the whole list
+and asked for an immediate commit rather than letting today's work ride the
+9pm daily sweep.
+
+1. **Auth-canary preflight** - added `preflight_auth_check()` helper to
+   sharescope_nlm_researcher.py (co-located with `run_nlm()`). Runs
+   `notebooklm auth check --test` (live token fetch against Google). Wired
+   into `run_nlm_research()` immediately before Step 0. Halts on failure with
+   a clear "run `notebooklm login`" message. Closes the up-to-6-hour cache-
+   lie window that the auth monitor cannot see.
+
+2. **Skip Nina's legacy v1** - added module-level
+   `SKIP_LEGACY_V1_REPORT = True` (with docstring explaining SOP v2.0
+   rationale) and refactored the tail of `run_nlm_research()` so the Nina ask
+   + save block is inside `if not SKIP_LEGACY_V1_REPORT:`. Extracted the
+   notebook title-rename step (Step 5) OUTSIDE the conditional so it always
+   runs. Flip the flag to False to bring Nina's v1 back as a safety-net.
+
+3. **Logout Page.press bug** - line 77 of sharescope_logout.py:
+   `page.press('Control+Shift+L')` -> `page.keyboard.press('Control+Shift+L')`.
+   The old form required a selector as its first argument and threw the
+   "missing 1 required positional argument: 'key'" cosmetic warning on every
+   single run.
+
+4. **Watcher on the Ron pipeline** - top-of-file docstring rewritten to SOP
+   v2.0. Added `run_chart_orchestrator(ticker)` helper mirroring the existing
+   `run_orchestrator(ticker)` pattern (subprocess to
+   sharescope_chart_orchestrator.py, 180s timeout, reads
+   `chart_result_{TICKER}.json`). Wired in as Step 2b after CSV export. Added
+   `result["next_action"]` field on run_complete payload with three explicit
+   forks: nlm_ok + chart_ok ("spawn Ron via subagent_type"), nlm_ok only
+   (fundamentals-only fallback), and nlm_failed. Documented explicitly that
+   the watcher CANNOT invoke Ron itself (named sub-agents only exist inside
+   a Claude Code session), so it stops at "notebook + chart ready" and hands
+   off via the next_action field. Test on the next voice trigger.
+
+5. **Notion Research Database backfill** - two entries created in Research
+   Database (main items), data source id
+   `ac552ce5-2ceb-4ffb-a502-7d5da6c67cf8`. Title convention:
+   `YYYY.MM.DD - [Company Name] ([TICKER]): Ron's Analysis`. Tag:
+   `Cedric's Report` (existing tag, kept for consistency). EPIC and
+   Company/Source Name relations point at the ticker collection
+   `2f3b567d-5dd5-4a64-ae9b-a33df0ee53e5` (JSE ticker page id
+   `170c3f50cea64b06a5ec7bc78b47bb36`; ENQ ticker page id
+   `17b9a7b1ecc04d338a6c61272d735ada`). `userDefined:URL` on each entry is
+   the working obsidian:// deep link back to the vault v2 file. Icon 📊
+   (matches historical entries).
+   - JSE: https://app.notion.com/p/3a4db32a9b0a819ea59bcfe96b25d28a
+   - ENQ: https://app.notion.com/p/3a4db32a9b0a81afa78ece40d501d945
+
+All three edited scripts pass py_compile.
+
+**Immediate commits (Mick's request):**
+
+- ShareScope-Automation is a NESTED PRIVATE GIT REPO under 04-Projects/,
+  gitignored from the Dex-MickP repo (line 46 of .gitignore). Branch
+  `post-webinar-dev`. NO REMOTE - the "ShareScope-Automation needs its own
+  private repo" open item from the July personal-backup work is still open.
+  Committed `42f2fd5` with ONLY the three script edits from this session
+  (`sharescope_nlm_researcher.py`, `sharescope_logout.py`,
+  `sharescope_watcher.py`). Pre-existing local mods to sharescope_login /
+  orchestrator / research_log.py + docs from prior sessions were left
+  deliberately untouched. Local only, nothing pushed.
+
+- Dex-MickP repo `main`, origin `git@github.com:Mick-P-UK/Dex-MickP.git`.
+  Used `git add -A` (matches daily_git_commit.py pattern). 19 files, +978/-62.
+  Includes: `.claude/agents/ron.md`, both today's baton archives
+  (14:35 + 18:39), ENQ v2 + Nina v1 safety-net, JSE v2 docx, LATEST.md,
+  Companies/ENQ profile bump, `_index.md` ENQ bump, plus 9 ambient
+  YouTube-Queue markdowns and one NBLM prompt note from the daily
+  gmail-self-notes sweep. Commit `4ca4235`, pushed clean
+  (`9ade3da..4ca4235 main -> main`). Working tree clean end-of-day.
+
+- The 07:38 automated daily commit had already run this morning (Committed
+  20 change(s) then Push succeeded, per `_git-commit.log`). Tonight's 9pm
+  sweep will be a near no-op because everything's already up.
+
+**Standing open items to carry forward:**
+
+- **RESTART the ShareScope watcher** (pid 2328, `nlm_auth_status: ok`,
+  started 07:34 today). The running process still has the OLD code loaded -
+  any voice-triggered research fires the old flow. HIGH PRIORITY before the
+  next voice trigger. `taskkill /pid 2328 /f` then relaunch via
+  `start_watcher.bat` (or its equivalent).
+- End-to-end validation of the Ron-aware watcher path (chart Step 2b +
+  `next_action` signal) needs a real voice trigger since the changes landed.
+- ShareScope repo remains without a remote. Today's `42f2fd5` is local only.
+- Broken JSE chart PNGs (three in `downloads/JSE/` from the 20 July debug
+  loop, plus one uploaded as source `2a9c622c-7f55-42b4-836f-6b4a484b26ce`
+  in the JSE NBLM notebook). Next JSE pipeline run selectively clears the
+  notebook side; local PNGs need manual tidy.
+- MCSB PRD v0.3 reconciliation (task `^task-20260711-002`) still open.
+
+Full detail: `_handovers/LATEST.md` (currently the 18:39 baton).
 
 ---
 
