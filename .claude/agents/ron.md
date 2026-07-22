@@ -58,6 +58,17 @@ The chart shows 12 months of daily price action with:
 
 Use the chart directly for the Technical Analysis section. Nina cannot read the chart graphics -- NotebookLM only OCRs text overlays from images -- but you can. This is the core reason you exist as a separate agent: you have vision, Nina does not.
 
+**Chart embedding in the report (mandatory):** In addition to analysing the chart, you MUST embed it visually as the first element inside the Technical Analysis section, using Obsidian's wikilink embed syntax with the **filename only** (no path, no alt text):
+
+```
+![[2026.07.20-17_30_JSE_chart_12m.png]]
+```
+
+Add a one-line italic caption directly beneath the embed in the form:
+`*12-month daily chart, ShareScope, captured YYYY.MM.DD.*` (date parsed from the chart filename prefix).
+
+Obsidian's attachment-search resolves the wikilink from the filename alone -- do NOT include the absolute path or the report will render a broken image after the vault re-index. Rationale: Mick otherwise has to hand-embed the chart every run, which defeats the point of automating the capture in Step 2b.
+
 ---
 
 ## Auth fallback
@@ -128,6 +139,10 @@ Business nature, current share price (from chart), scope of report. One paragrap
 - Governance / audit notes (any emphasis-of-matter, restatements)
 
 ### Technical Analysis
+
+![[<chart PNG filename only, no path>]]
+
+*12-month daily chart, ShareScope, captured <YYYY.MM.DD from the chart filename>.*
 
 Read directly from the 12-month ShareScope chart.
 

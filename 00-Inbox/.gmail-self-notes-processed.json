@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-21T07:45:00+01:00",
-  "note": "2026-07-21 ~07:4x BST scheduled run (window after:2026/07/20). Filed 9 YouTube notes to YouTube-Queue from 9 self-sent emails, all pure YouTube-link emails (no attachments, no body notes, no sibling links). Three carried an add-to-NBLM directive (topic Superwhisper): GtcqpLtb9TY (Create Custom Superwhisper Shortcuts), v79Pp8DF2Po (Use the Superwhisper CLI+MCP), LbWcBObvcnI (Superwhisper CLI+MCP is here) - action=add-to-nblm, nblm_topic=Superwhisper set. zXysLUTLjw4 (FDE) kept annotation 'Analyse this... FDE - Forward Deployment Engineer'. Video N9lHR0iDQUE (Google AutoSync) sent twice (threads 19f7fa6094d662ad and 19f7fa6058fbfb8d) so two notes, second got ' (2)' suffix. All 9 threads labelled MCSB-Filed (Label_534) and archived (INBOX removed). Thread 19f7e3d08abedab8 was the automated LSE RNS News Check digest (skill output, not a self-note) so skipped-auto-digest, left in inbox, not labelled. No attachments so no Chrome/Drive hop. Nothing pending.",
+  "last_run": "2026-07-22T07:35:00+01:00",
+  "note": "2026-07-22 ~07:35 BST scheduled run (window after:2026/07/20). Filed 3 YouTube notes to YouTube-Queue from 3 self-sent pure YouTube-link emails (no attachments, no body notes, no sibling links). Rl7rvHbDqGk (I Stopped Building AI Agents and Did This Instead) carried a poss-add-to-NBLM directive: action=add-to-nblm, nblm_topic=NBLM. jbiMx17fEK0 (Anthropic Just Changed How We Build Skills Forever) had no annotation - link-only note. m2maDNtho7Y (Mastering Notebook Navigator 3 for Obsidian) annotation 'Checkout Notebook Navigator (Obsidian Plugin)'. All 3 threads labelled MCSB-Filed (Label_534) and archived (INBOX removed). Thread 19f7e3d08abedab8 (LSE RNS News Check digest, 20 July) is automated skill output not a self-note - skipped again, left in inbox, not labelled. No attachments so no Chrome/Drive hop. Nothing pending.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -547,6 +547,15 @@
     ],
     "19f7e3d08abedab8": [
       "skipped-auto-digest"
+    ],
+    "19f886c539152be0": [
+      "Rl7rvHbDqGk"
+    ],
+    "19f88682c82c330e": [
+      "jbiMx17fEK0"
+    ],
+    "19f8864a654e3c5b": [
+      "m2maDNtho7Y"
     ]
   }
 }
