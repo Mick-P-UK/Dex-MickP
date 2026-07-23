@@ -145,7 +145,14 @@ Read these files when users ask about system details, features, or setup.
 Add any personal instructions between these markers. The `/dex-update` process preserves this block verbatim.
 
 ## USER_EXTENSIONS_START
-### Time-Based Greeting (MANDATORY - Updated 2026.04.11)
+### Time-Based Greeting (MANDATORY - GREETING RULE v2.0, Updated 2026.07.23)
+
+**CANONICAL SOURCE for the greeting rule.** Mirror lives in
+`C:\Users\pavey\.claude\_rules.md` (the file Claude Code loads via @_rules.md).
+Edit BOTH together and keep the operative logic (thresholds + London BST/GMT)
+identical. Only the time-check command legitimately differs by platform: Python
+below (claude.ai / Desktop / Cowork), PowerShell in _rules.md (Claude Code on
+Windows).
 
 ALWAYS verify the current London time using code before greeting. NEVER rely on
 the system clock directly -- the container runs UTC and London may be UTC+0 (GMT)

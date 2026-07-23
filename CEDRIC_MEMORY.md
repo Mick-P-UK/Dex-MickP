@@ -1378,19 +1378,11 @@ This applies to ALL .MD files, CLAUDE.MD, and CHANGELOG.md updates.
 ---
 
 ## London Time Protocol (MANDATORY)
-NEVER use raw system clock. Always run python3 to verify London time.
-BST (UTC+1): late March to late October. GMT (UTC+0): otherwise.
-
-```python
-from datetime import datetime, timezone, timedelta
-utc_now = datetime.now(timezone.utc)
-bst_active = 4 <= utc_now.month <= 10
-offset = timedelta(hours=1) if bst_active else timedelta(hours=0)
-london_now = utc_now.astimezone(timezone(offset))
-print(london_now.strftime('%H:%M'), 'BST' if bst_active else 'GMT')
-```
-
-Greeting: before 12 = Good morning / 12-17 = Good afternoon / 18+ = Good evening
+Pointer only - not a separate definition. The greeting / London-time rule is
+CANONICAL in the USER_EXTENSIONS "Time-Based Greeting v2.0" block of
+Dex-MickP\CLAUDE.md, and mirrored for Claude Code in
+C:\Users\pavey\.claude\_rules.md. Follow that rule; do not keep a third copy
+here. (Slimmed 2026.07.23 to stop drift.)
 
 ---
 
