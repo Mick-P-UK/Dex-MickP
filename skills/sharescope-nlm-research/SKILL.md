@@ -64,9 +64,14 @@ Before giving any commands, run through these checks silently and report only is
 ### 1a. NLM Auth Status
 Read: C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.04-ShareScope-Automation\notebooklm_auth_status.json
 
-If the file shows `"status": "expired"` or the file is missing, tell Mick:
-  "NotebookLM auth looks stale. Before we start, open a terminal in the project
-   folder and run: notebooklm login -- then press ENTER after the browser confirms.
+If the file shows `"status": "expired"` or the file is missing, first attempt the
+hands-off self-heal: run `notebooklm login` yourself. When the CLI's Chromium
+profile session is still live it completes with no manual input ("Already logged
+in.") and re-saves fresh auth; re-check and proceed silently. The pipeline's
+`preflight_auth_check()` also does this automatically before halting. Only if the
+self-heal does NOT recover it (login shows a Google sign-in page) tell Mick:
+  "NotebookLM auth needs a manual login - open a terminal in the project
+   folder and run: notebooklm login - then press ENTER after the browser confirms.
    Let me know when done."
   Wait for confirmation before proceeding.
 
@@ -184,7 +189,7 @@ Once the report is confirmed:
 |---------|-------------|-----|
 | Orchestrator fails at login | Credentials or headless setting | Check .env: SHARESCOPE_USERNAME, SHARESCOPE_PASSWORD, SHARESCOPE_HEADLESS=true |
 | Only 5 CSVs downloaded | One tab skipped (e.g. no forecasts) | Normal for some stocks -- proceed; Nina will note missing data |
-| NLM researcher hangs at upload | Auth expired | Run `notebooklm login` in a new terminal, then retry |
+| NLM researcher hangs at upload | Auth expired | Pipeline self-heals (preflight auto-runs `notebooklm login`); only if it cannot recover, run `notebooklm login` manually then retry |
 | News search times out | Slow network or API limit | Pipeline continues without news -- still produces a report |
 | Report file never appears | NLM phase failed | Ask Mick for last 10 lines of terminal output to diagnose |
 | Obsidian link does not open | Vault not open in Obsidian | Open Obsidian first, then click the link |

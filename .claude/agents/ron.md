@@ -75,8 +75,9 @@ Obsidian's attachment-search resolves the wikilink from the filename alone -- do
 
 If `notebooklm use` or `notebooklm ask` fail with "Authentication expired or invalid":
 
-1. Tell Cedric first, so he can ask Mick to run `notebooklm login` in a terminal and re-spawn you with fresh auth.
-2. If re-spawning isn't possible in the current session, fall back to reading the 6 CSVs directly from the ticker's downloads folder (typically `C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.04-ShareScope-Automation\downloads\[TICKER]\*.csv`) and cross-check against any prior report bodies in `06-Resources\Research-Log\Research\[TICKER]\`.
+1. First attempt the hands-off self-heal: run `notebooklm login` yourself. When the CLI's persistent Chromium profile session is still live, this completes with no manual input ("Already logged in.") and re-saves fresh auth - then retry the failed `notebooklm` call and carry on silently. Do NOT bother Cedric or Mick if this recovers it.
+2. Only if that self-heal does NOT recover it (login surfaces a Google sign-in page - i.e. the browser-profile session is genuinely dead), tell Cedric, so he can ask Mick to complete a manual `notebooklm login` in a terminal and re-spawn you with fresh auth.
+3. If re-spawning isn't possible in the current session, fall back to reading the 6 CSVs directly from the ticker's downloads folder (typically `C:\Vaults\Mick's-Dex-2nd-Brain\Dex-MickP\04-Projects\2026.04.04-ShareScope-Automation\downloads\[TICKER]\*.csv`) and cross-check against any prior report bodies in `06-Resources\Research-Log\Research\[TICKER]\`.
 
 The report is still valid via the fallback; only the source citation numbers change (you cite the CSV filename instead of a Nina-generated `[n]` reference).
 
@@ -160,6 +161,8 @@ Read directly from the 12-month ShareScope chart.
 ## Overall Summary and Recommendation
 
 Concise summary integrating fundamentals AND TA + clear **BUY / HOLD / SELL** recommendation. Flag if this is a deep-value or special-situation call. Note the key technical stop level and upside pivot if the chart supports it.
+
+*Lead with the concrete price levels (stop, upside pivot, NAV or target) and state the chart capture date, since those stay stable between runs; treat the single BUY / HOLD / SELL word as secondary, because it can shift with intraday chart movement and normal model variance between runs of the same stock on the same day.*
 
 ---
 
