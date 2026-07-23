@@ -64,8 +64,9 @@ In a Claude Code session rooted at C:\Vaults, the harness auto-loads ONLY: user-
 
 - URGENT (task, ~2026-07-26): dedicated private git repo for ~/.claude (snapshot is interim only; goes stale on edit).
 - URGENT (task, ~2026-07-26): private GitHub remote for ShareScope-Automation (ba053d1 + prior work backed up nowhere off-machine).
-- CREI retro (item 1) NOT done - still the five findings: verdict drift v2 vs v3; auth-canary lie (now mitigated by self-heal); balance-sheet transport timeout (now fixed by retry loop); recurring P&amp;L HTML-entity leak in Ron output; Ron subagent-type restart. Two now fixed, three remain to discuss.
-- Align Ron's agent-def "Auth fallback" section + the ShareScope SOP auth step to the new self-heal behaviour (currently still say "ask Mick first"). Needs editing all 3 ron.md copies (they are byte-identical now - keep them so).
+- NEW (2026-07-23): the Cowork vault C:\Vaults\Cowork\ is NOT a git repo, so the CANONICAL ShareScope SOP (3-SKILL-sharescope-nlm-research.md) and everything else in Cowork has NO off-machine backup. Fold into the C:\Vaults backup strategy decision (task_c3efead7). Reminder also added to CEDRIC_MEMORY.md.
+- CREI retro (item 1) CLOSED 2026-07-23 (afternoon). All five findings resolved: verdict drift (baked a "lead with stable price levels + chart date, treat the single BUY/HOLD/SELL word as secondary" line into Ron's template); auth-canary lie (fixed - self-heal, verified in code); balance-sheet transport timeout (fixed - retry loop, verified in code); P&amp;L HTML-entity leak (NOT a bug - Ron's markdown + template are clean, was a Notion-render artifact, spot-check on next push); Ron subagent-type restart (fixed - Ron registers now). Committed + pushed 658fe25.
+- Align Ron's agent-def "Auth fallback" + the ShareScope SOP auth step to the self-heal - DONE 2026-07-23. All four ron.md copies edited byte-identical (hash 8afcc13); canonical SOP (Cowork, 4 spots) + both vault SKILL.md mirrors aligned so auth failure tries hands-off `notebooklm login` FIRST, escalating to Mick only if the browser-profile session is dead. In 658fe25 (2 ron.md tracked copies + 2 SKILL.md mirrors); the Cowork canonical SOP copy is NOT git-backed (see new open item above).
 - Ron subagent-type: user-level ron.md added, but THIS session still lacks it (restart pending). Confirm it registers on the next fresh session.
 - Meet Cedric episode: created in Notion as Draft - ready to script/produce when Mick wants.
 
@@ -73,7 +74,7 @@ In a Claude Code session rooted at C:\Vaults, the harness auto-loads ONLY: user-
 
 - Opener: "Cedric, resume from LATEST handover."
 - FIRST ACTION: run the session-start routine properly (read this file, then CEDRIC_MEMORY.md top) BEFORE greeting - and greet using the verified London time (greeting rule v2.0 should now load from _rules.md in Claude Code; confirm it fires).
-- Likely first tasks: (1) either of the two urgent backup tasks; (2) the CREI retro (three remaining findings + aligning Ron/SOP to the auth self-heal); (3) whatever Mick brings.
+- Likely first tasks: (1) either of the two urgent backup tasks (now also covering the Cowork-vault git gap); (2) whatever Mick brings. [CREI retro CLOSED 2026-07-23 - see Open questions.]
 - What NOT to re-derive: the config-loading model (memory claude-code-config-loading-mick-vaults); the auth self-heal mechanism (baked into code + _rules.md); that ShareScope-Automation is a separate nested repo with no remote; that Cedric can run git here.
 
 ## Content Studio logged
