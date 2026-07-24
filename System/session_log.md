@@ -2,6 +2,49 @@
 
 ---
 
+## Session: 2026-07-23 (Thursday, Claude Code) - ShareScope pre-webinar hardening
+
+_Environment: Claude Code (Mick's PC), working directory C:\Vaults_
+
+### Context
+- Worked the outstanding task list. Mick prioritised the three ShareScope pipeline items
+  ahead of next week's AI for Investing webinar, then added three follow-on fixes.
+
+### Actions Taken
+1. WATCHER RESTART (item 1): old pid 2328 long dead (recycled to svchost). A fresh watcher
+   was already on current code; restarted cleanly regardless. Final running pid 27076,
+   registered in Windows startup, live NLM auth verified.
+2. JSE TIDY (item 3): removed the erroneous chart image source 2a9c622c from JSE notebook
+   cfd84684 (18 -> 17 sources); deleted the 4 superseded local JSE debug PNGs, kept the
+   canonical 17:30 one the report references.
+3. END-TO-END TEST (item 2) - PASS on USAS (Americas Gold and Silver Corp): enriched the
+   existing USAS notebook b8835808 (kept Mick's 2 prelim sources); watcher ran
+   CSV -> chart -> NLM prep -> next_action; Ron wrote a clean v2 report (0 non-ASCII,
+   0 HTML entities, chart embedded, market corrected to US/USD). Verdict HOLD / Spec Buy.
+4. NO-FLASH FIX (Mick request): the flashing black boxes were the notebooklm CLI console
+   windows, not the browser. Added creationflags=CREATE_NO_WINDOW to all 5 notebooklm /
+   subprocess call sites. Committed aef1165.
+5. HEADLESS: set true, then REVERSED to false at Mick's request - he wants the ShareScope
+   browser VISIBLE for the webinar demo. Flash fix keeps the consoles hidden regardless.
+   SHARESCOPE_HEADLESS=false in C:\Users\pavey\.env (gitignored, not committed).
+6. SINGLE-SESSION BOOKEND restored (Mick request): the pipeline was logging in twice
+   (CSVs, then chart). Created sharescope_session_orchestrator.py wrapping the existing
+   bookend runner and re-wired the watcher to one run_session() call. Validated live via a
+   full watcher test on USAS - watcher log shows exactly ONE login and ONE logout, 6 CSVs
+   plus chart in 25s. Committed 368f84a.
+
+### Outstanding / Next steps
+- FIX the US-stock market mis-classification (US stocks tagged market:"UK") - task chip
+  task_d0889bb3, webinar-relevant. Offered to fix this session; Mick chose to wrap, so open.
+- ShareScope repo still has no remote (both commits local only); untracked pipeline files
+  plus a stray corrupted-name ZPHR file (repo hygiene, fold into the backup task).
+- Pre-existing harmless logout "NoneType ... stop" warning and empty session_*.log (both
+  cosmetic).
+
+_Session wrapped 2026-07-23 ~17:07 London. Full baton: _handovers/LATEST.md._
+
+---
+
 ## Session: 2026-07-10 (Friday, Claude Code CLI) - PATH file ASCII cleanup closed out
 
 _Environment: Claude Code CLI (Mick's PC)_
