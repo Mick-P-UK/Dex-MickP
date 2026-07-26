@@ -9,6 +9,7 @@ description: >-
   judged to be filling (around 70 percent). This is the thread-level wrap; for
   the daily consolidation use sundown-wrap instead.
 license: Proprietary - Mick Pavey / DIY Investors internal use.
+version: 2.0 (2026.07.26 - bulletproofing spec applied; see _handovers/2026.07.25 - Baton-Wrap Post-Mortem and Bulletproofing Spec.md)
 ---
 
 # baton-wrap
@@ -21,8 +22,39 @@ cold. The whole reason it exists is continuity: the next thread has no memory of
 this one, so the handover note is the baton being passed. Fast and near-silent by
 design.
 
-Scope for now: Cowork and Claude Code only (both are vault-aware surfaces). Mobile
-and claude.ai web are out of scope until MCSB Phase 1.5 gives them vault access.
+Scope: ALL surfaces. Claude Code and Cowork (cloud or desktop) write the vault
+directly; claude.ai web has no vault access and uses the degraded-mode route in
+"Surface routing" below. The baton must NEVER exist only in ephemeral memory.
+
+## Registry independence (do not skip)
+
+The vault copy of this file - skills/baton-wrap/SKILL.md - is the single source
+of truth. The Cowork/web skill registry is only a convenience trigger, NEVER a
+precondition. If a wrap is requested and the Skill tool does not list baton-wrap,
+READ this file from the vault and EXECUTE it anyway. A missing registry entry is
+not a reason to fall back to an ad-hoc pickup note (that is exactly how the
+2026-07-25 relay break happened).
+
+## Surface routing
+
+One canonical read target for every session-start: `_handovers/LATEST.md`.
+Delivery is routed by surface:
+
+- **Claude Code** (vault + git): write archive copy, then LATEST.md, verify,
+  then git commit/push. The full procedure below.
+- **Cowork, cloud or desktop** (vault via Filesystem/device bridge; ephemeral
+  sandbox): write the SAME vault files via the bridge, BEFORE the session ends -
+  anything held only in the sandbox dies with it. Also deliver the baton note to
+  Mick as a file (SendUserFile) so an out-of-vault copy exists regardless of
+  sandbox lifetime. Git: commit via the device VM if the C:\Vaults mount is
+  available (use `git -c core.autocrlf=true` - the mount shows CRLF/LF phantom
+  diffs otherwise, and move any leftover .git/*.lock files to _to_delete/ since
+  the mount cannot delete); push is not possible from the VM (no SSH route), it
+  rides the next daily-commit run.
+- **claude.ai web** (no vault): degraded mode. Output the full baton note
+  in-chat AND email it to Mick as a self-note with the fixed subject tag
+  `[BATON-ORPHAN] YYYY.MM.DD - <topic>`. The next vault-aware session promotes
+  it into LATEST.md (see "Promote latest" below).
 
 ## When to use
 
@@ -89,16 +121,29 @@ format:
 
 ACTION is CREATE, UPDATE, or DELETE. One line per file touched this thread.
 
-### 5. Write the handover note
+### 5. Write the handover note - ARCHIVE FIRST, VERIFY AFTER
 
-Write to two places:
-- `_handovers/LATEST.md` - overwrite every time. This is the single predictable
-  place the next thread looks.
-- `_handovers/archive/YYYY.MM.DD - HHMM - baton - <topic>.md` - a timestamped
-  archive copy (HHMM is 24-hour London time, no colon). Several baton-wraps a day
-  each leave their own archived copy.
+Strict ordering. Never overwrite LATEST.md in a run that has not already written
+its archive copy - archive-first guarantees that even a half-finished wrap leaves
+a durable dated copy.
 
-ASCII only. UK English. Use the template in the Appendix.
+1. Write `_handovers/archive/YYYY.MM.DD - HHMM - baton - <topic>.md` (HHMM is
+   24-hour London time, no colon). Several baton-wraps a day each leave their
+   own archived copy.
+2. Overwrite `_handovers/LATEST.md` - the single predictable place the next
+   thread looks.
+3. FRESHNESS GUARD (mandatory): RE-READ LATEST.md and assert its frontmatter
+   date and time equal the london_now computed in step 1. If they do not match,
+   the write did not land - raise it LOUDLY to Mick and do NOT report success.
+   A stale baton is byte-indistinguishable from a fresh one; this check is the
+   only thing that makes a broken relay visible at wrap time.
+
+ASCII only. UK English. Use the template in the Appendix - including the
+mandatory `surface:` and `working_dir:` frontmatter stamp, which records what
+the authoring session could and could not do (git? vault bridge? sandbox?).
+
+On claude.ai web, replace this whole step with the degraded-mode route in
+"Surface routing".
 
 ### 6. Content Studio check (silent)
 
@@ -115,20 +160,20 @@ happened, skip silently.
 
 Move any final outputs produced this thread to the outputs folder and surface them
 with present_files. (This is the per-thread delivery step; it is separate from the
-handover note, which lives in the vault.)
+handover note, which lives in the vault.) On Cowork, additionally send the baton
+note itself to Mick as a file per "Surface routing".
 
 ### 8. Git commit and push
 
-Back up the vault:
-1. Clear a stale `.git/index.lock` if one is present.
-2. Stage the changed files.
+Back up the vault, per the surface routing above:
+1. Clear a stale `.git/index.lock` if one is present (on the Cowork VM mount,
+   MOVE it to _to_delete/ - the mount cannot delete files).
+2. Stage the changed files (on the VM mount, always `-c core.autocrlf=true`).
 3. Commit (the ASCII pre-commit hook must pass - steps 3 and 5 already enforce
    ASCII, so this should be clean).
-4. Push to the configured remote.
-
-Note: push currently goes to the local remote, so it versions and de-risks the
-working copy but is not yet off-device backup. Off-device (GitHub) is a separate
-decision, out of scope for baton-wrap.
+4. Push to the configured remote (Claude Code only; from the Cowork VM there is
+   no SSH route, so note in the confirm line that the push rides the next
+   daily-commit run).
 
 ### 9. Confirm (one line)
 
@@ -137,7 +182,30 @@ opener for the next thread. Example:
 
     Baton passed. Safe to refresh now. New thread opener: "Cedric, resume from LATEST handover."
 
-Do not show Mick the handover note. Do not narrate the steps.
+Do not show Mick the handover note. Do not narrate the steps. If the freshness
+guard failed, this line is replaced by the loud failure report - never confirm a
+wrap that did not verify.
+
+## Session-start staleness check (read side of the contract)
+
+Any session that opens with "resume from LATEST handover" (or reads LATEST.md as
+part of session start) must check LATEST.md's frontmatter date and flag a visible
+"STALE HANDOVER" warning to Mick, before greeting pleasantries, if LATEST.md is:
+(a) older than expected when a wrap was known to have happened,
+(b) older than the newest file in `_handovers/archive/`, OR
+(c) older than the newest project `PICKUP_POINT_*` file or `[BATON-ORPHAN]`
+    email in Gmail.
+Silent staleness is the failure mode that broke the relay on 2026-07-25; this
+check turns it into a banner.
+
+## Promote latest (reconciler)
+
+When the staleness check fires, or on request ("promote latest"), any vault-aware
+session runs this: scan the newest handover evidence across (i) `_handovers/archive/`,
+(ii) project `PICKUP_POINT_*` files, and (iii) `[BATON-ORPHAN]` emails in Gmail.
+If the newest is newer than LATEST.md, rebuild LATEST.md from it - archive-first,
+verify-after, exactly as in step 5. Take a byte-perfect backup of the current
+LATEST.md into `_handovers/_backups/` before overwriting.
 
 ## What baton-wrap does NOT do
 
@@ -152,14 +220,21 @@ Do not show Mick the handover note. Do not narrate the steps.
 - UK English throughout (organise, colour, behaviour).
 - Verify date/time with code, never mental arithmetic.
 - File naming: YYYY.MM.DD for dates, dots as separators, date first.
+- The baton must never exist only in ephemeral memory - vault write (or orphan
+  email on web) comes before anything else can end the session.
+- Mick must upload any amended SKILL.md to Cowork + web via Settings >
+  Capabilities - Cedric cannot write those stores; the vault copy alone does not
+  make the change live on the weaker surfaces.
 
 ## Appendix: handover note template
 
     ---
     title: Baton Handover -- <topic>
     date: YYYY-MM-DD
-    time: HH:MM (London)
+    time: HH:MM (London, BST/GMT, verified via code)
     topic: <topic>
+    surface: <Claude Code | Cowork-cloud | Cowork-desktop | web>
+    working_dir: <working directory / bridge routes available to this session>
     thread: <short description>
     status: handover
     author: Cedric (PAIDA)
