@@ -104,3 +104,5 @@
 2026-07-26 12:31 [UPDATE] CEDRIC_MEMORY.md - Prepended 2026.07.26 Last Updated line + Recent session block. Author: Cedric. Status: current.
 2026-07-26 12:31 [UPDATE] _handovers/LATEST.md - Baton handover for the Ditty Box accountant pack thread. Author: Cedric. Status: current.
 2026-07-26 12:31 [CREATE] _handovers/archive/2026.07.26 - 1231 - baton - Ditty Box Year End Accountant Pack.md - Archived baton copy. Author: Cedric. Status: current.
+2026-07-26 12:46 [UPDATE] C:\Vaults\_SOPs\INDEX.md - Registered SOP - Ditty Box Ltd Year End Accounts as entry 4 (v0.9 DRAFT), closing the blocked mandatory final step from the 2026-07-26 12:31 handover. Author: Cedric. Status: current.
+2026-07-26 12:46 [GIT] Committed vault as 5c4b1ef (27 files) via device VM with autocrlf-safe settings. Push blocked from VM (no SSH route); goes up with the next daily-commit run or manual push. Author: Cedric. Status: current.
