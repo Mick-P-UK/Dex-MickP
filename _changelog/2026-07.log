@@ -83,3 +83,14 @@
 2026-07-21 18:39 [CREATE] _daily/2026.07.21 - Sundown.md - Today's sundown rollup covering both threads. Author: Cedric. Status: current.
 2026-07-21 18:39 [UPDATE] CEDRIC_MEMORY.md - Prepended new Last Updated line and Recent session block for 2026.07.21. Author: Cedric. Status: current.
 2026-07-21 18:39 [APPEND] _changelog/2026-07.log - Today's changelog entries batched at sundown time. Author: Cedric. Status: current.
+2026-07-25 18:59 [CREATE] _handovers/_backups/2026.07.25 - 1616 - LATEST-backup (pre-reconciliation).md - Byte-perfect backup of the pre-reconciliation LATEST.md. Author: Cedric. Status: current.
+2026-07-25 18:59 [CREATE] _handovers/2026.07.25 - Baton-Wrap Post-Mortem and Bulletproofing Spec.md - Post-mortem of the failed baton-wrap + hardening spec. Author: Cedric. Status: current.
+2026-07-25 18:59 [CREATE] _handovers/archive/2026.07.25 - 1628 - baton - Portico Snapshot Automation (reconciled).md - Reconciliation baton. Author: Cedric. Status: archived.
+2026-07-25 18:59 [CREATE] _handovers/archive/2026.07.25 - 1851 - baton - Portico Snapshot Automation Hardened.md - End-of-thread baton. Author: Cedric. Status: archived.
+2026-07-25 18:59 [UPDATE] _handovers/LATEST.md - Now the 1851 baton. Author: Cedric. Status: current.
+2026-07-25 18:59 [UPDATE] 04-Projects/2026.04.04-ShareScope-Automation/sharescope_portico.py - Toggle-aware current-holdings view + verified retrying portfolio selection + network-idle settle + pre-capture guard. Author: Cedric. Status: current.
+2026-07-25 18:59 [UPDATE] 04-Projects/2026.04.04-ShareScope-Automation/ShareScope-data-cmd-Reference.md - Added View-state verification section (ViewCurrentOnly is a toggle; verify the painted caption). Author: Cedric. Status: current.
+2026-07-25 18:59 [CREATE] 04-Projects/2026.04.04-ShareScope-Automation/portico/outputs/2026.07.25 - PP1 - Portico Weekend Snapshot.png - Finished PP1 weekend image. Author: Cedric. Status: current.
+2026-07-25 18:59 [CREATE] 04-Projects/2026.04.04-ShareScope-Automation/portico/outputs/2026.07.25 - PP2 - Portico Weekend Snapshot.png - Finished PP2 weekend image. Author: Cedric. Status: current.
+2026-07-25 18:59 [UPDATE] CEDRIC_MEMORY.md - Prepended 2026.07.25 Last Updated line + Recent session block. Author: Cedric. Status: current.
+2026-07-25 18:59 [CREATE] _daily/2026.07.25 - Sundown.md - Today's sundown rollup. Author: Cedric. Status: current.
