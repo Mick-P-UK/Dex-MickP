@@ -2,7 +2,7 @@
 
 **Single source of truth for every skill Mick can run from any runtime.**
 
-- Last updated: 2026-07-19 (added newsletter-wp-publisher skill in V - end-to-end newsletter media upload + WordPress post create/update, multi-site aware)
+- Last updated: 2026-07-26 (added the six Ditty Box Ltd year-end accounts skills, which had never been registered: natwest-to-xero, cc1136-to-xero, paypal-to-xero, ii-to-xero, schwab-to-xero, and the new info-for-accountant. See SOP - Ditty Box Ltd Year End Accounts for how they chain together.)
 - Maintained by: Cedric (PAIDA)
 - Update rule: see CLAUDE.md "MANDATORY SKILL DEPLOY PROTOCOL". This file MUST be updated on every skill create, rename, version-bump, or deprecation.
 
@@ -82,6 +82,12 @@ Each row tells you four things: who built it, where it lives, how to invoke it, 
 | benchmark-fetcher | (called by portfolio-post-creator) | mick-cedric | C-Pete, V, M | active | v1.0: month-end FTSE All-Share + S&P 500 closes from Yahoo Finance; updates Indices spreadsheet. Migrated to V+M 2026-05-30. |
 | wordpress-image-uploader | (called by portfolio-post-creator) | mick-cedric | C-Pete, V, M | active | v1.0: upload portfolio screenshots to WordPress media library; returns real media IDs + dimensions. Migrated to V+M 2026-05-30. |
 | wordpress-post-publisher | (called by portfolio-post-creator, or ad-hoc) | mick-cedric | C-Pete, V, M | active | v1.2: push post objects to WordPress as drafts via REST API. Content-agnostic. v1.2 (2026-05-30) added tags field to payload for portfolio post tagging. |
+| natwest-to-xero | "convert the NatWest CSV" / "do the NatWest import" | mick-cedric | V, P (M pending) | active | Ditty Box year-end chain, step 1. NatWest CSV export to Xero bank statement import CSV + 11-column audit XLSX. Account code is a parameter; works for GBP Current, No 2 and USD. Registered 2026-07-26. |
+| cc1136-to-xero | "convert the Halifax statements" / "do the CC1136 import" | mick-cedric | V, P (M pending) | active | Ditty Box year-end chain, step 1. Halifax Clarity 1136 monthly PDF statements to Xero CSV + 3-sheet audit XLSX. Auto-detects the two page-3 table layouts (Card Ending column added July 2025). Registered 2026-07-26. |
+| paypal-to-xero | "convert the PayPal export" / "do the PayPal import" | mick-cedric | V only | active | Ditty Box year-end chain, step 1. PayPal CSV/XLSX export to Xero bank statement import CSV + audit XLSX. D.Box PayPal = code 058. NOTE: unlike its three siblings this one is NOT visible as a Cowork skill - vault only. Registered 2026-07-26. |
+| ii-to-xero | "process the ii account" / "do the Interactive Investor YE" | mick-cedric | V, P (M pending) | active | Ditty Box year-end chain, step 2. Folds the ii year-end download into the master tracking spreadsheet (history from 2008) + audit XLSX. Produces figures for MANUAL journals, not a Xero CSV. Registered 2026-07-26. |
+| schwab-to-xero | "process the Schwab account" / "do the Schwab year-end" | mick-cedric | V, P (M pending) | active | Ditty Box year-end chain, step 2. Schwab corporate ...366 download to audit XLSX + posting schedule. USD account, Xero is GBP-only, so no CSV - Mick keys two manual cash transactions and the stock revaluation journal. Registered 2026-07-26. |
+| info-for-accountant | "do the pack for the accountant" / "build the Jade pack" | mick-cedric | V (M not possible from Cowork cloud; .skill file delivered to Mick 2026-07-26) | active | Ditty Box year-end chain, FINAL step. Assembles the numbered evidence pack for the accountants: derives the J-manifest from the prior year's pack, proposes the mapping for approval, copies (never moves) with md5 verification, builds the checklist xlsx, reports gaps, zips on request. Baseline manifest J01-J25 in reference/manifest.md. Created 2026-07-26. |
 
 ### 1b. claude.ai PAIDA Project skills (NOT yet mirrored to vault)
 

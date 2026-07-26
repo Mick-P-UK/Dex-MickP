@@ -94,3 +94,13 @@
 2026-07-25 18:59 [CREATE] 04-Projects/2026.04.04-ShareScope-Automation/portico/outputs/2026.07.25 - PP2 - Portico Weekend Snapshot.png - Finished PP2 weekend image. Author: Cedric. Status: current.
 2026-07-25 18:59 [UPDATE] CEDRIC_MEMORY.md - Prepended 2026.07.25 Last Updated line + Recent session block. Author: Cedric. Status: current.
 2026-07-25 18:59 [CREATE] _daily/2026.07.25 - Sundown.md - Today's sundown rollup. Author: Cedric. Status: current.
+2026-07-26 12:31 [CREATE] skills/info-for-accountant/SKILL.md - New skill: assembles the Ditty Box Ltd year-end evidence pack for the accountants. Author: Cedric. Status: current.
+2026-07-26 12:31 [CREATE] skills/info-for-accountant/reference/manifest.md - J01-J25 item manifest with search hints and habitual sub-folders. Author: Cedric. Status: current.
+2026-07-26 12:31 [CREATE] skills/info-for-accountant/scripts/build_checklist.py - Checklist workbook builder with the house print footer baked in. Author: Cedric. Status: current.
+2026-07-26 12:31 [UPDATE] skills/README.md - Added info-for-accountant plus the five previously unlisted year-end converter skills. Author: Cedric. Status: current.
+2026-07-26 12:31 [UPDATE] SKILLS_REGISTRY.md - Registered all six Ditty Box accounts skills; registry had been stale since 2026-07-19. Author: Cedric. Status: current.
+2026-07-26 12:31 [UPDATE] CLAUDE.md - Added mandatory Spreadsheet Print Footer rule to the USER_EXTENSIONS protected block. Author: Cedric. Status: current.
+2026-07-26 12:31 [CREATE] 06-Resources/SOPs/SOP - Ditty Box Ltd Year End Accounts.md - New SOP, v0.9 DRAFT, seven open questions pending Mick's walkthrough. Author: Cedric. Status: draft.
+2026-07-26 12:31 [UPDATE] CEDRIC_MEMORY.md - Prepended 2026.07.26 Last Updated line + Recent session block. Author: Cedric. Status: current.
+2026-07-26 12:31 [UPDATE] _handovers/LATEST.md - Baton handover for the Ditty Box accountant pack thread. Author: Cedric. Status: current.
+2026-07-26 12:31 [CREATE] _handovers/archive/2026.07.26 - 1231 - baton - Ditty Box Year End Accountant Pack.md - Archived baton copy. Author: Cedric. Status: current.

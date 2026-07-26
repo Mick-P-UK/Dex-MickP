@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"console.log\\(require.resolve\\('docx'\\)\\)\")",
+      "Bash(npm ls *)",
+      "Read(//c/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/**)",
+      "Bash(node \"C:\\\\Users\\\\pavey\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Vaults-Mick-s-Dex-2nd-Brain-Dex-MickP-06-Resources-Research-Log-Research-JSE\\\\32d35db6-7c7a-446b-8b06-cedfa3841ad4\\\\scratchpad\\\\build_jse_docx.js\" \"06-Resources/Research-Log/Research/JSE/2026.07.20 - JSE - Jadestone Energy - AI - Financial Analysis_v2.docx\")",
+      "Bash(cp \"C:\\\\Users\\\\pavey\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Vaults-Mick-s-Dex-2nd-Brain-Dex-MickP-06-Resources-Research-Log-Research-JSE\\\\32d35db6-7c7a-446b-8b06-cedfa3841ad4\\\\scratchpad\\\\build_jse_docx.js\" ./build_jse_docx_tmp.js)",
+      "Bash(node build_jse_docx_tmp.js \"06-Resources/Research-Log/Research/JSE/2026.07.20 - JSE - Jadestone Energy - AI - Financial Analysis_v2.docx\")",
+      "Bash(rm build_jse_docx_tmp.js)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "work-mcp",
+    "calendar-mcp",
+    "granola-mcp",
+    "career-mcp",
+    "dex-improvements-mcp",
+    "resume-mcp",
+    "update-checker",
+    "onboarding-mcp",
+    "notebooklm-mcp"
+  ]
+}

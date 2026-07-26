@@ -196,6 +196,49 @@ PROACTIVE RULE: When a session produces a notable insight, build, or discovery,
 log a Meet Cedric brain dump in Notion Content Studio immediately -- do NOT wait
 to be asked. If it feels worthy of sharing with the DIY Investors community, capture it.
 
+### Spreadsheet Print Footer (MANDATORY - Added 2026.07.26)
+
+EVERY spreadsheet Cedric produces, on ANY project, must carry Mick's standard print
+footer. This is automatic - Mick should never have to ask for it.
+
+Footer text (LEFT-hand side of the footer only, all other footer sections left empty):
+
+    (&[Path]&[File] - Printed: &[Date] at &[Time])
+
+In raw Excel field codes, which is what openpyxl and the file XML actually need:
+
+    (&Z&F - Printed: &D at &T)
+
+Rules:
+- Apply to EVERY worksheet in the workbook, not just the first tab.
+- Set all three footer variants so it survives however the sheet is printed:
+  oddFooter, evenFooter and firstFooter.
+- The round brackets ARE part of the footer text. Keep them.
+- Applies to new workbooks AND to any existing workbook Cedric edits, unless that
+  workbook already has a deliberate footer of its own - in that case ask Mick first.
+
+openpyxl implementation:
+
+```python
+FOOTER = "(&Z&F - Printed: &D at &T)"
+for ws in wb.worksheets:
+    ws.oddFooter.left.text = FOOTER
+    ws.evenFooter.left.text = FOOTER
+    ws.firstFooter.left.text = FOOTER
+```
+
+Verify after saving (and after any LibreOffice recalc pass, which can rewrite the file):
+
+```bash
+unzip -p book.xlsx xl/worksheets/sheet1.xml | grep -o '<oddFooter>[^<]*</oddFooter>'
+```
+
+Expected output: `<oddFooter>&amp;L(&amp;Z&amp;F - Printed: &amp;D at &amp;T)</oddFooter>`
+The `&amp;L` prefix is the LEFT-section marker and is correct.
+
+Mirror note: if `C:\Users\pavey\.claude\_rules.md` is in scope for the session, add the
+same rule there so Claude Code on Windows picks it up too.
+
 ## USER_EXTENSIONS_END
 
 ---

@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node -e \"console.log\\(require.resolve\\('docx'\\)\\)\")",
+      "Bash(npm ls *)",
+      "Bash(node \"C:/Users/pavey/AppData/Local/Temp/claude/C--Vaults-Mick-s-Dex-2nd-Brain-Dex-MickP-06-Resources-Research-Log-Research/c13a5860-4c82-4afd-9603-efbcad6a0ddf/scratchpad/build_crei_docx.js\")",
+      "Bash(cp \"C:/Users/pavey/AppData/Local/Temp/claude/C--Vaults-Mick-s-Dex-2nd-Brain-Dex-MickP-06-Resources-Research-Log-Research/c13a5860-4c82-4afd-9603-efbcad6a0ddf/scratchpad/build_crei_docx.js\" \"C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/build_crei_docx_tmp.js\")",
+      "Bash(node build_crei_docx_tmp.js)",
+      "Bash(mv \"C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/CREI_v3.docx\" \"C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/06-Resources/Research-Log/Research/CREI/2026.07.22 - CREI - Custodian REIT - AI - Financial Analysis_v3.docx\")",
+      "Bash(rm \"C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/build_crei_docx_tmp.js\")",
+      "Read(//c/tmp/**)",
+      "Bash(command -v pandoc)",
+      "Bash(pandoc \"C:/Vaults/Mick's-Dex-2nd-Brain/Dex-MickP/06-Resources/Research-Log/Research/CREI/2026.07.22 - CREI - Custodian REIT - AI - Financial Analysis_v3.docx\" -o /tmp/crei_check.md)",
+      "Read(//tmp/**)",
+      "Bash(where pandoc *)",
+      "Bash(where soffice *)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(python -c \"import docx2pdf\")",
+      "Bash(python -c \"import win32com\")",
+      "Bash(python *)",
+      "Bash(where pdftoppm *)",
+      "Bash(where magick *)",
+      "Bash(pip install *)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "work-mcp",
+    "calendar-mcp",
+    "granola-mcp",
+    "career-mcp",
+    "dex-improvements-mcp",
+    "resume-mcp",
+    "update-checker",
+    "onboarding-mcp",
+    "notebooklm-mcp"
+  ]
+}
