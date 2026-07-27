@@ -2,6 +2,47 @@
 
 ---
 
+## Session: 2026-07-27 (Monday, Claude Code) - NotebookLM auth fix + June webinar processing + SOP
+
+_Environment: Claude Code (Mick's PC), working directory C:\Vaults_
+
+### Context
+- Opened with "can you connect to NotebookLM?" - the CLI auth had lapsed. Grew into the
+  full monthly webinar pipeline for the June 2026 edition, then an SOP + skill update.
+
+### Actions Taken
+1. AUTH FIX: `notebooklm auth check --test` failed at Token fetch; `notebooklm login` hung
+   to timeout (twice) despite Mick being signed in. Root cause: the Gemini Notebook rebrand
+   (notebook.google.com) breaks the CLI's login-detection. Fixed by re-exporting live cookies
+   from the CLI's persistent browser profile into storage_state.json via Playwright - no
+   re-login needed. Token fetch passed (29 cookies); `notebooklm list` worked. Saved to
+   CEDRIC_MEMORY + Claude Code auto-memory notebooklm-login-detection-rebrand-fix.
+2. WEBINAR PIPELINE (June 2026 edition, held 1 July): uploaded the 57MB m4a to notebook
+   d3d6216b (source df09ec5a, via `source add` + `source wait` - this CLI has no `--wait`);
+   generated a source-scoped 10-section user guide (`ask -s`); built the branded Word guide
+   (node/docx, Windows-path work dir) into the webinar Recordings folder; refreshed the index
+   source (854bbadd), Source Index note (4bc66b71), index.md note, and a new per-edition
+   summary note; renamed the notebook _Updated:2026.07.27.
+3. EXPLAINER VIDEO: generated "June 2026 Webinar Recap" (artifact 57c313ce) with
+   `generate video --format explainer --style whiteboard --prompt-file`, reusing Mick's saved
+   webinar-summary video prompt (May->June). Downloaded the 35MB mp4 to Recordings as
+   "...Recap_Unedited.mp4" via the authenticated browser profile (plain curl hits a sign-in).
+4. SOP + SKILL: wrote "SOP - AI4Inv Monthly Webinar Processing.md" (v1.0) in 06-Resources/SOPs;
+   registered it as entry 5 in C:\Vaults\_SOPs\INDEX.md; updated the ai4inv-webinar-processor
+   SKILL.md to the corrected CLI syntax (source wait / source delete -y / note create --content -
+   / rename positional / ask -s / Windows docx require / Phase B video) and the edition-vs-held
+   -date rule.
+
+### Outstanding / Next steps
+- Sync the updated ai4inv-webinar-processor skill to /mnt/skills/user in a Desktop/Cowork
+  session (Claude Code cannot reach /mnt).
+- C:\Vaults\_SOPs\INDEX.md still has no off-machine git backup (open backup-strategy decision).
+- Optional: check for a newer notebooklm-py that understands the Gemini Notebook rebrand.
+
+_Session wrapped 2026-07-27 ~19:15 London. Full baton: _handovers/LATEST.md._
+
+---
+
 ## Session: 2026-07-23 (Thursday, Claude Code) - ShareScope pre-webinar hardening
 
 _Environment: Claude Code (Mick's PC), working directory C:\Vaults_

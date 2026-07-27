@@ -120,3 +120,9 @@
 2026-07-26 16:20 [CREATE] .../2026.07.26 - Portico Report - Ch03 - How the Numbers Were Measured v0.1.md - draft incl dividends-vs-price-index caveat. Author: Cedric. Status: awaiting Mick review
 2026-07-26 16:20 [CREATE] .../2026.07.26 - Portico Report - Ch04 - The Harvest v0.1.md - draft, top-ten winners. Author: Cedric. Status: awaiting Mick review
 2026-07-26 16:20 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line + Recent session block (Portico Member Report). Author: Cedric. Status: done
+2026-07-27 19:15 [UPDATE] CEDRIC_MEMORY.md - top Last Updated stack + new Recent session block (auth fix + June webinar + SOP). Author: Cedric. Status: done.
+2026-07-27 19:15 [UPDATE] System/session_log.md - new session entry. Author: Cedric. Status: done.
+2026-07-27 19:15 [CREATE] 06-Resources/SOPs/SOP - AI4Inv Monthly Webinar Processing.md - new SOP v1.0 (webinar ingest + guide + explainer video). Author: Cedric. Status: active.
+2026-07-27 19:15 [UPDATE] skills/ai4inv-webinar-processor/SKILL.md - corrected CLI syntax (source wait/delete, note create stdin, rename, ask -s, Windows docx) + Phase B video step + edition-vs-held-date rule. Author: Cedric. Status: done (/mnt mirror sync pending).
+2026-07-27 19:15 [UPDATE] C:\Vaults\_SOPs\INDEX.md (outside Dex vault) - registered SOP as entry 5. Author: Cedric. Status: done (no git backup - open backup decision).
+2026-07-27 19:15 [BATON] Thread wrap - NotebookLM auth fix and June webinar processing. Handover to _handovers/LATEST.md + archive/2026.07.27 - 1915 - baton - NotebookLM auth fix and June webinar processing.md. Author: Cedric.
