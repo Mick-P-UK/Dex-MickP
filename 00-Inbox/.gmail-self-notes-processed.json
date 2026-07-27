@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-25T09:30:00+01:00",
-  "note": "2026-07-25 ~09:30 BST scheduled run (window after:2026/07/24, -label:MCSB-Filed). Filed 7 YouTube notes into YouTube-Queue (S_-uD3GtFno, Aded2v7_vag, 2SgI1kAczfk, ZKWtJ2GxjPw, 6mUScq-6U3U [add-to-nblm: YT channel n business development], KMxo3T_MTvY, tpLQftkr99o); all 7 threads labelled MCSB-Filed and archived. Skipped 2 US news digests (19f94ae923133578, 19f94ae2293d8311) as automated skill output. No attachments, nothing pending.",
+  "last_run": "2026-07-27T07:25:00+01:00",
+  "note": "2026-07-27 ~07:25 BST scheduled run (window after:2026/07/25, -label:MCSB-Filed). Filed 18 YouTube notes into YouTube-Queue (sHZAEBUZlW0, Hv8YGUXZY1g, i_23KUAEtUM, 00UsxuaG-5w x2 [one add-to-nblm: Avatar with AI], Uy3tqFxJFi8, iXd0t60YmMw, uQV8uEzgxHo, f8_uF_IDV50, fN_2c_LPfX0 x2 [one add-to-nblm: BD for diy-investors], 6veRn2-zAxI, RMazHAOjCGk [add-to-nblm: creating an SOP - 'NNLM' read as NBLM typo], 5H-s-TIO0QE, rYUS7ibZhYo [add-to-nblm: digital products], uZ4pPPAn-lE x2, UfN4l2yCT54); all 18 threads labelled MCSB-Filed and archived. Skipped 8 self-forwarded news digests (LSE RNS + US Active 10) as automated skill output. No attachments, no text notes, nothing pending.",
   "threads": {
     "19f3421213ed0761": [
       "jbHB-rzKBAs"
@@ -600,6 +600,84 @@
       "skipped-auto-digest"
     ],
     "19f94ae2293d8311": [
+      "skipped-auto-digest"
+    ],
+    "19fa22ecc39f57f5": [
+      "sHZAEBUZlW0"
+    ],
+    "19fa22bb59496671": [
+      "Hv8YGUXZY1g"
+    ],
+    "19fa22a8f630714a": [
+      "i_23KUAEtUM"
+    ],
+    "19fa0605ee4caf3f": [
+      "00UsxuaG-5w"
+    ],
+    "19fa0576fa9c7b55": [
+      "00UsxuaG-5w"
+    ],
+    "19fa03fd8d62f90f": [
+      "Uy3tqFxJFi8"
+    ],
+    "19fa0218d2d89356": [
+      "iXd0t60YmMw"
+    ],
+    "19f9d48d18caa4c5": [
+      "uQV8uEzgxHo"
+    ],
+    "19f9d47ff0b9f4be": [
+      "f8_uF_IDV50"
+    ],
+    "19f9d182beb3600d": [
+      "fN_2c_LPfX0"
+    ],
+    "19f9d122d490cdf2": [
+      "fN_2c_LPfX0"
+    ],
+    "19f9d105cb64d76f": [
+      "6veRn2-zAxI"
+    ],
+    "19f9d04e53923dd9": [
+      "RMazHAOjCGk"
+    ],
+    "19f9cfb6fcdc39e6": [
+      "5H-s-TIO0QE"
+    ],
+    "19f9b6356c9daf71": [
+      "rYUS7ibZhYo"
+    ],
+    "19f9b3608ffacb25": [
+      "uZ4pPPAn-lE"
+    ],
+    "19f9b30b840347cf": [
+      "uZ4pPPAn-lE"
+    ],
+    "19f9aa61cf5182cb": [
+      "UfN4l2yCT54"
+    ],
+    "19f8e38bff2d28f9": [
+      "skipped-auto-digest"
+    ],
+    "19f888ceb3ddaf2b": [
+      "skipped-auto-digest"
+    ],
+    "19f8f1654af6303c": [
+      "skipped-auto-digest"
+    ],
+    "19f8f16bea5cad23": [
+      "skipped-auto-digest"
+    ],
+    "19f92dfbf256bbc5": [
+      "skipped-auto-digest"
+    ],
+    "19f84cae1a595972": [
+      "skipped-auto-digest"
+    ],
+    "19f84ca89bb4c539": [
+      "skipped-auto-digest"
+    ],
+    "19f836c6462afd8d": [
       "skipped-auto-digest"
     ]
   }
