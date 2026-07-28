@@ -41,6 +41,25 @@ Your task backlog organized by priority and pillar.
 
 > High-impact tasks aligned with your weekly priorities.
 
+- [ ] Extract the Inner Circle webinar house theme into pptx-editable-graphics ^task-20260728-001
+  - **What:** Run `skills/pptx-editable-graphics/scripts/extract_theme.py` against the most recent live Inner Circle webinar deck, then write up the palette, chrome geometry and usable graphic area in `skills/pptx-editable-graphics/references/themes.md`, following the .ai Webinar section as the pattern.
+  - **Why:** The skill skins slide graphics by reading the target deck rather than guessing. Only the .ai Webinar pack is captured so far, so any Inner Circle graphic still needs a manual extraction run first.
+  - **Watch for:** The deck almost certainly carries the STOCK Office 2007 scheme in ppt/theme/theme1.xml (4F81BD / C0504D / 9BBB59). Ignore it - the real branding is in the literal slide colours, which the script reports separately. Inner Circle is print-friendly, so check contrast before reusing the white label text from the .ai Webinar build.
+  - **Effort:** About ten minutes
+  - **Pillar:** DIY-Investors
+  - **Created:** 2026-07-28
+  - **Priority:** Medium - no deadline, but it removes a repeated five-minute detour and the risk of the wrong palette being guessed under time pressure.
+  - **Ref:** skills/pptx-editable-graphics/references/themes.md; SKILLS_REGISTRY.md
+
+- [ ] Extract the Portico Plaza webinar house theme into pptx-editable-graphics ^task-20260728-002
+  - **What:** As task-20260728-001, but for the Portico Plaza webinar pack. Same script, same write-up target in `references/themes.md`.
+  - **Why:** Second of the two remaining live packs. Once both are captured the skill covers every deck currently in rotation.
+  - **Pillar:** DIY-Investors
+  - **Created:** 2026-07-28
+  - **Priority:** Medium
+  - **Ref:** skills/pptx-editable-graphics/references/themes.md
+  - **Note:** Boot Camp is deliberately NOT on this list. Mick's decision 2026-07-28: it is an annual event, so it is deferred to next year.
+
 - [ ] Migrate DIY Investors store from Stan.store to Fourthwall ^task-20260712-001
   - **Due:** Target this week
   - **Reminder:** Tomorrow (Mon 13 Jul) morning if not done today

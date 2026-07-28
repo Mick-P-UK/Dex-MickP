@@ -126,3 +126,15 @@
 2026-07-27 19:15 [UPDATE] skills/ai4inv-webinar-processor/SKILL.md - corrected CLI syntax (source wait/delete, note create stdin, rename, ask -s, Windows docx) + Phase B video step + edition-vs-held-date rule. Author: Cedric. Status: done (/mnt mirror sync pending).
 2026-07-27 19:15 [UPDATE] C:\Vaults\_SOPs\INDEX.md (outside Dex vault) - registered SOP as entry 5. Author: Cedric. Status: done (no git backup - open backup decision).
 2026-07-27 19:15 [BATON] Thread wrap - NotebookLM auth fix and June webinar processing. Handover to _handovers/LATEST.md + archive/2026.07.27 - 1915 - baton - NotebookLM auth fix and June webinar processing.md. Author: Cedric.
+2026-07-28 13:40 [CREATE] skills/pptx-editable-graphics/SKILL.md - new skill: slide diagrams as fully editable native PowerPoint shapes, themed from the target deck. Author: Cedric. Status: done (vault master only; /mnt mirror sync pending).
+2026-07-28 13:40 [CREATE] skills/pptx-editable-graphics/scripts/ppt_shapes.py - helper library: freeforms, block arcs, donuts, rotated ring labels, interlocking jigsaw boundaries, effectRef shadow fix. Author: Cedric. Status: done.
+2026-07-28 13:40 [CREATE] skills/pptx-editable-graphics/scripts/extract_theme.py - reads real palette, fonts and chrome geometry out of a target .pptx (slide census, not the theme part). Author: Cedric. Status: done.
+2026-07-28 13:40 [CREATE] skills/pptx-editable-graphics/scripts/qa_render.py - validate, convert to PDF, render JPEGs for visual QA. Author: Cedric. Status: done.
+2026-07-28 13:40 [CREATE] skills/pptx-editable-graphics/references/themes.md - .ai Webinar palette and chrome captured; Inner Circle and Portico Plaza outstanding; Boot Camp deferred to next year. Author: Cedric. Status: done.
+2026-07-28 13:40 [CREATE] skills/pptx-editable-graphics/examples/build_jigsaw_ring.py - worked concentric-jigsaw example; tested end to end from a clean directory. Author: Cedric. Status: done.
+2026-07-28 13:40 [UPDATE] SKILLS_REGISTRY.md - registered pptx-editable-graphics; Last updated line refreshed. Author: Cedric. Status: done.
+2026-07-28 13:40 [UPDATE] skills/README.md - added pptx-editable-graphics to the Available Skills table. Author: Cedric. Status: done.
+2026-07-28 13:40 [UPDATE] 03-Tasks/Tasks.md - added P1 tasks 20260728-001 and 20260728-002 (extract Inner Circle and Portico Plaza house themes, medium priority). Author: Cedric. Status: open.
+2026-07-28 13:40 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the infographic and skill session. Author: Cedric. Status: done.
+2026-07-28 13:40 [CREATE] C:\Users\pavey\Documents\0.0 - AI Projects\2026.07.29 - AI-4-Inv Webnr\2026.07.29 - AI4Inv Core Model Infographic (themed).pptx - final themed editable infographic slide for the 29 July webinar (outside Dex vault). Author: Cedric. Status: delivered.
+2026-07-28 13:40 [BATON] Thread wrap - AI4Inv Core Model infographic and pptx-editable-graphics skill. Handover to _handovers/LATEST.md + archive/2026.07.28 - 1340 - baton - AI4Inv Core Model infographic and pptx-editable-graphics skill.md. Author: Cedric.

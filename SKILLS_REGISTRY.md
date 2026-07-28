@@ -2,7 +2,7 @@
 
 **Single source of truth for every skill Mick can run from any runtime.**
 
-- Last updated: 2026-07-26 (added the six Ditty Box Ltd year-end accounts skills, which had never been registered: natwest-to-xero, cc1136-to-xero, paypal-to-xero, ii-to-xero, schwab-to-xero, and the new info-for-accountant. See SOP - Ditty Box Ltd Year End Accounts for how they chain together.)
+- Last updated: 2026-07-28 (added pptx-editable-graphics: editable native-shape slide graphics with theme extraction from the target deck. Created during the AI for Investing 29 July webinar prep after a flat-PNG infographic had to be rebuilt twice.)
 - Maintained by: Cedric (PAIDA)
 - Update rule: see CLAUDE.md "MANDATORY SKILL DEPLOY PROTOCOL". This file MUST be updated on every skill create, rename, version-bump, or deprecation.
 
@@ -69,6 +69,7 @@ Each row tells you four things: who built it, where it lives, how to invoke it, 
 | notion-summary | (on request, browser-control) | mick-cedric | V, M | active | Notion announcement summary via browser control with Ctrl+B/Shift+Enter |
 | pdf-to-pptx-converter | (on request) | mick-cedric | V, M | active | Convert NotebookLM PDF slide decks into branded PowerPoint with logo masking |
 | pns | /pns | mick-cedric | V, M | active | Post Notion Summary via Notion MCP (200-word structured summary) |
+| pptx-editable-graphics | "make an infographic" / "rebuild the graphic as shapes" / "match the deck theme" | mick-cedric | V, M | active | Build slide diagrams as fully editable native PowerPoint shapes (never a flat PNG) and skin them to the house theme read straight out of the target deck. Includes ppt_shapes helper library, extract_theme, qa_render and a worked concentric-jigsaw example |
 | process-webinar | /process-webinar | mick-cedric | V, M | active | Single Inner Circle / Plaza webinar PDF; populate Radar Log + Companies Covered |
 | session-start | (automatic) | mick-cedric | V, M | active | Mandatory session start protocol; environment probe + announcement |
 | sharescope-financials | "download [TICKER] financials" / /sharescope-financials | mick-cedric | V, M | active | Financial data export for any ShareScope stock; verifies 6 CSVs |
