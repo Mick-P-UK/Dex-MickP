@@ -150,3 +150,15 @@
 2026-07-29 14:09 [UPDATE] C:\Users\pavey\.claude\_rules.md - added two mandatory rules (NotebookLM auth re-export FIRST post-rebrand; NotebookLM notebook naming _Updated: stamp) (config, outside Dex vault). Author: Cedric. Status: done.
 2026-07-29 14:09 [UPDATE] C:\Users\pavey\.claude\projects\C--Vaults\memory\notebooklm-login-detection-rebrand-fix.md - hardened to re-export-first; MEMORY.md index pointer updated (outside Dex vault). Author: Cedric. Status: done.
 2026-07-29 14:09 [RENAME] NotebookLM notebook 7473143f - retitled "GGP - Greatland Gold_Updated_2026.07.06" to "Greatland Resources_Updated:2026.07.29" (external, not a vault file). Author: Cedric. Status: done.
+2026-07-29 15:35 [CREATE] NotebookLM-Queries/2026.07.29 - GGP Greatland Resources - Q4 n FY26 Updated Analysis.md - Ron-authored updated FY26 analysis (Q4 bolted on) plus 30-item calculations appendix. Author: Ron/Cedric. Status: done.
+2026-07-29 15:35 [ADD-SOURCE] NotebookLM notebook 7473143f - added the 29 July GGP June-2026 Quarterly Activities Report RNS as source ef481528 (external, not a vault file). Author: Cedric. Status: done.
+2026-07-29 15:35 [CREATE] GGP research folder - 2026.07.29 - GGP - Ron_Q4 n FY26 Updated Analysis_Formatted.docx + _Formatted_PDF.pdf (house style, provenance footer; outside vault, on PC). Author: Cedric. Status: done.
+2026-07-29 15:35 [CREATE] C:\Users\pavey\.claude\projects\C--Vaults\memory\commodity-prices-q2-cy2026.md - Claude Code auto-memory: real Apr-Jun 2026 gold/copper/AUD-USD averages (outside Dex vault); MEMORY.md index pointer added. Author: Cedric. Status: done.
+2026-07-29 15:35 [CREATE] 06-Resources/SOPs/SOP - Quarterly Production Update.md - v0.9 PROVISIONAL SOP for the quarterly-update routine, awaiting Mick's review. Author: Cedric. Status: provisional.
+2026-07-29 15:35 [UPDATE] C:\Vaults\_SOPs\INDEX.md - registered entry 6 (Quarterly production update, flagged PROVISIONAL). Author: Cedric. Status: done.
+2026-07-29 15:35 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the GGP Q4/FY26 analysis + provisional SOP session. Author: Cedric. Status: done.
+2026-07-29 15:39 [CREATE] 06-Resources/Prompts/NBLM-07 - Detailed Report for Novice Reader (Nina Sign-Off).md - new NotebookLM prompt supplied by Mick; ahk ::nb8# reserved, pending addition to the AHK script. Author: Cedric. Status: done.
+2026-07-29 15:39 [UPDATE] C:\Vaults\Cowork\PROMPT_LIBRARY.md - NBLM-07 added (INDEX row + PROMPTS block); ::nb7# flagged as reserved-by-Mick, not free. Author: Cedric. Status: done.
+2026-07-29 15:39 [UPDATE] 06-Resources/Prompts/00-Index.md - catalogue regenerated (2 to 3 notes), NBLM-07 row added. Author: Cedric. Status: done.
+2026-07-29 15:39 [UPDATE] 06-Resources/Prompts/NBLM-07 - Detailed Report for Novice Reader (Nina Sign-Off).md - corrected the ::nb7# note from "unused gap" to "reserved by Mick, prompt still to be supplied"; recorded that it becomes NBLM-08. Author: Cedric. Status: done.
+2026-07-29 15:39 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the NBLM-07 prompt-library session. Author: Cedric. Status: done.
