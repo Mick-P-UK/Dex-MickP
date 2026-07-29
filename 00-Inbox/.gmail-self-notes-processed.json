@@ -1,6 +1,6 @@
 {
-    "last_run": "2026-07-28T06:39:14+01:00",
-    "note": "2026-07-27 ~07:25 BST scheduled run (window after:2026/07/25, -label:MCSB-Filed). Filed 18 YouTube notes into YouTube-Queue (sHZAEBUZlW0, Hv8YGUXZY1g, i_23KUAEtUM, 00UsxuaG-5w x2 [one add-to-nblm: Avatar with AI], Uy3tqFxJFi8, iXd0t60YmMw, uQV8uEzgxHo, f8_uF_IDV50, fN_2c_LPfX0 x2 [one add-to-nblm: BD for diy-investors], 6veRn2-zAxI, RMazHAOjCGk [add-to-nblm: creating an SOP - 'NNLM' read as NBLM typo], 5H-s-TIO0QE, rYUS7ibZhYo [add-to-nblm: digital products], uZ4pPPAn-lE x2, UfN4l2yCT54); all 18 threads labelled MCSB-Filed and archived. Skipped 8 self-forwarded news digests (LSE RNS + US Active 10) as automated skill output. No attachments, no text notes, nothing pending.",
+    "last_run": "2026-07-29T07:35:00+01:00",
+    "note": "2026-07-29 ~07:30 BST scheduled run (window after:2026/07/28, -label:MCSB-Filed). 10 threads found. Filed 4 NEW YouTube notes into YouTube-Queue (DoRQo3aGaPY, QAj8q91K-H0, I5raG0Sb19s, DTVBLbQ1wBQ). 2 re-sends of already-filed videos (1RIXGL5Vgag, S_-uD3GtFno) were appended as extra annotations to the existing notes rather than duplicated, following the re-sent precedent set in the 2026.07.15 note. All 6 threads labelled MCSB-Filed and archived. Skipped 4 self-forwarded automated digests (LSE RNS UK Active 10 x2, US Active 10 + Yr2). No attachments, no text notes, nothing pending.",
     "threads": {
         "19f3421213ed0761": [
             "jbHB-rzKBAs"
@@ -741,6 +741,36 @@
             "skipped-auto-digest"
         ],
         "19fa3b27a3903acc": [
+            "skipped-auto-digest"
+        ],
+        "19fac766610eedeb": [
+            "1RIXGL5Vgag"
+        ],
+        "19fac751c1a23367": [
+            "DoRQo3aGaPY"
+        ],
+        "19fac733354c9538": [
+            "QAj8q91K-H0"
+        ],
+        "19faaf2cb59057ca": [
+            "I5raG0Sb19s"
+        ],
+        "19faaed62b0fb0f7": [
+            "DTVBLbQ1wBQ"
+        ],
+        "19fa88321a3ebf57": [
+            "S_-uD3GtFno"
+        ],
+        "19fa772234dbffa4": [
+            "skipped-auto-digest"
+        ],
+        "19fa7723c9bfd5f9": [
+            "skipped-auto-digest"
+        ],
+        "19fa8dbbc5d2ff7d": [
+            "skipped-auto-digest"
+        ],
+        "19fa8dac5b1e2e53": [
             "skipped-auto-digest"
         ]
     }
