@@ -145,3 +145,8 @@
 2026-07-29 12:08 [UPDATE] 03-Tasks/Tasks.md - added P1 task 20260729-001 (bulk-migrate remaining prompts into the prompt library, medium priority). Author: Cedric. Status: open.
 2026-07-29 12:08 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the prompt-library session. Author: Cedric. Status: done.
 2026-07-29 12:08 [CREATE] C:\Users\pavey\.claude\projects\C--Vaults\memory\prompt-library-workflow.md - Claude Code auto-memory for the prompt-library 3-place workflow and ASCII convention (outside Dex vault); MEMORY.md index pointer added. Author: Cedric. Status: done.
+2026-07-29 14:09 [CREATE] NotebookLM-Queries/2026.07.06 - GGP Greatland Resources - Analysis Snapshot Marker.md - dated point-in-time GGP analysis marker (as at 2026-07-06); also added as a source inside the notebook (source fda4b9c9). Author: Cedric. Status: done.
+2026-07-29 14:09 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the GGP notebook marker + NotebookLM rules session. Author: Cedric. Status: done.
+2026-07-29 14:09 [UPDATE] C:\Users\pavey\.claude\_rules.md - added two mandatory rules (NotebookLM auth re-export FIRST post-rebrand; NotebookLM notebook naming _Updated: stamp) (config, outside Dex vault). Author: Cedric. Status: done.
+2026-07-29 14:09 [UPDATE] C:\Users\pavey\.claude\projects\C--Vaults\memory\notebooklm-login-detection-rebrand-fix.md - hardened to re-export-first; MEMORY.md index pointer updated (outside Dex vault). Author: Cedric. Status: done.
+2026-07-29 14:09 [RENAME] NotebookLM notebook 7473143f - retitled "GGP - Greatland Gold_Updated_2026.07.06" to "Greatland Resources_Updated:2026.07.29" (external, not a vault file). Author: Cedric. Status: done.
