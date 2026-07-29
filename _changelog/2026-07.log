@@ -138,3 +138,10 @@
 2026-07-28 13:40 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the infographic and skill session. Author: Cedric. Status: done.
 2026-07-28 13:40 [CREATE] C:\Users\pavey\Documents\0.0 - AI Projects\2026.07.29 - AI-4-Inv Webnr\2026.07.29 - AI4Inv Core Model Infographic (themed).pptx - final themed editable infographic slide for the 29 July webinar (outside Dex vault). Author: Cedric. Status: delivered.
 2026-07-28 13:40 [BATON] Thread wrap - AI4Inv Core Model infographic and pptx-editable-graphics skill. Handover to _handovers/LATEST.md + archive/2026.07.28 - 1340 - baton - AI4Inv Core Model infographic and pptx-editable-graphics skill.md. Author: Cedric.
+2026-07-29 12:08 [CREATE] 06-Resources/Prompts/SUM-02 - Video Section Summary (Timestamped).md - video section summary prompt (first filed as WEB-01, then recategorised to SUM-02 at Mick's request; old WEB-01 note deleted). Author: Cedric. Status: done.
+2026-07-29 12:08 [CREATE] 06-Resources/Prompts/SUM-01 - Notion Announcement Summary (Summary item field).md - Notion RNS summary prompt, stored fully ASCII (bullet described as U+2022). Author: Cedric. Status: done.
+2026-07-29 12:08 [UPDATE] C:\Vaults\Cowork\PROMPT_LIBRARY.md - added SUM-01 and SUM-02 (INDEX rows + PROMPTS blocks); Last updated bumped to 2026-07-29. Author: Cedric. Status: done.
+2026-07-29 12:08 [UPDATE] 06-Resources/Prompts/00-Index.md - regenerated catalogue (note count 0 to 2, SUM-01 + SUM-02 rows, Last generated 2026.07.29). Author: Cedric. Status: done.
+2026-07-29 12:08 [UPDATE] 03-Tasks/Tasks.md - added P1 task 20260729-001 (bulk-migrate remaining prompts into the prompt library, medium priority). Author: Cedric. Status: open.
+2026-07-29 12:08 [UPDATE] CEDRIC_MEMORY.md - prepended Last Updated line and Recent session block for the prompt-library session. Author: Cedric. Status: done.
+2026-07-29 12:08 [CREATE] C:\Users\pavey\.claude\projects\C--Vaults\memory\prompt-library-workflow.md - Claude Code auto-memory for the prompt-library 3-place workflow and ASCII convention (outside Dex vault); MEMORY.md index pointer added. Author: Cedric. Status: done.

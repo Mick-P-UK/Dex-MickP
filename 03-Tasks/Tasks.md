@@ -60,6 +60,16 @@ Your task backlog organized by priority and pillar.
   - **Ref:** skills/pptx-editable-graphics/references/themes.md
   - **Note:** Boot Camp is deliberately NOT on this list. Mick's decision 2026-07-28: it is an annual event, so it is deferred to next year.
 
+- [ ] Migrate the remaining prompts into the prompt library ^task-20260729-001
+  - **What:** Bulk-add Mick's backlog of many reusable AI prompts into the prompt library. Two are in so far (SUM-01 Notion Announcement Summary, SUM-02 Video Section Summary); the rest need doing in one dedicated block.
+  - **How (3 places per prompt, kept in sync):** (1) create a source note in 06-Resources/Prompts/ named "CODE - Title.md" using _Prompt-Template.md frontmatter; (2) add the entry to the operational file C:\Vaults\Cowork\PROMPT_LIBRARY.md (INDEX row + PROMPTS block) - this is what AutoHotkey and the demos read; (3) regenerate 06-Resources/Prompts/00-Index.md (row + note count + Last generated date).
+  - **Conventions:** Code format CAT-NN. Categories: NBLM, INV, SUM, CON, ANL, COM, WEB, GEN. Store fully ASCII per the global rule - describe any required special glyph in words (bullet as "Unicode U+2022", arrows as "->", em dash as " - "). De-mangle any mojibake in pasted prompts first.
+  - **Why:** The 06-Resources/Prompts folder sat at 0 notes since 30 June (migration pending); now live with SUM-01/02. Many more to go.
+  - **Pillar:** PAIDA
+  - **Created:** 2026-07-29
+  - **Priority:** Medium - no deadline; needs a dedicated block of Mick's time.
+  - **Ref:** 06-Resources/Prompts/README.md; memory note prompt-library-workflow
+
 - [ ] Migrate DIY Investors store from Stan.store to Fourthwall ^task-20260712-001
   - **Due:** Target this week
   - **Reminder:** Tomorrow (Mon 13 Jul) morning if not done today

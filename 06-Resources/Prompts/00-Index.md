@@ -4,16 +4,15 @@ Generated catalogue of every prompt note in this folder. Cedric regenerates it
 when prompts are added or updated. For live filtering and sorting inside
 Obsidian, use Prompts.base.
 
-Last generated: 2026.06.30
-Prompt notes: 0 (folder just created - migration from Mick's Vault pending)
+Last generated: 2026.07.29
+Prompt notes: 2
 
 ## Catalogue
 
-(Table is populated as prompts are migrated in.)
-
-| Code | Title | Category | Version | Status | AHK | Operational |
-|------|-------|----------|---------|--------|-----|-------------|
-| -    | -     | -        | -       | -      | -   | -           |
+| Code   | Title | Category | Version | Status | AHK | Operational |
+|--------|-------|----------|---------|--------|-----|-------------|
+| SUM-01 | Notion Announcement Summary (Summary item field) | SUM | 1.0 | active | none | Yes |
+| SUM-02 | Video Section Summary (Timestamped Bullets) | SUM | 1.0 | active | none | Yes |
 
 ## Legend
 
