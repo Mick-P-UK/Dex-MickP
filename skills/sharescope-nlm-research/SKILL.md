@@ -146,6 +146,19 @@ python sharescope_nlm_researcher.py HAL "Halliburton"
 Then Nina reads everything and writes the full analysis. This takes approximately
 5-8 minutes. I will watch the Research Log for the report to appear."
 
+### NOTEBOOK HYGIENE (mandatory, added 2026.07.30)
+
+One notebook per company clutters fast, and a stale source poisons Ron's query:
+1. Before Ron queries, DELETE the previous run's ShareScope CSVs (dedupe by title,
+   keep one). The researcher script auto-clears [PIPE]-tagged CSVs, but a MANUAL
+   `notebooklm source add` flow does NOT - so clear `nlm_[TICKER]_*` sources by hand.
+   Root cause 2026.07.30: stale April EDV CSVs made Ron quote the wrong (April)
+   forecast, which had to be corrected in the report.
+2. ARCHIVE, do not just delete: copy any removed CSV to the company's base-data
+   folder with a `YYYY.MM.DD - ` prefix first. ShareScope CSVs are in USD (per-share
+   extras are in GBp) - a currency-looking mismatch is usually a STALE source, not a
+   missing conversion. Cross-ref memory `notebook-hygiene-per-company`.
+
 ### While it runs -- monitor for completion:
 
 Poll for a new report file in:
