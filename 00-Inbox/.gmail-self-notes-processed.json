@@ -1,6 +1,6 @@
 {
-    "last_run": "2026-07-29T07:35:00+01:00",
-    "note": "2026-07-29 ~07:30 BST scheduled run (window after:2026/07/28, -label:MCSB-Filed). 10 threads found. Filed 4 NEW YouTube notes into YouTube-Queue (DoRQo3aGaPY, QAj8q91K-H0, I5raG0Sb19s, DTVBLbQ1wBQ). 2 re-sends of already-filed videos (1RIXGL5Vgag, S_-uD3GtFno) were appended as extra annotations to the existing notes rather than duplicated, following the re-sent precedent set in the 2026.07.15 note. All 6 threads labelled MCSB-Filed and archived. Skipped 4 self-forwarded automated digests (LSE RNS UK Active 10 x2, US Active 10 + Yr2). No attachments, no text notes, nothing pending.",
+    "last_run": "2026-07-30T07:35:00+01:00",
+    "note": "2026-07-30 ~07:20 BST scheduled run (window after:2026/07/29, -label:MCSB-Filed). 9 threads found. Filed 3 NEW notes: 2 YouTube notes into YouTube-Queue (tPh9_Cx4yZY Mermaid vs PlantUML vs HackerDraw; j9rV0b1I3mo Obsidian YAML Frontmatter, carries action=add-to-nblm nblm_topic='Obsidian 4 Noobs') plus 1 text note in the inbox root (Check this out - poss memory structure, github.com/jaredrhod/ai-memory-vault). 3 re-sends of already-filed videos (2kbINqpluM0, B35SWx_4BNM, 1RIXGL5Vgag) were appended as extra annotations to the existing notes rather than duplicated, following the re-sent precedent. All 6 threads labelled MCSB-Filed and archived. Skipped 3 self-forwarded automated digests (US Active 10, US Active 10 Yr2, LSE RNS UK Active 10 + Yr2). No attachments, nothing pending. Each email produced a single note so no sibling cross-linking was needed. HOUSEKEEPING: a zero-byte file '.wtest' was created in 00-Inbox during a write-permission check and could not be removed (mount denies unlink); it is a hidden dotfile and harmless, but Mick may wish to delete it.",
     "threads": {
         "19f3421213ed0761": [
             "jbHB-rzKBAs"
@@ -771,6 +771,33 @@
             "skipped-auto-digest"
         ],
         "19fa8dac5b1e2e53": [
+            "skipped-auto-digest"
+        ],
+        "19fb1a4d25af41da": [
+            "tPh9_Cx4yZY"
+        ],
+        "19faddc09b7a5e04": [
+            "j9rV0b1I3mo"
+        ],
+        "19fb1a4d46ff44b4": [
+            "body"
+        ],
+        "19faffac409224b5": [
+            "2kbINqpluM0"
+        ],
+        "19fafcde6812e277": [
+            "B35SWx_4BNM"
+        ],
+        "19facb9007641d81": [
+            "1RIXGL5Vgag"
+        ],
+        "19fae00c7e6ae23e": [
+            "skipped-auto-digest"
+        ],
+        "19fadfffca3b064a": [
+            "skipped-auto-digest"
+        ],
+        "19fac9996b6260ee": [
             "skipped-auto-digest"
         ]
     }
