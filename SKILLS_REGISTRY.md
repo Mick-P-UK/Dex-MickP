@@ -2,7 +2,7 @@
 
 **Single source of truth for every skill Mick can run from any runtime.**
 
-- Last updated: 2026-07-28 (added pptx-editable-graphics: editable native-shape slide graphics with theme extraction from the target deck. Created during the AI for Investing 29 July webinar prep after a flat-PNG infographic had to be rebuilt twice.)
+- Last updated: 2026-07-31 (added image-cta-overlay v2.0: diagonal CTA overlay for thumbnails, now with the light grey banded house style for dark blue webinar slides. Discovered during the same session that this skill had NEVER been in the vault - it existed only in the Cowork skill store - so it is registered here for the first time.)
 - Maintained by: Cedric (PAIDA)
 - Update rule: see CLAUDE.md "MANDATORY SKILL DEPLOY PROTOCOL". This file MUST be updated on every skill create, rename, version-bump, or deprecation.
 
@@ -75,6 +75,7 @@ Each row tells you four things: who built it, where it lives, how to invoke it, 
 | sharescope-financials | "download [TICKER] financials" / /sharescope-financials | mick-cedric | V, M | active | Financial data export for any ShareScope stock; verifies 6 CSVs |
 | sharescope-nlm-research | /research [TICKER] / "research [company]" | mick-cedric | V, M | active | Full ShareScope plus NotebookLM pipeline (v1.2). Resolves ticker, runs orchestrator, parallel upload + Nina analysis, Research Log entry, Notion publish |
 | sharescope-start | "sharescope start" / /sharescope-start | mick-cedric | V, M | active | ShareScope session opener; vault + project folder, PICKUP_POINT, briefing |
+| image-cta-overlay | "add CTA to thumbnail" / "add click here text" / "add diagonal text to image" | mick-cedric | V (P = v1.0 old; M pending) | active | v2.0 (2026-07-31): diagonal call-to-action overlay on an image thumbnail. Two styles: plain text (red, original) and BANDED - a narrow angled light grey band (224,224,224 at alpha 240) carrying bright green text (0,255,0) with a 3px dark outline and soft drop shadow. Banded light grey is the confirmed house style for diy-investors.ai monthly webinar thumbnails and any dark blue .ai Webinar slide. WARNING: the vault copy is v2.0 but the Cowork skill store still runs v1.0 until Mick uploads the delivered image-cta-overlay.skill file. |
 | thumbnail-play-button | (on request) | mick-cedric | V, M | active | YouTube-style play button overlay on image thumbnails |
 | week-plan-print | /week-plan-print | mick-cedric | V, M | active | Print-ready A4 Word doc of current week's calendar |
 | yt-play-button-overlay | (on request) | mick-cedric | V, M | active | YouTube play button overlay (image processing) |

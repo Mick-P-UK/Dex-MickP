@@ -1,804 +1,906 @@
 {
-    "last_run": "2026-07-30T07:35:00+01:00",
-    "note": "2026-07-30 ~07:20 BST scheduled run (window after:2026/07/29, -label:MCSB-Filed). 9 threads found. Filed 3 NEW notes: 2 YouTube notes into YouTube-Queue (tPh9_Cx4yZY Mermaid vs PlantUML vs HackerDraw; j9rV0b1I3mo Obsidian YAML Frontmatter, carries action=add-to-nblm nblm_topic='Obsidian 4 Noobs') plus 1 text note in the inbox root (Check this out - poss memory structure, github.com/jaredrhod/ai-memory-vault). 3 re-sends of already-filed videos (2kbINqpluM0, B35SWx_4BNM, 1RIXGL5Vgag) were appended as extra annotations to the existing notes rather than duplicated, following the re-sent precedent. All 6 threads labelled MCSB-Filed and archived. Skipped 3 self-forwarded automated digests (US Active 10, US Active 10 Yr2, LSE RNS UK Active 10 + Yr2). No attachments, nothing pending. Each email produced a single note so no sibling cross-linking was needed. HOUSEKEEPING: a zero-byte file '.wtest' was created in 00-Inbox during a write-permission check and could not be removed (mount denies unlink); it is a hidden dotfile and harmless, but Mick may wish to delete it.",
-    "threads": {
-        "19f3421213ed0761": [
-            "jbHB-rzKBAs"
-        ],
-        "19f3304c2ba9044c": [
-            "iXd0t60YmMw"
-        ],
-        "19f32e9b27497260": [
-            "lqiwQiDglGk"
-        ],
-        "19f3120cf4e12b64": [
-            "Eu49kEwAmOU"
-        ],
-        "19f3163da1679968": [
-            "HgAQOkG_v8c"
-        ],
-        "19f3114f97ba46d0": [
-            "EO2WufLMuh0"
-        ],
-        "19f2c076f20714a1": [
-            "MTousqjQM0w"
-        ],
-        "19f2c0b6f17c0210": [
-            "MTousqjQM0w"
-        ],
-        "19f2df73a6102f9d": [
-            "MTousqjQM0w"
-        ],
-        "19f2bd26a9dbbaf2": [
-            "d2XiTDzoizc"
-        ],
-        "19f2f0abc4dc0b2c": [
-            "body"
-        ],
-        "19f2f52338d99970": [
-            "body",
-            "DIY-Investors-Income-Plan.docx"
-        ],
-        "19f316291668a754": [
-            "n4EVksU_EOs"
-        ],
-        "19f3130bf90b2371": [
-            "dxq7WtWxi44"
-        ],
-        "19f31227914858a0": [
-            "dxq7WtWxi44"
-        ],
-        "19f3121b681ecc79": [
-            "k4sMSsMzX2g"
-        ],
-        "19f3120198d979a0": [
-            "zwl9Uyw2DjA"
-        ],
-        "19f311f4f6141ab8": [
-            "zwl9Uyw2DjA"
-        ],
-        "19f31158e7af32fb": [
-            "ZJQ3q7gSWNE"
-        ],
-        "19f3114f6a01cfab": [
-            "lIQ79IkGpjk"
-        ],
-        "19f2dcbfe6dd9822": [
-            "ASeEk09YTbM"
-        ],
-        "19f2dcaf3d766b00": [
-            "BtqWM3wQLSo"
-        ],
-        "19f3b2ca32ccfe1c": [
-            "kU3qYQ7ACMA"
-        ],
-        "19f3b2b78bc8b2f1": [
-            "STH929HARLo"
-        ],
-        "19f3b28057cd61b4": [
-            "rKV5JcALQoQ"
-        ],
-        "19f3b267b7b4a7e1": [
-            "0TpON5T-Sw4"
-        ],
-        "19f3b24b1be021b0": [
-            "STH929HARLo"
-        ],
-        "19f39884726bd1cc": [
-            "yke4fLQUsh4"
-        ],
-        "19f3984dc8b75347": [
-            "yke4fLQUsh4"
-        ],
-        "19f397fa6edaf9d8": [
-            "yke4fLQUsh4"
-        ],
-        "19f397c7c68f8b52": [
-            "glAoiBWVkmU"
-        ],
-        "19f3865c26c54621": [
-            "TyFLg7XwrA0"
-        ],
-        "19f3853cf8e0e703": [
-            "TyFLg7XwrA0"
-        ],
-        "19f376050453ff37": [
-            "2kbINqpluM0"
-        ],
-        "19f374fdea4682a1": [
-            "qEbZy3gw90w"
-        ],
-        "19f36a5a003ea50e": [
-            "CSA36pM8ga8"
-        ],
-        "19f36a50bc878a07": [
-            "X5h4J_JeZ8A"
-        ],
-        "19f36a3de7039e69": [
-            "9nTG1B1No_E"
-        ],
-        "19f4ab179f2d30f2": [
-            "glAoiBWVkmU"
-        ],
-        "19f4aaf21b2ea4db": [
-            "glAoiBWVkmU"
-        ],
-        "19f49006c7465fba": [
-            "R_tuS9sWJEk"
-        ],
-        "19f457b1d212f390": [
-            "9MXSuCSktCw"
-        ],
-        "19f455a2d5f35e75": [
-            "4C2w8eIG48A"
-        ],
-        "19f454d029506639": [
-            "B35SWx_4BNM"
-        ],
-        "19f43efe464d7f3e": [
-            "B35SWx_4BNM"
-        ],
-        "19f43be97dc2830a": [
-            "HuREI6lks4s"
-        ],
-        "19f43bcd7b8bc9cb": [
-            "a1FDaoF8Jog"
-        ],
-        "19f43bba69d41323": [
-            "AvliytN6xKU"
-        ],
-        "19f439306dfb36e2": [
-            "GaYbwONmjSE"
-        ],
-        "19f437c878e9b920": [
-            "raTGrL2MGxg"
-        ],
-        "19f3d1d1991680a8": [
-            "-rkdt--Q4KM"
-        ],
-        "19f3c7c3d5b8602e": [
-            "EPeP9xFrtP0"
-        ],
-        "19f3c79316029164": [
-            "MsZEjmfeAzA"
-        ],
-        "19f3c78493016c8e": [
-            "R2-Y1Hjwx2U"
-        ],
-        "19f3c765fd6401b4": [
-            "xqGCbEDbny8"
-        ],
-        "19f3bb6a1e398c84": [
-            "EPeP9xFrtP0"
-        ],
-        "19f3d12d938505bb": [
-            "body"
-        ],
-        "19f3d0f36ed210a8": [
-            "body"
-        ],
-        "19f43d009bfbcd04": [
-            "body",
-            "2026.07.08 - RPA and AI Automation Listed Companies Report.docx"
-        ],
-        "19f3ce2162c386d9": [
-            "20260703_182811.jpg"
-        ],
-        "19f5013deff98235": [
-            "EJm8Ka-gVOc"
-        ],
-        "19f5012ec7414d29": [
-            "v_E42FkgH2I"
-        ],
-        "19f501254c19f1ab": [
-            "mpUq6NMDb5E"
-        ],
-        "19f5011e57048607": [
-            "L0tQrTQBmjI"
-        ],
-        "19f50117058547ec": [
-            "ubxDCAtYQwE"
-        ],
-        "19f501108b6c1e6c": [
-            "gb5TlGw6Uks"
-        ],
-        "19f501096913440a": [
-            "mTYxpIRK7xA"
-        ],
-        "19f500fe063d21d8": [
-            "Owv503rTqYY"
-        ],
-        "19f4fe5f894f6782": [
-            "SpEwNq9H23w"
-        ],
-        "19f4fe54fc79a305": [
-            "6GtF_uHbGhw"
-        ],
-        "19f4fd7d0972090b": [
-            "4KXLW9Y1r4c"
-        ],
-        "19f4fcc9c67186aa": [
-            "D3dQqqDx2V4"
-        ],
-        "19f4fc94343e58d1": [
-            "gYzlgK5Dw1s"
-        ],
-        "19f4fa10882003b8": [
-            "OMQo6YMZYzo"
-        ],
-        "19f4e15d818dcc40": [
-            "40GPEEj3ijg"
-        ],
-        "19f4bf13e933dd13": [
-            "WlorPYYgvUQ"
-        ],
-        "19f4beea14d7f628": [
-            "xnq1ZURgKbk"
-        ],
-        "19f4bea8c736f889": [
-            "GqBIt3u26do"
-        ],
-        "19f4adb3a1c085d8": [
-            "w0S-khYCaB4"
-        ],
-        "19f4fbf34c131121": [
-            "2026.07.11 - Hermes - A Guide for DIY Investors.docx"
-        ],
-        "19f5275b52af0f4a": [
-            "mTYxpIRK7xA"
-        ],
-        "19f59f0341b559f1": [
-            "n32qq7Kwzh0"
-        ],
-        "19f584c56d8fd92a": [
-            "Xv36Z65VPv0"
-        ],
-        "19f577e09f1caaab": [
-            "Xv36Z65VPv0"
-        ],
-        "19f5775f1650b046": [
-            "yzlvDnxvi1I"
-        ],
-        "19f5773e66121db7": [
-            "Xv36Z65VPv0"
-        ],
-        "19f5770f500c88c2": [
-            "yaMcm3sQswc"
-        ],
-        "19f575f447a21585": [
-            "cQqOkx5qnWo"
-        ],
-        "19f5d3872d4458c9": [
-            "9CiOwbmOKdU"
-        ],
-        "19f5d07f72c5d669": [
-            "k5NhsF7t68M"
-        ],
-        "19f5d064c9833972": [
-            "6MBq1paspVU"
-        ],
-        "19f5b68625bb7d88": [
-            "-h7ZAuuNDLE"
-        ],
-        "19f5b674b7705d1e": [
-            "n4EVksU_EOs"
-        ],
-        "19f5b51a633eb748": [
-            "iXd0t60YmMw"
-        ],
-        "19f5b10432a17602": [
-            "nN6DZi_fiSo"
-        ],
-        "19f5b0f67d13c198": [
-            "JZWJzSSHYqU"
-        ],
-        "19f5b0e53afdd5ee": [
-            "-h7ZAuuNDLE"
-        ],
-        "19f5b0d9a1f0d8b8": [
-            "1MaFErWfL24"
-        ],
-        "19f5b0cbb5f8dba5": [
-            "GCZseZzrrW0"
-        ],
-        "19f5b0bbd04cc44d": [
-            "I9W6NhFkGAI"
-        ],
-        "19f5b0b35db1863a": [
-            "OMQo6YMZYzo"
-        ],
-        "19f5b0a96b3c749e": [
-            "2ZacwCbiLjg"
-        ],
-        "19f5b09821ff0021": [
-            "EJm8Ka-gVOc"
-        ],
-        "19f5b052ed3047d1": [
-            "yzlvDnxvi1I"
-        ],
-        "19f5b0357cf2ffb7": [
-            "bpM9D1kQaAs"
-        ],
-        "19f5b203084c2c89": [
-            "body"
-        ],
-        "19f5d311c413df75": [
-            "body",
-            "2026.07.13 - Hermes vs MCSB Brainstorm.md"
-        ],
-        "19f5d43b4f410ab4": [
-            "skipped-empty"
-        ],
-        "19f4c24bdd03fb8b": [
-            "skipped-auto-digest"
-        ],
-        "19f5a34acc1d49f9": [
-            "skipped-auto-digest"
-        ],
-        "19f5adbf78ebd771": [
-            "skipped-not-self-note"
-        ],
-        "19f64659e68b3a21": [
-            "1RIXGL5Vgag"
-        ],
-        "19f64594bba4f03d": [
-            "1RIXGL5Vgag"
-        ],
-        "19f644d117e01503": [
-            "z9YzRqjJo4k"
-        ],
-        "19f5f91925edbeed": [
-            "UHVFcUzAGlM"
-        ],
-        "19f5f90d24d8ba4c": [
-            "8rVQuZlRaqo"
-        ],
-        "19f5f90357bb285b": [
-            "8rVQuZlRaqo"
-        ],
-        "19f60c1b09aa4a79": [
-            "skipped-auto-digest"
-        ],
-        "19f60c0d160495e4": [
-            "skipped-auto-digest"
-        ],
-        "19f67123d8b15599": [
-            "XeTAlZiIWHE"
-        ],
-        "19f66740b556ecbf": [
-            "bj04doEDOY4"
-        ],
-        "19f655ae1dab0b82": [
-            "G0sUSkRcM3A"
-        ],
-        "19f6554f1484c1b3": [
-            "1RIXGL5Vgag"
-        ],
-        "19f6ecb62bd1b2cc": [
-            "4Kw-AQp8Xkg"
-        ],
-        "19f6d0544c2bd01a": [
-            "b3OiEUp1GIU"
-        ],
-        "19f6bf1381045dd5": [
-            "TsYD0rNDTOA"
-        ],
-        "19f6be2997b0d2d8": [
-            "TsYD0rNDTOA"
-        ],
-        "19f6bcef23a6507e": [
-            "TsYD0rNDTOA"
-        ],
-        "19f6bce3d4495558": [
-            "4C2w8eIG48A"
-        ],
-        "19f6bab69e96e15d": [
-            "B35SWx_4BNM"
-        ],
-        "19f6b9202cf97084": [
-            "gUv7VqcRzok"
-        ],
-        "19f6b70ede513d34": [
-            "20260716_145651.jpg"
-        ],
-        "19f69aa133ee882c": [
-            "skipped-auto-digest"
-        ],
-        "19f69a9d2b619fd0": [
-            "skipped-auto-digest"
-        ],
-        "19f5f597309349b7": [
-            "skipped-auto-digest"
-        ],
-        "19f5b98fadb5707b": [
-            "skipped-auto-digest"
-        ],
-        "19f5b9896ad0f9c0": [
-            "skipped-auto-digest"
-        ],
-        "19f69a9a36bee1a3": [
-            "skipped-auto-digest"
-        ],
-        "19f69a8ee1b0cb27": [
-            "skipped-auto-digest"
-        ],
-        "19f73fbaf8a06018": [
-            "PELnAZ4yeig"
-        ],
-        "19f73f8bc6070846": [
-            "ye5sr67Jo5U"
-        ],
-        "19f73ebcbbcd03c6": [
-            "vCyENfxgyYA"
-        ],
-        "19f73e711b7eef8c": [
-            "V1SWuUosVMI"
-        ],
-        "19f71240f8b9bdb5": [
-            "lmmgzIuWEbk"
-        ],
-        "19f7100c785a43dd": [
-            "tgoMkQxGOVw"
-        ],
-        "19f746a25c3e54ba": [
-            "body"
-        ],
-        "19f712fca44f16df": [
-            "Pay_17072026_HARRY_NA.pdf"
-        ],
-        "19f70f0b0b0e698d": [
-            "skipped-auto-digest"
-        ],
-        "19f70eff941fd9e6": [
-            "skipped-auto-digest"
-        ],
-        "19f6ed581d17fe1e": [
-            "skipped-auto-digest"
-        ],
-        "19f6ed5436aa5884": [
-            "skipped-auto-digest"
-        ],
-        "19f6eddd45438366": [
-            "skipped-auto-digest"
-        ],
-        "19f6ed9b85783d4b": [
-            "skipped-auto-digest"
-        ],
-        "19f6ed8790029f1b": [
-            "skipped-auto-digest"
-        ],
-        "19f7744266d7d4c3": [
-            "k74RUCqv0Jk"
-        ],
-        "19f774425d599c73": [
-            "5H-s-TIO0QE"
-        ],
-        "19f7700c7d87c2b4": [
-            "FovWUk7WbAQ"
-        ],
-        "19f76ffe8f9132f7": [
-            "hHNDgjan15c"
-        ],
-        "19f76d0cf974c994": [
-            "ShfBNXm9pe8"
-        ],
-        "19f7624e989ac62b": [
-            "0-QDPnEIkvw"
-        ],
-        "19f7e2b4f4d62b7c": [
-            "5H-s-TIO0QE"
-        ],
-        "19f7e2088c231d34": [
-            "TBKjg9ObgY4"
-        ],
-        "19f7e1ded0c62dd8": [
-            "4C2w8eIG48A"
-        ],
-        "19f7e11cf01f61c1": [
-            "4C2w8eIG48A"
-        ],
-        "19f7e1172b9ae45b": [
-            "KekL4cLtpuc"
-        ],
-        "19f7e0c32038a8c9": [
-            "1RIXGL5Vgag"
-        ],
-        "19f7e0c339fbcd18": [
-            "T3K9r3wDoO8"
-        ],
-        "19f7c0745ce364d2": [
-            "A2ZXEE_fvqM"
-        ],
-        "19f7c07423051315": [
-            "FovWUk7WbAQ"
-        ],
-        "19f7bfc7b16ad3ff": [
-            "IF6UdjjiHh0"
-        ],
-        "19f79d4590264347": [
-            "BewIlG8wLAM"
-        ],
-        "19f834f83a14e8aa": [
-            "y-ixvCfMaEs"
-        ],
-        "19f81632f4287ed1": [
-            "zXysLUTLjw4"
-        ],
-        "19f812c7d8b3531c": [
-            "QFcOq_0YIwY"
-        ],
-        "19f8119d249fe0e0": [
-            "GtcqpLtb9TY"
-        ],
-        "19f8118141c277a0": [
-            "v79Pp8DF2Po"
-        ],
-        "19f81177dc0221a7": [
-            "LbWcBObvcnI"
-        ],
-        "19f7fa6094d662ad": [
-            "N9lHR0iDQUE"
-        ],
-        "19f7fa6058fbfb8d": [
-            "N9lHR0iDQUE"
-        ],
-        "19f7fa6074d7f6a7": [
-            "fmYn6ODiISA"
-        ],
-        "19f7e3d08abedab8": [
-            "skipped-auto-digest"
-        ],
-        "19f886c539152be0": [
-            "Rl7rvHbDqGk"
-        ],
-        "19f88682c82c330e": [
-            "jbiMx17fEK0"
-        ],
-        "19f8864a654e3c5b": [
-            "m2maDNtho7Y"
-        ],
-        "19f8bd98a597314c": [
-            "M4kliMrqbB4"
-        ],
-        "19f8bd5d7476e5a4": [
-            "Hgucu1ch3mo"
-        ],
-        "19f8966fba63edb5": [
-            "YjXxQ85_PUg"
-        ],
-        "19f895330b6d5a06": [
-            "jbiMx17fEK0"
-        ],
-        "19f89f48041a9f38": [
-            "skipped-auto-digest"
-        ],
-        "19f89f3aa6bf6edc": [
-            "skipped-auto-digest"
-        ],
-        "19f97f6edb0f3f6f": [
-            "S_-uD3GtFno"
-        ],
-        "19f97e0aa7f4c54c": [
-            "Aded2v7_vag"
-        ],
-        "19f97df36df95c5a": [
-            "2SgI1kAczfk"
-        ],
-        "19f960dd8c705453": [
-            "ZKWtJ2GxjPw"
-        ],
-        "19f95d6658f16325": [
-            "6mUScq-6U3U"
-        ],
-        "19f95d23a904b318": [
-            "KMxo3T_MTvY"
-        ],
-        "19f93157de4dd0d4": [
-            "tpLQftkr99o"
-        ],
-        "19f94ae923133578": [
-            "skipped-auto-digest"
-        ],
-        "19f94ae2293d8311": [
-            "skipped-auto-digest"
-        ],
-        "19fa22ecc39f57f5": [
-            "sHZAEBUZlW0"
-        ],
-        "19fa22bb59496671": [
-            "Hv8YGUXZY1g"
-        ],
-        "19fa22a8f630714a": [
-            "i_23KUAEtUM"
-        ],
-        "19fa0605ee4caf3f": [
-            "00UsxuaG-5w"
-        ],
-        "19fa0576fa9c7b55": [
-            "00UsxuaG-5w"
-        ],
-        "19fa03fd8d62f90f": [
-            "Uy3tqFxJFi8"
-        ],
-        "19fa0218d2d89356": [
-            "iXd0t60YmMw"
-        ],
-        "19f9d48d18caa4c5": [
-            "uQV8uEzgxHo"
-        ],
-        "19f9d47ff0b9f4be": [
-            "f8_uF_IDV50"
-        ],
-        "19f9d182beb3600d": [
-            "fN_2c_LPfX0"
-        ],
-        "19f9d122d490cdf2": [
-            "fN_2c_LPfX0"
-        ],
-        "19f9d105cb64d76f": [
-            "6veRn2-zAxI"
-        ],
-        "19f9d04e53923dd9": [
-            "RMazHAOjCGk"
-        ],
-        "19f9cfb6fcdc39e6": [
-            "5H-s-TIO0QE"
-        ],
-        "19f9b6356c9daf71": [
-            "rYUS7ibZhYo"
-        ],
-        "19f9b3608ffacb25": [
-            "uZ4pPPAn-lE"
-        ],
-        "19f9b30b840347cf": [
-            "uZ4pPPAn-lE"
-        ],
-        "19f9aa61cf5182cb": [
-            "UfN4l2yCT54"
-        ],
-        "19f8e38bff2d28f9": [
-            "skipped-auto-digest"
-        ],
-        "19f888ceb3ddaf2b": [
-            "skipped-auto-digest"
-        ],
-        "19f8f1654af6303c": [
-            "skipped-auto-digest"
-        ],
-        "19f8f16bea5cad23": [
-            "skipped-auto-digest"
-        ],
-        "19f92dfbf256bbc5": [
-            "skipped-auto-digest"
-        ],
-        "19f84cae1a595972": [
-            "skipped-auto-digest"
-        ],
-        "19f84ca89bb4c539": [
-            "skipped-auto-digest"
-        ],
-        "19f836c6462afd8d": [
-            "skipped-auto-digest"
-        ],
-        "19fa73b9481f9043": [
-            "rBIeT9iLmnU"
-        ],
-        "19fa7209b37ff6ce": [
-            "rBIeT9iLmnU"
-        ],
-        "19fa5c1c39ca7ae9": [
-            "vI4RdXMSq8c"
-        ],
-        "19fa5c1a9f344179": [
-            "body"
-        ],
-        "19fa5749690252ba": [
-            "qyPCVqFUyDo"
-        ],
-        "19fa52d6254568fd": [
-            "LCqAQjp9TGU"
-        ],
-        "19fa529f02c47981": [
-            "hzLjVBSohcY"
-        ],
-        "19fa529ef0d149b4": [
-            "mJ-qvsxPHpY"
-        ],
-        "19fa4512506f7b26": [
-            "Hgucu1ch3mo"
-        ],
-        "19fa4012aff669d5": [
-            "uQV8uEzgxHo"
-        ],
-        "19fa3ffbb22438e1": [
-            "Hgucu1ch3mo"
-        ],
-        "19fa3fefaf3adddd": [
-            "a9u2yZvsqHA"
-        ],
-        "19fa3fe2ac00f27f": [
-            "z5jZ9lrSpqk"
-        ],
-        "19fa3fd107fd9b47": [
-            "i_23KUAEtUM"
-        ],
-        "19fa3f74042f9fb7": [
-            "i_23KUAEtUM"
-        ],
-        "19fa3f30ea5b631b": [
-            "e9lnsKot_SQ"
-        ],
-        "19fa3f30c64ce4c7": [
-            "YxpCxqIuca4"
-        ],
-        "19fa24c2f46aad1d": [
-            "skipped-auto-digest"
-        ],
-        "19fa24c5993b8db8": [
-            "skipped-auto-digest"
-        ],
-        "19fa3b20355c9002": [
-            "skipped-auto-digest"
-        ],
-        "19fa3b27a3903acc": [
-            "skipped-auto-digest"
-        ],
-        "19fac766610eedeb": [
-            "1RIXGL5Vgag"
-        ],
-        "19fac751c1a23367": [
-            "DoRQo3aGaPY"
-        ],
-        "19fac733354c9538": [
-            "QAj8q91K-H0"
-        ],
-        "19faaf2cb59057ca": [
-            "I5raG0Sb19s"
-        ],
-        "19faaed62b0fb0f7": [
-            "DTVBLbQ1wBQ"
-        ],
-        "19fa88321a3ebf57": [
-            "S_-uD3GtFno"
-        ],
-        "19fa772234dbffa4": [
-            "skipped-auto-digest"
-        ],
-        "19fa7723c9bfd5f9": [
-            "skipped-auto-digest"
-        ],
-        "19fa8dbbc5d2ff7d": [
-            "skipped-auto-digest"
-        ],
-        "19fa8dac5b1e2e53": [
-            "skipped-auto-digest"
-        ],
-        "19fb1a4d25af41da": [
-            "tPh9_Cx4yZY"
-        ],
-        "19faddc09b7a5e04": [
-            "j9rV0b1I3mo"
-        ],
-        "19fb1a4d46ff44b4": [
-            "body"
-        ],
-        "19faffac409224b5": [
-            "2kbINqpluM0"
-        ],
-        "19fafcde6812e277": [
-            "B35SWx_4BNM"
-        ],
-        "19facb9007641d81": [
-            "1RIXGL5Vgag"
-        ],
-        "19fae00c7e6ae23e": [
-            "skipped-auto-digest"
-        ],
-        "19fadfffca3b064a": [
-            "skipped-auto-digest"
-        ],
-        "19fac9996b6260ee": [
-            "skipped-auto-digest"
-        ]
-    }
+ "last_run": "2026-08-01T09:55:00+01:00",
+ "note": "2026-08-01 ~09:50 BST scheduled run (window after:2026/07/30, -label:MCSB-Filed). 34 threads found. RECONCILIATION: an earlier run at ~07:07 on 31 Jul had written notes for 13 threads but never updated this log or applied MCSB-Filed, so those 13 were re-verified against the vault (all present, no duplicates created), logged, labelled and archived. NEW this run: 10 notes filed - 9 YouTube notes into YouTube-Queue (7huCP6RkcY4 Self-Evolving Claude Code Memory; 0TPq43Wpbz0 Karpathy Wiki shipped by Pinecone; OMkdlwZxSt8 Master ALL 7 Levels of Claude Code Memory; INIYTUFZNgg Before a Market Crash; lWEKiak0WVU VS Code for Absolute Beginners [add-to-nblm]; zbmuiaPuiNM Agentic Engineering masterclass [add-to-nblm]; Xt6Bm2dOdzY cottage garden plants; 4l8MXYUqGaA ULTIMATE AI Second Brain [add-to-nblm]; 1FiER-40zng Full Guide Build Your Own AI Second Brain) plus 1 text note in the inbox root (Karpathy - llm-wiki.md repo). 2 re-sends (7huCP6RkcY4, 0TPq43Wpbz0) were appended as extra annotations to the notes just created rather than duplicated. 25 threads labelled MCSB-Filed and archived. Skipped 8 self-forwarded automated reports (AI Security Watch, US Active 10 x2, US Active 10 Yr2 x2, LSE RNS x3) and 1 outbound business email to Azets (bcc to self, matched the search but is not a self-note) - these were logged as skipped but NOT labelled or archived, so they stay in the inbox for Mick. No attachments in scope; nothing pending. Each email produced a single note so no sibling cross-linking was needed. HOUSEKEEPING: zero-byte files .wtest and .wtest2 remain in 00-Inbox from earlier write-permission checks (mount denies unlink); harmless hidden dotfiles, Mick may wish to delete them.",
+ "threads": {
+  "19f3421213ed0761": [
+   "jbHB-rzKBAs"
+  ],
+  "19f3304c2ba9044c": [
+   "iXd0t60YmMw"
+  ],
+  "19f32e9b27497260": [
+   "lqiwQiDglGk"
+  ],
+  "19f3120cf4e12b64": [
+   "Eu49kEwAmOU"
+  ],
+  "19f3163da1679968": [
+   "HgAQOkG_v8c"
+  ],
+  "19f3114f97ba46d0": [
+   "EO2WufLMuh0"
+  ],
+  "19f2c076f20714a1": [
+   "MTousqjQM0w"
+  ],
+  "19f2c0b6f17c0210": [
+   "MTousqjQM0w"
+  ],
+  "19f2df73a6102f9d": [
+   "MTousqjQM0w"
+  ],
+  "19f2bd26a9dbbaf2": [
+   "d2XiTDzoizc"
+  ],
+  "19f2f0abc4dc0b2c": [
+   "body"
+  ],
+  "19f2f52338d99970": [
+   "body",
+   "DIY-Investors-Income-Plan.docx"
+  ],
+  "19f316291668a754": [
+   "n4EVksU_EOs"
+  ],
+  "19f3130bf90b2371": [
+   "dxq7WtWxi44"
+  ],
+  "19f31227914858a0": [
+   "dxq7WtWxi44"
+  ],
+  "19f3121b681ecc79": [
+   "k4sMSsMzX2g"
+  ],
+  "19f3120198d979a0": [
+   "zwl9Uyw2DjA"
+  ],
+  "19f311f4f6141ab8": [
+   "zwl9Uyw2DjA"
+  ],
+  "19f31158e7af32fb": [
+   "ZJQ3q7gSWNE"
+  ],
+  "19f3114f6a01cfab": [
+   "lIQ79IkGpjk"
+  ],
+  "19f2dcbfe6dd9822": [
+   "ASeEk09YTbM"
+  ],
+  "19f2dcaf3d766b00": [
+   "BtqWM3wQLSo"
+  ],
+  "19f3b2ca32ccfe1c": [
+   "kU3qYQ7ACMA"
+  ],
+  "19f3b2b78bc8b2f1": [
+   "STH929HARLo"
+  ],
+  "19f3b28057cd61b4": [
+   "rKV5JcALQoQ"
+  ],
+  "19f3b267b7b4a7e1": [
+   "0TpON5T-Sw4"
+  ],
+  "19f3b24b1be021b0": [
+   "STH929HARLo"
+  ],
+  "19f39884726bd1cc": [
+   "yke4fLQUsh4"
+  ],
+  "19f3984dc8b75347": [
+   "yke4fLQUsh4"
+  ],
+  "19f397fa6edaf9d8": [
+   "yke4fLQUsh4"
+  ],
+  "19f397c7c68f8b52": [
+   "glAoiBWVkmU"
+  ],
+  "19f3865c26c54621": [
+   "TyFLg7XwrA0"
+  ],
+  "19f3853cf8e0e703": [
+   "TyFLg7XwrA0"
+  ],
+  "19f376050453ff37": [
+   "2kbINqpluM0"
+  ],
+  "19f374fdea4682a1": [
+   "qEbZy3gw90w"
+  ],
+  "19f36a5a003ea50e": [
+   "CSA36pM8ga8"
+  ],
+  "19f36a50bc878a07": [
+   "X5h4J_JeZ8A"
+  ],
+  "19f36a3de7039e69": [
+   "9nTG1B1No_E"
+  ],
+  "19f4ab179f2d30f2": [
+   "glAoiBWVkmU"
+  ],
+  "19f4aaf21b2ea4db": [
+   "glAoiBWVkmU"
+  ],
+  "19f49006c7465fba": [
+   "R_tuS9sWJEk"
+  ],
+  "19f457b1d212f390": [
+   "9MXSuCSktCw"
+  ],
+  "19f455a2d5f35e75": [
+   "4C2w8eIG48A"
+  ],
+  "19f454d029506639": [
+   "B35SWx_4BNM"
+  ],
+  "19f43efe464d7f3e": [
+   "B35SWx_4BNM"
+  ],
+  "19f43be97dc2830a": [
+   "HuREI6lks4s"
+  ],
+  "19f43bcd7b8bc9cb": [
+   "a1FDaoF8Jog"
+  ],
+  "19f43bba69d41323": [
+   "AvliytN6xKU"
+  ],
+  "19f439306dfb36e2": [
+   "GaYbwONmjSE"
+  ],
+  "19f437c878e9b920": [
+   "raTGrL2MGxg"
+  ],
+  "19f3d1d1991680a8": [
+   "-rkdt--Q4KM"
+  ],
+  "19f3c7c3d5b8602e": [
+   "EPeP9xFrtP0"
+  ],
+  "19f3c79316029164": [
+   "MsZEjmfeAzA"
+  ],
+  "19f3c78493016c8e": [
+   "R2-Y1Hjwx2U"
+  ],
+  "19f3c765fd6401b4": [
+   "xqGCbEDbny8"
+  ],
+  "19f3bb6a1e398c84": [
+   "EPeP9xFrtP0"
+  ],
+  "19f3d12d938505bb": [
+   "body"
+  ],
+  "19f3d0f36ed210a8": [
+   "body"
+  ],
+  "19f43d009bfbcd04": [
+   "body",
+   "2026.07.08 - RPA and AI Automation Listed Companies Report.docx"
+  ],
+  "19f3ce2162c386d9": [
+   "20260703_182811.jpg"
+  ],
+  "19f5013deff98235": [
+   "EJm8Ka-gVOc"
+  ],
+  "19f5012ec7414d29": [
+   "v_E42FkgH2I"
+  ],
+  "19f501254c19f1ab": [
+   "mpUq6NMDb5E"
+  ],
+  "19f5011e57048607": [
+   "L0tQrTQBmjI"
+  ],
+  "19f50117058547ec": [
+   "ubxDCAtYQwE"
+  ],
+  "19f501108b6c1e6c": [
+   "gb5TlGw6Uks"
+  ],
+  "19f501096913440a": [
+   "mTYxpIRK7xA"
+  ],
+  "19f500fe063d21d8": [
+   "Owv503rTqYY"
+  ],
+  "19f4fe5f894f6782": [
+   "SpEwNq9H23w"
+  ],
+  "19f4fe54fc79a305": [
+   "6GtF_uHbGhw"
+  ],
+  "19f4fd7d0972090b": [
+   "4KXLW9Y1r4c"
+  ],
+  "19f4fcc9c67186aa": [
+   "D3dQqqDx2V4"
+  ],
+  "19f4fc94343e58d1": [
+   "gYzlgK5Dw1s"
+  ],
+  "19f4fa10882003b8": [
+   "OMQo6YMZYzo"
+  ],
+  "19f4e15d818dcc40": [
+   "40GPEEj3ijg"
+  ],
+  "19f4bf13e933dd13": [
+   "WlorPYYgvUQ"
+  ],
+  "19f4beea14d7f628": [
+   "xnq1ZURgKbk"
+  ],
+  "19f4bea8c736f889": [
+   "GqBIt3u26do"
+  ],
+  "19f4adb3a1c085d8": [
+   "w0S-khYCaB4"
+  ],
+  "19f4fbf34c131121": [
+   "2026.07.11 - Hermes - A Guide for DIY Investors.docx"
+  ],
+  "19f5275b52af0f4a": [
+   "mTYxpIRK7xA"
+  ],
+  "19f59f0341b559f1": [
+   "n32qq7Kwzh0"
+  ],
+  "19f584c56d8fd92a": [
+   "Xv36Z65VPv0"
+  ],
+  "19f577e09f1caaab": [
+   "Xv36Z65VPv0"
+  ],
+  "19f5775f1650b046": [
+   "yzlvDnxvi1I"
+  ],
+  "19f5773e66121db7": [
+   "Xv36Z65VPv0"
+  ],
+  "19f5770f500c88c2": [
+   "yaMcm3sQswc"
+  ],
+  "19f575f447a21585": [
+   "cQqOkx5qnWo"
+  ],
+  "19f5d3872d4458c9": [
+   "9CiOwbmOKdU"
+  ],
+  "19f5d07f72c5d669": [
+   "k5NhsF7t68M"
+  ],
+  "19f5d064c9833972": [
+   "6MBq1paspVU"
+  ],
+  "19f5b68625bb7d88": [
+   "-h7ZAuuNDLE"
+  ],
+  "19f5b674b7705d1e": [
+   "n4EVksU_EOs"
+  ],
+  "19f5b51a633eb748": [
+   "iXd0t60YmMw"
+  ],
+  "19f5b10432a17602": [
+   "nN6DZi_fiSo"
+  ],
+  "19f5b0f67d13c198": [
+   "JZWJzSSHYqU"
+  ],
+  "19f5b0e53afdd5ee": [
+   "-h7ZAuuNDLE"
+  ],
+  "19f5b0d9a1f0d8b8": [
+   "1MaFErWfL24"
+  ],
+  "19f5b0cbb5f8dba5": [
+   "GCZseZzrrW0"
+  ],
+  "19f5b0bbd04cc44d": [
+   "I9W6NhFkGAI"
+  ],
+  "19f5b0b35db1863a": [
+   "OMQo6YMZYzo"
+  ],
+  "19f5b0a96b3c749e": [
+   "2ZacwCbiLjg"
+  ],
+  "19f5b09821ff0021": [
+   "EJm8Ka-gVOc"
+  ],
+  "19f5b052ed3047d1": [
+   "yzlvDnxvi1I"
+  ],
+  "19f5b0357cf2ffb7": [
+   "bpM9D1kQaAs"
+  ],
+  "19f5b203084c2c89": [
+   "body"
+  ],
+  "19f5d311c413df75": [
+   "body",
+   "2026.07.13 - Hermes vs MCSB Brainstorm.md"
+  ],
+  "19f5d43b4f410ab4": [
+   "skipped-empty"
+  ],
+  "19f4c24bdd03fb8b": [
+   "skipped-auto-digest"
+  ],
+  "19f5a34acc1d49f9": [
+   "skipped-auto-digest"
+  ],
+  "19f5adbf78ebd771": [
+   "skipped-not-self-note"
+  ],
+  "19f64659e68b3a21": [
+   "1RIXGL5Vgag"
+  ],
+  "19f64594bba4f03d": [
+   "1RIXGL5Vgag"
+  ],
+  "19f644d117e01503": [
+   "z9YzRqjJo4k"
+  ],
+  "19f5f91925edbeed": [
+   "UHVFcUzAGlM"
+  ],
+  "19f5f90d24d8ba4c": [
+   "8rVQuZlRaqo"
+  ],
+  "19f5f90357bb285b": [
+   "8rVQuZlRaqo"
+  ],
+  "19f60c1b09aa4a79": [
+   "skipped-auto-digest"
+  ],
+  "19f60c0d160495e4": [
+   "skipped-auto-digest"
+  ],
+  "19f67123d8b15599": [
+   "XeTAlZiIWHE"
+  ],
+  "19f66740b556ecbf": [
+   "bj04doEDOY4"
+  ],
+  "19f655ae1dab0b82": [
+   "G0sUSkRcM3A"
+  ],
+  "19f6554f1484c1b3": [
+   "1RIXGL5Vgag"
+  ],
+  "19f6ecb62bd1b2cc": [
+   "4Kw-AQp8Xkg"
+  ],
+  "19f6d0544c2bd01a": [
+   "b3OiEUp1GIU"
+  ],
+  "19f6bf1381045dd5": [
+   "TsYD0rNDTOA"
+  ],
+  "19f6be2997b0d2d8": [
+   "TsYD0rNDTOA"
+  ],
+  "19f6bcef23a6507e": [
+   "TsYD0rNDTOA"
+  ],
+  "19f6bce3d4495558": [
+   "4C2w8eIG48A"
+  ],
+  "19f6bab69e96e15d": [
+   "B35SWx_4BNM"
+  ],
+  "19f6b9202cf97084": [
+   "gUv7VqcRzok"
+  ],
+  "19f6b70ede513d34": [
+   "20260716_145651.jpg"
+  ],
+  "19f69aa133ee882c": [
+   "skipped-auto-digest"
+  ],
+  "19f69a9d2b619fd0": [
+   "skipped-auto-digest"
+  ],
+  "19f5f597309349b7": [
+   "skipped-auto-digest"
+  ],
+  "19f5b98fadb5707b": [
+   "skipped-auto-digest"
+  ],
+  "19f5b9896ad0f9c0": [
+   "skipped-auto-digest"
+  ],
+  "19f69a9a36bee1a3": [
+   "skipped-auto-digest"
+  ],
+  "19f69a8ee1b0cb27": [
+   "skipped-auto-digest"
+  ],
+  "19f73fbaf8a06018": [
+   "PELnAZ4yeig"
+  ],
+  "19f73f8bc6070846": [
+   "ye5sr67Jo5U"
+  ],
+  "19f73ebcbbcd03c6": [
+   "vCyENfxgyYA"
+  ],
+  "19f73e711b7eef8c": [
+   "V1SWuUosVMI"
+  ],
+  "19f71240f8b9bdb5": [
+   "lmmgzIuWEbk"
+  ],
+  "19f7100c785a43dd": [
+   "tgoMkQxGOVw"
+  ],
+  "19f746a25c3e54ba": [
+   "body"
+  ],
+  "19f712fca44f16df": [
+   "Pay_17072026_HARRY_NA.pdf"
+  ],
+  "19f70f0b0b0e698d": [
+   "skipped-auto-digest"
+  ],
+  "19f70eff941fd9e6": [
+   "skipped-auto-digest"
+  ],
+  "19f6ed581d17fe1e": [
+   "skipped-auto-digest"
+  ],
+  "19f6ed5436aa5884": [
+   "skipped-auto-digest"
+  ],
+  "19f6eddd45438366": [
+   "skipped-auto-digest"
+  ],
+  "19f6ed9b85783d4b": [
+   "skipped-auto-digest"
+  ],
+  "19f6ed8790029f1b": [
+   "skipped-auto-digest"
+  ],
+  "19f7744266d7d4c3": [
+   "k74RUCqv0Jk"
+  ],
+  "19f774425d599c73": [
+   "5H-s-TIO0QE"
+  ],
+  "19f7700c7d87c2b4": [
+   "FovWUk7WbAQ"
+  ],
+  "19f76ffe8f9132f7": [
+   "hHNDgjan15c"
+  ],
+  "19f76d0cf974c994": [
+   "ShfBNXm9pe8"
+  ],
+  "19f7624e989ac62b": [
+   "0-QDPnEIkvw"
+  ],
+  "19f7e2b4f4d62b7c": [
+   "5H-s-TIO0QE"
+  ],
+  "19f7e2088c231d34": [
+   "TBKjg9ObgY4"
+  ],
+  "19f7e1ded0c62dd8": [
+   "4C2w8eIG48A"
+  ],
+  "19f7e11cf01f61c1": [
+   "4C2w8eIG48A"
+  ],
+  "19f7e1172b9ae45b": [
+   "KekL4cLtpuc"
+  ],
+  "19f7e0c32038a8c9": [
+   "1RIXGL5Vgag"
+  ],
+  "19f7e0c339fbcd18": [
+   "T3K9r3wDoO8"
+  ],
+  "19f7c0745ce364d2": [
+   "A2ZXEE_fvqM"
+  ],
+  "19f7c07423051315": [
+   "FovWUk7WbAQ"
+  ],
+  "19f7bfc7b16ad3ff": [
+   "IF6UdjjiHh0"
+  ],
+  "19f79d4590264347": [
+   "BewIlG8wLAM"
+  ],
+  "19f834f83a14e8aa": [
+   "y-ixvCfMaEs"
+  ],
+  "19f81632f4287ed1": [
+   "zXysLUTLjw4"
+  ],
+  "19f812c7d8b3531c": [
+   "QFcOq_0YIwY"
+  ],
+  "19f8119d249fe0e0": [
+   "GtcqpLtb9TY"
+  ],
+  "19f8118141c277a0": [
+   "v79Pp8DF2Po"
+  ],
+  "19f81177dc0221a7": [
+   "LbWcBObvcnI"
+  ],
+  "19f7fa6094d662ad": [
+   "N9lHR0iDQUE"
+  ],
+  "19f7fa6058fbfb8d": [
+   "N9lHR0iDQUE"
+  ],
+  "19f7fa6074d7f6a7": [
+   "fmYn6ODiISA"
+  ],
+  "19f7e3d08abedab8": [
+   "skipped-auto-digest"
+  ],
+  "19f886c539152be0": [
+   "Rl7rvHbDqGk"
+  ],
+  "19f88682c82c330e": [
+   "jbiMx17fEK0"
+  ],
+  "19f8864a654e3c5b": [
+   "m2maDNtho7Y"
+  ],
+  "19f8bd98a597314c": [
+   "M4kliMrqbB4"
+  ],
+  "19f8bd5d7476e5a4": [
+   "Hgucu1ch3mo"
+  ],
+  "19f8966fba63edb5": [
+   "YjXxQ85_PUg"
+  ],
+  "19f895330b6d5a06": [
+   "jbiMx17fEK0"
+  ],
+  "19f89f48041a9f38": [
+   "skipped-auto-digest"
+  ],
+  "19f89f3aa6bf6edc": [
+   "skipped-auto-digest"
+  ],
+  "19f97f6edb0f3f6f": [
+   "S_-uD3GtFno"
+  ],
+  "19f97e0aa7f4c54c": [
+   "Aded2v7_vag"
+  ],
+  "19f97df36df95c5a": [
+   "2SgI1kAczfk"
+  ],
+  "19f960dd8c705453": [
+   "ZKWtJ2GxjPw"
+  ],
+  "19f95d6658f16325": [
+   "6mUScq-6U3U"
+  ],
+  "19f95d23a904b318": [
+   "KMxo3T_MTvY"
+  ],
+  "19f93157de4dd0d4": [
+   "tpLQftkr99o"
+  ],
+  "19f94ae923133578": [
+   "skipped-auto-digest"
+  ],
+  "19f94ae2293d8311": [
+   "skipped-auto-digest"
+  ],
+  "19fa22ecc39f57f5": [
+   "sHZAEBUZlW0"
+  ],
+  "19fa22bb59496671": [
+   "Hv8YGUXZY1g"
+  ],
+  "19fa22a8f630714a": [
+   "i_23KUAEtUM"
+  ],
+  "19fa0605ee4caf3f": [
+   "00UsxuaG-5w"
+  ],
+  "19fa0576fa9c7b55": [
+   "00UsxuaG-5w"
+  ],
+  "19fa03fd8d62f90f": [
+   "Uy3tqFxJFi8"
+  ],
+  "19fa0218d2d89356": [
+   "iXd0t60YmMw"
+  ],
+  "19f9d48d18caa4c5": [
+   "uQV8uEzgxHo"
+  ],
+  "19f9d47ff0b9f4be": [
+   "f8_uF_IDV50"
+  ],
+  "19f9d182beb3600d": [
+   "fN_2c_LPfX0"
+  ],
+  "19f9d122d490cdf2": [
+   "fN_2c_LPfX0"
+  ],
+  "19f9d105cb64d76f": [
+   "6veRn2-zAxI"
+  ],
+  "19f9d04e53923dd9": [
+   "RMazHAOjCGk"
+  ],
+  "19f9cfb6fcdc39e6": [
+   "5H-s-TIO0QE"
+  ],
+  "19f9b6356c9daf71": [
+   "rYUS7ibZhYo"
+  ],
+  "19f9b3608ffacb25": [
+   "uZ4pPPAn-lE"
+  ],
+  "19f9b30b840347cf": [
+   "uZ4pPPAn-lE"
+  ],
+  "19f9aa61cf5182cb": [
+   "UfN4l2yCT54"
+  ],
+  "19f8e38bff2d28f9": [
+   "skipped-auto-digest"
+  ],
+  "19f888ceb3ddaf2b": [
+   "skipped-auto-digest"
+  ],
+  "19f8f1654af6303c": [
+   "skipped-auto-digest"
+  ],
+  "19f8f16bea5cad23": [
+   "skipped-auto-digest"
+  ],
+  "19f92dfbf256bbc5": [
+   "skipped-auto-digest"
+  ],
+  "19f84cae1a595972": [
+   "skipped-auto-digest"
+  ],
+  "19f84ca89bb4c539": [
+   "skipped-auto-digest"
+  ],
+  "19f836c6462afd8d": [
+   "skipped-auto-digest"
+  ],
+  "19fa73b9481f9043": [
+   "rBIeT9iLmnU"
+  ],
+  "19fa7209b37ff6ce": [
+   "rBIeT9iLmnU"
+  ],
+  "19fa5c1c39ca7ae9": [
+   "vI4RdXMSq8c"
+  ],
+  "19fa5c1a9f344179": [
+   "body"
+  ],
+  "19fa5749690252ba": [
+   "qyPCVqFUyDo"
+  ],
+  "19fa52d6254568fd": [
+   "LCqAQjp9TGU"
+  ],
+  "19fa529f02c47981": [
+   "hzLjVBSohcY"
+  ],
+  "19fa529ef0d149b4": [
+   "mJ-qvsxPHpY"
+  ],
+  "19fa4512506f7b26": [
+   "Hgucu1ch3mo"
+  ],
+  "19fa4012aff669d5": [
+   "uQV8uEzgxHo"
+  ],
+  "19fa3ffbb22438e1": [
+   "Hgucu1ch3mo"
+  ],
+  "19fa3fefaf3adddd": [
+   "a9u2yZvsqHA"
+  ],
+  "19fa3fe2ac00f27f": [
+   "z5jZ9lrSpqk"
+  ],
+  "19fa3fd107fd9b47": [
+   "i_23KUAEtUM"
+  ],
+  "19fa3f74042f9fb7": [
+   "i_23KUAEtUM"
+  ],
+  "19fa3f30ea5b631b": [
+   "e9lnsKot_SQ"
+  ],
+  "19fa3f30c64ce4c7": [
+   "YxpCxqIuca4"
+  ],
+  "19fa24c2f46aad1d": [
+   "skipped-auto-digest"
+  ],
+  "19fa24c5993b8db8": [
+   "skipped-auto-digest"
+  ],
+  "19fa3b20355c9002": [
+   "skipped-auto-digest"
+  ],
+  "19fa3b27a3903acc": [
+   "skipped-auto-digest"
+  ],
+  "19fac766610eedeb": [
+   "1RIXGL5Vgag"
+  ],
+  "19fac751c1a23367": [
+   "DoRQo3aGaPY"
+  ],
+  "19fac733354c9538": [
+   "QAj8q91K-H0"
+  ],
+  "19faaf2cb59057ca": [
+   "I5raG0Sb19s"
+  ],
+  "19faaed62b0fb0f7": [
+   "DTVBLbQ1wBQ"
+  ],
+  "19fa88321a3ebf57": [
+   "S_-uD3GtFno"
+  ],
+  "19fa772234dbffa4": [
+   "skipped-auto-digest"
+  ],
+  "19fa7723c9bfd5f9": [
+   "skipped-auto-digest"
+  ],
+  "19fa8dbbc5d2ff7d": [
+   "skipped-auto-digest"
+  ],
+  "19fa8dac5b1e2e53": [
+   "skipped-auto-digest"
+  ],
+  "19fb1a4d25af41da": [
+   "tPh9_Cx4yZY"
+  ],
+  "19faddc09b7a5e04": [
+   "j9rV0b1I3mo"
+  ],
+  "19fb1a4d46ff44b4": [
+   "body"
+  ],
+  "19faffac409224b5": [
+   "2kbINqpluM0"
+  ],
+  "19fafcde6812e277": [
+   "B35SWx_4BNM"
+  ],
+  "19facb9007641d81": [
+   "1RIXGL5Vgag"
+  ],
+  "19fae00c7e6ae23e": [
+   "skipped-auto-digest"
+  ],
+  "19fadfffca3b064a": [
+   "skipped-auto-digest"
+  ],
+  "19fac9996b6260ee": [
+   "skipped-auto-digest"
+  ],
+  "19fb6f9119118b66": [
+   "7huCP6RkcY4"
+  ],
+  "19fb7011815dc370": [
+   "7huCP6RkcY4-resend"
+  ],
+  "19fb7024d07b6ced": [
+   "0TPq43Wpbz0"
+  ],
+  "19fb7149580a9582": [
+   "0TPq43Wpbz0-resend"
+  ],
+  "19fb74fbab9cb6cb": [
+   "body"
+  ],
+  "19fb755a89350718": [
+   "OMkdlwZxSt8"
+  ],
+  "19fba71185b90455": [
+   "INIYTUFZNgg"
+  ],
+  "19fbbf48a015c846": [
+   "lWEKiak0WVU"
+  ],
+  "19fbbf7e21b68627": [
+   "zbmuiaPuiNM"
+  ],
+  "19fbbfb2b1ed2836": [
+   "Xt6Bm2dOdzY"
+  ],
+  "19fbc0c905bfa3d5": [
+   "4l8MXYUqGaA"
+  ],
+  "19fbc0e9a11bb157": [
+   "1FiER-40zng"
+  ],
+  "19fb6b99f9a3a529": [
+   "dxq7WtWxi44-resend"
+  ],
+  "19fb69aac58e746f": [
+   "dxq7WtWxi44-resend"
+  ],
+  "19fb6982a410ce51": [
+   "dxq7WtWxi44-resend"
+  ],
+  "19fb68f52169c291": [
+   "R-5_2nsF_ZM"
+  ],
+  "19fb536e86826b7f": [
+   "8JWhwhxWtJw-resend"
+  ],
+  "19fb52f81980e203": [
+   "8JWhwhxWtJw"
+  ],
+  "19fb5285b2a87d65": [
+   "qWX-Rl56vr4"
+  ],
+  "19fb50b431facce0": [
+   "body"
+  ],
+  "19fb4db905619da0": [
+   "2kbINqpluM0-resend"
+  ],
+  "19fb4495af55f818": [
+   "body"
+  ],
+  "19fb3fe8f1f3765b": [
+   "iXd0t60YmMw-resend"
+  ],
+  "19fb3beba1a804ab": [
+   "lsytBlAdJK4"
+  ],
+  "19fb1eee310588bb": [
+   "lsytBlAdJK4-resend"
+  ],
+  "19fb84a6c175b8fa": [
+   "skipped-auto-digest"
+  ],
+  "19fb84c9d067babf": [
+   "skipped-auto-digest"
+  ],
+  "19fb84d8f6f1c9fc": [
+   "skipped-auto-digest"
+  ],
+  "19fb6e6f6802251c": [
+   "skipped-auto-digest"
+  ],
+  "19fb3269519bde1d": [
+   "skipped-auto-digest"
+  ],
+  "19fb325e9e474b2f": [
+   "skipped-auto-digest"
+  ],
+  "19fb1bf8bb6ecc2b": [
+   "skipped-auto-digest"
+  ],
+  "19fb1bf56b515640": [
+   "skipped-auto-digest"
+  ],
+  "19fb95fdf59c12e6": [
+   "skipped-outbound-not-self-note"
+  ]
+ }
 }
