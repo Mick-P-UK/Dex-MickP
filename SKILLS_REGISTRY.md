@@ -2,7 +2,8 @@
 
 **Single source of truth for every skill Mick can run from any runtime.**
 
-- Last updated: 2026-07-31 (added image-cta-overlay v2.0: diagonal CTA overlay for thumbnails, now with the light grey banded house style for dark blue webinar slides. Discovered during the same session that this skill had NEVER been in the vault - it existed only in the Cowork skill store - so it is registered here for the first time.)
+- Last updated: 2026-08-01 (added eom-portfolio-capture v1.0: the month-end ShareScope image grab - four Active 10 portfolios' current-holdings + OCR-cropped month transactions, plus ASX and SP500 verified 12-month charts at two 16:9 sizes, filed into the live folders that feed portfolio-post-creator. Built with Mick this session.)
+- Prior update: 2026-07-31 (added image-cta-overlay v2.0: diagonal CTA overlay for thumbnails, now with the light grey banded house style for dark blue webinar slides. Discovered during the same session that this skill had NEVER been in the vault - it existed only in the Cowork skill store - so it is registered here for the first time.)
 - Maintained by: Cedric (PAIDA)
 - Update rule: see CLAUDE.md "MANDATORY SKILL DEPLOY PROTOCOL". This file MUST be updated on every skill create, rename, version-bump, or deprecation.
 
@@ -55,6 +56,7 @@ Each row tells you four things: who built it, where it lives, how to invoke it, 
 | ai4inv-webinar-processor | /ai4inv or "process [month] webinar" | mick-cedric | V, M, P | active | Monthly AI for Investors webinar pipeline: NotebookLM source + Word user guide + index update |
 | batch-process-webinars | /batch-process-webinars | mick-cedric | V, M | active | Batch version of /process-webinar for an entire archive folder |
 | cedric-note-fetcher | "download the note I emailed myself" / "fetch the Cedric note" | mick-cedric | V, P (M pending) | active | On-demand: fetch a self-sent Gmail attachment to a real file (browser Add-to-Drive then Google Drive connector; decode+validate) |
+| eom-portfolio-capture | "do the end-of-month capture" / "grab the month-end portfolio images" / "run the EOM capture" | mick-cedric | V (+ user-level C:\Users\pavey\.claude\skills; M pending) | active | v1.0 (2026-08-01): month-end ShareScope image grab. One login: 4 Active 10 portfolios (current-holdings screenshot + OCR-cropped month transactions) + ASX & SP500 12-month charts at 1200px/1920px (16:9 JPEG, verified 12m). Files into the six live folders that feed portfolio-post-creator. Scripts eom_capture_full.py (+ --commit) and crop_transactions.py in 04-Projects\2026.04.04-ShareScope-Automation. UPSTREAM of the End-of-Month Portfolio Posting SOP. |
 | gmail-self-notes | "sweep my Gmail notes" / scheduled morning run | mick-cedric | V, P (M pending) | LIVE - scheduled gmail-self-notes-sweep daily ~06:20 (catch-up-on-wake); MCSB-Filed label+archive on success; representative 48h test sweep PASSED. YouTube overlap resolved (vault wins; yt-inbox-sweeper retired for YT; 44 Sheet rows migrated; Sheet archived 2026.07.05). OPEN: 48h backlog backfill; mirror (M) re-sync | Ingest self-sent Gmail into 00-Inbox as Obsidian notes: body text + attachment(md) + YouTube link, shared xref + two-way links, author Mick/MCSB, catch-up-on-wake |
 | logo-masking | "mask the logo" / "remove the branding" | mick-cedric | V, M | active | Remove watermarks/logos from PNG/JPG via auto-sampled colour matching |
 | micks-stocknote | (Micks-View write command) | mick-cedric | V, M | active | Capture brain dump on a stock and write as structured Obsidian note to Micks-View Inbox |

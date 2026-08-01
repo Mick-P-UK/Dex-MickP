@@ -25,14 +25,23 @@ OPTIONS
   --out PATH  --label "TEXT"  --total N  --currency GBP|USD  --base N  --jpg
 """
 
-import numpy as np, argparse, os, re, sys, math
+import numpy as np, argparse, os, re, sys, math, shutil
 from datetime import date
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import pytesseract
 from pytesseract import Output
 
+# Windows Tesseract is installed but usually not on PATH - point pytesseract at it
+# so this formatter runs in a Claude Code Windows session too (fix 2026-08-01).
+if not shutil.which("tesseract"):
+    for _c in (r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+               r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"):
+        if os.path.exists(_c):
+            pytesseract.pytesseract.tesseract_cmd = _c
+            break
+
 RED  = (197, 0, 0)      # title, Total underline, bottom label text
-BLUE = (0, 0, 197)      # box borders + gain line
+BLUE = (0, 0, 197)      # box borders + gain line + Cash underline
 GREY = (128, 128, 128)
 WHITE = (255, 255, 255)
 
@@ -41,9 +50,18 @@ MONTHS = ["January", "February", "March", "April", "May", "June", "July",
 
 
 def font(sz, bold=True):
-    p = ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold
-         else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
-    return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.load_default()
+    # Find a REAL scalable TTF cross-platform. On Windows the Linux DejaVu path does
+    # not exist and PIL's load_default() ignores the size (tiny bitmap), which silently
+    # shrank every label - so try Arial/Segoe on Windows too (fix 2026-08-01).
+    candidates = (["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                   r"C:\Windows\Fonts\arialbd.ttf", r"C:\Windows\Fonts\segoeuib.ttf"]
+                  if bold else
+                  ["/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+                   r"C:\Windows\Fonts\arial.ttf", r"C:\Windows\Fonts\segoeui.ttf"])
+    for p in candidates:
+        if os.path.exists(p):
+            return ImageFont.truetype(p, sz)
+    return ImageFont.load_default()
 
 
 def trunc2(x):
@@ -145,12 +163,16 @@ def read_values(im):
         if m:
             cand.append((float(m.group(1).replace(",", "")),
                          bd['left'][i], bd['top'][i] + 80, bd['width'][i], bd['height'][i]))
-    total, tbbox = None, None
+    total, tbbox, cbbox = None, None, None
     if cand:
-        cand.sort(key=lambda c: c[2])
+        cand.sort(key=lambda c: c[2])          # top -> bottom: Holdings, Cash, Total
         vv, l, tp, wd, ht = cand[-1]
         total, tbbox = vv, (l, tp, l + wd, tp + ht)
-    return dict(currency=currency, portfolio=portfolio, date=datestr, total=total, tbbox=tbbox)
+        if len(cand) >= 2:                     # the row above Total is Cash
+            _, cl, ctp, cwd, cht = cand[-2]
+            cbbox = (cl, ctp, cl + cwd, ctp + cht)
+    return dict(currency=currency, portfolio=portfolio, date=datestr,
+                total=total, tbbox=tbbox, cbbox=cbbox)
 
 
 def build(args):
@@ -161,7 +183,7 @@ def build(args):
     v = read_values(im)
 
     currency = args.currency or v["currency"]
-    sym = "$" if currency == "USD" else "GBP"
+    sym = "$" if currency == "USD" else chr(0xA3)   # pound sign in the rendered image
     total = args.total if args.total is not None else v["total"]
     if total is None:
         sys.exit("ERROR: could not read Total value - pass --total N")
@@ -191,9 +213,14 @@ def build(args):
     canvas.paste(clock, (cw - clock.width - 4, ch + (strip_h - clock.height) // 2))
     draw = ImageDraw.Draw(canvas)
 
+    # Summary underlines, placed BELOW the value (never through it):
+    # blue under the Cash value, red under the Total value.
+    if v.get("cbbox"):
+        x0, _, x1, y1 = v["cbbox"]
+        draw.line([(x0, y1 + 2), (x1, y1 + 2)], fill=BLUE, width=3)
     if v["tbbox"]:
         x0, _, x1, y1 = v["tbbox"]
-        draw.line([(x0, y1 + 1), (x1, y1 + 1)], fill=RED, width=2)
+        draw.line([(x0, y1 + 2), (x1, y1 + 2)], fill=RED, width=3)
 
     avail = cw - clock.width - 16
     bx0 = (avail - (lw + pad * 2)) // 2

@@ -15,3 +15,7 @@
 2026-08-01 11:41 [CREATE] 04-Projects/.../portico/caption_pp1.txt + caption_pp2.txt - Approved captions with timed sign-offs for the live post. Author: Cedric.
 2026-08-01 11:42 [POST] Slack #portico-portfolio-1 + #portico-portfolio-2 - Posted PP1 and PP2 weekend snapshots AS Mick via slack_post_portico.py (first live run of the routine). Author: Cedric. Status: Verified in-channel.
 2026-08-01 11:45 [UPDATE] _handovers/LATEST.md (+ archive/2026.08.01 - 1145 - baton - Portico-WE-portfolios live run + fixes.md) + CEDRIC_MEMORY.md + phraseology reference + PPfolios-to-Slack SKILL (timed sign-off + forward-looking video pointer). Author: Cedric. Status: Handover refreshed.
+2026-08-01 16:16 [CREATE] 04-Projects/2026.04.04-ShareScope-Automation/eom_capture_full.py + crop_transactions.py + format_holdings.py + eom_post_drafts.py + eom_capture_example.py - end-of-month ShareScope capture routine + WP draft poster. Author: Cedric. Status: live (July 2026 run committed).
+2026-08-01 16:16 [CREATE] skills/eom-portfolio-capture/SKILL.md + 06-Resources/SOPs/SOP - End-of-Month ShareScope Capture.md - new skill + SOP (v1.0). Author: Cedric. Status: active.
+2026-08-01 16:16 [UPDATE] skills/portfolio-formatter/annotate_portfolio.py - Windows font + Tesseract, pound sign, blue Cash underline. Author: Cedric. Status: done.
+2026-08-01 16:16 [UPDATE] SKILLS_REGISTRY.md + C:\Vaults\_SOPs\INDEX.md (entries 8+9) + ShareScope-data-cmd-Reference.md + CEDRIC_MEMORY.md + _handovers/LATEST.md. Author: Cedric. Status: done.
