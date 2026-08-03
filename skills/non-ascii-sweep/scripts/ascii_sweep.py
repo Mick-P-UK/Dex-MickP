@@ -135,6 +135,15 @@ def clean_full(t):
     return ''.join(c for c in s if ord(c) < 128)
 
 CURR = {0x00A3, 0x20AC, 0x00A2, 0x00A5, 0x20B9}
+
+# Code points that are legitimate content, NOT corruption, and must never be
+# flagged for review in the scan/safe report tally. Kept as code points (not
+# literals) so this file stays pure ASCII. Mick's standing decisions:
+#   0x00A3 = pound sign - legitimate GBP price notation (2026.08.02).
+#   0x00A2 = cent sign  - legitimate price data too (2026.08.02).
+# Leave these as-is; do not surface them for review every week.
+REVIEW_IGNORE = {0x00A3, 0x00A2}
+
 def bucket(ch):
     o = ord(ch)
     if o in CURR: return 'currency'
@@ -224,7 +233,8 @@ def main():
                 errors.append((rel, str(e))); continue
 
         for ch in newt:
-            if ord(ch) >= 128:
+            o = ord(ch)
+            if o >= 128 and o not in REVIEW_IGNORE:
                 remaining[bucket(ch)] += 1
                 remaining_files[rel] += 1
 

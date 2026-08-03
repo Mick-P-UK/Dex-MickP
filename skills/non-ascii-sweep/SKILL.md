@@ -52,6 +52,32 @@ the 2026.07.11 full clean; turns that one-off job into a repeatable, ASCII-safe 
 - Files that cannot be decoded as text (corrupt binaries, Word/temp files) are listed
   in the report and left alone - they are safe to delete by hand if unwanted.
 
+## Known-legitimate non-ASCII - do NOT flag or convert (added 2026.08.02)
+
+Some non-ASCII is meaningful content, not corruption. When relaying a SAFE-mode
+summary, do NOT raise these for review and do NOT "fix" them - they are correct:
+
+- Pound sign (U+00A3, the GBP currency symbol) in prices - share prices, market
+  caps, AISC figures, targets - throughout the research notes and the
+  company-research template. Mick's standing decision (2026.08.02): leave every
+  pound sign as-is. Do NOT convert it to "GBP", including in FULL mode, without a
+  fresh explicit go-ahead. It is data, not corruption, and the pound sign does NOT
+  cause the Obsidian/Dex UnicodeDecodeError this sweep exists to prevent (that is
+  caused by cp1252 smart quotes, em/en dashes and ellipsis).
+- Cent sign (U+00A2) - legitimate price data (Mick's decision 2026.08.02). Same
+  treatment as the pound sign: never flag it for review, leave it as-is.
+- Accented letters inside machine-generated artefacts - the three Portico mapping
+  HTML snapshots (portico/mapping/*.html) and the ShareScope CSV downloads. These
+  are captured web pages and raw data exports, not notes; transliterating them
+  risks changing data. Leave them alone.
+
+The real targets are unchanged: cp1252 smart quotes, em/en dashes, ellipsis,
+non-breaking spaces, bullets, arrows, box-drawing, U+FFFD. Keep fixing those in
+SAFE mode. (Done 2026.08.02: the script excludes pound (U+00A3) and cent (U+00A2)
+from the scan/safe review tally via the REVIEW_IGNORE set, so they no longer
+appear in the weekly report. Any other currency - yen, euro, rupee - is still
+reported. To silence one of those too, add its code point to REVIEW_IGNORE.)
+
 ## Design notes (important)
 
 - The script `scripts/ascii_sweep.py` is written in PURE ASCII on purpose: every special

@@ -43,6 +43,7 @@ tasks. Each skill lives in its own subfolder with a SKILL.md file.
 | pptx-editable-graphics | "make an infographic" / "rebuild the graphic as shapes" / "match the deck theme" / "brand this diagram" | Builds slide diagrams and infographics as fully editable native PowerPoint shapes (freeforms, autoshapes, real text boxes) rather than a flat PNG, so pieces can be dragged apart for build animations, recoloured and retyped. Skins the graphic to the correct pack by reading the palette and chrome geometry straight out of the target deck (extract_theme.py) rather than from a stored copy. Ships ppt_shapes.py (block-arc angle conversion, donut adjustments, interlocking jigsaw boundaries, tangential label rotation, and the effectRef fix that kills phantom drop shadows), qa_render.py and a worked concentric-jigsaw example. .ai Webinar palette captured in references/themes.md; Boot Camp and Inner Circle still to do. Created 2026.07.28. |
 | portico-snapshot | "capture the Portico snapshots" / "snapshot PP1 and PP2" / "run the Portico snapshot" | Captures PP1 and PP2 from ShareScope (headed Playwright on mick-pc25) and produces Mick's house-style branded snapshot images plus a week-on-week figures update in portico_history.json. Standalone - runnable any time, not only weekends. Does NOT post to Slack (that is the separate PPfolios-to-Slack skill); the Portico-WE-portfolios SOP chains the two. Lifts the hardened sharescope_portico.py capture + annotate_portico.py formatter. Bases: PP1 29,331.39, PP2 50,000; percentages truncated to 2dp. Dual-written: vault + C:\Users\pavey\.claude\skills. Created 2026.08.01. |
 | PPfolios-to-Slack | "post the PP1 and PP2 snapshots to Slack" / "PPfolios to Slack" / "post the Portico snapshots" | Posts the finished PP1/PP2 snapshot images to #portico-portfolio-1 (C01H7ST4BDK) and #portico-portfolio-2 (C04GZAAPT9U), AS Mick, via slack_post_portico.py using a user token (SLACK_USER_TOKEN in .env, chat:write+files:write user scopes on the "PPfolios Poster" app). Converts PNG to the standard-named JPG, drafts the caption in Mick's house style from PPfolios-Slack-Phraseology-Reference.md + the week-on-week delta, and posts ONLY on Mick's explicit go-ahead (script also gates real channels behind --yes; --channel C0BMFLPKTHS for safe tests to #cedric-private). Second half of the Portico-WE-portfolios SOP. Dual-written: vault + C:\Users\pavey\.claude\skills. Created 2026.08.01. |
+| yt-transcript | "get the transcript of [video]" / "transcribe this YouTube video" / "process my YouTube inbox" / paste a YouTube link | Fetches a YouTube transcript (youtube-transcript-api, no API key) and files it as a note following Mick's Source Template (tags [YT], Reference Link = URL, By = author, sections Summary / Key Takeaways / Notes/Transcript) in 06-Resources/Transcripts. The script (scripts/yt_transcript.py, pure ASCII) does fetch + clean + write; Cedric writes the Summary and Key Takeaways from the transcript. Modes: --url (one or more links/ids) and --scan-inbox (00-Inbox root by default; --include-queue for the 200+ backlog), with dedupe, --dry-run and --force. Near-daily tool. Created 2026.08.02. v1.1 (2026.08.02): INSTALLED AS AN ACCOUNT SKILL - no mirror needed, it now syncs to claude.ai web, Cowork and Claude Code automatically. v1.1 also adds a runtime table and three paths, because testing proved YouTube returns IpBlocked for caption fetches from any datacentre IP (and device_bash has no network), so the script only runs from Mick's home IP: Path A script (Claude Code / Cowork-on-computer), Path B Claude in Chrome capture then Filesystem MCP write (Cowork cloud), Path C paste-and-deliver-a-md-file (claude.ai web). oembed metadata lookup is not blocked and works everywhere. |
 
 ## IMPORTANT: Two Notion Summary Skills
 
@@ -84,16 +85,36 @@ Each skill requires:
 - A subfolder named after the skill (e.g. `skills/my-skill-name/`)
 - A `SKILL.md` file inside it with the standard frontmatter and workflow
 - An entry in this README table
-- A copy placed in `/mnt/skills/user/` to mirror for claude.ai sessions
+- An entry in `SKILLS_REGISTRY.md` at the vault root (the single source of truth)
+- Distribution to the other runtimes - see Skill Locations below
 
 ## Skill Locations
 
-Skills are stored in two places for universal availability:
+Skills reach the other runtimes by one of three routes. Prefer route 2.
 
-1. **This vault** (`skills/`): Version-controlled, available to Claude Desktop,
-   Claude Code, Cowork, and any tool with filesystem access to this vault.
+1. **This vault** (`skills/`): the master copy. Version-controlled, available to Claude
+   Desktop, Claude Code, Cowork, and any tool with filesystem access to this vault.
 
-2. **Mounted skills directory** (`/mnt/skills/user/`): Available to Claude in the
-   browser (claude.ai) and Claude in Chrome sessions.
+2. **Account skill** (PREFERRED, Lives-In code `A`): package the skill folder as a
+   `.skill` file (a zip whose single top-level folder contains SKILL.md and any scripts)
+   and save it to Mick's Claude account. It then syncs to EVERY runtime automatically -
+   claude.ai web, Cowork and Claude Code - and survives across sessions with no
+   per-session step. This replaces the old mirror approach for new work.
+   First skill deployed this way: yt-transcript v1.1, 2026.08.02.
 
-Both locations must be kept in sync when creating or updating skills.
+3. **Mounted skills directory** (`/mnt/skills/user/`, Lives-In code `M`): the legacy
+   mirror. NOTE (verified 2026.08.02): this path does NOT exist in a Cowork cloud
+   container, so it cannot be written from a cloud session. Existing `M` entries stay
+   valid; do not create new ones.
+
+The vault master and whatever is distributed must be kept byte-identical, and verified
+as such before a deployment is declared complete.
+
+## Runtime limits worth knowing
+
+- A Cowork CLOUD session has no outbound access to sites that block datacentre IPs.
+  YouTube caption fetching is the proven case (`IpBlocked`, tested 2026.08.02).
+- `device_bash` runs on Mick's PC but has NO network access at all, so it is not a way
+  round the above. Claude in Chrome is, because it drives Mick's own browser.
+- Skills whose engine needs Mick's home IP or his filesystem should document per-runtime
+  fallback paths rather than simply failing. yt-transcript v1.1 is the pattern to copy.

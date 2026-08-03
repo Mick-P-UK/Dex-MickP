@@ -1,6 +1,6 @@
 {
- "last_run": "2026-08-01T09:55:00+01:00",
- "note": "2026-08-01 ~09:50 BST scheduled run (window after:2026/07/30, -label:MCSB-Filed). 34 threads found. RECONCILIATION: an earlier run at ~07:07 on 31 Jul had written notes for 13 threads but never updated this log or applied MCSB-Filed, so those 13 were re-verified against the vault (all present, no duplicates created), logged, labelled and archived. NEW this run: 10 notes filed - 9 YouTube notes into YouTube-Queue (7huCP6RkcY4 Self-Evolving Claude Code Memory; 0TPq43Wpbz0 Karpathy Wiki shipped by Pinecone; OMkdlwZxSt8 Master ALL 7 Levels of Claude Code Memory; INIYTUFZNgg Before a Market Crash; lWEKiak0WVU VS Code for Absolute Beginners [add-to-nblm]; zbmuiaPuiNM Agentic Engineering masterclass [add-to-nblm]; Xt6Bm2dOdzY cottage garden plants; 4l8MXYUqGaA ULTIMATE AI Second Brain [add-to-nblm]; 1FiER-40zng Full Guide Build Your Own AI Second Brain) plus 1 text note in the inbox root (Karpathy - llm-wiki.md repo). 2 re-sends (7huCP6RkcY4, 0TPq43Wpbz0) were appended as extra annotations to the notes just created rather than duplicated. 25 threads labelled MCSB-Filed and archived. Skipped 8 self-forwarded automated reports (AI Security Watch, US Active 10 x2, US Active 10 Yr2 x2, LSE RNS x3) and 1 outbound business email to Azets (bcc to self, matched the search but is not a self-note) - these were logged as skipped but NOT labelled or archived, so they stay in the inbox for Mick. No attachments in scope; nothing pending. Each email produced a single note so no sibling cross-linking was needed. HOUSEKEEPING: zero-byte files .wtest and .wtest2 remain in 00-Inbox from earlier write-permission checks (mount denies unlink); harmless hidden dotfiles, Mick may wish to delete them.",
+ "last_run": "2026-08-02T09:45:00+01:00",
+ "note": "2026-08-02 ~09:30 BST scheduled run (window after:2026/08/01, -label:MCSB-Filed). 16 threads found, all genuine self-notes, no automated digests in scope. 17 notes filed: 8 text notes in the inbox root (Graphify + Obsidian + Claude Code MCSB candidate; Closing Hambledon Group Ltd working note for Jade; Notes - Simon's one-Cowork-setup-everywhere system; Note to Cedric voice agents; Video editing with Claude background note; Video link for tomorrow transcript needed; Note to Cedric Wanderloots Obsidian Bases + Web Clipper v2; Cedric - Obsidian Web Clipper for YouTube transcripts into MCSB) and 9 YouTube notes in YouTube-Queue (GnA9xjYWHBg Graphify GOD MODE; ChskqGovoHg Open Source Repo Solved Claude Code #1 Problem; 63jRQuGossE BEST Way to Capture Into Obsidian [add-to-nblm]; z02Y-1OvWSM Don't Use Karpathy's Second Brain [add-to-nblm]; KdQwhuxlVok Creating & Using Links in Obsidian; qIWpa582Pso How I Sync One Claude CoWork Setup [add-to-nblm]; mWLDn49_8HA Graphify CHEAT CODE; tg_p9MhTW0w and _dVSjwsgXAo both title-not-fetched watch-queue stubs). 3 emails produced 2 notes each and were cross-linked with two-way related wikilinks. 2 re-sends handled without duplication: qIWpa582Pso (19fbd37d7386de10) folded into the note just created, and AvliytN6xKU (19fbf4cfa4fbd308) appended as an extra annotation to the existing 2026.07.08 Obsidian Bases + Web Clipper (2) note. All 16 threads labelled MCSB-Filed and archived. No attachments in scope; nothing pending. HOUSEKEEPING: zero-byte .wtest and .wtest2 files still present in 00-Inbox from earlier write-permission checks (mount denies unlink); harmless, Mick may wish to delete them.",
  "threads": {
   "19f3421213ed0761": [
    "jbHB-rzKBAs"
@@ -901,6 +901,57 @@
   ],
   "19fb95fdf59c12e6": [
    "skipped-outbound-not-self-note"
+  ],
+  "19fc1644958593d2": [
+   "GnA9xjYWHBg"
+  ],
+  "19fc163f4b62edb9": [
+   "ChskqGovoHg"
+  ],
+  "19fc1579f0f3ce6c": [
+   "body",
+   "mWLDn49_8HA"
+  ],
+  "19fc131da484c862": [
+   "body"
+  ],
+  "19fc11c59a07a5a1": [
+   "body"
+  ],
+  "19fbf83f35823f76": [
+   "body"
+  ],
+  "19fbf7f39fe0a9d4": [
+   "body",
+   "tg_p9MhTW0w"
+  ],
+  "19fbf774c6b50408": [
+   "body",
+   "_dVSjwsgXAo"
+  ],
+  "19fbf5e547853a14": [
+   "body"
+  ],
+  "19fbf57c66e7148a": [
+   "body"
+  ],
+  "19fbf4fcb253bd49": [
+   "63jRQuGossE"
+  ],
+  "19fbf4cfa4fbd308": [
+   "AvliytN6xKU-resend"
+  ],
+  "19fbe43d36c17785": [
+   "z02Y-1OvWSM"
+  ],
+  "19fbd3e1251556d7": [
+   "KdQwhuxlVok"
+  ],
+  "19fbd3ae8c3fad94": [
+   "qIWpa582Pso"
+  ],
+  "19fbd37d7386de10": [
+   "qIWpa582Pso-resend"
   ]
  }
 }

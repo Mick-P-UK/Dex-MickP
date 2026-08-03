@@ -1,8 +1,9 @@
 ---
-"date_created:": "{{date:YYYY.MM.DD}}"
+date_created: "{{date:YYYY.MM.DD}}"
 Category:
 tags:
 Reference Link:
+Channel:
 By:
 status:
 ---
@@ -13,4 +14,4 @@ status:
 ## Key Takeaways
 
 
-## Notes
+## Notes/Transcript
