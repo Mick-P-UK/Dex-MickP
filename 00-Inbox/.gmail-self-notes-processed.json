@@ -1,6 +1,6 @@
 {
- "last_run": "2026-08-02T09:45:00+01:00",
- "note": "2026-08-02 ~09:30 BST scheduled run (window after:2026/08/01, -label:MCSB-Filed). 16 threads found, all genuine self-notes, no automated digests in scope. 17 notes filed: 8 text notes in the inbox root (Graphify + Obsidian + Claude Code MCSB candidate; Closing Hambledon Group Ltd working note for Jade; Notes - Simon's one-Cowork-setup-everywhere system; Note to Cedric voice agents; Video editing with Claude background note; Video link for tomorrow transcript needed; Note to Cedric Wanderloots Obsidian Bases + Web Clipper v2; Cedric - Obsidian Web Clipper for YouTube transcripts into MCSB) and 9 YouTube notes in YouTube-Queue (GnA9xjYWHBg Graphify GOD MODE; ChskqGovoHg Open Source Repo Solved Claude Code #1 Problem; 63jRQuGossE BEST Way to Capture Into Obsidian [add-to-nblm]; z02Y-1OvWSM Don't Use Karpathy's Second Brain [add-to-nblm]; KdQwhuxlVok Creating & Using Links in Obsidian; qIWpa582Pso How I Sync One Claude CoWork Setup [add-to-nblm]; mWLDn49_8HA Graphify CHEAT CODE; tg_p9MhTW0w and _dVSjwsgXAo both title-not-fetched watch-queue stubs). 3 emails produced 2 notes each and were cross-linked with two-way related wikilinks. 2 re-sends handled without duplication: qIWpa582Pso (19fbd37d7386de10) folded into the note just created, and AvliytN6xKU (19fbf4cfa4fbd308) appended as an extra annotation to the existing 2026.07.08 Obsidian Bases + Web Clipper (2) note. All 16 threads labelled MCSB-Filed and archived. No attachments in scope; nothing pending. HOUSEKEEPING: zero-byte .wtest and .wtest2 files still present in 00-Inbox from earlier write-permission checks (mount denies unlink); harmless, Mick may wish to delete them.",
+ "last_run": "2026-08-03T07:55:00+01:00",
+ "note": "2026-08-03 ~07:30-07:55 BST scheduled run (window after:2026/08/02, -label:MCSB-Filed). 22 threads found, all genuine self-notes. 20 notes filed: 14 YouTube notes in YouTube-Queue (m3fqyXZ4k4I Build BEAUTIFUL Diagrams; QHMdkajJ-oQ Mermaid AI Flowcharts; 5ECZraJKFZ0 How I safely connect Claude; uGwDuvSqgYI Cowork Fundamentals in 22 Minutes; UNzCG3lw6O0 Building Great Agent Skills; dtAJ2dOd3ko handoff is my new favourite skill; Jjz4jt9YWGQ Silver's 2011 Cycle; OYiek-08-Lc Claude Code for Beginners [Blueprint Automation Systems]; UHVFcUzAGlM Every Claude Code Memory System Compared [Simon Scrapes]; ib74sLgjIBM Karpathy AI Knowledge Base [Systems Made Better]; eRr2rTKriDM Claude Code + Obsidian [Chase AI]; B35SWx_4BNM Obsidian plus Claude works [Tom, ICOR]; 6MBq1paspVU How I Use Obsidian + Claude Code to Run My Life [Greg Isenberg]; gdrPkpXuNks My Full Claude Cowork Setup [Tina Huang]), 3 text notes in the inbox root (Member query - Claude context window sizes; Cedric - Note - PARA over the flat Karpathy structure via Obsidian Bases; GRAPHIFY - Graphify-Labs repo link) and 3 attachment stub notes in the inbox root (Ruth at Bewdley; Art ref - dahlias; Sunflower). DEDUPE: dtAJ2dOd3ko arrived twice (19fc2caad40769c2 and 19fc2c90ab93caf0) - one note, both annotations folded in. SUPERSEDED: 19fc63aaa5dbf509 (earlier Blueprint OYiek-08-Lc note, 06:55 BST) was NOT filed separately because the 07:06 consolidated version 19fc63aac74d143a explicitly supersedes it; the earlier thread was still labelled and archived, and the supersession is recorded in the filed note. PENDING: the 3 photo attachments (20260718_121253.jpg 3.0MB, 20260724_151655.jpg 2.3MB, 20260724_203536.jpg 2.0MB) were saved to Google Drive via Chrome but the local binaries were NOT written to 00-Inbox/attachments - pulling 6-7MB of base64 through the connector in one run was judged disproportionate. Each stub note carries the Drive file id and view link and status: binary-pending. Their 3 threads (19fc299e537e34e6, 19fc29935fa5b9d7, 19fc298c7c7cf288) were deliberately left UNLABELLED and in the inbox so a later run completes them. 19 threads labelled MCSB-Filed and archived. HOUSEKEEPING: zero-byte .wtest and .wtest2 files still in 00-Inbox from earlier write-permission checks.",
  "threads": {
   "19f3421213ed0761": [
    "jbHB-rzKBAs"
@@ -952,6 +952,72 @@
   ],
   "19fbd37d7386de10": [
    "qIWpa582Pso-resend"
+  ],
+  "19fc644ebe8b72d4": [
+   "m3fqyXZ4k4I"
+  ],
+  "19fc644e99f70eba": [
+   "QHMdkajJ-oQ"
+  ],
+  "19fc63aac74d143a": [
+   "OYiek-08-Lc"
+  ],
+  "19fc63aaa5dbf509": [
+   "OYiek-08-Lc-superseded"
+  ],
+  "19fc626f10ad022b": [
+   "UHVFcUzAGlM"
+  ],
+  "19fc61f7ac117e6e": [
+   "ib74sLgjIBM"
+  ],
+  "19fc60f0146b59e3": [
+   "5ECZraJKFZ0"
+  ],
+  "19fc47470ea36c85": [
+   "body"
+  ],
+  "19fc4533c3a344c3": [
+   "uGwDuvSqgYI"
+  ],
+  "19fc4503bb715137": [
+   "body"
+  ],
+  "19fc43d205eb0dec": [
+   "eRr2rTKriDM"
+  ],
+  "19fc43ac06c74f1b": [
+   "B35SWx_4BNM"
+  ],
+  "19fc43893d2dc896": [
+   "6MBq1paspVU"
+  ],
+  "19fc43891ab6bc35": [
+   "gdrPkpXuNks"
+  ],
+  "19fc2d2542f274eb": [
+   "UNzCG3lw6O0"
+  ],
+  "19fc2caad40769c2": [
+   "dtAJ2dOd3ko"
+  ],
+  "19fc2c90ab93caf0": [
+   "dtAJ2dOd3ko"
+  ],
+  "19fc2c851d107c67": [
+   "Jjz4jt9YWGQ"
+  ],
+  "19fc299e537e34e6": [
+   "20260718_121253.jpg-stub"
+  ],
+  "19fc29935fa5b9d7": [
+   "20260724_151655.jpg-stub"
+  ],
+  "19fc298c7c7cf288": [
+   "20260724_203536.jpg-stub"
+  ],
+  "19fc273b759051ff": [
+   "body"
   ]
  }
 }
