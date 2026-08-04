@@ -1,0 +1,94 @@
+---
+title: Baton Handover -- HOC research run and Ava the Auditor
+date: 2026-08-04
+time: 16:35 (London, BST, verified via code)
+topic: HOC research run and Ava the Auditor
+surface: Claude Code
+working_dir: C:\Vaults (nested vaults Dex-MickP + Writing-System); direct vault writes + Bash/PowerShell; local ShareScope + NotebookLM CLI; git present locally but per Mick's rule Cedric PROVIDES git commands rather than running them - commit/push rides Mick's terminal run
+thread: Full ShareScope + NotebookLM + Ron research run on Hochschild Mining (HOC), then built Ava the Auditor as a permanent audit persona and made her mandatory in SOP #1
+status: handover
+author: Cedric (PAIDA)
+generated-by: AI
+---
+
+# Baton Handover -- HOC research run and Ava the Auditor (2026-08-04 1635)
+
+Topic: [[HOC research run and Ava the Auditor]]
+
+## Thread character
+
+Started as a full research run on Hochschild Mining (HOC, LSE) via SOP #1. Mick
+added an audit requirement (a separate agent to check the calculations, all calcs
+in an appendix). The audit caught a real error, so the thread grew a second half:
+formalising the auditor as a permanent persona, "Ava the Auditor", with an
+editable rulebook, and making her a mandatory step of the pipeline. Ends with a
+members transcript and a Meet Cedric episode for tomorrow's Inner Circle webinar.
+
+## Decisions made
+
+- Audit persona named **Ava** (Mick's choice), deliberately NOT "Annie the Auditor"
+  to avoid clashing with the existing calendar Annie.
+- Ava's persona (stable) is separated from her rules (hot-editable): persona in
+  `.claude/agents/ava.md`; rules pack in `06-Resources/Audit-System/` which Ava
+  re-reads every run, so Mick evolves the audit with no code change.
+- Ava is now a MANDATORY stage: Step 4.5 of canonical SOP #1 (v2.1). Ron's report
+  must carry a Calculations Appendix (Appendix A); Ava's audit is appended as
+  Appendix B.
+- Report types beyond Financial Analysis (Technical Analysis, Production Analysis)
+  are PARKED at Mick's request while he preps the webinar.
+- HOC is HELD OUT of the Notion Research DB and the Meet Cedric episode is HELD OUT
+  of Content Studio until AFTER the 5 Aug Inner Circle webinar (Mick wants to
+  present HOC first).
+- A master agent registry (`06-Resources/AGENTS.md`) is the new who's-who; add a
+  row when any new agent is created.
+
+## The HOC result (for reference)
+
+- Ron: BUY. Anchored to the 430-460p base, stop below 400p, confirmation pivot 500p.
+  FY2025 turnover $1,182m (+24.7pc), gross margin 42.7pc, reported PBT $372.8m.
+- Ava caught a MATERIAL error: price-to-forward-NAV stated 1.87x was a pence-vs-cents
+  mix-up (NAV per share is US cents, not pence); correct ~2.5x, matching ShareScope's
+  own 2.4x. Plus a minor rounding fix and a missing calc-ID. Corrected before issue.
+- Latest news folded in: 22 Jul 2026 H1 production report (net cash $51m from net debt
+  $22.7m; guidance reaffirmed 300-328k GEO; AISC 5-10pc above the $2,157-2,320/GEO guide).
+- Notebook: 6a2ecdfd-dcf8-46a8-a15f-9d72bf60cf9a.
+
+## Files changed this thread
+
+- [CREATE] 06-Resources/Research-Log/Research/HOC/2026.08.04 - HOC - Hochschild Mining - AI - Financial Analysis_v2.md - audited report (Appendix A + B).
+- [CREATE] Documents\...\2026.08.05 - IC.Webnr\HOC - 2026.08.04 - Micks Radar\ - 2nd copy of report + chart PNG + session transcript + Meet Cedric episode.
+- [CREATE] 06-Resources/Research-Log/Companies/HOC - Hochschild Mining.md (via Nina) + [UPDATE] Research-Log/_index.md (22 companies).
+- [CREATE] .claude/agents/ava.md (Dex-MickP + Writing-System).
+- [CREATE] 06-Resources/Audit-System/ (rules.md, examples.md, checklists/financial-analysis.md, README.md).
+- [CREATE] 06-Resources/AGENTS.md.
+- [UPDATE] C:\Vaults\Cowork\ShareScope-Project-Setup\3-SKILL-sharescope-nlm-research.md (SOP #1 v2.1).
+- [UPDATE] C:\Vaults\_SOPs\INDEX.md; CEDRIC_MEMORY.md; auto-memory project_ron_output_checker.md + MEMORY.md.
+
+## Open questions / unfinished
+
+- POST-WEBINAR: log HOC to the Notion Research DB, and log the Meet Cedric episode
+  ("The Team That Audits Itself") to Content Studio (Project = Meet Cedric). Held at
+  Mick's request until after 5 Aug.
+- PARKED: build technical-analysis.md and production-analysis.md checklists for Ava.
+- STALE MIRROR: vault skill skills/sharescope-nlm-research/SKILL.md is still the old
+  Nina-only v1 (no Ron, no Ava) - reconcile up to canonical v2.1 when time allows.
+- Ava as subagent_type "ava" needs a Claude Code restart to load; until then spawn
+  via general-purpose + inline "read your rules pack" prompt (as done this thread).
+- Minor: HOC company profile auto-tagged exchange "LSE:AIM"; HOC is LSE Main Market /
+  FTSE 250 (index set to "LSE"; profile field not corrected).
+- Also still open from the PRIOR baton (webinar-deck-build): the two deck_start
+  defects, the Webinar Deck Build SOP, registry entries, Plaza/AI4Inv configs, and the
+  vault US Active 10 July image overwrite. Not touched this thread.
+
+## Next-thread pickup
+
+- Opener phrase: "Cedric, resume from LATEST handover."
+- First action: if it is after the 5 Aug webinar, offer to log HOC to Notion Research
+  DB + the Meet Cedric episode to Content Studio. Otherwise, either continue the
+  webinar-deck-build fixes (prior baton) or build Ava's technical-analysis /
+  production-analysis checklists when Mick unparks them.
+
+## Content Studio logged
+
+- none this thread (Meet Cedric episode drafted as a vault/Documents file but HELD from
+  Content Studio until after the 5 Aug webinar, per Mick).

@@ -1,4 +1,5 @@
 # CEDRIC MEMORY
+**Last Updated:** 2026.08.04 (Tue, Claude Code, evening 18:19) - MD-TO-DOCX SKILL BUILT (v1.1) + WORD COM INCIDENT. Converted the HOC Hochschild Mining research report MD to a formatted 8-page DOCX (2 tables, 12m chart embedded, provenance footer, ASCII clean) in its project folder, then on Mick's go-ahead promoted the throwaway converter into the md-to-docx skill. v1.0 = md_to_docx.py (markdown to DOCX: Heading styles, native tables, embedded images, lists, hyperlinks, code blocks, page breaks, Ron/Nina **Header:** title convention, provenance footer with --no-footer for press copies). v1.1 same evening = docx_to_pdf.py, a SECOND ENTRY POINT (not a separate skill - deliberate, to avoid the near-duplicate-name discovery failure that hit CREI on 2026-07-22) for any DOCX to PDF, single file or batch, and now the SHARED PDF engine that md_to_docx.py --pdf imports. KEY FINDING: a vault-wide search found NO docx-to-pdf implementation anywhere, despite newsletter SOP v2.0 Phase 5 calling for one since July - it had been improvised every month. That SOP line now points at the script. PDF uses ExportAsFixedFormat not SaveAs, so PDFs carry bookmarks from the Word headings (verified 12 headings to 12 nested bookmarks on HOC), tagged and with doc properties. INCIDENT: Word closed itself on Mick twice-plus this evening - my scripts used Dispatch / New-Object -ComObject Word.Application, which ATTACHES to the running Word (his) and then Quit() closed it, with DisplayAlerts off suppressing save prompts. Fixed to DispatchEx (private instance); the unsafe PowerShell page-count snippet removed from SKILL.md and replaced with a python-docx check plus a do-NOT-do-this warning. Damage check: no saved .docx altered; one pre-existing AutoRecover file from 13:11 (before my activity). NEVER change DispatchEx back to Dispatch.
 **Last Updated:** 2026.08.04 (Tue, Claude Code, afternoon 16:35) - HOC FULL RESEARCH RUN + BUILT AVA THE AUDITOR. Ran SOP #1 on Hochschild Mining (HOC, LSE): auth healed hands-free (Playwright re-export), 6 CSVs + 12m chart, Nina notebook 6a2ecdfd, LSE RNS checked since 11 Mar prelims (22 Jul H1: net cash $51m from net debt $22.7m, AISC 5-10pc above $2,157-2,320/GEO guide, guidance reaffirmed 300-328k GEO), Ron report = BUY (base 430-460p, stop <400p, pivot 500p). NEW: built Ava the Auditor (independent calc-audit persona; chose "Ava" not "Annie" to avoid the calendar-Annie clash) - on the HOC pilot she caught a MATERIAL pence-vs-cents NAV error (1.87x -> ~2.5x, matches ShareScope 2.4x) before issue. Ava now MANDATORY as Step 4.5 of SOP #1 (canonical v2.1). Rules pack 06-Resources/Audit-System/ (rules.md + examples.md + checklists/financial-analysis.md); persona .claude/agents/ava.md (both vaults); master registry 06-Resources/AGENTS.md. Report + 2nd copy (Micks Radar folder) both carry Appendix A (calcs) + Appendix B (audit). HELD: HOC NOT in Notion Research DB and Meet Cedric episode NOT in Content Studio yet - Mick presents HOC at the 5 Aug IC webinar first. TA/production checklists parked; stale vault mirror skills/sharescope-nlm-research/SKILL.md still to reconcile to v2.1.
 **Last Updated:** 2026.08.02 (Sun, Cowork-cloud, evening 19:47) - IC WEBINAR DECK IMAGES + NEW SKILL webinar-deck-build v0.9. Populated the 5 Aug Inner Circle deck (project 2026.08.05 - IC.Webnr): v.01.03 = six 31 July images (ASX 5836.47 down 0.29pc, SP500 7489.72 up 0.70pc, UK A10 +34.06pc, UK A10 Yr2 +61.82pc, US A10 -6.89pc, US A10 Yr2 +79.56pc) onto the blank slides 8/10/12/14/16/18, plus June-style annotation boxes on the two index slides built as NATIVE editable shapes (white fill, 0000FF border 2.25pt, FF0000 bold Arial 15pt); v.01.04 = transactions strips added under UK A10, UK A10 Yr2, US A10. KEY: took images from Documents (authoritative) NOT vault eom/full, which still holds the SUPERSEDED US A10 image reading 698.63 / -6.98pc - vault copy still needs overwriting. US A10 Yr2 has NO July transactions image and that is CORRECT (no trades; cash unchanged at 5471.31) per eom-portfolio-capture. Index charts shrunk to 6.33in high so the caption sits on white rather than over the ADX panel. NEW SKILL webinar-deck-build v0.9 (two commands: start-deck, refresh-images) - refresh-images VERIFIED, reproduced the hand-built deck on 5 of 6 slides from an untouched v.01.02; deck_start has TWO KNOWN DEFECTS documented in SKILL.md (superscript ordinal splits the header date across runs so it is missed; blank-slide band too wide, needs section markers). Webinars are NOT tied to month end - they follow broadcast dates; three types (Inner Circle monthly, Plaza Group quarterly, AI for Investing monthly), each its own template; Plaza has portfolios + index, AI4Inv has index only. Deck work must run on the PC via device shell (61MB decks exceed the cloud transfer cap). STILL TO DO: SOP - Webinar Deck Build, SKILLS_REGISTRY.md + skills/README.md entries, the two deck_start fixes, Plaza/AI4Inv configs.
 **Last Updated:** 2026.08.01 (Sat, Claude Code, evening 18:05) - EOM PORTFOLIO POSTING COMPLETED. Created the remaining THREE Active 10 draft posts to match each June post: US Y1 (15602), UK Yr2 (15597), US Yr2 (15599); UK Y1 (15585) already published by Mick. Fixed a US Y1 image-vs-total discrepancy: the annotation box read 9301.37 / -6.98pc but the ShareScope Total (Holdings + Cash) was 9310.19; on Mick's call re-annotated the image to 689.81 / -6.89pc (format_holdings.py --total on the preserved _raw panel) and used 9310.19 throughout. NEW CONVENTION (Mick): benchmark INDEX values carry NO thousands comma (5350.38); currency/portfolio values keep them (13,406.74). De-comma'd all four live posts, hardened eom_post_drafts.py (idx values :.2f), saved auto-memory index-values-no-thousands-comma.
@@ -55,6 +56,46 @@ carried in memory since 2026.07.09 is now CLOSED; drafts must have existed from 
 **Environment:** Cowork-cloud (this session; device bridge to C:\Vaults + live ShareScope via Playwright MCP on mick-pc25). (Prior sessions: Claude Code CLI, Cowork, Claude Desktop.)
 
 ---
+
+## Recent session: 2026.08.04 (Tuesday, Claude Code, evening) - md-to-docx skill build and the Word COM incident
+
+- **Started as:** "create a Word document from this MD" for the HOC Hochschild Mining
+  research report (in Documents\0.1 - Projects (n)\2026.08.05 - IC.Webnr\HOC -
+  2026.08.04 - Micks Radar). Delivered an 8-page, 3,630-word DOCX beside the markdown:
+  both tables as native Word tables, the 12-month ShareScope chart embedded, headings as
+  real Heading styles, provenance footer, zero non-ASCII. Frontmatter deliberately
+  omitted (machine metadata, not reader-facing).
+- **Grew into:** promoting the one-off converter into a permanent skill, on Mick's
+  "genius idea" go-ahead. md-to-docx v1.0 dual-written vault + user-level, hash-verified,
+  registered in skills/README.md, SKILLS_REGISTRY.md and _SOPs/INDEX.md (entry #10).
+- **Then Mick asked** whether a separate docx-to-pdf skill was needed. Recommendation
+  (accepted): NO separate skill - a second ENTRY POINT in the same skill. Reasons: 50+
+  skills means discovery is the bottleneck, a docx-to-pdf sitting next to md-to-docx is
+  exactly the pair that gets mis-picked (the CREI failure of 2026-07-22), and duplicated
+  Word COM logic drifts. docx_to_pdf.py added and made the shared engine.
+- **Gap found and closed:** no DOCX-to-PDF implementation existed anywhere in the vault,
+  yet newsletter SOP v2.0 Phase 5 has said "Convert final DOCX to PDF (Word COM
+  automation)" since July. It was being re-improvised monthly - Mick said he had noticed
+  exactly that. Phase 5 now names the script and says to run it on the footer-stripped
+  going-to-press DOCX.
+- **Quality decision:** ExportAsFixedFormat, not SaveAs(FileFormat=17), so PDFs get
+  bookmarks built from the Word heading structure (working navigation pane), tagging and
+  document properties. Verified: 12 headings to 12 correctly nested bookmarks.
+- **INCIDENT (worth remembering):** Mick reported Word "closing of its own accord". It
+  was me. Word is a single-instance COM server, so Dispatch / New-Object -ComObject
+  Word.Application attaches to HIS open Word, and my Quit() closed it - with
+  DisplayAlerts off, save prompts suppressed. Two fixes applied: DispatchEx (a private
+  Word instance the script can only close itself), and the unsafe page-count snippet
+  removed from the skill's own verification step, replaced with a python-docx check and
+  an explicit warning citing this incident. Damage check ran: no saved document altered;
+  only AutoRecover file predates the activity.
+- **ASCII discipline note:** the first draft of md_to_docx.py held its typographic
+  mapping table as literal em dashes and curly quotes, which would have made the script a
+  permanent false positive in the weekly non-ascii-sweep. Rewritten with \u escapes; both
+  scripts verified at zero non-ASCII bytes. The converter's own ASCII pass exempts the
+  pound and cent signs, matching the non-ascii-sweep REVIEW_IGNORE decision of 2026-08-02.
+- **Parked at Mick's request:** the two deck_start defects (webinar-deck-build), until
+  after the Inner Circle webinar on Wednesday 5 August.
 
 ## Recent session: 2026.08.04 (Tuesday, Claude Code, afternoon) - HOC full research run + built Ava the Auditor (mandatory audit stage)
 

@@ -1,6 +1,6 @@
 {
- "last_run": "2026-08-03T07:55:00+01:00",
- "note": "2026-08-03 ~07:30-07:55 BST scheduled run (window after:2026/08/02, -label:MCSB-Filed). 22 threads found, all genuine self-notes. 20 notes filed: 14 YouTube notes in YouTube-Queue (m3fqyXZ4k4I Build BEAUTIFUL Diagrams; QHMdkajJ-oQ Mermaid AI Flowcharts; 5ECZraJKFZ0 How I safely connect Claude; uGwDuvSqgYI Cowork Fundamentals in 22 Minutes; UNzCG3lw6O0 Building Great Agent Skills; dtAJ2dOd3ko handoff is my new favourite skill; Jjz4jt9YWGQ Silver's 2011 Cycle; OYiek-08-Lc Claude Code for Beginners [Blueprint Automation Systems]; UHVFcUzAGlM Every Claude Code Memory System Compared [Simon Scrapes]; ib74sLgjIBM Karpathy AI Knowledge Base [Systems Made Better]; eRr2rTKriDM Claude Code + Obsidian [Chase AI]; B35SWx_4BNM Obsidian plus Claude works [Tom, ICOR]; 6MBq1paspVU How I Use Obsidian + Claude Code to Run My Life [Greg Isenberg]; gdrPkpXuNks My Full Claude Cowork Setup [Tina Huang]), 3 text notes in the inbox root (Member query - Claude context window sizes; Cedric - Note - PARA over the flat Karpathy structure via Obsidian Bases; GRAPHIFY - Graphify-Labs repo link) and 3 attachment stub notes in the inbox root (Ruth at Bewdley; Art ref - dahlias; Sunflower). DEDUPE: dtAJ2dOd3ko arrived twice (19fc2caad40769c2 and 19fc2c90ab93caf0) - one note, both annotations folded in. SUPERSEDED: 19fc63aaa5dbf509 (earlier Blueprint OYiek-08-Lc note, 06:55 BST) was NOT filed separately because the 07:06 consolidated version 19fc63aac74d143a explicitly supersedes it; the earlier thread was still labelled and archived, and the supersession is recorded in the filed note. PENDING: the 3 photo attachments (20260718_121253.jpg 3.0MB, 20260724_151655.jpg 2.3MB, 20260724_203536.jpg 2.0MB) were saved to Google Drive via Chrome but the local binaries were NOT written to 00-Inbox/attachments - pulling 6-7MB of base64 through the connector in one run was judged disproportionate. Each stub note carries the Drive file id and view link and status: binary-pending. Their 3 threads (19fc299e537e34e6, 19fc29935fa5b9d7, 19fc298c7c7cf288) were deliberately left UNLABELLED and in the inbox so a later run completes them. 19 threads labelled MCSB-Filed and archived. HOUSEKEEPING: zero-byte .wtest and .wtest2 files still in 00-Inbox from earlier write-permission checks.",
+ "last_run": "2026-08-04T07:40:00+01:00",
+ "note": "2026-08-04 ~07:28-07:40 BST scheduled run (window after:2026/08/03, -label:MCSB-Filed). 9 threads returned. 6 genuine self-notes, all pure YouTube-link emails, 6 YouTube notes filed in 00-Inbox/YouTube-Queue (J44D3BrGKoo OpenSource Tool That Connects Claude to ANY App - annotation 'Create a CLI for any external tool o app'; AZ-5cLKVtBo Japan's Currency Crisis Is Now America's Problem - annotation 'For IC webinar'; 1wh1rcQXEz0 How to Clear Your iPad Cache; nCDmY9A3EIQ Stop Creating New Gmail Accounts; ag-zO-a7Vnw Gmail Tips Change Your Gmail Address; 9eKI_mvqVPw Stop Learning AI in 2026). No attachments and no text-only notes in this window, so no sibling cross-linking was needed. SKIPPED: 2 auto-generated US Active 10 / US Active 10 Yr2 news digests (19fc7c43f7697374, 19fc7c32b2fae965) - labelled and archived. SKIPPED (left alone): 19fb95fdf59c12e6 - live Azets/Jade Pearce accountancy correspondence, already logged as skipped-outbound-not-self-note; deliberately NOT labelled or archived because it is an active reply thread, not a self-note. STILL PENDING from 2026-08-03: the 3 photo attachment binaries (20260718_121253.jpg, 20260724_151655.jpg, 20260724_203536.jpg) on threads 19fc299e537e34e6 / 19fc29935fa5b9d7 / 19fc298c7c7cf288 - stub notes exist with Drive ids, binaries not yet written to 00-Inbox/attachments; those threads remain unlabelled and in the inbox. Not attempted this run (6-7MB of base64 through the connector). HOUSEKEEPING: zero-byte .wtest and .wtest2 files still in 00-Inbox.",
  "threads": {
   "19f3421213ed0761": [
    "jbHB-rzKBAs"
@@ -1018,6 +1018,30 @@
   ],
   "19fc273b759051ff": [
    "body"
+  ],
+  "19fc9bff454d0799": [
+   "J44D3BrGKoo"
+  ],
+  "19fc994df08c2c12": [
+   "AZ-5cLKVtBo"
+  ],
+  "19fc98e57921defb": [
+   "1wh1rcQXEz0"
+  ],
+  "19fc98bb9755981f": [
+   "nCDmY9A3EIQ"
+  ],
+  "19fc98aca2876929": [
+   "ag-zO-a7Vnw"
+  ],
+  "19fc681ddeddbc17": [
+   "9eKI_mvqVPw"
+  ],
+  "19fc7c43f7697374": [
+   "skipped-auto-digest"
+  ],
+  "19fc7c32b2fae965": [
+   "skipped-auto-digest"
   ]
  }
 }

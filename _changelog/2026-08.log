@@ -40,3 +40,13 @@
 2026-08-04 16:35 [UPDATE] C:/Vaults/_SOPs/INDEX.md - SOP #1 audit stage now MANDATORY; Ron Output-checker marked BUILT as Ava. Author: Cedric. Status: done.
 2026-08-04 16:35 [UPDATE] CEDRIC_MEMORY.md + auto-memory (project_ron_output_checker.md, MEMORY.md) - HOC run + Ava built. Author: Cedric. Status: done.
 2026-08-04 16:35 [CREATE] _handovers/archive/2026.08.04 - 1635 - baton - HOC research run and Ava the Auditor.md + [UPDATE] _handovers/LATEST.md - baton wrap, freshness guard passed. Author: Cedric. Status: verified.
+2026-08-04 18:19 [CREATE] C:/Users/pavey/Documents/0.1 - Projects (n)/2026.08.05 - IC.Webnr/HOC - 2026.08.04 - Micks Radar/2026.08.04 - HOC - Hochschild Mining - AI - Financial Analysis_v2.docx - Word version of Ron's HOC report: 8 pages, 2 native tables, 12m chart embedded, provenance footer, ASCII clean. Author: Cedric. Status: delivered.
+2026-08-04 18:19 [CREATE] skills/md-to-docx/md_to_docx.py - markdown to formatted DOCX engine (headings, tables, images, lists, hyperlinks, code, page breaks, provenance footer, ASCII pass). Pure ASCII. Author: Cedric. Status: production.
+2026-08-04 18:19 [CREATE] skills/md-to-docx/docx_to_pdf.py - standalone DOCX to PDF (single/batch) and the shared PDF engine; ExportAsFixedFormat for heading bookmarks; DispatchEx for a private Word instance. Pure ASCII. Author: Cedric. Status: production.
+2026-08-04 18:19 [CREATE] skills/md-to-docx/SKILL.md - v1.1 skill doc covering both entry points, options, gotchas and the Dispatch/DispatchEx warning. Author: Cedric. Status: production.
+2026-08-04 18:19 [CREATE] C:/Users/pavey/.claude/skills/md-to-docx/ - user-level mirror of all three files, hash-verified byte-identical. Author: Cedric. Status: verified.
+2026-08-04 18:19 [UPDATE] skills/README.md - added the md-to-docx row (both entry points). Author: Cedric. Status: done.
+2026-08-04 18:19 [UPDATE] SKILLS_REGISTRY.md - added md-to-docx v1.1 row and prepended the Last updated line. Author: Cedric. Status: done.
+2026-08-04 18:19 [UPDATE] C:/Vaults/_SOPs/INDEX.md - new SOP entry #10 (document conversion), covering both entry points and the PDF bookmark decision. Author: Cedric. Status: done.
+2026-08-04 18:19 [UPDATE] C:/Vaults/Mick's-Writing-System/0.0 - Inbox/2026.07.19 - Freedom Blueprint Newsletter SOP v2.0.md - Phase 5 PDF step now names docx_to_pdf.py instead of being improvised each month. Author: Cedric. Status: done.
+2026-08-04 18:19 [UPDATE] CEDRIC_MEMORY.md + auto-memory (project_md_to_docx_skill.md, feedback_extend_skill_not_duplicate.md, MEMORY.md) - skill build, the extend-not-duplicate principle, and the Word COM incident. Author: Cedric. Status: done.
