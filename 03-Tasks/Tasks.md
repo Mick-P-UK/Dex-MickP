@@ -126,6 +126,16 @@ Your task backlog organized by priority and pillar.
     - [x] Chat with Steve before Friday regarding the castle - DONE (met Steve at Hay-on-Wye, Sat 21 Mar)
     - [x] Ask Steve about the castle (as referenced in webinar) when attending on Friday 20 Mar - DONE (Hay-on-Wye Sat 21 Mar)
 
+- [ ] Review the "Forecasting Interim Results from Production Figures and Resource Prices" method paper ^task-20260805-001
+  - **Due:** Monday 10 August 2026 (Friday 7 Aug if a window opens - Mick is away at the weekend)
+  - **What:** Read and approve the v1.0 methodology paper written on 5 August, then decide whether it goes out to members. It sets out the eleven-step method for estimating turnover and profitability from a production report weeks before the interim accounts appear, using the HOC (Hochschild) H1 2026 work as the worked example throughout. 7 pages, ~3,700 words, written in Mick's voice from the voice-DNA profile.
+  - **Files:** source markdown `C:\Vaults\Mick's-Writing-System\knowledge\drafts\2026.08.05 - Forecasting Interim Results from Production Figures and Resource Prices_v1.0.md`; branded DOCX + PDF in `Documents\0.1 - Projects (n)\2026.08.05 - IC.Webnr\`
+  - **On approval:** move the markdown from `knowledge/drafts/` to `knowledge/content/`, and decide the release channel (Inner Circle, Plaza, newsletter feature, or all three).
+  - **Follow-on - EVERGREEN YOUTUBE VIDEO:** Mick's idea, 5 Aug. The method is evergreen (not tied to HOC or to any market conditions) and teaches a genuinely differentiated skill, so it should work as a standalone YouTube piece. Strongest angles: the 12% error in the obvious approach (equivalent ounces x headline price); the back-test that turns an estimate into something defensible (0.05% variance); and the hedge found in a derivatives note that explained an 11% gold realisation gap. Possible title direction: what a mining company tells you five weeks before it tells you what it earned.
+  - **Pillar:** DIY-Investors
+  - **Created:** 2026-08-05
+  - **Priority:** IMPORTANT, NOT URGENT (Mick's classification) - no deadline pressure, but high value. Not to compete with the 5 Aug IC webinar prep.
+
 - [ ] Follow up Janusz Marecki (Polish speaker, AI) for Inner Circle webinar ^task-20260322-001
   - **What:** Janusz Marecki spoke on AI at the 'Weekend of Mistakes' event at Hay-on-Wye (21 Mar 2026). Very well-received. Explore potential as a guest speaker for the IC webinar on 8 April 2026.
   - **Action:** Contact Janusz to discuss availability and topic fit. Confirm if 8 Apr works or find alternative date.

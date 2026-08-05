@@ -27,6 +27,7 @@ micks_view_count: 0
 
 ## Notes
 
+- Website mentions (diy-investors.com): [[2026.08.05 - HL - Hecla Mining - DIY-Investors.com Website Mentions]] - 4 published-post mentions (sold Aug 2020, added to US Active 10 Yr2 Jan 2023, Radar Jul 2023, Plaza snippet Feb 2026).
 - US primary silver producer (NYSE:HL). North America's largest silver producer.
 - Continuing mines: Greens Creek (Alaska), Lucky Friday (Idaho), Keno Hill (Yukon).
 - Casa Berardi gold mine SOLD to Orezone Gold (25 Mar 2026) - now reported as a discontinued operation.

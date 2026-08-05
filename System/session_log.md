@@ -2,6 +2,51 @@
 
 ---
 
+## Session: 2026-08-05 (Wednesday, Claude Code) - Document branding + HOC v3 production-to-turnover analysis + method paper
+
+_Environment: Claude Code (Mick's PC), working directory C:\Vaults. Ran in parallel with the HL session logged below._
+
+### Context
+- Opened on document branding for the HOC report going to Inner Circle members, and grew
+  into a substantive re-analysis of HOC plus a new member-facing methodology paper.
+
+### Actions Taken
+1. BRANDING (md-to-docx v1.3): brand logo top left of the header at 25% of usable width,
+   ratio preserved (`--brand com|ai|none`, com = diy-investors.com default). Logos copied
+   INTO the skill at `assets/` so it cannot break if the Documents folders move.
+2. FOOTER, DRAFT vs FINAL: file-path footer replaced by right-aligned "Page x of y" using
+   live PAGE/NUMPAGES fields. Mick's refinement after the first proposal - drafts KEEP the
+   path (labelled `DRAFT - <path>`) because he uses it to find the file in Obsidian; only
+   `--final` drops it. Amended the provenance rule in all THREE places it lived (user
+   CLAUDE.md v1.5 + changelog, Cowork CLAUDE.md, Writing-System CLAUDE.md).
+3. BUG FOUND: the converter silently dropped Obsidian `![[embed]]` images, so the HOC Word
+   copy issued 4 Aug had NO ShareScope chart. Now resolved vault-wide by filename.
+4. HOC v3 (the substantive work): Mick spotted the report never estimated H1 turnover despite
+   having production AND realised prices. Found SOP #6 covers exactly this. Result:
+   H1 net revenue USD 832.5m; the v2 GEO shortcut understated by USD 91.7m (12.2%) because
+   silver converts at 77:1 but realised at 53.6:1; method BACK-TESTED against H1 2025 to
+   within 0.05% of reported revenue; the 11% gold realisation gap traced to a 2023 Citibank
+   hedge (50koz/yr at USD 2,167 against Mara Rosa) found in the prior interims' derivatives
+   note; FY2026 read-across USD 1,589m vs consensus 1,660m (-4.3%). Added sections on
+   inventory and on cash-flow-versus-profitability at Mick's direction. 22 new Calc IDs;
+   independent recompute ran 70 checks and CAUGHT 4 errors before issue (including a period
+   figure mislabelled as annual, and two inconsistent readings of the AISC overrun).
+5. SOPs UPDATED: SOP #6 gained the 10-step METHOD CARD (v0.10); SOP #1 gained conditional
+   Step 4.6 with the three applicability tests (v2.3); index updated for both.
+6. METHOD PAPER: "Forecasting Interim Results from Production Figures and Resource Prices"
+   v1.0 - 7 pages, ~3,700 words, written in Mick's voice from the voice-DNA profile, HOC as
+   the worked example throughout. In Writing-System `knowledge/drafts/` pending his review.
+
+### Outstanding / Next steps
+- Mick to review the method paper (task ^task-20260805-001, due ~Mon 10 Aug, important not
+  urgent). On approval: move drafts -> content, pick the release channel.
+- Evergreen YouTube video on the method - Mick's idea, captured in the same task.
+- Ava has NOT audited the v3 calculation rows (self-recompute only) - offered, not yet run.
+
+_Session wrapped 2026-08-05. Full baton: _handovers/LATEST.md._
+
+---
+
 ## Session: 2026-08-05 (Wednesday, Claude Code) - Hecla (HL) SOP#1 US-stock run (SEC-primary) + two ShareScope fixes + DOCX/PDF
 
 _Environment: Claude Code (Mick's PC), working directory C:\Vaults_

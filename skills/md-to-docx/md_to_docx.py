@@ -2,17 +2,44 @@
 
 Built for Mick's PAIDA system (Cedric). Turns any vault / project markdown file
 into a clean, readable .docx with real Word structure: heading styles, native
-tables, embedded images, bullet and numbered lists, hyperlinks, code blocks and
-the mandatory left-aligned provenance footer.
+tables, embedded images, bullet and numbered lists, hyperlinks, code blocks,
+the brand logo in the header and a right-aligned "Page x of y" footer.
 
 Optionally exports a matching PDF via Word (pywin32 COM).
 
 Usage:
     python md_to_docx.py "<input.md>"
     python md_to_docx.py "<input.md>" --pdf
+    python md_to_docx.py "<input.md>" --brand ai            (diy-investors.ai)
+    python md_to_docx.py "<input.md>" --brand none          (no header logo)
+    python md_to_docx.py "<input.md>" --final               (the copy Mick sends)
     python md_to_docx.py "<input.md>" -o "<output.docx>" --landscape
-    python md_to_docx.py "<input.md>" --no-footer          (going-to-press copy)
-    python md_to_docx.py "<input.md>" --frontmatter        (keep YAML as a block)
+    python md_to_docx.py "<input.md>" --no-footer           (no footer at all)
+    python md_to_docx.py "<input.md>" --frontmatter         (keep YAML as a block)
+
+Branding (added 2026-08-05):
+    --brand com   diy-investors.com logo (DEFAULT - Inner Circle, Plaza Group)
+    --brand ai    diy-investors.ai logo (AI for Investing material)
+    --brand none  no logo
+The logo sits top LEFT of the header, at 25 percent of the usable page width,
+original aspect ratio preserved.
+
+Footer - draft vs final (Mick's rule, 2026-08-05):
+    Every document gets "Page x of y", RIGHT aligned, using live Word PAGE and
+    NUMPAGES fields so it stays correct after editing and in the PDF.
+
+    DRAFT (the default) ALSO carries the file path on the left, labelled:
+        DRAFT - C:\\...\\file.docx - Created: YYYY.MM.DD
+    Mick works through several iterations of most documents and uses that path
+    to find the file again in Obsidian, so it is on by default.
+
+    FINAL (--final) drops the path entirely - just the logo and the page
+    numbers. Use it for the copy that goes to members: they must never see
+    Mick's local vault paths. The DRAFT label is what stops a working copy
+    passing as a finished one, which a bare path line never did.
+
+    A PDF exported with --pdf is produced FROM the DOCX, so it inherits
+    whichever mode was used. There is no separate PDF rule to remember.
 
 Markdown supported:
     YAML frontmatter (skipped by default)
@@ -33,7 +60,7 @@ Mick's standing decision that they are legitimate content, matching the
 REVIEW_IGNORE list in non-ascii-sweep. Anything else non-ASCII is REPORTED with
 its line number and left untouched, so the source can be fixed at source.
 
-Version: 1.0 (2026-08-04)
+Version: 1.3 (2026-08-05 - brand header logo, Page x of y footer, draft/final)
 """
 
 import argparse
@@ -42,12 +69,12 @@ import re
 import sys
 
 from docx import Document
-from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK, WD_TAB_ALIGNMENT
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Inches, Pt, RGBColor
+from docx.shared import Emu, Inches, Pt, RGBColor
 
 # ---------------------------------------------------------------- constants --
 
@@ -61,6 +88,11 @@ HEADING_SIZES = {1: Pt(16), 2: Pt(14), 3: Pt(12), 4: Pt(11), 5: Pt(11), 6: Pt(11
 INLINE_RE = re.compile(r"(\*\*\*.+?\*\*\*|\*\*.+?\*\*|\*[^*\n]+?\*|`[^`\n]+?`)")
 LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\s]+)\)")
 IMG_RE = re.compile(r"^!\[(.*?)\]\((.+?)\)\s*$")
+# Obsidian embed: ![[image.png]] or ![[image.png|caption]] - resolved by
+# filename anywhere in the vault, the way Obsidian itself resolves it.
+WIKI_IMG_RE = re.compile(r"^!\[\[([^\]|]+?)(?:\|([^\]]*))?\]\]\s*$")
+IMAGE_EXTS = (".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tif", ".tiff", ".emf",
+              ".wmf")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$")
 BULLET_RE = re.compile(r"^(\s*)[-*+]\s+(.*)$")
 NUMBER_RE = re.compile(r"^(\s*)\d+[.)]\s+(.*)$")
@@ -102,6 +134,35 @@ ASCII_MAP = {
 # Non-ASCII that is legitimate content and must NOT be flagged or altered.
 # Matches the REVIEW_IGNORE decision in non-ascii-sweep (2026-08-02).
 ASCII_ALLOW = {"\u00a3", "\u00a2"}   # pound sign, cent sign
+
+# ------------------------------------------------------------------ branding --
+#
+# Which logo goes on which document (Mick's rule, 2026-08-05):
+#   com -> diy-investors.com  : Inner Circle and Plaza Group material
+#   ai  -> diy-investors.ai   : AI for Investing material
+#
+# Logos are shipped inside this skill (assets/) so the skill is self-contained
+# and does not break if the Documents project folders are reorganised. The
+# original masters in "0 - AI Logos n Podcast Covers" are kept as a fallback.
+HERE = os.path.dirname(os.path.abspath(__file__))
+LOGO_MASTERS = os.path.join(
+    os.path.expanduser("~"), "Documents", "0.1 - Projects (n)",
+    "0 - AI Logos n Podcast Covers", "0 - Logos")
+
+BRAND_LOGOS = {
+    "com": [
+        os.path.join(HERE, "assets", "logo-diy-investors-com.jpg"),
+        os.path.join(LOGO_MASTERS, "DIY-Logo_290 x 58px_for Covers_White_JPG.jpg"),
+    ],
+    "ai": [
+        os.path.join(HERE, "assets", "logo-diy-investors-ai.jpg"),
+        os.path.join(LOGO_MASTERS,
+                     "2024.12.18 - 800x200px_DIY.ai_v.02_Logo_white_JPG.jpg"),
+    ],
+}
+
+# Logo width as a fraction of the usable page width (page minus both margins).
+LOGO_WIDTH_FRACTION = 0.25
 
 
 # ------------------------------------------------------------------ helpers --
@@ -240,16 +301,156 @@ def add_table(doc, rows, cfg):
     doc.add_paragraph().paragraph_format.space_after = Pt(4)
 
 
-def add_footer(section, text, cfg):
+def find_vault_root(start_dir):
+    """Walk up from start_dir looking for the folder that holds .obsidian."""
+    path = os.path.abspath(start_dir)
+    while True:
+        if os.path.isdir(os.path.join(path, ".obsidian")):
+            return path
+        parent = os.path.dirname(path)
+        if parent == path:
+            return None
+        path = parent
+
+
+_VAULT_INDEX = {}
+
+
+def vault_lookup(name, src_dir):
+    """Find a file by BASENAME anywhere in the vault, as Obsidian does.
+
+    The index is built once per vault per run and skips the usual noise
+    directories, so a big vault costs one walk, not one per embed.
+    """
+    root = find_vault_root(src_dir)
+    if root is None:
+        return None
+    if root not in _VAULT_INDEX:
+        index = {}
+        skip = {".git", ".obsidian", ".trash", "__pycache__", "node_modules",
+                ".venv"}
+        for dirpath, dirnames, filenames in os.walk(root):
+            dirnames[:] = [d for d in dirnames if d not in skip]
+            for fn in filenames:
+                index.setdefault(fn.lower(), os.path.join(dirpath, fn))
+        _VAULT_INDEX[root] = index
+    return _VAULT_INDEX[root].get(os.path.basename(name).lower())
+
+
+def resolve_asset(path, src_dir, wiki=False):
+    """Resolve an image reference to a file on disk, or None.
+
+    Order: absolute path, then relative to the markdown file, then (for
+    Obsidian ![[embeds]]) a vault-wide search on the filename.
+    """
+    if os.path.isabs(path) and os.path.exists(path):
+        return path
+    local = os.path.join(src_dir, path)
+    if os.path.exists(local):
+        return local
+    if wiki:
+        return vault_lookup(path, src_dir)
+    return None
+
+
+def usable_width(section):
+    """Width of the printable area: page width less both margins (EMU)."""
+    return section.page_width - section.left_margin - section.right_margin
+
+
+def resolve_logo(brand):
+    """Return the first logo file that exists for this brand, else None."""
+    for path in BRAND_LOGOS.get(brand, []):
+        if os.path.exists(path):
+            return path
+    return None
+
+
+def add_brand_header(section, brand, cfg):
+    """Put the brand logo top LEFT of the header, at 25% of the usable width.
+
+    python-docx scales the height automatically when only a width is given, so
+    the original aspect ratio is always preserved.
+    """
+    if brand in (None, "none"):
+        return None
+    logo = resolve_logo(brand)
+    if logo is None:
+        print("WARNING: no logo file found for brand '%s' - header left blank."
+              % brand)
+        return None
+    header = section.header
+    header.is_linked_to_previous = False
+    par = header.paragraphs[0] if header.paragraphs else header.add_paragraph()
+    par.text = ""
+    par.alignment = WD_ALIGN_PARAGRAPH.LEFT
+    par.paragraph_format.space_after = Pt(6)
+    width = Emu(int(usable_width(section) * LOGO_WIDTH_FRACTION))
+    par.add_run().add_picture(logo, width=width)
+    return logo
+
+
+def add_field(par, instruction):
+    """Insert a live Word field (PAGE, NUMPAGES, ...) into a paragraph.
+
+    Word evaluates these at layout time, so the numbers stay correct after
+    editing and come through correctly in the exported PDF.
+    """
+    run = par.add_run()
+    begin = OxmlElement("w:fldChar")
+    begin.set(qn("w:fldCharType"), "begin")
+    instr = OxmlElement("w:instrText")
+    instr.set(qn("xml:space"), "preserve")
+    instr.text = instruction
+    end = OxmlElement("w:fldChar")
+    end.set(qn("w:fldCharType"), "end")
+    for node in (begin, instr, end):
+        run._r.append(node)
+    return run
+
+
+def add_footer(doc, section, cfg, draft_text=None):
+    """Footer: "Page x of y", hard RIGHT, on every document.
+
+    draft_text is the DRAFT path line. It goes on its own line above the page
+    numbers, because a full vault path plus page numbers does not fit on one A4
+    line. Passed on drafts (the default) and omitted on --final copies.
+
+    Note: Word's built-in Footer style carries its own centre and right tab
+    stops, sized for US Letter with 1in margins. Those are cleared here and
+    replaced with a right tab at the real page width, otherwise anything
+    tabbed in a footer lands mid-page instead of at the right margin.
+    """
     footer = section.footer
     footer.is_linked_to_previous = False
     par = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
     par.text = ""
-    par.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    run = par.add_run(text)
-    run.font.size = Pt(7.5)
-    run.font.name = cfg["font"]
-    run.font.color.rgb = GREY
+    par.paragraph_format.space_before = Pt(2)
+
+    style_tabs = doc.styles["Footer"].paragraph_format.tab_stops
+    style_tabs.clear_all()
+    style_tabs.add_tab_stop(Emu(int(usable_width(section))),
+                            WD_TAB_ALIGNMENT.RIGHT)
+
+    if draft_text:
+        par.alignment = WD_ALIGN_PARAGRAPH.LEFT
+        par.paragraph_format.space_after = Pt(0)
+        run = par.add_run(draft_text)
+        run.font.size = Pt(7.5)
+        run.font.name = cfg["font"]
+        run.font.color.rgb = GREY
+        par = footer.add_paragraph()
+
+    par.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    par.add_run("Page ")
+    add_field(par, " PAGE ")
+    par.add_run(" of ")
+    add_field(par, " NUMPAGES ")
+    for run in par.runs:
+        if run.font.size is None:
+            run.font.size = Pt(8.5)
+            run.font.name = cfg["font"]
+            run.font.color.rgb = GREY
 
 
 def export_pdf(docx_path):
@@ -320,6 +521,10 @@ def convert(src, out, args):
     for side in ("top", "bottom", "left", "right"):
         setattr(section, "%s_margin" % side, Inches(args.margin))
 
+    logo = add_brand_header(section, args.brand, cfg)
+    if logo:
+        print("Header logo (%s): %s" % (args.brand, os.path.basename(logo)))
+
     normal = doc.styles["Normal"]
     normal.font.name = cfg["font"]
     normal.font.size = cfg["size"]
@@ -369,19 +574,29 @@ def convert(src, out, args):
             i = j + 1
             continue
 
-        # Image
+        # Image - standard markdown ![alt](path) or Obsidian embed ![[file.png]]
         m = IMG_RE.match(stripped)
-        if m:
-            alt, path = m.group(1), m.group(2)
-            full = path if os.path.isabs(path) else os.path.join(src_dir, path)
+        wm = WIKI_IMG_RE.match(stripped) if not m else None
+        if m or wm:
+            wiki = wm is not None
+            path = wm.group(1).strip() if wiki else m.group(2)
+            if wiki and not path.lower().endswith(IMAGE_EXTS):
+                # ![[Some Note]] - an embedded note, not an image. Not something
+                # this converter can inline; leave a visible marker.
+                par = doc.add_paragraph()
+                add_runs(par, "[embedded note: %s]" % path, cfg)
+                print("WARNING: embedded note skipped (not an image) -> %s" % path)
+                i += 1
+                continue
+            full = resolve_asset(path, src_dir, wiki=wiki)
             par = doc.add_paragraph()
             par.alignment = WD_ALIGN_PARAGRAPH.CENTER
             par.paragraph_format.space_after = Pt(4)
-            if os.path.exists(full):
+            if full:
                 par.add_run().add_picture(full, width=Inches(args.image_width))
             else:
                 add_runs(par, "[image not found: %s]" % path, cfg)
-                print("WARNING: image not found -> %s" % full)
+                print("WARNING: image not found -> %s" % path)
             i += 1
             continue
 
@@ -483,8 +698,14 @@ def convert(src, out, args):
         i = j
 
     if not args.no_footer:
-        add_footer(section, "(%s - Created: %s)" %
-                   (os.path.abspath(out), args.date), cfg)
+        draft_text = None
+        if not args.final:
+            draft_text = "DRAFT - %s - Created: %s" % (os.path.abspath(out),
+                                                       args.date)
+        add_footer(doc, section, cfg, draft_text)
+        print("Footer: %s" % ("FINAL - page numbers only, no path"
+                              if args.final else
+                              "DRAFT - labelled path plus page numbers"))
 
     doc.save(out)
     return out
@@ -496,8 +717,17 @@ def main():
     ap.add_argument("-o", "--output", help="output .docx path "
                                            "(default: same folder, same name)")
     ap.add_argument("--pdf", action="store_true", help="also export a PDF via Word")
+    ap.add_argument("--brand", choices=("com", "ai", "none"), default="com",
+                    help="header logo: com = diy-investors.com (Inner Circle / "
+                         "Plaza Group, the default), ai = diy-investors.ai, "
+                         "none = no logo")
+    ap.add_argument("--final", action="store_true",
+                    help="FINAL copy: page numbers only, no path in the footer. "
+                         "Use for anything going to members. Without it the "
+                         "document is a DRAFT and carries the labelled file "
+                         "path so Mick can find it again in Obsidian")
     ap.add_argument("--no-footer", action="store_true",
-                    help="omit the provenance footer (going-to-press copy)")
+                    help="omit the footer entirely (going-to-press copy)")
     ap.add_argument("--frontmatter", action="store_true",
                     help="render the YAML frontmatter as a grey metadata line")
     ap.add_argument("--landscape", action="store_true", help="landscape A4")
@@ -510,8 +740,8 @@ def main():
     ap.add_argument("--margin", type=float, default=0.7, help="page margin (inches)")
     ap.add_argument("--no-justify", dest="justify", action="store_false",
                     help="left-align body text instead of justifying")
-    ap.add_argument("--date", help="creation date for the footer (YYYY.MM.DD); "
-                                   "defaults to today")
+    ap.add_argument("--date", help="creation date shown in the DRAFT footer "
+                                   "(YYYY.MM.DD); defaults to today")
     args = ap.parse_args()
 
     if not os.path.exists(args.source):

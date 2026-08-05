@@ -1,6 +1,6 @@
 {
- "last_run": "2026-08-04T07:40:00+01:00",
- "note": "2026-08-04 ~07:28-07:40 BST scheduled run (window after:2026/08/03, -label:MCSB-Filed). 9 threads returned. 6 genuine self-notes, all pure YouTube-link emails, 6 YouTube notes filed in 00-Inbox/YouTube-Queue (J44D3BrGKoo OpenSource Tool That Connects Claude to ANY App - annotation 'Create a CLI for any external tool o app'; AZ-5cLKVtBo Japan's Currency Crisis Is Now America's Problem - annotation 'For IC webinar'; 1wh1rcQXEz0 How to Clear Your iPad Cache; nCDmY9A3EIQ Stop Creating New Gmail Accounts; ag-zO-a7Vnw Gmail Tips Change Your Gmail Address; 9eKI_mvqVPw Stop Learning AI in 2026). No attachments and no text-only notes in this window, so no sibling cross-linking was needed. SKIPPED: 2 auto-generated US Active 10 / US Active 10 Yr2 news digests (19fc7c43f7697374, 19fc7c32b2fae965) - labelled and archived. SKIPPED (left alone): 19fb95fdf59c12e6 - live Azets/Jade Pearce accountancy correspondence, already logged as skipped-outbound-not-self-note; deliberately NOT labelled or archived because it is an active reply thread, not a self-note. STILL PENDING from 2026-08-03: the 3 photo attachment binaries (20260718_121253.jpg, 20260724_151655.jpg, 20260724_203536.jpg) on threads 19fc299e537e34e6 / 19fc29935fa5b9d7 / 19fc298c7c7cf288 - stub notes exist with Drive ids, binaries not yet written to 00-Inbox/attachments; those threads remain unlabelled and in the inbox. Not attempted this run (6-7MB of base64 through the connector). HOUSEKEEPING: zero-byte .wtest and .wtest2 files still in 00-Inbox.",
+ "last_run": "2026-08-05T07:35:00+01:00",
+ "note": "2026-08-05 ~07:20-07:35 BST scheduled run (window after:2026/08/04, -label:MCSB-Filed). 9 threads returned. 7 genuine self-notes: 5 YouTube notes filed in 00-Inbox/YouTube-Queue (8TuzfQxz4CY The Fuse Is Lit - Shock US Decision for Full Fiat Destruction, annotation 'Relevant to webinar?'; Ah9p7v7nJWg The 7 phases of AI-driven development, 'Summarise this / Anything useful?'; asBbko6ZxTw Silver - COMEX & CME numbers, 'Transcribe / Check silver futures process / Abstract silver miners'; o0re4J8iiNo Stock Report Webapp using Yahoo Finance CLI Made by Claude, action=add-to-nblm, nblm_topic set, annotation merged from the 11:52 BST original and the 18:47 BST resend on thread 19fcde2bb19bc32e which was labelled as a resend and NOT filed twice; JWhICz1QR8M Why Graph Engineering will 10x your Claude/Codex, 'Excellent video / Fork for diy-investing / Research report checker!'), plus 1 text note in 00-Inbox root (2026.08.04 - 18.26BST - Mick Brain Dump for tomorrow (5th August).md - HOC first-half estimate + SOP#1 brief revision + header banners + Word footer page X of Y; Travis Perkins as second Mick's Radar candidate; explicit NOTE to Cedric asking for these points to be carried into today's daily brief). Title of the text note had the leading date stripped to avoid a doubled date in the filename. No attachments in this window, so no sibling cross-linking needed. SKIPPED: 2 auto-generated US Active 10 / US Active 10 Yr2 news digests (19fcce69d10d5646, 19fcce5b752c3587) - labelled and archived. STILL PENDING from 2026-08-03: the 3 photo attachment binaries (20260718_121253.jpg, 20260724_151655.jpg, 20260724_203536.jpg) on threads 19fc299e537e34e6 / 19fc29935fa5b9d7 / 19fc298c7c7cf288 - stub notes exist with Drive ids, binaries not yet written to 00-Inbox/attachments; those threads remain unlabelled and in the inbox. Not attempted this run (6-7MB of base64 through the connector). ALSO OUTSTANDING: 19fb95fdf59c12e6 live Azets/Jade Pearce correspondence, deliberately left alone. HOUSEKEEPING: zero-byte .wtest and .wtest2 files still in 00-Inbox.",
  "threads": {
   "19f3421213ed0761": [
    "jbHB-rzKBAs"
@@ -1041,6 +1041,33 @@
    "skipped-auto-digest"
   ],
   "19fc7c32b2fae965": [
+   "skipped-auto-digest"
+  ],
+  "19fd04ec850bf8aa": [
+   "8TuzfQxz4CY"
+  ],
+  "19fd04cb65c916b1": [
+   "Ah9p7v7nJWg"
+  ],
+  "19fce074a634e63b": [
+   "asBbko6ZxTw"
+  ],
+  "19fcde2bb19bc32e": [
+   "o0re4J8iiNo-resend"
+  ],
+  "19fcdcff54a80a3c": [
+   "body"
+  ],
+  "19fcc66ca899b802": [
+   "o0re4J8iiNo"
+  ],
+  "19fcbff468cab41e": [
+   "JWhICz1QR8M"
+  ],
+  "19fcce69d10d5646": [
+   "skipped-auto-digest"
+  ],
+  "19fcce5b752c3587": [
    "skipped-auto-digest"
   ]
  }
