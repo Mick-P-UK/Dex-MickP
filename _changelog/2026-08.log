@@ -50,3 +50,10 @@
 2026-08-04 18:19 [UPDATE] C:/Vaults/_SOPs/INDEX.md - new SOP entry #10 (document conversion), covering both entry points and the PDF bookmark decision. Author: Cedric. Status: done.
 2026-08-04 18:19 [UPDATE] C:/Vaults/Mick's-Writing-System/0.0 - Inbox/2026.07.19 - Freedom Blueprint Newsletter SOP v2.0.md - Phase 5 PDF step now names docx_to_pdf.py instead of being improvised each month. Author: Cedric. Status: done.
 2026-08-04 18:19 [UPDATE] CEDRIC_MEMORY.md + auto-memory (project_md_to_docx_skill.md, feedback_extend_skill_not_duplicate.md, MEMORY.md) - skill build, the extend-not-duplicate principle, and the Word COM incident. Author: Cedric. Status: done.
+2026-08-05 11:21 [CREATE] 06-Resources/Research-Log/Research/HL/2026.08.05 - HL - Hecla Mining - AI - Financial Analysis_v2.md - Ron report (BUY), Ava-audited 25/25 clean; SEC-primary US-stock SOP#1 run. Author: Cedric. Status: done.
+2026-08-05 11:21 [CREATE] 06-Resources/Research-Log/Research/HL/2026.08.05_HL_chart_12month_DAILY.png + 2026.08.05_HL_chart_FULL-HISTORY_2004-2026.png - charts embedded in the report. Author: Cedric. Status: done.
+2026-08-05 11:21 [CREATE] 06-Resources/Research-Log/Companies/HL - Hecla Mining.md - new Company Profile (notebook 781ebf35). Author: Cedric. Status: done.
+2026-08-05 11:21 [UPDATE] 06-Resources/Research-Log/_index.md - added HL row; 22 -> 23 companies tracked. Author: Cedric. Status: done.
+2026-08-05 11:21 [UPDATE] 04-Projects/2026.04.04-ShareScope-Automation/sharescope_chart.py - new set_chart_periodicity() sets DAILY candles via the Bars dropdown '1 day'; wired into capture_chart_png. Author: Cedric. Status: done.
+2026-08-05 11:21 [UPDATE] 04-Projects/2026.04.04-ShareScope-Automation/sharescope_search.py - company-picker DROPDOWN VERIFICATION: logs candidates, warns on ambiguous ticker, adds expected_exchange= to force the right instrument. Author: Cedric. Status: done.
+2026-08-05 11:21 [UPDATE] CEDRIC_MEMORY.md + auto-memory (sharescope-csv-notebooklm-text-not-file.md, hl-us-stock-sop1-sec-primary-and-sharescope-fixes.md, MEMORY.md) - HL run, the two fixes, and the CSV-as-text finding. Author: Cedric. Status: done.

@@ -2,6 +2,41 @@
 
 ---
 
+## Session: 2026-08-05 (Wednesday, Claude Code) - Hecla (HL) SOP#1 US-stock run (SEC-primary) + two ShareScope fixes + DOCX/PDF
+
+_Environment: Claude Code (Mick's PC), working directory C:\Vaults_
+
+### Context
+- Mick asked to run the full SOP#1 on Hecla Mining (NYSE:HL) and pull the SEC filings.
+  First US-stock run since the pipeline matured; grew into two ShareScope automation fixes,
+  a webinar DOCX/PDF, and the CSV-into-NotebookLM diagnosis.
+
+### Actions Taken
+1. AUTH: notebooklm live call failed despite cache "ok"; healed via the Playwright cookie
+   re-export then a HEADED browser (stored Google creds auto-signed in, hands-free).
+2. SOP#1 (SEC-primary, Mick's choice "Both, SEC as primary"): pulled SEC EDGAR filings
+   (CIK 719413 - FY2025 10-K, Q2 2026 10-Q, Q2/H1 2026 8-K earnings release from 4 Aug) via
+   curl+User-Agent, stripped HTML to text, archived to the HL base-data SEC-Filings folder.
+   Built NEW notebook 781ebf35 (SEC filings + 6 ShareScope financials as text = 9 ready sources).
+   Verified HL = Hecla not Hargreaves Lansdown (Historical) via the search dropdown.
+   Ron report = BUY (net cash ~$483m, debt-free, key level $13); Ava audit 25/25 clean.
+   Saved to Research-Log/Research/HL + Company Profile + index (23 companies).
+3. DELIVERABLE: branded FINAL DOCX+PDF (8 pages) into the 5 Aug IC webinar folder. Notion held.
+4. TWO PRODUCTION FIXES (tested live): sharescope_chart.py now sets DAILY candles via the Bars
+   dropdown '1 day' (period WINDOW and bar INTERVAL are separate; presets retain last period);
+   sharescope_search.py company-picker logs DROPDOWN candidates, warns on ambiguous tickers,
+   and takes expected_exchange= to force + abort.
+5. CSV FINDING: ShareScope CSVs fail NotebookLM as FILE uploads (Unknown/error) regardless of
+   width - a 7-year trim did NOT help; add as TEXT instead. Auto-memory saved.
+
+### Outstanding / Next steps
+- Mick to decide whether to codify the SEC-primary US-stock branch in SOP#1.
+- Notion Research DB entry for HL - held until after tonight's webinar.
+
+_Session wrapped 2026-08-05 ~11:21 London. Full baton: _handovers/LATEST.md._
+
+---
+
 ## Session: 2026-07-27 (Monday, Claude Code) - NotebookLM auth fix + June webinar processing + SOP
 
 _Environment: Claude Code (Mick's PC), working directory C:\Vaults_
