@@ -2,6 +2,39 @@
 
 ---
 
+## Session: 2026-08-06 (Thursday, Claude Code) - AX Trees automation relocated out of Cowork + own GitHub repo
+
+_Environment: Claude Code (Mick's PC), working directory C:\Vaults_
+
+### Context
+- Mick could not remember where the AX Trees automation lived. Found in THREE places. Because
+  Cowork went cloud-only, decided to move the local-execution project to its own home so it can
+  be worked on in Claude Code.
+
+### Actions Taken
+1. MOVED the live project C:\Vaults\Cowork\ax-trees-automation -> C:\Vaults\ax-trees-automation
+   (PowerShell Move-Item; plain mv failed "Device or resource busy" - the scheduled autocommit
+   task + shell cwd held handles). 1063 files, own git repo, history intact.
+2. REPATHED the fallout: the Windows scheduled task "ax-trees-automation git autocommit"
+   repointed to the new path; 11 operational scripts had hardcoded C:\Vaults\Cowork\... paths
+   corrected. Historical session logs left as-is. Committed a09f45f in the ax-trees repo.
+3. ARCHIVED the stale 1-May snapshot Dex-MickP\ax-trees-automation (22 files) via git mv to
+   07-Archives/Projects/ax-trees-automation-snapshot-2026-05-01-SUPERSEDED (+ ARCHIVE-NOTE.md).
+4. CHECKED skills/ax-mapper: it is a LIVE, DEPLOYED skill (registered, referenced, run 11 Jul),
+   NOT stale - kept. Corrected its two dead Cowork path refs.
+5. COMMITTED the Dex changes surgically (58a78e5) and PUSHED to Mick-P-UK/Dex-MickP.
+6. CREATED a PRIVATE GitHub repo: github.com/Mick-P-UK/ax-trees-automation (gh, HTTPS) and
+   pushed main. Secret scan clean before push (only .env.example tracked).
+
+### Outstanding / Next steps
+- Mick to START the ShareScope AX-tree mapping in a FRESH session, rooted in
+  C:\Vaults\ax-trees-automation so the project CLAUDE.md loads. Mapper is BUILT, not yet
+  live-tested; next step is a live GGP harvest on the PC.
+
+_Session wrapped 2026-08-06 ~12:47 London. Full baton: _handovers/LATEST.md._
+
+---
+
 ## Session: 2026-08-05 (Wednesday, Claude Code) - Document branding + HOC v3 production-to-turnover analysis + method paper
 
 _Environment: Claude Code (Mick's PC), working directory C:\Vaults. Ran in parallel with the HL session logged below._
