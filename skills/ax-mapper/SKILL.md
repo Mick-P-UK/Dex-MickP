@@ -73,7 +73,7 @@ node engine/mapper.js --adapter ./adapters/<app>.adapter.js --out ./output
 ```
 For the ShareScope example, first set:
 ```
-set AX_MAPPER_SHARESCOPE_SKILLS=C:\Vaults\Cowork\ax-trees-automation\skills
+set AX_MAPPER_SHARESCOPE_SKILLS=C:\Vaults\ax-trees-automation\skills
 set AX_MAPPER_TICKER=GGP
 ```
 

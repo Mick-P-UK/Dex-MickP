@@ -63,7 +63,7 @@ See `SKILL.md` for how Cedric invokes this.
 
 Run the portfolio flow:
 ```
-$env:AX_MAPPER_SHARESCOPE_SKILLS = "C:\Vaults\Cowork\ax-trees-automation\skills"
+$env:AX_MAPPER_SHARESCOPE_SKILLS = "C:\Vaults\ax-trees-automation\skills"
 node engine\mapper.js --adapter .\adapters\sharescope-portfolio.adapter.js --out .\output
 ```
 Notes: run wide (the engine sets 1920x1080) or the rightmost toolbar buttons overflow.
