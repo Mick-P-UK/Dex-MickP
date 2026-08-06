@@ -62,3 +62,6 @@
 2026-08-06 12:47 [UPDATE] skills/ax-mapper/SKILL.md + README.md - corrected two dead C:\Vaults\Cowork\... path refs to the project's new location; skill confirmed live. Author: Cedric. Status: done.
 2026-08-06 12:47 [CREATE] github.com/Mick-P-UK/ax-trees-automation - created PRIVATE GitHub repo for the relocated project and pushed main after a clean secret scan. Author: Cedric. Status: done.
 2026-08-06 12:47 [UPDATE] _handovers/LATEST.md + archive, CEDRIC_MEMORY.md, System/session_log.md - baton wrap for the AX Trees relocation thread. Author: Cedric. Status: done.
+2026-08-06 18:06 [UPDATE] (ax-trees repo) sharescope/sharescope-ax-tree-master.md - v1.7, added Section 2B: Filter Apply/Manage modal + Edit-details dialog + fork-a-filter workflow, mapped live from Mick's Snagit video. Author: Cedric. Status: committed to ax-trees repo.
+2026-08-06 18:06 [CREATE] (ax-trees repo) mini-projects/sharescope-stock-filter/scripts/{harvest-filter.js,fork-cycle-test.js} + PROGRESS.md - read-only Filter harvest + controlled fork-cycle confirmation. Author: Cedric. Status: committed to ax-trees repo.
+2026-08-06 18:06 [UPDATE] CEDRIC_MEMORY.md + _handovers/LATEST.md + archive - baton wrap for the Session 21 AX-tree Filter mapping (video-brief) thread; new headless-by-default rule. Author: Cedric. Status: Dex vault committed.
