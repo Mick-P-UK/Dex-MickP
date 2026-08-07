@@ -41,6 +41,15 @@ Your task backlog organized by priority and pillar.
 
 > High-impact tasks aligned with your weekly priorities.
 
+- [ ] Restructure and index CEDRIC_MEMORY.md ^task-20260806-001
+  - **Target:** Next few days (Mick, 2026-08-06)
+  - **What:** CEDRIC_MEMORY.md has grown large and unwieldy - it now exceeds a single-read token limit and must be read in slices, and the flat Last Updated stack plus long Recent session blocks make it hard to scan. Restructure for maintainability: add an index / table of contents at the top, and consider splitting or summarising older Recent session blocks (archive the detail out, keep a rolling summary) while preserving the newest-at-top read order.
+  - **Why:** Session-start reads this file every time; on Session 21 (2026-08-06) it had to be read piecemeal. An index plus tighter structure keeps it usable as it keeps growing.
+  - **Watch for:** Keep newest-at-top ordering - the session-start protocol and baton-wrap both rely on the first Last Updated line and the first Recent session block being current. ASCII only. Archive rather than delete, so no durable fact is lost when trimming.
+  - **Pillar:** PAIDA
+  - **Created:** 2026-08-06
+  - **Priority:** Medium - housekeeping, no hard deadline; Mick wants it sorted in the next few days.
+
 - [ ] Extract the Inner Circle webinar house theme into pptx-editable-graphics ^task-20260728-001
   - **What:** Run `skills/pptx-editable-graphics/scripts/extract_theme.py` against the most recent live Inner Circle webinar deck, then write up the palette, chrome geometry and usable graphic area in `skills/pptx-editable-graphics/references/themes.md`, following the .ai Webinar section as the pattern.
   - **Why:** The skill skins slide graphics by reading the target deck rather than guessing. Only the .ai Webinar pack is captured so far, so any Inner Circle graphic still needs a manual extraction run first.
